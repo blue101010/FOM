@@ -2,13 +2,12 @@
 
 
 # Details
-ID: FOMCTE001
-Sub-techniques: [FOMCTE001.001](https://github.com/blue101010/FOM/blob/main/tactics/FOMCTE001.001.md),
-Tactic: [Binary hexadecimal format modifications ](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA001.md),
-Platforms: Linux, Windows, macOS
+- ID: FOMCTE001
+- Sub-techniques: [FOMCTE001.001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.001.md),
+- Tactic: [Binary hexadecimal format modifications ](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA001.md),
+- Platforms: Linux, Windows, macOS
 
 # Procedure examples
-
 
 | ID                                                  | Name       | Description |
 | --------------------------------------------------- | ---------- | ----------- |

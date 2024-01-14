@@ -1,4 +1,4 @@
-# FOM Countertechniques
+# FOM Counter techniques
 
 | FOM Counter Techniques                                                                  | Counter Techniques Description         | FOM Related Techniques                                                         |
 | --------------------------------------------------------------------------------------- | -------------------------------------- | ------------------------------------------------------------------------------ |
