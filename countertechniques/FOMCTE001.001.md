@@ -1,6 +1,6 @@
-# Recover legitimate signature of an OpenEXR image file
+# Recover legitimate header signature of an OpenEXR image file
 
-Recover the legitimate signature of the 	OpenEXR bitmap image format:
+Recover the legitimate "magic number" header signature of the OpenEXR bitmap image format:
 ```
 76 2F 31 01	 	v/1.
 EXR	 	OpenEXR bitmap image format
