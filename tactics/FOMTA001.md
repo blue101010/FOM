@@ -3,12 +3,9 @@
 Binaries format are modified to make difficult to use files and find targeted data.
 
 # Details
-
-ID: FOMTA001
-Created: 13 January 2024
-Last Modified : 14 January 2024
-
-
+- ID: [FOMTA001](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA001.md)
+- Created: 13 January 2024
+- Last Modified : 14 January 2024
 
 # Techniques 
 
