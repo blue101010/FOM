@@ -1,24 +1,78 @@
 {
   "type": "bundle",
-  "id": "bundle--<uuid>",
+  "id": "bundle--e3dd2ee9-2441-4237-a8fb-53483f107694",
   "spec_version": "2.1",
   "objects": [
     {
-      "type": "fom-pattern",
-      "id": "form-pattern--<uuid>",
-      "created": "<timestamp>",
-      "modified": "<timestamp>",
-      "name": "Modify binary image header hexadecimal signature or 'magic number'",
-      "description": "<description>",
+      "type": "x-blueonezero-collection",
+      "id": "x-blueonezero-collection--ccf90f17-da8b-43c9-bce3-d4d01b22c524",
+      "spec_version": "2.1",
+      "x_blueonezero_form_spec_version": "2.1.0",
+      "name": "Enterprise FOM",
+      "x_blueonezero_version": "2.0",
+      "description": "FOM for Enterprise provides a knowledge base of real-world techniques used to hide content",
+      "created_by_ref": "identity--fbe79dea-6df9-40db-a80d-06a57eebedf5",
+      "created": "2024-01-13T12:56:55.080Z",
+      "modified": "2024-01-13T12:56:55.080Z",
+      "object_marking_refs": [
+        "marking-definition--1deb76d0-e89a-4df2-ad95-ae8f4f43c332"
+     ],
+     "x_blueonezero_contents": [
+        {
+            "object_ref": "course-of-action--61aa67b2-7402-4a77-9d98-8defa1deca08",
+            "object_modified": "2024-01-13T12:56:55.080Z"
+        },
+        {
+            "object_ref": "course-of-action--cef17988-2b55-41d7-a890-45a43e387bb8",
+            "object_modified": "2024-01-13T12:56:55.080Z"
+        }
+      ]
+    },
+    {
+      "name": "Recover legitimate signature of a file",
+      "description": "Recover legitimate magic number header signature of a file will permit legitimate file to be used by legitimate application",
       "external_references": [
         {
-          "source_name": "enterprise-fom",
-          "external_id": "FOMTE001",
-          "url": "<url>"
+          "source_name": "blueonezero-fom",
+          "url": "https://www-tbd.com",
+          "external_id": "FOMCTE001"
         }
       ],
-      "x_bluezero_is_subtechnique": false,
-      "x_bluezero_countertechnique": "<description of countertechnique>"
+      "created_by_ref": "identity--479be12c-d5b2-437a-af3a-727df9c619cf",
+      "id": "course-of-action--22988c9d-922c-4f8a-8a86-4ba8961f1270",
+      "created": "2024-01-13T12:56:55.080Z",
+      "modified": "2024-01-13T12:56:55.080Z",
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "x_blueonezero_form_spec_version": "2.1.0",
+      "x_blueonezero_domains": [
+        "enterprise-fom"
+      ],
+      "x_blueonezero_modified_by_ref": "identity--c017e416-aba3-4859-be83-946ce2cbc9f8",
+      "x_blueonezero_version": "1.0",
+    },
+    {
+      "name": "Recover legitimate header parameter of a file",
+      "description": "Recover legitimate header parameter a file will permit legitimate file to be used by legitimate application",
+      "external_references": [
+        {
+          "source_name": "blueonezero-fom",
+          "url": "https://www-tbd.com",
+          "external_id": "FOMCTE002"
+        }
+      ],
+      "created_by_ref": "identity--8a14f966-5b3e-48e2-974f-19840257ba89",
+      "id": "course-of-action--a3079b55-a55d-445d-8f2b-da1c0b4de0cd",
+      "created": "2024-01-13T12:56:55.080Z",
+      "modified": "2024-01-13T12:56:55.080Z",
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "x_blueonezero_form_spec_version": "2.1.0",
+      "x_blueonezero_domains": [
+        "enterprise-fom"
+      ],
+      "x_blueonezero_modified_by_ref": "identity--c017e416-aba3-4859-be83-946ce2cbc9f8",
+      "x_blueonezero_version": "1.0"
     }
   ]
 }
