@@ -14,17 +14,18 @@ A specialized model, akin to the MITRE ATT&CK framework, that focuses on forensi
 
 The tool and model primarily focus on retrieving data from files that were 'obfuscated' using forensic tools, steganography, or other techniques. Contrary to the MITRE ATT&CK framework, the counter-techniques (CTs) in this model may be more detailed.
 
+## Counter technique and counter sub-technique
+
+**A counter technique (FOMCTE) is implementing a mitigation, restoration to "default" of a technique (TE).**
+!! **The counter techniques are the main focus of this model [countertechniques.md](https://github.com/blue101010/FOM/blob/main/countertechniques/countertechniques.md)**!!
+
+
 ## Tactic
 A tactic (FOMTA) is used to hide something mainly through forensics, steganography, "security by obscurity" and less with cryptography.
 Example : FOMTA001: Binary hexadecimal format modifications.
 
 ## Technique and sub-technique
 A technique (FOMTE) is implementing a tactic (FOMTA) of obfuscation.
-
-## Counter technique and counter sub-technique
-A countertechnique (FOMCTE) is implementing a mitigation, restoration to "default" of a technique (TE).
-!! ** The counter techniques are the main focus of this model [countertechniques.md](https://github.com/blue101010/FOM/blob/main/countertechniques/countertechniques.md)  **!!
-
 
 ## Enterprise FOM
 This repository contains the Forensic Obfuscation Model (FOM) for DOMAIN enterprise.
