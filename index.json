@@ -1,0 +1,21 @@
+{
+  "collections": [
+    {
+      "type": "collection",
+      "id": "collection--<uuid>",
+      "spec_version": "2.1",
+      "name": "enterprise-fom",
+      "description": "<description>",
+      "can_read": true,
+      "can_write": false,
+      "media_type": "application/stix+json",
+      "objects": [
+        {
+          "url": "<url to enterprise-fom.json>",
+          "media_type": "application/json",
+          "description": "<description>"
+        }
+      ]
+    }
+  ]
+}

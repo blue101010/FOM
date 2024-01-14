@@ -1,0 +1,24 @@
+{
+  "type": "bundle",
+  "id": "bundle--<uuid>",
+  "spec_version": "2.1",
+  "objects": [
+    {
+      "type": "fom-pattern",
+      "id": "form-pattern--<uuid>",
+      "created": "<timestamp>",
+      "modified": "<timestamp>",
+      "name": "Modify binary image header hexadecimal signature or 'magic number'",
+      "description": "<description>",
+      "external_references": [
+        {
+          "source_name": "enterprise-fom",
+          "external_id": "FOMTE001",
+          "url": "<url>"
+        }
+      ],
+      "x_bluezero_is_subtechnique": false,
+      "x_bluezero_countertechnique": "<description of countertechnique>"
+    }
+  ]
+}
