@@ -28,7 +28,7 @@ A technique (FOMTE) is implementing a tactic (FOMTA) of obfuscation.
 This repository contains the Forensic Obfuscation Model (FOM) for DOMAIN enterprise.
 
 
-## Counter-techniques - techniques and 
+## Counter-techniques - techniques and tactics
 - [countertechniques.md](https://github.com/blue101010/FOM/blob/main/countertechniques/countertechniques.md) : The list of countertechniques
 
 ## Contents Details 
