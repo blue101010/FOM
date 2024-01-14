@@ -3,7 +3,7 @@
 
 # Details
 - ID: FOMCTE001
-- Sub-techniques: [FOMCTE001.001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.001.md),
+- Sub-techniques: [FOMCTE001.001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.001.md),[FOMCTE001.002](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.002.md),
 - Tactic: [Binary hexadecimal format modifications ](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA001.md),
 - Platforms: Linux, Windows, macOS
 
