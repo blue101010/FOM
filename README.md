@@ -25,7 +25,7 @@ Example : FOMTA001: Binary hexadecimal format modifications.
 ## Technique and sub-technique
 A technique (FOMTE) is implementing a tactic (FOMTA) of obfuscation.
 
-Example : FOMTE001: Modify binary image header hexadecicimal signature or "magic number". Ref https://www.garykessler.net/library/file_sigs.html
+
 
 ## Counter technique and counter sub-technique
 A countertechnique (FOMCTE) is implementing a mitigation, restoration to "default" of a technique (TE).

@@ -1,6 +1,6 @@
-| FOM Techniques | FOM technique Description              | FOM Related Tactics                                                                    |
-| -------------- | -------------------------------------- | -------------------------------------------------------------------------------------- |
-| FOMTE001       | Modify legitimate signature of a file | [Obfuscated Files or Information FOMTA001](https://attack.mitre.org/techniques/T1027/) |
+| FOM Techniques | FOM technique Description             | FOM Related CounterTechniques                                                                                                   |
+| -------------- | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| [FOMTE001](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE001.md)       | Modify legitimate signature of a file | [Recover legitimate signature of a file FOMTCTE001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.md) |
 
 
 

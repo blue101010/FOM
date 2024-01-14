@@ -1,6 +1,8 @@
-| FOM CountersubTechnique | CounterSubTechnique Description        | FOM  Related Techniques                         |
-| ----------------------- | -------------------------------------- | ----------------------------------------------- |
-| FOMCTE001               | Recover legitimate signature of a file | [ FOMTE001](https://github.com/blue101010/FOM/) |
+# FOM Counter Subtechniques
+
+| FOM CountersubTechnique                                                              | CounterSubTechnique Description                       | FOM  Related CounterTechnique                                                        |
+| ------------------------------------------------------------------------------------ | ----------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| [FOMCTE001.001](https://github.com/blue101010/FOM/blob/main/techniques/FOMCTE001.md) | Recover legitimate signature of an OpenEXR image file | [FOMCTE001](https://github.com/blue101010/FOM/blob/main/techniques/FOMCTE001.001.md) |
 
 
 
