@@ -8,7 +8,7 @@ EXR	 	OpenEXR bitmap image format
 
 # Details
 - ID: FOMCTE001.001
-- Sub-technique of: [FOMCTE001](https://github.com/blue101010/FOM/blob/main/techniques/FOMCTE001.md)
+- Sub-technique of: [FOMCTE001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.md)
 - Tactic: [Modify legitimate signature of a file](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA001.md)
 
 
