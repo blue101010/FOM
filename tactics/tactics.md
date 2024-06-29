@@ -1,5 +1,7 @@
 # FOM Tactics
 
+A tactic is the adversary's tactical goal: the reason for performing an action.
+
 | FOM Tactic                                                                  | FOM Tactic Description                                             | MITRE ATT&CK potential related Tactics                                              |
 | --------------------------------------------------------------------------- | ------------------------------------------------------------------ | ----------------------------------------------------------------------------------- |
 | [FOMTA001](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA001.md) | Binary hexadecimal format obfuscations                            | [Obfuscated Files or Information T1027](https://attack.mitre.org/techniques/T1027/) |
