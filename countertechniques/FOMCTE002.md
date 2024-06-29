@@ -1,9 +1,9 @@
-# Recover legitimate signature of a file
+# FOMCTE002 - xxxxxx
 
 
 # Details
 
-- ID: FOMCTE002
+
 - Sub-techniques:
 - Tactic: 
 - Platforms: Linux, Windows, macOS
@@ -15,7 +15,6 @@
 | [C0001](https://attack.mitre.org/campaigns/C00-XXX) | xxxxxxxTBC | TBC         |
 
 
+## Writeups and Sources
 
-# Sources 
-
-- (1) [Joep van Steen. (2021, Mars 23). Some thoughts on signature based file recovery. Retrieved January 14, 2024.](https://www.disktuna.com/some-thoughts-on-signature-based-file-recovery/)
+- (1) xxxx

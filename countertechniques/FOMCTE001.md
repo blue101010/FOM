@@ -1,19 +1,19 @@
-# Recover legitimate signature of a file
-
+# FOMCTE001 - Recover legitimate signature of a file
 
 # Details
-- ID: FOMCTE001
-- Sub-techniques: [FOMCTE001.001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.001.md),[FOMCTE001.002](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.002.md),
-- Tactic: [Binary hexadecimal format modifications ](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA001.md),
+
+- Related Sub-techniques: [FOMCTE001.001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.001.md),),
+- Related Tactics: [FOMTA001 - Binary hexadecimal format modifications ](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA001.md),
 - Platforms: Linux, Windows, macOS
 
-# Procedure examples
+# Counter-techniques related
 
-| ID                                                  | Name       | Description |
-| --------------------------------------------------- | ---------- | ----------- |
-| [C0001](https://attack.mitre.org/campaigns/C00-XXX) | xxxxxxxTBC | TBC         |
+| Counter-techniques ID                                                     | Name       | Description |
+| ------------------------------------------------------------ | ---------- | ----------- |
+| [FOMCTE001.001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.001.md) | Recover OpenEXR magic signature | TBC         |
+| [FOMCTE001.002](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.002.md | Recover OpenEXR magic signature | TBC         |
 
 
+## Writeups and Sources
 
-# Sources 
-- [Joep van Steen. (2021, Mars 23). Some thoughts on signature based file recovery. Retrieved January 14, 2024.](https://www.disktuna.com/some-thoughts-on-signature-based-file-recovery/)
+- (1) [Joep van Steen. (2021, Mars 23). Some thoughts on signature based file recovery. Retrieved January 14, 2024.](https://www.disktuna.com/some-thoughts-on-signature-based-file-recovery/)
