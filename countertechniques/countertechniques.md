@@ -2,7 +2,7 @@
 
 Tactics | Counter Techniques                                                                  | Counter Techniques Description         | FOM Related Techniques                                                         |
 |-------| --------------------------------------------------------------------------------------- | -------------------------------------- | ------------------------------------------------------------------------------ |
-[FOMTA001](https://github.com/blue101010/FOM/blob/main/tactics/FOMCTA001.md) | [FOMCTE001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.md) | Recover legitimate signature of a file | [FOMTE001 - Modify legitimate header signature of a file](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE001.md) |
+[FOMTA001](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA001.md) | [FOMCTE001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.md) | Recover legitimate signature of a file | [FOMTE001 - Modify legitimate header signature of a file](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE001.md) |
 
 
 
