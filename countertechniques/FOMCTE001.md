@@ -8,7 +8,7 @@
 
 # Counter-techniques related
 
-| Counter-techniques ID                                                     | Name       | Description |
+| Sub-Counter-techniques ID                                                     | Name       | Description |
 | ------------------------------------------------------------ | ---------- | ----------- |
 | [FOMCTE001.001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.001.md) | Recover OpenEXR magic signature | TBC         |
 
