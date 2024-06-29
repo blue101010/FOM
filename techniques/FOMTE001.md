@@ -9,15 +9,15 @@ Modify legitimate magic headers.
     - [FOMTA001 Binary hexadecimal format modifications](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA001.md)
 - Platforms : Linux, Windows, macOS
 
-## FOM Subtechniques (ST) procedures (P) and Counter-Techniques (CT)
+## FOM Subtechniques (ST) and Counter-Techniques (CT)
 
 
-| FOM Subtechniques ID   | FOM ST Name | FOM ST Description | MITRE ATT&CK similar ST                   | FOM Procedures related | FOM CT related
-| ---------------------- |-----------  | -------------------|-------------------------------------------|------------------------|----------------
-| FOMST0001                    | TBC         |                    | [C0001](https://attack.mitre.org/software/S0150/) |              |  [FOMCTE001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.md)   |
+| FOM Subtechniques ID   | FOM ST Name | FOM ST Description | MITRE ATT&CK similar ST                   | FOM CT related
+| ---------------------- |-----------  | -------------------|-------------------------------------------|----------------
+| FOMST0001                    | TBC         |                    | [C0001](https://attack.mitre.org/software/S0150/) |  [FOMCTE001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.md)   |
 
 
-## MITRE ATT&CK techniques or procedures similarities 
+## MITRE ATT&CK techniques related
 
 |  MITRE ATT&CK similarities: techniques and procedures |       Description               |
 | --------------------------------------------------- | ----------------------------------|
