@@ -1,14 +1,13 @@
-# Binary hexadecimal format modifications
+# FOMTA001 - Binary hexadecimal format modifications
 
-Binaries format are modified to make difficult to use files and find targeted data.
+Binaries formats are modified to make difficult to use files and find targeted data.
 
 # Details
-- ID: [FOMTA001](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA001.md)
-- Created: 13 January 2024
-- Last Modified : 14 January 2024
+- Tactic 1: [FOMTA001](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA001.md)
 
-# Techniques 
 
-| ID                                                                             | name                                  | Description                                                                                                                     |
+# Techniques and counter-techniques
+
+| Technique ID   | Technique name                                  | Counter-Techniques name and Description                                                                                                                     |
 | ------------------------------------------------------------------------------ | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
 | [FOMTE001](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE001.md) | Modify legitimate signature of a file | [Recover legitimate signature of a file FOMTCTE001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.md) |
