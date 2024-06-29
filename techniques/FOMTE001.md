@@ -1,4 +1,4 @@
-# Modify legitimate header signature of a file
+# FOMTE001 - Modify legitimate header signature of a file
 
 Modify legitimate magic headers.
 
