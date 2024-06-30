@@ -10,7 +10,7 @@ Modify legitimate magic headers.
 
 | FOM Sub-techniques ID   | FOM Sub-techniques Names | FOM Sub-techniques Descriptiosn | MITRE ATT&CK similar Sub-techniques            | FOM CT related
 | ---------------------- |-----------  | -------------------|-------------------------------------------|----------------
-| FOMST0001                    | TBC         |                    | [C0001](https://attack.mitre.org/software/S0150/) |  [FOMCTE001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.md)   |
+|  [FOMTE001.001](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE001.001.md)                      | TBC         |                    | N/A |  [FOMCTE001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.md)   |
 
 
 ## MITRE ATT&CK techniques related
