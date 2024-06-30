@@ -10,7 +10,7 @@ Use special encoding system to hide data with visual, machine-readable form.
 
 | FOM Sub-techniques ID   | FOM Sub-techniques Names | FOM Sub-techniques Descriptiosn | MITRE ATT&CK similar Sub-techniques            | FOM CT related
 | ---------------------- |-----------  | -------------------|-------------------------------------------|----------------
-|  [FOMTE001.001](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE001.001.md)                      | Modify legitimate header signature of a file via python script        |                    | N/A |  [FOMCTE001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.md)   |
+|  [FOMTE007.001](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE007.001.md)                      | Hide data with QR codes        |                    | N/A |  x   |
 
 
 ## MITRE ATT&CK techniques related
