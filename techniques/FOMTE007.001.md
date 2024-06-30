@@ -1,11 +1,14 @@
 # [FOMTE007.001](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE002.md) - Use special encoding system to hide data with QR codes
 
-Use special encoding system to hide data with visual, machine-readable form.
+Use special encoding system to hide data with QR codes.
 
 ## Tactics
 
 [FOM tactics](https://github.com/blue101010/FOM/blob/main/tactics/tactics.md)
 
+| FOM related tactics  |
+| --------------------------------------- |
+| [FOMTA007 - Use special encoding system to hide data](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA007.md)   |
 
 ## Details
 
