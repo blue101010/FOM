@@ -8,19 +8,31 @@
 | --------------------------------------- |
 | [FOMTA001](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA001.md) - Binary hexadecimal format modifications   |
 
+## Sub-techniques related
 
-- Related sub-Techniques:
-    - N/A
-- Related Counter-Techniques:
-    - [FOMCTE001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.md)
+| FOM related  Sub-techniquesIDs and names|
+| ------------------------------------------------------------ |
+| [FOMTE001.001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMTE001.001.md)         |
 
-## Details
+## Counter-techniques related
+
+| FOM related  Sub-Counter-techniques IDs and names|
+| ------------------------------------------------------------ |
+| [FOMCTE001.001 - Recover OpenEXR magic signature](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.001.md)         |
+
+
+## Tools
 
 Recover the legitimate "magic number" header signature of the OpenEXR bitmap image format with hexadecimals tools like:
 
-- https://hexed.it/
-- **imhex**  <https://github.com/WerWolv/ImHex> (provide templating colorization of formats)
+| Related tools|
+| ------------------------------------------------------------ |
+| [FOMTOU001](https://github.com/blue101010/FOM/blob/main/tools/FOMTOU001.md) - hexed.it |
+| ------------------------------------------------------------ |
+| **imhex**  <https://github.com/WerWolv/ImHex> (provide templating colorization of formats) |
 
+
+## Details and procedures
 
 Fix the legitimate magic header for an EXR file . Reference: (1)
 

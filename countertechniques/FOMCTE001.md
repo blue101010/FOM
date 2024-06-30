@@ -8,8 +8,7 @@
 | --------------------------------------- |
 | [FOMTA001](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA001.md) - Binary hexadecimal format modifications   |
 
-
-- Related Sub-techniques: [FOMCTE001.001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.001.md)
+## Sub-techniques related
 
 | FOM related  Sub-techniquesIDs and names|
 | ------------------------------------------------------------ |
@@ -24,9 +23,8 @@
 ## Details
 
 Recover legitimate signature of a file, often called magic headers.
-Magic headers, also known as file signatures, are specific byte sequences located at the beginning of a file that help identify the file type. 
+Magic headers, also known as file signatures, are specific byte sequences located at the beginning of a file that help identify the file type.
 These headers are used by operating systems and applications to determine how to process or open a file.
-
 
 
 ## Writeups and Sources
