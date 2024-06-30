@@ -1,4 +1,4 @@
-# [FOMTE010.001](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE010.md) - Conceal information with Mengenlehreuhr diagrams encoding
+# [FOMTE010.001](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE010.001.md) - Conceal information with Mengenlehreuhr diagrams encoding
 
 
 ## Tactics

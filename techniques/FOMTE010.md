@@ -18,20 +18,20 @@ Conceal information with diagrams encoding
 
 | FOM Sub-techniques ID and description  |
 | --------------------------------------- |
-| [FOMTE009.001 - Conceal via **technical text** steganography](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.md)   |
+| [FOMTE010.001](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE010.001.md) - Conceal information with Mengenlehreuhr diagrams encoding   |
 
 ## FOM Counter-Techniques (CT)
 
 | FOM Counter-Techniques ID and description  |
 | --------------------------------------- |
-| [FOMCTE001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.md)   |
+| XXXX  |
 
 
 ## MITRE ATT&CK techniques related
 
 |  MITRE ATT&CK similarities: techniques and procedures |       Description               |
 | --------------------------------------------------- | ----------------------------------|
-|  [C0001](https://attack.mitre.org/software/S0150/)  | Blah |
+|   XXXX   |  XXXX  |
 
 
 ## Writeups and Sources
