@@ -12,16 +12,13 @@ Use special encoding system to hide data with QR codes.
 
 ## Details
 
-Use QR codes to hide data:
-- use 
-
+Use QR codes to hide data. Refer to SST:
 
 ## FOM Related Sub Sub-Techniques (SST)
 
-| FOM Sub-techniques ID and description  |
-| --------------------------------------- |
-| [FOMTE007.001.001](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE001.001.001.md) - Use special encoding system to hide data with RMQR codes  |
-
+| FOM Sub Sub-techniques ID and descriptions (SST)  |
+| ------------------------------------------------- |
+| [FOMTE007.001.001](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE007.001.001.md) - Use special encoding system to hide data with RMQR codes  |
 
 ## FOM Related Sub-Techniques (ST)
 

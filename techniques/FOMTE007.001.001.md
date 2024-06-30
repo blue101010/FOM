@@ -19,7 +19,7 @@ Use special encoding system to hide data with Rectangular [rMQR](https://www.qrc
 
 | FOM Sub-techniques ID and description  |
 | --------------------------------------- |
-| [FOMTE007.001.001.md - Hide data with QR codes ](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE007.001.md)   |
+| [FOMTE007.001.001.md - Hide data with QR codes ](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE007.001.001.md)   |
 
 
 ## FOM Related Sub-Techniques (ST)
