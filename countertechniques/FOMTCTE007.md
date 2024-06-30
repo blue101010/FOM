@@ -13,15 +13,15 @@
 
 | FOM related  Sub-techniques IDs and names|
 | ------------------------------------------------------------ |
-| [FOMTE0xxx](https://github.com/blue101010/FOM/blob/main/xxxx)         |
+| [FOMTE007.001 - Hide data with QR codes](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE007.001.md)        |
 
 ## Counter-techniques related
 
 | FOM related  Sub-Counter-techniques IDs and names|
 | ------------------------------------------------------------ |
-| [FOMCTE001.001 - Recover OpenEXR magic signature](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.001.md)         |
+| [FOMTCTE007.001 - Retrieve information from rMQR codes](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE007md)       |
 
-## Tools
+## Tools and algorithms
 
 TBD
 
@@ -30,6 +30,10 @@ TBD
 Retrieve information from QR codes based on the legitimate specifications and extra methods (like stegnography or specific algorithms).
 
  
-## Writeups and Sources
+## Sources
+
+- (1) [QR Code Model 2 Structure and Algorithms](https://franckybox.com/wp-content/uploads/qrcode.pdf)
+
+## Writeups
 
 - (1) 
