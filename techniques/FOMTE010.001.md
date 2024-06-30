@@ -13,6 +13,9 @@
 
  Conceal information with [Mengenlehreuhr](https://en.wikipedia.org/wiki/Mengenlehreuhr) diagrams encoding.
 
+Exemple:
+ ![alt text](image.png)
+
 ## FOM Related Sub-Techniques (ST)
 
 | FOM Sub-techniques ID and description  |
