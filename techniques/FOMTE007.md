@@ -48,5 +48,5 @@ Use special encoding system to hide data with visual, machine-readable form
 
 ## Writeups
 
- - (1) xxx
+ - (1) [QRRRRRRRR — NahamCon CTF](https://medium.com/@inferiorak/qrrrrrrrr-nahamcon-ctf-2024-writeup-by-inferiorak-063406df187e)
 
