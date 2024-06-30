@@ -10,7 +10,7 @@ Modify magic headers via python script
 ## Related counter-techniques
 
 Counter-technique and sub-technique can use similar approaches.
-ref [FOMCTE001.001](https://github.com/blue101010/FOM/blob/main/techniques/FOMCTE001.001.md)
+ref [FOMCTE001.001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.001.md)
 
 
 ## Sub-technique
