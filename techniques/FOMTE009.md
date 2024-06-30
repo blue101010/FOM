@@ -1,4 +1,4 @@
-# [FOMTA003](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA003.md) - Distort data, obfuscate it to make it more difficult to understand
+# [FOMTE009](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE009.md) - Conceal information within digital media with **technical** steganography
 
 
 ## Tactics
@@ -7,13 +7,13 @@
 
 ## Details
 
-Distort data, obfuscate it to make it more difficult to understand
+Conceal information within digital media with **technical** steganography
 
 
 ## Techniques and counter-techniques
 
 | Related ID Techniques  | Techniques names                                  | Counter-Techniques names and Description s                                                                                                                    |
 | ------------------------------------------------------------------------------ | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| [FOMTE010](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE010.md) | xxxxxx| [FOMTCTE001 - Recover legitimate signature of a file ](https://github.com/blue101010/FOM/blob/main/xxxxx) |
-| [FOMTE009](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE009.md)  | xxxxxx | [FOMTCTE001 - Recover legitimate signature of a file ](https://github.com/blue101010/FOM/blob/main/xxxxx) |
+| [FOMTE007](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE007.md) | Hide data with QR codes| [FOMTCTE001 - Recover legitimate signature of a file ](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.md) |
+
 
