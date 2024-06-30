@@ -1,21 +1,19 @@
-# FOMCTE003 - Recover from packager obfuscations
+# FOMCTE005 - Recover from packager obfuscations
 
 
-# Details
+## Details
 
 - Related Sub-techniques:
 - Related Tactics: 
 - Platforms: Linux, Windows, macOS
 
-# Counter-techniques IDs
+## Counter-techniques IDs
 
-# Counter-techniques related
+## Counter-techniques related
 
 | Counter-techniques ID                                                     | Name       | Description |
 | ------------------------------------------------------------ | ---------- | ----------- |
 | [FOMCTE003.001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE003.001.md) | Repair p_info header on UPX| TBC         |
-
-
 
 ## Writeups and Sources
 
