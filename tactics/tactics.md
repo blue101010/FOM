@@ -2,9 +2,9 @@
 
 A tactic is the adversary's tactical goal: the reason for performing an action.
 
-| FOM Tactic                                                                  | FOM Tactic Description                                             | MITRE ATT&CK related Tactics                                              |
+| FOM Tactic                                                                  | FOM Tactic Description                                             | MITRE ATT&CK related Tactics and techniques                                              |
 | --------------------------------------------------------------------------- | ------------------------------------------------------------------ | ----------------------------------------------------------------------------------- |
-| [FOMTA001](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA001.md) | Binary hexadecimal format obfuscations                            | [T1027 - Obfuscated Files or Information ](https://attack.mitre.org/techniques/T1027/) |
+| [FOMTA001](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA001.md) | Binary hexadecimal format obfuscations                            | [T1027 - Obfuscated Files or Information ](https://attack.mitre.org/techniques/T1027/)  [TA0005](https://attack.mitre.org/tactics/TA0005)|
 | [FOMTA002](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA002.md)                                                                     | Conceal information within digital media with steganography        | [xxxxxx](https://attack.mitre.org/techniques/T1xxx/)                                |
 | [FOMTA003](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA003.md)                                                                    | Distort data, obfuscate it to make it more difficult to understand | [xxxxxx](https://attack.mitre.org/techniques/T1xxx/)                                |
 | [FOMTA004](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA004.md)                                                                     | Reduce size of data with compression to mask its true content      | [xxxxxx](https://attack.mitre.org/techniques/T1xxx/)                                |
