@@ -1,6 +1,6 @@
 # [FOMTE002](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE002.md) - Corrupt Image file magic signature
 
-Modify legitimate magic headers of an image file
+
 
 ## Tactics
 
@@ -12,7 +12,7 @@ Modify legitimate magic headers of an image file
 
 ## Details
 
-- Platforms: Linux, Windows, macOS
+Modify or Corrupt legitimate magic headers of an image file.
 
 
 ## FOM Related Sub-Techniques (ST)
@@ -25,7 +25,7 @@ Modify legitimate magic headers of an image file
 
 | FOM Counter-Techniques ID and description  |
 | --------------------------------------- |
-| [FOMCTE001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.md)   |
+| [FOMCTE001 - Recover legitimate signature of a file](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.md)   |
 
 
 

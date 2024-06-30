@@ -9,18 +9,20 @@
 | [FOMTA001](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA001.md) - Binary hexadecimal format modifications   |
 
 
-Modify magic headers via python script
-
 ## Details
 
-- Platforms: Linux, Windows, macOS
+Modify magic headers via python script
 
-## Related counter-techniques
+
+## FOM  Related Counter-Techniques (CT)
 
 Counter-technique and sub-technique can use similar approaches.
-ref [FOMCTE001.001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.001.md)
 
-## Sub-technique
+| FOM Counter-Techniques ID and description  |
+| --------------------------------------- |
+| [FOMCTE001 - Recover legitimate signature of a file](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.md)   |
+
+## Sub-technique or counter-technique
 
 Python script example to fix (or modify...) a header and CRC for a PNG file
 

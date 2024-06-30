@@ -18,7 +18,7 @@ Reduce size of data with compression to mask its true content.
 
 | Related ID Techniques  | Techniques names                                  | Counter-Techniques names and Descriptions                                                                                                                    |
 | ------------------------------------------------------------------------------ | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| xxx | xxxx | [xxxx |
+| xxx | xxxx | xxxx |
 | xxx | xxx| xxx |
 
 ## Writeups and Sources

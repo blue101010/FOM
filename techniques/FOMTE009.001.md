@@ -5,6 +5,9 @@
 
 [FOM tactics](https://github.com/blue101010/FOM/blob/main/tactics/tactics.md)
 
+| FOM related tactics  |
+| --------------------------------------- |
+| [FOMTA002](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA002.md) - Conceal information within digital media with steganography  |
 
 ## Details
 
@@ -26,14 +29,14 @@ Other text steganography techniques might include adding meaningful typos or enc
 
 | FOM Sub-techniques ID  and description  |
 | --------------------------------------- |
-| [FOMCTE001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.md)   |
+| [FOMCTE001 - Recover legitimate signature of a file](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.md)   |
 
 
 ## MITRE ATT&CK techniques related
 
 |  MITRE ATT&CK similarities: techniques and procedures |       Description               |
 | ----------------------------------------------------- | ---------------------------------|
-|  [C0001](https://attack.mitre.org/software/S0150/)  | Blah |
+|  XXXXX  | XXXXX |
 
 
 

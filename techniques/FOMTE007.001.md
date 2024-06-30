@@ -24,13 +24,13 @@ Use QR codes to hide data. Refer to SST:
 
 | FOM Sub-techniques ID and description  |
 | --------------------------------------- |
-| [FOMTE007.001 - Hide data with QR codes ](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE007.001.md)   |
+| [FOMTE007.001 - Hide data with QR codes](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE007.001.md)   |
 
 ## FOM Counter-Techniques (CT)
 
-| FOM Sub-techniques ID  and description  |
+| FOM Counter-Techniques ID  and description  |
 | --------------------------------------- |
-| [FOMCTE001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.md)   |
+| [FOMTCTE007 - Retrieve information from QR codes](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE007md)  |
 
 ## MITRE ATT&CK techniques related
 

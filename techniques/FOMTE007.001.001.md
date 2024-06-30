@@ -19,20 +19,21 @@ Use special encoding system to hide data with Rectangular [rMQR](https://www.qrc
 
 | FOM Sub-techniques ID and description  |
 | --------------------------------------- |
-| [FOMTE007.001.001.md - Hide data with QR codes ](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE007.001.001.md)   |
+| [FOMTE007.001.001.md - Hide data with QR codes](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE007.001.001.md)   |
 
 
 ## FOM Related Sub-Techniques (ST)
 
 | FOM Sub-techniques ID and description  |
 | --------------------------------------- |
-| [FOMTE007.001 - Hide data with QR codes ](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE007.001.md)   |
+| [FOMTE007.001 - Use special encoding system to hide data with RMQR codes](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE007.001.md)   |
 
 ## FOM Counter-Techniques (CT)
 
-| FOM Sub-techniques ID  and description  |
+| FOM Counter-Techniques ID  and description  |
 | --------------------------------------- |
-| [FOMCTE001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.md)   |
+| [FOMTCTE007.001 - Retrieve information from rMQR codes](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE007.001.md) |
+
 
 ## MITRE ATT&CK techniques related
 

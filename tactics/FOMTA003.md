@@ -18,7 +18,7 @@ Distort data, obfuscate it to make it more difficult to understand.
 
 | Related ID Techniques  | Techniques names                                  | Counter-Techniques names and Descriptions                                                                                                                    |
 | ------------------------------------------------------------------------------ | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| xxx | xxxx | [xxxx |
+| xxx | xxxx | xxxx |
 | xxx | xxx| xxx |
 
 ## Writeups and Sources

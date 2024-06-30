@@ -10,7 +10,7 @@
 
 ## Details
 
-Disguise secret information in unrelalated commands and scripts
+Disguise secret information in unrelalated commands and scripts.
 
 ## Techniques and counter-techniques
 
