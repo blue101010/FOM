@@ -1,18 +1,14 @@
-# FOMTE001 - Modify legitimate header signature of a file
+# [FOMTE001](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE001.md) - Modify legitimate header signature of a file
 
 Modify legitimate magic headers.
 
 ## Details
 
-- ID: FOMTE001
-- Related Tactics:  
-    - [FOMTA001 Binary hexadecimal format modifications](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA001.md)
-- Platforms : Linux, Windows, macOS
+- Platforms: Linux, Windows, macOS
 
-## FOM Subtechniques (ST) and Counter-Techniques (CT)
+## FOM Sub-techniques (ST) and Counter-Techniques (CT)
 
-
-| FOM Subtechniques ID   | FOM ST Name | FOM ST Description | MITRE ATT&CK similar ST                   | FOM CT related
+| FOM Sub-techniques ID   | FOM Sub-techniques Names | FOM Sub-techniques Descriptiosn | MITRE ATT&CK similar Sub-techniques            | FOM CT related
 | ---------------------- |-----------  | -------------------|-------------------------------------------|----------------
 | FOMST0001                    | TBC         |                    | [C0001](https://attack.mitre.org/software/S0150/) |  [FOMCTE001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.md)   |
 
