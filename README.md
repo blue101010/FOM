@@ -24,7 +24,7 @@ Example : [FOMAT001](https://github.com/blue101010/FOM/tactics/FOMTA001.md): Bin
 
 ## Technique and sub-technique
 
-A technique (FOMTE) is implementing a A [Tactic](https://github.com/blue101010/FOM/tactics) (**FOMTA**) of obfuscation.
+A technique (FOMTE) is implementing a A [Tactic](https://github.com/blue101010/FOM/blob/main/tactics/tactics.md) (**FOMTA**) of obfuscation.
 
 ## Enterprise FOM
 
