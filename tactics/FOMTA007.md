@@ -5,14 +5,17 @@
 
 [FOM tactics](https://github.com/blue101010/FOM/blob/main/tactics/tactics.md)
 
+| FOM related tactics  |
+| --------------------------------------- |
+| [FOMTA007 - Use special encoding system to hide data](https://github.com/blue101010/FOM/blob/main/techniques/FOMTA007.md)   |
+
 ## Details
 
-Use special encoding system to hide data  
-
+Use special encoding system to hide data.
 
 ## Techniques and counter-techniques
 
-| Related ID Techniques  | Techniques names                                  | Counter-Techniques names and Description s                                                                                                                    |
+| Related ID Techniques  | Techniques names                                  | Counter-Techniques names and Descriptions                                                                                                                    |
 | ------------------------------------------------------------------------------ | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
 | [FOMTE007](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE007.md) | Hide data with QR codes| [FOMTCTE001 - Recover legitimate signature of a file ](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.md) |
 
