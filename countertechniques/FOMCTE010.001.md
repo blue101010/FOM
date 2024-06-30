@@ -1,4 +1,4 @@
-# [FOMTE010.001](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE010.001.md) - Conceal information with Mengenlehreuhr diagrams encoding
+# [FOMCTE010.001](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE010.001.md) - Retrieve information from Mengenlehreuhr diagrams encoding
 
 
 ## Tactics
@@ -11,12 +11,11 @@
 
 ## Details
 
- Conceal information with [Mengenlehreuhr](https://en.wikipedia.org/wiki/Mengenlehreuhr) diagrams encoding.
+ Retrieve information with [Mengenlehreuhr](https://en.wikipedia.org/wiki/Mengenlehreuhr) diagrams encoding.
 
 Exemple:
 
- ![alt text](image.png)
- 
+
  See [2024 - NSEC -  Dorsolateral Challenge](https://github.com/blue101010/writeups/blob/main/2024/NSEC/Dorsolateral/dorsolateral.md)
 
 ## FOM Related Sub-Techniques (ST)
@@ -29,7 +28,7 @@ Exemple:
 
 | FOM Counter-Techniques ID and description  |
 | --------------------------------------- |
-| # [FOMCTE010.001 - Retrieve information from Mengenlehreuhr diagrams encoding](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE010.001.md)   |
+| [FOMCTE001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.md)   |
 
 
 ## MITRE ATT&CK Related techniques
