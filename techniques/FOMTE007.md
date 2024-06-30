@@ -13,13 +13,22 @@ Use special encoding system to hide data with visual, machine-readable form.
 
 ## Details
 
-- Platforms: Linux, Windows, macOS
+Use special encoding system to hide data with visual, machine-readable form
+
+## FOM Related Techniques (ST)
+
+| FOM Sub-techniques ID and description  |
+| --------------------------------------- |
+
+| [FOMTE010 - Conceal information with diagrams encoding](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE010.md) |
 
 ## FOM Related Sub-Techniques (ST)
 
 | FOM Sub-techniques ID and description  |
 | --------------------------------------- |
 | [FOMTE007.001 - Hide data with QR codes ](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE007.001.md)   |
+| [FOMTE010.001 - Conceal information with Mengenlehreuhr diagrams encoding](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE010.md) |
+
 
 ## FOM Counter-Techniques (CT)
 
