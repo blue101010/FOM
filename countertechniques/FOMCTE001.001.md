@@ -15,8 +15,9 @@ Fix the legitimate magic header for an EXR file . Reference: (1)
 
 ## Details
 
-- ID: [FOMCTE001 - Recover legitimate signature of a file](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.001.md)
-- Related Sub-techniques:
+- Related sub-Techniques:
+    - N/A
+- Related Counter-Techniques:
     - [FOMCTE001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.md)
 - Related Tactics:
     - [FOMTA001 - Modify legitimate signature of a file](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA001.md)
