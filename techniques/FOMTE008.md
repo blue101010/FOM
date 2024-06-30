@@ -12,7 +12,7 @@ Conceal information within digital media with **linguistic** steganography
 
 ## FOM Sub-techniques (ST) and Counter-Techniques (CT)
 
-| FOM Sub-techniques ID   | FOM Sub-techniques Names | FOM Sub-techniques Descriptiosn | MITRE ATT&CK similar Sub-techniques            | FOM CT related
+| FOM Sub-techniques ID   | FOM Sub-techniques Names | FOM Sub-techniques Descriptions | MITRE ATT&CK similar Sub-techniques            | FOM CT related
 | ---------------------- |-----------  | -------------------|-------------------------------------------|----------------
 |  [FOMTE001.001](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE001.001.md)                      | TBC         |                    | N/A |  [FOMCTE001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.md)   |
 
