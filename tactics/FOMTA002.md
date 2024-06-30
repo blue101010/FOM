@@ -5,6 +5,10 @@
 
 [FOM tactics](https://github.com/blue101010/FOM/blob/main/tactics/tactics.md)
 
+| FOM related tactics  |
+| --------------------------------------- |
+| [FOMTA002](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA002.md) - Conceal information within digital media with steganography  |
+
 ## Details
 
 Conceal information within digital media with steganography.
