@@ -23,7 +23,7 @@ Exemple:
 
 | FOM Sub-techniques ID and description  |
 | --------------------------------------- |
-| [FOMTE009.001 - Conceal via **technical text** steganography](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.md)   |
+| XXX   |
 
 ## FOM Related Counter-Techniques (CT)
 
@@ -44,6 +44,6 @@ Exemple:
 - (1) [Mengenlehreuhr dodona.be](https://dodona.be/en/courses/1/series/279/activities/527398301/)
 - (2) [Mengenlehreuhr Wikipedia](https://en.wikipedia.org/wiki/Mengenlehreuhr)
 
-## Writeups 
+## Writeups
 
  - (1) [2024 - NSEC -  Dorsolateral Challenge](https://github.com/blue101010/writeups/blob/main/2024/NSEC/Dorsolateral/dorsolateral.md)
