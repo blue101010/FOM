@@ -6,8 +6,14 @@ Modify magic headers via python script
 
 - Platforms: Linux, Windows, macOS
 
-## Sub-technique
 
+## Related counter-techniques
+
+Counter-technique and sub-technique can use similar approaches.
+ref [FOMCTE001.001](https://github.com/blue101010/FOM/blob/main/techniques/FOMCTE001.001.md)
+
+
+## Sub-technique
 
 Python script example to fix (or modify...) a header and CRC for a PNG file
 
