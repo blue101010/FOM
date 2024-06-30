@@ -7,7 +7,7 @@
 
 ## Details
 
-Conceal information within digital media with steganography
+Conceal information within digital media with steganography.
 
 
 ## Techniques and counter-techniques

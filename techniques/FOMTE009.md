@@ -7,14 +7,14 @@
 
 ## Details
 
-Conceal information within digital media with **technical** steganography
+Conceal information within digital media with **technical** steganography.
 
 
-## FOM Sub-techniques (ST) and Counter-Techniques (CT)
+## FOM Counter-Techniques (CT)
 
-| FOM Sub-techniques ID   | FOM Sub-techniques Names | FOM Sub-techniques Descriptions | MITRE ATT&CK similar Sub-techniques            | FOM CT related
-| ---------------------- |-----------  | -------------------|-------------------------------------------|----------------
-|  [FOMTE009.001](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE009.001.md)                      | Conceal via **technical** text steganography         |                    | N/A |  [FOMCTE001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.md)   |
+| FOM Sub-techniques ID  and description  |
+| --------------------------------------- |
+| [FOMCTE001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.md)   |
 
 
 ## MITRE ATT&CK techniques related
