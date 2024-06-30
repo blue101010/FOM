@@ -20,7 +20,6 @@
 | ------------------------------------------------------------ |
 | [FOMCTE001.001 - Recover OpenEXR magic signature](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.001.md)         |
 
-
 ## Tools
 
 Recover the legitimate "magic number" header signature of the OpenEXR bitmap image format with hexadecimals tools like:
@@ -28,17 +27,15 @@ Recover the legitimate "magic number" header signature of the OpenEXR bitmap ima
 | Related tools|
 | ------------------------------------------------------------ |
 | [FOMTOU001](https://github.com/blue101010/FOM/blob/main/tools/FOMTOU001.md) - hexed.it |
-| ------------------------------------------------------------ |
 | **imhex**  <https://github.com/WerWolv/ImHex> (provide templating colorization of formats) |
-
 
 ## Details and procedures
 
-Fix the legitimate magic header for an EXR file . Reference: (1)
+Fix the legitimate magic header for an EXR file (1) with [FOMTOU001 - hexed.it](https://github.com/blue101010/FOM/blob/main/tools/FOMTOU001.md)
 
-|Hex Signature | ASCII Signature | File Extension | File Description
-|--------------|-----------------|--------| ----------------------|
-|76 2F 31 01   |                 | EXR    | [OpenEXR](https://openexr.com/en/latest) bitmap image format |
+|Hex Signature | ASCII Signature | File Extension | File Description      |
+|--------------|-----------------|----------------| ----------------------|
+|76 2F 31 01   |                 | EXR            | [OpenEXR](https://openexr.com/en/latest) bitmap image format |
 
 
 ## Writeups and Sources

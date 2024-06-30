@@ -17,7 +17,6 @@
 ## Counter-techniques related
 
 | FOM related  Sub-Counter-techniques IDs and names|
-| ------------------------------------------------------------ |
 | [FOMCTE001.001 - Recover OpenEXR magic signature](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.001.md)         |
 
 ## Details
