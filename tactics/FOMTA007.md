@@ -7,7 +7,7 @@
 
 | FOM related tactics  |
 | --------------------------------------- |
-| [FOMTA007 - Use special encoding system to hide data](https://github.com/blue101010/FOM/blob/main/techniques/FOMTA007.md)   |
+| [FOMTA007 - Use special encoding system to hide data](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA007.md)   |
 
 ## Details
 
