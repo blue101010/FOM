@@ -10,5 +10,5 @@ A tactic is the adversary's tactical goal: the reason for performing an action.
 | FOMTA004                                                                    | Reduce size of data with compression to mask its true content      | [xxxxxx](https://attack.mitre.org/techniques/T1xxx/)                                |
 | FOMTA005                                                                   | Use File fragmentation to split data in smaller parts              | [xxxxxx](https://attack.mitre.org/techniques/T1xxx/)                                |
 | FOMTA006                                                                    | Disguise secret information in unrelalated commands and scripts    | [xxxxxx](https://attack.mitre.org/techniques/T1xxx/)                                |
-| FOMTA007                                                                    | Use special encoding system to hide data                         | [xxxxxx](https://attack.mitre.org/techniques/T1xxx/)                                |
+| [FOMTA007](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA007.md)                                                                    | Use special encoding system to hide data                         | [xxxxxx](https://attack.mitre.org/techniques/T1xxx/)                                |
 
