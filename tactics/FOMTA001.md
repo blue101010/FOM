@@ -1,9 +1,13 @@
 # [FOMTA001](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA001.md) - Binary hexadecimal format modifications
 
-Binaries formats are modified to make difficult to use files and find targeted data.
+
+## Tactics
+
+[FOM tactics](https://github.com/blue101010/FOM/blob/main/tactics/tactics.md)
 
 ## Details
 
+Binaries formats are modified to make difficult to use files and find targeted data.
 
 
 ## Techniques and counter-techniques
