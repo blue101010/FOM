@@ -6,6 +6,11 @@ Use special encoding system to hide data with visual, machine-readable form.
 
 [FOM tactics](https://github.com/blue101010/FOM/blob/main/tactics/tactics.md)
 
+| FOM related tactics  |
+| --------------------------------------- |
+| [FOMTA007 - Use special encoding system to hide data  ](https://github.com/blue101010/FOM/blob/main/techniques/FOMTA007.md)   |
+
+
 ## Details
 
 - Platforms: Linux, Windows, macOS
