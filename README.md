@@ -20,7 +20,7 @@ The tool and model primarily focus on retrieving data from files that were 'obfu
 ## Tactic
 
 A [Tactic](https://github.com/blue101010/FOM/blob/main/tactics/tactics.md) (FOMTA) is used to hide something mainly through forensics, steganography, "security by obscurity" and less with cryptography.
-Example : [FOMAT001](https://github.com/blue101010/FOM/tactics/FOMTA001.md): Binary hexadecimal format modifications.
+Example : [FOMTA001](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA001.md): Binary hexadecimal format modifications.
 
 ## Technique and sub-technique
 
