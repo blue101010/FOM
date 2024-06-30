@@ -4,6 +4,11 @@
 
 [FOM tactics](https://github.com/blue101010/FOM/blob/main/tactics/tactics.md)
 
+| FOM related tactics  |
+| --------------------------------------- |
+| [FOMTA001](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA001.md) - Binary hexadecimal format modifications   |
+
+
 Modify magic headers via python script
 
 ## Details
