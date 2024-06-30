@@ -2,6 +2,11 @@
 
 Modify legitimate magic headers of an image file
 
+## Tactics
+
+[FOM tactics](https://github.com/blue101010/FOM/blob/main/tactics/tactics.md)
+
+
 ## Details
 
 - Platforms: Linux, Windows, macOS

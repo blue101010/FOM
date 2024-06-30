@@ -1,6 +1,5 @@
 # [FOMTE008](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE008.md) - Conceal information within digital media with **linguistic** steganography
 
-
 ## Tactics
 
 [FOM tactics](https://github.com/blue101010/FOM/blob/main/tactics/tactics.md)

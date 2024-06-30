@@ -1,8 +1,13 @@
 # [FOMTE001](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE001.md) - Modify legitimate header signature of a file
 
-Modify legitimate magic headers.
+## Tactics
+
+[FOM tactics](https://github.com/blue101010/FOM/blob/main/tactics/tactics.md)
+
 
 ## Details
+
+Modify legitimate magic headers.
 
 - Platforms: Linux, Windows, macOS
 

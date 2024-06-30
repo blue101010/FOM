@@ -1,17 +1,19 @@
 # [FOMTE001.001](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE001.001.md) - Modify legitimate header signature of a file via python script
 
+## Tactics
+
+[FOM tactics](https://github.com/blue101010/FOM/blob/main/tactics/tactics.md)
+
 Modify magic headers via python script
 
 ## Details
 
 - Platforms: Linux, Windows, macOS
 
-
 ## Related counter-techniques
 
 Counter-technique and sub-technique can use similar approaches.
 ref [FOMCTE001.001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.001.md)
-
 
 ## Sub-technique
 

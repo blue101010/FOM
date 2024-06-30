@@ -2,6 +2,11 @@
 
 Use special encoding system to hide data with visual, machine-readable form.
 
+## Tactics
+
+[FOM tactics](https://github.com/blue101010/FOM/blob/main/tactics/tactics.md)
+
+
 ## Details
 
 - Platforms: Linux, Windows, macOS
