@@ -30,6 +30,10 @@ TBD
 
 Retrieve information from rMQR codes
 
-## Writeups and Sources
+## Sources
 
 - (1) 
+
+## Writeups 
+
+- (1) [QRRRRRRRR — NahamCon CTF] (https://medium.com/@inferiorak/qrrrrrrrr-nahamcon-ctf-2024-writeup-by-inferiorak-063406df187e)
