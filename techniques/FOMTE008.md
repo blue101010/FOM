@@ -30,7 +30,7 @@ Conceal information within digital media with **linguistic** steganography
 
 |  MITRE ATT&CK similarities: techniques and procedures |       Description               |
 | --------------------------------------------------- | ----------------------------------|
-|  [C0001](https://attack.mitre.org/software/S0150/)  | Blah |
+|  xxxx |     xxx |
 
 ## Writeups and Sources
 
