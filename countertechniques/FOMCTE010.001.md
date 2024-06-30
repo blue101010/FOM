@@ -28,7 +28,7 @@ Exemple:
 
 | FOM Counter-Techniques ID and description  |
 | --------------------------------------- |
-| [FOMCTE001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.md)   |
+| XXX  |
 
 
 ## MITRE ATT&CK Related techniques
