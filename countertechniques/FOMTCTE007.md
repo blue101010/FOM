@@ -19,7 +19,7 @@
 
 | FOM related  Sub-Counter-techniques IDs and names|
 | ------------------------------------------------------------ |
-| [FOMTCTE007.001 - Retrieve information from rMQR codes](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE007md)       |
+| [FOMTCTE007.001 - Retrieve information from rMQR codes](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMTCTE007.001.md)       |
 
 ## Tools and algorithms
 
