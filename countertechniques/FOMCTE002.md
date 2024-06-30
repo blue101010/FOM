@@ -1,18 +1,34 @@
 # FOMCTE002 - xxxxxx
 
 
-# Details
+## Tactics
+
+[FOM tactics](https://github.com/blue101010/FOM/blob/main/tactics/tactics.md)
+
+| FOM related tactics  |
+| --------------------------------------- |
+|  |
 
 
-- Sub-techniques:
-- Tactic: 
-- Platforms: Linux, Windows, macOS
+## Sub-techniques related
 
-# Procedure examples
+| FOM related  Sub-techniques IDs and names|
+| ------------------------------------------------------------ |
+|  xx   |
 
-| ID                                                  | Name       | Description |
-| --------------------------------------------------- | ---------- | ----------- |
-| [C0001](https://attack.mitre.org/campaigns/C00-XXX) | xxxxxxxTBC | TBC         |
+## Counter-techniques related
+
+
+| Counter-techniques ID                                                     | Name       | Description |
+| ------------------------------------------------------------ | ---------- | ----------- |
+| [FOMCTE003.001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE003.001.md) | Repair p_info header on UPX| TBC         |
+
+
+## Tools
+TBD
+
+
+## Details
 
 
 ## Writeups and Sources

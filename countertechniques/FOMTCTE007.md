@@ -1,21 +1,35 @@
 # [FOMTCTE007](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE007md) - Retrieve information from QR codes
 
+## Tactics
 
-## Details
+[FOM tactics](https://github.com/blue101010/FOM/blob/main/tactics/tactics.md)
 
-- Related Sub-techniques:
-- Related Tactics:
-    - [FOMTA007](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA007.md)
-- Platforms: Linux, Windows, macOS
+| FOM related tactics  |
+| --------------------------------------- |
+| [FOMTA007](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA007.md)   |
 
-## Counter-techniques IDs
+
+## Sub-techniques related
+
+| FOM related  Sub-techniques IDs and names|
+| ------------------------------------------------------------ |
+| [FOMTE0xxx](https://github.com/blue101010/FOM/blob/main/xxxx)         |
 
 ## Counter-techniques related
 
-| Counter-techniques ID                                                     | Name       | Description |
-| ------------------------------------------------------------ | ---------- | ----------- |
-| [FOMCTE003.001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE003.001.md) | Repair p_info header on UPX| TBC         |
+| FOM related  Sub-Counter-techniques IDs and names|
+| ------------------------------------------------------------ |
+| [FOMCTE001.001 - Recover OpenEXR magic signature](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.001.md)         |
 
+## Tools
+
+TBD
+
+## Details
+
+Retrieve information from QR codes based on the legitimate specifications and extra methods (like stegnography or specific algorithms).
+
+ 
 ## Writeups and Sources
 
-- (1) [Joep van Steen. (2021, Mars 23). Some thoughts on signature based file recovery. Retrieved January 14, 2024.](https://www.disktuna.com/some-thoughts-on-signature-based-file-recovery/)
+- (1) 
