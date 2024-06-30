@@ -17,7 +17,7 @@ Use special encoding system to hide data.
 
 | Related  Techniques IDs and names  | Counter-Techniques names and escriptions  |
 | -----------------------------------|  -----------------------------------------|
-| [FOMTE007 - Hide data with QR codes](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE007.md) |  [FOMTCTE007](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE007md) - Retrieve information from QR codes |
+| [FOMTE007 - Hide data with QR codes](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE007.md) |  [FOMTCTE007](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE007.md) - Retrieve information from QR codes |
 
 
 ## Writeups and Sources
