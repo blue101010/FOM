@@ -3,9 +3,10 @@
 Recover the legitimate "magic number" header signature of the OpenEXR bitmap image format with hexadecimals tools like:
 
 - https://hexed.it/
-- imhex  <https://github.com/WerWolv/ImHex> (provide templating colorization of formats)
+- **imhex**  <https://github.com/WerWolv/ImHex> (provide templating colorization of formats)
 
-The legitimate magic header for an EXR file is (1): 
+
+Fix the legitimate magic header for an EXR file . Reference: (1)
 
 |Hex Signature | ASCII Signature | File Extension | File Description
 |--------------|-----------------|--------| ----------------------|
