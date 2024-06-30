@@ -35,7 +35,11 @@ Modify legitimate magic headers of an image file
 | --------------------------------------------------- | ----------------------------------|
 | X  | X |
 
-## Writeups and Sources
+## Sources
 
 - (1) [Jason (jxb5151). (2021, January 28). findapihash.py. Retrieved August 22, 2022.](https://github.com/MITRECND/malchive/blob/main/malchive/utilities/findapihash.py)
+
+## Writeups
+
+ - (1) xxx
 

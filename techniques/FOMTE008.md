@@ -32,6 +32,11 @@ Conceal information within digital media with **linguistic** steganography
 | --------------------------------------------------- | ----------------------------------|
 |  xxxx |     xxx |
 
-## Writeups and Sources
 
-- (1) 
+## Sources
+
+ - (1) xxx
+
+## Writeups
+
+ - (1) xxx

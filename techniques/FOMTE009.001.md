@@ -36,6 +36,11 @@ Other text steganography techniques might include adding meaningful typos or enc
 |  [C0001](https://attack.mitre.org/software/S0150/)  | Blah |
 
 
-## Writeups and Sources
+
+## Sources
+
+ - (1) xxx
+
+## Writeups
 
  - (1) xxx

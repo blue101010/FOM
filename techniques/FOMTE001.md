@@ -37,7 +37,12 @@ Modify legitimate magic headers.
 | --------------------------------------------------- | ----------------------------------|
 |  [C0001](https://attack.mitre.org/software/S0150/)  | Blah |
 
-## Writeups and Sources
+## Sources
 
-- (1) [Jason (jxb5151). (2021, January 28). findapihash.py. Retrieved August 22, 2022.](https://github.com/MITRECND/malchive/blob/main/malchive/utilities/findapihash.py)
+- (1) 
+
+## Writeups
+
+ - (1) xxx
+
 

@@ -33,6 +33,11 @@
 |  [C0001](https://attack.mitre.org/software/S0150/)  | Blah |
 
 
-## Writeups and Sources
+## Sources
 
- - (1) [Mengenlehreuhr](https://dodona.be/en/courses/1/series/279/activities/527398301/)
+ - (1) [Mengenlehreuhr dodona.be](https://dodona.be/en/courses/1/series/279/activities/527398301/)
+-  (2) [Mengenlehreuhr Wikipedia](https://en.wikipedia.org/wiki/Mengenlehreuhr)
+
+## Writeups 
+
+ - (1) [2024 - NSEC -  Dorsolateral Challenge](https://github.com/blue101010/writeups/blob/main/2024/NSEC/Dorsolateral/dorsolateral.md)

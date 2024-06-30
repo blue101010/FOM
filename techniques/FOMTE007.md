@@ -42,6 +42,12 @@ Use special encoding system to hide data with visual, machine-readable form
 | --------------------------------------------------- | ----------------------------------|
 | X  | X |
 
-## Writeups and Sources
 
-- (1) [Jason (jxb5151). (2021, January 28). findapihash.py. Retrieved August 22, 2022.](https://github.com/MITRECND/malchive/blob/main/malchive/utilities/findapihash.py)
+## Sources
+
+ - (1) [Jason (jxb5151). (2021, January 28). findapihash.py. Retrieved August 22, 2022.](https://github.com/MITRECND/malchive/blob/main/malchive/utilities/findapihash.py)
+
+## Writeups
+
+ - (1) xxx
+
