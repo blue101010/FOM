@@ -43,7 +43,7 @@ Use special encoding system to hide data with Rectangular [rMQR](https://www.qrc
 
 ## Sources
 
- - (1) 
+- (1) [QR Code Model 2 Structure and Algorithms](https://franckybox.com/wp-content/uploads/qrcode.pdf)
 
 ## Writeups
 
