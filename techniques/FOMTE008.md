@@ -10,10 +10,16 @@
 Conceal information within digital media with **linguistic** steganography
 
 
-## Techniques and counter-techniques
+## FOM Sub-techniques (ST) and Counter-Techniques (CT)
 
-| Related ID Techniques  | Techniques names                                  | Counter-Techniques names and Description s                                                                                                                    |
-| ------------------------------------------------------------------------------ | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| [FOMTE007](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE007.md) | Hide data with QR codes| [FOMTCTE001 - Recover legitimate signature of a file ](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.md) |
+| FOM Sub-techniques ID   | FOM Sub-techniques Names | FOM Sub-techniques Descriptiosn | MITRE ATT&CK similar Sub-techniques            | FOM CT related
+| ---------------------- |-----------  | -------------------|-------------------------------------------|----------------
+|  [FOMTE001.001](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE001.001.md)                      | TBC         |                    | N/A |  [FOMCTE001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.md)   |
 
+
+## MITRE ATT&CK techniques related
+
+|  MITRE ATT&CK similarities: techniques and procedures |       Description               |
+| --------------------------------------------------- | ----------------------------------|
+|  [C0001](https://attack.mitre.org/software/S0150/)  | Blah |
 
