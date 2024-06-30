@@ -14,7 +14,10 @@
  Conceal information with [Mengenlehreuhr](https://en.wikipedia.org/wiki/Mengenlehreuhr) diagrams encoding.
 
 Exemple:
+
  ![alt text](image.png)
+ 
+ See [2024 - NSEC -  Dorsolateral Challenge](https://github.com/blue101010/writeups/blob/main/2024/NSEC/Dorsolateral/dorsolateral.md)
 
 ## FOM Related Sub-Techniques (ST)
 
@@ -33,7 +36,7 @@ Exemple:
 
 |  MITRE ATT&CK similarities: techniques and procedures |       Description               |
 | --------------------------------------------------- | ----------------------------------|
-|  [C0001](https://attack.mitre.org/software/S0150/)  | Blah |
+| XXXX | XXXX |
 
 
 ## Sources
