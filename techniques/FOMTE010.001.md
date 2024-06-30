@@ -29,7 +29,7 @@ Exemple:
 
 | FOM Counter-Techniques ID and description  |
 | --------------------------------------- |
-| [FOMCTE010.001 - Retrieve information from Mengenlehreuhr diagrams encoding](https://github.com/blue101010/FOM/blob/main/techniques/FOMCTE010.001.md)   |
+| [FOMCTE010.001 - Retrieve information from Mengenlehreuhr diagrams encoding](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE010.001.md)   |
 
 
 ## MITRE ATT&CK Related techniques
