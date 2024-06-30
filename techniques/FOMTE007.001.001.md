@@ -1,6 +1,6 @@
-# [FOMTE007.001](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE002.md) - Use special encoding system to hide data with QR codes
+# [FOMTE007.001.001](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE001.001.001.md) - Use special encoding system to hide data with RMQR codes
 
-Use special encoding system to hide data with QR codes.
+
 
 ## Tactics
 
@@ -12,15 +12,14 @@ Use special encoding system to hide data with QR codes.
 
 ## Details
 
-Use QR codes to hide data:
-- use 
+Use special encoding system to hide data with Rectangular [rMQR](https://www.qrcode.com/en/codes/rmqr.html) codes.
 
 
 ## FOM Related Sub Sub-Techniques (SST)
 
 | FOM Sub-techniques ID and description  |
 | --------------------------------------- |
-| [FOMTE007.001.001](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE001.001.001.md) - Use special encoding system to hide data with RMQR codes  |
+| [FOMTE007.001.001.md - Hide data with QR codes ](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE007.001.md)   |
 
 
 ## FOM Related Sub-Techniques (ST)
