@@ -1,4 +1,4 @@
-# [FOMTCTE007](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE007md) - Retrieve information from QR codes
+# [FOMTCTE007](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE007.md) - Retrieve information from QR codes
 
 ## Tactics
 
