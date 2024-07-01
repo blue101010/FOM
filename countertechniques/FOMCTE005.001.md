@@ -25,7 +25,7 @@
 
 ## Tools
 
-| Related Counter-techniques ID and Name |
+| Related Tools ID and Name |
 | ------------------------------------------------------------ |
 | [FOMTOU003](https://github.com/blue101010/FOM/blob/main/tools/FOMTOU003.md) - UPX Fixer |
 
