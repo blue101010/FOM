@@ -6,7 +6,7 @@
 
 | FOM related tactics  |
 | --------------------------------------- |
-| [ |
+|[FOMTA007](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA007.md) - Use special encoding system to hide data|
 
 
 ## Sub-techniques related
@@ -18,14 +18,16 @@
 ## Counter-techniques related
 
 
-| Counter-techniques ID                                                     | Name       | Description |
-| ------------------------------------------------------------ | ---------- | ----------- |
-| [FOMCTE003.001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE003.001.md) | Repair p_info header on UPX| TBC         |
+| Related Counter-techniques ID and Name |
+| ------------------------------------------------------------ | 
+| [FOMCTE003.001 - Repair p_info header on UPX](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE003.001.md) |
 
 
 ## Tools
 
-TBD
+| Related Counter-techniques ID and Name |
+| ------------------------------------------------------------ |
+| [FOMTOU003](https://github.com/blue101010/FOM/blob/main/tools/FOMTOU003.md) - UPX Fixer |
 
 
 ## Details
