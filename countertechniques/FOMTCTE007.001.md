@@ -14,13 +14,13 @@
 
 | FOM related  Sub-techniques IDs and names|
 | ------------------------------------------------------------ |
-|     |
+|  XXX   |
 
 ## Counter-techniques related
 
 | FOM related  Sub-Counter-techniques IDs and names|
 | ------------------------------------------------------------ |
-|       |
+|  [FOMTCTE007 - Retrieve information from QR codes](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE007.md)     |
 
 ## Tools
 
