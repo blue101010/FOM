@@ -32,8 +32,8 @@ Retrieve information from rMQR codes
 
 ## Sources
 
-- (1) 
+- (1) [QR Code Model 2 Structure and Algorithms](https://franckybox.com/wp-content/uploads/qrcode.pdf)
 
 ## Writeups 
 
-- (1) [QRRRRRRRR — NahamCon CTF] (https://medium.com/@inferiorak/qrrrrrrrr-nahamcon-ctf-2024-writeup-by-inferiorak-063406df187e)
+- (1) [QRRRRRRRR — NahamCon CTF](https://medium.com/@inferiorak/qrrrrrrrr-nahamcon-ctf-2024-writeup-by-inferiorak-063406df187e)
