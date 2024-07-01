@@ -10,7 +10,7 @@
 
 ## Sub-techniques related
 
-| FOM related  Sub-techniquesIDs and names|
+| FOM related  Sub-techniques IDs and names                   |
 | ------------------------------------------------------------ |
 | [FOMTE001.001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMTE001.001.md)         |
 

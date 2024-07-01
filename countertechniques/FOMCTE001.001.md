@@ -1,4 +1,4 @@
-# FOMCTE001.001 -  Recover legitimate header signature of an OpenEXR image file
+# [FOMCTE001.001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.001.md) -  Recover legitimate header signature of an OpenEXR image file
 
 ## Tactics
 
@@ -10,7 +10,7 @@
 
 ## Sub-techniques related
 
-| FOM related  Sub-techniquesIDs and names|
+| FOM related  Sub-techniques IDs and names|
 | ------------------------------------------------------------ |
 | [FOMTE001.001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMTE001.001.md)         |
 
@@ -18,16 +18,17 @@
 
 | FOM related  Sub-Counter-techniques IDs and names|
 | ------------------------------------------------------------ |
-| [FOMCTE001.001 - Recover OpenEXR magic signature](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.001.md)         |
+| [FOMCTE001.001 - Recover OpenEXR magic signature](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.001.md)  |
+
 
 ## Tools
 
-Recover the legitimate "magic number" header signature of the OpenEXR bitmap image format with hexadecimals tools like:
-
 | Related tools|
 | ------------------------------------------------------------ |
-| [FOMTOU001](https://github.com/blue101010/FOM/blob/main/tools/FOMTOU001.md) - hexed.it |
-| **imhex**  <https://github.com/WerWolv/ImHex> (provide templating colorization of formats) |
+| [FOMTOU001 - hexed.it](https://github.com/blue101010/FOM/blob/main/tools/FOMTOU001.md)  |
+| [FOMTOU002 - imhex](https://github.com/blue101010/FOM/blob/main/tools/FOMTOU002.md) |
+
+Recover the legitimate "magic number" header signature of the OpenEXR bitmap image format with hexadecimals tools.
 
 ## Details and procedures
 
