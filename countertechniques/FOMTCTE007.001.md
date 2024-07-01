@@ -20,7 +20,7 @@
 
 | FOM related  Sub-Counter-techniques IDs and names|
 | ------------------------------------------------------------ |
-|  [FOMTCTE007 - Retrieve information from QR codes](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE007.md)     |
+|  [FOMTCTE007 - Retrieve information from QR codes](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMTCTE007.md)     |
 
 ## Tools
 
