@@ -23,7 +23,7 @@
 
 ## Tools
 
-| Related tools|
+| Useful tools|
 | ------------------------------------------------------------ |
 | [FOMTOU001 - hexed.it](https://github.com/blue101010/FOM/blob/main/tools/FOMTOU001.md)  |
 | [FOMTOU002 - imhex](https://github.com/blue101010/FOM/blob/main/tools/FOMTOU002.md) |

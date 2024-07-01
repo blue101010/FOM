@@ -19,12 +19,13 @@
 ## Counter-techniques related
 
 
-| Counter-techniques ID                                                     | Name       | Description |
-| ------------------------------------------------------------ | ---------- | ----------- |
-| [FOMCTE003.001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE003.001.md) | Repair p_info header on UPX| TBC         |
+| Counter-techniques IDs and names|
+| ------------------------------------------------------------ | 
+| [FOMCTE003.001 - Repair p_info header on UPX](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE003.001.md) |
 
 
 ## Tools
+
 TBD
 
 

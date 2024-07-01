@@ -6,13 +6,13 @@
 
 | FOM related tactics  |
 | --------------------------------------- |
-| [FOMTA001](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA001.md) - Binary hexadecimal format modifications   |
+| [FOMTA001 - Binary hexadecimal format modifications](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA001.md)    |
 
 ## Sub-techniques related
 
 | FOM related  Sub-techniques IDs and names                   |
 | ------------------------------------------------------------ |
-| [FOMTE001.001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMTE001.001.md)         |
+| [FOMTE001.001 - Modify legitimate header signature of a file via python script](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMTE001.001.md)         |
 
 ## Counter-techniques related
 
