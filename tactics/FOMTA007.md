@@ -22,6 +22,10 @@ Use special encoding system to hide data.
 |                   xxx                               | [FOMCTE005 - Recover from packager obfuscations](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE005.md) |
 
 
-## Writeups and Sources
+## Sources
 
  - (1) [QR Code Model 2 Structure and Algorithms](https://franckybox.com/wp-content/uploads/qrcode.pdf)
+
+## Writeups
+
+- (1) 
