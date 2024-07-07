@@ -8,11 +8,11 @@
 | FOM related tactics  |
 | --------------------------------------- |
 | [FOMTA001](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA001.md) - Binary hexadecimal format modifications   |
-| 
+
 
 ## Details
 
-ZXingReader , based on https://github.com/zxing-cpp/zxing-cpp.git can read a variety of QR codes.
+ZXingReader, based on https://github.com/zxing-cpp/zxing-cpp.git can read a variety of QR codes.
 
 ## Tools
 
