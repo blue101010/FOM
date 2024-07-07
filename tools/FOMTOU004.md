@@ -14,7 +14,7 @@
 
 | Related techniques and counter-techniques  |
 | --------------------------------------- |
-| [FOMTCTE007.001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE007.001.md) - Retrieve information from rMQR codes |
+| [FOMTCTE007.001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMTCTE007.001.md) - Retrieve information from rMQR codes |
 
 ## Details
 
