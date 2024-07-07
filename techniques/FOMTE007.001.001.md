@@ -32,7 +32,7 @@ Use special encoding system to hide data with Rectangular [rMQR](https://www.qrc
 
 | FOM Counter-Techniques ID  and description  |
 | --------------------------------------- |
-| [FOMTCTE007.001 - Retrieve information from rMQR codes](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE007.001.md) |
+| [FOMTCTE007.001 - Retrieve information from rMQR codes](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMTCTE007.001.md) |
 
 
 ## MITRE ATT&CK techniques related
