@@ -16,6 +16,14 @@
 | --------------------------------------- |
 | [FOMTA001](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA001.md) - Binary hexadecimal format modifications   |
 
+
+## Techniques
+
+| Relatef techniques and counter-techniques  |
+| --------------------------------------- |
+| xx|
+
+
 ## Details
 
 hexed.it <https://hexed.it/> is a client-side javascript based hex editor

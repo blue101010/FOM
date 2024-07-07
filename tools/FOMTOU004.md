@@ -10,6 +10,12 @@
 | [FOMTA001](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA001.md) - Binary hexadecimal format modifications   |
 
 
+## Techniques
+
+| Relatef techniques and counter-techniques  |
+| --------------------------------------- |
+| [FOMTCTE007.001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE007.001.md) - Retrieve information from rMQR codes |
+
 ## Details
 
 ZXingReader, based on https://github.com/zxing-cpp/zxing-cpp.git can read a variety of QR codes.
