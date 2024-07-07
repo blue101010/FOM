@@ -18,10 +18,10 @@ ZXingReader, based on https://github.com/zxing-cpp/zxing-cpp.git can read a vari
 
 | FOM Tools related  |
 | --------------------------------------- |
-| [FOMTOU001](https://github.com/blue101010/FOM/blob/main/tools/FOMTOU001.md) - hexed.it  |
+| N/A |
 
 
 ## Writeups and Sources
 
-- (1) [UPX Fixer](https://github.com/blue101010/writeups/blob/main/2024/NAHAMCONF/qrrrrrr/README.md)
+- (1) [2024 NAHAMCONF Challenge RMQR](https://github.com/blue101010/writeups/blob/main/2024/NAHAMCONF/qrrrrrr/README.md)
 - (2) <https://github.com/zxing-cpp/zxing-cpp.git>
