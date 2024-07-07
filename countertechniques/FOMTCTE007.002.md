@@ -1,4 +1,4 @@
-# [FOMTCTE007.001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE007.001.md) - Retrieve information from JAB QR codes (2D color bar code)
+# [FOMTCTE007.002](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE007.002.md) - Retrieve information from JAB QR codes (2D color bar code)
 
 
 ## Tactics
