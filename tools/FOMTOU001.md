@@ -19,7 +19,7 @@
 
 ## Techniques
 
-| Relatef techniques and counter-techniques  |
+| Related techniques and counter-techniques  |
 | --------------------------------------- |
 | xx|
 
