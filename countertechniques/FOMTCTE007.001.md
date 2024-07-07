@@ -24,17 +24,14 @@
 
 ## Tools and algorithms
 
-TBD
+Use [FOMTOU004 - ZXingReader](https://github.com/blue101010/FOM/blob/main/tools/FOMTOU004.md) like in CTF Writeup ref (1)
 
 ## Details
 
 Retrieve information from QR codes based on the legitimate specifications and extra methods (like stegnography or specific algorithms).
-
  
-## Sources
+## Sources and writeups
 
-- (1) [QR Code Model 2 Structure and Algorithms](https://franckybox.com/wp-content/uploads/qrcode.pdf)
-
-## Writeups
-
-- (1) [QRRRRRRRR — NahamCon CTF](https://medium.com/@inferiorak/qrrrrrrrr-nahamcon-ctf-2024-writeup-by-inferiorak-063406df187e)
+- (1) [NAHAMCONF 2024 RMQR challenge](https://github.com/blue101010/writeups/blob/main/2024/NAHAMCONF/qrrrrrr/README.md)
+- (2) [QR Code Model 2 Structure and Algorithms](https://franckybox.com/wp-content/uploads/qrcode.pdf)
+- (3) [QRRRRRRRR — NahamCon CTF](https://medium.com/@inferiorak/qrrrrrrrr-nahamcon-ctf-2024-writeup-by-inferiorak-063406df187e)
