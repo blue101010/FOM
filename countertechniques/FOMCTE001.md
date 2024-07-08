@@ -30,4 +30,4 @@ These headers are used by operating systems and applications to determine how to
 
 - (1) [Joep van Steen. (2021, Mars 23). Some thoughts on signature based file recovery. Retrieved January 14, 2024.](https://www.disktuna.com/some-thoughts-on-signature-based-file-recovery/)
 - (2) [GCK'S FILE SIGNATURES TABLE](https://www.garykessler.net/library/file_sigs.html)
-- (3) [2024 - LEVELEFFECTCDA2024 - Forensics - Magic repairman](https://github.com/blue101010/writeups/blob/main/2024/LEVELEFFECTCDA2024/Forensics/Magic_repairman/magic_repairman.md)
+- (3) [2024 - LEVELEFFECTCDA2024 - Forensics - Magic repairman](https://github.com/blue101010/writeups/blob/main/2024/LEVELEFFECTCDA2024/Forensics/Magic_repairman/README.md)
