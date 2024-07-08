@@ -89,5 +89,5 @@ fix_png_file('magic_repairman.png', '2_fixed_magic_repairman.png')
 
 ## Writeups
 
-- (1)   [CTF - LEVELEFFECTCDA2024 - Forensics - Magic repairman](https://github.com/blue101010/writeups/blob/main/2024/LEVELEFFECTCDA2024/Forensics/Magic_repairman/magic_repairman.md)
+- (1)   [CTF - LEVELEFFECTCDA2024 - Forensics - Magic repairman](https://github.com/blue101010/writeups/blob/main/2024/LEVELEFFECTCDA2024/Forensics/Magic_repairman/README.md)
 
