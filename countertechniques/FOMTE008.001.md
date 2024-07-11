@@ -1,4 +1,4 @@
-# [FOMTE008.001](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE008.001md) - Recover information with epoch time
+# [FOMTE008.001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMTE008.001md) - Recover information with epoch time
 
 
 ## Tactics

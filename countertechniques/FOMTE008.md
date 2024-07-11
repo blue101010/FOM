@@ -1,4 +1,4 @@
-# [FOMTE008](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE008.md) - Recover information with date and time representations
+# [FOMCTE008](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE008.md) - Recover information with date and time representations
 
 
 ## Tactics
@@ -23,7 +23,7 @@ Conceal information with diagrams encoding
 
 | FOM Counter-Techniques ID and description  |
 | --------------------------------------- |
-| [FOMTE008.001](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE008.001md) - Recover information with epoch time |
+| [FOMCTE008.001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE008.001md) - Recover information with epoch time |
 
 ## MITRE ATT&CK techniques related
 
