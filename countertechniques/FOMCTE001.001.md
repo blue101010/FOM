@@ -12,7 +12,8 @@
 
 | FOM related  Sub-techniques IDs and names|
 | ------------------------------------------------------------ |
-| [FOMTE001.001](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMTE001.001.md)         |
+| [FOMTE001.001](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE001.md)         |
+
 
 ## Counter-techniques related
 
