@@ -15,8 +15,7 @@
 
 Exemple:
 
-
- See [2024 - NSEC -  Dorsolateral Challenge](https://github.com/blue101010/writeups/blob/main/2024/NSEC/Dorsolateral/dorsolateral.md)
+See [2024 - NSEC -  Dorsolateral Challenge](https://github.com/blue101010/writeups/blob/main/2024/NSEC/Dorsolateral/dorsolateral.md)
 
 ## FOM Related Sub-Techniques (ST)
 
