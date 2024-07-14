@@ -14,9 +14,9 @@ Use special encoding system to hide data.
 
 ## Techniques and counter-techniques
 
-| Related  Techniques IDs and names  | Counter-Techniques names and descriptions  |
+| Related Techniques IDs and names  | Counter-Techniques names and descriptions  |
 | -----------------------------------|  -----------------------------------------|
-| [FOMTA013 - Conceal text data strings in ELF binary](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA008.md) |                                           |
+| [FOMTE013 - Conceal text data strings in ELF binary](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE013.md) |                                           |
 
 ## Sources and Writeups
 
