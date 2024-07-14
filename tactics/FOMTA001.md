@@ -1,4 +1,4 @@
-# [FOMTA001](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA001.md) - Binary hexadecimal format modifications
+# [FOMTA001](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA001.md) - Modify Binary format for obfuscations
 
 
 ## Tactics
@@ -7,7 +7,7 @@
 
 | FOM related tactics  |
 | --------------------------------------- |
-| [FOMTA001](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA001.md) - Binary hexadecimal format modifications   |
+| [FOMTA001](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA001.md) - Modify Binary format for obfuscations   |
 
 ## Details
 
