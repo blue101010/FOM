@@ -10,7 +10,7 @@
 
 ## Details
 
-Use special encoding system to hide data.
+Conceal data in binary format
 
 ## Techniques and counter-techniques
 
