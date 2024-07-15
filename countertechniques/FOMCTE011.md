@@ -1,4 +1,4 @@
-# [FOMTA013](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA008.md) - Conceal text data strings in ELF binary
+# [FOMCTE013](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE011.md) - Recover text data strings from ELF binary
 
 ## Tactics
 
@@ -10,13 +10,14 @@
 
 ## Details
 
-Conceal text data strings in ELF binary.
+Recover text data strings from ELF binary with tools like
+- strings (linux)
 
 ## Tools
 
 | Related tools |
 | --------------------------------------- |
-| [FOMTA008 - Conceal data in binary format](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA008.md)   |
+| linux strings  |
 
 ## Techniques and counter-techniques
 
