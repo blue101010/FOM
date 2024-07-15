@@ -1,4 +1,4 @@
-# [FOMCTE013](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE011.md) - Recover text data strings from ELF binary
+# [FOMCTE011](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE011.md) - Recover text data strings from ELF binary
 
 ## Tactics
 

@@ -22,7 +22,7 @@ Conceal text data strings in ELF binary.
 
 | Related Techniques IDs and names  | Counter-Techniques names and descriptions  |
 | -----------------------------------|  -----------------------------------------|
-| [FOMTE013 - Conceal text data strings in ELF binary](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE013.md) |                                           |
+| [FOMTE013 - Conceal text data strings in ELF binary](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE013.md) |  [FOMCTE011 - Recover text data strings from ELF binary  ](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE011.md)                                        |
 
 ## Sources and Writeups
 
