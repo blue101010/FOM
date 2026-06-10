@@ -21,7 +21,7 @@ puzzle-craft) detail ATT&CK omits, and the nearest ATT&CK anchor where one exist
 | Design / Hide technique | `CTFTTE-<CAT>-NNN` | `CTFTTE-FOR-001` |
 | Counter-technique | `CTFTCTE-<CAT>-NNN` | `CTFTCTE-FOR-001` |
 
-## Tactics (14 HackTheBox categories)
+## Tactics (17 HackTheBox categories)
 
 | Tactic | Name | HTB | Count |
 | --- | --- | --- | --- |
@@ -38,7 +38,10 @@ puzzle-craft) detail ATT&CK omits, and the nearest ATT&CK anchor where one exist
 | [CTFT-TA-CLD](tactics/CTFT-TA-CLD.md) | Cloud | HTB: Cloud | 5 |
 | [CTFT-TA-ICS](tactics/CTFT-TA-ICS.md) | ICS / SCADA | HTB: ICS | 5 |
 | [CTFT-TA-AIM](tactics/CTFT-TA-AIM.md) | AI / ML | HTB: AI-ML | 5 |
-| [CTFT-TA-MSC](tactics/CTFT-TA-MSC.md) | Misc / Jail / Coding / Fullpwn | HTB: Misc, Coding, GamePwn, Fullpwn | 5 |
+| [CTFT-TA-JAL](tactics/CTFT-TA-JAL.md) | Jail / Sandbox Escape | HTB: Misc (Jail) | 5 |
+| [CTFT-TA-COD](tactics/CTFT-TA-COD.md) | Coding / Programming Puzzle | HTB: Coding | 5 |
+| [CTFT-TA-GAM](tactics/CTFT-TA-GAM.md) | Game / Protocol Automation | HTB: GamePwn | 5 |
+| [CTFT-TA-FPN](tactics/CTFT-TA-FPN.md) | Full Pwn / Multi-Stage | HTB: Fullpwn | 5 |
 
 
 ## Layout
@@ -49,9 +52,9 @@ CTFT/
   HIERARCHY.md          full design<->counter listing
   CORRELATION.md        master technique <-> counter-technique cross-reference
   index.json            machine-readable index (includes pairs/by_id maps)
-  tactics/              14 tactic pages (CTFT-TA-<CAT>.md)
-  techniques/           68 design/hide techniques (CTFTTE-<CAT>-NNN.md)
-  countertechniques/    68 counter-techniques   (CTFTCTE-<CAT>-NNN.md)
+  tactics/              tactic pages (CTFT-TA-<CAT>.md)
+  techniques/           design/hide techniques (CTFTTE-<CAT>-NNN.md)
+  countertechniques/    counter-techniques   (CTFTCTE-<CAT>-NNN.md)
   stix/
     ctft-bundle.json    full STIX 2.1 bundle
     by-category/        one STIX bundle per tactic
@@ -77,4 +80,4 @@ IDs are deterministic (`uuid5`) so regeneration is stable and diff-friendly.
 
 ## License
 
-Recommended: BSD-2-Clause, matching FOM.
+Recommended: BSD-2-Clause

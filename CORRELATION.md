@@ -2,12 +2,11 @@
 
 Quick cross-reference of every **Design / Hide Technique** and its paired **Counter-Technique**, grouped by tactic.
 
-Generated: 2026-06-10T20:21:25Z  |  Total pairs: **82** across **13** tactics.
 
 ---
 
 
-## `CTFT-TA-AIM` — AI / ML  (5 pairs)
+## `CTFT-TA-AIM` — AI / ML
 
 | # | Technique ID | Hide / Design name | Counter-technique ID | Counter name |
 | --- | --- | --- | --- | --- |
@@ -18,7 +17,7 @@ Generated: 2026-06-10T20:21:25Z  |  Total pairs: **82** across **13** tactics.
 | 5 | [CTFTTE-AIM-005](techniques/CTFTTE-AIM-005.md) | Training-data leakage via queries | [CTFTCTE-AIM-005](countertechniques/CTFTCTE-AIM-005.md) | Recover secrets through model inversion |
 
 
-## `CTFT-TA-BLK` — Blockchain  (5 pairs)
+## `CTFT-TA-BLK` — Blockchain
 
 | # | Technique ID | Hide / Design name | Counter-technique ID | Counter name |
 | --- | --- | --- | --- | --- |
@@ -29,7 +28,7 @@ Generated: 2026-06-10T20:21:25Z  |  Total pairs: **82** across **13** tactics.
 | 5 | [CTFTTE-BLK-005](techniques/CTFTTE-BLK-005.md) | Access-control flaw to set flag | [CTFTCTE-BLK-005](countertechniques/CTFTCTE-BLK-005.md) | Craft a transaction abusing missing checks |
 
 
-## `CTFT-TA-CLD` — Cloud  (5 pairs)
+## `CTFT-TA-CLD` — Cloud
 
 | # | Technique ID | Hide / Design name | Counter-technique ID | Counter name |
 | --- | --- | --- | --- | --- |
@@ -40,7 +39,18 @@ Generated: 2026-06-10T20:21:25Z  |  Total pairs: **82** across **13** tactics.
 | 5 | [CTFTTE-CLD-005](techniques/CTFTTE-CLD-005.md) | Container image / registry leak | [CTFTCTE-CLD-005](countertechniques/CTFTCTE-CLD-005.md) | Pull and inspect image layers |
 
 
-## `CTFT-TA-CRY` — Cryptography  (6 pairs)
+## `CTFT-TA-COD` — Coding / Programming Puzzle
+
+| # | Technique ID | Hide / Design name | Counter-technique ID | Counter name |
+| --- | --- | --- | --- | --- |
+| 1 | [CTFTTE-COD-001](techniques/CTFTTE-COD-001.md) | Esolang / unusual-encoding puzzle | [CTFTCTE-COD-001](countertechniques/CTFTCTE-COD-001.md) | Interpret or transpile the encoding |
+| 2 | [CTFTTE-COD-002](techniques/CTFTTE-COD-002.md) | Algorithm optimisation challenge | [CTFTCTE-COD-002](countertechniques/CTFTCTE-COD-002.md) | Implement an efficient algorithm to satisfy the server |
+| 3 | [CTFTTE-COD-003](techniques/CTFTTE-COD-003.md) | Scripted protocol / automation marathon | [CTFTCTE-COD-003](countertechniques/CTFTCTE-COD-003.md) | Write a pwntools script to complete all rounds |
+| 4 | [CTFTTE-COD-004](techniques/CTFTTE-COD-004.md) | Code-golf / polyglot code puzzle | [CTFTCTE-COD-004](countertechniques/CTFTCTE-COD-004.md) | Craft a minimal polyglot that satisfies every parser |
+| 5 | [CTFTTE-COD-005](techniques/CTFTTE-COD-005.md) | Symbolic-execution / SMT-solver puzzle | [CTFTCTE-COD-005](countertechniques/CTFTCTE-COD-005.md) | Extract constraints and solve with Z3 / angr |
+
+
+## `CTFT-TA-CRY` — Cryptography 
 
 | # | Technique ID | Hide / Design name | Counter-technique ID | Counter name |
 | --- | --- | --- | --- | --- |
@@ -52,7 +62,7 @@ Generated: 2026-06-10T20:21:25Z  |  Total pairs: **82** across **13** tactics.
 | 6 | [CTFTTE-CRY-006](techniques/CTFTTE-CRY-006.md) | Nested encoding obfuscation | [CTFTCTE-CRY-006](countertechniques/CTFTCTE-CRY-006.md) | Unwrap chained encodings |
 
 
-## `CTFT-TA-FOR` — Forensics  (17 pairs)
+## `CTFT-TA-FOR` — Forensics
 
 | # | Technique ID | Hide / Design name | Counter-technique ID | Counter name |
 | --- | --- | --- | --- | --- |
@@ -75,7 +85,29 @@ Generated: 2026-06-10T20:21:25Z  |  Total pairs: **82** across **13** tactics.
 | 17 | [CTFTTE-FOR-017](techniques/CTFTTE-FOR-017.md) | Conceal text data strings in ELF binary | [CTFTCTE-FOR-017](countertechniques/CTFTCTE-FOR-017.md) | Recover text data strings from ELF binary |
 
 
-## `CTFT-TA-ICS` — ICS / SCADA  (5 pairs)
+## `CTFT-TA-FPN` — Full Pwn / Multi-Stage
+
+| # | Technique ID | Hide / Design name | Counter-technique ID | Counter name |
+| --- | --- | --- | --- | --- |
+| 1 | [CTFTTE-FPN-001](techniques/CTFTTE-FPN-001.md) | Multi-stage chained challenge | [CTFTCTE-FPN-001](countertechniques/CTFTCTE-FPN-001.md) | Chain enumeration, foothold and privilege escalation |
+| 2 | [CTFTTE-FPN-002](techniques/CTFTTE-FPN-002.md) | Windows Active Directory fullpwn | [CTFTCTE-FPN-002](countertechniques/CTFTCTE-FPN-002.md) | Enumerate AD, abuse delegation or ACL paths to the DC |
+| 3 | [CTFTTE-FPN-003](techniques/CTFTTE-FPN-003.md) | Multi-hop network pivot | [CTFTCTE-FPN-003](countertechniques/CTFTCTE-FPN-003.md) | Tunnel through compromised hosts to reach the flag |
+| 4 | [CTFTTE-FPN-004](techniques/CTFTTE-FPN-004.md) | Container / service misconfiguration chain | [CTFTCTE-FPN-004](countertechniques/CTFTCTE-FPN-004.md) | Chain service misconfig and container escape to host |
+| 5 | [CTFTTE-FPN-005](techniques/CTFTTE-FPN-005.md) | Cloud-integrated fullpwn | [CTFTCTE-FPN-005](countertechniques/CTFTCTE-FPN-005.md) | Pivot from on-prem to cloud IAM to retrieve the secret |
+
+
+## `CTFT-TA-GAM` — Game / Protocol Automation (GamePwn)
+
+| # | Technique ID | Hide / Design name | Counter-technique ID | Counter name |
+| --- | --- | --- | --- | --- |
+| 1 | [CTFTTE-GAM-001](techniques/CTFTTE-GAM-001.md) | Networked game / protocol automation | [CTFTCTE-GAM-001](countertechniques/CTFTCTE-GAM-001.md) | Script a client to beat the protocol |
+| 2 | [CTFTTE-GAM-002](techniques/CTFTTE-GAM-002.md) | Game save-state / memory manipulation | [CTFTCTE-GAM-002](countertechniques/CTFTCTE-GAM-002.md) | Hex-edit the save file or patch in-memory values |
+| 3 | [CTFTTE-GAM-003](techniques/CTFTTE-GAM-003.md) | Bot-vs-AI / ML-opponent challenge | [CTFTCTE-GAM-003](countertechniques/CTFTCTE-GAM-003.md) | Exploit AI weaknesses or craft adversarial inputs |
+| 4 | [CTFTTE-GAM-004](techniques/CTFTTE-GAM-004.md) | Game binary win-condition bypass | [CTFTCTE-GAM-004](countertechniques/CTFTCTE-GAM-004.md) | Patch the jump / comparison to force a win state |
+| 5 | [CTFTTE-GAM-005](techniques/CTFTTE-GAM-005.md) | Protocol sequence replay / race | [CTFTCTE-GAM-005](countertechniques/CTFTCTE-GAM-005.md) | Record, replay, or race the server sequence precisely |
+
+
+## `CTFT-TA-ICS` — ICS / SCADA
 
 | # | Technique ID | Hide / Design name | Counter-technique ID | Counter name |
 | --- | --- | --- | --- | --- |
@@ -86,7 +118,18 @@ Generated: 2026-06-10T20:21:25Z  |  Total pairs: **82** across **13** tactics.
 | 5 | [CTFTTE-ICS-005](techniques/CTFTTE-ICS-005.md) | DNP3 / BACnet object enumeration | [CTFTCTE-ICS-005](countertechniques/CTFTCTE-ICS-005.md) | Enumerate protocol objects |
 
 
-## `CTFT-TA-MOB` — Mobile  (5 pairs)
+## `CTFT-TA-JAL` — Jail / Sandbox Escape
+
+| # | Technique ID | Hide / Design name | Counter-technique ID | Counter name |
+| --- | --- | --- | --- | --- |
+| 1 | [CTFTTE-JAL-001](techniques/CTFTTE-JAL-001.md) | Python jail (pyjail) confinement | [CTFTCTE-JAL-001](countertechniques/CTFTCTE-JAL-001.md) | Escape the Python sandbox |
+| 2 | [CTFTTE-JAL-002](techniques/CTFTTE-JAL-002.md) | Restricted-shell confinement | [CTFTCTE-JAL-002](countertechniques/CTFTCTE-JAL-002.md) | Escape the restricted shell |
+| 3 | [CTFTTE-JAL-003](techniques/CTFTTE-JAL-003.md) | Docker / container escape | [CTFTCTE-JAL-003](countertechniques/CTFTCTE-JAL-003.md) | Break out of the container to the host |
+| 4 | [CTFTTE-JAL-004](techniques/CTFTTE-JAL-004.md) | JavaScript browser-sandbox jail | [CTFTCTE-JAL-004](countertechniques/CTFTCTE-JAL-004.md) | Traverse the prototype chain to escape |
+| 5 | [CTFTTE-JAL-005](techniques/CTFTTE-JAL-005.md) | Seccomp / AppArmor policy confinement | [CTFTCTE-JAL-005](countertechniques/CTFTCTE-JAL-005.md) | Identify allowed syscalls and pivot around the filter |
+
+
+## `CTFT-TA-MOB` — Mobile
 
 | # | Technique ID | Hide / Design name | Counter-technique ID | Counter name |
 | --- | --- | --- | --- | --- |
@@ -97,18 +140,7 @@ Generated: 2026-06-10T20:21:25Z  |  Total pairs: **82** across **13** tactics.
 | 5 | [CTFTTE-MOB-005](techniques/CTFTTE-MOB-005.md) | Runtime/device-conditioned flag | [CTFTCTE-MOB-005](countertechniques/CTFTCTE-MOB-005.md) | Hook the app to satisfy runtime checks |
 
 
-## `CTFT-TA-MSC` — Misc / Jail / Coding / Fullpwn  (5 pairs)
-
-| # | Technique ID | Hide / Design name | Counter-technique ID | Counter name |
-| --- | --- | --- | --- | --- |
-| 1 | [CTFTTE-MSC-001](techniques/CTFTTE-MSC-001.md) | Python jail (pyjail) confinement | [CTFTCTE-MSC-001](countertechniques/CTFTCTE-MSC-001.md) | Escape the Python sandbox |
-| 2 | [CTFTTE-MSC-002](techniques/CTFTTE-MSC-002.md) | Restricted-shell confinement | [CTFTCTE-MSC-002](countertechniques/CTFTCTE-MSC-002.md) | Escape the restricted shell |
-| 3 | [CTFTTE-MSC-003](techniques/CTFTTE-MSC-003.md) | Esolang / unusual-encoding puzzle | [CTFTCTE-MSC-003](countertechniques/CTFTCTE-MSC-003.md) | Interpret or transpile the encoding |
-| 4 | [CTFTTE-MSC-004](techniques/CTFTTE-MSC-004.md) | Networked game / protocol automation (GamePwn) | [CTFTCTE-MSC-004](countertechniques/CTFTCTE-MSC-004.md) | Script a client to beat the protocol |
-| 5 | [CTFTTE-MSC-005](techniques/CTFTTE-MSC-005.md) | Multi-stage chained challenge (Fullpwn) | [CTFTCTE-MSC-005](countertechniques/CTFTCTE-MSC-005.md) | Chain enumeration, foothold and privilege escalation |
-
-
-## `CTFT-TA-OSI` — OSINT  (5 pairs)
+## `CTFT-TA-OSI` — OSINT 
 
 | # | Technique ID | Hide / Design name | Counter-technique ID | Counter name |
 | --- | --- | --- | --- | --- |
@@ -119,7 +151,7 @@ Generated: 2026-06-10T20:21:25Z  |  Total pairs: **82** across **13** tactics.
 | 5 | [CTFTTE-OSI-005](techniques/CTFTTE-OSI-005.md) | Public-record / repo leak pivot | [CTFTCTE-OSI-005](countertechniques/CTFTCTE-OSI-005.md) | Mine public repositories and records |
 
 
-## `CTFT-TA-PWN` — Binary Exploitation  (5 pairs)
+## `CTFT-TA-PWN` — Binary Exploitation  
 
 | # | Technique ID | Hide / Design name | Counter-technique ID | Counter name |
 | --- | --- | --- | --- | --- |
