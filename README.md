@@ -9,8 +9,7 @@ Every entry **pairs**:
   - **Offensive Recovery** - the CTF practitioner / solver, and
   - **Forensic Perspective** - the blue-team / DFIR analyst.
 
-The 14 tactics are the HackTheBox CTF categories. CTFT does **not** duplicate
-MITRE ATT&CK: each technique carries an explicit *complementarity* note
+CTFT does **not** duplicate MITRE ATT&CK: each technique carries an explicit *complementarity* note
 explaining the CTF-specific (forensic / cryptographic / steganographic /
 puzzle-craft) detail ATT&CK omits, and the nearest ATT&CK anchor where one exists.
 
