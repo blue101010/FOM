@@ -1,6 +1,8 @@
 
-# 
+#  Agents directions
+
 AGENTS.md
+CLAUDE.md
 
 # Migration tooling — not part of the published knowledge base
 fom-migrate.py

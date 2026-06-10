@@ -168,4 +168,4 @@ Generated: 2026-06-10T20:21:25Z  |  Total pairs: **82** across **13** tactics.
 
 
 ---
-*Regenerate with `python ctft-generator.py` after editing entries.*
+

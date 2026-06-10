@@ -22,5 +22,5 @@ Slot reads demonstrate that on-chain confidentiality cannot rely on visibility m
 
 ## References
 
-- https://book.getfoundry.sh/
+- <https://book.getfoundry.sh/>
 - Add challenge write-up link

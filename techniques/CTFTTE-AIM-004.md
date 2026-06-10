@@ -21,5 +21,5 @@ Complements T1204/T1027 conceptually; CTFT adds safe-pickle-inspection procedure
 
 ## References
 
-- https://github.com/trailofbits/fickling
+- <https://github.com/trailofbits/fickling>
 - Add challenge write-up link

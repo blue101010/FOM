@@ -21,5 +21,5 @@ Opcode-level inspection documents embedded payloads without triggering them.
 
 ## References
 
-- https://github.com/trailofbits/fickling
+- <https://github.com/trailofbits/fickling>
 - Add challenge write-up link

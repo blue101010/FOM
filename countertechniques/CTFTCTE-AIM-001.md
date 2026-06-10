@@ -22,5 +22,5 @@ Tensor inspection documents non-functional data smuggled into the model file.
 
 ## References
 
-- https://github.com/lutzroeder/netron
+- <https://github.com/lutzroeder/netron>
 - Add challenge write-up link

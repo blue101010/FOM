@@ -22,5 +22,5 @@ No ATT&CK equivalent; smart-contract analysis.
 
 ## References
 
-- https://book.getfoundry.sh/
+- <https://book.getfoundry.sh/>
 - Add challenge write-up link
