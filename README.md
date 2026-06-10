@@ -1,8 +1,6 @@
 # CTFT - Capture-The-Flag Techniques
 
-A MITRE ATT&CK-**complementary** knowledge base of specialized CTF techniques,
-generalized from the Forensic Obfuscation Model
-([FOM](https://github.com/blue101010/FOM)).
+A MITRE ATT&CK-**complementary** knowledge base of specialized CTF techniques.
 
 Every entry **pairs**:
 
