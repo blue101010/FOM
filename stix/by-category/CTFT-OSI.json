@@ -1,0 +1,303 @@
+{
+  "type": "bundle",
+  "id": "bundle--95f3219b-cd65-5d5d-88c3-2b289772f351",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "name": "CTFT Project",
+      "identity_class": "organization",
+      "description": "Capture-The-Flag Techniques - complementary to MITRE ATT&CK, generalized from FOM."
+    },
+    {
+      "type": "x-ctft-tactic",
+      "spec_version": "2.1",
+      "id": "x-ctft-tactic--d4acf67a-1aa6-5694-81dc-3342e9ad9c0f",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "OSINT",
+      "x_ctft_shortname": "osi",
+      "description": "Information dispersed across public sources and correlated back together. (HTB: OSINT)",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFT-TA-OSI"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--b5fbc959-8772-517c-9d4a-89787c50d99b",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-OSI-001 - Metadata-dispersed identity/location",
+      "description": "Identifying data is scattered across file metadata and post artifacts rather than stated outright. | ATT&CK complementarity: Complements the Reconnaissance tactic conceptually; CTFT adds artifact-level OSINT procedure.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "osi"
+        }
+      ],
+      "x_ctft_category": "OSI",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-OSI-001"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--53aed7f6-5e34-58e9-a5d4-54e102c766ec",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-OSI-001 - Correlate leaked metadata",
+      "description": "OFFENSIVE (solver): Extract metadata (GPS/author/timestamps) and pivot to the real identity/location. || FORENSIC (analyst): Aggregating metadata across artifacts reconstructs the subject's footprint.",
+      "x_ctft_category": "OSI",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-OSI-001"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--a38e3869-73b3-52e0-89b0-5ca097cb2608",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--53aed7f6-5e34-58e9-a5d4-54e102c766ec",
+      "target_ref": "attack-pattern--b5fbc959-8772-517c-9d4a-89787c50d99b",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--7e206102-28ae-5feb-9d09-772bb3d9fa78",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-OSI-002 - Cross-platform username pivot",
+      "description": "The target's presence is split across many platforms under varying handles. | ATT&CK complementarity: No direct ATT&CK technique.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "osi"
+        }
+      ],
+      "x_ctft_category": "OSI",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-OSI-002"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--bcd282a0-efe2-5f0d-9445-98e6b746ab74",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-OSI-002 - Enumerate accounts across platforms",
+      "description": "OFFENSIVE (solver): Search a username across services and correlate profiles to find the flag-bearing one. || FORENSIC (analyst): Profile correlation documents the linkage between disparate online identities.",
+      "x_ctft_category": "OSI",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-OSI-002"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--977db60b-42f1-5bc4-99ed-c4ad3ccdc48a",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--bcd282a0-efe2-5f0d-9445-98e6b746ab74",
+      "target_ref": "attack-pattern--7e206102-28ae-5feb-9d09-772bb3d9fa78",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--12ca4f28-f6b3-5c9a-a4fd-23f705eabcf2",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-OSI-003 - Historical / cached content concealment",
+      "description": "The flag was present but removed/edited, expecting solvers not to check history. | ATT&CK complementarity: No direct ATT&CK technique.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "osi"
+        }
+      ],
+      "x_ctft_category": "OSI",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-OSI-003"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--3c9ebcde-e89d-5112-bb82-e57a9d85b25f",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-OSI-003 - Recover deleted or changed content",
+      "description": "OFFENSIVE (solver): Retrieve prior versions from web archives and cached copies. || FORENSIC (analyst): Archived snapshots evidence the content as it existed at a prior time.",
+      "x_ctft_category": "OSI",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-OSI-003"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--04e6b9d8-3d6e-5cf1-85f8-164f206ada39",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--3c9ebcde-e89d-5112-bb82-e57a9d85b25f",
+      "target_ref": "attack-pattern--12ca4f28-f6b3-5c9a-a4fd-23f705eabcf2",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--1e12c9bf-1937-5537-8cfe-2d1af7339e3a",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-OSI-004 - Geolocation from imagery",
+      "description": "Location is inferable only from landmarks, signage, vegetation, sun/shadow in an image. | ATT&CK complementarity: No direct ATT&CK technique.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "osi"
+        }
+      ],
+      "x_ctft_category": "OSI",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-OSI-004"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--b852f7ee-65b2-5b17-8bc4-03fcb779bae9",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-OSI-004 - Geolocate using visual cues",
+      "description": "OFFENSIVE (solver): Combine visible cues with mapping/imagery to triangulate the place. || FORENSIC (analyst): A documented cue-to-coordinate chain substantiates the geolocation conclusion.",
+      "x_ctft_category": "OSI",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-OSI-004"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--ecc03b52-55a1-5469-9367-3f4ae868ab93",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--b852f7ee-65b2-5b17-8bc4-03fcb779bae9",
+      "target_ref": "attack-pattern--1e12c9bf-1937-5537-8cfe-2d1af7339e3a",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--1823cdde-6ad9-5ba0-adf3-8ff191479257",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-OSI-005 - Public-record / repo leak pivot",
+      "description": "The flag/secret was committed to a public repo, paste, or document and later assumed forgotten. | ATT&CK complementarity: Complements T1213/T1593 (info from repositories) with CTF artifact-mining steps.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "osi"
+        }
+      ],
+      "x_ctft_category": "OSI",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-OSI-005"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--8159001c-ea2b-5c46-a61b-ebee414f4fa4",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-OSI-005 - Mine public repositories and records",
+      "description": "OFFENSIVE (solver): Search code history, pastes and documents for the leaked token or hint. || FORENSIC (analyst): Commit history and timestamps document when and where the secret was exposed.",
+      "x_ctft_category": "OSI",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-OSI-005"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--5a4fbba9-fb3c-5c30-bebf-2935c80f3cca",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--8159001c-ea2b-5c46-a61b-ebee414f4fa4",
+      "target_ref": "attack-pattern--1823cdde-6ad9-5ba0-adf3-8ff191479257",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    }
+  ]
+}

@@ -1,0 +1,303 @@
+{
+  "type": "bundle",
+  "id": "bundle--53c844df-b3bb-5edf-9162-d3d471f5c6b3",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "name": "CTFT Project",
+      "identity_class": "organization",
+      "description": "Capture-The-Flag Techniques - complementary to MITRE ATT&CK, generalized from FOM."
+    },
+    {
+      "type": "x-ctft-tactic",
+      "spec_version": "2.1",
+      "id": "x-ctft-tactic--db5e8dca-b29c-5e2c-a084-cfb3650d5923",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "Blockchain",
+      "x_ctft_shortname": "blk",
+      "description": "On-chain/contract concealment and EVM-level recovery. (HTB: Blockchain)",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFT-TA-BLK"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--56fde017-9999-5810-8efd-53efa8a69136",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-BLK-001 - Private storage-variable concealment",
+      "description": "The flag is a private variable; the author assumes private means unreadable. | ATT&CK complementarity: No ATT&CK equivalent; smart-contract analysis.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "blk"
+        }
+      ],
+      "x_ctft_category": "BLK",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-BLK-001"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--f6fe4f43-75ff-5a14-b429-f50ed8c1a281",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-BLK-001 - Read contract storage slots directly",
+      "description": "OFFENSIVE (solver): Read the storage slot directly from the node since on-chain storage is public. || FORENSIC (analyst): Slot reads demonstrate that on-chain confidentiality cannot rely on visibility modifiers.",
+      "x_ctft_category": "BLK",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-BLK-001"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--68de5378-397f-5904-a3b3-5606259daec2",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--f6fe4f43-75ff-5a14-b429-f50ed8c1a281",
+      "target_ref": "attack-pattern--56fde017-9999-5810-8efd-53efa8a69136",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--34d2767e-3b6b-50cf-8181-0cac0d11f625",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-BLK-002 - Reentrancy-gated flag",
+      "description": "The flag only flips after a withdraw/transfer flow vulnerable to reentrancy. | ATT&CK complementarity: No ATT&CK equivalent.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "blk"
+        }
+      ],
+      "x_ctft_category": "BLK",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-BLK-002"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--5928aa96-f18e-5059-8721-36f098307f46",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-BLK-002 - Exploit reentrancy to set the flag",
+      "description": "OFFENSIVE (solver): Deploy an attacker contract that re-enters during the external call to drive the state change. || FORENSIC (analyst): Trace analysis shows the nested calls that produced the unintended state.",
+      "x_ctft_category": "BLK",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-BLK-002"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--ac1d9d02-c0cd-5be7-aaff-86ab4159bcaa",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--5928aa96-f18e-5059-8721-36f098307f46",
+      "target_ref": "attack-pattern--34d2767e-3b6b-50cf-8181-0cac0d11f625",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--946feb00-2c6a-573c-8b99-ff63fc6b531c",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-BLK-003 - Unverified-bytecode logic hiding",
+      "description": "No source is published; the author assumes raw bytecode is opaque. | ATT&CK complementarity: No ATT&CK equivalent.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "blk"
+        }
+      ],
+      "x_ctft_category": "BLK",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-BLK-003"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--0e3fab35-9b7f-5637-b27d-e3536e0d0174",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-BLK-003 - Decompile EVM bytecode",
+      "description": "OFFENSIVE (solver): Decompile the deployed bytecode to recover the function logic and the flag condition. || FORENSIC (analyst): A decompilation report makes the on-chain logic auditable despite missing source.",
+      "x_ctft_category": "BLK",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-BLK-003"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--dd3fab50-daa3-5fb6-b297-017e8cf33ebd",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--0e3fab35-9b7f-5637-b27d-e3536e0d0174",
+      "target_ref": "attack-pattern--946feb00-2c6a-573c-8b99-ff63fc6b531c",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--96d55186-f7b4-5f15-97be-a26007777109",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-BLK-004 - Hidden event-log / calldata concealment",
+      "description": "The flag is emitted in an event or passed in calldata rather than stored visibly. | ATT&CK complementarity: No ATT&CK equivalent.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "blk"
+        }
+      ],
+      "x_ctft_category": "BLK",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-BLK-004"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--ef108315-1ea9-500b-85be-aa3745a63578",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-BLK-004 - Parse transaction logs and calldata",
+      "description": "OFFENSIVE (solver): Decode historical logs and transaction input data to recover the value. || FORENSIC (analyst): Decoded logs/calldata reconstruct the off-state data flow of the contract.",
+      "x_ctft_category": "BLK",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-BLK-004"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--e7257bda-c19d-570d-be45-21dcdfcdc1b0",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--ef108315-1ea9-500b-85be-aa3745a63578",
+      "target_ref": "attack-pattern--96d55186-f7b4-5f15-97be-a26007777109",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--ff6b8bbb-3eae-5ee2-ac0d-26fb25eebc94",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-BLK-005 - Access-control flaw to set flag",
+      "description": "A privileged setter lacks proper access control, gating the flag behind a check that is missing. | ATT&CK complementarity: No ATT&CK equivalent.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "blk"
+        }
+      ],
+      "x_ctft_category": "BLK",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-BLK-005"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--567a458f-a228-568a-ace7-993373e466b8",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-BLK-005 - Craft a transaction abusing missing checks",
+      "description": "OFFENSIVE (solver): Call the unprotected function directly with a crafted transaction. || FORENSIC (analyst): The call trace evidences the unauthorized privileged invocation.",
+      "x_ctft_category": "BLK",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-BLK-005"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--38dcae68-4496-56bc-94ce-e47b749537b0",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--567a458f-a228-568a-ace7-993373e466b8",
+      "target_ref": "attack-pattern--ff6b8bbb-3eae-5ee2-ac0d-26fb25eebc94",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    }
+  ]
+}

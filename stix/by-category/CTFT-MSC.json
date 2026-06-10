@@ -1,0 +1,303 @@
+{
+  "type": "bundle",
+  "id": "bundle--55b94bab-de6a-59fe-8c71-2ef21cdda61f",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "name": "CTFT Project",
+      "identity_class": "organization",
+      "description": "Capture-The-Flag Techniques - complementary to MITRE ATT&CK, generalized from FOM."
+    },
+    {
+      "type": "x-ctft-tactic",
+      "spec_version": "2.1",
+      "id": "x-ctft-tactic--2690e47e-4d17-5591-9f1d-eb5131e4fe6a",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "Misc / Jail / Coding / Fullpwn",
+      "x_ctft_shortname": "msc",
+      "description": "Escapes, automation and multi-stage chains that do not fit one category. (HTB: Misc, Coding, GamePwn, Fullpwn)",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFT-TA-MSC"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--6150f2bf-8b47-54fb-b104-48936793ed50",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-MSC-001 - Python jail (pyjail) confinement",
+      "description": "Input is eval'd in a restricted namespace meant to prevent reading the flag. | ATT&CK complementarity: No ATT&CK equivalent.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "msc"
+        }
+      ],
+      "x_ctft_category": "MSC",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-MSC-001"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--96ec2f74-0b95-5070-877a-d7b4a5b12463",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-MSC-001 - Escape the Python sandbox",
+      "description": "OFFENSIVE (solver): Reach builtins/attributes via object traversal to import os/open and read the flag. || FORENSIC (analyst): The escape chain documents the incomplete sandboxing of the eval context.",
+      "x_ctft_category": "MSC",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-MSC-001"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--d280c0bb-9296-55ab-8582-8f7d08c1a74c",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--96ec2f74-0b95-5070-877a-d7b4a5b12463",
+      "target_ref": "attack-pattern--6150f2bf-8b47-54fb-b104-48936793ed50",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--995f167e-13c4-58b8-8fc8-9fc4dc8796ff",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-MSC-002 - Restricted-shell confinement",
+      "description": "A limited shell (rbash/menu) restricts commands to keep the flag out of reach. | ATT&CK complementarity: Complements T1059 conceptually with CTF restricted-shell-escape detail.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "msc"
+        }
+      ],
+      "x_ctft_category": "MSC",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-MSC-002"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--88c2a83c-06c6-5fa2-ae1a-cb481667e70e",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-MSC-002 - Escape the restricted shell",
+      "description": "OFFENSIVE (solver): Abuse an allowed program's shell-escape feature to gain an unrestricted shell. || FORENSIC (analyst): Command history documents the escape vector used to break confinement.",
+      "x_ctft_category": "MSC",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-MSC-002"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--58d07ddc-3101-59a8-b2b0-8fa6d13bb746",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--88c2a83c-06c6-5fa2-ae1a-cb481667e70e",
+      "target_ref": "attack-pattern--995f167e-13c4-58b8-8fc8-9fc4dc8796ff",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--01588017-64da-552b-b621-cefaa87f4a75",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-MSC-003 - Esolang / unusual-encoding puzzle",
+      "description": "The flag is expressed in an esoteric language or unusual representation. | ATT&CK complementarity: No ATT&CK equivalent.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "msc"
+        }
+      ],
+      "x_ctft_category": "MSC",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-MSC-003"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--637d7d14-0af8-534f-8649-1e51241de5e5",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-MSC-003 - Interpret or transpile the encoding",
+      "description": "OFFENSIVE (solver): Identify the language/scheme and run an interpreter or write a transpiler to decode it. || FORENSIC (analyst): A documented decode path explains how the representation maps to plaintext.",
+      "x_ctft_category": "MSC",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-MSC-003"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--e7654113-25d9-52c8-bc87-6cdee514b081",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--637d7d14-0af8-534f-8649-1e51241de5e5",
+      "target_ref": "attack-pattern--01588017-64da-552b-b621-cefaa87f4a75",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--d6167213-2775-5a97-afbb-446967f2c0d5",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-MSC-004 - Networked game / protocol automation (GamePwn)",
+      "description": "The flag requires playing/solving many rounds faster than is humanly feasible. | ATT&CK complementarity: No ATT&CK equivalent.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "msc"
+        }
+      ],
+      "x_ctft_category": "MSC",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-MSC-004"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--332d2b34-a101-5266-9a80-44832c01ab4e",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-MSC-004 - Script a client to beat the protocol",
+      "description": "OFFENSIVE (solver): Write a scripted client that parses the protocol and responds programmatically at speed. || FORENSIC (analyst): The automation script documents the protocol and the win condition.",
+      "x_ctft_category": "MSC",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-MSC-004"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--cde7139f-7e9b-57f0-894b-d890bafb08fa",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--332d2b34-a101-5266-9a80-44832c01ab4e",
+      "target_ref": "attack-pattern--d6167213-2775-5a97-afbb-446967f2c0d5",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--9b8cfb8a-f29c-502f-ae0f-327c28067c60",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-MSC-005 - Multi-stage chained challenge (Fullpwn)",
+      "description": "The flag(s) require a full host compromise: recon to foothold to privilege escalation. | ATT&CK complementarity: This is where CTFT links to full ATT&CK chains; CTFT entries plug the forensic/crypto gaps along the path.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "msc"
+        }
+      ],
+      "x_ctft_category": "MSC",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-MSC-005"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--4fc6e121-d663-5295-83c2-847a8d33a63e",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-MSC-005 - Chain enumeration, foothold and privilege escalation",
+      "description": "OFFENSIVE (solver): Enumerate services, gain a foothold, then escalate to reach the user and root flags. || FORENSIC (analyst): The kill-chain narrative documents each stage from initial access to escalation.",
+      "x_ctft_category": "MSC",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-MSC-005"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--5d4001b0-be08-5a5a-a8a2-2404d785d235",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--4fc6e121-d663-5295-83c2-847a8d33a63e",
+      "target_ref": "attack-pattern--9b8cfb8a-f29c-502f-ae0f-327c28067c60",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    }
+  ]
+}

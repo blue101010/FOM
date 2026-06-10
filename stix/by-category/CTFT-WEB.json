@@ -1,0 +1,357 @@
+{
+  "type": "bundle",
+  "id": "bundle--b6251c0e-bd34-5f09-8147-36a4fcc3e276",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "name": "CTFT Project",
+      "identity_class": "organization",
+      "description": "Capture-The-Flag Techniques - complementary to MITRE ATT&CK, generalized from FOM."
+    },
+    {
+      "type": "x-ctft-tactic",
+      "spec_version": "2.1",
+      "id": "x-ctft-tactic--5e585d11-d677-59bd-9c0a-2ac3c42ecf6c",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "Web Exploitation",
+      "x_ctft_shortname": "web",
+      "description": "Hiding/recovering flags inside web applications, APIs and client-side code. (HTB: Web)",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFT-TA-WEB"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--881806e7-d4bb-5c93-ace9-4cdce22c3ba1",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-WEB-001 - Obscured endpoint / source-comment hiding",
+      "description": "The flag route is unlinked, hinted in comments, robots.txt, JS bundles or backup files. | ATT&CK complementarity: Complements T1083/T1595 (discovery/recon) but is CTF content-discovery craft.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "web"
+        }
+      ],
+      "x_ctft_category": "WEB",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-WEB-001"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--b67017fc-fc2c-5382-91e7-8625d7c4d3e5",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-WEB-001 - Content discovery and source review",
+      "description": "OFFENSIVE (solver): Brute force paths/parameters and review client source/maps for hidden references. || FORENSIC (analyst): Access logs of the discovery sweep document how the hidden surface was found.",
+      "x_ctft_category": "WEB",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-WEB-001"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--f86de788-15fe-500f-9549-68aeb030133c",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--b67017fc-fc2c-5382-91e7-8625d7c4d3e5",
+      "target_ref": "attack-pattern--881806e7-d4bb-5c93-ace9-4cdce22c3ba1",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--27f4583c-2523-583f-aaa1-fe3c91d570d5",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-WEB-002 - IDOR / predictable object obscurity",
+      "description": "The flag belongs to another object/user reachable by guessing an ID the UI never exposes. | ATT&CK complementarity: No direct ATT&CK technique; web authorization-flaw craft.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "web"
+        }
+      ],
+      "x_ctft_category": "WEB",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-WEB-002"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--df8e072d-f283-52f1-8918-34769369d34b",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-WEB-002 - Enumerate insecure direct object references",
+      "description": "OFFENSIVE (solver): Iterate identifiers/parameters to access objects outside the intended scope. || FORENSIC (analyst): Sequential access to non-owned IDs in logs is the signature of IDOR abuse.",
+      "x_ctft_category": "WEB",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-WEB-002"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--da930d31-8654-5afa-a0cc-b51ac8ff2145",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--df8e072d-f283-52f1-8918-34769369d34b",
+      "target_ref": "attack-pattern--27f4583c-2523-583f-aaa1-fe3c91d570d5",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--40a60fc7-0ea2-56d5-a751-8d1869025d8f",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-WEB-003 - JWT misconfiguration",
+      "description": "The flag sits behind auth using a JWT with alg=none, a weak HMAC secret, or key confusion. | ATT&CK complementarity: No direct ATT&CK technique.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "web"
+        }
+      ],
+      "x_ctft_category": "WEB",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-WEB-003"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--44b9b675-16aa-5fca-96cc-abff9aa6d672",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-WEB-003 - Forge or downgrade a JSON Web Token",
+      "description": "OFFENSIVE (solver): Strip/replace the algorithm, crack the secret, or perform RS256->HS256 confusion to forge a token. || FORENSIC (analyst): Token validation logs reveal accepted tokens with unexpected alg/signature.",
+      "x_ctft_category": "WEB",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-WEB-003"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--a3fe662c-b7fb-58b4-88b5-9d937fbc7b2b",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--44b9b675-16aa-5fca-96cc-abff9aa6d672",
+      "target_ref": "attack-pattern--40a60fc7-0ea2-56d5-a751-8d1869025d8f",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--6d5a8e1c-c441-5d0a-b5fa-f8b6b237afe5",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-WEB-004 - Blind / WAF-evaded SQL injection",
+      "description": "The flag is in the database, reachable only through a filtered, blind injection point. | ATT&CK complementarity: No direct ATT&CK technique; covers injection mechanics.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "web"
+        }
+      ],
+      "x_ctft_category": "WEB",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-WEB-004"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--10c2c11c-0741-534f-a630-e492050d050f",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-WEB-004 - Extract data via blind injection",
+      "description": "OFFENSIVE (solver): Use boolean/time-based inference with WAF-evasion encodings to extract the value. || FORENSIC (analyst): Many near-identical timed/parametric requests in logs indicate blind extraction.",
+      "x_ctft_category": "WEB",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-WEB-004"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--4a9ab217-f5e8-51a8-aeae-6cdb720ae0a4",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--10c2c11c-0741-534f-a630-e492050d050f",
+      "target_ref": "attack-pattern--6d5a8e1c-c441-5d0a-b5fa-f8b6b237afe5",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--3065518b-9871-5133-85ca-e41e39b69009",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-WEB-005 - Server-side template injection",
+      "description": "User input is rendered by a server template engine, letting the author gate the flag behind it. | ATT&CK complementarity: No direct ATT&CK technique.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "web"
+        }
+      ],
+      "x_ctft_category": "WEB",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-WEB-005"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--2811859c-a450-523b-9cd9-037e20b1a3f4",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-WEB-005 - Exploit template evaluation",
+      "description": "OFFENSIVE (solver): Fingerprint the engine, then escalate from expression evaluation to file read or RCE. || FORENSIC (analyst): Template-syntax payloads in request logs identify the injection vector.",
+      "x_ctft_category": "WEB",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-WEB-005"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--91e719f7-5ac5-5efd-b378-47d27aaa9242",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--2811859c-a450-523b-9cd9-037e20b1a3f4",
+      "target_ref": "attack-pattern--3065518b-9871-5133-85ca-e41e39b69009",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--d604c5f7-d381-52c1-b2c9-15089facb5b9",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-WEB-006 - Client-side obfuscated logic",
+      "description": "A minified/packed JS bundle computes or gates the flag entirely in the browser. | ATT&CK complementarity: No direct ATT&CK technique.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "web"
+        }
+      ],
+      "x_ctft_category": "WEB",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-WEB-006"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--2c0088be-be4e-513e-b4e5-3c79b5e2149c",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-WEB-006 - Deobfuscate and dynamically analyze JS",
+      "description": "OFFENSIVE (solver): Beautify and trace the code, or set breakpoints to read the computed value at runtime. || FORENSIC (analyst): Reconstructing the client logic documents how the value was derived without a server call.",
+      "x_ctft_category": "WEB",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-WEB-006"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--3af40dac-c90f-5f50-86f1-884449cafe06",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--2c0088be-be4e-513e-b4e5-3c79b5e2149c",
+      "target_ref": "attack-pattern--d604c5f7-d381-52c1-b2c9-15089facb5b9",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    }
+  ]
+}

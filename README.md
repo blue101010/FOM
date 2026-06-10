@@ -1,41 +1,83 @@
-# FOM
+# CTFT - Capture-The-Flag Techniques
 
-**Forensic Obfuscation Model (FOM) by BlueOneZero (blue101010) Corporation.**
+A MITRE ATT&CK-**complementary** knowledge base of specialized CTF techniques,
+generalized from the Forensic Obfuscation Model
+([FOM](https://github.com/blue101010/FOM)).
 
-A specialized model, akin to the MITRE ATT&CK framework, that focuses on forensics and steganography. This concept diverges from MITRE ATT&CK, as MITRE ATt&CK does not extensively incorporate forensic procedures with technical details. The model introduces a framework of TTPs (Tactics, Techniques, and Procedures) along with mitigations, procedures, and **Counter-Techniques (CTEs)**.
+Every entry **pairs**:
 
-**A counter technique (FOMCTE) is implementing a mitigation, restoration to "default" of a technique (TE).**
-!! **The counter techniques are the main focus of this model [countertechniques.md](https://github.com/blue101010/FOM/blob/main/countertechniques/countertechniques.md)**!!
+- a **Design / Hide Technique** (`CTFTTE-<CAT>-NNN`) - how a challenge author conceals a flag or artifact, and
+- a **Counter-Technique** (`CTFTCTE-<CAT>-NNN`) - how it is recovered, split into:
+  - **Offensive Recovery** - the CTF practitioner / solver, and
+  - **Forensic Perspective** - the blue-team / DFIR analyst.
 
-![Alt text](fom.png)
+The 14 tactics are the HackTheBox CTF categories. CTFT does **not** duplicate
+MITRE ATT&CK: each technique carries an explicit *complementarity* note
+explaining the CTF-specific (forensic / cryptographic / steganographic /
+puzzle-craft) detail ATT&CK omits, and the nearest ATT&CK anchor where one exists.
+
+## Nomenclature
+
+| Object | ID format | Example |
+| --- | --- | --- |
+| Tactic (category) | `CTFT-TA-<CAT>` | `CTFT-TA-FOR` |
+| Design / Hide technique | `CTFTTE-<CAT>-NNN` | `CTFTTE-FOR-001` |
+| Counter-technique | `CTFTCTE-<CAT>-NNN` | `CTFTCTE-FOR-001` |
+
+## Tactics (14 HackTheBox categories)
+
+| Tactic | Name | HTB | Count |
+| --- | --- | --- | --- |
+| [CTFT-TA-WEB](tactics/CTFT-TA-WEB.md) | Web Exploitation | HTB: Web | 6 |
+| [CTFT-TA-PWN](tactics/CTFT-TA-PWN.md) | Binary Exploitation | HTB: Pwn | 5 |
+| [CTFT-TA-REV](tactics/CTFT-TA-REV.md) | Reverse Engineering | HTB: Reversing | 5 |
+| [CTFT-TA-CRY](tactics/CTFT-TA-CRY.md) | Cryptography | HTB: Crypto | 6 |
+| [CTFT-TA-FOR](tactics/CTFT-TA-FOR.md) | Forensics | HTB: Forensics | 6 |
+| [CTFT-TA-STE](tactics/CTFT-TA-STE.md) | Steganography | HTB: Forensics/Misc (Stego) | 5 |
+| [CTFT-TA-HWR](tactics/CTFT-TA-HWR.md) | Hardware | HTB: Hardware | 0 |
+| [CTFT-TA-MOB](tactics/CTFT-TA-MOB.md) | Mobile | HTB: Mobile | 5 |
+| [CTFT-TA-OSI](tactics/CTFT-TA-OSI.md) | OSINT | HTB: OSINT | 5 |
+| [CTFT-TA-BLK](tactics/CTFT-TA-BLK.md) | Blockchain | HTB: Blockchain | 5 |
+| [CTFT-TA-CLD](tactics/CTFT-TA-CLD.md) | Cloud | HTB: Cloud | 5 |
+| [CTFT-TA-ICS](tactics/CTFT-TA-ICS.md) | ICS / SCADA | HTB: ICS | 5 |
+| [CTFT-TA-AIM](tactics/CTFT-TA-AIM.md) | AI / ML | HTB: AI-ML | 5 |
+| [CTFT-TA-MSC](tactics/CTFT-TA-MSC.md) | Misc / Jail / Coding / Fullpwn | HTB: Misc, Coding, GamePwn, Fullpwn | 5 |
+
+
+## Layout
 
 ```
-#FF+#FF+#FF+#FF+#FF+#FF+#FF+#FF+
-#FF+#FF+#FF+#FF+#FF+#FF+#FF+#FF+#FF+#FF+#FF+
-#FF+#FF+#FF+#FF+#FF+
+CTFT/
+  README.md
+  HIERARCHY.md          full design<->counter listing
+  CORRELATION.md        master technique <-> counter-technique cross-reference
+  index.json            machine-readable index (includes pairs/by_id maps)
+  tactics/              14 tactic pages (CTFT-TA-<CAT>.md)
+  techniques/           68 design/hide techniques (CTFTTE-<CAT>-NNN.md)
+  countertechniques/    68 counter-techniques   (CTFTCTE-<CAT>-NNN.md)
+  stix/
+    ctft-bundle.json    full STIX 2.1 bundle
+    by-category/        one STIX bundle per tactic
 ```
 
-The tool and model primarily focus on retrieving data from files that were 'obfuscated' using forensic tools, steganography, or other techniques. At contrary to the MITRE ATT&CK framework, the counter-techniques (CTs) in this model may be more detailed.
+## Quick pair lookup example
 
-## Tactic
+| Technique | Hides | Counter-technique | Recovers |
+| --- | --- | --- | --- |
+| `CTFTTE-WEB-001` | Obscured endpoint / source-comment hiding | `CTFTCTE-WEB-001` | Content discovery and source review |
+| `CTFTTE-FOR-001` | Magic-byte / file-signature tampering | `CTFTCTE-FOR-001` | Recover the legitimate file signature |
 
-A [Tactic](https://github.com/blue101010/FOM/blob/main/tactics/tactics.md) (FOMTA) is used to hide something mainly through forensics, steganography, "security by obscurity" and less with cryptography.
-Example : [FOMTA001](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA001.md): Binary hexadecimal format modifications.
+See [CORRELATION.md](CORRELATION.md) for the complete matrix.
 
-## Technique and sub-technique
+## STIX 2.1 mapping
 
-A technique (FOMTE) is implementing a A [Tactic](https://github.com/blue101010/FOM/blob/main/tactics/tactics.md) (**FOMTA**) of obfuscation.
+- Design technique  -> `attack-pattern` (kill_chain_name `ctft`, phase = category)
+- Counter-technique -> `course-of-action`
+- Link              -> `relationship` of type `mitigates` (counter mitigates design)
+- Tactic            -> custom `x-ctft-tactic`
 
-## Enterprise FOM
+IDs are deterministic (`uuid5`) so regeneration is stable and diff-friendly.
 
-This repository contains the Forensic Obfuscation Model (**FOM**).
+## License
 
-## Counter-techniques - techniques and tactics
-
-- [Counter-techniques](https://github.com/blue101010/FOM/blob/main/countertechniques/countertechniques.md) : The list of counter-techniques
-
-## Contents Details
-
-- [enterprise-fom.json](https://github.com/blue101010/FOM/blob/main/enterprise-fom.json): The main JSON file containing the FOM techniques and countertechniques.
-- [index.json](https://github.com/blue101010/FOM/blob/main/index.json): The collection index JSON file listing the contents of this repository in a machine-readable format.
-
+Recommended: BSD-2-Clause, matching FOM.

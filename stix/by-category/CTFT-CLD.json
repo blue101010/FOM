@@ -1,0 +1,303 @@
+{
+  "type": "bundle",
+  "id": "bundle--a8d95e65-1139-58aa-bcfa-326768e2dfb8",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "name": "CTFT Project",
+      "identity_class": "organization",
+      "description": "Capture-The-Flag Techniques - complementary to MITRE ATT&CK, generalized from FOM."
+    },
+    {
+      "type": "x-ctft-tactic",
+      "spec_version": "2.1",
+      "id": "x-ctft-tactic--617f5539-8f6e-56b8-ad76-9e6f25bc0778",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "Cloud",
+      "x_ctft_shortname": "cld",
+      "description": "Cloud misconfiguration concealment and enumeration-based recovery. (HTB: Cloud)",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFT-TA-CLD"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--cc4a7f4b-cdb3-59d0-90e0-381f3fbb06ae",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-CLD-001 - Misconfigured object-storage exposure",
+      "description": "The flag object sits in a world-readable or weakly-named bucket the author assumes is private. | ATT&CK complementarity: Complements T1530 (Data from Cloud Storage) with CTF enumeration procedure.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "cld"
+        }
+      ],
+      "x_ctft_category": "CLD",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-CLD-001"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--75e0ea7b-30d7-5b8d-8273-924bf7757782",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-CLD-001 - Enumerate and list public buckets",
+      "description": "OFFENSIVE (solver): Enumerate bucket names and list/download objects anonymously. || FORENSIC (analyst): Storage access logs document anonymous reads of the exposed objects.",
+      "x_ctft_category": "CLD",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-CLD-001"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--f9c480cb-0fd6-5e2d-82ab-c99f26ff1d70",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--75e0ea7b-30d7-5b8d-8273-924bf7757782",
+      "target_ref": "attack-pattern--cc4a7f4b-cdb3-59d0-90e0-381f3fbb06ae",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--44ce10e1-a301-52c1-aa8d-fa2230991b78",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-CLD-002 - Over-permissive IAM role",
+      "description": "A role/policy grants more than intended, letting solvers pivot to the flag resource. | ATT&CK complementarity: Complements T1078.004 (Cloud Accounts) with CTF permission-mapping steps.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "cld"
+        }
+      ],
+      "x_ctft_category": "CLD",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-CLD-002"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--f5f88319-99d2-58c3-a62e-aa744d770626",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-CLD-002 - Enumerate and assume reachable roles",
+      "description": "OFFENSIVE (solver): Enumerate effective permissions and assume the role to reach the protected resource. || FORENSIC (analyst): CloudTrail-style logs show the privilege enumeration and assume-role calls.",
+      "x_ctft_category": "CLD",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-CLD-002"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--402072f4-38e2-5293-a8a0-8bd2b8762cb0",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--f5f88319-99d2-58c3-a62e-aa744d770626",
+      "target_ref": "attack-pattern--44ce10e1-a301-52c1-aa8d-fa2230991b78",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--c2485c69-a3b0-504b-9804-3fc07454b864",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-CLD-003 - Instance metadata service exposure",
+      "description": "An SSRF-able app sits beside the metadata endpoint holding role credentials. | ATT&CK complementarity: Complements T1552.005 (Cloud Instance Metadata API) with the SSRF retrieval recipe.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "cld"
+        }
+      ],
+      "x_ctft_category": "CLD",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-CLD-003"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--e8988315-d9bf-52b7-83bd-1648c7634f30",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-CLD-003 - Retrieve credentials via SSRF to IMDS",
+      "description": "OFFENSIVE (solver): Force a request to the metadata endpoint and harvest temporary credentials. || FORENSIC (analyst): Metadata requests from an application context flag SSRF-to-IMDS abuse.",
+      "x_ctft_category": "CLD",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-CLD-003"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--77714874-3f7f-59d7-b8b9-ef129d723a22",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--e8988315-d9bf-52b7-83bd-1648c7634f30",
+      "target_ref": "attack-pattern--c2485c69-a3b0-504b-9804-3fc07454b864",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--04ae93c3-b2c9-52b4-88dc-75ba0492f8bb",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-CLD-004 - Secrets in function config / layers",
+      "description": "Secrets/flags live in environment variables, layers, or build artifacts of a function. | ATT&CK complementarity: No direct ATT&CK technique.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "cld"
+        }
+      ],
+      "x_ctft_category": "CLD",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-CLD-004"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--3958ffe2-8247-5593-8c01-c69677516b49",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-CLD-004 - Dump serverless configuration and layers",
+      "description": "OFFENSIVE (solver): Read the function configuration, environment and layers to extract embedded secrets. || FORENSIC (analyst): Configuration extraction documents secrets shipped in the deployment package.",
+      "x_ctft_category": "CLD",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-CLD-004"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--ed010a3f-e67c-5982-8201-d1d080f7ce41",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--3958ffe2-8247-5593-8c01-c69677516b49",
+      "target_ref": "attack-pattern--04ae93c3-b2c9-52b4-88dc-75ba0492f8bb",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--9ca2d6e3-1333-5307-90b8-3a84d597beef",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-CLD-005 - Container image / registry leak",
+      "description": "The flag is baked into a container layer or left in a pushed image's history. | ATT&CK complementarity: No direct ATT&CK technique.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "cld"
+        }
+      ],
+      "x_ctft_category": "CLD",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-CLD-005"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--e4cc5739-0ea9-5b31-a7e7-a5bf5a6eac9e",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-CLD-005 - Pull and inspect image layers",
+      "description": "OFFENSIVE (solver): Pull the image and inspect layer history/filesystem for the artifact. || FORENSIC (analyst): Layer diffing reveals files and history entries containing the secret.",
+      "x_ctft_category": "CLD",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-CLD-005"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--4eb50505-be74-52e8-9516-532636e520a9",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--e4cc5739-0ea9-5b31-a7e7-a5bf5a6eac9e",
+      "target_ref": "attack-pattern--9ca2d6e3-1333-5307-90b8-3a84d597beef",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    }
+  ]
+}

@@ -1,0 +1,303 @@
+{
+  "type": "bundle",
+  "id": "bundle--6c95f9ac-65d1-5713-b7da-38fa80c47d87",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "name": "CTFT Project",
+      "identity_class": "organization",
+      "description": "Capture-The-Flag Techniques - complementary to MITRE ATT&CK, generalized from FOM."
+    },
+    {
+      "type": "x-ctft-tactic",
+      "spec_version": "2.1",
+      "id": "x-ctft-tactic--0e8bc9b5-bdfe-54c9-9c5e-862ef74e73c9",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "Reverse Engineering",
+      "x_ctft_shortname": "rev",
+      "description": "Concealing logic in binaries/bytecode and reconstructing it. (HTB: Reversing)",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFT-TA-REV"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--fd979fce-8f24-5515-bc0a-c768e600c9c2",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-REV-001 - Anti-debugging / anti-analysis guards",
+      "description": "The binary detects debuggers/VMs/timing and alters behaviour or refuses to reveal the flag logic. | ATT&CK complementarity: Complements T1622/T1497 (debugger/sandbox evasion); CTFT adds the reach-the-check workflow.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "rev"
+        }
+      ],
+      "x_ctft_category": "REV",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-REV-001"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--01ae6aec-3775-52a2-86db-d8bb8a1874ce",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-REV-001 - Bypass anti-analysis to reach the check",
+      "description": "OFFENSIVE (solver): Identify and patch or hook the detection routines, then debug to the comparison. || FORENSIC (analyst): Mapping the guards documents the binary's evasive intent and how analysis was restored.",
+      "x_ctft_category": "REV",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-REV-001"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--be3eda3b-b680-5a0a-88ab-c9ab28ae6386",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--01ae6aec-3775-52a2-86db-d8bb8a1874ce",
+      "target_ref": "attack-pattern--fd979fce-8f24-5515-bc0a-c768e600c9c2",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--2e13f431-6ba7-5625-9e0d-f821e9c5a355",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-REV-002 - Packing / runtime self-modification",
+      "description": "Code is packed (UPX/custom) or decrypts itself at runtime so static strings/logic are hidden. | ATT&CK complementarity: Complements T1027.002 (Software Packing) with CTF unpack-and-dump procedure.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "rev"
+        }
+      ],
+      "x_ctft_category": "REV",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-REV-002"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--44a3ed69-17d7-5306-a416-0b7aa14c5122",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-REV-002 - Unpack and dump the real code",
+      "description": "OFFENSIVE (solver): Run to the original entry point and dump the unpacked image, or statically reverse the stub. || FORENSIC (analyst): Memory dumping recovers the true payload that on-disk static analysis could not see.",
+      "x_ctft_category": "REV",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-REV-002"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--1d15038f-5133-59ca-b922-a0acb898e5b9",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--44a3ed69-17d7-5306-a416-0b7aa14c5122",
+      "target_ref": "attack-pattern--2e13f431-6ba7-5625-9e0d-f821e9c5a355",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--a1f414fb-9f04-5817-963b-a8f9ac69cbce",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-REV-003 - Control-flow obfuscation / opaque predicates",
+      "description": "Flattening, junk branches and opaque predicates make the real path hard to follow. | ATT&CK complementarity: No ATT&CK equivalent.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "rev"
+        }
+      ],
+      "x_ctft_category": "REV",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-REV-003"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--57e69c40-a075-53ab-adee-ee9d4d0d7326",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-REV-003 - Deobfuscate flattened control flow",
+      "description": "OFFENSIVE (solver): Use symbolic/concolic execution to find the path that satisfies the flag check. || FORENSIC (analyst): Recovering the real CFG documents the obfuscation scheme and the intended logic.",
+      "x_ctft_category": "REV",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-REV-003"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--cd8d5e7b-6779-548e-88dd-22678d910d59",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--57e69c40-a075-53ab-adee-ee9d4d0d7326",
+      "target_ref": "attack-pattern--a1f414fb-9f04-5817-963b-a8f9ac69cbce",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--68617471-36f0-5fde-b597-11908d1df753",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-REV-004 - Custom VM / bytecode interpreter",
+      "description": "The flag check runs on a bespoke virtual machine whose opcodes must be understood first. | ATT&CK complementarity: No ATT&CK equivalent.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "rev"
+        }
+      ],
+      "x_ctft_category": "REV",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-REV-004"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--aca275da-64e6-5623-aab6-510eeab5ecd1",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-REV-004 - Reconstruct the VM and lift its bytecode",
+      "description": "OFFENSIVE (solver): Reverse the dispatch loop to recover opcode semantics, then disassemble/lift the bytecode. || FORENSIC (analyst): A documented opcode table turns an opaque interpreter into reviewable logic.",
+      "x_ctft_category": "REV",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-REV-004"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--3302e743-7519-5639-837f-6cd695017d62",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--aca275da-64e6-5623-aab6-510eeab5ecd1",
+      "target_ref": "attack-pattern--68617471-36f0-5fde-b597-11908d1df753",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--16c911fd-7377-535f-be1b-795fce9383ff",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-REV-005 - Constraint-gated flag check",
+      "description": "The binary validates input against arithmetic/bitwise constraints rather than comparing to a stored flag. | ATT&CK complementarity: No ATT&CK equivalent.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "rev"
+        }
+      ],
+      "x_ctft_category": "REV",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-REV-005"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--fc1bbcef-8894-5b4d-8de2-3c1dbac79bcf",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-REV-005 - Solve the check with an SMT/symbolic engine",
+      "description": "OFFENSIVE (solver): Model the constraints and solve for the satisfying input that is the flag. || FORENSIC (analyst): Extracting the constraint set proves how the flag was derived rather than stored.",
+      "x_ctft_category": "REV",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-REV-005"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--518df884-c010-5d7c-84d4-670989639aa8",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--fc1bbcef-8894-5b4d-8de2-3c1dbac79bcf",
+      "target_ref": "attack-pattern--16c911fd-7377-535f-be1b-795fce9383ff",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    }
+  ]
+}

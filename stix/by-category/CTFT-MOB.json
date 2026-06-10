@@ -1,0 +1,303 @@
+{
+  "type": "bundle",
+  "id": "bundle--990e55aa-8d0b-523f-97fb-bc4167efe8bc",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "name": "CTFT Project",
+      "identity_class": "organization",
+      "description": "Capture-The-Flag Techniques - complementary to MITRE ATT&CK, generalized from FOM."
+    },
+    {
+      "type": "x-ctft-tactic",
+      "spec_version": "2.1",
+      "id": "x-ctft-tactic--d59bc991-a9dc-5a8c-b4ca-fbf9b70a372c",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "Mobile",
+      "x_ctft_shortname": "mob",
+      "description": "Secrets concealed in mobile apps and runtime, recovered statically/dynamically. (HTB: Mobile)",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFT-TA-MOB"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--643a9db6-3ceb-5b05-9f1f-17e884577466",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-MOB-001 - Hardcoded secrets in app resources",
+      "description": "Keys/flags are embedded in resources, strings, or smali rather than fetched at runtime. | ATT&CK complementarity: No direct ATT&CK technique; mobile RE craft.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "mob"
+        }
+      ],
+      "x_ctft_category": "MOB",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-MOB-001"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--b4b841af-cf54-580e-a771-b51356d54103",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-MOB-001 - Decompile the APK and extract secrets",
+      "description": "OFFENSIVE (solver): Decompile to Java/smali and grep resources/strings for the secret. || FORENSIC (analyst): Static review of the package documents secrets shipped inside the artifact.",
+      "x_ctft_category": "MOB",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-MOB-001"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--daeb463c-565b-5f12-b5e4-a2e87a7c5704",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--b4b841af-cf54-580e-a771-b51356d54103",
+      "target_ref": "attack-pattern--643a9db6-3ceb-5b05-9f1f-17e884577466",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--3eab832b-61a4-5491-a392-4fcf0d850f33",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-MOB-002 - Native-library logic hiding",
+      "description": "Sensitive logic is pushed into a compiled native library to evade Java-level inspection. | ATT&CK complementarity: No direct ATT&CK technique.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "mob"
+        }
+      ],
+      "x_ctft_category": "MOB",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-MOB-002"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--5edadf54-553c-5bac-b142-0ee835b84530",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-MOB-002 - Reverse the native .so",
+      "description": "OFFENSIVE (solver): Disassemble the ARM/AArch64 library and reverse the routine that produces the flag. || FORENSIC (analyst): Native reversing recovers logic invisible to bytecode-only analysis.",
+      "x_ctft_category": "MOB",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-MOB-002"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--d2987fb9-00ff-5786-802f-b109f09762bb",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--5edadf54-553c-5bac-b142-0ee835b84530",
+      "target_ref": "attack-pattern--3eab832b-61a4-5491-a392-4fcf0d850f33",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--32301229-0251-5b03-85b5-e612290100d8",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-MOB-003 - Certificate pinning as capture barrier",
+      "description": "TLS pinning prevents intercepting the request/response that carries the flag. | ATT&CK complementarity: No direct ATT&CK technique.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "mob"
+        }
+      ],
+      "x_ctft_category": "MOB",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-MOB-003"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--9caee03f-7061-5d25-bc81-56e3fe44356c",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-MOB-003 - Bypass pinning to observe traffic",
+      "description": "OFFENSIVE (solver): Hook the pinning/validation logic at runtime to allow a proxy to read the traffic. || FORENSIC (analyst): Instrumentation logs show where validation was disabled to enable capture.",
+      "x_ctft_category": "MOB",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-MOB-003"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--b0d6fd93-49f5-55fb-9c92-709ed6a6fcf3",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--9caee03f-7061-5d25-bc81-56e3fe44356c",
+      "target_ref": "attack-pattern--32301229-0251-5b03-85b5-e612290100d8",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--124f80ed-1e87-5d6d-979b-7d874623991f",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-MOB-004 - DEX obfuscation",
+      "description": "ProGuard/R8 renaming and string encryption hide the flag-producing method. | ATT&CK complementarity: No direct ATT&CK technique.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "mob"
+        }
+      ],
+      "x_ctft_category": "MOB",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-MOB-004"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--8ef73bea-63c6-5bf4-8778-bd04b277e1c5",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-MOB-004 - Deobfuscate renamed/obfuscated bytecode",
+      "description": "OFFENSIVE (solver): Decompile and rename systematically, decrypting strings to locate the logic. || FORENSIC (analyst): A reconstructed call graph documents the obfuscation and the recovered routine.",
+      "x_ctft_category": "MOB",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-MOB-004"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--b1369415-2110-5133-b83f-f970ca355c38",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--8ef73bea-63c6-5bf4-8778-bd04b277e1c5",
+      "target_ref": "attack-pattern--124f80ed-1e87-5d6d-979b-7d874623991f",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--a2b68da0-5241-5fa6-b766-86d89b5fe42b",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-MOB-005 - Runtime/device-conditioned flag",
+      "description": "The flag only renders when device/root/emulator/time conditions are met. | ATT&CK complementarity: No direct ATT&CK technique.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "mob"
+        }
+      ],
+      "x_ctft_category": "MOB",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-MOB-005"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--acfb5ce3-a235-561e-b9e8-33101cd02bce",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-MOB-005 - Hook the app to satisfy runtime checks",
+      "description": "OFFENSIVE (solver): Hook the conditional methods to force the success branch and read the value. || FORENSIC (analyst): Hook traces document which checks gated the flag and how they were satisfied.",
+      "x_ctft_category": "MOB",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-MOB-005"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--6b9533e3-6066-59ee-b7ec-ecbc187ec504",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--acfb5ce3-a235-561e-b9e8-33101cd02bce",
+      "target_ref": "attack-pattern--a2b68da0-5241-5fa6-b766-86d89b5fe42b",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    }
+  ]
+}

@@ -1,0 +1,357 @@
+{
+  "type": "bundle",
+  "id": "bundle--cf35e603-fd7d-56a8-8f42-26200ad87bc4",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "name": "CTFT Project",
+      "identity_class": "organization",
+      "description": "Capture-The-Flag Techniques - complementary to MITRE ATT&CK, generalized from FOM."
+    },
+    {
+      "type": "x-ctft-tactic",
+      "spec_version": "2.1",
+      "id": "x-ctft-tactic--5546aa7b-4d15-5273-94e9-f01d91d805f2",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "Forensics",
+      "x_ctft_shortname": "for",
+      "description": "Disk/memory/network artifact concealment and DFIR recovery. (HTB: Forensics)",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFT-TA-FOR"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--732e248e-0754-5780-b1cd-b7e64470d487",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FOR-001 - Magic-byte / file-signature tampering",
+      "description": "The author corrupts or swaps the file's magic header (e.g. flips PNG 89504E47 to a bogus value) so type detection and viewers fail. | ATT&CK complementarity: Closest ATT&CK context is T1027 (Obfuscated Files), but ATT&CK omits the byte-level magic-header recovery detail that defines this CTF technique.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "for"
+        }
+      ],
+      "x_ctft_category": "FOR",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FOR-001"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--440b5e86-7089-5328-820d-b0bd6667220a",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FOR-001 - Recover the legitimate file signature",
+      "description": "OFFENSIVE (solver): Compare bytes against a signature table, identify the true type from structure/footers, and patch the header with a hex editor or python. || FORENSIC (analyst): During carving, signature-based recovery reconstructs files whose extension or header was altered; corroborate with internal structure, not just the leading bytes.",
+      "x_ctft_category": "FOR",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FOR-001"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--5c46041b-38be-5223-be44-0d0523d2784b",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--440b5e86-7089-5328-820d-b0bd6667220a",
+      "target_ref": "attack-pattern--732e248e-0754-5780-b1cd-b7e64470d487",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--7cfbc45a-206b-54d8-906a-f1c0bc20ba31",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FOR-002 - Slack-space and unallocated-area concealment",
+      "description": "Flag data is written into file slack, unallocated clusters, or between partitions where directory entries do not point. | ATT&CK complementarity: No ATT&CK equivalent; this is media-forensics carving craft.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "for"
+        }
+      ],
+      "x_ctft_category": "FOR",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FOR-002"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--70b4daaa-6779-548d-913e-1474472e8549",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FOR-002 - Carve hidden files from slack/unallocated space",
+      "description": "OFFENSIVE (solver): Run file-carving over the raw image to extract artifacts independent of the filesystem index. || FORENSIC (analyst): Treat the image at the block level; carving + manual cluster inspection recovers data the filesystem no longer references.",
+      "x_ctft_category": "FOR",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FOR-002"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--56a56205-8d1c-584c-a3ca-5b070980deb7",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--70b4daaa-6779-548d-913e-1474472e8549",
+      "target_ref": "attack-pattern--7cfbc45a-206b-54d8-906a-f1c0bc20ba31",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--bcfaac61-d50e-5d3a-a9e8-cc41e2acf606",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FOR-003 - Timestomping (MACB manipulation)",
+      "description": "Author rewrites file timestamps so the relevant artifact blends into a noisy timeline or appears older/newer than reality. | ATT&CK complementarity: Complements T1070.006 (Timestomp) but adds the CTF-grade MFT attribute-diff recovery procedure.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "for"
+        }
+      ],
+      "x_ctft_category": "FOR",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FOR-003"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--424711e6-78ac-51ae-8d9a-3947b6b97a0f",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FOR-003 - Detect and reconstruct true timestamps",
+      "description": "OFFENSIVE (solver): On NTFS, compare $STANDARD_INFORMATION vs $FILE_NAME timestamps; mismatches reveal manipulation and often the real ordering. || FORENSIC (analyst): Cross-reference MFT, $LogFile/$UsnJrnl, registry and event logs; timestamps that disagree across sources expose the stomped value.",
+      "x_ctft_category": "FOR",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FOR-003"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--d8cbcec8-629a-517b-a366-0c9b64a50f36",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--424711e6-78ac-51ae-8d9a-3947b6b97a0f",
+      "target_ref": "attack-pattern--bcfaac61-d50e-5d3a-a9e8-cc41e2acf606",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--db5d70cb-2377-5960-ba8a-f4255afa08db",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FOR-004 - NTFS Alternate Data Stream hiding",
+      "description": "Payload is stored in a named ADS (file.txt:secret) that is invisible to ordinary directory listings. | ATT&CK complementarity: Complements T1564.004 (NTFS File Attributes); CTFT adds the extraction recipe and MFT-attribute view.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "for"
+        }
+      ],
+      "x_ctft_category": "FOR",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FOR-004"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--e676b045-651f-56d8-a2ff-af8ba3d46d03",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FOR-004 - Enumerate and extract Alternate Data Streams",
+      "description": "OFFENSIVE (solver): List streams (dir /r, Get-Item -Stream) and read the named stream directly. || FORENSIC (analyst): Enumerate $DATA attributes per MFT record; non-default named streams are immediate indicators of concealment.",
+      "x_ctft_category": "FOR",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FOR-004"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--4eaa13ec-aee6-548d-a821-550d2b7162d0",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--e676b045-651f-56d8-a2ff-af8ba3d46d03",
+      "target_ref": "attack-pattern--db5d70cb-2377-5960-ba8a-f4255afa08db",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--8e53c973-2750-5825-94df-b8cd5c45dff1",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FOR-005 - Memory-resident artifact concealment",
+      "description": "The flag exists only in RAM (process heap, clipboard, decrypted blob) and never touches disk in plaintext. | ATT&CK complementarity: No ATT&CK technique; this is volatile-memory DFIR.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "for"
+        }
+      ],
+      "x_ctft_category": "FOR",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FOR-005"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--1debf2c7-8722-5080-9460-55ece6262556",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FOR-005 - Recover secrets from a memory image",
+      "description": "OFFENSIVE (solver): Profile the dump, list processes, scan for strings/patterns, and dump the owning process's address space. || FORENSIC (analyst): Volatility plugins reconstruct process lists, network state, command history and injected regions to locate transient secrets.",
+      "x_ctft_category": "FOR",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FOR-005"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--dca2fdd3-5dd1-509d-8127-d69a2c6ca9c4",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--1debf2c7-8722-5080-9460-55ece6262556",
+      "target_ref": "attack-pattern--8e53c973-2750-5825-94df-b8cd5c45dff1",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--b901c743-3053-570f-9abf-b555601b616c",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FOR-006 - PCAP payload obfuscation",
+      "description": "Flag is split across packets, tunnelled in odd fields (ICMP data, DNS labels), or encoded before transmission. | ATT&CK complementarity: Complements C2/exfil tactics conceptually but the CTFT entry is about packet-level reassembly and decoding.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "for"
+        }
+      ],
+      "x_ctft_category": "FOR",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FOR-006"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--2de66fe4-d5fa-5bb2-bb1f-58b24c32c146",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FOR-006 - Reassemble and decode hidden network payloads",
+      "description": "OFFENSIVE (solver): Follow streams, filter by protocol, export objects, then decode the reassembled payload. || FORENSIC (analyst): Reconstruct sessions and extract transferred objects; covert channels show up as anomalous field usage or unusual protocol volume.",
+      "x_ctft_category": "FOR",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FOR-006"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--1ddb799d-c949-5a23-9807-4e2a6919544e",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--2de66fe4-d5fa-5bb2-bb1f-58b24c32c146",
+      "target_ref": "attack-pattern--b901c743-3053-570f-9abf-b555601b616c",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    }
+  ]
+}

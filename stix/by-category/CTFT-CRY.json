@@ -1,0 +1,357 @@
+{
+  "type": "bundle",
+  "id": "bundle--d53bb78e-8cdb-558b-ac30-818b5fb1366e",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "name": "CTFT Project",
+      "identity_class": "organization",
+      "description": "Capture-The-Flag Techniques - complementary to MITRE ATT&CK, generalized from FOM."
+    },
+    {
+      "type": "x-ctft-tactic",
+      "spec_version": "2.1",
+      "id": "x-ctft-tactic--2504ba30-d687-5659-a29c-4d03db291cb3",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "Cryptography",
+      "x_ctft_shortname": "cry",
+      "description": "Deliberately weakened or layered crypto and its cryptanalysis. (HTB: Crypto)",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFT-TA-CRY"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--8dff19fc-102c-5f11-917a-2be7edcc0139",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-CRY-001 - Weak RSA parameter design",
+      "description": "The author ships RSA with an exploitable weakness: tiny e, close primes, shared modulus, or partial key leakage. | ATT&CK complementarity: No ATT&CK equivalent; applied cryptanalysis.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "cry"
+        }
+      ],
+      "x_ctft_category": "CRY",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-CRY-001"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--05c12445-d246-5c7f-9b70-07f3bb7f5689",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-CRY-001 - Recover the RSA private key from weak parameters",
+      "description": "OFFENSIVE (solver): Identify the weakness class and apply the matching attack (Fermat, Wiener, common-modulus, Coppersmith). || FORENSIC (analyst): Documenting the parameter weakness explains how plaintext was recoverable without the key custodian.",
+      "x_ctft_category": "CRY",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-CRY-001"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--8f718a8f-8905-51b7-bd90-faa9cf4c67e7",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--05c12445-d246-5c7f-9b70-07f3bb7f5689",
+      "target_ref": "attack-pattern--8dff19fc-102c-5f11-917a-2be7edcc0139",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--068650f0-910e-545e-9147-0efa0fc1b011",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-CRY-002 - Classical cipher layering",
+      "description": "The flag is wrapped in stacked classical ciphers (ROT/Caesar, Vigenere, substitution) to resist a single pass. | ATT&CK complementarity: No ATT&CK equivalent.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "cry"
+        }
+      ],
+      "x_ctft_category": "CRY",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-CRY-002"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--2fd57f59-80ff-506d-b1b3-78b91014c6d3",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-CRY-002 - Break layered classical ciphers",
+      "description": "OFFENSIVE (solver): Use frequency analysis and automated solvers, peeling one layer at a time. || FORENSIC (analyst): Statistical language analysis identifies cipher families and confirms successful decryption.",
+      "x_ctft_category": "CRY",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-CRY-002"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--1cfb15b3-9cdb-5114-8634-bc85540f6744",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--2fd57f59-80ff-506d-b1b3-78b91014c6d3",
+      "target_ref": "attack-pattern--068650f0-910e-545e-9147-0efa0fc1b011",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--21824479-7d58-584f-9629-54aeb854ec36",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-CRY-003 - Repeating-key XOR / ECB pattern",
+      "description": "Data is XORed with a short repeating key, or encrypted in ECB so identical blocks leak structure. | ATT&CK complementarity: No ATT&CK equivalent.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "cry"
+        }
+      ],
+      "x_ctft_category": "CRY",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-CRY-003"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--c2911172-5b9c-5ce3-a58a-409af990065c",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-CRY-003 - Exploit key reuse and block-mode patterns",
+      "description": "OFFENSIVE (solver): Recover XOR key length via Hamming distance then solve per byte; for ECB, use block cut-and-paste. || FORENSIC (analyst): Repeated ciphertext blocks are a tell-tale of ECB and of structural leakage in the design.",
+      "x_ctft_category": "CRY",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-CRY-003"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--6124a500-a20b-566d-8c44-31ff0b2489ae",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--c2911172-5b9c-5ce3-a58a-409af990065c",
+      "target_ref": "attack-pattern--21824479-7d58-584f-9629-54aeb854ec36",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--0bb646d8-5ffb-5aa4-b912-90b4900f144c",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-CRY-004 - Predictable PRNG / nonce reuse",
+      "description": "A weak/seeded PRNG (LCG, time-seeded) or a reused ECDSA/CTR nonce undermines the scheme. | ATT&CK complementarity: No ATT&CK equivalent.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "cry"
+        }
+      ],
+      "x_ctft_category": "CRY",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-CRY-004"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--ea33315c-cd50-5ba1-91ca-42c6626ea3e4",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-CRY-004 - Reconstruct keys from broken randomness",
+      "description": "OFFENSIVE (solver): Recover PRNG state from outputs, or recover the ECDSA private key from two signatures sharing a nonce. || FORENSIC (analyst): Nonce reuse and predictable seeds are documented as the root cause enabling key recovery.",
+      "x_ctft_category": "CRY",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-CRY-004"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--6ea48eb3-d603-59bb-ad0a-5b7e51cdb906",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--ea33315c-cd50-5ba1-91ca-42c6626ea3e4",
+      "target_ref": "attack-pattern--0bb646d8-5ffb-5aa4-b912-90b4900f144c",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--e44eaaf1-ee03-5c08-ba98-a3d4eaca51b0",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-CRY-005 - Hash length-extension exposure",
+      "description": "A MAC built as H(secret || message) with a Merkle-Damgard hash lets an attacker append data. | ATT&CK complementarity: No ATT&CK equivalent.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "cry"
+        }
+      ],
+      "x_ctft_category": "CRY",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-CRY-005"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--effe49f1-ac4a-52c0-bb02-c8cbac8a5966",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-CRY-005 - Forge data via length extension",
+      "description": "OFFENSIVE (solver): Use a length-extension tool with the known digest and length to forge a valid extended message. || FORENSIC (analyst): The vulnerability report attributes forgery to the insecure secret-prefix MAC construction.",
+      "x_ctft_category": "CRY",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-CRY-005"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--46e4c34f-76f7-56d8-85c6-8a29a15dece2",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--effe49f1-ac4a-52c0-bb02-c8cbac8a5966",
+      "target_ref": "attack-pattern--e44eaaf1-ee03-5c08-ba98-a3d4eaca51b0",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--d316d4e7-d5fd-5486-a567-814da4a1ddb6",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-CRY-006 - Nested encoding obfuscation",
+      "description": "The flag is buried under stacked encodings (base64/base85/base32/hex/url) to look like ciphertext. | ATT&CK complementarity: No ATT&CK equivalent.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "cry"
+        }
+      ],
+      "x_ctft_category": "CRY",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-CRY-006"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--080c7926-b8bf-55b0-9982-f2b05c71b335",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-CRY-006 - Unwrap chained encodings",
+      "description": "OFFENSIVE (solver): Detect each encoding by alphabet/padding and decode iteratively until plaintext appears. || FORENSIC (analyst): An encoding chain is recoverable without a key and is distinguished from genuine encryption.",
+      "x_ctft_category": "CRY",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-CRY-006"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--2cd06d9a-f11e-55d6-810b-91e6548948f7",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--080c7926-b8bf-55b0-9982-f2b05c71b335",
+      "target_ref": "attack-pattern--d316d4e7-d5fd-5486-a567-814da4a1ddb6",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    }
+  ]
+}

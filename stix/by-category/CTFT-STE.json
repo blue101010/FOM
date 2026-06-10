@@ -1,0 +1,303 @@
+{
+  "type": "bundle",
+  "id": "bundle--6e8d290a-efdd-551e-93bb-a78531add7a4",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "name": "CTFT Project",
+      "identity_class": "organization",
+      "description": "Capture-The-Flag Techniques - complementary to MITRE ATT&CK, generalized from FOM."
+    },
+    {
+      "type": "x-ctft-tactic",
+      "spec_version": "2.1",
+      "id": "x-ctft-tactic--6fe28e3d-7572-58da-b3c0-756c81819552",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "Steganography",
+      "x_ctft_shortname": "ste",
+      "description": "Embedding data in carriers (image/audio/text) and extracting it. (HTB: Forensics/Misc (Stego))",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFT-TA-STE"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--1630d465-1f57-55ae-a7f9-e448e696e392",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-STE-001 - LSB image steganography",
+      "description": "Bits of the secret are written into the least-significant bits of pixel channels, leaving the image visually unchanged. | ATT&CK complementarity: No ATT&CK equivalent; pure steganalysis.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "ste"
+        }
+      ],
+      "x_ctft_category": "STE",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-STE-001"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--05aced62-880f-5a5f-ac42-f2a200a73246",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-STE-001 - Extract least-significant-bit payloads",
+      "description": "OFFENSIVE (solver): Run LSB extractors across channels/bit-planes; visual bit-plane inspection reveals embedded structure. || FORENSIC (analyst): Bit-plane and chi-square analysis flags non-natural LSB distributions characteristic of embedding.",
+      "x_ctft_category": "STE",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-STE-001"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--284f6a24-dc5a-5a24-adef-84758e813264",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--05aced62-880f-5a5f-ac42-f2a200a73246",
+      "target_ref": "attack-pattern--1630d465-1f57-55ae-a7f9-e448e696e392",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--b3ec85fb-cae9-559d-9d50-2f04af6b13f9",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-STE-002 - Appended data / polyglot after EOF",
+      "description": "A second file (zip, flag.txt) is concatenated after a valid image's end-of-image marker, so viewers ignore it. | ATT&CK complementarity: No ATT&CK equivalent.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "ste"
+        }
+      ],
+      "x_ctft_category": "STE",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-STE-002"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--543b6b3c-17a5-5653-8175-78b453234f73",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-STE-002 - Detect and split appended/embedded files",
+      "description": "OFFENSIVE (solver): Scan for embedded signatures and carve the trailing file; unzip/extract it. || FORENSIC (analyst): Entropy + signature scanning reveals additional file structures beyond the declared container length.",
+      "x_ctft_category": "STE",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-STE-002"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--1d2a9ed8-657c-5940-8c41-afbe36a68a86",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--543b6b3c-17a5-5653-8175-78b453234f73",
+      "target_ref": "attack-pattern--b3ec85fb-cae9-559d-9d50-2f04af6b13f9",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--1ae42870-faaf-5446-ae48-875c9dd92e02",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-STE-003 - Audio spectrogram hiding",
+      "description": "Text or a QR is drawn into frequency content so it is inaudible but visible in a spectrogram. | ATT&CK complementarity: No ATT&CK equivalent.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "ste"
+        }
+      ],
+      "x_ctft_category": "STE",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-STE-003"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--fd83cb66-705b-507f-9209-5ea2fd0d7782",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-STE-003 - Reveal data in the audio spectrogram",
+      "description": "OFFENSIVE (solver): Open the file in a spectrogram view and adjust window/contrast to read the embedded content. || FORENSIC (analyst): Spectral analysis exposes synthetic frequency artifacts that natural audio would not contain.",
+      "x_ctft_category": "STE",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-STE-003"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--1412cda6-9fb2-5ca2-a10a-32cb6df45dfa",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--fd83cb66-705b-507f-9209-5ea2fd0d7782",
+      "target_ref": "attack-pattern--1ae42870-faaf-5446-ae48-875c9dd92e02",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--0716f798-5c4e-5878-a2e7-a41a756260ab",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-STE-004 - Metadata / EXIF embedding",
+      "description": "The secret sits in EXIF/XMP/ID3 comment, GPS or maker-note fields rather than the visible content. | ATT&CK complementarity: No ATT&CK equivalent.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "ste"
+        }
+      ],
+      "x_ctft_category": "STE",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-STE-004"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--daa08734-4b54-54f3-bb79-83523b75839f",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-STE-004 - Extract concealed metadata fields",
+      "description": "OFFENSIVE (solver): Dump all metadata and inspect comment/user fields and GPS tags. || FORENSIC (analyst): Full metadata extraction surfaces author-injected fields and inconsistencies versus the file's apparent origin.",
+      "x_ctft_category": "STE",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-STE-004"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--b55d9850-5ad5-51cf-ae8a-5fcb7879b85c",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--daa08734-4b54-54f3-bb79-83523b75839f",
+      "target_ref": "attack-pattern--0716f798-5c4e-5878-a2e7-a41a756260ab",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--b9cbf437-e053-5402-aa1a-585bc76dface",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-STE-005 - Zero-width / whitespace text steganography",
+      "description": "Zero-width or whitespace characters encode bits inside otherwise normal text. | ATT&CK complementarity: No ATT&CK equivalent.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "ste"
+        }
+      ],
+      "x_ctft_category": "STE",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-STE-005"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--bdbf929b-0c2f-5f60-99ae-ddc622fb366e",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-STE-005 - Decode invisible-character payloads",
+      "description": "OFFENSIVE (solver): Normalize/inspect code points and map zero-width sequences back to bits/characters. || FORENSIC (analyst): Unicode code-point inspection reveals non-printing characters that should not appear in plain prose.",
+      "x_ctft_category": "STE",
+      "x_ctft_role": "counter-technique",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-STE-005"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--b7ed8e4c-4cfb-52bd-88e1-fb4764c3c4e3",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--bdbf929b-0c2f-5f60-99ae-ddc622fb366e",
+      "target_ref": "attack-pattern--b9cbf437-e053-5402-aa1a-585bc76dface",
+      "description": "Counter-technique recovers/defeats the paired design technique."
+    }
+  ]
+}

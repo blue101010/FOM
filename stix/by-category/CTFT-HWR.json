@@ -1,0 +1,33 @@
+{
+  "type": "bundle",
+  "id": "bundle--33b17896-5500-5ada-8b1a-7566f6193c04",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "name": "CTFT Project",
+      "identity_class": "organization",
+      "description": "Capture-The-Flag Techniques - complementary to MITRE ATT&CK, generalized from FOM."
+    },
+    {
+      "type": "x-ctft-tactic",
+      "spec_version": "2.1",
+      "id": "x-ctft-tactic--961d4746-8435-5c9a-9cae-4566a3780118",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "Hardware",
+      "x_ctft_shortname": "hwr",
+      "description": "Hiding data in embedded interfaces/signals and physically extracting it. (HTB: Hardware)",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFT-TA-HWR"
+        }
+      ]
+    }
+  ]
+}

@@ -16,4 +16,6 @@ Recover flag in linux ELF binary with strings command <https://github.com/blue10
 Recover flag from RMQR (rectangular ISO/IEC 23941 QR code) <https://github.com/blue101010/writeups/blob/main/2024/NAHAMCONF/qrrrrrr/README.md>
 Recover flag from disseminated bash commands in linux files <https://github.com/blue101010/writeups/blob/main/2024/cyber_apocalypse_2024_HTB/forensics/it_has_begun/flag.md>
 Recover flag from fake javascript in web app <https://github.com/blue101010/writeups/blob/main/2024/cyber_apocalypse_2024_HTB/forensics/urgent/flag.md>
-Recover flag from disseminated letters in special patterns
+Recover flag from disseminated letters in special patterns <https://github.com/blue101010/writeups/blob/main/2023/LinuxMeetup_Montreal/init2_recherche.md>
+Recover flag in JPEG with corrupted quantization table/DCT coefficients <https://github.com/tsg-ut/tsgctf2020/blob/master/misc/poorguy/writeup.en.md>
+
