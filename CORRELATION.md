@@ -162,7 +162,7 @@ Quick cross-reference of every **Design / Hide Technique** and its paired **Coun
 | 5 | [CTFTTE-PWN-005](techniques/CTFTTE-PWN-005.md) | seccomp-restricted shell puzzle | [CTFTCTE-PWN-005](countertechniques/CTFTCTE-PWN-005.md) | Open-Read-Write the flag under seccomp |
 
 
-## `CTFT-TA-REV` — Reverse Engineering  (5 pairs)
+## `CTFT-TA-REV` — Reverse Engineering 
 
 | # | Technique ID | Hide / Design name | Counter-technique ID | Counter name |
 | --- | --- | --- | --- | --- |
@@ -173,7 +173,7 @@ Quick cross-reference of every **Design / Hide Technique** and its paired **Coun
 | 5 | [CTFTTE-REV-005](techniques/CTFTTE-REV-005.md) | Constraint-gated flag check | [CTFTCTE-REV-005](countertechniques/CTFTCTE-REV-005.md) | Solve the check with an SMT/symbolic engine |
 
 
-## `CTFT-TA-STE` — Steganography  (8 pairs)
+## `CTFT-TA-STE` — Steganography 
 
 | # | Technique ID | Hide / Design name | Counter-technique ID | Counter name |
 | --- | --- | --- | --- | --- |
@@ -187,7 +187,7 @@ Quick cross-reference of every **Design / Hide Technique** and its paired **Coun
 | 8 | [CTFTTE-STE-008](techniques/CTFTTE-STE-008.md) | Conceal via **technical text** steganography | [CTFTCTE-STE-008](countertechniques/CTFTCTE-STE-008.md) | Counter — Conceal via **technical text** steganography |
 
 
-## `CTFT-TA-WEB` — Web Exploitation  (6 pairs)
+## `CTFT-TA-WEB` — Web Exploitation
 
 | # | Technique ID | Hide / Design name | Counter-technique ID | Counter name |
 | --- | --- | --- | --- | --- |
