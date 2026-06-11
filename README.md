@@ -47,17 +47,30 @@ puzzle-craft) detail ATT&CK omits, and the nearest ATT&CK anchor where one exist
 ## Layout
 
 ```
-CTFT/
-  README.md
-  HIERARCHY.md          full design<->counter listing
-  CORRELATION.md        master technique <-> counter-technique cross-reference
-  index.json            machine-readable index (includes pairs/by_id maps)
-  tactics/              tactic pages (CTFT-TA-<CAT>.md)
-  techniques/           design/hide techniques (CTFTTE-<CAT>-NNN.md)
-  countertechniques/    counter-techniques   (CTFTCTE-<CAT>-NNN.md)
+FOM/
+  README.md                   this file
+  HIERARCHY.md                full design ↔ counter listing
+  CORRELATION.md              master technique ↔ counter-technique cross-reference
+  index.json                  machine-readable index (pairs/by_id maps)
+  ctft-generator.py           regenerates index.json and STIX bundles
+  fom-migrate.py              migration utility
+  tactics/                    17 tactic pages (CTFT-TA-<CAT>.md)
+  techniques/                 design/hide techniques (CTFTTE-<CAT>-NNN.md)
+    subtechniques.md          sub-technique index
+  countertechniques/          counter-techniques (CTFTCTE-<CAT>-NNN.md)
+  tools/                      tool reference sheets
+    tools.md                  tool index
+    CTFTTOU-NNN.md            individual tool pages
+  to_categorize/              staging area for uncategorized entries
   stix/
-    ctft-bundle.json    full STIX 2.1 bundle
-    by-category/        one STIX bundle per tactic
+    ctft-bundle.json          full STIX 2.1 bundle
+    by-category/              one STIX bundle per tactic (CTFT-<CAT>.json)
+  backup/                     point-in-time snapshots of prior versions
+    tactics/
+    techniques/
+    countertechniques/
+    tools/
+    to_categorize/
 ```
 
 ## Quick pair lookup example
