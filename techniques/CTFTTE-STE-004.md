@@ -10,9 +10,11 @@
 
 The secret sits in EXIF/XMP/ID3 comment, GPS or maker-note fields rather than the visible content.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No ATT&CK equivalent.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1001.002 | Steganography | Metadata / EXIF embedding. |
 
 ## Tools
 

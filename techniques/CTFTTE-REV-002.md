@@ -10,9 +10,11 @@
 
 Code is packed (UPX/custom) or decrypts itself at runtime so static strings/logic are hidden.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-Complements T1027.002 (Software Packing) with CTF unpack-and-dump procedure.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1027.002 | Software Packing | Packing / runtime self-modification. |
 
 ## Tools
 

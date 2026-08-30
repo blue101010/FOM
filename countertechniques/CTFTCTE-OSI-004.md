@@ -14,6 +14,12 @@ Combine visible cues with mapping/imagery to triangulate the place.
 
 A documented cue-to-coordinate chain substantiates the geolocation conclusion.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1589 | Gather Victim Identity Information | Imagery geolocation is OSINT craft ATT&CK omits. |
+
 ## Tools
 
 - mapping imagery

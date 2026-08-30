@@ -10,9 +10,12 @@
 
 The flag(s) require a full host compromise: external reconnaissance, initial foothold, and privilege escalation — each gate concealed by a separate vulnerability or design decision.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-This is where CTFT links most directly to full ATT&CK chains; CTFT entries plug the forensic, crypto, and stego gaps encountered along the kill chain that ATT&CK describes at a higher level.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1190 | Exploit Public-Facing Application | Initial access. |
+| T1078 | Valid Accounts | Foothold and movement. |
 
 ## Tools
 

@@ -10,9 +10,11 @@
 
 The flag only flips after a withdraw/transfer flow vulnerable to reentrancy.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No ATT&CK equivalent.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1190 | Exploit Public-Facing Application | Reentrancy exploitation of a public contract. |
 
 ## Tools
 

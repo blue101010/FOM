@@ -14,6 +14,12 @@ Call the unprotected function directly with a crafted transaction.
 
 The call trace evidences the unauthorized privileged invocation.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1548 | Abuse Elevation Control Mechanism | Missing access checks echo elevation-control abuse. |
+
 ## Tools
 
 - foundry cast

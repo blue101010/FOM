@@ -14,6 +14,12 @@ Read the storage slot directly from the node since on-chain storage is public.
 
 Slot reads demonstrate that on-chain confidentiality cannot rely on visibility modifiers.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1213 | Data from Information Repositories | Storage-slot reading echoes data-from-repositories. |
+
 ## Tools
 
 - web3.py

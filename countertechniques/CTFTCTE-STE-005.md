@@ -14,6 +14,12 @@ Normalize/inspect code points and map zero-width sequences back to bits/characte
 
 Unicode code-point inspection reveals non-printing characters that should not appear in plain prose.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1001.002 | Steganography | Zero-width / whitespace text steganography. |
+
 ## Tools
 
 - CyberChef

@@ -10,11 +10,11 @@
 
 Modify or Corrupt legitimate magic headers of an image file.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-|  MITRE ATT&CK similarities: techniques and procedures |       Description               |
-| --------------------------------------------------- | ----------------------------------|
-| X  | X |
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1027 | Obfuscated Files or Information | ATT&CK omits the byte-level magic-header repair detail. |
 
 ## Tools
 

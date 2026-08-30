@@ -14,6 +14,12 @@ Use boolean/time-based inference with WAF-evasion encodings to extract the value
 
 Many near-identical timed/parametric requests in logs indicate blind extraction.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1190 | Exploit Public-Facing Application | ATT&CK has no SQLi technique; public-application exploitation is the closest echo. |
+
 ## Tools
 
 - sqlmap

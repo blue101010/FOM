@@ -18,6 +18,12 @@ See [2024 - NSEC -  Dorsolateral Challenge](https://github.com/blue101010/writeu
 
 _See sources and writeups for forensic analysis context._
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1027 | Obfuscated Files or Information | Diagram encodings are CTF-specific obfuscation ATT&CK omits. |
+
 ## Tools
 
 _See references._

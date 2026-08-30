@@ -10,9 +10,11 @@
 
 The flag is baked into a container layer or left in a pushed image's history.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No direct ATT&CK technique.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1613 | Container and Resource Discovery | Container image / registry inspection. |
 
 ## Tools
 

@@ -14,6 +14,12 @@ Identify the weakness class and apply the matching attack (Fermat, Wiener, commo
 
 Documenting the parameter weakness explains how plaintext was recoverable without the key custodian.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1573 | Encrypted Channel | Weak RSA parameter design; ATT&CK omits cryptanalytic key recovery. |
+
 ## Tools
 
 - RsaCtfTool

@@ -10,9 +10,12 @@
 
 The flag host sits on a network segment not directly reachable from the attacker; reaching it requires traversing one or more intermediate compromised hosts via tunnelling or proxying.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-Complements T1572 (Protocol Tunneling) and T1090 (Proxy) with CTF pivot-chain setup detail (proxychains, chisel, socat) that ATT&CK omits.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1572 | Protocol Tunneling | Pivot tunnels. |
+| T1090 | Proxy | Pivot relays. |
 
 ## Tools
 

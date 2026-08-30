@@ -14,6 +14,12 @@ Use an S7 client to read the relevant data block and extract the value.
 
 Data-block reads document the accessible memory regions of the device.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T0861 | Point & Tag Identification | ICS ATT&CK: S7 data-block reads. |
+
 ## Tools
 
 - snap7

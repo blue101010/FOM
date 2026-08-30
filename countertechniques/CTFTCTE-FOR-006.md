@@ -14,6 +14,12 @@ Follow streams, filter by protocol, export objects, then decode the reassembled 
 
 Reconstruct sessions and extract transferred objects; covert channels show up as anomalous field usage or unusual protocol volume.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1573 | Encrypted Channel | PCAP payload obfuscation echoes encrypted-channel traffic; ATT&CK omits reassembly craft. |
+
 ## Tools
 
 - wireshark

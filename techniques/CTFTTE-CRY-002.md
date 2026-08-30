@@ -10,9 +10,11 @@
 
 The flag is wrapped in stacked classical ciphers (ROT/Caesar, Vigenere, substitution) to resist a single pass.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No ATT&CK equivalent.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1027 | Obfuscated Files or Information | Layered classical ciphers echo obfuscation rather than adversary crypto. |
 
 ## Tools
 

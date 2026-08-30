@@ -10,9 +10,11 @@
 
 The server validates a precise sequence or timing of game-protocol actions; the flag is only released when a specific state-machine path is triggered under strict timing constraints.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No ATT&CK equivalent. ATT&CK does not model game-protocol state-machine puzzle craft.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1071 | Application Layer Protocol | Protocol replay / race. |
 
 ## Tools
 

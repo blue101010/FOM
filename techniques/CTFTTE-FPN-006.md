@@ -13,16 +13,16 @@ contexts. A low-privilege entry can traverse a chain whose effective identity
 has more privileges than the initial identity. The challenge models the trust
 relation and privilege boundary; it does not embed a query or credential.
 
-## ATT\&CK Complementarity
-
-This is a challenge graph of service trust and identity translation. It
-complements account and remote-service concepts without claiming a universal
-database procedure.
-
 ## Evidence expected
 
 - Each trust edge names source service, target service and effective identity.
 - A change in privilege is confirmed by a supplied, redacted role observation.
+
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1213 | Data from Information Repositories | Database trust-context escalation. |
 
 ## References
 

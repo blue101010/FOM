@@ -14,6 +14,12 @@ Run file-carving over the raw image to extract artifacts independent of the file
 
 Treat the image at the block level; carving + manual cluster inspection recovers data the filesystem no longer references.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1564 | Hide Artifacts | Slack/unallocated-space carving is media-forensics craft; ATT&CK covers artifact hiding only generically. |
+
 ## Tools
 
 - foremost

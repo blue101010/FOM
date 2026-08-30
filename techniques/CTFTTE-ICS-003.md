@@ -10,9 +10,11 @@
 
 The flag rides a less-common industrial protocol inside a provided capture.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No direct ATT&CK technique.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T0842 | Network Sniffing | ICS ATT&CK: industrial protocol captures. |
 
 ## Tools
 

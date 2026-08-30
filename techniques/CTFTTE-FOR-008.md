@@ -67,9 +67,11 @@ def fix_png_file(file_path, output_path):
 fix_png_file('magic_repairman.png', '2_fixed_magic_repairman.png')
 ```
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1027 | Obfuscated Files or Information | ATT&CK omits the byte-level header-recovery detail. |
 
 ## Tools
 

@@ -14,6 +14,12 @@ Use symbolic/concolic execution to find the path that satisfies the flag check.
 
 Recovering the real CFG documents the obfuscation scheme and the intended logic.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1027 | Obfuscated Files or Information | Control-flow flattening and opaque predicates. |
+
 ## Tools
 
 - angr

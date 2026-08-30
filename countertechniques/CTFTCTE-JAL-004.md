@@ -14,6 +14,12 @@ Walk the prototype chain via `({}).__proto__.__proto__.constructor` or access `F
 
 The escape demonstrates that proxy-based sandboxes must intercept every prototype-chain access point; a missing `Function` proxy or unguarded `constructor` property breaks containment.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1059.007 | JavaScript | JS sandbox-escape craft. |
+
 ## Tools
 
 - browser DevTools

@@ -10,9 +10,11 @@
 
 execve is filtered, so a shell is impossible; only file I/O syscalls remain.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No ATT&CK equivalent.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1059 | Command and Scripting Interpreter | seccomp-restricted ORW shellcraft is CTF-specific. |
 
 ## Tools
 

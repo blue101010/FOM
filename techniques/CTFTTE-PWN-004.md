@@ -10,9 +10,11 @@
 
 A stripped, statically linked binary forces a return-oriented chain instead of a simple call.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No ATT&CK equivalent.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1211 | Exploitation for Defense Evasion | ROP-chain construction bypasses mitigations ATT&CK does not model. |
 
 ## Tools
 

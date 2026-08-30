@@ -14,6 +14,12 @@ Beautify and trace the code, or set breakpoints to read the computed value at ru
 
 Reconstructing the client logic documents how the value was derived without a server call.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1027 | Obfuscated Files or Information | Client-side JavaScript obfuscation. |
+
 ## Tools
 
 - browser devtools

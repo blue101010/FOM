@@ -14,6 +14,13 @@ Deploy a lightweight SOCKS5 tunnel (chisel server/client) or SSH dynamic-forward
 
 Pivot tunnels leave characteristic artefacts: unexpected outbound SOCKS connections, chisel/socat processes, and unusual SSH port-forwarding entries in auth logs; network segmentation and egress filtering limit the blast radius.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1572 | Protocol Tunneling | Pivot tunnels. |
+| T1090 | Proxy | Pivot relays. |
+
 ## Tools
 
 - chisel

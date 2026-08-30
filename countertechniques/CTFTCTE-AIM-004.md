@@ -14,6 +14,12 @@ Statically inspect the serialized opcodes without executing them to recover cont
 
 Opcode-level inspection documents embedded payloads without triggering them.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1190 | Exploit Public-Facing Application | Malicious serialized models echo public-app exploitation on ML serving endpoints. |
+
 ## Tools
 
 - fickling

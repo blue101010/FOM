@@ -14,6 +14,12 @@ Use a length-extension tool with the known digest and length to forge a valid ex
 
 The vulnerability report attributes forgery to the insecure secret-prefix MAC construction.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| — | — | No ATT&CK equivalent; hash length-extension forgery craft. |
+
 ## Tools
 
 - hashpump

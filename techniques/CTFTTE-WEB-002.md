@@ -10,9 +10,11 @@
 
 The flag belongs to another object/user reachable by guessing an ID the UI never exposes.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No direct ATT&CK technique; web authorization-flaw craft.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1213 | Data from Information Repositories | IDOR abuse echoes unauthorized data access from repositories. |
 
 ## Tools
 

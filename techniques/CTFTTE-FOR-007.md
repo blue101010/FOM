@@ -10,11 +10,11 @@
 
 Modify legitimate header signature of a file.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-|  MITRE ATT&CK similarities: techniques and procedures |       Description               |
-| --------------------------------------------------- | ----------------------------------|
-|  xxxx | xxxx |
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1027 | Obfuscated Files or Information | ATT&CK omits the byte-level header-recovery detail. |
 
 ## Tools
 

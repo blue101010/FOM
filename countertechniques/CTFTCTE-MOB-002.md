@@ -14,6 +14,12 @@ Disassemble the ARM/AArch64 library and reverse the routine that produces the fl
 
 Native reversing recovers logic invisible to bytecode-only analysis.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1406 | Obfuscated Files or Information (Mobile) | Native-library logic hiding. |
+
 ## Tools
 
 - Ghidra

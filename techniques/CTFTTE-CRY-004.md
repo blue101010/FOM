@@ -11,9 +11,11 @@
 A challenge repeats a nonce in a declared cryptographic operation, creating a
 relationship between outputs that should have been independent.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No ATT&CK equivalent.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1573.001 | Symmetric Cryptography | Nonce-reuse consequences are cryptanalytic craft ATT&CK omits. |
 
 ## Tools
 

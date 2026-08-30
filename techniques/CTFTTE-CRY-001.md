@@ -10,9 +10,11 @@
 
 The author ships RSA with an exploitable weakness: tiny e, close primes, shared modulus, or partial key leakage.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No ATT&CK equivalent; applied cryptanalysis.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1573 | Encrypted Channel | Weak RSA parameter design; ATT&CK omits cryptanalytic key recovery. |
 
 ## Tools
 

@@ -14,6 +14,12 @@ Run LSB extractors across channels/bit-planes; visual bit-plane inspection revea
 
 Bit-plane and chi-square analysis flags non-natural LSB distributions characteristic of embedding.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1001.002 | Steganography | CTFT details LSB extraction mechanics ATT&CK omits. |
+
 ## Tools
 
 - zsteg

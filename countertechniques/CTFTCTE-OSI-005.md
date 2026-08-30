@@ -14,6 +14,12 @@ Search code history, pastes and documents for the leaked token or hint.
 
 Commit history and timestamps document when and where the secret was exposed.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1596 | Search Open Technical Databases | Public-repo mining echoes open-technical-database searching. |
+
 ## Tools
 
 - github search/dorking

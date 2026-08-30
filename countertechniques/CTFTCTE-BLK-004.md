@@ -14,6 +14,12 @@ Decode historical logs and transaction input data to recover the value.
 
 Decoded logs/calldata reconstruct the off-state data flow of the contract.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1213 | Data from Information Repositories | Transaction-log / calldata mining. |
+
 ## Tools
 
 - web3.py

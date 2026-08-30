@@ -10,9 +10,11 @@
 
 The flag is emitted in an event or passed in calldata rather than stored visibly.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No ATT&CK equivalent.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1213 | Data from Information Repositories | Transaction-log / calldata mining. |
 
 ## Tools
 

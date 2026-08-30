@@ -14,6 +14,12 @@ Use GTFOBins to find a binary permitted by the shell that spawns an unrestricted
 
 A restricted shell escape reveals that the confinement relied on a blocklist rather than an allowlist; any permitted binary with shell-spawning capability (vi, awk, python) breaks the model.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1059 | Command and Scripting Interpreter | Restricted-shell escape details ATT&CK omits. |
+
 ## Tools
 
 - GTFOBins references

@@ -14,6 +14,13 @@ Run BloodHound/SharpHound to map the AD graph; identify shortest attack paths (K
 
 BloodHound attack-path analysis is also a defensive tool; DFIR teams use it to identify the paths an attacker traversed and recommend ACL clean-up to prevent recurrence.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1558 | Steal or Forge Kerberos Tickets | AD ticket abuse. |
+| T1482 | Domain Trust Discovery | Domain mapping. |
+
 ## Tools
 
 - bloodhound / sharphound

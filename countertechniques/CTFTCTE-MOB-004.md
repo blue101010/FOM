@@ -14,6 +14,12 @@ Decompile and rename systematically, decrypting strings to locate the logic.
 
 A reconstructed call graph documents the obfuscation and the recovered routine.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1406 | Obfuscated Files or Information (Mobile) | DEX obfuscation. |
+
 ## Tools
 
 - jadx

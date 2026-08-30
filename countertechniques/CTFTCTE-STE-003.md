@@ -14,6 +14,12 @@ Open the file in a spectrogram view and adjust window/contrast to read the embed
 
 Spectral analysis exposes synthetic frequency artifacts that natural audio would not contain.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1001.002 | Steganography | Spectrogram embedding. |
+
 ## Tools
 
 - Sonic Visualiser

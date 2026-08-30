@@ -18,6 +18,12 @@ Fix the legitimate magic header for an EXR file (1) with [FOMTOU001 - hexed.it](
 
 _See sources and writeups for forensic analysis context._
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1027 | Obfuscated Files or Information | ATT&CK omits the byte-level header-recovery detail. |
+
 ## Tools
 
 | Useful tools|

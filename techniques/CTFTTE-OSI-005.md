@@ -10,9 +10,11 @@
 
 The flag/secret was committed to a public repo, paste, or document and later assumed forgotten.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-Complements T1213/T1593 (info from repositories) with CTF artifact-mining steps.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1596 | Search Open Technical Databases | Public-repo mining echoes open-technical-database searching. |
 
 ## Tools
 

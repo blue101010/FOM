@@ -10,9 +10,11 @@
 
 The submitted program must simultaneously pass several syntactic or semantic constraints (valid in multiple languages, under a byte limit, must not contain specific characters) while producing the correct output.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No ATT&CK equivalent. ATT&CK does not model code-golf or polyglot puzzle craft.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1027 | Obfuscated Files or Information | Polyglot craft. |
 
 ## Tools
 

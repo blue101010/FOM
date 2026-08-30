@@ -10,9 +10,12 @@
 
 The flag requires chaining a service-level misconfiguration (weak credentials, exposed API, SSRF) with a container-escape technique to break out to the host filesystem.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-Complements T1611 (Escape to Host) and T1190 (Exploit Public-Facing Application) with CTF multi-step container-chain detail.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1611 | Escape to Host | Container escape. |
+| T1190 | Exploit Public-Facing Application | Service exploitation. |
 
 ## Tools
 

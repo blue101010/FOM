@@ -10,9 +10,11 @@
 
 An SSRF-able app sits beside the metadata endpoint holding role credentials.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-Complements T1552.005 (Cloud Instance Metadata API) with the SSRF retrieval recipe.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1552.005 | Cloud Instance Metadata API | IMDS credential retrieval. |
 
 ## Tools
 

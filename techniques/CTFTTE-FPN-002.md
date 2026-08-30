@@ -10,9 +10,12 @@
 
 The flag resides on a Domain Controller; reaching it requires a chain of AD-specific attacks (Kerberoasting, AS-REP Roasting, delegation abuse, or ACL exploitation) rather than a single CVE.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-Complements TA0006 (Credential Access) and T1558 (Steal or Forge Kerberos Tickets) with CTF-specific AD attack-chain sequencing detail.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1558 | Steal or Forge Kerberos Tickets | AD ticket abuse. |
+| T1482 | Domain Trust Discovery | Domain mapping. |
 
 ## Tools
 

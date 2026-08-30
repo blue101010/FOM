@@ -10,9 +10,11 @@
 
 The flag is encoded in a layer's weights/embedding rather than any text field.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No ATT&CK equivalent.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1552 | Unsecured Credentials | Secrets embedded in model artifacts. |
 
 ## Tools
 

@@ -27,6 +27,12 @@ services have consistent access controls, logging and ownership.
 - A service bind exists on an address family omitted by the primary inventory.
 - The policy treatment differs across address families.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1083 | File and Directory Discovery | Dual-stack management exposure. |
+
 ## References
 
 - <https://www.rfc-editor.org/rfc/rfc8200>

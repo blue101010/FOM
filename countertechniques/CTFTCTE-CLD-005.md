@@ -14,6 +14,12 @@ Pull the image and inspect layer history/filesystem for the artifact.
 
 Layer diffing reveals files and history entries containing the secret.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1613 | Container and Resource Discovery | Container image / registry inspection. |
+
 ## Tools
 
 - docker

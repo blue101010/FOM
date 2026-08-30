@@ -16,6 +16,12 @@ These headers are used by operating systems and applications to determine how to
 
 _See sources and writeups for forensic analysis context._
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1027 | Obfuscated Files or Information | ATT&CK omits the byte-level header-recovery detail. |
+
 ## Tools
 
 _See references._

@@ -10,9 +10,11 @@
 
 A sandboxed JavaScript eval context strips or proxies `window`, `Function`, `eval`, and dangerous globals, requiring prototype-chain or constructor traversal to reach native execution.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No ATT&CK equivalent. ATT&CK does not model JS sandbox-escape puzzle craft.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1059.007 | JavaScript | JS sandbox-escape craft. |
 
 ## Tools
 

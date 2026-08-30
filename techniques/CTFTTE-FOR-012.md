@@ -10,11 +10,11 @@
 
 Use special encoding system to hide data with Rectangular [rMQR](https://www.qrcode.com/en/codes/rmqr.html) codes.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-|  MITRE ATT&CK similarities: techniques and procedures |       Description               |
-| --------------------------------------------------- | ----------------------------------|
-| X  | X |
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1027 | Obfuscated Files or Information | rMQR encodings are CTF-specific obfuscation ATT&CK omits. |
 
 ## Tools
 

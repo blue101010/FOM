@@ -12,10 +12,11 @@ The challenge derives a token, ordering, or key material from a deliberately
 predictable stateful pseudo-random generator and exposes enough declared output
 to make the generator family testable.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-This is a challenge-construction weakness in randomness, not a claim about an
-ATT\&CK procedure.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1573.001 | Symmetric Cryptography | Predictable PRNG state undermines stream cryptography; recovery is CTF-specific. |
 
 ## Tools
 

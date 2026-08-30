@@ -10,9 +10,11 @@
 
 Input is eval'd or exec'd in a restricted Python namespace with builtins stripped or whitelisted, preventing direct import of `os`, `subprocess`, or open file reads.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No ATT&CK equivalent. ATT&CK T1059.006 (Python) models scripting for lateral movement, not sandbox-escape puzzle craft.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1059.006 | Python | Python sandbox escape; ATT&CK models Python scripting for other purposes. |
 
 ## Tools
 

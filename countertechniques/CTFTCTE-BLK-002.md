@@ -14,6 +14,12 @@ Deploy an attacker contract that re-enters during the external call to drive the
 
 Trace analysis shows the nested calls that produced the unintended state.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1190 | Exploit Public-Facing Application | Reentrancy exploitation of a public contract. |
+
 ## Tools
 
 - foundry

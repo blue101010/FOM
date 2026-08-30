@@ -10,9 +10,11 @@
 
 Bits of the secret are written into the least-significant bits of pixel channels, leaving the image visually unchanged.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No ATT&CK equivalent; pure steganalysis.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1001.002 | Steganography | CTFT details LSB extraction mechanics ATT&CK omits. |
 
 ## Tools
 

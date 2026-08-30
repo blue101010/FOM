@@ -10,11 +10,11 @@
 
 Conceal information with diagrams encoding
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-|  MITRE ATT&CK similarities: techniques and procedures |       Description               |
-| --------------------------------------------------- | ----------------------------------|
-|   XXXX   |  XXXX  |
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1027 | Obfuscated Files or Information | Date/time encodings are CTF-specific obfuscation ATT&CK omits. |
 
 ## Tools
 

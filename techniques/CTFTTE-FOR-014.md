@@ -16,11 +16,11 @@ Exemple:
  
  See [2024 - NSEC -  Dorsolateral Challenge](https://github.com/blue101010/writeups/blob/main/2024/NSEC/Dorsolateral/dorsolateral.md)
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-|  MITRE ATT&CK similarities: techniques and procedures |       Description               |
-| --------------------------------------------------- | ----------------------------------|
-| XXXX | XXXX |
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1027 | Obfuscated Files or Information | Diagram encodings are CTF-specific obfuscation ATT&CK omits. |
 
 ## Tools
 

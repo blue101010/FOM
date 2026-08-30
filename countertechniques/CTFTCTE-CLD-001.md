@@ -14,6 +14,12 @@ Enumerate bucket names and list/download objects anonymously.
 
 Storage access logs document anonymous reads of the exposed objects.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1530 | Data from Cloud Storage Object | Misconfigured object storage. |
+
 ## Tools
 
 - awscli

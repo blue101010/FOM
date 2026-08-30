@@ -14,6 +14,12 @@ _This counter-technique entry was auto-generated as a stub for `CTFTTE-STE-008`.
 
 _Add blue-team / DFIR perspective here._
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1001.002 | Steganography | Technical text steganography. |
+
 ## Tools
 
 _See references._

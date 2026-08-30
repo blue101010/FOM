@@ -9,8 +9,9 @@ Every entry **pairs**:
   - **Offensive Recovery** - the CTF practitioner / solver, and
   - **Forensic Perspective** - the blue-team / DFIR analyst.
 
-CTFT does **not** duplicate MITRE ATT&CK: each technique carries an explicit *complementarity* note
-explaining the CTF-specific (forensic / cryptographic / steganographic /
+CTFT does **not** duplicate MITRE ATT&CK: every technique **and** counter-technique page
+carries a `Related MITRE ATT&CK` table listing potentially related ATT&CK techniques with a
+*complementarity* note — the CTF-specific (forensic / cryptographic / steganographic /
 puzzle-craft) detail ATT&CK omits, and the nearest ATT&CK anchor where one exists.
 
 ## Nomenclature

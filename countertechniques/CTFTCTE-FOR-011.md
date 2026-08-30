@@ -14,6 +14,12 @@ Retrieve information from QR codes based on the legitimate specifications and ex
 
 _See sources and writeups for forensic analysis context._
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1027 | Obfuscated Files or Information | QR-code encodings are CTF-specific obfuscation ATT&CK omits. |
+
 ## Tools
 
 Use [FOMTOU004 - ZXingReader](https://github.com/blue101010/FOM/blob/main/tools/FOMTOU004.md) like in CTF Writeup ref (1)

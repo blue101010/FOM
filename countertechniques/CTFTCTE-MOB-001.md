@@ -14,6 +14,12 @@ Decompile to Java/smali and grep resources/strings for the secret.
 
 Static review of the package documents secrets shipped inside the artifact.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1552.001 | Credentials in Files | APK resource secrets. |
+
 ## Tools
 
 - jadx

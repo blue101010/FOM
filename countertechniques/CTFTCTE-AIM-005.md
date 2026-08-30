@@ -14,6 +14,12 @@ Query systematically (membership/inversion) to reconstruct the memorized value.
 
 The query-response trail evidences memorization-based leakage.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1213 | Data from Information Repositories | Model inversion echoes data extraction from repositories. |
+
 ## Tools
 
 - python

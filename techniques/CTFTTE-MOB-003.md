@@ -10,9 +10,11 @@
 
 TLS pinning prevents intercepting the request/response that carries the flag.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No direct ATT&CK technique.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1557 | Man-in-the-Middle | Certificate pinning as a MITM barrier. |
 
 ## Tools
 

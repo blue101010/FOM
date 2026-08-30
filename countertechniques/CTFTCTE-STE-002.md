@@ -14,6 +14,12 @@ Scan for embedded signatures and carve the trailing file; unzip/extract it.
 
 Entropy + signature scanning reveals additional file structures beyond the declared container length.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1001.002 | Steganography | Polyglot / appended-data concealment. |
+
 ## Tools
 
 - binwalk

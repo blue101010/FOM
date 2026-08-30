@@ -10,9 +10,11 @@
 
 Flag is split across packets, tunnelled in odd fields (ICMP data, DNS labels), or encoded before transmission.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-Complements C2/exfil tactics conceptually but the CTFT entry is about packet-level reassembly and decoding.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1573 | Encrypted Channel | PCAP payload obfuscation echoes encrypted-channel traffic; ATT&CK omits reassembly craft. |
 
 ## Tools
 

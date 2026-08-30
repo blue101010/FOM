@@ -14,6 +14,12 @@ Detect each encoding by alphabet/padding and decode iteratively until plaintext 
 
 An encoding chain is recoverable without a key and is distinguished from genuine encryption.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1140 | Deobfuscate/Decode Files or Information | Chained encodings echo deobfuscation/decoding. |
+
 ## Tools
 
 - CyberChef (Magic)

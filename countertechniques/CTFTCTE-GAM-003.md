@@ -14,6 +14,12 @@ Probe the AI's decision boundary by submitting edge-case inputs; if rule-based, 
 
 Adversarial inputs against ML models are a real threat in production classifiers; the CTF challenge demonstrates the same attack surface in an accessible game context, highlighting the importance of adversarial robustness testing.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| — | — | No ATT&CK equivalent; adversarial gameplay craft. |
+
 ## Tools
 
 - python gymnasium / stable-baselines3

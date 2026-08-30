@@ -15,7 +15,23 @@
     "artifact_types": { "type": "array", "items": { "type": "string" } },
     "attack_complement": {
       "type": "object",
+      "deprecated": true,
+      "description": "Legacy single closest-technique prose. Superseded by attack_related (per-entry MITRE ATT&CK display, SCHEMA_V2 §3.5).",
       "properties": { "closest": { "type": "string" }, "note": { "type": "string" } }
+    },
+    "attack_related": {
+      "type": "array",
+      "description": "MITRE ATT&CK techniques potentially related to this entry; rendered on the technique page as a Related MITRE ATT&CK table.",
+      "items": {
+        "type": "object",
+        "required": ["id"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^T[0-9]{4}(\\.[0-9]{3})?$" },
+          "name": { "type": "string" },
+          "note": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
     },
     "indicators": { "type": "array", "items": { "type": "string", "pattern": "^IND-" } },
     "difficulty": { "type": "integer", "minimum": 1, "maximum": 5 },

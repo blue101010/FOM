@@ -14,6 +14,12 @@ Use `seccomp-tools dump` to disassemble the BPF filter and enumerate permitted s
 
 The pivot documents incomplete syscall coverage in the seccomp policy; a robust policy should adopt a default-deny allowlist and validate both 32-bit and 64-bit ABI syscall numbers independently.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1055 | Process Injection | Seccomp/AppArmor filter-bypass detail ATT&CK omits. |
+
 ## Tools
 
 - seccomp-tools

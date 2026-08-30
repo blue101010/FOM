@@ -10,11 +10,11 @@
 
 Use special encoding system to hide data with visual, machine-readable form
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-|  MITRE ATT&CK similarities: techniques and procedures |       Description               |
-| --------------------------------------------------- | ----------------------------------|
-| X  | X |
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1027 | Obfuscated Files or Information | Visual machine-readable encodings (QR) are CTF-specific obfuscation ATT&CK omits. |
 
 ## Tools
 

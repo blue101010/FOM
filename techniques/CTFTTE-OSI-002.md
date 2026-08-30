@@ -10,9 +10,11 @@
 
 The target's presence is split across many platforms under varying handles.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No direct ATT&CK technique.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1593 | Search Open Websites/Domains | Username pivoting echoes open-web searching. |
 
 ## Tools
 

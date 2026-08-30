@@ -15,6 +15,12 @@ Recover text data strings from ELF binary with tools like
 
 _See sources and writeups for forensic analysis context._
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1027 | Obfuscated Files or Information | Strings concealed in ELF binaries echo obfuscated payloads. |
+
 ## Tools
 
 | Related tools |

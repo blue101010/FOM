@@ -10,9 +10,11 @@
 
 The binary validates input against arithmetic/bitwise constraints rather than comparing to a stored flag.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No ATT&CK equivalent.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1480 | Execution Guardrails | Constraint-gated flag checks echo execution guardrails. |
 
 ## Tools
 

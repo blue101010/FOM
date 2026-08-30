@@ -14,6 +14,13 @@ Exploit the exposed service (weak credentials, SSRF, command injection) to gain 
 
 The two-stage chain documents a defence-in-depth failure: neither the service hardening nor the container isolation was sufficient alone; both must be remediated together to close the attack path.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1611 | Escape to Host | Container escape. |
+| T1190 | Exploit Public-Facing Application | Service exploitation. |
+
 ## Tools
 
 - docker / kubectl

@@ -14,6 +14,12 @@ Apply protocol dissectors to decode fields and extract the payload.
 
 Dissection documents the protocol semantics carrying the hidden data.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T0842 | Network Sniffing | ICS ATT&CK: industrial protocol captures. |
+
 ## Tools
 
 - wireshark (ICS dissectors)

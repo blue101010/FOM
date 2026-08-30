@@ -10,11 +10,11 @@
 
 Use QR codes to hide data. Refer to SST:
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-|  MITRE ATT&CK similarities: techniques and procedures |       Description               |
-| --------------------------------------------------- | ----------------------------------|
-| X  | X |
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1027 | Obfuscated Files or Information | QR-code encodings are CTF-specific obfuscation ATT&CK omits. |
 
 ## Tools
 

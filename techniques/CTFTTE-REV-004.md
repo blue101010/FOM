@@ -10,9 +10,11 @@
 
 The flag check runs on a bespoke virtual machine whose opcodes must be understood first.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No ATT&CK equivalent.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1027 | Obfuscated Files or Information | Custom VM bytecode interpretation. |
 
 ## Tools
 

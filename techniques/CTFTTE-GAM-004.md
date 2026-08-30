@@ -10,9 +10,11 @@
 
 The win condition is hardcoded in the game binary (e.g. score must reach an astronomically high value) and is unreachable through legitimate play, requiring binary patching to bypass the comparison.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-Complements T1027 (Obfuscated Files / Information) with CTF binary-patching detail (NOP-ing comparisons, flipping jump conditions).
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1055 | Process Injection | Memory patching to force a win state. |
 
 ## Tools
 

@@ -10,9 +10,11 @@
 
 The server presents a large input instance and enforces a strict time or computation budget; a naïve brute-force approach will time out, requiring the solver to identify and implement the correct polynomial-time algorithm.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No ATT&CK equivalent. ATT&CK does not model competitive-programming puzzle craft.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| — | — | No ATT&CK equivalent; competitive-programming puzzle craft. |
 
 ## Tools
 

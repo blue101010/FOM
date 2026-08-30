@@ -14,6 +14,12 @@ Identify the esoteric language or encoding from its characteristic syntax (e.g. 
 
 The esolang documents how a challenge author can obfuscate computation; in a real-incident context, malware payloads have been encoded in Brainfuck-like representations to evade signature detection.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1140 | Deobfuscate/Decode Files or Information | Esolang decoding echoes deobfuscation. |
+
 ## Tools
 
 - esolang interpreters

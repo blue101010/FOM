@@ -14,6 +14,12 @@ Enumerate container capabilities with `amicontained`; if `--privileged`, mount t
 
 The escape documents a deliberate misconfiguration (excessive capability, exposed socket, writable mount); in production, containers should run with the minimum capability set and no host socket exposure.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1611 | Escape to Host | Container escape paths ATT&CK describes generically. |
+
 ## Tools
 
 - docker

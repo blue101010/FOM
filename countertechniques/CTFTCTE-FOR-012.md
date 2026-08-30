@@ -14,6 +14,12 @@ _See details below._
 
 _See sources and writeups for forensic analysis context._
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1027 | Obfuscated Files or Information | rMQR encodings are CTF-specific obfuscation ATT&CK omits. |
+
 ## Tools
 
 JAB Code (Just Another Barcode) is a colour 2D matrix symbology made of colour squares arranged in either square or rectangle grids.

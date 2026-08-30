@@ -10,9 +10,11 @@
 
 Data is XORed with a short repeating key, or encrypted in ECB so identical blocks leak structure.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No ATT&CK equivalent.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1573.001 | Symmetric Cryptography | ECB/repeating-XOR structural leakage; ATT&CK omits the cryptanalysis detail. |
 
 ## Tools
 

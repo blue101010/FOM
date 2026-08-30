@@ -10,9 +10,11 @@
 
 Flattening, junk branches and opaque predicates make the real path hard to follow.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No ATT&CK equivalent.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1027 | Obfuscated Files or Information | Control-flow flattening and opaque predicates. |
 
 ## Tools
 

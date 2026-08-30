@@ -10,9 +10,11 @@
 
 The flag requires playing or solving many rounds of a networked game or custom protocol faster than is humanly feasible without automation.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No ATT&CK equivalent. ATT&CK does not model game-protocol automation puzzle craft.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1071 | Application Layer Protocol | Game-protocol automation. |
 
 ## Tools
 

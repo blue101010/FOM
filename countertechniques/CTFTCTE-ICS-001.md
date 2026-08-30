@@ -14,6 +14,12 @@ Connect and read the register range, then reassemble the bytes into the flag.
 
 Register reads document the unauthenticated data exposure typical of Modbus.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T0861 | Point & Tag Identification | ICS ATT&CK: Modbus register reads. |
+
 ## Tools
 
 - pymodbus

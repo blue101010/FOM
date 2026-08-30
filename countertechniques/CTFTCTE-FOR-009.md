@@ -14,6 +14,12 @@ _This counter-technique entry was auto-generated as a stub for `CTFTTE-FOR-009`.
 
 _Add blue-team / DFIR perspective here._
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1027 | Obfuscated Files or Information | ATT&CK omits the byte-level magic-header repair detail. |
+
 ## Tools
 
 _See references._

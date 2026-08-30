@@ -10,9 +10,11 @@
 
 The correct flag input is the unique solution to a system of mathematical or Boolean constraints embedded in the binary's verification routine; no amount of manual guessing will reach it.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No ATT&CK equivalent. ATT&CK does not model constraint-satisfaction puzzle craft.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| — | — | No ATT&CK equivalent; constraint-satisfaction craft. |
 
 ## Tools
 

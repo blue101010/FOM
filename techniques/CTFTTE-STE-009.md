@@ -12,10 +12,11 @@ The challenge places clues across nested metadata containers, such as embedded
 documents, thumbnails, sidecar records, or recursively embedded media, so a
 single top-level metadata listing is incomplete.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-This is carrier-level challenge craft. It does not assert that metadata presence
-alone represents malicious behavior.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1001.002 | Steganography | Nested metadata containers. |
 
 ## Tools
 

@@ -14,6 +14,12 @@ Profile the dump, list processes, scan for strings/patterns, and dump the owning
 
 Volatility plugins reconstruct process lists, network state, command history and injected regions to locate transient secrets.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1014 | Rootkit | Volatile-memory DFIR; ATT&CK models rootkit-style memory concealment only generically. |
+
 ## Tools
 
 - volatility3

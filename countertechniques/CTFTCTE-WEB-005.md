@@ -14,6 +14,12 @@ Fingerprint the engine, then escalate from expression evaluation to file read or
 
 Template-syntax payloads in request logs identify the injection vector.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1190 | Exploit Public-Facing Application | SSTI echoes public-application exploitation. |
+
 ## Tools
 
 - tplmap

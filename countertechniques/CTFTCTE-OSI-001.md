@@ -14,6 +14,12 @@ Extract metadata (GPS/author/timestamps) and pivot to the real identity/location
 
 Aggregating metadata across artifacts reconstructs the subject's footprint.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1589 | Gather Victim Identity Information | Metadata correlation echoes identity gathering. |
+
 ## Tools
 
 - exiftool

@@ -10,9 +10,11 @@
 
 The binary detects debuggers/VMs/timing and alters behaviour or refuses to reveal the flag logic.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-Complements T1622/T1497 (debugger/sandbox evasion); CTFT adds the reach-the-check workflow.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1622 | Debugger Evasion | Anti-debugging guards. |
 
 ## Tools
 

@@ -10,9 +10,11 @@
 
 The flag unlocks only when a classifier is driven to a specific (incorrect) prediction.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No ATT&CK equivalent.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| — | — | No ATT&CK equivalent; adversarial-example craft. |
 
 ## Tools
 

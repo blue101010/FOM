@@ -10,9 +10,11 @@
 
 The flag only renders when device/root/emulator/time conditions are met.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No direct ATT&CK technique.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1497 | Virtualization/Sandbox Evasion | Runtime/device-conditioned checks echo sandbox evasion. |
 
 ## Tools
 

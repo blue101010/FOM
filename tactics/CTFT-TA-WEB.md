@@ -16,6 +16,10 @@ challenge-craft (forensic, cryptographic, steganographic and puzzle) detail
 that ATT&CK intentionally leaves out, and that CTF solvers and DFIR analysts
 rely on. CTFT never re-labels an existing ATT&CK technique.
 
+> Per-entry related ATT&CK IDs are rendered on every technique and
+> counter-technique page as a `Related MITRE ATT&CK` table (SCHEMA_V2 §3.5).
+
+
 ## Techniques ↔ Counter-techniques
 
 | Technique | Hide / Design name | Counter-technique | Counter name | ATT&CK note (excerpt) |

@@ -96,10 +96,10 @@ engine.
   "paired_counter": "CTFTCTE-FOR-001",
   "summary": "Author corrupts/swaps the file magic header so type detection and viewers fail.",
   "artifact_types": ["file", "image", "archive"], // what this hides inside (controlled vocab)
-  "attack_complement": {                          // was free prose; now structured
-    "closest": "T1027",
-    "note": "ATT&CK omits the byte-level magic-header recovery detail."
-  },
+  "attack_related": [                          // potentially related MITRE ATT&CK — displayed per entry
+    { "id": "T1027", "name": "Obfuscated Files or Information",
+      "note": "ATT&CK omits the byte-level magic-header recovery detail." }
+  ],
   "indicators": ["IND-FOR-magic-mismatch", "IND-FOR-ext-type-conflict"], // -> Layer 2 retrieval
   "difficulty": 2,                                // 1..5, author-effort / obscurity
   "prevalence": 0.7,                              // 0..1, how common in real CTFs (retrieval prior)
@@ -117,6 +117,10 @@ engine.
   "name": "Recover the legitimate file signature",
   "tactic": "CTFT-TA-FOR",
   "counters": "CTFTTE-FOR-001",
+  "attack_related": [                          // same per-entry ATT&CK list as its paired technique
+    { "id": "T1027", "name": "Obfuscated Files or Information",
+      "note": "Recovery mirrors the related ATT&CK obfuscation technique." }
+  ],
 
   // --- when should this fire? (indicators + preconditions) ---
   "triggers": {                                   // boolean expr over indicator ids
@@ -226,6 +230,40 @@ above for brevity) so nothing in the current corpus is lost.
   },
   "produces": ["embedded_files", "true_type"]
 }
+```
+
+### 3.5 Per-entry MITRE ATT&CK display
+
+`attack_related` is the per-entry source of truth for ATT&CK relations; the tactic page keeps its
+`ATT&CK note (excerpt)` column for orientation only. Every technique and counter-technique page
+renders the list as a `Related MITRE ATT&CK` table:
+
+**Technique page** — replaces the former prose-only `ATT&CK Complementarity` section:
+
+```markdown
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1027 | Obfuscated Files or Information | ATT&CK omits the byte-level magic-header recovery detail. |
+```
+
+**Counter-technique page** — the same table, placed before `## Tools`; the note states how the
+recovery mirrors or counters the related ATT&CK behaviour.
+
+When no ATT&CK technique is potentially related, the table carries a single explicit empty row so
+the absence is visible and machine-checkable instead of assumed:
+
+```markdown
+| — | — | No direct ATT&CK equivalent. |
+```
+
+The rendered `attack_related` arrays are maintained by `v2/attach_attack_related.py`, an
+author-curated `ID → ATT&CK list` mapping applied across all entry pages:
+
+```bash
+python v2/attach_attack_related.py             # dry run
+python v2/attach_attack_related.py --write     # rewrite entry pages
 ```
 
 ---

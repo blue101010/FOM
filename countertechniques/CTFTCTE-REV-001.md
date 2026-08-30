@@ -14,6 +14,12 @@ Identify and patch or hook the detection routines, then debug to the comparison.
 
 Mapping the guards documents the binary's evasive intent and how analysis was restored.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1622 | Debugger Evasion | Anti-debugging guards. |
+
 ## Tools
 
 - GDB+GEF

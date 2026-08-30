@@ -14,6 +14,12 @@ Retrieve information from QR codes based on the legitimate specifications and ex
 
 _See sources and writeups for forensic analysis context._
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1027 | Obfuscated Files or Information | Visual machine-readable encodings (QR) are CTF-specific obfuscation ATT&CK omits. |
+
 ## Tools
 
 See  Sub-Counter-techniques

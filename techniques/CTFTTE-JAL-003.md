@@ -10,9 +10,11 @@
 
 The flag resides on the host filesystem; the player lands inside a container with a deliberate misconfiguration (privileged mode, exposed Docker socket, writable host mount, excessive Linux capability).
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-Complements T1611 (Escape to Host) with CTF-specific misconfiguration paths (e.g. `--privileged`, socket mount) that ATT&CK describes generically.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1611 | Escape to Host | Container escape paths ATT&CK describes generically. |
 
 ## Tools
 

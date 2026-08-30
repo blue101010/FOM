@@ -14,6 +14,12 @@ Force a request to the metadata endpoint and harvest temporary credentials.
 
 Metadata requests from an application context flag SSRF-to-IMDS abuse.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1552.005 | Cloud Instance Metadata API | IMDS credential retrieval. |
+
 ## Tools
 
 - curl

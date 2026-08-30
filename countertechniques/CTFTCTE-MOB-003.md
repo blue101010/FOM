@@ -14,6 +14,12 @@ Hook the pinning/validation logic at runtime to allow a proxy to read the traffi
 
 Instrumentation logs show where validation was disabled to enable capture.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1557 | Man-in-the-Middle | Certificate pinning as a MITM barrier. |
+
 ## Tools
 
 - Frida

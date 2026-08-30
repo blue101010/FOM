@@ -14,6 +14,12 @@ Hook the conditional methods to force the success branch and read the value.
 
 Hook traces document which checks gated the flag and how they were satisfied.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1497 | Virtualization/Sandbox Evasion | Runtime/device-conditioned checks echo sandbox evasion. |
+
 ## Tools
 
 - Frida

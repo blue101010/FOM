@@ -10,11 +10,11 @@
 
 Conceal information within digital media with **technical** steganography.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-|  MITRE ATT&CK similarities: techniques and procedures |       Description               |
-| --------------------------------------------------- | ----------------------------------|
-|  XXXXX | XXXXX |
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1001.002 | Steganography | Technical steganography. |
 
 ## Tools
 

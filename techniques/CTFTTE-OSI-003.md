@@ -10,9 +10,11 @@
 
 The flag was present but removed/edited, expecting solvers not to check history.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No direct ATT&CK technique.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1593.002 | Search Engines | Cached-content recovery echoes search-engine mining. |
 
 ## Tools
 

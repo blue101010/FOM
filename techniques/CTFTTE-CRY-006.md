@@ -10,9 +10,11 @@
 
 The flag is buried under stacked encodings (base64/base85/base32/hex/url) to look like ciphertext.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No ATT&CK equivalent.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1140 | Deobfuscate/Decode Files or Information | Chained encodings echo deobfuscation/decoding. |
 
 ## Tools
 

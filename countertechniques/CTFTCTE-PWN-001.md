@@ -14,6 +14,12 @@ Overflow saved control data and redirect execution (ret2win), defeating any leak
 
 The exploit path documents the missing bounds check enabling control-flow hijack.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1068 | Exploitation for Privilege Escalation | Win-function backdoors echo privilege-escalation exploitation. |
+
 ## Tools
 
 - pwntools

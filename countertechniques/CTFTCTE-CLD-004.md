@@ -14,6 +14,12 @@ Read the function configuration, environment and layers to extract embedded secr
 
 Configuration extraction documents secrets shipped in the deployment package.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1552 | Unsecured Credentials | Secrets in serverless configuration. |
+
 ## Tools
 
 - awscli

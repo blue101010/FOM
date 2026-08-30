@@ -14,6 +14,12 @@ Search a username across services and correlate profiles to find the flag-bearin
 
 Profile correlation documents the linkage between disparate online identities.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1593 | Search Open Websites/Domains | Username pivoting echoes open-web searching. |
+
 ## Tools
 
 - sherlock

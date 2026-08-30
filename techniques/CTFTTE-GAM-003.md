@@ -10,9 +10,11 @@
 
 The flag is awarded only by defeating a machine-learning or rule-based opponent in a game scenario that appears unbeatable under standard play.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No ATT&CK equivalent. ATT&CK does not model adversarial ML puzzle craft in CTF contexts.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| — | — | No ATT&CK equivalent; adversarial gameplay craft. |
 
 ## Tools
 

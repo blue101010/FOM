@@ -10,9 +10,11 @@
 
 An LLM-backed app holds the flag in its instructions/context behind guardrails.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No ATT&CK equivalent; emerging LLM-security craft.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1190 | Exploit Public-Facing Application | Prompt-injection is emerging LLM-security craft ATT&CK does not model. |
 
 ## Tools
 

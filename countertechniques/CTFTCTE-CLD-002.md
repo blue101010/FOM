@@ -14,6 +14,12 @@ Enumerate effective permissions and assume the role to reach the protected resou
 
 CloudTrail-style logs show the privilege enumeration and assume-role calls.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1078.004 | Cloud Accounts | Over-permissive IAM roles. |
+
 ## Tools
 
 - enumerate-iam

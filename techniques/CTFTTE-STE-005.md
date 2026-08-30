@@ -10,9 +10,11 @@
 
 Zero-width or whitespace characters encode bits inside otherwise normal text.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No ATT&CK equivalent.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1001.002 | Steganography | Zero-width / whitespace text steganography. |
 
 ## Tools
 

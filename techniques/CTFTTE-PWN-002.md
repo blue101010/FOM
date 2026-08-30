@@ -10,9 +10,11 @@
 
 A user-controlled format string both leaks memory (secrets/canary) and enables targeted writes.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No ATT&CK equivalent.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1068 | Exploitation for Privilege Escalation | Format-string leak/write mechanics are omitted by ATT&CK. |
 
 ## Tools
 

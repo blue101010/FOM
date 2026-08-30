@@ -10,9 +10,11 @@
 
 A second file (zip, flag.txt) is concatenated after a valid image's end-of-image marker, so viewers ignore it.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No ATT&CK equivalent.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1001.002 | Steganography | Polyglot / appended-data concealment. |
 
 ## Tools
 

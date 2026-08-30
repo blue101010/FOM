@@ -10,9 +10,11 @@
 
 Conceal text data strings in ELF binary.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1027 | Obfuscated Files or Information | Strings concealed in ELF binaries echo obfuscated payloads. |
 
 ## Tools
 

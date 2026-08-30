@@ -10,9 +10,11 @@
 
 The flag exists only in RAM (process heap, clipboard, decrypted blob) and never touches disk in plaintext.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No ATT&CK technique; this is volatile-memory DFIR.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1014 | Rootkit | Volatile-memory DFIR; ATT&CK models rootkit-style memory concealment only generically. |
 
 ## Tools
 

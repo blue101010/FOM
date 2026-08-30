@@ -10,9 +10,11 @@
 
 The flag object sits in a world-readable or weakly-named bucket the author assumes is private.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-Complements T1530 (Data from Cloud Storage) with CTF enumeration procedure.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1530 | Data from Cloud Storage Object | Misconfigured object storage. |
 
 ## Tools
 

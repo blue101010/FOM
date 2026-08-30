@@ -14,6 +14,12 @@ Identify the problem class (shortest-path, dynamic programming, number theory), 
 
 Timing-bounded server challenges verify that the client has sufficient computational capability; the pattern also appears in legitimate proof-of-work anti-spam schemes and rate-limiting systems.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| — | — | No ATT&CK equivalent; competitive-programming puzzle craft. |
+
 ## Tools
 
 - python / pypy

@@ -10,9 +10,11 @@
 
 Credentials/flags are stored in an HMI or SCADA project/configuration file.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No direct ATT&CK technique.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T0843 | Program Download | ICS ATT&CK: HMI project-file secrets. |
 
 ## Tools
 

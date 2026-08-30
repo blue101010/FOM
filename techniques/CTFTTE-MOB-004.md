@@ -10,9 +10,11 @@
 
 ProGuard/R8 renaming and string encryption hide the flag-producing method.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No direct ATT&CK technique.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1406 | Obfuscated Files or Information (Mobile) | DEX obfuscation. |
 
 ## Tools
 

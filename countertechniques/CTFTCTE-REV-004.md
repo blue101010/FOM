@@ -14,6 +14,12 @@ Reverse the dispatch loop to recover opcode semantics, then disassemble/lift the
 
 A documented opcode table turns an opaque interpreter into reviewable logic.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1027 | Obfuscated Files or Information | Custom VM bytecode interpretation. |
+
 ## Tools
 
 - Ghidra

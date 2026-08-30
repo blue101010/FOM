@@ -10,9 +10,11 @@
 
 User input is rendered by a server template engine, letting the author gate the flag behind it.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No direct ATT&CK technique.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1190 | Exploit Public-Facing Application | SSTI echoes public-application exploitation. |
 
 ## Tools
 

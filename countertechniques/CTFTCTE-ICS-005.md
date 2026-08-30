@@ -14,6 +14,12 @@ Enumerate objects/points and read the value carrying the flag.
 
 Object enumeration documents the device's exposed data model.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T0861 | Point & Tag Identification | ICS ATT&CK: DNP3/BACnet object enumeration. |
+
 ## Tools
 
 - bacnet/dnp3 clients

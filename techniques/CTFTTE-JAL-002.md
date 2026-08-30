@@ -10,9 +10,11 @@
 
 A limited shell (rbash, menu shell, or custom restricted interpreter) is placed between the player and the flag, blocking path traversal and forbidden commands.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-Complements T1059 conceptually with CTF restricted-shell-escape detail that ATT&CK omits (GTFOBins escape paths, PATH hijacking).
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1059 | Command and Scripting Interpreter | Restricted-shell escape details ATT&CK omits. |
 
 ## Tools
 

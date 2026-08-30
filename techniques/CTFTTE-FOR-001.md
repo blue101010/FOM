@@ -10,9 +10,11 @@
 
 The author corrupts or swaps the file's magic header (e.g. flips PNG 89504E47 to a bogus value) so type detection and viewers fail.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-Closest ATT&CK context is T1027 (Obfuscated Files), but ATT&CK omits the byte-level magic-header recovery detail that defines this CTF technique.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1027 | Obfuscated Files or Information | ATT&CK omits the byte-level magic-header recovery detail. |
 
 ## Tools
 

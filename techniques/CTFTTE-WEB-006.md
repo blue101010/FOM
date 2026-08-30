@@ -10,9 +10,11 @@
 
 A minified/packed JS bundle computes or gates the flag entirely in the browser.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No direct ATT&CK technique.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1027 | Obfuscated Files or Information | Client-side JavaScript obfuscation. |
 
 ## Tools
 

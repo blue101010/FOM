@@ -14,6 +14,13 @@ After gaining on-premises access, query the cloud instance metadata endpoint (e.
 
 Metadata-endpoint credential theft is a documented cloud attack pattern; AWS IMDSv2 token requirements mitigate it. DFIR analysts correlate CloudTrail API calls (ListBuckets, GetSecretValue) with the on-prem compromise timeline to reconstruct the full attack.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1078.004 | Cloud Accounts | Cloud IAM pivot. |
+| T1552.005 | Cloud Instance Metadata API | IMDS credential theft. |
+
 ## Tools
 
 - aws cli / azure cli / gcloud

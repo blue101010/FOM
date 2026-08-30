@@ -14,6 +14,12 @@ List streams (dir /r, Get-Item -Stream) and read the named stream directly.
 
 Enumerate $DATA attributes per MFT record; non-default named streams are immediate indicators of concealment.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1564.004 | NTFS File Attributes | ATT&CK covers ADS hiding; CTFT details enumeration and extraction. |
+
 ## Tools
 
 - dir /r

@@ -12,10 +12,11 @@ The challenge modifies, unlinks, or partially corrupts NTFS Master File Table
 records so that the expected file is absent from normal directory traversal
 while residual record, attribute, or allocation evidence remains in the image.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-CTFT models offline artifact recovery from a supplied image. It complements
-forensic analysis rather than asserting a live adversary procedure.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1564.001 | Hidden Files and Directories | MFT-level tampering extends hidden-file craft below ATT&CK granularity. |
 
 ## Tools
 

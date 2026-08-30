@@ -10,9 +10,11 @@
 
 The flag route is unlinked, hinted in comments, robots.txt, JS bundles or backup files.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-Complements T1083/T1595 (discovery/recon) but is CTF content-discovery craft.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1552.001 | Credentials in Files | Source-comment/endpoint hiding is CTF craft; credential discovery is the closest ATT&CK echo. |
 
 ## Tools
 

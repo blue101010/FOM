@@ -26,6 +26,12 @@ the paths it reveals, and the configuration change that removes public access.
 - Deployment metadata contains resources absent from normal navigation.
 - Historical or development paths are exposed in a public artifact.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1083 | File and Directory Discovery | Deployment-metadata disclosure echoes file/directory discovery. |
+
 ## References
 
 - <https://owasp.org/www-project-web-security-testing-guide/>

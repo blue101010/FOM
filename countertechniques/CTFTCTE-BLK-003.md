@@ -14,6 +14,12 @@ Decompile the deployed bytecode to recover the function logic and the flag condi
 
 A decompilation report makes the on-chain logic auditable despite missing source.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1140 | Deobfuscate/Decode Files or Information | EVM decompilation echoes deobfuscation. |
+
 ## Tools
 
 - heimdall-rs

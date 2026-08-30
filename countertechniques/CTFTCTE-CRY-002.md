@@ -14,6 +14,12 @@ Use frequency analysis and automated solvers, peeling one layer at a time.
 
 Statistical language analysis identifies cipher families and confirms successful decryption.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1027 | Obfuscated Files or Information | Layered classical ciphers echo obfuscation rather than adversary crypto. |
+
 ## Tools
 
 - CyberChef

@@ -10,9 +10,11 @@
 
 Payload is stored in a named ADS (file.txt:secret) that is invisible to ordinary directory listings.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-Complements T1564.004 (NTFS File Attributes); CTFT adds the extraction recipe and MFT-attribute view.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1564.004 | NTFS File Attributes | ATT&CK covers ADS hiding; CTFT details enumeration and extraction. |
 
 ## Tools
 

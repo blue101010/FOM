@@ -28,6 +28,12 @@ rotation through the approved secret store.
 - A configuration key denotes credentials, connection data, or an access token.
 - The field is reachable from a Web deployment artifact.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1552 | Unsecured Credentials | Configuration secret exposure echoes unsecured credentials. |
+
 ## References
 
 - <https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html>

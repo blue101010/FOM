@@ -10,9 +10,11 @@
 
 Author rewrites file timestamps so the relevant artifact blends into a noisy timeline or appears older/newer than reality.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-Complements T1070.006 (Timestomp) but adds the CTF-grade MFT attribute-diff recovery procedure.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1070.006 | Timestomp | CTFT details MACB timestomping mechanics ATT&CK describes only at technique level. |
 
 ## Tools
 

@@ -10,9 +10,11 @@
 
 The flag is gated behind an in-game condition (score, item count, level unlock) stored in a save file or process memory that cannot be legitimately reached through normal gameplay.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No ATT&CK equivalent. ATT&CK does not model game-state tamper puzzle craft.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1213 | Data from Information Repositories | Save-state manipulation. |
 
 ## Tools
 

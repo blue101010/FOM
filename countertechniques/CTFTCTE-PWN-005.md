@@ -14,6 +14,12 @@ Build an ORW chain (open, read, write) via ROP/shellcode to read the flag file d
 
 Reading the seccomp policy reveals the allowed syscall surface that the solve relied on.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1059 | Command and Scripting Interpreter | seccomp-restricted ORW shellcraft is CTF-specific. |
+
 ## Tools
 
 - seccomp-tools

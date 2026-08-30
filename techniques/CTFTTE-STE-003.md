@@ -10,9 +10,11 @@
 
 Text or a QR is drawn into frequency content so it is inaudible but visible in a spectrogram.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No ATT&CK equivalent.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1001.002 | Steganography | Spectrogram embedding. |
 
 ## Tools
 

@@ -14,6 +14,12 @@ Reach builtins or OS access via object traversal: walk `__class__.__mro__` and `
 
 The escape chain documents incomplete sandboxing of the eval context; audit the restricted namespace for object hierarchy exposure and ensure `__builtins__` is fully replaced rather than filtered.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1059.006 | Python | Python sandbox escape; ATT&CK models Python scripting for other purposes. |
+
 ## Tools
 
 - python

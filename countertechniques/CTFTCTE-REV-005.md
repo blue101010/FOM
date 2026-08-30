@@ -14,6 +14,12 @@ Model the constraints and solve for the satisfying input that is the flag.
 
 Extracting the constraint set proves how the flag was derived rather than stored.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1480 | Execution Guardrails | Constraint-gated flag checks echo execution guardrails. |
+
 ## Tools
 
 - z3

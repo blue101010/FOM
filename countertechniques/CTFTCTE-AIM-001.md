@@ -14,6 +14,12 @@ Load the model, dump tensors, and decode the embedded bytes/strings.
 
 Tensor inspection documents non-functional data smuggled into the model file.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1552 | Unsecured Credentials | Secrets embedded in model artifacts. |
+
 ## Tools
 
 - numpy

@@ -14,6 +14,12 @@ Study each parser's grammar and find overlapping syntax: begin with the most res
 
 Polyglot files exploit parser ambiguity; the same technique is used by attackers to craft files that appear benign to one tool but execute as another format, evading content-type-based security controls.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1027 | Obfuscated Files or Information | Polyglot craft. |
+
 ## Tools
 
 - python / bash / perl

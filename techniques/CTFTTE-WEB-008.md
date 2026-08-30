@@ -13,16 +13,17 @@ resource names while direct browsing keeps the complete resources hidden. The
 challenge distinguishes naming evidence from proof that a resource is present
 or reachable.
 
-## ATT\&CK Complementarity
-
-This is a compatibility-layer disclosure in a controlled web challenge, not an
-ATT\&CK technique.
-
 ## Evidence expected
 
 - A supplied observation identifies a short-name alias.
 - The complete candidate name is corroborated by challenge metadata or a
   permitted artifact.
+
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1083 | File and Directory Discovery | 8.3 short-name disclosure echoes filesystem discovery. |
 
 ## References
 

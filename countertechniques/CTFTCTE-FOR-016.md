@@ -14,6 +14,12 @@ Conceal information with diagrams encoding
 
 _See sources and writeups for forensic analysis context._
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1027 | Obfuscated Files or Information | Date/time encodings are CTF-specific obfuscation ATT&CK omits. |
+
 ## Tools
 
 _See references._

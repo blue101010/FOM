@@ -10,9 +10,11 @@
 
 A secret memorized in training is reachable only by probing the model's outputs.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No ATT&CK equivalent.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1213 | Data from Information Repositories | Model inversion echoes data extraction from repositories. |
 
 ## Tools
 

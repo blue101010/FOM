@@ -27,6 +27,12 @@ deployment should disable legacy name generation or direct disclosure.
 - Legacy aliases expose a stable prefix and ordinal suffix.
 - The application inventory contains an ambiguous matching resource family.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1083 | File and Directory Discovery | 8.3 short-name disclosure echoes filesystem discovery. |
+
 ## References
 
 - <https://learn.microsoft.com/windows/win32/fileio/naming-a-file>

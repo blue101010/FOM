@@ -14,6 +14,12 @@ Enumerate gadgets and assemble a ROP chain to call execve or print the flag.
 
 The chain shows how existing code was repurposed despite NX/no convenient symbols.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1211 | Exploitation for Defense Evasion | ROP-chain construction bypasses mitigations ATT&CK does not model. |
+
 ## Tools
 
 - ROPgadget

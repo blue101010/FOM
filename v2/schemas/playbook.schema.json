@@ -10,6 +10,20 @@
     "name": { "type": "string" },
     "tactic": { "type": "string", "pattern": "^CTFT-TA-[A-Z]{3}$" },
     "counters": { "type": "string", "pattern": "^CTFTTE-[A-Z]{3}-[0-9]{3}$" },
+    "attack_related": {
+      "type": "array",
+      "description": "MITRE ATT&CK techniques potentially related to this playbook; rendered on the counter-technique page as a Related MITRE ATT&CK table.",
+      "items": {
+        "type": "object",
+        "required": ["id"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^T[0-9]{4}(\\.[0-9]{3})?$" },
+          "name": { "type": "string" },
+          "note": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
     "triggers": {
       "type": "object",
       "properties": {

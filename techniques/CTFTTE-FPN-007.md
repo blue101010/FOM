@@ -12,15 +12,16 @@ A management service is declared on an address family absent from the primary
 inventory. The challenge requires reconciling interface records, service binds
 and access policy before treating the alternate route as a possible path.
 
-## ATT\&CK Complementarity
-
-This is an inventory-completeness condition for a multi-stage challenge, not a
-network enumeration or remote-access procedure.
-
 ## Evidence expected
 
 - An interface record and a service bind identify the alternate address family.
 - The management route is corroborated by the challenge's access policy.
+
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1083 | File and Directory Discovery | Dual-stack management exposure. |
 
 ## References
 

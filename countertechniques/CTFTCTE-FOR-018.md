@@ -29,6 +29,12 @@ proof of a recovered file's content or provenance.
 - A record is unlinked while retaining coherent attributes.
 - Allocation metadata conflicts with directory metadata.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1564.001 | Hidden Files and Directories | MFT-level tampering extends hidden-file craft below ATT&CK granularity. |
+
 ## Tools
 
 - MFTECmd / analyzeMFT

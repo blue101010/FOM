@@ -14,6 +14,12 @@ Retrieve prior versions from web archives and cached copies.
 
 Archived snapshots evidence the content as it existed at a prior time.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1593.002 | Search Engines | Cached-content recovery echoes search-engine mining. |
+
 ## Tools
 
 - Wayback Machine

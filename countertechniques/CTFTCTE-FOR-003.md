@@ -14,6 +14,12 @@ On NTFS, compare $STANDARD_INFORMATION vs $FILE_NAME timestamps; mismatches reve
 
 Cross-reference MFT, $LogFile/$UsnJrnl, registry and event logs; timestamps that disagree across sources expose the stomped value.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1070.006 | Timestomp | CTFT details MACB timestomping mechanics ATT&CK describes only at technique level. |
+
 ## Tools
 
 - MFTECmd

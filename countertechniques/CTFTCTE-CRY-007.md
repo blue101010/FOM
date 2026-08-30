@@ -28,6 +28,12 @@ silently change the model.
 - Outputs show a declared weak seed, small state, or deterministic sequence.
 - Repeated challenge instances expose a consistent generator family.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1573.001 | Symmetric Cryptography | Predictable PRNG state undermines stream cryptography; recovery is CTF-specific. |
+
 ## Tools
 
 - SageMath

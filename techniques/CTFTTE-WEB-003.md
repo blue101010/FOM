@@ -10,9 +10,11 @@
 
 The flag sits behind auth using a JWT with alg=none, a weak HMAC secret, or key confusion.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No direct ATT&CK technique.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1606 | Forge Web Credentials | JWT misconfiguration echoes web credential forgery. |
 
 ## Tools
 

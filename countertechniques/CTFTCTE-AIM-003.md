@@ -14,6 +14,12 @@ Use gradient/black-box methods to craft an input that forces the target class.
 
 The crafted input documents the model's decision-boundary fragility.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| — | — | No ATT&CK equivalent; adversarial-example craft. |
+
 ## Tools
 
 - foolbox

@@ -10,9 +10,11 @@
 
 Data is concealed inside S7 PLC data blocks reachable over S7comm.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No direct ATT&CK technique.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T0861 | Point & Tag Identification | ICS ATT&CK: S7 data-block reads. |
 
 ## Tools
 

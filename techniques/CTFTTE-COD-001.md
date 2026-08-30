@@ -10,9 +10,11 @@
 
 The flag is expressed in an esoteric programming language (Brainfuck, Malbolge, Whitespace) or an unusual data representation that must be interpreted or decoded before the flag becomes readable.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No ATT&CK equivalent. ATT&CK does not model esolang puzzle craft.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1140 | Deobfuscate/Decode Files or Information | Esolang decoding echoes deobfuscation. |
 
 ## Tools
 

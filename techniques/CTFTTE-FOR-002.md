@@ -10,9 +10,11 @@
 
 Flag data is written into file slack, unallocated clusters, or between partitions where directory entries do not point.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No ATT&CK equivalent; this is media-forensics carving craft.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1564 | Hide Artifacts | Slack/unallocated-space carving is media-forensics craft; ATT&CK covers artifact hiding only generically. |
 
 ## Tools
 

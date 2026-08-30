@@ -28,6 +28,12 @@ contexts.
 - A linked service executes under a different declared identity.
 - A trust path crosses into a more privileged role boundary.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1213 | Data from Information Repositories | Database trust-context escalation. |
+
 ## References
 
 - <https://learn.microsoft.com/sql/relational-databases/linked-servers/linked-servers-database-engine>

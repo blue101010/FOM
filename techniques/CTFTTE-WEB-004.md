@@ -10,9 +10,11 @@
 
 The flag is in the database, reachable only through a filtered, blind injection point.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No direct ATT&CK technique; covers injection mechanics.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1190 | Exploit Public-Facing Application | ATT&CK has no SQLi technique; public-application exploitation is the closest echo. |
 
 ## Tools
 

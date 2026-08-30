@@ -14,6 +14,12 @@ Recover XOR key length via Hamming distance then solve per byte; for ECB, use bl
 
 Repeated ciphertext blocks are a tell-tale of ECB and of structural leakage in the design.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1573.001 | Symmetric Cryptography | ECB/repeating-XOR structural leakage; ATT&CK omits the cryptanalysis detail. |
+
 ## Tools
 
 - xortool

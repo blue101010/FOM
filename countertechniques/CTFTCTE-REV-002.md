@@ -14,6 +14,12 @@ Run to the original entry point and dump the unpacked image, or statically rever
 
 Memory dumping recovers the true payload that on-disk static analysis could not see.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1027.002 | Software Packing | Packing / runtime self-modification. |
+
 ## Tools
 
 - upx

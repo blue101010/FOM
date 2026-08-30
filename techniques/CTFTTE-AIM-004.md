@@ -10,9 +10,11 @@
 
 A pickle/serialized model hides logic or data that executes/loads on deserialization.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-Complements T1204/T1027 conceptually; CTFT adds safe-pickle-inspection procedure.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1190 | Exploit Public-Facing Application | Malicious serialized models echo public-app exploitation on ML serving endpoints. |
 
 ## Tools
 

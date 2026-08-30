@@ -10,9 +10,11 @@
 
 A privileged setter lacks proper access control, gating the flag behind a check that is missing.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No ATT&CK equivalent.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1548 | Abuse Elevation Control Mechanism | Missing access checks echo elevation-control abuse. |
 
 ## Tools
 

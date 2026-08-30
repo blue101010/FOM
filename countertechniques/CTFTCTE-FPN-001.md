@@ -14,6 +14,13 @@ Run port and service enumeration, exploit the exposed service for a foothold, th
 
 The full chain documents the complete attack path; DFIR reconstruction uses log correlation across each stage to build a timeline, and each CTFT entry in the chain links to the relevant ATT&CK technique for structured reporting.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1190 | Exploit Public-Facing Application | Initial access. |
+| T1078 | Valid Accounts | Foothold and movement. |
+
 ## Tools
 
 - nmap

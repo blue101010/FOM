@@ -14,6 +14,12 @@ Capture a valid game session with Wireshark, identify the critical state-machine
 
 Replay attacks on game protocols mirror real credential-replay attacks; production services mitigate this with per-session nonces, sequence counters, and time-bounded tokens embedded in every packet.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1071 | Application Layer Protocol | Protocol replay / race. |
+
 ## Tools
 
 - wireshark / tshark

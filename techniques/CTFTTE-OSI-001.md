@@ -10,9 +10,11 @@
 
 Identifying data is scattered across file metadata and post artifacts rather than stated outright.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-Complements the Reconnaissance tactic conceptually; CTFT adds artifact-level OSINT procedure.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1589 | Gather Victim Identity Information | Metadata correlation echoes identity gathering. |
 
 ## Tools
 

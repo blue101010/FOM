@@ -10,9 +10,11 @@
 
 A MAC built as H(secret || message) with a Merkle-Damgard hash lets an attacker append data.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No ATT&CK equivalent.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| — | — | No ATT&CK equivalent; hash length-extension forgery craft. |
 
 ## Tools
 

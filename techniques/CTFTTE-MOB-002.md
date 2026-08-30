@@ -10,9 +10,11 @@
 
 Sensitive logic is pushed into a compiled native library to evade Java-level inspection.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No direct ATT&CK technique.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1406 | Obfuscated Files or Information (Mobile) | Native-library logic hiding. |
 
 ## Tools
 

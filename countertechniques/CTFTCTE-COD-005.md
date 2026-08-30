@@ -14,6 +14,12 @@ Decompile the binary to identify the constraint system (comparisons, XOR chains,
 
 Constraint-extraction is also used in defensive reverse engineering to automatically derive anti-tamper key conditions; angr-based path exploration assists malware analysis by reaching flagged code paths without manual tracing.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| — | — | No ATT&CK equivalent; constraint-satisfaction craft. |
+
 ## Tools
 
 - z3-solver

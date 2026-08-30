@@ -14,6 +14,12 @@ Open/parse the project file structure to extract embedded values.
 
 Project-file analysis documents secrets persisted by the engineering tool.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T0843 | Program Download | ICS ATT&CK: HMI project-file secrets. |
+
 ## Tools
 
 - archive/file parsers

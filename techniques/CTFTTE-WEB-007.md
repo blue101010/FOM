@@ -13,15 +13,16 @@ resource names that are absent from the visible application navigation. The
 challenge requires correlating this disclosure with a supplied application
 inventory instead of treating every listed path as accessible.
 
-## ATT\&CK Complementarity
-
-This describes challenge-specific deployment artifact exposure. It complements
-content discovery without claiming a live reconnaissance procedure.
-
 ## Evidence expected
 
 - A supplied metadata artifact names a resource absent from the public index.
 - The disclosed name is corroborated by the declared challenge inventory.
+
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1083 | File and Directory Discovery | Deployment-metadata disclosure echoes file/directory discovery. |
 
 ## References
 

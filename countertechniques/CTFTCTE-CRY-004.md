@@ -16,6 +16,12 @@ the resulting cryptographic weakness with reproducible evidence.
 Nonce reuse is documented as the root cause; generator-state prediction is
 tracked separately by CTFTCTE-CRY-007.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1573.001 | Symmetric Cryptography | Nonce-reuse consequences are cryptanalytic craft ATT&CK omits. |
+
 ## Tools
 
 - SageMath

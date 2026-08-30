@@ -10,9 +10,11 @@
 
 A seccomp BPF profile or AppArmor policy blocks the direct syscalls (e.g. `execve`, `open`) needed to read the flag, forcing the solver to find an equivalent permitted path.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-Complements T1055 (Process Injection) with CTF syscall-filter-bypass detail (seccomp audit mode, allowed-syscall enumeration) that ATT&CK omits.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1055 | Process Injection | Seccomp/AppArmor filter-bypass detail ATT&CK omits. |
 
 ## Tools
 

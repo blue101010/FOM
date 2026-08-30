@@ -14,6 +14,12 @@ Write a pwntools `remote` or `process` script that parses each server prompt, co
 
 The automation pattern documents server interaction that is indistinguishable from a legitimate compliant client; in production, server-side rate limiting and per-round session tokens limit scripted mass interaction.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1071 | Application Layer Protocol | Protocol-automation marathon. |
+
 ## Tools
 
 - pwntools

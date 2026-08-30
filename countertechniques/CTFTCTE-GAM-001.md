@@ -14,6 +14,12 @@ Reverse the game protocol (from traffic capture or source), implement a pwntools
 
 Scripted game clients are indistinguishable from legitimate fast players; in production, server-side behavioural analytics (response timing distribution, move entropy) detect bots.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1071 | Application Layer Protocol | Game-protocol automation. |
+
 ## Tools
 
 - pwntools

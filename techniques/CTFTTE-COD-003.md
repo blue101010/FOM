@@ -10,9 +10,11 @@
 
 The flag is awarded only after completing a very large number of stateful rounds of a binary or network protocol interaction — far beyond what manual solving allows within the server's timeout.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No ATT&CK equivalent. ATT&CK does not model protocol-automation puzzle craft.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1071 | Application Layer Protocol | Protocol-automation marathon. |
 
 ## Tools
 

@@ -10,9 +10,11 @@
 
 The flag/control is reachable only by manipulating allocator metadata (use-after-free, tcache).
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No ATT&CK equivalent.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1068 | Exploitation for Privilege Escalation | Heap-grooming mechanics are omitted by ATT&CK. |
 
 ## Tools
 

@@ -10,9 +10,11 @@
 
 The flag is stored across Modbus holding/input registers on a simulated PLC.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No direct ATT&CK technique; complements ATT&CK for ICS at the protocol-recovery level.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T0861 | Point & Tag Identification | ICS ATT&CK: Modbus register reads. |
 
 ## Tools
 

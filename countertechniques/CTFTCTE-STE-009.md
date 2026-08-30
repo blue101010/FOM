@@ -27,6 +27,12 @@ version and extraction result so an apparent clue can be reproduced or rejected.
 - Embedded preview, attachment, or sidecar metadata is present.
 - Top-level metadata references a nested object or inconsistent authoring data.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1001.002 | Steganography | Nested metadata containers. |
+
 ## Tools
 
 - ExifTool

@@ -15,11 +15,11 @@ Text steganography conceals a secret message inside a piece of text.
 The simplest version of text steganography might use the first letter in each sentence to form the hidden message. 
 Other text steganography techniques might include adding meaningful typos or encoding information through punctuation.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-|  MITRE ATT&CK similarities: techniques and procedures |       Description               |
-| ----------------------------------------------------- | ---------------------------------|
-|  XXXXX  | XXXXX |
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1001.002 | Steganography | Technical text steganography. |
 
 ## Tools
 

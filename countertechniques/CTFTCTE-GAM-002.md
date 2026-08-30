@@ -14,6 +14,12 @@ Parse the save-file format (often a binary blob or JSON), locate the target fiel
 
 Save-file tampering demonstrates that any client-side state is untrusted; authoritative games must validate all game-state server-side or use cryptographically signed save files.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1213 | Data from Information Repositories | Save-state manipulation. |
+
 ## Tools
 
 - Cheat Engine

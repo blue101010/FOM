@@ -10,9 +10,11 @@
 
 No source is published; the author assumes raw bytecode is opaque.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No ATT&CK equivalent.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1140 | Deobfuscate/Decode Files or Information | EVM decompilation echoes deobfuscation. |
 
 ## Tools
 

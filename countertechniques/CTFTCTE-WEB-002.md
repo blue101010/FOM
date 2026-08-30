@@ -14,6 +14,12 @@ Iterate identifiers/parameters to access objects outside the intended scope.
 
 Sequential access to non-owned IDs in logs is the signature of IDOR abuse.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1213 | Data from Information Repositories | IDOR abuse echoes unauthorized data access from repositories. |
+
 ## Tools
 
 - Burp Suite

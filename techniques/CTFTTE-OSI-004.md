@@ -10,9 +10,11 @@
 
 Location is inferable only from landmarks, signage, vegetation, sun/shadow in an image.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No direct ATT&CK technique.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1589 | Gather Victim Identity Information | Imagery geolocation is OSINT craft ATT&CK omits. |
 
 ## Tools
 

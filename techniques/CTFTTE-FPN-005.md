@@ -10,9 +10,12 @@
 
 The flag is stored in a cloud resource (S3 bucket, Secrets Manager, Lambda environment variable) that is reachable only after compromising an on-premises host and pivoting through its attached cloud credentials.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-Complements T1552.005 (Cloud Instance Metadata) and T1537 (Transfer Data to Cloud Account) with CTF-specific on-prem-to-cloud pivot detail.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1078.004 | Cloud Accounts | Cloud IAM pivot. |
+| T1552.005 | Cloud Instance Metadata API | IMDS credential theft. |
 
 ## Tools
 

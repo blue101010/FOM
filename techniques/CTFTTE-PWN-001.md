@@ -10,9 +10,11 @@
 
 An unreferenced function prints the flag/spawns a shell, gated behind a vulnerable input.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No ATT&CK equivalent; exploitation mechanics, not adversary behaviour.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1068 | Exploitation for Privilege Escalation | Win-function backdoors echo privilege-escalation exploitation. |
 
 ## Tools
 

@@ -10,9 +10,11 @@
 
 Keys/flags are embedded in resources, strings, or smali rather than fetched at runtime.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No direct ATT&CK technique; mobile RE craft.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1552.001 | Credentials in Files | APK resource secrets. |
 
 ## Tools
 

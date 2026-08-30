@@ -14,6 +14,12 @@ Strip/replace the algorithm, crack the secret, or perform RS256->HS256 confusion
 
 Token validation logs reveal accepted tokens with unexpected alg/signature.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1606 | Forge Web Credentials | JWT misconfiguration echoes web credential forgery. |
+
 ## Tools
 
 - jwt_tool

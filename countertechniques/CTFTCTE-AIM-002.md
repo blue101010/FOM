@@ -14,6 +14,12 @@ Craft inputs that bypass the guardrails to make the model reveal the protected c
 
 Logged prompts/responses document the injection that defeated the controls.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1190 | Exploit Public-Facing Application | Prompt-injection is emerging LLM-security craft ATT&CK does not model. |
+
 ## Tools
 
 - the target chat interface

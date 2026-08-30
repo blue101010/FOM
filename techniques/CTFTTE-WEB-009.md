@@ -12,15 +12,16 @@ A supplied deployment configuration embeds a credential, connection reference,
 or privileged service setting that is not intended to be exposed with the Web
 application. The secret is represented only as a redacted challenge artifact.
 
-## ATT\&CK Complementarity
-
-This is a configuration-hygiene failure represented in a challenge artifact; it
-does not describe credential use against an external system.
-
 ## Evidence expected
 
 - A configuration artifact contains a redacted secret-bearing field.
 - The field is linked to an application, service role, and remediation owner.
+
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1552 | Unsecured Credentials | Configuration secret exposure echoes unsecured credentials. |
 
 ## References
 

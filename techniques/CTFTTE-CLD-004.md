@@ -10,9 +10,11 @@
 
 Secrets/flags live in environment variables, layers, or build artifacts of a function.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No direct ATT&CK technique.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1552 | Unsecured Credentials | Secrets in serverless configuration. |
 
 ## Tools
 

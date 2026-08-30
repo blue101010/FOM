@@ -14,6 +14,12 @@ Dump all metadata and inspect comment/user fields and GPS tags.
 
 Full metadata extraction surfaces author-injected fields and inconsistencies versus the file's apparent origin.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1001.002 | Steganography | Metadata / EXIF embedding. |
+
 ## Tools
 
 - exiftool

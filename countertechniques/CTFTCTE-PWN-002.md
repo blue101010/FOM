@@ -14,6 +14,12 @@ Use %p/%s to leak, then %n-style writes to redirect execution or overwrite the G
 
 The vulnerability report attributes the leak/overwrite to unsanitized format arguments.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1068 | Exploitation for Privilege Escalation | Format-string leak/write mechanics are omitted by ATT&CK. |
+
 ## Tools
 
 - pwntools

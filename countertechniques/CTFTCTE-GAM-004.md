@@ -14,6 +14,12 @@ Decompile the game binary, locate the win-condition comparison (e.g. `cmp score,
 
 Binary patching to bypass integrity checks follows the same technique used to crack license checks; production software should use code signing and runtime integrity verification to detect patched executables.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1055 | Process Injection | Memory patching to force a win state. |
+
 ## Tools
 
 - ghidra / ida

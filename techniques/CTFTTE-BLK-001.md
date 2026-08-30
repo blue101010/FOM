@@ -10,9 +10,11 @@
 
 The flag is a private variable; the author assumes private means unreadable.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-No ATT&CK equivalent; smart-contract analysis.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1213 | Data from Information Repositories | Storage-slot reading echoes data-from-repositories. |
 
 ## Tools
 

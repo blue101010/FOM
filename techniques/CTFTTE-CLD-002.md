@@ -10,9 +10,11 @@
 
 A role/policy grants more than intended, letting solvers pivot to the flag resource.
 
-## ATT\&CK Complementarity
+## Related MITRE ATT&CK
 
-Complements T1078.004 (Cloud Accounts) with CTF permission-mapping steps.
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1078.004 | Cloud Accounts | Over-permissive IAM roles. |
 
 ## Tools
 

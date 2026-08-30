@@ -14,6 +14,12 @@ Brute force paths/parameters and review client source/maps for hidden references
 
 Access logs of the discovery sweep document how the hidden surface was found.
 
+## Related MITRE ATT&CK
+
+| ATT&CK ID | ATT&CK technique | Relation note |
+| --- | --- | --- |
+| T1552.001 | Credentials in Files | Source-comment/endpoint hiding is CTF craft; credential discovery is the closest ATT&CK echo. |
+
 ## Tools
 
 - ffuf
