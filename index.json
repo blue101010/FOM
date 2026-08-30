@@ -1,7 +1,7 @@
 {
   "model": "CTFT",
   "version": "1.2",
-  "generated": "2026-08-30T00:44:14+00:00",
+  "generated": "2026-08-30T00:59:46+00:00",
   "complements": "MITRE ATT&CK",
   "tactics": [
     {
@@ -77,12 +77,6 @@
       "count": 5
     },
     {
-      "id": "CTFT-TA-MSC",
-      "name": "MSC — Misc / Jail / Coding / Fullpwn",
-      "path": "tactics/CTFT-TA-MSC.md",
-      "count": 5
-    },
-    {
       "id": "CTFT-TA-OSI",
       "name": "OSI — OSINT",
       "path": "tactics/CTFT-TA-OSI.md",
@@ -113,7 +107,7 @@
       "count": 9
     }
   ],
-  "total_techniques": 110,
+  "total_techniques": 105,
   "techniques": [
     {
       "tactic": "CTFT-TA-AIM",
@@ -1124,76 +1118,6 @@
       }
     },
     {
-      "tactic": "CTFT-TA-MSC",
-      "category": "MSC",
-      "technique": {
-        "id": "CTFTTE-MSC-001",
-        "name": "CTFTTE-MSC-001 — Python jail (pyjail) confinement",
-        "path": "techniques/CTFTTE-MSC-001.md"
-      },
-      "counter": {
-        "id": "CTFTCTE-MSC-001",
-        "name": "CTFTCTE-MSC-001 — Escape the Python sandbox",
-        "path": "countertechniques/CTFTCTE-MSC-001.md"
-      }
-    },
-    {
-      "tactic": "CTFT-TA-MSC",
-      "category": "MSC",
-      "technique": {
-        "id": "CTFTTE-MSC-002",
-        "name": "CTFTTE-MSC-002 — Restricted-shell confinement",
-        "path": "techniques/CTFTTE-MSC-002.md"
-      },
-      "counter": {
-        "id": "CTFTCTE-MSC-002",
-        "name": "CTFTCTE-MSC-002 — Escape the restricted shell",
-        "path": "countertechniques/CTFTCTE-MSC-002.md"
-      }
-    },
-    {
-      "tactic": "CTFT-TA-MSC",
-      "category": "MSC",
-      "technique": {
-        "id": "CTFTTE-MSC-003",
-        "name": "CTFTTE-MSC-003 — Esolang / unusual-encoding puzzle",
-        "path": "techniques/CTFTTE-MSC-003.md"
-      },
-      "counter": {
-        "id": "CTFTCTE-MSC-003",
-        "name": "CTFTCTE-MSC-003 — Interpret or transpile the encoding",
-        "path": "countertechniques/CTFTCTE-MSC-003.md"
-      }
-    },
-    {
-      "tactic": "CTFT-TA-MSC",
-      "category": "MSC",
-      "technique": {
-        "id": "CTFTTE-MSC-004",
-        "name": "CTFTTE-MSC-004 — Networked game / protocol automation (GamePwn)",
-        "path": "techniques/CTFTTE-MSC-004.md"
-      },
-      "counter": {
-        "id": "CTFTCTE-MSC-004",
-        "name": "CTFTCTE-MSC-004 — Script a client to beat the protocol",
-        "path": "countertechniques/CTFTCTE-MSC-004.md"
-      }
-    },
-    {
-      "tactic": "CTFT-TA-MSC",
-      "category": "MSC",
-      "technique": {
-        "id": "CTFTTE-MSC-005",
-        "name": "CTFTTE-MSC-005 — Multi-stage chained challenge (Fullpwn)",
-        "path": "techniques/CTFTTE-MSC-005.md"
-      },
-      "counter": {
-        "id": "CTFTCTE-MSC-005",
-        "name": "CTFTCTE-MSC-005 — Chain enumeration, foothold and privilege escalation",
-        "path": "countertechniques/CTFTCTE-MSC-005.md"
-      }
-    },
-    {
       "tactic": "CTFT-TA-OSI",
       "category": "OSI",
       "technique": {
@@ -1729,11 +1653,6 @@
     "CTFTTE-MOB-003": "CTFTCTE-MOB-003",
     "CTFTTE-MOB-004": "CTFTCTE-MOB-004",
     "CTFTTE-MOB-005": "CTFTCTE-MOB-005",
-    "CTFTTE-MSC-001": "CTFTCTE-MSC-001",
-    "CTFTTE-MSC-002": "CTFTCTE-MSC-002",
-    "CTFTTE-MSC-003": "CTFTCTE-MSC-003",
-    "CTFTTE-MSC-004": "CTFTCTE-MSC-004",
-    "CTFTTE-MSC-005": "CTFTCTE-MSC-005",
     "CTFTTE-OSI-001": "CTFTCTE-OSI-001",
     "CTFTTE-OSI-002": "CTFTCTE-OSI-002",
     "CTFTTE-OSI-003": "CTFTCTE-OSI-003",
@@ -2272,41 +2191,6 @@
       "counter_name": "CTFTCTE-MOB-005 — Hook the app to satisfy runtime checks",
       "tactic": "CTFT-TA-MOB",
       "path": "techniques/CTFTTE-MOB-005.md"
-    },
-    "CTFTTE-MSC-001": {
-      "name": "CTFTTE-MSC-001 — Python jail (pyjail) confinement",
-      "counter_id": "CTFTCTE-MSC-001",
-      "counter_name": "CTFTCTE-MSC-001 — Escape the Python sandbox",
-      "tactic": "CTFT-TA-MSC",
-      "path": "techniques/CTFTTE-MSC-001.md"
-    },
-    "CTFTTE-MSC-002": {
-      "name": "CTFTTE-MSC-002 — Restricted-shell confinement",
-      "counter_id": "CTFTCTE-MSC-002",
-      "counter_name": "CTFTCTE-MSC-002 — Escape the restricted shell",
-      "tactic": "CTFT-TA-MSC",
-      "path": "techniques/CTFTTE-MSC-002.md"
-    },
-    "CTFTTE-MSC-003": {
-      "name": "CTFTTE-MSC-003 — Esolang / unusual-encoding puzzle",
-      "counter_id": "CTFTCTE-MSC-003",
-      "counter_name": "CTFTCTE-MSC-003 — Interpret or transpile the encoding",
-      "tactic": "CTFT-TA-MSC",
-      "path": "techniques/CTFTTE-MSC-003.md"
-    },
-    "CTFTTE-MSC-004": {
-      "name": "CTFTTE-MSC-004 — Networked game / protocol automation (GamePwn)",
-      "counter_id": "CTFTCTE-MSC-004",
-      "counter_name": "CTFTCTE-MSC-004 — Script a client to beat the protocol",
-      "tactic": "CTFT-TA-MSC",
-      "path": "techniques/CTFTTE-MSC-004.md"
-    },
-    "CTFTTE-MSC-005": {
-      "name": "CTFTTE-MSC-005 — Multi-stage chained challenge (Fullpwn)",
-      "counter_id": "CTFTCTE-MSC-005",
-      "counter_name": "CTFTCTE-MSC-005 — Chain enumeration, foothold and privilege escalation",
-      "tactic": "CTFT-TA-MSC",
-      "path": "techniques/CTFTTE-MSC-005.md"
     },
     "CTFTTE-OSI-001": {
       "name": "CTFTTE-OSI-001 — Metadata-dispersed identity/location",
@@ -3044,41 +2928,6 @@
       "technique_name": "CTFTTE-MOB-005 — Runtime/device-conditioned flag",
       "tactic": "CTFT-TA-MOB",
       "path": "countertechniques/CTFTCTE-MOB-005.md"
-    },
-    "CTFTCTE-MSC-001": {
-      "name": "CTFTCTE-MSC-001 — Escape the Python sandbox",
-      "technique_id": "CTFTTE-MSC-001",
-      "technique_name": "CTFTTE-MSC-001 — Python jail (pyjail) confinement",
-      "tactic": "CTFT-TA-MSC",
-      "path": "countertechniques/CTFTCTE-MSC-001.md"
-    },
-    "CTFTCTE-MSC-002": {
-      "name": "CTFTCTE-MSC-002 — Escape the restricted shell",
-      "technique_id": "CTFTTE-MSC-002",
-      "technique_name": "CTFTTE-MSC-002 — Restricted-shell confinement",
-      "tactic": "CTFT-TA-MSC",
-      "path": "countertechniques/CTFTCTE-MSC-002.md"
-    },
-    "CTFTCTE-MSC-003": {
-      "name": "CTFTCTE-MSC-003 — Interpret or transpile the encoding",
-      "technique_id": "CTFTTE-MSC-003",
-      "technique_name": "CTFTTE-MSC-003 — Esolang / unusual-encoding puzzle",
-      "tactic": "CTFT-TA-MSC",
-      "path": "countertechniques/CTFTCTE-MSC-003.md"
-    },
-    "CTFTCTE-MSC-004": {
-      "name": "CTFTCTE-MSC-004 — Script a client to beat the protocol",
-      "technique_id": "CTFTTE-MSC-004",
-      "technique_name": "CTFTTE-MSC-004 — Networked game / protocol automation (GamePwn)",
-      "tactic": "CTFT-TA-MSC",
-      "path": "countertechniques/CTFTCTE-MSC-004.md"
-    },
-    "CTFTCTE-MSC-005": {
-      "name": "CTFTCTE-MSC-005 — Chain enumeration, foothold and privilege escalation",
-      "technique_id": "CTFTTE-MSC-005",
-      "technique_name": "CTFTTE-MSC-005 — Multi-stage chained challenge (Fullpwn)",
-      "tactic": "CTFT-TA-MSC",
-      "path": "countertechniques/CTFTCTE-MSC-005.md"
     },
     "CTFTCTE-OSI-001": {
       "name": "CTFTCTE-OSI-001 — Correlate leaked metadata",

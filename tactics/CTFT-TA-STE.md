@@ -1,6 +1,7 @@
 # STE — Steganography
 
 > **Tactic ID:** `CTFT-TA-STE`  
+> **HTB mapping:** HTB: Forensics/Misc (Stego)  
 > **Techniques:** 9
 
 ## Description

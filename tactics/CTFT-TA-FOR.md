@@ -1,6 +1,7 @@
 # FOR — Forensics
 
 > **Tactic ID:** `CTFT-TA-FOR`  
+> **HTB mapping:** HTB: Forensics  
 > **Techniques:** 18
 
 ## Description

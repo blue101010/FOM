@@ -21,29 +21,38 @@ puzzle-craft) detail ATT&CK omits, and the nearest ATT&CK anchor where one exist
 | Design / Hide technique | `CTFTTE-<CAT>-NNN` | `CTFTTE-FOR-001` |
 | Counter-technique | `CTFTCTE-<CAT>-NNN` | `CTFTCTE-FOR-001` |
 
-## Tactics (18 categories)
+## Tactics (16 active categories)
 
-| Tactic | Name | HTB | Count |
-| --- | --- | --- | --- |
-| [CTFT-TA-WEB](tactics/CTFT-TA-WEB.md) | Web Exploitation | HTB: Web | 9 |
-| [CTFT-TA-PWN](tactics/CTFT-TA-PWN.md) | Binary Exploitation | HTB: Pwn | 5 |
-| [CTFT-TA-REV](tactics/CTFT-TA-REV.md) | Reverse Engineering | HTB: Reversing | 5 |
-| [CTFT-TA-CRY](tactics/CTFT-TA-CRY.md) | Cryptography | HTB: Crypto | 7 |
-| [CTFT-TA-FOR](tactics/CTFT-TA-FOR.md) | Forensics | HTB: Forensics | 18 |
-| [CTFT-TA-STE](tactics/CTFT-TA-STE.md) | Steganography | HTB: Forensics/Misc (Stego) | 9 |
-| [CTFT-TA-HWR](tactics/CTFT-TA-HWR.md) | Hardware | HTB: Hardware | 0 |
-| [CTFT-TA-MOB](tactics/CTFT-TA-MOB.md) | Mobile | HTB: Mobile | 5 |
-| [CTFT-TA-OSI](tactics/CTFT-TA-OSI.md) | OSINT | HTB: OSINT | 5 |
-| [CTFT-TA-BLK](tactics/CTFT-TA-BLK.md) | Blockchain | HTB: Blockchain | 5 |
-| [CTFT-TA-CLD](tactics/CTFT-TA-CLD.md) | Cloud | HTB: Cloud | 5 |
-| [CTFT-TA-ICS](tactics/CTFT-TA-ICS.md) | ICS / SCADA | HTB: ICS | 5 |
-| [CTFT-TA-AIM](tactics/CTFT-TA-AIM.md) | AI / ML | HTB: AI-ML | 5 |
-| [CTFT-TA-JAL](tactics/CTFT-TA-JAL.md) | Jail / Sandbox Escape | HTB: Misc (Jail) | 5 |
-| [CTFT-TA-COD](tactics/CTFT-TA-COD.md) | Coding / Programming Puzzle | HTB: Coding | 5 |
-| [CTFT-TA-GAM](tactics/CTFT-TA-GAM.md) | Game / Protocol Automation | HTB: GamePwn | 5 |
-| [CTFT-TA-FPN](tactics/CTFT-TA-FPN.md) | Full Pwn / Multi-Stage | HTB: Fullpwn | 7 |
-| [CTFT-TA-MSC](tactics/CTFT-TA-MSC.md) | Misc / Jail / Coding / Fullpwn | HTB: Misc, Coding, GamePwn, Fullpwn | 5 |
+Order and short labels follow the challenge-category picker.
 
+| # | Tactic | Label | Name | HTB | Pairs |
+| --- | --- | --- | --- | --- | --- |
+| 1 | [CTFT-TA-FOR](tactics/CTFT-TA-FOR.md) | Forensics | Forensics | HTB: Forensics | 18 |
+| 2 | [CTFT-TA-WEB](tactics/CTFT-TA-WEB.md) | Web | Web Exploitation | HTB: Web | 9 |
+| 3 | [CTFT-TA-CRY](tactics/CTFT-TA-CRY.md) | Crypto | Cryptography | HTB: Crypto | 7 |
+| 4 | [CTFT-TA-PWN](tactics/CTFT-TA-PWN.md) | Binary | Binary Exploitation | HTB: Pwn | 5 |
+| 5 | [CTFT-TA-REV](tactics/CTFT-TA-REV.md) | Reverse | Reverse Engineering | HTB: Reversing | 5 |
+| 6 | [CTFT-TA-STE](tactics/CTFT-TA-STE.md) | Stego | Steganography | HTB: Forensics/Misc (Stego) | 9 |
+| 7 | [CTFT-TA-OSI](tactics/CTFT-TA-OSI.md) | OSINT | OSINT | HTB: OSINT | 5 |
+| 8 | [CTFT-TA-CLD](tactics/CTFT-TA-CLD.md) | Cloud | Cloud | HTB: Cloud | 5 |
+| 9 | [CTFT-TA-BLK](tactics/CTFT-TA-BLK.md) | Blockchain | Blockchain | HTB: Blockchain | 5 |
+| 10 | [CTFT-TA-AIM](tactics/CTFT-TA-AIM.md) | AI/ML | AI / ML | HTB: AI-ML | 5 |
+| 11 | [CTFT-TA-ICS](tactics/CTFT-TA-ICS.md) | ICS/SCADA | ICS / SCADA | HTB: ICS | 5 |
+| 12 | [CTFT-TA-MOB](tactics/CTFT-TA-MOB.md) | Mobile | Mobile | HTB: Mobile | 5 |
+| 13 | [CTFT-TA-JAL](tactics/CTFT-TA-JAL.md) | Jail escape | Jail / Sandbox Escape | HTB: Misc (Jail) | 5 |
+| 14 | [CTFT-TA-GAM](tactics/CTFT-TA-GAM.md) | Game/Proto | Game / Protocol Automation | HTB: GamePwn | 5 |
+| 15 | [CTFT-TA-COD](tactics/CTFT-TA-COD.md) | Coding | Coding / Programming Puzzle | HTB: Coding | 5 |
+| 16 | [CTFT-TA-FPN](tactics/CTFT-TA-FPN.md) | Full Pwn | Full Pwn / Multi-Stage | HTB: Fullpwn | 7 |
+| | | | **Total** | | **105** |
+
+**Reserved:** [CTFT-TA-HWR](tactics/CTFT-TA-HWR.md) - Hardware (HTB: Hardware) is
+declared but holds no entries yet and is not offered in the picker.
+
+**Retired:** `CTFT-TA-MSC` (Misc) is **removed**. It was a catch-all and every entry
+it held duplicated a precise tactic. Do not create `MSC` entries; file the challenge
+under `JAL` (jail/sandbox), `COD` (coding/esolang), `GAM` (game/protocol automation)
+or `FPN` (multi-stage host compromise). The supersession map is in
+[CORRELATION.md](CORRELATION.md#retired-categories).
 
 ## Layout
 
@@ -54,9 +63,10 @@ FOM/
   CORRELATION.md              master technique ↔ counter-technique cross-reference
   index.json                  machine-readable index (pairs/by_id maps)
   ctft-generator.py           guarded legacy fixture generator
-  v2/catalog_audit.py          synchronizes index.json and writes coverage manifest
   fom-migrate.py              migration utility
-  tactics/                    18 tactic pages (CTFT-TA-<CAT>.md)
+  v2/render_taxonomy_docs.py  renders CORRELATION.md and HIERARCHY.md from the files
+  v2/catalog_audit.py         synchronizes index.json and writes coverage manifest
+  tactics/                    tactic pages (CTFT-TA-<CAT>.md), 16 active + HWR reserved
   techniques/                 design/hide techniques (CTFTTE-<CAT>-NNN.md)
     subtechniques.md          sub-technique index
   countertechniques/          counter-techniques (CTFTCTE-<CAT>-NNN.md)
@@ -67,7 +77,8 @@ FOM/
   stix/
     ctft-bundle.json          full STIX 2.1 bundle
     by-category/              one STIX bundle per tactic (CTFT-<CAT>.json)
-  backup/                     point-in-time snapshots of prior versions
+  backup/                     point-in-time snapshots of prior versions (untracked)
+    deprecated-msc/           retired MSC entries, superseded by JAL/COD/GAM/FPN
     tactics/
     techniques/
     countertechniques/
@@ -95,14 +106,19 @@ IDs are deterministic (`uuid5`) so regeneration is stable and diff-friendly.
 
 ## Catalogue integrity
 
-The current corpus contains 18 tactics and 110 complete technique/counter-technique
-pairs. Run the offline audit after editing taxonomy files; it generates a fingerprinted
-manifest and synchronizes `index.json` without inventing entries:
+The corpus contains **105 complete technique/counter-technique pairs** across 16 active
+tactics (plus the empty `HWR` placeholder). `CORRELATION.md` and `HIERARCHY.md` are
+**generated**, never hand-edited: the markdown entry files are the source of truth, so a
+renamed technique can never drift from the matrix. After adding or renaming an entry:
 
 ```bash
-python v2/catalog_audit.py --write --write-index --check
-python v2/catalog_audit.py --write-catalog
+python v2/render_taxonomy_docs.py --write
+python v2/catalog_audit.py --write --write-index --write-catalog --check
 ```
+
+The renderer refuses to run if a tactic directory is missing from its `CANONICAL_ORDER`
+list, or if a retired tactic (`MSC`) reappears - so a new category has to be declared
+deliberately rather than drifting in.
 
 `--check` validates structural consistency only. It deliberately reports placeholders
 and the smaller typed v2 slice as coverage debt until curated entries are available.
@@ -112,6 +128,15 @@ use it only with `--legacy-rebuild` to generate an isolated fixture.
 `catalog.json` contains every complete pair with a maturity marker. Only entries marked
 `typed` have validated indicators and playbook metadata; entries marked `taxonomy_only`
 remain discoverable but are not executable recommendations.
+
+### Known coverage debt
+
+- The STIX bundle under `stix/` predates the current corpus: it carries 63 pairs and 13
+  tactics against the 105 pairs and 16 tactics in the markdown taxonomy. `MSC` has been
+  purged from it, but it still needs a full regeneration from `index.json`.
+- `CORRELATION.md` lists the pairs whose counter-technique does not answer the technique
+  it is filed against, and the counters still named `Counter - <technique name>`. Both
+  need an editorial pass on the entry content.
 
 ## License
 

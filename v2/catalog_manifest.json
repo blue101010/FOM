@@ -1,10 +1,10 @@
 {
   "model": "CTFT",
   "schema_version": "2.0",
-  "generated_at": "2026-08-30T00:44:14+00:00",
+  "generated_at": "2026-08-30T00:59:46+00:00",
   "source": {
-    "correlation_sha256": "9998f5338df6965a2856161d65454e1aa937c549b5c713bba4b1dba899b7efdd",
-    "legacy_index_sha256": "d6a6fb951b50ae23b89f6f28e2e8def6fa262f1f3dc73392ad7dd607658d1741"
+    "correlation_sha256": "6dbe1bfb740a27b2e9d623c73523d651c86dccf8cc09358ba94a73c14be91e81",
+    "legacy_index_sha256": "b90c90f3e44a6489825f3eca901b074c392b76732f97452c988bf512d0167e2b"
   },
   "taxonomy": {
     "tactics": [
@@ -20,17 +20,16 @@
       "ICS",
       "JAL",
       "MOB",
-      "MSC",
       "OSI",
       "PWN",
       "REV",
       "STE",
       "WEB"
     ],
-    "tactic_count": 18,
-    "technique_count": 110,
-    "counter_technique_count": 110,
-    "complete_pairs": 110,
+    "tactic_count": 17,
+    "technique_count": 105,
+    "counter_technique_count": 105,
+    "complete_pairs": 105,
     "by_tactic": {
       "AIM": 5,
       "BLK": 5,
@@ -43,7 +42,6 @@
       "ICS": 5,
       "JAL": 5,
       "MOB": 5,
-      "MSC": 5,
       "OSI": 5,
       "PWN": 5,
       "REV": 5,
@@ -59,11 +57,11 @@
       "tools": 9
     },
     "stix_object_types": {
-      "attack-pattern": 68,
-      "course-of-action": 68,
+      "attack-pattern": 63,
+      "course-of-action": 63,
       "identity": 1,
-      "relationship": 68,
-      "x-ctft-tactic": 14
+      "relationship": 63,
+      "x-ctft-tactic": 13
     },
     "placeholder_entries": [
       "countertechniques/CTFTCTE-AIM-001.md",
@@ -124,11 +122,6 @@
       "countertechniques/CTFTCTE-MOB-003.md",
       "countertechniques/CTFTCTE-MOB-004.md",
       "countertechniques/CTFTCTE-MOB-005.md",
-      "countertechniques/CTFTCTE-MSC-001.md",
-      "countertechniques/CTFTCTE-MSC-002.md",
-      "countertechniques/CTFTCTE-MSC-003.md",
-      "countertechniques/CTFTCTE-MSC-004.md",
-      "countertechniques/CTFTCTE-MSC-005.md",
       "countertechniques/CTFTCTE-OSI-001.md",
       "countertechniques/CTFTCTE-OSI-002.md",
       "countertechniques/CTFTCTE-OSI-003.md",
@@ -212,11 +205,6 @@
       "techniques/CTFTTE-MOB-003.md",
       "techniques/CTFTTE-MOB-004.md",
       "techniques/CTFTTE-MOB-005.md",
-      "techniques/CTFTTE-MSC-001.md",
-      "techniques/CTFTTE-MSC-002.md",
-      "techniques/CTFTTE-MSC-003.md",
-      "techniques/CTFTTE-MSC-004.md",
-      "techniques/CTFTTE-MSC-005.md",
       "techniques/CTFTTE-OSI-001.md",
       "techniques/CTFTTE-OSI-002.md",
       "techniques/CTFTTE-OSI-003.md",
@@ -248,13 +236,13 @@
   "integrity": {
     "techniques_without_counter": [],
     "counters_without_technique": [],
-    "correlation_pair_count": 110,
+    "correlation_pair_count": 105,
     "correlation_pairs_missing_from_files": [],
     "correlation_pairs_not_identity": [],
     "pairs_missing_from_correlation": [],
     "legacy_index_tactics_missing_from_files": [],
     "tactics_missing_from_legacy_index": [],
-    "legacy_index_pair_count": 110,
+    "legacy_index_pair_count": 105,
     "legacy_index_pairs_missing_from_files": []
   }
 }

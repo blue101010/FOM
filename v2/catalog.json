@@ -2,8 +2,8 @@
   "model": "CTFT",
   "schema_version": "2.0",
   "collection": "catalog",
-  "generated_at": "2026-08-30T00:44:14+00:00",
-  "source_sha256": "9998f5338df6965a2856161d65454e1aa937c549b5c713bba4b1dba899b7efdd",
+  "generated_at": "2026-08-30T00:59:46+00:00",
+  "source_sha256": "6dbe1bfb740a27b2e9d623c73523d651c86dccf8cc09358ba94a73c14be91e81",
   "items": [
     {
       "id": "CTFTPAIR-AIM-001",
@@ -1545,116 +1545,6 @@
         "id": "CTFTCTE-MOB-005",
         "name": "CTFTCTE-MOB-005 — Hook the app to satisfy runtime checks",
         "path": "countertechniques/CTFTCTE-MOB-005.md"
-      },
-      "maturity": "taxonomy_only",
-      "missing_for_typed_recommendation": [
-        "indicators",
-        "preconditions",
-        "reviewed_tool_bindings",
-        "evaluation_case"
-      ]
-    },
-    {
-      "id": "CTFTPAIR-MSC-001",
-      "schema_version": "2.0",
-      "tactic": "CTFT-TA-MSC",
-      "technique": {
-        "id": "CTFTTE-MSC-001",
-        "name": "CTFTTE-MSC-001 — Python jail (pyjail) confinement",
-        "path": "techniques/CTFTTE-MSC-001.md"
-      },
-      "counter_technique": {
-        "id": "CTFTCTE-MSC-001",
-        "name": "CTFTCTE-MSC-001 — Escape the Python sandbox",
-        "path": "countertechniques/CTFTCTE-MSC-001.md"
-      },
-      "maturity": "taxonomy_only",
-      "missing_for_typed_recommendation": [
-        "indicators",
-        "preconditions",
-        "reviewed_tool_bindings",
-        "evaluation_case"
-      ]
-    },
-    {
-      "id": "CTFTPAIR-MSC-002",
-      "schema_version": "2.0",
-      "tactic": "CTFT-TA-MSC",
-      "technique": {
-        "id": "CTFTTE-MSC-002",
-        "name": "CTFTTE-MSC-002 — Restricted-shell confinement",
-        "path": "techniques/CTFTTE-MSC-002.md"
-      },
-      "counter_technique": {
-        "id": "CTFTCTE-MSC-002",
-        "name": "CTFTCTE-MSC-002 — Escape the restricted shell",
-        "path": "countertechniques/CTFTCTE-MSC-002.md"
-      },
-      "maturity": "taxonomy_only",
-      "missing_for_typed_recommendation": [
-        "indicators",
-        "preconditions",
-        "reviewed_tool_bindings",
-        "evaluation_case"
-      ]
-    },
-    {
-      "id": "CTFTPAIR-MSC-003",
-      "schema_version": "2.0",
-      "tactic": "CTFT-TA-MSC",
-      "technique": {
-        "id": "CTFTTE-MSC-003",
-        "name": "CTFTTE-MSC-003 — Esolang / unusual-encoding puzzle",
-        "path": "techniques/CTFTTE-MSC-003.md"
-      },
-      "counter_technique": {
-        "id": "CTFTCTE-MSC-003",
-        "name": "CTFTCTE-MSC-003 — Interpret or transpile the encoding",
-        "path": "countertechniques/CTFTCTE-MSC-003.md"
-      },
-      "maturity": "taxonomy_only",
-      "missing_for_typed_recommendation": [
-        "indicators",
-        "preconditions",
-        "reviewed_tool_bindings",
-        "evaluation_case"
-      ]
-    },
-    {
-      "id": "CTFTPAIR-MSC-004",
-      "schema_version": "2.0",
-      "tactic": "CTFT-TA-MSC",
-      "technique": {
-        "id": "CTFTTE-MSC-004",
-        "name": "CTFTTE-MSC-004 — Networked game / protocol automation (GamePwn)",
-        "path": "techniques/CTFTTE-MSC-004.md"
-      },
-      "counter_technique": {
-        "id": "CTFTCTE-MSC-004",
-        "name": "CTFTCTE-MSC-004 — Script a client to beat the protocol",
-        "path": "countertechniques/CTFTCTE-MSC-004.md"
-      },
-      "maturity": "taxonomy_only",
-      "missing_for_typed_recommendation": [
-        "indicators",
-        "preconditions",
-        "reviewed_tool_bindings",
-        "evaluation_case"
-      ]
-    },
-    {
-      "id": "CTFTPAIR-MSC-005",
-      "schema_version": "2.0",
-      "tactic": "CTFT-TA-MSC",
-      "technique": {
-        "id": "CTFTTE-MSC-005",
-        "name": "CTFTTE-MSC-005 — Multi-stage chained challenge (Fullpwn)",
-        "path": "techniques/CTFTTE-MSC-005.md"
-      },
-      "counter_technique": {
-        "id": "CTFTCTE-MSC-005",
-        "name": "CTFTCTE-MSC-005 — Chain enumeration, foothold and privilege escalation",
-        "path": "countertechniques/CTFTCTE-MSC-005.md"
       },
       "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [

@@ -2,9 +2,9 @@
   "model": "CTFT",
   "schema_version": "2.0",
   "collection": "curation_queue",
-  "generated_at": "2026-08-30T00:44:14+00:00",
-  "source_sha256": "9998f5338df6965a2856161d65454e1aa937c549b5c713bba4b1dba899b7efdd",
-  "pending_count": 103,
+  "generated_at": "2026-08-30T00:59:46+00:00",
+  "source_sha256": "6dbe1bfb740a27b2e9d623c73523d651c86dccf8cc09358ba94a73c14be91e81",
+  "pending_count": 98,
   "by_tactic": {
     "CTFT-TA-AIM": [
       {
@@ -670,58 +670,6 @@
       {
         "pair_id": "CTFTPAIR-MOB-005",
         "counter_technique": "CTFTCTE-MOB-005",
-        "missing": [
-          "indicators",
-          "preconditions",
-          "reviewed_tool_bindings",
-          "evaluation_case"
-        ]
-      }
-    ],
-    "CTFT-TA-MSC": [
-      {
-        "pair_id": "CTFTPAIR-MSC-001",
-        "counter_technique": "CTFTCTE-MSC-001",
-        "missing": [
-          "indicators",
-          "preconditions",
-          "reviewed_tool_bindings",
-          "evaluation_case"
-        ]
-      },
-      {
-        "pair_id": "CTFTPAIR-MSC-002",
-        "counter_technique": "CTFTCTE-MSC-002",
-        "missing": [
-          "indicators",
-          "preconditions",
-          "reviewed_tool_bindings",
-          "evaluation_case"
-        ]
-      },
-      {
-        "pair_id": "CTFTPAIR-MSC-003",
-        "counter_technique": "CTFTCTE-MSC-003",
-        "missing": [
-          "indicators",
-          "preconditions",
-          "reviewed_tool_bindings",
-          "evaluation_case"
-        ]
-      },
-      {
-        "pair_id": "CTFTPAIR-MSC-004",
-        "counter_technique": "CTFTCTE-MSC-004",
-        "missing": [
-          "indicators",
-          "preconditions",
-          "reviewed_tool_bindings",
-          "evaluation_case"
-        ]
-      },
-      {
-        "pair_id": "CTFTPAIR-MSC-005",
-        "counter_technique": "CTFTCTE-MSC-005",
         "missing": [
           "indicators",
           "preconditions",
