@@ -2,7 +2,7 @@
 
 > **Tactic ID:** `CTFT-TA-FPN`  
 > **HTB mapping:** HTB: Fullpwn  
-> **Techniques:** 5
+> **Techniques:** 7
 
 ## Description
 
@@ -25,6 +25,8 @@ rely on. CTFT never re-labels an existing ATT&CK technique.
 | [CTFTTE-FPN-003](../techniques/CTFTTE-FPN-003.md) | Multi-hop network pivot | [CTFTCTE-FPN-003](../countertechniques/CTFTCTE-FPN-003.md) | Tunnel through compromised hosts to reach the flag | Complements T1572 (Protocol Tunneling) with CTF pivot detail. |
 | [CTFTTE-FPN-004](../techniques/CTFTTE-FPN-004.md) | Container / service misconfiguration chain | [CTFTCTE-FPN-004](../countertechniques/CTFTCTE-FPN-004.md) | Chain service misconfig and container escape to host | Complements T1611 with multi-step CTF container-chain detail. |
 | [CTFTTE-FPN-005](../techniques/CTFTTE-FPN-005.md) | Cloud-integrated fullpwn | [CTFTCTE-FPN-005](../countertechniques/CTFTCTE-FPN-005.md) | Pivot from on-prem to cloud IAM to retrieve the secret | Complements T1552.005 (Cloud Instance Metadata) with CTF pivot detail. |
+| [CTFTTE-FPN-006](../techniques/CTFTTE-FPN-006.md) | Chained database trust-context escalation | [CTFTCTE-FPN-006](../countertechniques/CTFTCTE-FPN-006.md) | Map database trust contexts and privilege boundaries | CTF service-trust graph. |
+| [CTFTTE-FPN-007](../techniques/CTFTTE-FPN-007.md) | Uninventoried dual-stack management path | [CTFTCTE-FPN-007](../countertechniques/CTFTCTE-FPN-007.md) | Reconcile dual-stack management exposure | CTF inventory-completeness condition. |
 
 
 ---

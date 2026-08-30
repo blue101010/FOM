@@ -60,6 +60,7 @@ Quick cross-reference of every **Design / Hide Technique** and its paired **Coun
 | 4 | [CTFTTE-CRY-004](techniques/CTFTTE-CRY-004.md) | Predictable PRNG / nonce reuse | [CTFTCTE-CRY-004](countertechniques/CTFTCTE-CRY-004.md) | Reconstruct keys from broken randomness |
 | 5 | [CTFTTE-CRY-005](techniques/CTFTTE-CRY-005.md) | Hash length-extension exposure | [CTFTCTE-CRY-005](countertechniques/CTFTCTE-CRY-005.md) | Forge data via length extension |
 | 6 | [CTFTTE-CRY-006](techniques/CTFTTE-CRY-006.md) | Nested encoding obfuscation | [CTFTCTE-CRY-006](countertechniques/CTFTCTE-CRY-006.md) | Unwrap chained encodings |
+| 7 | [CTFTTE-CRY-007](techniques/CTFTTE-CRY-007.md) | Deliberately predictable stateful pseudo-random generator | [CTFTCTE-CRY-007](countertechniques/CTFTCTE-CRY-007.md) | Assess and predict recoverable PRNG state |
 
 
 ## `CTFT-TA-FOR` — Forensics
@@ -83,6 +84,7 @@ Quick cross-reference of every **Design / Hide Technique** and its paired **Coun
 | 15 | [CTFTTE-FOR-015](techniques/CTFTTE-FOR-015.md) | Conceal information with packagers | [CTFTCTE-FOR-015](countertechniques/CTFTCTE-FOR-015.md) | Recover from packager obfuscations |
 | 16 | [CTFTTE-FOR-016](techniques/CTFTTE-FOR-016.md) | Conceal information with date and time representations | [CTFTCTE-FOR-016](countertechniques/CTFTCTE-FOR-016.md) | Recover information with date and time representations |
 | 17 | [CTFTTE-FOR-017](techniques/CTFTTE-FOR-017.md) | Conceal text data strings in ELF binary | [CTFTCTE-FOR-017](countertechniques/CTFTCTE-FOR-017.md) | Recover text data strings from ELF binary |
+| 18 | [CTFTTE-FOR-018](techniques/CTFTTE-FOR-018.md) | MFT record and attribute tampering | [CTFTCTE-FOR-018](countertechniques/CTFTCTE-FOR-018.md) | Analyze orphaned MFT records and raw attributes |
 
 
 ## `CTFT-TA-FPN` — Full Pwn / Multi-Stage
@@ -94,6 +96,8 @@ Quick cross-reference of every **Design / Hide Technique** and its paired **Coun
 | 3 | [CTFTTE-FPN-003](techniques/CTFTTE-FPN-003.md) | Multi-hop network pivot | [CTFTCTE-FPN-003](countertechniques/CTFTCTE-FPN-003.md) | Tunnel through compromised hosts to reach the flag |
 | 4 | [CTFTTE-FPN-004](techniques/CTFTTE-FPN-004.md) | Container / service misconfiguration chain | [CTFTCTE-FPN-004](countertechniques/CTFTCTE-FPN-004.md) | Chain service misconfig and container escape to host |
 | 5 | [CTFTTE-FPN-005](techniques/CTFTTE-FPN-005.md) | Cloud-integrated fullpwn | [CTFTCTE-FPN-005](countertechniques/CTFTCTE-FPN-005.md) | Pivot from on-prem to cloud IAM to retrieve the secret |
+| 6 | [CTFTTE-FPN-006](techniques/CTFTTE-FPN-006.md) | Chained database trust-context escalation | [CTFTCTE-FPN-006](countertechniques/CTFTCTE-FPN-006.md) | Map database trust contexts and privilege boundaries |
+| 7 | [CTFTTE-FPN-007](techniques/CTFTTE-FPN-007.md) | Uninventoried dual-stack management path | [CTFTCTE-FPN-007](countertechniques/CTFTCTE-FPN-007.md) | Reconcile dual-stack management exposure |
 
 
 ## `CTFT-TA-GAM` — Game / Protocol Automation (GamePwn)
@@ -185,6 +189,7 @@ Quick cross-reference of every **Design / Hide Technique** and its paired **Coun
 | 6 | [CTFTTE-STE-006](techniques/CTFTTE-STE-006.md) | Conceal information within digital media with **linguistic** | [CTFTCTE-STE-006](countertechniques/CTFTCTE-STE-006.md) | Counter — Conceal information within digital media with **li |
 | 7 | [CTFTTE-STE-007](techniques/CTFTTE-STE-007.md) | Conceal information within digital media with **technical**  | [CTFTCTE-STE-007](countertechniques/CTFTCTE-STE-007.md) | Counter — Conceal information within digital media with **te |
 | 8 | [CTFTTE-STE-008](techniques/CTFTTE-STE-008.md) | Conceal via **technical text** steganography | [CTFTCTE-STE-008](countertechniques/CTFTCTE-STE-008.md) | Counter — Conceal via **technical text** steganography |
+| 9 | [CTFTTE-STE-009](techniques/CTFTTE-STE-009.md) | Nested metadata-container embedding | [CTFTCTE-STE-009](countertechniques/CTFTCTE-STE-009.md) | Recursively inspect nested metadata containers |
 
 
 ## `CTFT-TA-WEB` — Web Exploitation
@@ -197,6 +202,9 @@ Quick cross-reference of every **Design / Hide Technique** and its paired **Coun
 | 4 | [CTFTTE-WEB-004](techniques/CTFTTE-WEB-004.md) | Blind / WAF-evaded SQL injection | [CTFTCTE-WEB-004](countertechniques/CTFTCTE-WEB-004.md) | Extract data via blind injection |
 | 5 | [CTFTTE-WEB-005](techniques/CTFTTE-WEB-005.md) | Server-side template injection | [CTFTCTE-WEB-005](countertechniques/CTFTCTE-WEB-005.md) | Exploit template evaluation |
 | 6 | [CTFTTE-WEB-006](techniques/CTFTTE-WEB-006.md) | Client-side obfuscated logic | [CTFTCTE-WEB-006](countertechniques/CTFTCTE-WEB-006.md) | Deobfuscate and dynamically analyze JS |
+| 7 | [CTFTTE-WEB-007](techniques/CTFTTE-WEB-007.md) | Deployment metadata index disclosure | [CTFTCTE-WEB-007](countertechniques/CTFTCTE-WEB-007.md) | Analyze a disclosed deployment metadata index |
+| 8 | [CTFTTE-WEB-008](techniques/CTFTTE-WEB-008.md) | Legacy short-name namespace disclosure | [CTFTCTE-WEB-008](countertechniques/CTFTCTE-WEB-008.md) | Reconcile a disclosed short-name namespace |
+| 9 | [CTFTTE-WEB-009](techniques/CTFTTE-WEB-009.md) | Web configuration secret exposure | [CTFTCTE-WEB-009](countertechniques/CTFTCTE-WEB-009.md) | Classify a configuration secret exposure |
 
 ## `CTFT-TA-MSC` — Misc / Jail / Coding / Fullpwn
 

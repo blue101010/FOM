@@ -1,7 +1,7 @@
 # STE — Steganography
 
 > **Tactic ID:** `CTFT-TA-STE`  
-> **Techniques:** 8
+> **Techniques:** 9
 
 ## Description
 
@@ -27,6 +27,7 @@ rely on. CTFT never re-labels an existing ATT&CK technique.
 | [CTFTTE-STE-006](../techniques/CTFTTE-STE-006.md) | Conceal information within digital media with **linguistic** steganograp | [CTFTCTE-STE-006](../countertechniques/CTFTCTE-STE-006.md) | Counter — Conceal information within digital media with **linguistic** s |
 | [CTFTTE-STE-007](../techniques/CTFTTE-STE-007.md) | Conceal information within digital media with **technical** steganograph | [CTFTCTE-STE-007](../countertechniques/CTFTCTE-STE-007.md) | Counter — Conceal information within digital media with **technical** st |
 | [CTFTTE-STE-008](../techniques/CTFTTE-STE-008.md) | Conceal via **technical text** steganography | [CTFTCTE-STE-008](../countertechniques/CTFTCTE-STE-008.md) | Counter — Conceal via **technical text** steganography |
+| [CTFTTE-STE-009](../techniques/CTFTTE-STE-009.md) | Nested metadata-container embedding | [CTFTCTE-STE-009](../countertechniques/CTFTCTE-STE-009.md) | Recursively inspect nested metadata containers |
 
 
 ---

@@ -2,9 +2,9 @@
   "model": "CTFT",
   "schema_version": "2.0",
   "collection": "curation_queue",
-  "generated_at": "2026-08-30T00:31:05+00:00",
-  "source_sha256": "dce1384754176adf9e64ac5252c683762d0abbd343ce9e41e3fdb60df9a3e7cc",
-  "pending_count": 96,
+  "generated_at": "2026-08-30T00:44:14+00:00",
+  "source_sha256": "9998f5338df6965a2856161d65454e1aa937c549b5c713bba4b1dba899b7efdd",
+  "pending_count": 103,
   "by_tactic": {
     "CTFT-TA-AIM": [
       {
@@ -274,6 +274,16 @@
           "reviewed_tool_bindings",
           "evaluation_case"
         ]
+      },
+      {
+        "pair_id": "CTFTPAIR-CRY-007",
+        "counter_technique": "CTFTCTE-CRY-007",
+        "missing": [
+          "indicators",
+          "preconditions",
+          "reviewed_tool_bindings",
+          "evaluation_case"
+        ]
       }
     ],
     "CTFT-TA-FOR": [
@@ -432,6 +442,26 @@
       {
         "pair_id": "CTFTPAIR-FPN-005",
         "counter_technique": "CTFTCTE-FPN-005",
+        "missing": [
+          "indicators",
+          "preconditions",
+          "reviewed_tool_bindings",
+          "evaluation_case"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-FPN-006",
+        "counter_technique": "CTFTCTE-FPN-006",
+        "missing": [
+          "indicators",
+          "preconditions",
+          "reviewed_tool_bindings",
+          "evaluation_case"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-FPN-007",
+        "counter_technique": "CTFTCTE-FPN-007",
         "missing": [
           "indicators",
           "preconditions",
@@ -936,6 +966,16 @@
           "reviewed_tool_bindings",
           "evaluation_case"
         ]
+      },
+      {
+        "pair_id": "CTFTPAIR-STE-009",
+        "counter_technique": "CTFTCTE-STE-009",
+        "missing": [
+          "indicators",
+          "preconditions",
+          "reviewed_tool_bindings",
+          "evaluation_case"
+        ]
       }
     ],
     "CTFT-TA-WEB": [
@@ -992,6 +1032,36 @@
       {
         "pair_id": "CTFTPAIR-WEB-006",
         "counter_technique": "CTFTCTE-WEB-006",
+        "missing": [
+          "indicators",
+          "preconditions",
+          "reviewed_tool_bindings",
+          "evaluation_case"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-WEB-007",
+        "counter_technique": "CTFTCTE-WEB-007",
+        "missing": [
+          "indicators",
+          "preconditions",
+          "reviewed_tool_bindings",
+          "evaluation_case"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-WEB-008",
+        "counter_technique": "CTFTCTE-WEB-008",
+        "missing": [
+          "indicators",
+          "preconditions",
+          "reviewed_tool_bindings",
+          "evaluation_case"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-WEB-009",
+        "counter_technique": "CTFTCTE-WEB-009",
         "missing": [
           "indicators",
           "preconditions",

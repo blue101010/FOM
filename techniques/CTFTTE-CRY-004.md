@@ -1,14 +1,15 @@
-# CTFTTE-CRY-004 — Predictable PRNG / nonce reuse
+# CTFTTE-CRY-004 — Nonce reuse in cryptographic operations
 
 > **Type:** Design / Hide Technique  
 > **Tactic:** [`CTFT-TA-CRY`](../tactics/CTFT-TA-CRY.md) — Cryptography  
-> **Paired counter-technique:** [`CTFTCTE-CRY-004`](../countertechniques/CTFTCTE-CRY-004.md) — Reconstruct keys from broken randomness
+> **Paired counter-technique:** [`CTFTCTE-CRY-004`](../countertechniques/CTFTCTE-CRY-004.md) — Assess nonce reuse and its cryptographic consequence
 
 ---
 
 ## How the challenge author hides
 
-A weak/seeded PRNG (LCG, time-seeded) or a reused ECDSA/CTR nonce undermines the scheme.
+A challenge repeats a nonce in a declared cryptographic operation, creating a
+relationship between outputs that should have been independent.
 
 ## ATT\&CK Complementarity
 
@@ -17,8 +18,7 @@ No ATT&CK equivalent.
 ## Tools
 
 - SageMath
-- z3
-- python ecdsa
+- Python cryptographic reference implementations
 
 ## References
 

@@ -1,7 +1,7 @@
 {
   "model": "CTFT",
   "version": "1.2",
-  "generated": "2026-08-30T00:31:05+00:00",
+  "generated": "2026-08-30T00:44:14+00:00",
   "complements": "MITRE ATT&CK",
   "tactics": [
     {
@@ -32,19 +32,19 @@
       "id": "CTFT-TA-CRY",
       "name": "CRY — Cryptography",
       "path": "tactics/CTFT-TA-CRY.md",
-      "count": 6
+      "count": 7
     },
     {
       "id": "CTFT-TA-FOR",
       "name": "FOR — Forensics",
       "path": "tactics/CTFT-TA-FOR.md",
-      "count": 17
+      "count": 18
     },
     {
       "id": "CTFT-TA-FPN",
       "name": "FPN — Full Pwn / Multi-Stage",
       "path": "tactics/CTFT-TA-FPN.md",
-      "count": 5
+      "count": 7
     },
     {
       "id": "CTFT-TA-GAM",
@@ -104,16 +104,16 @@
       "id": "CTFT-TA-STE",
       "name": "STE — Steganography",
       "path": "tactics/CTFT-TA-STE.md",
-      "count": 8
+      "count": 9
     },
     {
       "id": "CTFT-TA-WEB",
       "name": "WEB — Web Exploitation",
       "path": "tactics/CTFT-TA-WEB.md",
-      "count": 6
+      "count": 9
     }
   ],
-  "total_techniques": 102,
+  "total_techniques": 110,
   "techniques": [
     {
       "tactic": "CTFT-TA-AIM",
@@ -442,12 +442,12 @@
       "category": "CRY",
       "technique": {
         "id": "CTFTTE-CRY-004",
-        "name": "CTFTTE-CRY-004 — Predictable PRNG / nonce reuse",
+        "name": "CTFTTE-CRY-004 — Nonce reuse in cryptographic operations",
         "path": "techniques/CTFTTE-CRY-004.md"
       },
       "counter": {
         "id": "CTFTCTE-CRY-004",
-        "name": "CTFTCTE-CRY-004 — Reconstruct keys from broken randomness",
+        "name": "CTFTCTE-CRY-004 — Assess nonce reuse and its cryptographic consequence",
         "path": "countertechniques/CTFTCTE-CRY-004.md"
       }
     },
@@ -477,6 +477,20 @@
         "id": "CTFTCTE-CRY-006",
         "name": "CTFTCTE-CRY-006 — Unwrap chained encodings",
         "path": "countertechniques/CTFTCTE-CRY-006.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-CRY",
+      "category": "CRY",
+      "technique": {
+        "id": "CTFTTE-CRY-007",
+        "name": "CTFTTE-CRY-007 — Deliberately predictable stateful pseudo-random generator",
+        "path": "techniques/CTFTTE-CRY-007.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-CRY-007",
+        "name": "CTFTCTE-CRY-007 — Assess and predict recoverable PRNG state",
+        "path": "countertechniques/CTFTCTE-CRY-007.md"
       }
     },
     {
@@ -718,6 +732,20 @@
       }
     },
     {
+      "tactic": "CTFT-TA-FOR",
+      "category": "FOR",
+      "technique": {
+        "id": "CTFTTE-FOR-018",
+        "name": "CTFTTE-FOR-018 — MFT record and attribute tampering",
+        "path": "techniques/CTFTTE-FOR-018.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-FOR-018",
+        "name": "CTFTCTE-FOR-018 — Analyze orphaned MFT records and raw attributes",
+        "path": "countertechniques/CTFTCTE-FOR-018.md"
+      }
+    },
+    {
       "tactic": "CTFT-TA-FPN",
       "category": "FPN",
       "technique": {
@@ -785,6 +813,34 @@
         "id": "CTFTCTE-FPN-005",
         "name": "CTFTCTE-FPN-005 — Pivot from on-prem to cloud IAM to retrieve the secret",
         "path": "countertechniques/CTFTCTE-FPN-005.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-FPN",
+      "category": "FPN",
+      "technique": {
+        "id": "CTFTTE-FPN-006",
+        "name": "CTFTTE-FPN-006 — Chained database trust-context escalation",
+        "path": "techniques/CTFTTE-FPN-006.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-FPN-006",
+        "name": "CTFTCTE-FPN-006 — Map database trust contexts and privilege boundaries",
+        "path": "countertechniques/CTFTCTE-FPN-006.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-FPN",
+      "category": "FPN",
+      "technique": {
+        "id": "CTFTTE-FPN-007",
+        "name": "CTFTTE-FPN-007 — Uninventoried dual-stack management path",
+        "path": "techniques/CTFTTE-FPN-007.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-FPN-007",
+        "name": "CTFTCTE-FPN-007 — Reconcile dual-stack management exposure",
+        "path": "countertechniques/CTFTCTE-FPN-007.md"
       }
     },
     {
@@ -1460,6 +1516,20 @@
       }
     },
     {
+      "tactic": "CTFT-TA-STE",
+      "category": "STE",
+      "technique": {
+        "id": "CTFTTE-STE-009",
+        "name": "CTFTTE-STE-009 — Nested metadata-container embedding",
+        "path": "techniques/CTFTTE-STE-009.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-STE-009",
+        "name": "CTFTCTE-STE-009 — Recursively inspect nested metadata containers",
+        "path": "countertechniques/CTFTCTE-STE-009.md"
+      }
+    },
+    {
       "tactic": "CTFT-TA-WEB",
       "category": "WEB",
       "technique": {
@@ -1542,6 +1612,48 @@
         "name": "CTFTCTE-WEB-006 — Deobfuscate and dynamically analyze JS",
         "path": "countertechniques/CTFTCTE-WEB-006.md"
       }
+    },
+    {
+      "tactic": "CTFT-TA-WEB",
+      "category": "WEB",
+      "technique": {
+        "id": "CTFTTE-WEB-007",
+        "name": "CTFTTE-WEB-007 — Deployment metadata index disclosure",
+        "path": "techniques/CTFTTE-WEB-007.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-WEB-007",
+        "name": "CTFTCTE-WEB-007 — Analyze a disclosed deployment metadata index",
+        "path": "countertechniques/CTFTCTE-WEB-007.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-WEB",
+      "category": "WEB",
+      "technique": {
+        "id": "CTFTTE-WEB-008",
+        "name": "CTFTTE-WEB-008 — Legacy short-name namespace disclosure",
+        "path": "techniques/CTFTTE-WEB-008.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-WEB-008",
+        "name": "CTFTCTE-WEB-008 — Reconcile a disclosed short-name namespace",
+        "path": "countertechniques/CTFTCTE-WEB-008.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-WEB",
+      "category": "WEB",
+      "technique": {
+        "id": "CTFTTE-WEB-009",
+        "name": "CTFTTE-WEB-009 — Web configuration secret exposure",
+        "path": "techniques/CTFTTE-WEB-009.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-WEB-009",
+        "name": "CTFTCTE-WEB-009 — Classify a configuration secret exposure",
+        "path": "countertechniques/CTFTCTE-WEB-009.md"
+      }
     }
   ],
   "pairs": {
@@ -1571,6 +1683,7 @@
     "CTFTTE-CRY-004": "CTFTCTE-CRY-004",
     "CTFTTE-CRY-005": "CTFTCTE-CRY-005",
     "CTFTTE-CRY-006": "CTFTCTE-CRY-006",
+    "CTFTTE-CRY-007": "CTFTCTE-CRY-007",
     "CTFTTE-FOR-001": "CTFTCTE-FOR-001",
     "CTFTTE-FOR-002": "CTFTCTE-FOR-002",
     "CTFTTE-FOR-003": "CTFTCTE-FOR-003",
@@ -1588,11 +1701,14 @@
     "CTFTTE-FOR-015": "CTFTCTE-FOR-015",
     "CTFTTE-FOR-016": "CTFTCTE-FOR-016",
     "CTFTTE-FOR-017": "CTFTCTE-FOR-017",
+    "CTFTTE-FOR-018": "CTFTCTE-FOR-018",
     "CTFTTE-FPN-001": "CTFTCTE-FPN-001",
     "CTFTTE-FPN-002": "CTFTCTE-FPN-002",
     "CTFTTE-FPN-003": "CTFTCTE-FPN-003",
     "CTFTTE-FPN-004": "CTFTCTE-FPN-004",
     "CTFTTE-FPN-005": "CTFTCTE-FPN-005",
+    "CTFTTE-FPN-006": "CTFTCTE-FPN-006",
+    "CTFTTE-FPN-007": "CTFTCTE-FPN-007",
     "CTFTTE-GAM-001": "CTFTCTE-GAM-001",
     "CTFTTE-GAM-002": "CTFTCTE-GAM-002",
     "CTFTTE-GAM-003": "CTFTCTE-GAM-003",
@@ -1641,12 +1757,16 @@
     "CTFTTE-STE-006": "CTFTCTE-STE-006",
     "CTFTTE-STE-007": "CTFTCTE-STE-007",
     "CTFTTE-STE-008": "CTFTCTE-STE-008",
+    "CTFTTE-STE-009": "CTFTCTE-STE-009",
     "CTFTTE-WEB-001": "CTFTCTE-WEB-001",
     "CTFTTE-WEB-002": "CTFTCTE-WEB-002",
     "CTFTTE-WEB-003": "CTFTCTE-WEB-003",
     "CTFTTE-WEB-004": "CTFTCTE-WEB-004",
     "CTFTTE-WEB-005": "CTFTCTE-WEB-005",
-    "CTFTTE-WEB-006": "CTFTCTE-WEB-006"
+    "CTFTTE-WEB-006": "CTFTCTE-WEB-006",
+    "CTFTTE-WEB-007": "CTFTCTE-WEB-007",
+    "CTFTTE-WEB-008": "CTFTCTE-WEB-008",
+    "CTFTTE-WEB-009": "CTFTCTE-WEB-009"
   },
   "by_technique_id": {
     "CTFTTE-AIM-001": {
@@ -1811,9 +1931,9 @@
       "path": "techniques/CTFTTE-CRY-003.md"
     },
     "CTFTTE-CRY-004": {
-      "name": "CTFTTE-CRY-004 — Predictable PRNG / nonce reuse",
+      "name": "CTFTTE-CRY-004 — Nonce reuse in cryptographic operations",
       "counter_id": "CTFTCTE-CRY-004",
-      "counter_name": "CTFTCTE-CRY-004 — Reconstruct keys from broken randomness",
+      "counter_name": "CTFTCTE-CRY-004 — Assess nonce reuse and its cryptographic consequence",
       "tactic": "CTFT-TA-CRY",
       "path": "techniques/CTFTTE-CRY-004.md"
     },
@@ -1830,6 +1950,13 @@
       "counter_name": "CTFTCTE-CRY-006 — Unwrap chained encodings",
       "tactic": "CTFT-TA-CRY",
       "path": "techniques/CTFTTE-CRY-006.md"
+    },
+    "CTFTTE-CRY-007": {
+      "name": "CTFTTE-CRY-007 — Deliberately predictable stateful pseudo-random generator",
+      "counter_id": "CTFTCTE-CRY-007",
+      "counter_name": "CTFTCTE-CRY-007 — Assess and predict recoverable PRNG state",
+      "tactic": "CTFT-TA-CRY",
+      "path": "techniques/CTFTTE-CRY-007.md"
     },
     "CTFTTE-FOR-001": {
       "name": "CTFTTE-FOR-001 — Magic-byte / file-signature tampering",
@@ -1950,6 +2077,13 @@
       "tactic": "CTFT-TA-FOR",
       "path": "techniques/CTFTTE-FOR-017.md"
     },
+    "CTFTTE-FOR-018": {
+      "name": "CTFTTE-FOR-018 — MFT record and attribute tampering",
+      "counter_id": "CTFTCTE-FOR-018",
+      "counter_name": "CTFTCTE-FOR-018 — Analyze orphaned MFT records and raw attributes",
+      "tactic": "CTFT-TA-FOR",
+      "path": "techniques/CTFTTE-FOR-018.md"
+    },
     "CTFTTE-FPN-001": {
       "name": "CTFTTE-FPN-001 — Multi-stage chained challenge",
       "counter_id": "CTFTCTE-FPN-001",
@@ -1984,6 +2118,20 @@
       "counter_name": "CTFTCTE-FPN-005 — Pivot from on-prem to cloud IAM to retrieve the secret",
       "tactic": "CTFT-TA-FPN",
       "path": "techniques/CTFTTE-FPN-005.md"
+    },
+    "CTFTTE-FPN-006": {
+      "name": "CTFTTE-FPN-006 — Chained database trust-context escalation",
+      "counter_id": "CTFTCTE-FPN-006",
+      "counter_name": "CTFTCTE-FPN-006 — Map database trust contexts and privilege boundaries",
+      "tactic": "CTFT-TA-FPN",
+      "path": "techniques/CTFTTE-FPN-006.md"
+    },
+    "CTFTTE-FPN-007": {
+      "name": "CTFTTE-FPN-007 — Uninventoried dual-stack management path",
+      "counter_id": "CTFTCTE-FPN-007",
+      "counter_name": "CTFTCTE-FPN-007 — Reconcile dual-stack management exposure",
+      "tactic": "CTFT-TA-FPN",
+      "path": "techniques/CTFTTE-FPN-007.md"
     },
     "CTFTTE-GAM-001": {
       "name": "CTFTTE-GAM-001 — Networked game / protocol automation",
@@ -2321,6 +2469,13 @@
       "tactic": "CTFT-TA-STE",
       "path": "techniques/CTFTTE-STE-008.md"
     },
+    "CTFTTE-STE-009": {
+      "name": "CTFTTE-STE-009 — Nested metadata-container embedding",
+      "counter_id": "CTFTCTE-STE-009",
+      "counter_name": "CTFTCTE-STE-009 — Recursively inspect nested metadata containers",
+      "tactic": "CTFT-TA-STE",
+      "path": "techniques/CTFTTE-STE-009.md"
+    },
     "CTFTTE-WEB-001": {
       "name": "CTFTTE-WEB-001 — Obscured endpoint / source-comment hiding",
       "counter_id": "CTFTCTE-WEB-001",
@@ -2362,6 +2517,27 @@
       "counter_name": "CTFTCTE-WEB-006 — Deobfuscate and dynamically analyze JS",
       "tactic": "CTFT-TA-WEB",
       "path": "techniques/CTFTTE-WEB-006.md"
+    },
+    "CTFTTE-WEB-007": {
+      "name": "CTFTTE-WEB-007 — Deployment metadata index disclosure",
+      "counter_id": "CTFTCTE-WEB-007",
+      "counter_name": "CTFTCTE-WEB-007 — Analyze a disclosed deployment metadata index",
+      "tactic": "CTFT-TA-WEB",
+      "path": "techniques/CTFTTE-WEB-007.md"
+    },
+    "CTFTTE-WEB-008": {
+      "name": "CTFTTE-WEB-008 — Legacy short-name namespace disclosure",
+      "counter_id": "CTFTCTE-WEB-008",
+      "counter_name": "CTFTCTE-WEB-008 — Reconcile a disclosed short-name namespace",
+      "tactic": "CTFT-TA-WEB",
+      "path": "techniques/CTFTTE-WEB-008.md"
+    },
+    "CTFTTE-WEB-009": {
+      "name": "CTFTTE-WEB-009 — Web configuration secret exposure",
+      "counter_id": "CTFTCTE-WEB-009",
+      "counter_name": "CTFTCTE-WEB-009 — Classify a configuration secret exposure",
+      "tactic": "CTFT-TA-WEB",
+      "path": "techniques/CTFTTE-WEB-009.md"
     }
   },
   "by_counter_id": {
@@ -2527,9 +2703,9 @@
       "path": "countertechniques/CTFTCTE-CRY-003.md"
     },
     "CTFTCTE-CRY-004": {
-      "name": "CTFTCTE-CRY-004 — Reconstruct keys from broken randomness",
+      "name": "CTFTCTE-CRY-004 — Assess nonce reuse and its cryptographic consequence",
       "technique_id": "CTFTTE-CRY-004",
-      "technique_name": "CTFTTE-CRY-004 — Predictable PRNG / nonce reuse",
+      "technique_name": "CTFTTE-CRY-004 — Nonce reuse in cryptographic operations",
       "tactic": "CTFT-TA-CRY",
       "path": "countertechniques/CTFTCTE-CRY-004.md"
     },
@@ -2546,6 +2722,13 @@
       "technique_name": "CTFTTE-CRY-006 — Nested encoding obfuscation",
       "tactic": "CTFT-TA-CRY",
       "path": "countertechniques/CTFTCTE-CRY-006.md"
+    },
+    "CTFTCTE-CRY-007": {
+      "name": "CTFTCTE-CRY-007 — Assess and predict recoverable PRNG state",
+      "technique_id": "CTFTTE-CRY-007",
+      "technique_name": "CTFTTE-CRY-007 — Deliberately predictable stateful pseudo-random generator",
+      "tactic": "CTFT-TA-CRY",
+      "path": "countertechniques/CTFTCTE-CRY-007.md"
     },
     "CTFTCTE-FOR-001": {
       "name": "CTFTCTE-FOR-001 — Recover the legitimate file signature",
@@ -2666,6 +2849,13 @@
       "tactic": "CTFT-TA-FOR",
       "path": "countertechniques/CTFTCTE-FOR-017.md"
     },
+    "CTFTCTE-FOR-018": {
+      "name": "CTFTCTE-FOR-018 — Analyze orphaned MFT records and raw attributes",
+      "technique_id": "CTFTTE-FOR-018",
+      "technique_name": "CTFTTE-FOR-018 — MFT record and attribute tampering",
+      "tactic": "CTFT-TA-FOR",
+      "path": "countertechniques/CTFTCTE-FOR-018.md"
+    },
     "CTFTCTE-FPN-001": {
       "name": "CTFTCTE-FPN-001 — Chain enumeration, foothold and privilege escalation",
       "technique_id": "CTFTTE-FPN-001",
@@ -2700,6 +2890,20 @@
       "technique_name": "CTFTTE-FPN-005 — Cloud-integrated fullpwn",
       "tactic": "CTFT-TA-FPN",
       "path": "countertechniques/CTFTCTE-FPN-005.md"
+    },
+    "CTFTCTE-FPN-006": {
+      "name": "CTFTCTE-FPN-006 — Map database trust contexts and privilege boundaries",
+      "technique_id": "CTFTTE-FPN-006",
+      "technique_name": "CTFTTE-FPN-006 — Chained database trust-context escalation",
+      "tactic": "CTFT-TA-FPN",
+      "path": "countertechniques/CTFTCTE-FPN-006.md"
+    },
+    "CTFTCTE-FPN-007": {
+      "name": "CTFTCTE-FPN-007 — Reconcile dual-stack management exposure",
+      "technique_id": "CTFTTE-FPN-007",
+      "technique_name": "CTFTTE-FPN-007 — Uninventoried dual-stack management path",
+      "tactic": "CTFT-TA-FPN",
+      "path": "countertechniques/CTFTCTE-FPN-007.md"
     },
     "CTFTCTE-GAM-001": {
       "name": "CTFTCTE-GAM-001 — Script a client to beat the protocol",
@@ -3037,6 +3241,13 @@
       "tactic": "CTFT-TA-STE",
       "path": "countertechniques/CTFTCTE-STE-008.md"
     },
+    "CTFTCTE-STE-009": {
+      "name": "CTFTCTE-STE-009 — Recursively inspect nested metadata containers",
+      "technique_id": "CTFTTE-STE-009",
+      "technique_name": "CTFTTE-STE-009 — Nested metadata-container embedding",
+      "tactic": "CTFT-TA-STE",
+      "path": "countertechniques/CTFTCTE-STE-009.md"
+    },
     "CTFTCTE-WEB-001": {
       "name": "CTFTCTE-WEB-001 — Content discovery and source review",
       "technique_id": "CTFTTE-WEB-001",
@@ -3078,6 +3289,27 @@
       "technique_name": "CTFTTE-WEB-006 — Client-side obfuscated logic",
       "tactic": "CTFT-TA-WEB",
       "path": "countertechniques/CTFTCTE-WEB-006.md"
+    },
+    "CTFTCTE-WEB-007": {
+      "name": "CTFTCTE-WEB-007 — Analyze a disclosed deployment metadata index",
+      "technique_id": "CTFTTE-WEB-007",
+      "technique_name": "CTFTTE-WEB-007 — Deployment metadata index disclosure",
+      "tactic": "CTFT-TA-WEB",
+      "path": "countertechniques/CTFTCTE-WEB-007.md"
+    },
+    "CTFTCTE-WEB-008": {
+      "name": "CTFTCTE-WEB-008 — Reconcile a disclosed short-name namespace",
+      "technique_id": "CTFTTE-WEB-008",
+      "technique_name": "CTFTTE-WEB-008 — Legacy short-name namespace disclosure",
+      "tactic": "CTFT-TA-WEB",
+      "path": "countertechniques/CTFTCTE-WEB-008.md"
+    },
+    "CTFTCTE-WEB-009": {
+      "name": "CTFTCTE-WEB-009 — Classify a configuration secret exposure",
+      "technique_id": "CTFTTE-WEB-009",
+      "technique_name": "CTFTTE-WEB-009 — Web configuration secret exposure",
+      "tactic": "CTFT-TA-WEB",
+      "path": "countertechniques/CTFTCTE-WEB-009.md"
     }
   }
 }

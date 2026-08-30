@@ -146,6 +146,30 @@
       "fallbacks": ["CTFTCTE-FOR-001"],
       "tools": ["TOOL-strings"],
       "references": []
+    },
+    {
+      "id": "CTFTCTE-FOR-018",
+      "schema_version": "2.0",
+      "name": "Analyze orphaned MFT records and raw attributes",
+      "tactic": "CTFT-TA-FOR",
+      "counters": "CTFTTE-FOR-018",
+      "triggers": {"all_of": ["IND-FOR-mft-record-inconsistency"], "any_of": ["IND-FOR-unlinked-mft-record"], "none_of": []},
+      "preconditions": [{"id": "have-readonly-ntfs-image", "desc": "A read-only NTFS image or documented MFT extract is available."}],
+      "inputs": {"type": "object", "properties": {"image_ref": {"type": "string"}}, "required": ["image_ref"]},
+      "outputs": {"type": "object", "properties": {"record_findings": {"type": "array"}, "correlated_artifacts": {"type": "array"}}},
+      "steps": [
+        {"id": "s1-inventory", "action": "Inventory records and retain the source reference.", "tool": "TOOL-mft-analysis", "produces": ["record_findings"], "on_true": "s2-correlate"},
+        {"id": "s2-correlate", "action": "Correlate unlinked records with allocation and directory evidence.", "tool": "TOOL-mft-analysis", "produces": ["correlated_artifacts"], "success_when": "correlated_artifacts is not empty"}
+      ],
+      "priority": 7,
+      "cost": "high",
+      "automation": "assisted",
+      "confidence_prior": 0.45,
+      "false_positives": ["An unlinked record can be normal filesystem history; corroborating allocation evidence is required."],
+      "success_criteria": "A recovered artifact is linked to reproducible record and allocation evidence.",
+      "fallbacks": ["CTFTCTE-FOR-002"],
+      "tools": ["TOOL-mft-analysis"],
+      "references": ["https://learn.microsoft.com/windows/win32/devnotes/master-file-table", "https://www.sleuthkit.org/"]
     }
   ]
 }

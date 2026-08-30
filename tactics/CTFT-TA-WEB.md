@@ -2,7 +2,7 @@
 
 > **Tactic ID:** `CTFT-TA-WEB`  
 > **HTB mapping:** HTB: Web  
-> **Techniques:** 6
+> **Techniques:** 9
 
 ## Description
 
@@ -26,6 +26,9 @@ rely on. CTFT never re-labels an existing ATT&CK technique.
 | [CTFTTE-WEB-004](../techniques/CTFTTE-WEB-004.md) | Blind / WAF-evaded SQL injection | [CTFTCTE-WEB-004](../countertechniques/CTFTCTE-WEB-004.md) | Extract data via blind injection | No direct ATT&CK technique |
 | [CTFTTE-WEB-005](../techniques/CTFTTE-WEB-005.md) | Server-side template injection | [CTFTCTE-WEB-005](../countertechniques/CTFTCTE-WEB-005.md) | Exploit template evaluation | No direct ATT&CK technique. |
 | [CTFTTE-WEB-006](../techniques/CTFTTE-WEB-006.md) | Client-side obfuscated logic | [CTFTCTE-WEB-006](../countertechniques/CTFTCTE-WEB-006.md) | Deobfuscate and dynamically analyze JS | No direct ATT&CK technique. |
+| [CTFTTE-WEB-007](../techniques/CTFTTE-WEB-007.md) | Deployment metadata index disclosure | [CTFTCTE-WEB-007](../countertechniques/CTFTCTE-WEB-007.md) | Analyze a disclosed deployment metadata index | CTF deployment-artifact exposure. |
+| [CTFTTE-WEB-008](../techniques/CTFTTE-WEB-008.md) | Legacy short-name namespace disclosure | [CTFTCTE-WEB-008](../countertechniques/CTFTCTE-WEB-008.md) | Reconcile a disclosed short-name namespace | CTF compatibility-layer disclosure. |
+| [CTFTTE-WEB-009](../techniques/CTFTTE-WEB-009.md) | Web configuration secret exposure | [CTFTCTE-WEB-009](../countertechniques/CTFTCTE-WEB-009.md) | Classify a configuration secret exposure | CTF configuration-hygiene exposure. |
 
 
 ---

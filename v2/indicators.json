@@ -83,6 +83,24 @@
       "signal_type": "boolean",
       "detector": { "method": "tool", "tool": "TOOL-strings", "expr": "len(strings(x)) > 0" },
       "weight": 0.4
+    },
+    {
+      "id": "IND-FOR-mft-record-inconsistency",
+      "schema_version": "2.0",
+      "name": "MFT record attributes conflict with the directory view",
+      "applies_to": ["disk", "ntfs_image"],
+      "signal_type": "boolean",
+      "detector": { "method": "manual", "tool": "TOOL-mft-analysis", "expr": "record attributes are not explained by the directory view" },
+      "weight": 0.85
+    },
+    {
+      "id": "IND-FOR-unlinked-mft-record",
+      "schema_version": "2.0",
+      "name": "Unlinked MFT record retains coherent attributes",
+      "applies_to": ["disk", "ntfs_image"],
+      "signal_type": "boolean",
+      "detector": { "method": "manual", "tool": "TOOL-mft-analysis", "expr": "unlinked record retains coherent attributes" },
+      "weight": 0.7
     }
   ]
 }

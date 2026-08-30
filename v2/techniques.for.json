@@ -93,6 +93,21 @@
       "difficulty": 1,
       "prevalence": 0.5,
       "references": []
+    },
+    {
+      "id": "CTFTTE-FOR-018",
+      "schema_version": "2.0",
+      "name": "MFT record and attribute tampering",
+      "tactic": "CTFT-TA-FOR",
+      "category": "FOR",
+      "paired_counter": "CTFTCTE-FOR-018",
+      "summary": "An NTFS image contains unlinked or inconsistent Master File Table records that normal directory traversal does not explain.",
+      "artifact_types": ["disk", "ntfs_image"],
+      "attack_complement": {"closest": "", "note": "Offline artifact recovery from a supplied image, not a live ATT&CK procedure."},
+      "indicators": ["IND-FOR-mft-record-inconsistency", "IND-FOR-unlinked-mft-record"],
+      "difficulty": 4,
+      "prevalence": 0.25,
+      "references": ["https://learn.microsoft.com/windows/win32/devnotes/master-file-table", "https://www.sleuthkit.org/"]
     }
   ]
 }

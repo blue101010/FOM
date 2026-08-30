@@ -25,12 +25,12 @@ puzzle-craft) detail ATT&CK omits, and the nearest ATT&CK anchor where one exist
 
 | Tactic | Name | HTB | Count |
 | --- | --- | --- | --- |
-| [CTFT-TA-WEB](tactics/CTFT-TA-WEB.md) | Web Exploitation | HTB: Web | 6 |
+| [CTFT-TA-WEB](tactics/CTFT-TA-WEB.md) | Web Exploitation | HTB: Web | 9 |
 | [CTFT-TA-PWN](tactics/CTFT-TA-PWN.md) | Binary Exploitation | HTB: Pwn | 5 |
 | [CTFT-TA-REV](tactics/CTFT-TA-REV.md) | Reverse Engineering | HTB: Reversing | 5 |
-| [CTFT-TA-CRY](tactics/CTFT-TA-CRY.md) | Cryptography | HTB: Crypto | 6 |
-| [CTFT-TA-FOR](tactics/CTFT-TA-FOR.md) | Forensics | HTB: Forensics | 17 |
-| [CTFT-TA-STE](tactics/CTFT-TA-STE.md) | Steganography | HTB: Forensics/Misc (Stego) | 8 |
+| [CTFT-TA-CRY](tactics/CTFT-TA-CRY.md) | Cryptography | HTB: Crypto | 7 |
+| [CTFT-TA-FOR](tactics/CTFT-TA-FOR.md) | Forensics | HTB: Forensics | 18 |
+| [CTFT-TA-STE](tactics/CTFT-TA-STE.md) | Steganography | HTB: Forensics/Misc (Stego) | 9 |
 | [CTFT-TA-HWR](tactics/CTFT-TA-HWR.md) | Hardware | HTB: Hardware | 0 |
 | [CTFT-TA-MOB](tactics/CTFT-TA-MOB.md) | Mobile | HTB: Mobile | 5 |
 | [CTFT-TA-OSI](tactics/CTFT-TA-OSI.md) | OSINT | HTB: OSINT | 5 |
@@ -41,7 +41,7 @@ puzzle-craft) detail ATT&CK omits, and the nearest ATT&CK anchor where one exist
 | [CTFT-TA-JAL](tactics/CTFT-TA-JAL.md) | Jail / Sandbox Escape | HTB: Misc (Jail) | 5 |
 | [CTFT-TA-COD](tactics/CTFT-TA-COD.md) | Coding / Programming Puzzle | HTB: Coding | 5 |
 | [CTFT-TA-GAM](tactics/CTFT-TA-GAM.md) | Game / Protocol Automation | HTB: GamePwn | 5 |
-| [CTFT-TA-FPN](tactics/CTFT-TA-FPN.md) | Full Pwn / Multi-Stage | HTB: Fullpwn | 5 |
+| [CTFT-TA-FPN](tactics/CTFT-TA-FPN.md) | Full Pwn / Multi-Stage | HTB: Fullpwn | 7 |
 | [CTFT-TA-MSC](tactics/CTFT-TA-MSC.md) | Misc / Jail / Coding / Fullpwn | HTB: Misc, Coding, GamePwn, Fullpwn | 5 |
 
 
@@ -95,7 +95,7 @@ IDs are deterministic (`uuid5`) so regeneration is stable and diff-friendly.
 
 ## Catalogue integrity
 
-The current corpus contains 18 tactics and 102 complete technique/counter-technique
+The current corpus contains 18 tactics and 110 complete technique/counter-technique
 pairs. Run the offline audit after editing taxonomy files; it generates a fingerprinted
 manifest and synchronizes `index.json` without inventing entries:
 

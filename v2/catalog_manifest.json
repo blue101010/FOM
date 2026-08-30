@@ -1,10 +1,10 @@
 {
   "model": "CTFT",
   "schema_version": "2.0",
-  "generated_at": "2026-08-30T00:31:05+00:00",
+  "generated_at": "2026-08-30T00:44:14+00:00",
   "source": {
-    "correlation_sha256": "dce1384754176adf9e64ac5252c683762d0abbd343ce9e41e3fdb60df9a3e7cc",
-    "legacy_index_sha256": "8c54305d922ae452a75f2c322b1df15c632b81b7f3b69a6da0f6199231515d64"
+    "correlation_sha256": "9998f5338df6965a2856161d65454e1aa937c549b5c713bba4b1dba899b7efdd",
+    "legacy_index_sha256": "d6a6fb951b50ae23b89f6f28e2e8def6fa262f1f3dc73392ad7dd607658d1741"
   },
   "taxonomy": {
     "tactics": [
@@ -28,17 +28,17 @@
       "WEB"
     ],
     "tactic_count": 18,
-    "technique_count": 102,
-    "counter_technique_count": 102,
-    "complete_pairs": 102,
+    "technique_count": 110,
+    "counter_technique_count": 110,
+    "complete_pairs": 110,
     "by_tactic": {
       "AIM": 5,
       "BLK": 5,
       "CLD": 5,
       "COD": 5,
-      "CRY": 6,
-      "FOR": 17,
-      "FPN": 5,
+      "CRY": 7,
+      "FOR": 18,
+      "FPN": 7,
       "GAM": 5,
       "ICS": 5,
       "JAL": 5,
@@ -47,16 +47,16 @@
       "OSI": 5,
       "PWN": 5,
       "REV": 5,
-      "STE": 8,
-      "WEB": 6
+      "STE": 9,
+      "WEB": 9
     }
   },
   "coverage": {
     "typed_v2": {
-      "techniques.for": 6,
-      "playbooks.for": 6,
-      "indicators": 9,
-      "tools": 8
+      "techniques.for": 7,
+      "playbooks.for": 7,
+      "indicators": 11,
+      "tools": 9
     },
     "stix_object_types": {
       "attack-pattern": 68,
@@ -248,13 +248,13 @@
   "integrity": {
     "techniques_without_counter": [],
     "counters_without_technique": [],
-    "correlation_pair_count": 102,
+    "correlation_pair_count": 110,
     "correlation_pairs_missing_from_files": [],
     "correlation_pairs_not_identity": [],
     "pairs_missing_from_correlation": [],
     "legacy_index_tactics_missing_from_files": [],
     "tactics_missing_from_legacy_index": [],
-    "legacy_index_pair_count": 102,
+    "legacy_index_pair_count": 110,
     "legacy_index_pairs_missing_from_files": []
   }
 }

@@ -1,7 +1,7 @@
 # FOR — Forensics
 
 > **Tactic ID:** `CTFT-TA-FOR`  
-> **Techniques:** 17
+> **Techniques:** 18
 
 ## Description
 
@@ -36,6 +36,7 @@ rely on. CTFT never re-labels an existing ATT&CK technique.
 | [CTFTTE-FOR-015](../techniques/CTFTTE-FOR-015.md) | Conceal information with packagers | [CTFTCTE-FOR-015](../countertechniques/CTFTCTE-FOR-015.md) | Recover from packager obfuscations |
 | [CTFTTE-FOR-016](../techniques/CTFTTE-FOR-016.md) | Conceal information with date and time representations | [CTFTCTE-FOR-016](../countertechniques/CTFTCTE-FOR-016.md) | Recover information with date and time representations |
 | [CTFTTE-FOR-017](../techniques/CTFTTE-FOR-017.md) | Conceal text data strings in ELF binary | [CTFTCTE-FOR-017](../countertechniques/CTFTCTE-FOR-017.md) | Recover text data strings from ELF binary |
+| [CTFTTE-FOR-018](../techniques/CTFTTE-FOR-018.md) | MFT record and attribute tampering | [CTFTCTE-FOR-018](../countertechniques/CTFTCTE-FOR-018.md) | Analyze orphaned MFT records and raw attributes |
 
 
 ---

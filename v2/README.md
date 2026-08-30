@@ -1,7 +1,7 @@
 # CTFT v2 — reference implementation (Forensics slice)
 
 Working proof that [`../SCHEMA_V2.md`](../SCHEMA_V2.md) is executable, not just descriptive.
-Covers 6 real Forensics techniques end to end: taxonomy → indicators → executable playbooks →
+Covers 7 curated Forensics techniques end to end: taxonomy → indicators → executable playbooks →
 retrieval → agent loop.
 
 ## Files
@@ -26,7 +26,7 @@ python v2/catalog_audit.py --write --write-index --check
 python v2/catalog_audit.py --write-catalog
 ```
 
-Expected: `VALIDATION OK: 29 objects schema-valid; indicator/tool references resolve.` then a ranked
+Expected: `VALIDATION OK: 34 objects schema-valid; indicator/tool references resolve.` then a ranked
 candidate list + tool-bound step plan per fingerprint.
 
 ## Catalogue integrity

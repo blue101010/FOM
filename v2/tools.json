@@ -92,6 +92,16 @@
       "invocation": { "cmd": "strings -n {min} {path}", "params": { "path": { "type": "string", "required": true }, "min": { "type": "integer", "default": 6 } } },
       "input_types": ["binary", "file"],
       "produces": ["ascii_strings"]
+    },
+    {
+      "id": "TOOL-mft-analysis",
+      "schema_version": "2.0",
+      "name": "NTFS metadata analyzer",
+      "kind": "manual",
+      "platforms": ["windows", "linux", "macos"],
+      "install": "Operator-selected read-only forensic tooling.",
+      "input_types": ["disk", "ntfs_image"],
+      "produces": ["record_findings", "correlated_artifacts"]
     }
   ]
 }

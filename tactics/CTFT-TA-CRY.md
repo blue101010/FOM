@@ -2,7 +2,7 @@
 
 > **Tactic ID:** `CTFT-TA-CRY`  
 > **HTB mapping:** HTB: Crypto  
-> **Techniques:** 6
+> **Techniques:** 7
 
 ## Description
 
@@ -23,9 +23,10 @@ rely on. CTFT never re-labels an existing ATT&CK technique.
 | [CTFTTE-CRY-001](../techniques/CTFTTE-CRY-001.md) | Weak RSA parameter design | [CTFTCTE-CRY-001](../countertechniques/CTFTCTE-CRY-001.md) | Recover the RSA private key from weak parameters | No ATT&CK equivalent |
 | [CTFTTE-CRY-002](../techniques/CTFTTE-CRY-002.md) | Classical cipher layering | [CTFTCTE-CRY-002](../countertechniques/CTFTCTE-CRY-002.md) | Break layered classical ciphers | No ATT&CK equivalent. |
 | [CTFTTE-CRY-003](../techniques/CTFTTE-CRY-003.md) | Repeating-key XOR / ECB pattern | [CTFTCTE-CRY-003](../countertechniques/CTFTCTE-CRY-003.md) | Exploit key reuse and block-mode patterns | No ATT&CK equivalent. |
-| [CTFTTE-CRY-004](../techniques/CTFTTE-CRY-004.md) | Predictable PRNG / nonce reuse | [CTFTCTE-CRY-004](../countertechniques/CTFTCTE-CRY-004.md) | Reconstruct keys from broken randomness | No ATT&CK equivalent. |
+| [CTFTTE-CRY-004](../techniques/CTFTTE-CRY-004.md) | Nonce reuse in cryptographic operations | [CTFTCTE-CRY-004](../countertechniques/CTFTCTE-CRY-004.md) | Assess nonce reuse and its cryptographic consequence | No ATT&CK equivalent. |
 | [CTFTTE-CRY-005](../techniques/CTFTTE-CRY-005.md) | Hash length-extension exposure | [CTFTCTE-CRY-005](../countertechniques/CTFTCTE-CRY-005.md) | Forge data via length extension | No ATT&CK equivalent. |
 | [CTFTTE-CRY-006](../techniques/CTFTTE-CRY-006.md) | Nested encoding obfuscation | [CTFTCTE-CRY-006](../countertechniques/CTFTCTE-CRY-006.md) | Unwrap chained encodings | No ATT&CK equivalent. |
+| [CTFTTE-CRY-007](../techniques/CTFTTE-CRY-007.md) | Deliberately predictable stateful pseudo-random generator | [CTFTCTE-CRY-007](../countertechniques/CTFTCTE-CRY-007.md) | Assess and predict recoverable PRNG state | No ATT&CK equivalent. |
 
 
 ---
