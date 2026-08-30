@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ctft/schemas/technique.schema.json",
+  "title": "CTFT Technique (design/hide)",
+  "type": "object",
+  "required": ["id", "schema_version", "name", "tactic", "paired_counter", "indicators"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^CTFTTE-[A-Z]{3}-[0-9]{3}$" },
+    "schema_version": { "const": "2.0" },
+    "name": { "type": "string" },
+    "tactic": { "type": "string", "pattern": "^CTFT-TA-[A-Z]{3}$" },
+    "category": { "type": "string", "pattern": "^[A-Z]{3}$" },
+    "paired_counter": { "type": "string", "pattern": "^CTFTCTE-[A-Z]{3}-[0-9]{3}$" },
+    "summary": { "type": "string" },
+    "artifact_types": { "type": "array", "items": { "type": "string" } },
+    "attack_complement": {
+      "type": "object",
+      "properties": { "closest": { "type": "string" }, "note": { "type": "string" } }
+    },
+    "indicators": { "type": "array", "items": { "type": "string", "pattern": "^IND-" } },
+    "difficulty": { "type": "integer", "minimum": 1, "maximum": 5 },
+    "prevalence": { "type": "number", "minimum": 0, "maximum": 1 },
+    "references": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

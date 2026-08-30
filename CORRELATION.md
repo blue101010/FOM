@@ -198,6 +198,16 @@ Quick cross-reference of every **Design / Hide Technique** and its paired **Coun
 | 5 | [CTFTTE-WEB-005](techniques/CTFTTE-WEB-005.md) | Server-side template injection | [CTFTCTE-WEB-005](countertechniques/CTFTCTE-WEB-005.md) | Exploit template evaluation |
 | 6 | [CTFTTE-WEB-006](techniques/CTFTTE-WEB-006.md) | Client-side obfuscated logic | [CTFTCTE-WEB-006](countertechniques/CTFTCTE-WEB-006.md) | Deobfuscate and dynamically analyze JS |
 
+## `CTFT-TA-MSC` — Misc / Jail / Coding / Fullpwn
+
+| # | Technique ID | Hide / Design name | Counter-technique ID | Counter name |
+| --- | --- | --- | --- | --- |
+| 1 | [CTFTTE-MSC-001](techniques/CTFTTE-MSC-001.md) | Python jail (pyjail) confinement | [CTFTCTE-MSC-001](countertechniques/CTFTCTE-MSC-001.md) | Escape the Python sandbox |
+| 2 | [CTFTTE-MSC-002](techniques/CTFTTE-MSC-002.md) | Restricted-shell confinement | [CTFTCTE-MSC-002](countertechniques/CTFTCTE-MSC-002.md) | Escape the restricted shell |
+| 3 | [CTFTTE-MSC-003](techniques/CTFTTE-MSC-003.md) | Esolang / unusual-encoding puzzle | [CTFTCTE-MSC-003](countertechniques/CTFTCTE-MSC-003.md) | Interpret or transpile the encoding |
+| 4 | [CTFTTE-MSC-004](techniques/CTFTTE-MSC-004.md) | Networked game / protocol automation (GamePwn) | [CTFTCTE-MSC-004](countertechniques/CTFTCTE-MSC-004.md) | Script a client to beat the protocol |
+| 5 | [CTFTTE-MSC-005](techniques/CTFTTE-MSC-005.md) | Multi-stage chained challenge (Fullpwn) | [CTFTCTE-MSC-005](countertechniques/CTFTCTE-MSC-005.md) | Chain enumeration, foothold and privilege escalation |
+
 
 ---
 

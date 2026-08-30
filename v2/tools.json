@@ -1,0 +1,97 @@
+{
+  "model": "CTFT",
+  "schema_version": "2.0",
+  "collection": "tools",
+  "items": [
+    {
+      "id": "TOOL-file",
+      "schema_version": "2.0",
+      "name": "file",
+      "kind": "cli",
+      "platforms": ["linux", "wsl", "macos"],
+      "install": "apt install file",
+      "invocation": { "cmd": "file {path}", "params": { "path": { "type": "string", "required": true } } },
+      "input_types": ["file", "image", "archive", "binary"],
+      "output_parser": { "format": "regex", "captures": { "type": "^[^:]+:\\s+(.+)$" } },
+      "produces": ["declared_type"]
+    },
+    {
+      "id": "TOOL-xxd",
+      "schema_version": "2.0",
+      "name": "xxd",
+      "kind": "cli",
+      "platforms": ["linux", "wsl", "macos"],
+      "install": "apt install xxd",
+      "invocation": { "cmd": "xxd {path} | head -n {lines}", "params": { "path": { "type": "string", "required": true }, "lines": { "type": "integer", "default": 4 } } },
+      "input_types": ["file"],
+      "produces": ["observed_magic"]
+    },
+    {
+      "id": "TOOL-binwalk",
+      "schema_version": "2.0",
+      "name": "binwalk",
+      "kind": "cli",
+      "platforms": ["linux", "wsl", "macos"],
+      "install": "pip install binwalk",
+      "invocation": { "cmd": "binwalk --extract {path}", "params": { "path": { "type": "string", "required": true } } },
+      "input_types": ["file", "image", "archive"],
+      "output_parser": { "format": "regex-lines", "captures": { "offset": "^(\\d+)", "type": "\\s+(\\w[\\w ]+)$" } },
+      "produces": ["embedded_files", "true_type"]
+    },
+    {
+      "id": "TOOL-python-struct",
+      "schema_version": "2.0",
+      "name": "python struct",
+      "kind": "python",
+      "platforms": ["linux", "wsl", "macos", "windows"],
+      "install": "builtin",
+      "invocation": { "cmd": "python fix_header.py {path}", "params": { "path": { "type": "string", "required": true } } },
+      "input_types": ["file"],
+      "produces": ["patched_file"]
+    },
+    {
+      "id": "TOOL-volatility3",
+      "schema_version": "2.0",
+      "name": "volatility3",
+      "kind": "cli",
+      "platforms": ["linux", "wsl", "macos", "windows"],
+      "install": "pip install volatility3",
+      "invocation": { "cmd": "vol -f {path} {plugin}", "params": { "path": { "type": "string", "required": true }, "plugin": { "type": "string", "required": true } } },
+      "input_types": ["memory"],
+      "produces": ["processes", "strings", "secrets"]
+    },
+    {
+      "id": "TOOL-wireshark",
+      "schema_version": "2.0",
+      "name": "wireshark / tshark",
+      "kind": "cli",
+      "platforms": ["linux", "wsl", "macos", "windows"],
+      "install": "apt install tshark",
+      "invocation": { "cmd": "tshark -r {path} -Y {filter} -T fields -e {field}", "params": { "path": { "type": "string", "required": true }, "filter": { "type": "string" }, "field": { "type": "string" } } },
+      "input_types": ["pcap"],
+      "produces": ["streams", "payloads"]
+    },
+    {
+      "id": "TOOL-zbarimg",
+      "schema_version": "2.0",
+      "name": "zbarimg",
+      "kind": "cli",
+      "platforms": ["linux", "wsl", "macos"],
+      "install": "apt install zbar-tools",
+      "invocation": { "cmd": "zbarimg {path}", "params": { "path": { "type": "string", "required": true } } },
+      "input_types": ["image"],
+      "produces": ["decoded_text"]
+    },
+    {
+      "id": "TOOL-strings",
+      "schema_version": "2.0",
+      "name": "strings",
+      "kind": "cli",
+      "platforms": ["linux", "wsl", "macos"],
+      "install": "apt install binutils",
+      "invocation": { "cmd": "strings -n {min} {path}", "params": { "path": { "type": "string", "required": true }, "min": { "type": "integer", "default": 6 } } },
+      "input_types": ["binary", "file"],
+      "produces": ["ascii_strings"]
+    }
+  ]
+}

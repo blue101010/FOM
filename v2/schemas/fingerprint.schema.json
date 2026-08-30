@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ctft/schemas/fingerprint.schema.json",
+  "title": "CTFT Fingerprint (retrieval query)",
+  "type": "object",
+  "required": ["schema_version", "artifact_type"],
+  "properties": {
+    "schema_version": { "const": "2.0" },
+    "label": { "type": "string" },
+    "artifact_type": {
+      "enum": ["file", "image", "archive", "binary", "web", "contract", "pcap", "memory", "disk", "text"]
+    },
+    "protocol": { "type": ["string", "null"] },
+    "runtime": { "type": ["string", "null"] },
+    "protections": { "type": "array", "items": { "type": "string" } },
+    "hints": { "type": "array", "items": { "type": "string" } },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["indicator", "value"],
+        "properties": {
+          "indicator": { "type": "string", "pattern": "^IND-" },
+          "value": {}
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

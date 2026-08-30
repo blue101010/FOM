@@ -1,0 +1,88 @@
+{
+  "model": "CTFT",
+  "schema_version": "2.0",
+  "collection": "indicators",
+  "items": [
+    {
+      "id": "IND-FOR-magic-mismatch",
+      "schema_version": "2.0",
+      "name": "File magic bytes do not match declared extension",
+      "applies_to": ["file", "image", "archive"],
+      "signal_type": "boolean",
+      "detector": { "method": "tool", "tool": "TOOL-file", "expr": "file(x).type != mimetype_of(extension(x))" },
+      "weight": 0.9
+    },
+    {
+      "id": "IND-FOR-ext-type-conflict",
+      "schema_version": "2.0",
+      "name": "Extension and content type disagree",
+      "applies_to": ["file", "image"],
+      "signal_type": "boolean",
+      "detector": { "method": "heuristic", "expr": "declared_type not in expected_for(extension)" },
+      "weight": 0.6
+    },
+    {
+      "id": "IND-FOR-file-cmd-unknown",
+      "schema_version": "2.0",
+      "name": "`file` reports 'data' / unknown type",
+      "applies_to": ["file"],
+      "signal_type": "boolean",
+      "detector": { "method": "tool", "tool": "TOOL-file", "expr": "declared_type == 'data'" },
+      "weight": 0.5
+    },
+    {
+      "id": "IND-FOR-abnormal-eof-size",
+      "schema_version": "2.0",
+      "name": "File larger than its structure accounts for (appended data)",
+      "applies_to": ["file", "image", "archive"],
+      "signal_type": "boolean",
+      "detector": { "method": "heuristic", "expr": "filesize > declared_structure_end" },
+      "weight": 0.6
+    },
+    {
+      "id": "IND-FOR-memory-image",
+      "schema_version": "2.0",
+      "name": "Artifact is a RAM/memory dump",
+      "applies_to": ["memory", "file"],
+      "signal_type": "boolean",
+      "detector": { "method": "heuristic", "expr": "ext in {.raw,.mem,.vmem,.dmp} or volatility_profile_detected" },
+      "weight": 0.95
+    },
+    {
+      "id": "IND-FOR-pcap",
+      "schema_version": "2.0",
+      "name": "Artifact is a packet capture",
+      "applies_to": ["pcap", "file"],
+      "signal_type": "boolean",
+      "detector": { "method": "tool", "tool": "TOOL-file", "expr": "declared_type contains 'pcap'" },
+      "weight": 0.95
+    },
+    {
+      "id": "IND-FOR-qr-visual",
+      "schema_version": "2.0",
+      "name": "Image contains a QR / 2D barcode pattern",
+      "applies_to": ["image"],
+      "signal_type": "boolean",
+      "detector": { "method": "tool", "tool": "TOOL-zbarimg", "expr": "zbarimg(x) returns symbol" },
+      "weight": 0.85
+    },
+    {
+      "id": "IND-FOR-elf-binary",
+      "schema_version": "2.0",
+      "name": "Artifact is an ELF executable",
+      "applies_to": ["binary", "file"],
+      "signal_type": "boolean",
+      "detector": { "method": "tool", "tool": "TOOL-file", "expr": "declared_type contains 'ELF'" },
+      "weight": 0.8
+    },
+    {
+      "id": "IND-FOR-embedded-strings",
+      "schema_version": "2.0",
+      "name": "Readable strings present in a binary blob",
+      "applies_to": ["binary", "file"],
+      "signal_type": "boolean",
+      "detector": { "method": "tool", "tool": "TOOL-strings", "expr": "len(strings(x)) > 0" },
+      "weight": 0.4
+    }
+  ]
+}

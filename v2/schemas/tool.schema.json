@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ctft/schemas/tool.schema.json",
+  "title": "CTFT Tool binding",
+  "type": "object",
+  "required": ["id", "schema_version", "name", "kind"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^TOOL-" },
+    "schema_version": { "const": "2.0" },
+    "name": { "type": "string" },
+    "kind": { "enum": ["cli", "python", "api", "web", "manual"] },
+    "platforms": { "type": "array", "items": { "type": "string" } },
+    "install": { "type": "string" },
+    "invocation": {
+      "type": "object",
+      "properties": {
+        "cmd": { "type": "string" },
+        "params": { "type": "object" }
+      }
+    },
+    "input_types": { "type": "array", "items": { "type": "string" } },
+    "output_parser": { "type": "object" },
+    "produces": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

@@ -21,7 +21,7 @@ puzzle-craft) detail ATT&CK omits, and the nearest ATT&CK anchor where one exist
 | Design / Hide technique | `CTFTTE-<CAT>-NNN` | `CTFTTE-FOR-001` |
 | Counter-technique | `CTFTCTE-<CAT>-NNN` | `CTFTCTE-FOR-001` |
 
-## Tactics (17 HackTheBox categories)
+## Tactics (18 categories)
 
 | Tactic | Name | HTB | Count |
 | --- | --- | --- | --- |
@@ -29,8 +29,8 @@ puzzle-craft) detail ATT&CK omits, and the nearest ATT&CK anchor where one exist
 | [CTFT-TA-PWN](tactics/CTFT-TA-PWN.md) | Binary Exploitation | HTB: Pwn | 5 |
 | [CTFT-TA-REV](tactics/CTFT-TA-REV.md) | Reverse Engineering | HTB: Reversing | 5 |
 | [CTFT-TA-CRY](tactics/CTFT-TA-CRY.md) | Cryptography | HTB: Crypto | 6 |
-| [CTFT-TA-FOR](tactics/CTFT-TA-FOR.md) | Forensics | HTB: Forensics | 6 |
-| [CTFT-TA-STE](tactics/CTFT-TA-STE.md) | Steganography | HTB: Forensics/Misc (Stego) | 5 |
+| [CTFT-TA-FOR](tactics/CTFT-TA-FOR.md) | Forensics | HTB: Forensics | 17 |
+| [CTFT-TA-STE](tactics/CTFT-TA-STE.md) | Steganography | HTB: Forensics/Misc (Stego) | 8 |
 | [CTFT-TA-HWR](tactics/CTFT-TA-HWR.md) | Hardware | HTB: Hardware | 0 |
 | [CTFT-TA-MOB](tactics/CTFT-TA-MOB.md) | Mobile | HTB: Mobile | 5 |
 | [CTFT-TA-OSI](tactics/CTFT-TA-OSI.md) | OSINT | HTB: OSINT | 5 |
@@ -42,6 +42,7 @@ puzzle-craft) detail ATT&CK omits, and the nearest ATT&CK anchor where one exist
 | [CTFT-TA-COD](tactics/CTFT-TA-COD.md) | Coding / Programming Puzzle | HTB: Coding | 5 |
 | [CTFT-TA-GAM](tactics/CTFT-TA-GAM.md) | Game / Protocol Automation | HTB: GamePwn | 5 |
 | [CTFT-TA-FPN](tactics/CTFT-TA-FPN.md) | Full Pwn / Multi-Stage | HTB: Fullpwn | 5 |
+| [CTFT-TA-MSC](tactics/CTFT-TA-MSC.md) | Misc / Jail / Coding / Fullpwn | HTB: Misc, Coding, GamePwn, Fullpwn | 5 |
 
 
 ## Layout
@@ -52,9 +53,10 @@ FOM/
   HIERARCHY.md                full design ↔ counter listing
   CORRELATION.md              master technique ↔ counter-technique cross-reference
   index.json                  machine-readable index (pairs/by_id maps)
-  ctft-generator.py           regenerates index.json and STIX bundles
+  ctft-generator.py           guarded legacy fixture generator
+  v2/catalog_audit.py          synchronizes index.json and writes coverage manifest
   fom-migrate.py              migration utility
-  tactics/                    17 tactic pages (CTFT-TA-<CAT>.md)
+  tactics/                    18 tactic pages (CTFT-TA-<CAT>.md)
   techniques/                 design/hide techniques (CTFTTE-<CAT>-NNN.md)
     subtechniques.md          sub-technique index
   countertechniques/          counter-techniques (CTFTCTE-<CAT>-NNN.md)
@@ -90,6 +92,26 @@ See [CORRELATION.md](CORRELATION.md) for the complete matrix.
 - Tactic            -> custom `x-ctft-tactic`
 
 IDs are deterministic (`uuid5`) so regeneration is stable and diff-friendly.
+
+## Catalogue integrity
+
+The current corpus contains 18 tactics and 102 complete technique/counter-technique
+pairs. Run the offline audit after editing taxonomy files; it generates a fingerprinted
+manifest and synchronizes `index.json` without inventing entries:
+
+```bash
+python v2/catalog_audit.py --write --write-index --check
+python v2/catalog_audit.py --write-catalog
+```
+
+`--check` validates structural consistency only. It deliberately reports placeholders
+and the smaller typed v2 slice as coverage debt until curated entries are available.
+The legacy generator is guarded because its embedded 14-tactic corpus is incomplete;
+use it only with `--legacy-rebuild` to generate an isolated fixture.
+
+`catalog.json` contains every complete pair with a maturity marker. Only entries marked
+`typed` have validated indicators and playbook metadata; entries marked `taxonomy_only`
+remain discoverable but are not executable recommendations.
 
 ## License
 

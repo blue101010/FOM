@@ -1,0 +1,46 @@
+{
+  "model": "CTFT",
+  "schema_version": "2.0",
+  "collection": "fingerprints",
+  "items": [
+    {
+      "schema_version": "2.0",
+      "label": "Suspicious image, corrupted magic bytes",
+      "artifact_type": "image",
+      "protocol": null,
+      "runtime": null,
+      "protections": ["corrupted-magic"],
+      "hints": ["look closer"],
+      "evidence": [
+        { "indicator": "IND-FOR-magic-mismatch", "value": true },
+        { "indicator": "IND-FOR-file-cmd-unknown", "value": true },
+        { "indicator": "IND-FOR-abnormal-eof-size", "value": true }
+      ]
+    },
+    {
+      "schema_version": "2.0",
+      "label": "RAM dump from an incident challenge",
+      "artifact_type": "memory",
+      "protocol": null,
+      "runtime": null,
+      "protections": [],
+      "hints": ["the secret was never written to disk"],
+      "evidence": [
+        { "indicator": "IND-FOR-memory-image", "value": true }
+      ]
+    },
+    {
+      "schema_version": "2.0",
+      "label": "Unknown ELF blob with readable text",
+      "artifact_type": "binary",
+      "protocol": null,
+      "runtime": "elf",
+      "protections": [],
+      "hints": [],
+      "evidence": [
+        { "indicator": "IND-FOR-elf-binary", "value": true },
+        { "indicator": "IND-FOR-embedded-strings", "value": true }
+      ]
+    }
+  ]
+}
