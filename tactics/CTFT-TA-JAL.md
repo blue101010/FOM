@@ -2,7 +2,7 @@
 
 > **Tactic ID:** `CTFT-TA-JAL`  
 > **HTB mapping:** HTB: Misc (Jail)  
-> **Techniques:** 5
+> **Techniques:** 6
 
 ## Description
 
@@ -29,6 +29,7 @@ rely on. CTFT never re-labels an existing ATT&CK technique.
 | [CTFTTE-JAL-003](../techniques/CTFTTE-JAL-003.md) | Docker / container escape | [CTFTCTE-JAL-003](../countertechniques/CTFTCTE-JAL-003.md) | Break out of the container to the host | Complements T1611 (Escape to Host) with CTF-specific misconfiguration paths. |
 | [CTFTTE-JAL-004](../techniques/CTFTTE-JAL-004.md) | JavaScript browser-sandbox jail | [CTFTCTE-JAL-004](../countertechniques/CTFTCTE-JAL-004.md) | Traverse the prototype chain to escape | No ATT&CK equivalent. |
 | [CTFTTE-JAL-005](../techniques/CTFTTE-JAL-005.md) | Seccomp / AppArmor policy confinement | [CTFTCTE-JAL-005](../countertechniques/CTFTCTE-JAL-005.md) | Identify allowed syscalls and pivot around the filter | Complements T1055 with CTF syscall-filter-bypass detail. |
+| [CTFTTE-JAL-006](../techniques/CTFTTE-JAL-006.md) | WSL-interop sandbox escape | [CTFTCTE-JAL-006](../countertechniques/CTFTCTE-JAL-006.md) | Escape WSL-interop boundaries | T1611 |
 
 
 ---

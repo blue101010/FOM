@@ -2,7 +2,7 @@
 
 > **Tactic ID:** `CTFT-TA-REV`  
 > **HTB mapping:** HTB: Reversing  
-> **Techniques:** 5
+> **Techniques:** 9
 
 ## Description
 
@@ -29,6 +29,10 @@ rely on. CTFT never re-labels an existing ATT&CK technique.
 | [CTFTTE-REV-003](../techniques/CTFTTE-REV-003.md) | Control-flow obfuscation / opaque predicates | [CTFTCTE-REV-003](../countertechniques/CTFTCTE-REV-003.md) | Deobfuscate flattened control flow | No ATT&CK equivalent. |
 | [CTFTTE-REV-004](../techniques/CTFTTE-REV-004.md) | Custom VM / bytecode interpreter | [CTFTCTE-REV-004](../countertechniques/CTFTCTE-REV-004.md) | Reconstruct the VM and lift its bytecode | No ATT&CK equivalent. |
 | [CTFTTE-REV-005](../techniques/CTFTTE-REV-005.md) | Constraint-gated flag check | [CTFTCTE-REV-005](../countertechniques/CTFTCTE-REV-005.md) | Solve the check with an SMT/symbolic engine | No ATT&CK equivalent. |
+| [CTFTTE-REV-006](../techniques/CTFTTE-REV-006.md) | Java bytecode / JAR obfuscation | [CTFTCTE-REV-006](../countertechniques/CTFTCTE-REV-006.md) | Decompile and deobfuscate JVM bytecode | T1027 |
+| [CTFTTE-REV-007](../techniques/CTFTTE-REV-007.md) | Python bytecode (.pyc/.pyo) concealment | [CTFTCTE-REV-007](../countertechniques/CTFTCTE-REV-007.md) | Decompile Python bytecode | T1027 |
+| [CTFTTE-REV-008](../techniques/CTFTTE-REV-008.md) | Functional-language binary concealment | [CTFTCTE-REV-008](../countertechniques/CTFTCTE-REV-008.md) | Reverse Haskell/functional compiled artifacts | T1027 |
+| [CTFTTE-REV-009](../techniques/CTFTTE-REV-009.md) | Assembly-level code-golf / shellcode RE | [CTFTCTE-REV-009](../countertechniques/CTFTCTE-REV-009.md) | Disassemble and annotate asm snippets | T1027 |
 
 
 ---

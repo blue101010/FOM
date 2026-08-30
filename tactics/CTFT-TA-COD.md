@@ -2,7 +2,7 @@
 
 > **Tactic ID:** `CTFT-TA-COD`  
 > **HTB mapping:** HTB: Coding  
-> **Techniques:** 5
+> **Techniques:** 7
 
 ## Description
 
@@ -29,6 +29,8 @@ rely on. CTFT never re-labels an existing ATT&CK technique.
 | [CTFTTE-COD-003](../techniques/CTFTTE-COD-003.md) | Scripted protocol / automation marathon | [CTFTCTE-COD-003](../countertechniques/CTFTCTE-COD-003.md) | Write a pwntools script to complete all rounds | No ATT&CK equivalent. |
 | [CTFTTE-COD-004](../techniques/CTFTTE-COD-004.md) | Code-golf / polyglot code puzzle | [CTFTCTE-COD-004](../countertechniques/CTFTCTE-COD-004.md) | Craft a minimal polyglot that satisfies every parser | No ATT&CK equivalent. |
 | [CTFTTE-COD-005](../techniques/CTFTTE-COD-005.md) | Symbolic-execution / SMT-solver puzzle | [CTFTCTE-COD-005](../countertechniques/CTFTCTE-COD-005.md) | Extract constraints and solve with Z3 / angr | No ATT&CK equivalent. |
+| [CTFTTE-COD-006](../techniques/CTFTTE-COD-006.md) | Combinatorial enumeration puzzle | [CTFTCTE-COD-006](../countertechniques/CTFTCTE-COD-006.md) | Generate permutations/combinations efficiently | No ATT&CK equivalent; competitive-programming puzzle craft. |
+| [CTFTTE-COD-007](../techniques/CTFTTE-COD-007.md) | Grid/logic-constraint puzzle (Sudoku) | [CTFTCTE-COD-007](../countertechniques/CTFTCTE-COD-007.md) | Solve constraint grids programmatically | No ATT&CK equivalent; constraint-satisfaction craft. |
 
 
 ---

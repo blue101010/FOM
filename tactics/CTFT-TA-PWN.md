@@ -2,7 +2,7 @@
 
 > **Tactic ID:** `CTFT-TA-PWN`  
 > **HTB mapping:** HTB: Pwn  
-> **Techniques:** 5
+> **Techniques:** 8
 
 ## Description
 
@@ -29,6 +29,9 @@ rely on. CTFT never re-labels an existing ATT&CK technique.
 | [CTFTTE-PWN-003](../techniques/CTFTTE-PWN-003.md) | Heap-grooming puzzle | [CTFTCTE-PWN-003](../countertechniques/CTFTCTE-PWN-003.md) | Groom the heap to corrupt allocator metadata | No ATT&CK equivalent. |
 | [CTFTTE-PWN-004](../techniques/CTFTTE-PWN-004.md) | Stripped/static gadget search | [CTFTCTE-PWN-004](../countertechniques/CTFTCTE-PWN-004.md) | Build a ROP chain from available gadgets | No ATT&CK equivalent. |
 | [CTFTTE-PWN-005](../techniques/CTFTTE-PWN-005.md) | seccomp-restricted shell puzzle | [CTFTCTE-PWN-005](../countertechniques/CTFTCTE-PWN-005.md) | Open-Read-Write the flag under seccomp | No ATT&CK equivalent. |
+| [CTFTTE-PWN-006](../techniques/CTFTTE-PWN-006.md) | Stack canary / PIE / ASLR hardening puzzle | [CTFTCTE-PWN-006](../countertechniques/CTFTCTE-PWN-006.md) | Leak canary/PIE base, ret2libc | T1068 |
+| [CTFTTE-PWN-007](../techniques/CTFTTE-PWN-007.md) | Kernel/mseal-guarded memory puzzle | [CTFTCTE-PWN-007](../countertechniques/CTFTCTE-PWN-007.md) | Exploit kernel-module or mseal protections | T1068 |
+| [CTFTTE-PWN-008](../techniques/CTFTTE-PWN-008.md) | Shellcode craft & encoding constraints | [CTFTCTE-PWN-008](../countertechniques/CTFTCTE-PWN-008.md) | Generate/encode shellcode (alphanumeric, null-free) | T1055 |
 
 
 ---

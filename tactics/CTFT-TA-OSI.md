@@ -2,7 +2,7 @@
 
 > **Tactic ID:** `CTFT-TA-OSI`  
 > **HTB mapping:** HTB: OSINT  
-> **Techniques:** 5
+> **Techniques:** 8
 
 ## Description
 
@@ -29,6 +29,9 @@ rely on. CTFT never re-labels an existing ATT&CK technique.
 | [CTFTTE-OSI-003](../techniques/CTFTTE-OSI-003.md) | Historical / cached content concealment | [CTFTCTE-OSI-003](../countertechniques/CTFTCTE-OSI-003.md) | Recover deleted or changed content | No direct ATT&CK technique. |
 | [CTFTTE-OSI-004](../techniques/CTFTTE-OSI-004.md) | Geolocation from imagery | [CTFTCTE-OSI-004](../countertechniques/CTFTCTE-OSI-004.md) | Geolocate using visual cues | No direct ATT&CK technique. |
 | [CTFTTE-OSI-005](../techniques/CTFTTE-OSI-005.md) | Public-record / repo leak pivot | [CTFTCTE-OSI-005](../countertechniques/CTFTCTE-OSI-005.md) | Mine public repositories and records | Complements T1213/T1593 (info from repositories) with CTF ar |
+| [CTFTTE-OSI-006](../techniques/CTFTTE-OSI-006.md) | Git-repository archaeology | [CTFTCTE-OSI-006](../countertechniques/CTFTCTE-OSI-006.md) | Mine git history, objects and reflog | T1596 |
+| [CTFTTE-OSI-007](../techniques/CTFTTE-OSI-007.md) | Search-engine mining (dorking) | [CTFTCTE-OSI-007](../countertechniques/CTFTCTE-OSI-007.md) | Run advanced dorks and search operators | T1593.002 |
+| [CTFTTE-OSI-008](../techniques/CTFTTE-OSI-008.md) | ASN / IP-range / subdomain recon | [CTFTCTE-OSI-008](../countertechniques/CTFTCTE-OSI-008.md) | Map ASN, ranges, subdomains (bbot, assetfinder) | T1596.001 |
 
 
 ---

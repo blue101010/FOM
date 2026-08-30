@@ -2,7 +2,7 @@
 
 > **Tactic ID:** `CTFT-TA-CLD`  
 > **HTB mapping:** HTB: Cloud  
-> **Techniques:** 5
+> **Techniques:** 8
 
 ## Description
 
@@ -29,6 +29,9 @@ rely on. CTFT never re-labels an existing ATT&CK technique.
 | [CTFTTE-CLD-003](../techniques/CTFTTE-CLD-003.md) | Instance metadata service exposure | [CTFTCTE-CLD-003](../countertechniques/CTFTCTE-CLD-003.md) | Retrieve credentials via SSRF to IMDS | Complements T1552.005 (Cloud Instance Metadata API) with the |
 | [CTFTTE-CLD-004](../techniques/CTFTTE-CLD-004.md) | Secrets in function config / layers | [CTFTCTE-CLD-004](../countertechniques/CTFTCTE-CLD-004.md) | Dump serverless configuration and layers | No direct ATT&CK technique. |
 | [CTFTTE-CLD-005](../techniques/CTFTTE-CLD-005.md) | Container image / registry leak | [CTFTCTE-CLD-005](../countertechniques/CTFTCTE-CLD-005.md) | Pull and inspect image layers | No direct ATT&CK technique. |
+| [CTFTTE-CLD-006](../techniques/CTFTTE-CLD-006.md) | Cross-account role chaining / trust abuse | [CTFTCTE-CLD-006](../countertechniques/CTFTCTE-CLD-006.md) | Chain sts:AssumeRole across accounts | T1078.004 |
+| [CTFTTE-CLD-007](../techniques/CTFTTE-CLD-007.md) | Cloud NoSQL-store misconfiguration | [CTFTCTE-CLD-007](../countertechniques/CTFTCTE-CLD-007.md) | Enumerate and query exposed cloud databases | T1213 |
+| [CTFTTE-CLD-008](../techniques/CTFTTE-CLD-008.md) | Azure management-plane misconfiguration | [CTFTCTE-CLD-008](../countertechniques/CTFTCTE-CLD-008.md) | Enumerate Azure AD/VM/storage from credentials | T1078.004 |
 
 
 ---

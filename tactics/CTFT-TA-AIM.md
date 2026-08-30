@@ -2,7 +2,7 @@
 
 > **Tactic ID:** `CTFT-TA-AIM`  
 > **HTB mapping:** HTB: AI-ML  
-> **Techniques:** 5
+> **Techniques:** 7
 
 ## Description
 
@@ -29,6 +29,8 @@ rely on. CTFT never re-labels an existing ATT&CK technique.
 | [CTFTTE-AIM-003](../techniques/CTFTTE-AIM-003.md) | Adversarial-input requirement | [CTFTCTE-AIM-003](../countertechniques/CTFTCTE-AIM-003.md) | Generate an adversarial example | No ATT&CK equivalent. |
 | [CTFTTE-AIM-004](../techniques/CTFTTE-AIM-004.md) | Malicious / opaque serialized model | [CTFTCTE-AIM-004](../countertechniques/CTFTCTE-AIM-004.md) | Safely inspect serialized model files | Complements T1204/T1027 conceptually |
 | [CTFTTE-AIM-005](../techniques/CTFTTE-AIM-005.md) | Training-data leakage via queries | [CTFTCTE-AIM-005](../countertechniques/CTFTCTE-AIM-005.md) | Recover secrets through model inversion | No ATT&CK equivalent. |
+| [CTFTTE-AIM-006](../techniques/CTFTTE-AIM-006.md) | Self-hosted LLM platform misconfiguration | [CTFTCTE-AIM-006](../countertechniques/CTFTCTE-AIM-006.md) | Audit ollama/oobabooga deployments for exposed endpoints | T1190 |
+| [CTFTTE-AIM-007](../techniques/CTFTTE-AIM-007.md) | Agent / tool-calling guardrail bypass | [CTFTCTE-AIM-007](../countertechniques/CTFTCTE-AIM-007.md) | Bypass agent tool policies | No ATT&CK equivalent; emerging LLM-security craft. |
 
 
 ---

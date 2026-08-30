@@ -2,7 +2,7 @@
 
 > **Tactic ID:** `CTFT-TA-FPN`  
 > **HTB mapping:** HTB: Fullpwn  
-> **Techniques:** 7
+> **Techniques:** 10
 
 ## Description
 
@@ -31,6 +31,9 @@ rely on. CTFT never re-labels an existing ATT&CK technique.
 | [CTFTTE-FPN-005](../techniques/CTFTTE-FPN-005.md) | Cloud-integrated fullpwn | [CTFTCTE-FPN-005](../countertechniques/CTFTCTE-FPN-005.md) | Pivot from on-prem to cloud IAM to retrieve the secret | Complements T1552.005 (Cloud Instance Metadata) with CTF pivot detail. |
 | [CTFTTE-FPN-006](../techniques/CTFTTE-FPN-006.md) | Chained database trust-context escalation | [CTFTCTE-FPN-006](../countertechniques/CTFTCTE-FPN-006.md) | Map database trust contexts and privilege boundaries | CTF service-trust graph. |
 | [CTFTTE-FPN-007](../techniques/CTFTTE-FPN-007.md) | Uninventoried dual-stack management path | [CTFTCTE-FPN-007](../countertechniques/CTFTCTE-FPN-007.md) | Reconcile dual-stack management exposure | CTF inventory-completeness condition. |
+| [CTFTTE-FPN-008](../techniques/CTFTTE-FPN-008.md) | Linux local privesc chain (SUID, ACLs, sudo, capabilities) | [CTFTCTE-FPN-008](../countertechniques/CTFTCTE-FPN-008.md) | Enumerate and chain Linux privesc vectors | T1068 / T1548 |
+| [CTFTTE-FPN-009](../techniques/CTFTTE-FPN-009.md) | Redis/NoSQL service misconfiguration chain | [CTFTCTE-FPN-009](../countertechniques/CTFTCTE-FPN-009.md) | Enumerate Redis/Mongo/MySQL, dump or RCE | T1213 |
+| [CTFTTE-FPN-010](../techniques/CTFTTE-FPN-010.md) | Reverse-shell delivery & listener operations | [CTFTCTE-FPN-010](../countertechniques/CTFTCTE-FPN-010.md) | Catch, upgrade and persist reverse shells | T1059 |
 
 
 ---

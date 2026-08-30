@@ -2,7 +2,7 @@
 
 > **Tactic ID:** `CTFT-TA-STE`  
 > **HTB mapping:** HTB: Forensics/Misc (Stego)  
-> **Techniques:** 9
+> **Techniques:** 11
 
 ## Description
 
@@ -33,6 +33,8 @@ rely on. CTFT never re-labels an existing ATT&CK technique.
 | [CTFTTE-STE-007](../techniques/CTFTTE-STE-007.md) | Conceal information within digital media with **technical** steganograph | [CTFTCTE-STE-007](../countertechniques/CTFTCTE-STE-007.md) | Counter — Conceal information within digital media with **technical** st |
 | [CTFTTE-STE-008](../techniques/CTFTTE-STE-008.md) | Conceal via **technical text** steganography | [CTFTCTE-STE-008](../countertechniques/CTFTCTE-STE-008.md) | Counter — Conceal via **technical text** steganography |
 | [CTFTTE-STE-009](../techniques/CTFTTE-STE-009.md) | Nested metadata-container embedding | [CTFTCTE-STE-009](../countertechniques/CTFTCTE-STE-009.md) | Recursively inspect nested metadata containers |
+| [CTFTTE-STE-010](../techniques/CTFTTE-STE-010.md) | Audio-domain stego beyond spectrograms (LSB/phase/DTMF/SSTV) | [CTFTCTE-STE-010](../countertechniques/CTFTCTE-STE-010.md) | Detect and decode audio-domain stego | T1001.002 |
+| [CTFTTE-STE-011](../techniques/CTFTTE-STE-011.md) | Palette / bitplane LSB tricks | [CTFTCTE-STE-011](../countertechniques/CTFTCTE-STE-011.md) | Analyze bitplanes and palette-based LSB | T1001.002 |
 
 
 ---

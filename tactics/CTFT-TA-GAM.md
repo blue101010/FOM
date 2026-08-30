@@ -2,7 +2,7 @@
 
 > **Tactic ID:** `CTFT-TA-GAM`  
 > **HTB mapping:** HTB: GamePwn  
-> **Techniques:** 5
+> **Techniques:** 6
 
 ## Description
 
@@ -29,6 +29,7 @@ rely on. CTFT never re-labels an existing ATT&CK technique.
 | [CTFTTE-GAM-003](../techniques/CTFTTE-GAM-003.md) | Bot-vs-AI / ML-opponent challenge | [CTFTCTE-GAM-003](../countertechniques/CTFTCTE-GAM-003.md) | Exploit AI weaknesses or craft adversarial inputs | No ATT&CK equivalent. |
 | [CTFTTE-GAM-004](../techniques/CTFTTE-GAM-004.md) | Game binary win-condition bypass | [CTFTCTE-GAM-004](../countertechniques/CTFTCTE-GAM-004.md) | Patch the jump / comparison to force a win state | Complements T1027 with CTF binary-patching detail. |
 | [CTFTTE-GAM-005](../techniques/CTFTTE-GAM-005.md) | Protocol sequence replay / race | [CTFTCTE-GAM-005](../countertechniques/CTFTCTE-GAM-005.md) | Record, replay, or race the server sequence precisely | No ATT&CK equivalent. |
+| [CTFTTE-GAM-006](../techniques/CTFTTE-GAM-006.md) | Chatbot / choice-path bot puzzle | [CTFTCTE-GAM-006](../countertechniques/CTFTCTE-GAM-006.md) | Script a bot interaction to reach the win branch | T1071 |
 
 
 ---

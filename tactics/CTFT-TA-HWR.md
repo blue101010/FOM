@@ -2,7 +2,7 @@
 
 > **Tactic ID:** `CTFT-TA-HWR`  
 > **HTB mapping:** HTB: Hardware  
-> **Techniques:** 0
+> **Techniques:** 2
 
 ## Description
 
@@ -24,6 +24,8 @@ rely on. CTFT never re-labels an existing ATT&CK technique.
 
 | Technique | Hide / Design name | Counter-technique | Counter name | ATT&CK note (excerpt) |
 | --- | --- | --- | --- | --- |
+| [CTFTTE-HWR-001](../techniques/CTFTTE-HWR-001.md) | USB HID keystroke concealment | [CTFTCTE-HWR-001](../countertechniques/CTFTCTE-HWR-001.md) | Reconstruct keystrokes from captured USB HID traffic | T1056.001 |
+| [CTFTTE-HWR-002](../techniques/CTFTTE-HWR-002.md) | Badge / embedded-device firmware concealment | [CTFTCTE-HWR-002](../countertechniques/CTFTCTE-HWR-002.md) | Dump and reverse badge firmware | T1027 |
 
 
 ---

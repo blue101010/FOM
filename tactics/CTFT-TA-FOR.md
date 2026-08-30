@@ -2,7 +2,7 @@
 
 > **Tactic ID:** `CTFT-TA-FOR`  
 > **HTB mapping:** HTB: Forensics  
-> **Techniques:** 18
+> **Techniques:** 26
 
 ## Description
 
@@ -42,6 +42,14 @@ rely on. CTFT never re-labels an existing ATT&CK technique.
 | [CTFTTE-FOR-016](../techniques/CTFTTE-FOR-016.md) | Conceal information with date and time representations | [CTFTCTE-FOR-016](../countertechniques/CTFTCTE-FOR-016.md) | Recover information with date and time representations |
 | [CTFTTE-FOR-017](../techniques/CTFTTE-FOR-017.md) | Conceal text data strings in ELF binary | [CTFTCTE-FOR-017](../countertechniques/CTFTCTE-FOR-017.md) | Recover text data strings from ELF binary |
 | [CTFTTE-FOR-018](../techniques/CTFTTE-FOR-018.md) | MFT record and attribute tampering | [CTFTCTE-FOR-018](../countertechniques/CTFTCTE-FOR-018.md) | Analyze orphaned MFT records and raw attributes |
+| [CTFTTE-FOR-019](../techniques/CTFTTE-FOR-019.md) | JPEG marker / DCT coefficient corruption | [CTFTCTE-FOR-019](../countertechniques/CTFTCTE-FOR-019.md) | Repair JPEG segments and decode DCT coefficients | T1027 |
+| [CTFTTE-FOR-020](../techniques/CTFTTE-FOR-020.md) | LUKS-encrypted volume concealment | [CTFTCTE-FOR-020](../countertechniques/CTFTCTE-FOR-020.md) | Recover LUKS headers/keyslots, bruteforce passphrase | T1486 |
+| [CTFTTE-FOR-021](../techniques/CTFTTE-FOR-021.md) | LVM fragment/concat volume labyrinth | [CTFTCTE-FOR-021](../countertechniques/CTFTCTE-FOR-021.md) | Reassemble LVM logical volumes and mount | T1564 |
+| [CTFTTE-FOR-022](../techniques/CTFTTE-FOR-022.md) | Deleted-file / open-handle recovery | [CTFTCTE-FOR-022](../countertechniques/CTFTCTE-FOR-022.md) | Recover deleted files via /proc handles, journal, carving | T1070.004 |
+| [CTFTTE-FOR-023](../techniques/CTFTTE-FOR-023.md) | SELinux context-based concealment | [CTFTCTE-FOR-023](../countertechniques/CTFTCTE-FOR-023.md) | Analyze SELinux contexts blocking artifacts | T1562 |
+| [CTFTTE-FOR-024](../techniques/CTFTTE-FOR-024.md) | Browser-profile artifact concealment | [CTFTCTE-FOR-024](../countertechniques/CTFTCTE-FOR-024.md) | Parse Firefox/SQLite artifacts (places, logins, cookies) | T1217 |
+| [CTFTTE-FOR-025](../techniques/CTFTTE-FOR-025.md) | PDF object/stream hiding | [CTFTCTE-FOR-025](../countertechniques/CTFTCTE-FOR-025.md) | Parse PDF xref, streams and filters | T1027 |
+| [CTFTTE-FOR-026](../techniques/CTFTTE-FOR-026.md) | Memory-image OS-artifact recovery | [CTFTCTE-FOR-026](../countertechniques/CTFTCTE-FOR-026.md) | Extract registry/services/process artifacts from memory images | T1003 |
 
 
 ---

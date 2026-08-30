@@ -2,7 +2,7 @@
 
 > **Tactic ID:** `CTFT-TA-SDR`  
 > **HTB mapping:** HTB: Hardware  
-> **Techniques:** 0
+> **Techniques:** 1
 
 ## Description
 
@@ -26,6 +26,7 @@ rely on. CTFT never re-labels an existing ATT&CK technique.
 
 | Technique | Hide / Design name | Counter-technique | Counter name | ATT&CK note (excerpt) |
 | --- | --- | --- | --- | --- |
+| [CTFTTE-SDR-001](../techniques/CTFTTE-SDR-001.md) | RF/SDR signal embedding | [CTFTCTE-SDR-001](../countertechniques/CTFTCTE-SDR-001.md) | Demodulate and decode RF captures | T1001.002 |
 
 
 ---

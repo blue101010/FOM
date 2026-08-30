@@ -41,11 +41,13 @@ CANONICAL_ORDER: list[tuple[str, str]] = [
     ("JAL", "Jail escape"),
     ("GAM", "Game/Proto"),
     ("COD", "Coding"),
+    ("NET", "Network"),
     ("FPN", "Full Pwn"),
+    ("HWR", "Hardware"),
     ("SDR", "SDR / RF"),
 ]
 # Declared but not offered in the picker and currently empty.
-RESERVED: list[tuple[str, str]] = [("HWR", "Hardware")]
+RESERVED: list[tuple[str, str]] = []
 
 # Retired categories, kept only so the matrix can explain where they went.
 RETIRED = {

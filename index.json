@@ -1,14 +1,14 @@
 {
   "model": "CTFT",
   "version": "1.2",
-  "generated": "2026-08-30T19:33:04+00:00",
+  "generated": "2026-08-30T21:58:17+00:00",
   "complements": "MITRE ATT&CK",
   "tactics": [
     {
       "id": "CTFT-TA-AIM",
       "name": "AIM — AI / ML",
       "path": "tactics/CTFT-TA-AIM.md",
-      "count": 5
+      "count": 7
     },
     {
       "id": "CTFT-TA-BLK",
@@ -20,43 +20,43 @@
       "id": "CTFT-TA-CLD",
       "name": "CLD — Cloud",
       "path": "tactics/CTFT-TA-CLD.md",
-      "count": 5
+      "count": 8
     },
     {
       "id": "CTFT-TA-COD",
       "name": "COD — Coding / Programming Puzzle",
       "path": "tactics/CTFT-TA-COD.md",
-      "count": 5
+      "count": 7
     },
     {
       "id": "CTFT-TA-CRY",
       "name": "CRY — Cryptography",
       "path": "tactics/CTFT-TA-CRY.md",
-      "count": 7
+      "count": 13
     },
     {
       "id": "CTFT-TA-FOR",
       "name": "FOR — Forensics",
       "path": "tactics/CTFT-TA-FOR.md",
-      "count": 18
+      "count": 26
     },
     {
       "id": "CTFT-TA-FPN",
       "name": "FPN — Full Pwn / Multi-Stage",
       "path": "tactics/CTFT-TA-FPN.md",
-      "count": 7
+      "count": 10
     },
     {
       "id": "CTFT-TA-GAM",
       "name": "GAM — Game / Protocol Automation (GamePwn)",
       "path": "tactics/CTFT-TA-GAM.md",
-      "count": 5
+      "count": 6
     },
     {
       "id": "CTFT-TA-HWR",
       "name": "HWR — Hardware",
       "path": "tactics/CTFT-TA-HWR.md",
-      "count": 0
+      "count": 2
     },
     {
       "id": "CTFT-TA-ICS",
@@ -68,7 +68,7 @@
       "id": "CTFT-TA-JAL",
       "name": "JAL — Jail / Sandbox Escape",
       "path": "tactics/CTFT-TA-JAL.md",
-      "count": 5
+      "count": 6
     },
     {
       "id": "CTFT-TA-MOB",
@@ -77,43 +77,49 @@
       "count": 5
     },
     {
+      "id": "CTFT-TA-NET",
+      "name": "NET — Network",
+      "path": "tactics/CTFT-TA-NET.md",
+      "count": 7
+    },
+    {
       "id": "CTFT-TA-OSI",
       "name": "OSI — OSINT",
       "path": "tactics/CTFT-TA-OSI.md",
-      "count": 5
+      "count": 8
     },
     {
       "id": "CTFT-TA-PWN",
       "name": "PWN — Binary Exploitation",
       "path": "tactics/CTFT-TA-PWN.md",
-      "count": 5
+      "count": 8
     },
     {
       "id": "CTFT-TA-REV",
       "name": "REV — Reverse Engineering",
       "path": "tactics/CTFT-TA-REV.md",
-      "count": 5
+      "count": 9
     },
     {
       "id": "CTFT-TA-SDR",
       "name": "SDR — Software-Defined Radio",
       "path": "tactics/CTFT-TA-SDR.md",
-      "count": 0
+      "count": 1
     },
     {
       "id": "CTFT-TA-STE",
       "name": "STE — Steganography",
       "path": "tactics/CTFT-TA-STE.md",
-      "count": 9
+      "count": 11
     },
     {
       "id": "CTFT-TA-WEB",
       "name": "WEB — Web Exploitation",
       "path": "tactics/CTFT-TA-WEB.md",
-      "count": 9
+      "count": 17
     }
   ],
-  "total_techniques": 105,
+  "total_techniques": 161,
   "techniques": [
     {
       "tactic": "CTFT-TA-AIM",
@@ -183,6 +189,34 @@
         "id": "CTFTCTE-AIM-005",
         "name": "CTFTCTE-AIM-005 — Recover secrets through model inversion",
         "path": "countertechniques/CTFTCTE-AIM-005.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-AIM",
+      "category": "AIM",
+      "technique": {
+        "id": "CTFTTE-AIM-006",
+        "name": "CTFTTE-AIM-006 — Self-hosted LLM platform misconfiguration",
+        "path": "techniques/CTFTTE-AIM-006.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-AIM-006",
+        "name": "CTFTCTE-AIM-006 — Audit ollama/oobabooga deployments for exposed endpoints",
+        "path": "countertechniques/CTFTCTE-AIM-006.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-AIM",
+      "category": "AIM",
+      "technique": {
+        "id": "CTFTTE-AIM-007",
+        "name": "CTFTTE-AIM-007 — Agent / tool-calling guardrail bypass",
+        "path": "techniques/CTFTTE-AIM-007.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-AIM-007",
+        "name": "CTFTCTE-AIM-007 — Bypass agent tool policies",
+        "path": "countertechniques/CTFTCTE-AIM-007.md"
       }
     },
     {
@@ -326,6 +360,48 @@
       }
     },
     {
+      "tactic": "CTFT-TA-CLD",
+      "category": "CLD",
+      "technique": {
+        "id": "CTFTTE-CLD-006",
+        "name": "CTFTTE-CLD-006 — Cross-account role chaining / trust abuse",
+        "path": "techniques/CTFTTE-CLD-006.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-CLD-006",
+        "name": "CTFTCTE-CLD-006 — Chain sts:AssumeRole across accounts",
+        "path": "countertechniques/CTFTCTE-CLD-006.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-CLD",
+      "category": "CLD",
+      "technique": {
+        "id": "CTFTTE-CLD-007",
+        "name": "CTFTTE-CLD-007 — Cloud NoSQL-store misconfiguration",
+        "path": "techniques/CTFTTE-CLD-007.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-CLD-007",
+        "name": "CTFTCTE-CLD-007 — Enumerate and query exposed cloud databases",
+        "path": "countertechniques/CTFTCTE-CLD-007.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-CLD",
+      "category": "CLD",
+      "technique": {
+        "id": "CTFTTE-CLD-008",
+        "name": "CTFTTE-CLD-008 — Azure management-plane misconfiguration",
+        "path": "techniques/CTFTTE-CLD-008.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-CLD-008",
+        "name": "CTFTCTE-CLD-008 — Enumerate Azure AD/VM/storage from credentials",
+        "path": "countertechniques/CTFTCTE-CLD-008.md"
+      }
+    },
+    {
       "tactic": "CTFT-TA-COD",
       "category": "COD",
       "technique": {
@@ -393,6 +469,34 @@
         "id": "CTFTCTE-COD-005",
         "name": "CTFTCTE-COD-005 — Extract constraints and solve with Z3 / angr",
         "path": "countertechniques/CTFTCTE-COD-005.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-COD",
+      "category": "COD",
+      "technique": {
+        "id": "CTFTTE-COD-006",
+        "name": "CTFTTE-COD-006 — Combinatorial enumeration puzzle",
+        "path": "techniques/CTFTTE-COD-006.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-COD-006",
+        "name": "CTFTCTE-COD-006 — Generate permutations/combinations efficiently",
+        "path": "countertechniques/CTFTCTE-COD-006.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-COD",
+      "category": "COD",
+      "technique": {
+        "id": "CTFTTE-COD-007",
+        "name": "CTFTTE-COD-007 — Grid/logic-constraint puzzle (Sudoku)",
+        "path": "techniques/CTFTTE-COD-007.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-COD-007",
+        "name": "CTFTCTE-COD-007 — Solve constraint grids programmatically",
+        "path": "countertechniques/CTFTCTE-COD-007.md"
       }
     },
     {
@@ -491,6 +595,90 @@
         "id": "CTFTCTE-CRY-007",
         "name": "CTFTCTE-CRY-007 — Assess and predict recoverable PRNG state",
         "path": "countertechniques/CTFTCTE-CRY-007.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-CRY",
+      "category": "CRY",
+      "technique": {
+        "id": "CTFTTE-CRY-008",
+        "name": "CTFTTE-CRY-008 — Block-cipher mode / AES implementation weakness",
+        "path": "techniques/CTFTTE-CRY-008.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-CRY-008",
+        "name": "CTFTCTE-CRY-008 — Attack AES modes (padding oracle, IV flaws)",
+        "path": "countertechniques/CTFTCTE-CRY-008.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-CRY",
+      "category": "CRY",
+      "technique": {
+        "id": "CTFTTE-CRY-009",
+        "name": "CTFTTE-CRY-009 — Stream-cipher keystream reuse (Salsa20)",
+        "path": "techniques/CTFTTE-CRY-009.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-CRY-009",
+        "name": "CTFTCTE-CRY-009 — Exploit keystream reuse to recover plaintext",
+        "path": "countertechniques/CTFTCTE-CRY-009.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-CRY",
+      "category": "CRY",
+      "technique": {
+        "id": "CTFTTE-CRY-010",
+        "name": "CTFTTE-CRY-010 — Certificate / PEM / ASN.1 field hiding",
+        "path": "techniques/CTFTTE-CRY-010.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-CRY-010",
+        "name": "CTFTCTE-CRY-010 — Parse certificates and extract hidden fields",
+        "path": "countertechniques/CTFTCTE-CRY-010.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-CRY",
+      "category": "CRY",
+      "technique": {
+        "id": "CTFTTE-CRY-011",
+        "name": "CTFTTE-CRY-011 — Protocol implementation flaw (Heartbleed-style)",
+        "path": "techniques/CTFTTE-CRY-011.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-CRY-011",
+        "name": "CTFTCTE-CRY-011 — Reproduce protocol memory-leak vulnerabilities",
+        "path": "countertechniques/CTFTCTE-CRY-011.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-CRY",
+      "category": "CRY",
+      "technique": {
+        "id": "CTFTTE-CRY-012",
+        "name": "CTFTTE-CRY-012 — Hash-cracking maze with constraints",
+        "path": "techniques/CTFTTE-CRY-012.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-CRY-012",
+        "name": "CTFTCTE-CRY-012 — Crack hashes under masks/rules",
+        "path": "countertechniques/CTFTCTE-CRY-012.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-CRY",
+      "category": "CRY",
+      "technique": {
+        "id": "CTFTTE-CRY-013",
+        "name": "CTFTTE-CRY-013 — Nonstandard-alphabet substitution (braille, cetacean)",
+        "path": "techniques/CTFTTE-CRY-013.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-CRY-013",
+        "name": "CTFTCTE-CRY-013 — Transcode nonstandard alphabets",
+        "path": "countertechniques/CTFTCTE-CRY-013.md"
       }
     },
     {
@@ -746,6 +934,118 @@
       }
     },
     {
+      "tactic": "CTFT-TA-FOR",
+      "category": "FOR",
+      "technique": {
+        "id": "CTFTTE-FOR-019",
+        "name": "CTFTTE-FOR-019 — JPEG marker / DCT coefficient corruption",
+        "path": "techniques/CTFTTE-FOR-019.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-FOR-019",
+        "name": "CTFTCTE-FOR-019 — Repair JPEG segments and decode DCT coefficients",
+        "path": "countertechniques/CTFTCTE-FOR-019.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-FOR",
+      "category": "FOR",
+      "technique": {
+        "id": "CTFTTE-FOR-020",
+        "name": "CTFTTE-FOR-020 — LUKS-encrypted volume concealment",
+        "path": "techniques/CTFTTE-FOR-020.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-FOR-020",
+        "name": "CTFTCTE-FOR-020 — Recover LUKS headers/keyslots, bruteforce passphrase",
+        "path": "countertechniques/CTFTCTE-FOR-020.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-FOR",
+      "category": "FOR",
+      "technique": {
+        "id": "CTFTTE-FOR-021",
+        "name": "CTFTTE-FOR-021 — LVM fragment/concat volume labyrinth",
+        "path": "techniques/CTFTTE-FOR-021.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-FOR-021",
+        "name": "CTFTCTE-FOR-021 — Reassemble LVM logical volumes and mount",
+        "path": "countertechniques/CTFTCTE-FOR-021.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-FOR",
+      "category": "FOR",
+      "technique": {
+        "id": "CTFTTE-FOR-022",
+        "name": "CTFTTE-FOR-022 — Deleted-file / open-handle recovery",
+        "path": "techniques/CTFTTE-FOR-022.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-FOR-022",
+        "name": "CTFTCTE-FOR-022 — Recover deleted files via /proc handles, journal, carving",
+        "path": "countertechniques/CTFTCTE-FOR-022.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-FOR",
+      "category": "FOR",
+      "technique": {
+        "id": "CTFTTE-FOR-023",
+        "name": "CTFTTE-FOR-023 — SELinux context-based concealment",
+        "path": "techniques/CTFTTE-FOR-023.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-FOR-023",
+        "name": "CTFTCTE-FOR-023 — Analyze SELinux contexts blocking artifacts",
+        "path": "countertechniques/CTFTCTE-FOR-023.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-FOR",
+      "category": "FOR",
+      "technique": {
+        "id": "CTFTTE-FOR-024",
+        "name": "CTFTTE-FOR-024 — Browser-profile artifact concealment",
+        "path": "techniques/CTFTTE-FOR-024.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-FOR-024",
+        "name": "CTFTCTE-FOR-024 — Parse Firefox/SQLite artifacts (places, logins, cookies)",
+        "path": "countertechniques/CTFTCTE-FOR-024.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-FOR",
+      "category": "FOR",
+      "technique": {
+        "id": "CTFTTE-FOR-025",
+        "name": "CTFTTE-FOR-025 — PDF object/stream hiding",
+        "path": "techniques/CTFTTE-FOR-025.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-FOR-025",
+        "name": "CTFTCTE-FOR-025 — Parse PDF xref, streams and filters",
+        "path": "countertechniques/CTFTCTE-FOR-025.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-FOR",
+      "category": "FOR",
+      "technique": {
+        "id": "CTFTTE-FOR-026",
+        "name": "CTFTTE-FOR-026 — Memory-image OS-artifact recovery",
+        "path": "techniques/CTFTTE-FOR-026.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-FOR-026",
+        "name": "CTFTCTE-FOR-026 — Extract registry/services/process artifacts from memory images",
+        "path": "countertechniques/CTFTCTE-FOR-026.md"
+      }
+    },
+    {
       "tactic": "CTFT-TA-FPN",
       "category": "FPN",
       "technique": {
@@ -844,6 +1144,48 @@
       }
     },
     {
+      "tactic": "CTFT-TA-FPN",
+      "category": "FPN",
+      "technique": {
+        "id": "CTFTTE-FPN-008",
+        "name": "CTFTTE-FPN-008 — Linux local privesc chain (SUID, ACLs, sudo, capabilities)",
+        "path": "techniques/CTFTTE-FPN-008.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-FPN-008",
+        "name": "CTFTCTE-FPN-008 — Enumerate and chain Linux privesc vectors",
+        "path": "countertechniques/CTFTCTE-FPN-008.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-FPN",
+      "category": "FPN",
+      "technique": {
+        "id": "CTFTTE-FPN-009",
+        "name": "CTFTTE-FPN-009 — Redis/NoSQL service misconfiguration chain",
+        "path": "techniques/CTFTTE-FPN-009.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-FPN-009",
+        "name": "CTFTCTE-FPN-009 — Enumerate Redis/Mongo/MySQL, dump or RCE",
+        "path": "countertechniques/CTFTCTE-FPN-009.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-FPN",
+      "category": "FPN",
+      "technique": {
+        "id": "CTFTTE-FPN-010",
+        "name": "CTFTTE-FPN-010 — Reverse-shell delivery & listener operations",
+        "path": "techniques/CTFTTE-FPN-010.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-FPN-010",
+        "name": "CTFTCTE-FPN-010 — Catch, upgrade and persist reverse shells",
+        "path": "countertechniques/CTFTCTE-FPN-010.md"
+      }
+    },
+    {
       "tactic": "CTFT-TA-GAM",
       "category": "GAM",
       "technique": {
@@ -911,6 +1253,48 @@
         "id": "CTFTCTE-GAM-005",
         "name": "CTFTCTE-GAM-005 — Record, replay, or race the server sequence precisely",
         "path": "countertechniques/CTFTCTE-GAM-005.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-GAM",
+      "category": "GAM",
+      "technique": {
+        "id": "CTFTTE-GAM-006",
+        "name": "CTFTTE-GAM-006 — Chatbot / choice-path bot puzzle",
+        "path": "techniques/CTFTTE-GAM-006.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-GAM-006",
+        "name": "CTFTCTE-GAM-006 — Script a bot interaction to reach the win branch",
+        "path": "countertechniques/CTFTCTE-GAM-006.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-HWR",
+      "category": "HWR",
+      "technique": {
+        "id": "CTFTTE-HWR-001",
+        "name": "CTFTTE-HWR-001 — USB HID keystroke concealment",
+        "path": "techniques/CTFTTE-HWR-001.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-HWR-001",
+        "name": "CTFTCTE-HWR-001 — Reconstruct keystrokes from captured USB HID traffic",
+        "path": "countertechniques/CTFTCTE-HWR-001.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-HWR",
+      "category": "HWR",
+      "technique": {
+        "id": "CTFTTE-HWR-002",
+        "name": "CTFTTE-HWR-002 — Badge / embedded-device firmware concealment",
+        "path": "techniques/CTFTTE-HWR-002.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-HWR-002",
+        "name": "CTFTCTE-HWR-002 — Dump and reverse badge firmware",
+        "path": "countertechniques/CTFTCTE-HWR-002.md"
       }
     },
     {
@@ -1054,6 +1438,20 @@
       }
     },
     {
+      "tactic": "CTFT-TA-JAL",
+      "category": "JAL",
+      "technique": {
+        "id": "CTFTTE-JAL-006",
+        "name": "CTFTTE-JAL-006 — WSL-interop sandbox escape",
+        "path": "techniques/CTFTTE-JAL-006.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-JAL-006",
+        "name": "CTFTCTE-JAL-006 — Escape WSL-interop boundaries",
+        "path": "countertechniques/CTFTCTE-JAL-006.md"
+      }
+    },
+    {
       "tactic": "CTFT-TA-MOB",
       "category": "MOB",
       "technique": {
@@ -1121,6 +1519,104 @@
         "id": "CTFTCTE-MOB-005",
         "name": "CTFTCTE-MOB-005 — Hook the app to satisfy runtime checks",
         "path": "countertechniques/CTFTCTE-MOB-005.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-NET",
+      "category": "NET",
+      "technique": {
+        "id": "CTFTTE-NET-001",
+        "name": "CTFTTE-NET-001 — Port/service discovery maze",
+        "path": "techniques/CTFTTE-NET-001.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-NET-001",
+        "name": "CTFTCTE-NET-001 — Systematic port/service enumeration",
+        "path": "countertechniques/CTFTCTE-NET-001.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-NET",
+      "category": "NET",
+      "technique": {
+        "id": "CTFTTE-NET-002",
+        "name": "CTFTTE-NET-002 — DNS covert channel / tunnel",
+        "path": "techniques/CTFTTE-NET-002.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-NET-002",
+        "name": "CTFTCTE-NET-002 — Detect DNS tunneling and beaconing in PCAPs",
+        "path": "countertechniques/CTFTCTE-NET-002.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-NET",
+      "category": "NET",
+      "technique": {
+        "id": "CTFTTE-NET-003",
+        "name": "CTFTTE-NET-003 — SMB enumeration barrier",
+        "path": "techniques/CTFTTE-NET-003.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-NET-003",
+        "name": "CTFTCTE-NET-003 — Enumerate SMB shares/versions",
+        "path": "countertechniques/CTFTCTE-NET-003.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-NET",
+      "category": "NET",
+      "technique": {
+        "id": "CTFTTE-NET-004",
+        "name": "CTFTTE-NET-004 — Wi-Fi capture / handshake concealment",
+        "path": "techniques/CTFTTE-NET-004.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-NET-004",
+        "name": "CTFTCTE-NET-004 — Crack WPA2 handshakes, decode Wi-Fi captures",
+        "path": "countertechniques/CTFTCTE-NET-004.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-NET",
+      "category": "NET",
+      "technique": {
+        "id": "CTFTTE-NET-005",
+        "name": "CTFTTE-NET-005 — Traffic tunnel / port-forwarding relay",
+        "path": "techniques/CTFTTE-NET-005.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-NET-005",
+        "name": "CTFTCTE-NET-005 — Pivot via ssh -L/-R, chisel",
+        "path": "countertechniques/CTFTCTE-NET-005.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-NET",
+      "category": "NET",
+      "technique": {
+        "id": "CTFTTE-NET-006",
+        "name": "CTFTTE-NET-006 — TTL / protocol-field covert channel",
+        "path": "techniques/CTFTTE-NET-006.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-NET-006",
+        "name": "CTFTCTE-NET-006 — Decode TTL/ICMP/padding channels",
+        "path": "countertechniques/CTFTCTE-NET-006.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-NET",
+      "category": "NET",
+      "technique": {
+        "id": "CTFTTE-NET-007",
+        "name": "CTFTTE-NET-007 — Packet-capture forensics maze",
+        "path": "techniques/CTFTTE-NET-007.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-NET-007",
+        "name": "CTFTCTE-NET-007 — Run beaconing/exfil/credential detectors over PCAPs",
+        "path": "countertechniques/CTFTCTE-NET-007.md"
       }
     },
     {
@@ -1194,6 +1690,48 @@
       }
     },
     {
+      "tactic": "CTFT-TA-OSI",
+      "category": "OSI",
+      "technique": {
+        "id": "CTFTTE-OSI-006",
+        "name": "CTFTTE-OSI-006 — Git-repository archaeology",
+        "path": "techniques/CTFTTE-OSI-006.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-OSI-006",
+        "name": "CTFTCTE-OSI-006 — Mine git history, objects and reflog",
+        "path": "countertechniques/CTFTCTE-OSI-006.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-OSI",
+      "category": "OSI",
+      "technique": {
+        "id": "CTFTTE-OSI-007",
+        "name": "CTFTTE-OSI-007 — Search-engine mining (dorking)",
+        "path": "techniques/CTFTTE-OSI-007.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-OSI-007",
+        "name": "CTFTCTE-OSI-007 — Run advanced dorks and search operators",
+        "path": "countertechniques/CTFTCTE-OSI-007.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-OSI",
+      "category": "OSI",
+      "technique": {
+        "id": "CTFTTE-OSI-008",
+        "name": "CTFTTE-OSI-008 — ASN / IP-range / subdomain recon",
+        "path": "techniques/CTFTTE-OSI-008.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-OSI-008",
+        "name": "CTFTCTE-OSI-008 — Map ASN, ranges, subdomains (bbot, assetfinder)",
+        "path": "countertechniques/CTFTCTE-OSI-008.md"
+      }
+    },
+    {
       "tactic": "CTFT-TA-PWN",
       "category": "PWN",
       "technique": {
@@ -1264,6 +1802,48 @@
       }
     },
     {
+      "tactic": "CTFT-TA-PWN",
+      "category": "PWN",
+      "technique": {
+        "id": "CTFTTE-PWN-006",
+        "name": "CTFTTE-PWN-006 — Stack canary / PIE / ASLR hardening puzzle",
+        "path": "techniques/CTFTTE-PWN-006.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-PWN-006",
+        "name": "CTFTCTE-PWN-006 — Leak canary/PIE base, ret2libc",
+        "path": "countertechniques/CTFTCTE-PWN-006.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-PWN",
+      "category": "PWN",
+      "technique": {
+        "id": "CTFTTE-PWN-007",
+        "name": "CTFTTE-PWN-007 — Kernel/mseal-guarded memory puzzle",
+        "path": "techniques/CTFTTE-PWN-007.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-PWN-007",
+        "name": "CTFTCTE-PWN-007 — Exploit kernel-module or mseal protections",
+        "path": "countertechniques/CTFTCTE-PWN-007.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-PWN",
+      "category": "PWN",
+      "technique": {
+        "id": "CTFTTE-PWN-008",
+        "name": "CTFTTE-PWN-008 — Shellcode craft & encoding constraints",
+        "path": "techniques/CTFTTE-PWN-008.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-PWN-008",
+        "name": "CTFTCTE-PWN-008 — Generate/encode shellcode (alphanumeric, null-free)",
+        "path": "countertechniques/CTFTCTE-PWN-008.md"
+      }
+    },
+    {
       "tactic": "CTFT-TA-REV",
       "category": "REV",
       "technique": {
@@ -1331,6 +1911,76 @@
         "id": "CTFTCTE-REV-005",
         "name": "CTFTCTE-REV-005 — Solve the check with an SMT/symbolic engine",
         "path": "countertechniques/CTFTCTE-REV-005.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-REV",
+      "category": "REV",
+      "technique": {
+        "id": "CTFTTE-REV-006",
+        "name": "CTFTTE-REV-006 — Java bytecode / JAR obfuscation",
+        "path": "techniques/CTFTTE-REV-006.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-REV-006",
+        "name": "CTFTCTE-REV-006 — Decompile and deobfuscate JVM bytecode",
+        "path": "countertechniques/CTFTCTE-REV-006.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-REV",
+      "category": "REV",
+      "technique": {
+        "id": "CTFTTE-REV-007",
+        "name": "CTFTTE-REV-007 — Python bytecode (.pyc/.pyo) concealment",
+        "path": "techniques/CTFTTE-REV-007.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-REV-007",
+        "name": "CTFTCTE-REV-007 — Decompile Python bytecode",
+        "path": "countertechniques/CTFTCTE-REV-007.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-REV",
+      "category": "REV",
+      "technique": {
+        "id": "CTFTTE-REV-008",
+        "name": "CTFTTE-REV-008 — Functional-language binary concealment",
+        "path": "techniques/CTFTTE-REV-008.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-REV-008",
+        "name": "CTFTCTE-REV-008 — Reverse Haskell/functional compiled artifacts",
+        "path": "countertechniques/CTFTCTE-REV-008.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-REV",
+      "category": "REV",
+      "technique": {
+        "id": "CTFTTE-REV-009",
+        "name": "CTFTTE-REV-009 — Assembly-level code-golf / shellcode RE",
+        "path": "techniques/CTFTTE-REV-009.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-REV-009",
+        "name": "CTFTCTE-REV-009 — Disassemble and annotate asm snippets",
+        "path": "countertechniques/CTFTCTE-REV-009.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-SDR",
+      "category": "SDR",
+      "technique": {
+        "id": "CTFTTE-SDR-001",
+        "name": "CTFTTE-SDR-001 — RF/SDR signal embedding",
+        "path": "techniques/CTFTTE-SDR-001.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-SDR-001",
+        "name": "CTFTCTE-SDR-001 — Demodulate and decode RF captures",
+        "path": "countertechniques/CTFTCTE-SDR-001.md"
       }
     },
     {
@@ -1460,6 +2110,34 @@
       }
     },
     {
+      "tactic": "CTFT-TA-STE",
+      "category": "STE",
+      "technique": {
+        "id": "CTFTTE-STE-010",
+        "name": "CTFTTE-STE-010 — Audio-domain stego beyond spectrograms (LSB/phase/DTMF/SSTV)",
+        "path": "techniques/CTFTTE-STE-010.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-STE-010",
+        "name": "CTFTCTE-STE-010 — Detect and decode audio-domain stego",
+        "path": "countertechniques/CTFTCTE-STE-010.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-STE",
+      "category": "STE",
+      "technique": {
+        "id": "CTFTTE-STE-011",
+        "name": "CTFTTE-STE-011 — Palette / bitplane LSB tricks",
+        "path": "techniques/CTFTTE-STE-011.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-STE-011",
+        "name": "CTFTCTE-STE-011 — Analyze bitplanes and palette-based LSB",
+        "path": "countertechniques/CTFTCTE-STE-011.md"
+      }
+    },
+    {
       "tactic": "CTFT-TA-WEB",
       "category": "WEB",
       "technique": {
@@ -1584,6 +2262,118 @@
         "name": "CTFTCTE-WEB-009 — Classify a configuration secret exposure",
         "path": "countertechniques/CTFTCTE-WEB-009.md"
       }
+    },
+    {
+      "tactic": "CTFT-TA-WEB",
+      "category": "WEB",
+      "technique": {
+        "id": "CTFTTE-WEB-010",
+        "name": "CTFTTE-WEB-010 — LFI / log poisoning / php-filter chains",
+        "path": "techniques/CTFTTE-WEB-010.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-WEB-010",
+        "name": "CTFTCTE-WEB-010 — Exploit LFI to RCE or flag read",
+        "path": "countertechniques/CTFTCTE-WEB-010.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-WEB",
+      "category": "WEB",
+      "technique": {
+        "id": "CTFTTE-WEB-011",
+        "name": "CTFTTE-WEB-011 — Directory-traversal maze",
+        "path": "techniques/CTFTTE-WEB-011.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-WEB-011",
+        "name": "CTFTCTE-WEB-011 — Traverse filtered paths (PHP labyrinth)",
+        "path": "countertechniques/CTFTCTE-WEB-011.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-WEB",
+      "category": "WEB",
+      "technique": {
+        "id": "CTFTTE-WEB-012",
+        "name": "CTFTTE-WEB-012 — XSS-driven flag exfiltration",
+        "path": "techniques/CTFTTE-WEB-012.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-WEB-012",
+        "name": "CTFTCTE-WEB-012 — Craft XSS payloads (stored/reflected/DOM)",
+        "path": "countertechniques/CTFTCTE-WEB-012.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-WEB",
+      "category": "WEB",
+      "technique": {
+        "id": "CTFTTE-WEB-013",
+        "name": "CTFTTE-WEB-013 — CSRF-gated state change",
+        "path": "techniques/CTFTTE-WEB-013.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-WEB-013",
+        "name": "CTFTCTE-WEB-013 — Forge cross-site requests",
+        "path": "countertechniques/CTFTCTE-WEB-013.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-WEB",
+      "category": "WEB",
+      "technique": {
+        "id": "CTFTTE-WEB-014",
+        "name": "CTFTTE-WEB-014 — WebSocket message hiding",
+        "path": "techniques/CTFTTE-WEB-014.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-WEB-014",
+        "name": "CTFTCTE-WEB-014 — Intercept and decode WebSocket traffic",
+        "path": "countertechniques/CTFTCTE-WEB-014.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-WEB",
+      "category": "WEB",
+      "technique": {
+        "id": "CTFTTE-WEB-015",
+        "name": "CTFTTE-WEB-015 — CMS / WordPress plugin flaw",
+        "path": "techniques/CTFTTE-WEB-015.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-WEB-015",
+        "name": "CTFTCTE-WEB-015 — Enumerate and exploit WordPress (wpscan)",
+        "path": "countertechniques/CTFTCTE-WEB-015.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-WEB",
+      "category": "WEB",
+      "technique": {
+        "id": "CTFTTE-WEB-016",
+        "name": "CTFTTE-WEB-016 — NoSQL injection",
+        "path": "techniques/CTFTTE-WEB-016.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-WEB-016",
+        "name": "CTFTCTE-WEB-016 — Inject Mongo/NoSQL queries",
+        "path": "countertechniques/CTFTCTE-WEB-016.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-WEB",
+      "category": "WEB",
+      "technique": {
+        "id": "CTFTTE-WEB-017",
+        "name": "CTFTTE-WEB-017 — Host-header / vhost fuzzing",
+        "path": "techniques/CTFTTE-WEB-017.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-WEB-017",
+        "name": "CTFTCTE-WEB-017 — Fuzz vhosts and host headers",
+        "path": "countertechniques/CTFTCTE-WEB-017.md"
+      }
     }
   ],
   "pairs": {
@@ -1592,6 +2382,8 @@
     "CTFTTE-AIM-003": "CTFTCTE-AIM-003",
     "CTFTTE-AIM-004": "CTFTCTE-AIM-004",
     "CTFTTE-AIM-005": "CTFTCTE-AIM-005",
+    "CTFTTE-AIM-006": "CTFTCTE-AIM-006",
+    "CTFTTE-AIM-007": "CTFTCTE-AIM-007",
     "CTFTTE-BLK-001": "CTFTCTE-BLK-001",
     "CTFTTE-BLK-002": "CTFTCTE-BLK-002",
     "CTFTTE-BLK-003": "CTFTCTE-BLK-003",
@@ -1602,11 +2394,16 @@
     "CTFTTE-CLD-003": "CTFTCTE-CLD-003",
     "CTFTTE-CLD-004": "CTFTCTE-CLD-004",
     "CTFTTE-CLD-005": "CTFTCTE-CLD-005",
+    "CTFTTE-CLD-006": "CTFTCTE-CLD-006",
+    "CTFTTE-CLD-007": "CTFTCTE-CLD-007",
+    "CTFTTE-CLD-008": "CTFTCTE-CLD-008",
     "CTFTTE-COD-001": "CTFTCTE-COD-001",
     "CTFTTE-COD-002": "CTFTCTE-COD-002",
     "CTFTTE-COD-003": "CTFTCTE-COD-003",
     "CTFTTE-COD-004": "CTFTCTE-COD-004",
     "CTFTTE-COD-005": "CTFTCTE-COD-005",
+    "CTFTTE-COD-006": "CTFTCTE-COD-006",
+    "CTFTTE-COD-007": "CTFTCTE-COD-007",
     "CTFTTE-CRY-001": "CTFTCTE-CRY-001",
     "CTFTTE-CRY-002": "CTFTCTE-CRY-002",
     "CTFTTE-CRY-003": "CTFTCTE-CRY-003",
@@ -1614,6 +2411,12 @@
     "CTFTTE-CRY-005": "CTFTCTE-CRY-005",
     "CTFTTE-CRY-006": "CTFTCTE-CRY-006",
     "CTFTTE-CRY-007": "CTFTCTE-CRY-007",
+    "CTFTTE-CRY-008": "CTFTCTE-CRY-008",
+    "CTFTTE-CRY-009": "CTFTCTE-CRY-009",
+    "CTFTTE-CRY-010": "CTFTCTE-CRY-010",
+    "CTFTTE-CRY-011": "CTFTCTE-CRY-011",
+    "CTFTTE-CRY-012": "CTFTCTE-CRY-012",
+    "CTFTTE-CRY-013": "CTFTCTE-CRY-013",
     "CTFTTE-FOR-001": "CTFTCTE-FOR-001",
     "CTFTTE-FOR-002": "CTFTCTE-FOR-002",
     "CTFTTE-FOR-003": "CTFTCTE-FOR-003",
@@ -1632,6 +2435,14 @@
     "CTFTTE-FOR-016": "CTFTCTE-FOR-016",
     "CTFTTE-FOR-017": "CTFTCTE-FOR-017",
     "CTFTTE-FOR-018": "CTFTCTE-FOR-018",
+    "CTFTTE-FOR-019": "CTFTCTE-FOR-019",
+    "CTFTTE-FOR-020": "CTFTCTE-FOR-020",
+    "CTFTTE-FOR-021": "CTFTCTE-FOR-021",
+    "CTFTTE-FOR-022": "CTFTCTE-FOR-022",
+    "CTFTTE-FOR-023": "CTFTCTE-FOR-023",
+    "CTFTTE-FOR-024": "CTFTCTE-FOR-024",
+    "CTFTTE-FOR-025": "CTFTCTE-FOR-025",
+    "CTFTTE-FOR-026": "CTFTCTE-FOR-026",
     "CTFTTE-FPN-001": "CTFTCTE-FPN-001",
     "CTFTTE-FPN-002": "CTFTCTE-FPN-002",
     "CTFTTE-FPN-003": "CTFTCTE-FPN-003",
@@ -1639,11 +2450,17 @@
     "CTFTTE-FPN-005": "CTFTCTE-FPN-005",
     "CTFTTE-FPN-006": "CTFTCTE-FPN-006",
     "CTFTTE-FPN-007": "CTFTCTE-FPN-007",
+    "CTFTTE-FPN-008": "CTFTCTE-FPN-008",
+    "CTFTTE-FPN-009": "CTFTCTE-FPN-009",
+    "CTFTTE-FPN-010": "CTFTCTE-FPN-010",
     "CTFTTE-GAM-001": "CTFTCTE-GAM-001",
     "CTFTTE-GAM-002": "CTFTCTE-GAM-002",
     "CTFTTE-GAM-003": "CTFTCTE-GAM-003",
     "CTFTTE-GAM-004": "CTFTCTE-GAM-004",
     "CTFTTE-GAM-005": "CTFTCTE-GAM-005",
+    "CTFTTE-GAM-006": "CTFTCTE-GAM-006",
+    "CTFTTE-HWR-001": "CTFTCTE-HWR-001",
+    "CTFTTE-HWR-002": "CTFTCTE-HWR-002",
     "CTFTTE-ICS-001": "CTFTCTE-ICS-001",
     "CTFTTE-ICS-002": "CTFTCTE-ICS-002",
     "CTFTTE-ICS-003": "CTFTCTE-ICS-003",
@@ -1654,26 +2471,45 @@
     "CTFTTE-JAL-003": "CTFTCTE-JAL-003",
     "CTFTTE-JAL-004": "CTFTCTE-JAL-004",
     "CTFTTE-JAL-005": "CTFTCTE-JAL-005",
+    "CTFTTE-JAL-006": "CTFTCTE-JAL-006",
     "CTFTTE-MOB-001": "CTFTCTE-MOB-001",
     "CTFTTE-MOB-002": "CTFTCTE-MOB-002",
     "CTFTTE-MOB-003": "CTFTCTE-MOB-003",
     "CTFTTE-MOB-004": "CTFTCTE-MOB-004",
     "CTFTTE-MOB-005": "CTFTCTE-MOB-005",
+    "CTFTTE-NET-001": "CTFTCTE-NET-001",
+    "CTFTTE-NET-002": "CTFTCTE-NET-002",
+    "CTFTTE-NET-003": "CTFTCTE-NET-003",
+    "CTFTTE-NET-004": "CTFTCTE-NET-004",
+    "CTFTTE-NET-005": "CTFTCTE-NET-005",
+    "CTFTTE-NET-006": "CTFTCTE-NET-006",
+    "CTFTTE-NET-007": "CTFTCTE-NET-007",
     "CTFTTE-OSI-001": "CTFTCTE-OSI-001",
     "CTFTTE-OSI-002": "CTFTCTE-OSI-002",
     "CTFTTE-OSI-003": "CTFTCTE-OSI-003",
     "CTFTTE-OSI-004": "CTFTCTE-OSI-004",
     "CTFTTE-OSI-005": "CTFTCTE-OSI-005",
+    "CTFTTE-OSI-006": "CTFTCTE-OSI-006",
+    "CTFTTE-OSI-007": "CTFTCTE-OSI-007",
+    "CTFTTE-OSI-008": "CTFTCTE-OSI-008",
     "CTFTTE-PWN-001": "CTFTCTE-PWN-001",
     "CTFTTE-PWN-002": "CTFTCTE-PWN-002",
     "CTFTTE-PWN-003": "CTFTCTE-PWN-003",
     "CTFTTE-PWN-004": "CTFTCTE-PWN-004",
     "CTFTTE-PWN-005": "CTFTCTE-PWN-005",
+    "CTFTTE-PWN-006": "CTFTCTE-PWN-006",
+    "CTFTTE-PWN-007": "CTFTCTE-PWN-007",
+    "CTFTTE-PWN-008": "CTFTCTE-PWN-008",
     "CTFTTE-REV-001": "CTFTCTE-REV-001",
     "CTFTTE-REV-002": "CTFTCTE-REV-002",
     "CTFTTE-REV-003": "CTFTCTE-REV-003",
     "CTFTTE-REV-004": "CTFTCTE-REV-004",
     "CTFTTE-REV-005": "CTFTCTE-REV-005",
+    "CTFTTE-REV-006": "CTFTCTE-REV-006",
+    "CTFTTE-REV-007": "CTFTCTE-REV-007",
+    "CTFTTE-REV-008": "CTFTCTE-REV-008",
+    "CTFTTE-REV-009": "CTFTCTE-REV-009",
+    "CTFTTE-SDR-001": "CTFTCTE-SDR-001",
     "CTFTTE-STE-001": "CTFTCTE-STE-001",
     "CTFTTE-STE-002": "CTFTCTE-STE-002",
     "CTFTTE-STE-003": "CTFTCTE-STE-003",
@@ -1683,6 +2519,8 @@
     "CTFTTE-STE-007": "CTFTCTE-STE-007",
     "CTFTTE-STE-008": "CTFTCTE-STE-008",
     "CTFTTE-STE-009": "CTFTCTE-STE-009",
+    "CTFTTE-STE-010": "CTFTCTE-STE-010",
+    "CTFTTE-STE-011": "CTFTCTE-STE-011",
     "CTFTTE-WEB-001": "CTFTCTE-WEB-001",
     "CTFTTE-WEB-002": "CTFTCTE-WEB-002",
     "CTFTTE-WEB-003": "CTFTCTE-WEB-003",
@@ -1691,7 +2529,15 @@
     "CTFTTE-WEB-006": "CTFTCTE-WEB-006",
     "CTFTTE-WEB-007": "CTFTCTE-WEB-007",
     "CTFTTE-WEB-008": "CTFTCTE-WEB-008",
-    "CTFTTE-WEB-009": "CTFTCTE-WEB-009"
+    "CTFTTE-WEB-009": "CTFTCTE-WEB-009",
+    "CTFTTE-WEB-010": "CTFTCTE-WEB-010",
+    "CTFTTE-WEB-011": "CTFTCTE-WEB-011",
+    "CTFTTE-WEB-012": "CTFTCTE-WEB-012",
+    "CTFTTE-WEB-013": "CTFTCTE-WEB-013",
+    "CTFTTE-WEB-014": "CTFTCTE-WEB-014",
+    "CTFTTE-WEB-015": "CTFTCTE-WEB-015",
+    "CTFTTE-WEB-016": "CTFTCTE-WEB-016",
+    "CTFTTE-WEB-017": "CTFTCTE-WEB-017"
   },
   "by_technique_id": {
     "CTFTTE-AIM-001": {
@@ -1728,6 +2574,20 @@
       "counter_name": "CTFTCTE-AIM-005 — Recover secrets through model inversion",
       "tactic": "CTFT-TA-AIM",
       "path": "techniques/CTFTTE-AIM-005.md"
+    },
+    "CTFTTE-AIM-006": {
+      "name": "CTFTTE-AIM-006 — Self-hosted LLM platform misconfiguration",
+      "counter_id": "CTFTCTE-AIM-006",
+      "counter_name": "CTFTCTE-AIM-006 — Audit ollama/oobabooga deployments for exposed endpoints",
+      "tactic": "CTFT-TA-AIM",
+      "path": "techniques/CTFTTE-AIM-006.md"
+    },
+    "CTFTTE-AIM-007": {
+      "name": "CTFTTE-AIM-007 — Agent / tool-calling guardrail bypass",
+      "counter_id": "CTFTCTE-AIM-007",
+      "counter_name": "CTFTCTE-AIM-007 — Bypass agent tool policies",
+      "tactic": "CTFT-TA-AIM",
+      "path": "techniques/CTFTTE-AIM-007.md"
     },
     "CTFTTE-BLK-001": {
       "name": "CTFTTE-BLK-001 — Private storage-variable concealment",
@@ -1799,6 +2659,27 @@
       "tactic": "CTFT-TA-CLD",
       "path": "techniques/CTFTTE-CLD-005.md"
     },
+    "CTFTTE-CLD-006": {
+      "name": "CTFTTE-CLD-006 — Cross-account role chaining / trust abuse",
+      "counter_id": "CTFTCTE-CLD-006",
+      "counter_name": "CTFTCTE-CLD-006 — Chain sts:AssumeRole across accounts",
+      "tactic": "CTFT-TA-CLD",
+      "path": "techniques/CTFTTE-CLD-006.md"
+    },
+    "CTFTTE-CLD-007": {
+      "name": "CTFTTE-CLD-007 — Cloud NoSQL-store misconfiguration",
+      "counter_id": "CTFTCTE-CLD-007",
+      "counter_name": "CTFTCTE-CLD-007 — Enumerate and query exposed cloud databases",
+      "tactic": "CTFT-TA-CLD",
+      "path": "techniques/CTFTTE-CLD-007.md"
+    },
+    "CTFTTE-CLD-008": {
+      "name": "CTFTTE-CLD-008 — Azure management-plane misconfiguration",
+      "counter_id": "CTFTCTE-CLD-008",
+      "counter_name": "CTFTCTE-CLD-008 — Enumerate Azure AD/VM/storage from credentials",
+      "tactic": "CTFT-TA-CLD",
+      "path": "techniques/CTFTTE-CLD-008.md"
+    },
     "CTFTTE-COD-001": {
       "name": "CTFTTE-COD-001 — Esolang / unusual-encoding puzzle",
       "counter_id": "CTFTCTE-COD-001",
@@ -1833,6 +2714,20 @@
       "counter_name": "CTFTCTE-COD-005 — Extract constraints and solve with Z3 / angr",
       "tactic": "CTFT-TA-COD",
       "path": "techniques/CTFTTE-COD-005.md"
+    },
+    "CTFTTE-COD-006": {
+      "name": "CTFTTE-COD-006 — Combinatorial enumeration puzzle",
+      "counter_id": "CTFTCTE-COD-006",
+      "counter_name": "CTFTCTE-COD-006 — Generate permutations/combinations efficiently",
+      "tactic": "CTFT-TA-COD",
+      "path": "techniques/CTFTTE-COD-006.md"
+    },
+    "CTFTTE-COD-007": {
+      "name": "CTFTTE-COD-007 — Grid/logic-constraint puzzle (Sudoku)",
+      "counter_id": "CTFTCTE-COD-007",
+      "counter_name": "CTFTCTE-COD-007 — Solve constraint grids programmatically",
+      "tactic": "CTFT-TA-COD",
+      "path": "techniques/CTFTTE-COD-007.md"
     },
     "CTFTTE-CRY-001": {
       "name": "CTFTTE-CRY-001 — Weak RSA parameter design",
@@ -1882,6 +2777,48 @@
       "counter_name": "CTFTCTE-CRY-007 — Assess and predict recoverable PRNG state",
       "tactic": "CTFT-TA-CRY",
       "path": "techniques/CTFTTE-CRY-007.md"
+    },
+    "CTFTTE-CRY-008": {
+      "name": "CTFTTE-CRY-008 — Block-cipher mode / AES implementation weakness",
+      "counter_id": "CTFTCTE-CRY-008",
+      "counter_name": "CTFTCTE-CRY-008 — Attack AES modes (padding oracle, IV flaws)",
+      "tactic": "CTFT-TA-CRY",
+      "path": "techniques/CTFTTE-CRY-008.md"
+    },
+    "CTFTTE-CRY-009": {
+      "name": "CTFTTE-CRY-009 — Stream-cipher keystream reuse (Salsa20)",
+      "counter_id": "CTFTCTE-CRY-009",
+      "counter_name": "CTFTCTE-CRY-009 — Exploit keystream reuse to recover plaintext",
+      "tactic": "CTFT-TA-CRY",
+      "path": "techniques/CTFTTE-CRY-009.md"
+    },
+    "CTFTTE-CRY-010": {
+      "name": "CTFTTE-CRY-010 — Certificate / PEM / ASN.1 field hiding",
+      "counter_id": "CTFTCTE-CRY-010",
+      "counter_name": "CTFTCTE-CRY-010 — Parse certificates and extract hidden fields",
+      "tactic": "CTFT-TA-CRY",
+      "path": "techniques/CTFTTE-CRY-010.md"
+    },
+    "CTFTTE-CRY-011": {
+      "name": "CTFTTE-CRY-011 — Protocol implementation flaw (Heartbleed-style)",
+      "counter_id": "CTFTCTE-CRY-011",
+      "counter_name": "CTFTCTE-CRY-011 — Reproduce protocol memory-leak vulnerabilities",
+      "tactic": "CTFT-TA-CRY",
+      "path": "techniques/CTFTTE-CRY-011.md"
+    },
+    "CTFTTE-CRY-012": {
+      "name": "CTFTTE-CRY-012 — Hash-cracking maze with constraints",
+      "counter_id": "CTFTCTE-CRY-012",
+      "counter_name": "CTFTCTE-CRY-012 — Crack hashes under masks/rules",
+      "tactic": "CTFT-TA-CRY",
+      "path": "techniques/CTFTTE-CRY-012.md"
+    },
+    "CTFTTE-CRY-013": {
+      "name": "CTFTTE-CRY-013 — Nonstandard-alphabet substitution (braille, cetacean)",
+      "counter_id": "CTFTCTE-CRY-013",
+      "counter_name": "CTFTCTE-CRY-013 — Transcode nonstandard alphabets",
+      "tactic": "CTFT-TA-CRY",
+      "path": "techniques/CTFTTE-CRY-013.md"
     },
     "CTFTTE-FOR-001": {
       "name": "CTFTTE-FOR-001 — Magic-byte / file-signature tampering",
@@ -2009,6 +2946,62 @@
       "tactic": "CTFT-TA-FOR",
       "path": "techniques/CTFTTE-FOR-018.md"
     },
+    "CTFTTE-FOR-019": {
+      "name": "CTFTTE-FOR-019 — JPEG marker / DCT coefficient corruption",
+      "counter_id": "CTFTCTE-FOR-019",
+      "counter_name": "CTFTCTE-FOR-019 — Repair JPEG segments and decode DCT coefficients",
+      "tactic": "CTFT-TA-FOR",
+      "path": "techniques/CTFTTE-FOR-019.md"
+    },
+    "CTFTTE-FOR-020": {
+      "name": "CTFTTE-FOR-020 — LUKS-encrypted volume concealment",
+      "counter_id": "CTFTCTE-FOR-020",
+      "counter_name": "CTFTCTE-FOR-020 — Recover LUKS headers/keyslots, bruteforce passphrase",
+      "tactic": "CTFT-TA-FOR",
+      "path": "techniques/CTFTTE-FOR-020.md"
+    },
+    "CTFTTE-FOR-021": {
+      "name": "CTFTTE-FOR-021 — LVM fragment/concat volume labyrinth",
+      "counter_id": "CTFTCTE-FOR-021",
+      "counter_name": "CTFTCTE-FOR-021 — Reassemble LVM logical volumes and mount",
+      "tactic": "CTFT-TA-FOR",
+      "path": "techniques/CTFTTE-FOR-021.md"
+    },
+    "CTFTTE-FOR-022": {
+      "name": "CTFTTE-FOR-022 — Deleted-file / open-handle recovery",
+      "counter_id": "CTFTCTE-FOR-022",
+      "counter_name": "CTFTCTE-FOR-022 — Recover deleted files via /proc handles, journal, carving",
+      "tactic": "CTFT-TA-FOR",
+      "path": "techniques/CTFTTE-FOR-022.md"
+    },
+    "CTFTTE-FOR-023": {
+      "name": "CTFTTE-FOR-023 — SELinux context-based concealment",
+      "counter_id": "CTFTCTE-FOR-023",
+      "counter_name": "CTFTCTE-FOR-023 — Analyze SELinux contexts blocking artifacts",
+      "tactic": "CTFT-TA-FOR",
+      "path": "techniques/CTFTTE-FOR-023.md"
+    },
+    "CTFTTE-FOR-024": {
+      "name": "CTFTTE-FOR-024 — Browser-profile artifact concealment",
+      "counter_id": "CTFTCTE-FOR-024",
+      "counter_name": "CTFTCTE-FOR-024 — Parse Firefox/SQLite artifacts (places, logins, cookies)",
+      "tactic": "CTFT-TA-FOR",
+      "path": "techniques/CTFTTE-FOR-024.md"
+    },
+    "CTFTTE-FOR-025": {
+      "name": "CTFTTE-FOR-025 — PDF object/stream hiding",
+      "counter_id": "CTFTCTE-FOR-025",
+      "counter_name": "CTFTCTE-FOR-025 — Parse PDF xref, streams and filters",
+      "tactic": "CTFT-TA-FOR",
+      "path": "techniques/CTFTTE-FOR-025.md"
+    },
+    "CTFTTE-FOR-026": {
+      "name": "CTFTTE-FOR-026 — Memory-image OS-artifact recovery",
+      "counter_id": "CTFTCTE-FOR-026",
+      "counter_name": "CTFTCTE-FOR-026 — Extract registry/services/process artifacts from memory images",
+      "tactic": "CTFT-TA-FOR",
+      "path": "techniques/CTFTTE-FOR-026.md"
+    },
     "CTFTTE-FPN-001": {
       "name": "CTFTTE-FPN-001 — Multi-stage chained challenge",
       "counter_id": "CTFTCTE-FPN-001",
@@ -2058,6 +3051,27 @@
       "tactic": "CTFT-TA-FPN",
       "path": "techniques/CTFTTE-FPN-007.md"
     },
+    "CTFTTE-FPN-008": {
+      "name": "CTFTTE-FPN-008 — Linux local privesc chain (SUID, ACLs, sudo, capabilities)",
+      "counter_id": "CTFTCTE-FPN-008",
+      "counter_name": "CTFTCTE-FPN-008 — Enumerate and chain Linux privesc vectors",
+      "tactic": "CTFT-TA-FPN",
+      "path": "techniques/CTFTTE-FPN-008.md"
+    },
+    "CTFTTE-FPN-009": {
+      "name": "CTFTTE-FPN-009 — Redis/NoSQL service misconfiguration chain",
+      "counter_id": "CTFTCTE-FPN-009",
+      "counter_name": "CTFTCTE-FPN-009 — Enumerate Redis/Mongo/MySQL, dump or RCE",
+      "tactic": "CTFT-TA-FPN",
+      "path": "techniques/CTFTTE-FPN-009.md"
+    },
+    "CTFTTE-FPN-010": {
+      "name": "CTFTTE-FPN-010 — Reverse-shell delivery & listener operations",
+      "counter_id": "CTFTCTE-FPN-010",
+      "counter_name": "CTFTCTE-FPN-010 — Catch, upgrade and persist reverse shells",
+      "tactic": "CTFT-TA-FPN",
+      "path": "techniques/CTFTTE-FPN-010.md"
+    },
     "CTFTTE-GAM-001": {
       "name": "CTFTTE-GAM-001 — Networked game / protocol automation",
       "counter_id": "CTFTCTE-GAM-001",
@@ -2092,6 +3106,27 @@
       "counter_name": "CTFTCTE-GAM-005 — Record, replay, or race the server sequence precisely",
       "tactic": "CTFT-TA-GAM",
       "path": "techniques/CTFTTE-GAM-005.md"
+    },
+    "CTFTTE-GAM-006": {
+      "name": "CTFTTE-GAM-006 — Chatbot / choice-path bot puzzle",
+      "counter_id": "CTFTCTE-GAM-006",
+      "counter_name": "CTFTCTE-GAM-006 — Script a bot interaction to reach the win branch",
+      "tactic": "CTFT-TA-GAM",
+      "path": "techniques/CTFTTE-GAM-006.md"
+    },
+    "CTFTTE-HWR-001": {
+      "name": "CTFTTE-HWR-001 — USB HID keystroke concealment",
+      "counter_id": "CTFTCTE-HWR-001",
+      "counter_name": "CTFTCTE-HWR-001 — Reconstruct keystrokes from captured USB HID traffic",
+      "tactic": "CTFT-TA-HWR",
+      "path": "techniques/CTFTTE-HWR-001.md"
+    },
+    "CTFTTE-HWR-002": {
+      "name": "CTFTTE-HWR-002 — Badge / embedded-device firmware concealment",
+      "counter_id": "CTFTCTE-HWR-002",
+      "counter_name": "CTFTCTE-HWR-002 — Dump and reverse badge firmware",
+      "tactic": "CTFT-TA-HWR",
+      "path": "techniques/CTFTTE-HWR-002.md"
     },
     "CTFTTE-ICS-001": {
       "name": "CTFTTE-ICS-001 — Modbus holding-register concealment",
@@ -2163,6 +3198,13 @@
       "tactic": "CTFT-TA-JAL",
       "path": "techniques/CTFTTE-JAL-005.md"
     },
+    "CTFTTE-JAL-006": {
+      "name": "CTFTTE-JAL-006 — WSL-interop sandbox escape",
+      "counter_id": "CTFTCTE-JAL-006",
+      "counter_name": "CTFTCTE-JAL-006 — Escape WSL-interop boundaries",
+      "tactic": "CTFT-TA-JAL",
+      "path": "techniques/CTFTTE-JAL-006.md"
+    },
     "CTFTTE-MOB-001": {
       "name": "CTFTTE-MOB-001 — Hardcoded secrets in app resources",
       "counter_id": "CTFTCTE-MOB-001",
@@ -2197,6 +3239,55 @@
       "counter_name": "CTFTCTE-MOB-005 — Hook the app to satisfy runtime checks",
       "tactic": "CTFT-TA-MOB",
       "path": "techniques/CTFTTE-MOB-005.md"
+    },
+    "CTFTTE-NET-001": {
+      "name": "CTFTTE-NET-001 — Port/service discovery maze",
+      "counter_id": "CTFTCTE-NET-001",
+      "counter_name": "CTFTCTE-NET-001 — Systematic port/service enumeration",
+      "tactic": "CTFT-TA-NET",
+      "path": "techniques/CTFTTE-NET-001.md"
+    },
+    "CTFTTE-NET-002": {
+      "name": "CTFTTE-NET-002 — DNS covert channel / tunnel",
+      "counter_id": "CTFTCTE-NET-002",
+      "counter_name": "CTFTCTE-NET-002 — Detect DNS tunneling and beaconing in PCAPs",
+      "tactic": "CTFT-TA-NET",
+      "path": "techniques/CTFTTE-NET-002.md"
+    },
+    "CTFTTE-NET-003": {
+      "name": "CTFTTE-NET-003 — SMB enumeration barrier",
+      "counter_id": "CTFTCTE-NET-003",
+      "counter_name": "CTFTCTE-NET-003 — Enumerate SMB shares/versions",
+      "tactic": "CTFT-TA-NET",
+      "path": "techniques/CTFTTE-NET-003.md"
+    },
+    "CTFTTE-NET-004": {
+      "name": "CTFTTE-NET-004 — Wi-Fi capture / handshake concealment",
+      "counter_id": "CTFTCTE-NET-004",
+      "counter_name": "CTFTCTE-NET-004 — Crack WPA2 handshakes, decode Wi-Fi captures",
+      "tactic": "CTFT-TA-NET",
+      "path": "techniques/CTFTTE-NET-004.md"
+    },
+    "CTFTTE-NET-005": {
+      "name": "CTFTTE-NET-005 — Traffic tunnel / port-forwarding relay",
+      "counter_id": "CTFTCTE-NET-005",
+      "counter_name": "CTFTCTE-NET-005 — Pivot via ssh -L/-R, chisel",
+      "tactic": "CTFT-TA-NET",
+      "path": "techniques/CTFTTE-NET-005.md"
+    },
+    "CTFTTE-NET-006": {
+      "name": "CTFTTE-NET-006 — TTL / protocol-field covert channel",
+      "counter_id": "CTFTCTE-NET-006",
+      "counter_name": "CTFTCTE-NET-006 — Decode TTL/ICMP/padding channels",
+      "tactic": "CTFT-TA-NET",
+      "path": "techniques/CTFTTE-NET-006.md"
+    },
+    "CTFTTE-NET-007": {
+      "name": "CTFTTE-NET-007 — Packet-capture forensics maze",
+      "counter_id": "CTFTCTE-NET-007",
+      "counter_name": "CTFTCTE-NET-007 — Run beaconing/exfil/credential detectors over PCAPs",
+      "tactic": "CTFT-TA-NET",
+      "path": "techniques/CTFTTE-NET-007.md"
     },
     "CTFTTE-OSI-001": {
       "name": "CTFTTE-OSI-001 — Metadata-dispersed identity/location",
@@ -2233,6 +3324,27 @@
       "tactic": "CTFT-TA-OSI",
       "path": "techniques/CTFTTE-OSI-005.md"
     },
+    "CTFTTE-OSI-006": {
+      "name": "CTFTTE-OSI-006 — Git-repository archaeology",
+      "counter_id": "CTFTCTE-OSI-006",
+      "counter_name": "CTFTCTE-OSI-006 — Mine git history, objects and reflog",
+      "tactic": "CTFT-TA-OSI",
+      "path": "techniques/CTFTTE-OSI-006.md"
+    },
+    "CTFTTE-OSI-007": {
+      "name": "CTFTTE-OSI-007 — Search-engine mining (dorking)",
+      "counter_id": "CTFTCTE-OSI-007",
+      "counter_name": "CTFTCTE-OSI-007 — Run advanced dorks and search operators",
+      "tactic": "CTFT-TA-OSI",
+      "path": "techniques/CTFTTE-OSI-007.md"
+    },
+    "CTFTTE-OSI-008": {
+      "name": "CTFTTE-OSI-008 — ASN / IP-range / subdomain recon",
+      "counter_id": "CTFTCTE-OSI-008",
+      "counter_name": "CTFTCTE-OSI-008 — Map ASN, ranges, subdomains (bbot, assetfinder)",
+      "tactic": "CTFT-TA-OSI",
+      "path": "techniques/CTFTTE-OSI-008.md"
+    },
     "CTFTTE-PWN-001": {
       "name": "CTFTTE-PWN-001 — Hidden win-function backdoor",
       "counter_id": "CTFTCTE-PWN-001",
@@ -2268,6 +3380,27 @@
       "tactic": "CTFT-TA-PWN",
       "path": "techniques/CTFTTE-PWN-005.md"
     },
+    "CTFTTE-PWN-006": {
+      "name": "CTFTTE-PWN-006 — Stack canary / PIE / ASLR hardening puzzle",
+      "counter_id": "CTFTCTE-PWN-006",
+      "counter_name": "CTFTCTE-PWN-006 — Leak canary/PIE base, ret2libc",
+      "tactic": "CTFT-TA-PWN",
+      "path": "techniques/CTFTTE-PWN-006.md"
+    },
+    "CTFTTE-PWN-007": {
+      "name": "CTFTTE-PWN-007 — Kernel/mseal-guarded memory puzzle",
+      "counter_id": "CTFTCTE-PWN-007",
+      "counter_name": "CTFTCTE-PWN-007 — Exploit kernel-module or mseal protections",
+      "tactic": "CTFT-TA-PWN",
+      "path": "techniques/CTFTTE-PWN-007.md"
+    },
+    "CTFTTE-PWN-008": {
+      "name": "CTFTTE-PWN-008 — Shellcode craft & encoding constraints",
+      "counter_id": "CTFTCTE-PWN-008",
+      "counter_name": "CTFTCTE-PWN-008 — Generate/encode shellcode (alphanumeric, null-free)",
+      "tactic": "CTFT-TA-PWN",
+      "path": "techniques/CTFTTE-PWN-008.md"
+    },
     "CTFTTE-REV-001": {
       "name": "CTFTTE-REV-001 — Anti-debugging / anti-analysis guards",
       "counter_id": "CTFTCTE-REV-001",
@@ -2302,6 +3435,41 @@
       "counter_name": "CTFTCTE-REV-005 — Solve the check with an SMT/symbolic engine",
       "tactic": "CTFT-TA-REV",
       "path": "techniques/CTFTTE-REV-005.md"
+    },
+    "CTFTTE-REV-006": {
+      "name": "CTFTTE-REV-006 — Java bytecode / JAR obfuscation",
+      "counter_id": "CTFTCTE-REV-006",
+      "counter_name": "CTFTCTE-REV-006 — Decompile and deobfuscate JVM bytecode",
+      "tactic": "CTFT-TA-REV",
+      "path": "techniques/CTFTTE-REV-006.md"
+    },
+    "CTFTTE-REV-007": {
+      "name": "CTFTTE-REV-007 — Python bytecode (.pyc/.pyo) concealment",
+      "counter_id": "CTFTCTE-REV-007",
+      "counter_name": "CTFTCTE-REV-007 — Decompile Python bytecode",
+      "tactic": "CTFT-TA-REV",
+      "path": "techniques/CTFTTE-REV-007.md"
+    },
+    "CTFTTE-REV-008": {
+      "name": "CTFTTE-REV-008 — Functional-language binary concealment",
+      "counter_id": "CTFTCTE-REV-008",
+      "counter_name": "CTFTCTE-REV-008 — Reverse Haskell/functional compiled artifacts",
+      "tactic": "CTFT-TA-REV",
+      "path": "techniques/CTFTTE-REV-008.md"
+    },
+    "CTFTTE-REV-009": {
+      "name": "CTFTTE-REV-009 — Assembly-level code-golf / shellcode RE",
+      "counter_id": "CTFTCTE-REV-009",
+      "counter_name": "CTFTCTE-REV-009 — Disassemble and annotate asm snippets",
+      "tactic": "CTFT-TA-REV",
+      "path": "techniques/CTFTTE-REV-009.md"
+    },
+    "CTFTTE-SDR-001": {
+      "name": "CTFTTE-SDR-001 — RF/SDR signal embedding",
+      "counter_id": "CTFTCTE-SDR-001",
+      "counter_name": "CTFTCTE-SDR-001 — Demodulate and decode RF captures",
+      "tactic": "CTFT-TA-SDR",
+      "path": "techniques/CTFTTE-SDR-001.md"
     },
     "CTFTTE-STE-001": {
       "name": "CTFTTE-STE-001 — LSB image steganography",
@@ -2366,6 +3534,20 @@
       "tactic": "CTFT-TA-STE",
       "path": "techniques/CTFTTE-STE-009.md"
     },
+    "CTFTTE-STE-010": {
+      "name": "CTFTTE-STE-010 — Audio-domain stego beyond spectrograms (LSB/phase/DTMF/SSTV)",
+      "counter_id": "CTFTCTE-STE-010",
+      "counter_name": "CTFTCTE-STE-010 — Detect and decode audio-domain stego",
+      "tactic": "CTFT-TA-STE",
+      "path": "techniques/CTFTTE-STE-010.md"
+    },
+    "CTFTTE-STE-011": {
+      "name": "CTFTTE-STE-011 — Palette / bitplane LSB tricks",
+      "counter_id": "CTFTCTE-STE-011",
+      "counter_name": "CTFTCTE-STE-011 — Analyze bitplanes and palette-based LSB",
+      "tactic": "CTFT-TA-STE",
+      "path": "techniques/CTFTTE-STE-011.md"
+    },
     "CTFTTE-WEB-001": {
       "name": "CTFTTE-WEB-001 — Obscured endpoint / source-comment hiding",
       "counter_id": "CTFTCTE-WEB-001",
@@ -2428,6 +3610,62 @@
       "counter_name": "CTFTCTE-WEB-009 — Classify a configuration secret exposure",
       "tactic": "CTFT-TA-WEB",
       "path": "techniques/CTFTTE-WEB-009.md"
+    },
+    "CTFTTE-WEB-010": {
+      "name": "CTFTTE-WEB-010 — LFI / log poisoning / php-filter chains",
+      "counter_id": "CTFTCTE-WEB-010",
+      "counter_name": "CTFTCTE-WEB-010 — Exploit LFI to RCE or flag read",
+      "tactic": "CTFT-TA-WEB",
+      "path": "techniques/CTFTTE-WEB-010.md"
+    },
+    "CTFTTE-WEB-011": {
+      "name": "CTFTTE-WEB-011 — Directory-traversal maze",
+      "counter_id": "CTFTCTE-WEB-011",
+      "counter_name": "CTFTCTE-WEB-011 — Traverse filtered paths (PHP labyrinth)",
+      "tactic": "CTFT-TA-WEB",
+      "path": "techniques/CTFTTE-WEB-011.md"
+    },
+    "CTFTTE-WEB-012": {
+      "name": "CTFTTE-WEB-012 — XSS-driven flag exfiltration",
+      "counter_id": "CTFTCTE-WEB-012",
+      "counter_name": "CTFTCTE-WEB-012 — Craft XSS payloads (stored/reflected/DOM)",
+      "tactic": "CTFT-TA-WEB",
+      "path": "techniques/CTFTTE-WEB-012.md"
+    },
+    "CTFTTE-WEB-013": {
+      "name": "CTFTTE-WEB-013 — CSRF-gated state change",
+      "counter_id": "CTFTCTE-WEB-013",
+      "counter_name": "CTFTCTE-WEB-013 — Forge cross-site requests",
+      "tactic": "CTFT-TA-WEB",
+      "path": "techniques/CTFTTE-WEB-013.md"
+    },
+    "CTFTTE-WEB-014": {
+      "name": "CTFTTE-WEB-014 — WebSocket message hiding",
+      "counter_id": "CTFTCTE-WEB-014",
+      "counter_name": "CTFTCTE-WEB-014 — Intercept and decode WebSocket traffic",
+      "tactic": "CTFT-TA-WEB",
+      "path": "techniques/CTFTTE-WEB-014.md"
+    },
+    "CTFTTE-WEB-015": {
+      "name": "CTFTTE-WEB-015 — CMS / WordPress plugin flaw",
+      "counter_id": "CTFTCTE-WEB-015",
+      "counter_name": "CTFTCTE-WEB-015 — Enumerate and exploit WordPress (wpscan)",
+      "tactic": "CTFT-TA-WEB",
+      "path": "techniques/CTFTTE-WEB-015.md"
+    },
+    "CTFTTE-WEB-016": {
+      "name": "CTFTTE-WEB-016 — NoSQL injection",
+      "counter_id": "CTFTCTE-WEB-016",
+      "counter_name": "CTFTCTE-WEB-016 — Inject Mongo/NoSQL queries",
+      "tactic": "CTFT-TA-WEB",
+      "path": "techniques/CTFTTE-WEB-016.md"
+    },
+    "CTFTTE-WEB-017": {
+      "name": "CTFTTE-WEB-017 — Host-header / vhost fuzzing",
+      "counter_id": "CTFTCTE-WEB-017",
+      "counter_name": "CTFTCTE-WEB-017 — Fuzz vhosts and host headers",
+      "tactic": "CTFT-TA-WEB",
+      "path": "techniques/CTFTTE-WEB-017.md"
     }
   },
   "by_counter_id": {
@@ -2465,6 +3703,20 @@
       "technique_name": "CTFTTE-AIM-005 — Training-data leakage via queries",
       "tactic": "CTFT-TA-AIM",
       "path": "countertechniques/CTFTCTE-AIM-005.md"
+    },
+    "CTFTCTE-AIM-006": {
+      "name": "CTFTCTE-AIM-006 — Audit ollama/oobabooga deployments for exposed endpoints",
+      "technique_id": "CTFTTE-AIM-006",
+      "technique_name": "CTFTTE-AIM-006 — Self-hosted LLM platform misconfiguration",
+      "tactic": "CTFT-TA-AIM",
+      "path": "countertechniques/CTFTCTE-AIM-006.md"
+    },
+    "CTFTCTE-AIM-007": {
+      "name": "CTFTCTE-AIM-007 — Bypass agent tool policies",
+      "technique_id": "CTFTTE-AIM-007",
+      "technique_name": "CTFTTE-AIM-007 — Agent / tool-calling guardrail bypass",
+      "tactic": "CTFT-TA-AIM",
+      "path": "countertechniques/CTFTCTE-AIM-007.md"
     },
     "CTFTCTE-BLK-001": {
       "name": "CTFTCTE-BLK-001 — Read contract storage slots directly",
@@ -2536,6 +3788,27 @@
       "tactic": "CTFT-TA-CLD",
       "path": "countertechniques/CTFTCTE-CLD-005.md"
     },
+    "CTFTCTE-CLD-006": {
+      "name": "CTFTCTE-CLD-006 — Chain sts:AssumeRole across accounts",
+      "technique_id": "CTFTTE-CLD-006",
+      "technique_name": "CTFTTE-CLD-006 — Cross-account role chaining / trust abuse",
+      "tactic": "CTFT-TA-CLD",
+      "path": "countertechniques/CTFTCTE-CLD-006.md"
+    },
+    "CTFTCTE-CLD-007": {
+      "name": "CTFTCTE-CLD-007 — Enumerate and query exposed cloud databases",
+      "technique_id": "CTFTTE-CLD-007",
+      "technique_name": "CTFTTE-CLD-007 — Cloud NoSQL-store misconfiguration",
+      "tactic": "CTFT-TA-CLD",
+      "path": "countertechniques/CTFTCTE-CLD-007.md"
+    },
+    "CTFTCTE-CLD-008": {
+      "name": "CTFTCTE-CLD-008 — Enumerate Azure AD/VM/storage from credentials",
+      "technique_id": "CTFTTE-CLD-008",
+      "technique_name": "CTFTTE-CLD-008 — Azure management-plane misconfiguration",
+      "tactic": "CTFT-TA-CLD",
+      "path": "countertechniques/CTFTCTE-CLD-008.md"
+    },
     "CTFTCTE-COD-001": {
       "name": "CTFTCTE-COD-001 — Interpret or transpile the encoding",
       "technique_id": "CTFTTE-COD-001",
@@ -2570,6 +3843,20 @@
       "technique_name": "CTFTTE-COD-005 — Symbolic-execution / SMT-solver puzzle",
       "tactic": "CTFT-TA-COD",
       "path": "countertechniques/CTFTCTE-COD-005.md"
+    },
+    "CTFTCTE-COD-006": {
+      "name": "CTFTCTE-COD-006 — Generate permutations/combinations efficiently",
+      "technique_id": "CTFTTE-COD-006",
+      "technique_name": "CTFTTE-COD-006 — Combinatorial enumeration puzzle",
+      "tactic": "CTFT-TA-COD",
+      "path": "countertechniques/CTFTCTE-COD-006.md"
+    },
+    "CTFTCTE-COD-007": {
+      "name": "CTFTCTE-COD-007 — Solve constraint grids programmatically",
+      "technique_id": "CTFTTE-COD-007",
+      "technique_name": "CTFTTE-COD-007 — Grid/logic-constraint puzzle (Sudoku)",
+      "tactic": "CTFT-TA-COD",
+      "path": "countertechniques/CTFTCTE-COD-007.md"
     },
     "CTFTCTE-CRY-001": {
       "name": "CTFTCTE-CRY-001 — Recover the RSA private key from weak parameters",
@@ -2619,6 +3906,48 @@
       "technique_name": "CTFTTE-CRY-007 — Deliberately predictable stateful pseudo-random generator",
       "tactic": "CTFT-TA-CRY",
       "path": "countertechniques/CTFTCTE-CRY-007.md"
+    },
+    "CTFTCTE-CRY-008": {
+      "name": "CTFTCTE-CRY-008 — Attack AES modes (padding oracle, IV flaws)",
+      "technique_id": "CTFTTE-CRY-008",
+      "technique_name": "CTFTTE-CRY-008 — Block-cipher mode / AES implementation weakness",
+      "tactic": "CTFT-TA-CRY",
+      "path": "countertechniques/CTFTCTE-CRY-008.md"
+    },
+    "CTFTCTE-CRY-009": {
+      "name": "CTFTCTE-CRY-009 — Exploit keystream reuse to recover plaintext",
+      "technique_id": "CTFTTE-CRY-009",
+      "technique_name": "CTFTTE-CRY-009 — Stream-cipher keystream reuse (Salsa20)",
+      "tactic": "CTFT-TA-CRY",
+      "path": "countertechniques/CTFTCTE-CRY-009.md"
+    },
+    "CTFTCTE-CRY-010": {
+      "name": "CTFTCTE-CRY-010 — Parse certificates and extract hidden fields",
+      "technique_id": "CTFTTE-CRY-010",
+      "technique_name": "CTFTTE-CRY-010 — Certificate / PEM / ASN.1 field hiding",
+      "tactic": "CTFT-TA-CRY",
+      "path": "countertechniques/CTFTCTE-CRY-010.md"
+    },
+    "CTFTCTE-CRY-011": {
+      "name": "CTFTCTE-CRY-011 — Reproduce protocol memory-leak vulnerabilities",
+      "technique_id": "CTFTTE-CRY-011",
+      "technique_name": "CTFTTE-CRY-011 — Protocol implementation flaw (Heartbleed-style)",
+      "tactic": "CTFT-TA-CRY",
+      "path": "countertechniques/CTFTCTE-CRY-011.md"
+    },
+    "CTFTCTE-CRY-012": {
+      "name": "CTFTCTE-CRY-012 — Crack hashes under masks/rules",
+      "technique_id": "CTFTTE-CRY-012",
+      "technique_name": "CTFTTE-CRY-012 — Hash-cracking maze with constraints",
+      "tactic": "CTFT-TA-CRY",
+      "path": "countertechniques/CTFTCTE-CRY-012.md"
+    },
+    "CTFTCTE-CRY-013": {
+      "name": "CTFTCTE-CRY-013 — Transcode nonstandard alphabets",
+      "technique_id": "CTFTTE-CRY-013",
+      "technique_name": "CTFTTE-CRY-013 — Nonstandard-alphabet substitution (braille, cetacean)",
+      "tactic": "CTFT-TA-CRY",
+      "path": "countertechniques/CTFTCTE-CRY-013.md"
     },
     "CTFTCTE-FOR-001": {
       "name": "CTFTCTE-FOR-001 — Recover the legitimate file signature",
@@ -2746,6 +4075,62 @@
       "tactic": "CTFT-TA-FOR",
       "path": "countertechniques/CTFTCTE-FOR-018.md"
     },
+    "CTFTCTE-FOR-019": {
+      "name": "CTFTCTE-FOR-019 — Repair JPEG segments and decode DCT coefficients",
+      "technique_id": "CTFTTE-FOR-019",
+      "technique_name": "CTFTTE-FOR-019 — JPEG marker / DCT coefficient corruption",
+      "tactic": "CTFT-TA-FOR",
+      "path": "countertechniques/CTFTCTE-FOR-019.md"
+    },
+    "CTFTCTE-FOR-020": {
+      "name": "CTFTCTE-FOR-020 — Recover LUKS headers/keyslots, bruteforce passphrase",
+      "technique_id": "CTFTTE-FOR-020",
+      "technique_name": "CTFTTE-FOR-020 — LUKS-encrypted volume concealment",
+      "tactic": "CTFT-TA-FOR",
+      "path": "countertechniques/CTFTCTE-FOR-020.md"
+    },
+    "CTFTCTE-FOR-021": {
+      "name": "CTFTCTE-FOR-021 — Reassemble LVM logical volumes and mount",
+      "technique_id": "CTFTTE-FOR-021",
+      "technique_name": "CTFTTE-FOR-021 — LVM fragment/concat volume labyrinth",
+      "tactic": "CTFT-TA-FOR",
+      "path": "countertechniques/CTFTCTE-FOR-021.md"
+    },
+    "CTFTCTE-FOR-022": {
+      "name": "CTFTCTE-FOR-022 — Recover deleted files via /proc handles, journal, carving",
+      "technique_id": "CTFTTE-FOR-022",
+      "technique_name": "CTFTTE-FOR-022 — Deleted-file / open-handle recovery",
+      "tactic": "CTFT-TA-FOR",
+      "path": "countertechniques/CTFTCTE-FOR-022.md"
+    },
+    "CTFTCTE-FOR-023": {
+      "name": "CTFTCTE-FOR-023 — Analyze SELinux contexts blocking artifacts",
+      "technique_id": "CTFTTE-FOR-023",
+      "technique_name": "CTFTTE-FOR-023 — SELinux context-based concealment",
+      "tactic": "CTFT-TA-FOR",
+      "path": "countertechniques/CTFTCTE-FOR-023.md"
+    },
+    "CTFTCTE-FOR-024": {
+      "name": "CTFTCTE-FOR-024 — Parse Firefox/SQLite artifacts (places, logins, cookies)",
+      "technique_id": "CTFTTE-FOR-024",
+      "technique_name": "CTFTTE-FOR-024 — Browser-profile artifact concealment",
+      "tactic": "CTFT-TA-FOR",
+      "path": "countertechniques/CTFTCTE-FOR-024.md"
+    },
+    "CTFTCTE-FOR-025": {
+      "name": "CTFTCTE-FOR-025 — Parse PDF xref, streams and filters",
+      "technique_id": "CTFTTE-FOR-025",
+      "technique_name": "CTFTTE-FOR-025 — PDF object/stream hiding",
+      "tactic": "CTFT-TA-FOR",
+      "path": "countertechniques/CTFTCTE-FOR-025.md"
+    },
+    "CTFTCTE-FOR-026": {
+      "name": "CTFTCTE-FOR-026 — Extract registry/services/process artifacts from memory images",
+      "technique_id": "CTFTTE-FOR-026",
+      "technique_name": "CTFTTE-FOR-026 — Memory-image OS-artifact recovery",
+      "tactic": "CTFT-TA-FOR",
+      "path": "countertechniques/CTFTCTE-FOR-026.md"
+    },
     "CTFTCTE-FPN-001": {
       "name": "CTFTCTE-FPN-001 — Chain enumeration, foothold and privilege escalation",
       "technique_id": "CTFTTE-FPN-001",
@@ -2795,6 +4180,27 @@
       "tactic": "CTFT-TA-FPN",
       "path": "countertechniques/CTFTCTE-FPN-007.md"
     },
+    "CTFTCTE-FPN-008": {
+      "name": "CTFTCTE-FPN-008 — Enumerate and chain Linux privesc vectors",
+      "technique_id": "CTFTTE-FPN-008",
+      "technique_name": "CTFTTE-FPN-008 — Linux local privesc chain (SUID, ACLs, sudo, capabilities)",
+      "tactic": "CTFT-TA-FPN",
+      "path": "countertechniques/CTFTCTE-FPN-008.md"
+    },
+    "CTFTCTE-FPN-009": {
+      "name": "CTFTCTE-FPN-009 — Enumerate Redis/Mongo/MySQL, dump or RCE",
+      "technique_id": "CTFTTE-FPN-009",
+      "technique_name": "CTFTTE-FPN-009 — Redis/NoSQL service misconfiguration chain",
+      "tactic": "CTFT-TA-FPN",
+      "path": "countertechniques/CTFTCTE-FPN-009.md"
+    },
+    "CTFTCTE-FPN-010": {
+      "name": "CTFTCTE-FPN-010 — Catch, upgrade and persist reverse shells",
+      "technique_id": "CTFTTE-FPN-010",
+      "technique_name": "CTFTTE-FPN-010 — Reverse-shell delivery & listener operations",
+      "tactic": "CTFT-TA-FPN",
+      "path": "countertechniques/CTFTCTE-FPN-010.md"
+    },
     "CTFTCTE-GAM-001": {
       "name": "CTFTCTE-GAM-001 — Script a client to beat the protocol",
       "technique_id": "CTFTTE-GAM-001",
@@ -2829,6 +4235,27 @@
       "technique_name": "CTFTTE-GAM-005 — Protocol sequence replay / race",
       "tactic": "CTFT-TA-GAM",
       "path": "countertechniques/CTFTCTE-GAM-005.md"
+    },
+    "CTFTCTE-GAM-006": {
+      "name": "CTFTCTE-GAM-006 — Script a bot interaction to reach the win branch",
+      "technique_id": "CTFTTE-GAM-006",
+      "technique_name": "CTFTTE-GAM-006 — Chatbot / choice-path bot puzzle",
+      "tactic": "CTFT-TA-GAM",
+      "path": "countertechniques/CTFTCTE-GAM-006.md"
+    },
+    "CTFTCTE-HWR-001": {
+      "name": "CTFTCTE-HWR-001 — Reconstruct keystrokes from captured USB HID traffic",
+      "technique_id": "CTFTTE-HWR-001",
+      "technique_name": "CTFTTE-HWR-001 — USB HID keystroke concealment",
+      "tactic": "CTFT-TA-HWR",
+      "path": "countertechniques/CTFTCTE-HWR-001.md"
+    },
+    "CTFTCTE-HWR-002": {
+      "name": "CTFTCTE-HWR-002 — Dump and reverse badge firmware",
+      "technique_id": "CTFTTE-HWR-002",
+      "technique_name": "CTFTTE-HWR-002 — Badge / embedded-device firmware concealment",
+      "tactic": "CTFT-TA-HWR",
+      "path": "countertechniques/CTFTCTE-HWR-002.md"
     },
     "CTFTCTE-ICS-001": {
       "name": "CTFTCTE-ICS-001 — Read Modbus registers",
@@ -2900,6 +4327,13 @@
       "tactic": "CTFT-TA-JAL",
       "path": "countertechniques/CTFTCTE-JAL-005.md"
     },
+    "CTFTCTE-JAL-006": {
+      "name": "CTFTCTE-JAL-006 — Escape WSL-interop boundaries",
+      "technique_id": "CTFTTE-JAL-006",
+      "technique_name": "CTFTTE-JAL-006 — WSL-interop sandbox escape",
+      "tactic": "CTFT-TA-JAL",
+      "path": "countertechniques/CTFTCTE-JAL-006.md"
+    },
     "CTFTCTE-MOB-001": {
       "name": "CTFTCTE-MOB-001 — Decompile the APK and extract secrets",
       "technique_id": "CTFTTE-MOB-001",
@@ -2934,6 +4368,55 @@
       "technique_name": "CTFTTE-MOB-005 — Runtime/device-conditioned flag",
       "tactic": "CTFT-TA-MOB",
       "path": "countertechniques/CTFTCTE-MOB-005.md"
+    },
+    "CTFTCTE-NET-001": {
+      "name": "CTFTCTE-NET-001 — Systematic port/service enumeration",
+      "technique_id": "CTFTTE-NET-001",
+      "technique_name": "CTFTTE-NET-001 — Port/service discovery maze",
+      "tactic": "CTFT-TA-NET",
+      "path": "countertechniques/CTFTCTE-NET-001.md"
+    },
+    "CTFTCTE-NET-002": {
+      "name": "CTFTCTE-NET-002 — Detect DNS tunneling and beaconing in PCAPs",
+      "technique_id": "CTFTTE-NET-002",
+      "technique_name": "CTFTTE-NET-002 — DNS covert channel / tunnel",
+      "tactic": "CTFT-TA-NET",
+      "path": "countertechniques/CTFTCTE-NET-002.md"
+    },
+    "CTFTCTE-NET-003": {
+      "name": "CTFTCTE-NET-003 — Enumerate SMB shares/versions",
+      "technique_id": "CTFTTE-NET-003",
+      "technique_name": "CTFTTE-NET-003 — SMB enumeration barrier",
+      "tactic": "CTFT-TA-NET",
+      "path": "countertechniques/CTFTCTE-NET-003.md"
+    },
+    "CTFTCTE-NET-004": {
+      "name": "CTFTCTE-NET-004 — Crack WPA2 handshakes, decode Wi-Fi captures",
+      "technique_id": "CTFTTE-NET-004",
+      "technique_name": "CTFTTE-NET-004 — Wi-Fi capture / handshake concealment",
+      "tactic": "CTFT-TA-NET",
+      "path": "countertechniques/CTFTCTE-NET-004.md"
+    },
+    "CTFTCTE-NET-005": {
+      "name": "CTFTCTE-NET-005 — Pivot via ssh -L/-R, chisel",
+      "technique_id": "CTFTTE-NET-005",
+      "technique_name": "CTFTTE-NET-005 — Traffic tunnel / port-forwarding relay",
+      "tactic": "CTFT-TA-NET",
+      "path": "countertechniques/CTFTCTE-NET-005.md"
+    },
+    "CTFTCTE-NET-006": {
+      "name": "CTFTCTE-NET-006 — Decode TTL/ICMP/padding channels",
+      "technique_id": "CTFTTE-NET-006",
+      "technique_name": "CTFTTE-NET-006 — TTL / protocol-field covert channel",
+      "tactic": "CTFT-TA-NET",
+      "path": "countertechniques/CTFTCTE-NET-006.md"
+    },
+    "CTFTCTE-NET-007": {
+      "name": "CTFTCTE-NET-007 — Run beaconing/exfil/credential detectors over PCAPs",
+      "technique_id": "CTFTTE-NET-007",
+      "technique_name": "CTFTTE-NET-007 — Packet-capture forensics maze",
+      "tactic": "CTFT-TA-NET",
+      "path": "countertechniques/CTFTCTE-NET-007.md"
     },
     "CTFTCTE-OSI-001": {
       "name": "CTFTCTE-OSI-001 — Correlate leaked metadata",
@@ -2970,6 +4453,27 @@
       "tactic": "CTFT-TA-OSI",
       "path": "countertechniques/CTFTCTE-OSI-005.md"
     },
+    "CTFTCTE-OSI-006": {
+      "name": "CTFTCTE-OSI-006 — Mine git history, objects and reflog",
+      "technique_id": "CTFTTE-OSI-006",
+      "technique_name": "CTFTTE-OSI-006 — Git-repository archaeology",
+      "tactic": "CTFT-TA-OSI",
+      "path": "countertechniques/CTFTCTE-OSI-006.md"
+    },
+    "CTFTCTE-OSI-007": {
+      "name": "CTFTCTE-OSI-007 — Run advanced dorks and search operators",
+      "technique_id": "CTFTTE-OSI-007",
+      "technique_name": "CTFTTE-OSI-007 — Search-engine mining (dorking)",
+      "tactic": "CTFT-TA-OSI",
+      "path": "countertechniques/CTFTCTE-OSI-007.md"
+    },
+    "CTFTCTE-OSI-008": {
+      "name": "CTFTCTE-OSI-008 — Map ASN, ranges, subdomains (bbot, assetfinder)",
+      "technique_id": "CTFTTE-OSI-008",
+      "technique_name": "CTFTTE-OSI-008 — ASN / IP-range / subdomain recon",
+      "tactic": "CTFT-TA-OSI",
+      "path": "countertechniques/CTFTCTE-OSI-008.md"
+    },
     "CTFTCTE-PWN-001": {
       "name": "CTFTCTE-PWN-001 — Redirect execution to the win function",
       "technique_id": "CTFTTE-PWN-001",
@@ -3005,6 +4509,27 @@
       "tactic": "CTFT-TA-PWN",
       "path": "countertechniques/CTFTCTE-PWN-005.md"
     },
+    "CTFTCTE-PWN-006": {
+      "name": "CTFTCTE-PWN-006 — Leak canary/PIE base, ret2libc",
+      "technique_id": "CTFTTE-PWN-006",
+      "technique_name": "CTFTTE-PWN-006 — Stack canary / PIE / ASLR hardening puzzle",
+      "tactic": "CTFT-TA-PWN",
+      "path": "countertechniques/CTFTCTE-PWN-006.md"
+    },
+    "CTFTCTE-PWN-007": {
+      "name": "CTFTCTE-PWN-007 — Exploit kernel-module or mseal protections",
+      "technique_id": "CTFTTE-PWN-007",
+      "technique_name": "CTFTTE-PWN-007 — Kernel/mseal-guarded memory puzzle",
+      "tactic": "CTFT-TA-PWN",
+      "path": "countertechniques/CTFTCTE-PWN-007.md"
+    },
+    "CTFTCTE-PWN-008": {
+      "name": "CTFTCTE-PWN-008 — Generate/encode shellcode (alphanumeric, null-free)",
+      "technique_id": "CTFTTE-PWN-008",
+      "technique_name": "CTFTTE-PWN-008 — Shellcode craft & encoding constraints",
+      "tactic": "CTFT-TA-PWN",
+      "path": "countertechniques/CTFTCTE-PWN-008.md"
+    },
     "CTFTCTE-REV-001": {
       "name": "CTFTCTE-REV-001 — Bypass anti-analysis to reach the check",
       "technique_id": "CTFTTE-REV-001",
@@ -3039,6 +4564,41 @@
       "technique_name": "CTFTTE-REV-005 — Constraint-gated flag check",
       "tactic": "CTFT-TA-REV",
       "path": "countertechniques/CTFTCTE-REV-005.md"
+    },
+    "CTFTCTE-REV-006": {
+      "name": "CTFTCTE-REV-006 — Decompile and deobfuscate JVM bytecode",
+      "technique_id": "CTFTTE-REV-006",
+      "technique_name": "CTFTTE-REV-006 — Java bytecode / JAR obfuscation",
+      "tactic": "CTFT-TA-REV",
+      "path": "countertechniques/CTFTCTE-REV-006.md"
+    },
+    "CTFTCTE-REV-007": {
+      "name": "CTFTCTE-REV-007 — Decompile Python bytecode",
+      "technique_id": "CTFTTE-REV-007",
+      "technique_name": "CTFTTE-REV-007 — Python bytecode (.pyc/.pyo) concealment",
+      "tactic": "CTFT-TA-REV",
+      "path": "countertechniques/CTFTCTE-REV-007.md"
+    },
+    "CTFTCTE-REV-008": {
+      "name": "CTFTCTE-REV-008 — Reverse Haskell/functional compiled artifacts",
+      "technique_id": "CTFTTE-REV-008",
+      "technique_name": "CTFTTE-REV-008 — Functional-language binary concealment",
+      "tactic": "CTFT-TA-REV",
+      "path": "countertechniques/CTFTCTE-REV-008.md"
+    },
+    "CTFTCTE-REV-009": {
+      "name": "CTFTCTE-REV-009 — Disassemble and annotate asm snippets",
+      "technique_id": "CTFTTE-REV-009",
+      "technique_name": "CTFTTE-REV-009 — Assembly-level code-golf / shellcode RE",
+      "tactic": "CTFT-TA-REV",
+      "path": "countertechniques/CTFTCTE-REV-009.md"
+    },
+    "CTFTCTE-SDR-001": {
+      "name": "CTFTCTE-SDR-001 — Demodulate and decode RF captures",
+      "technique_id": "CTFTTE-SDR-001",
+      "technique_name": "CTFTTE-SDR-001 — RF/SDR signal embedding",
+      "tactic": "CTFT-TA-SDR",
+      "path": "countertechniques/CTFTCTE-SDR-001.md"
     },
     "CTFTCTE-STE-001": {
       "name": "CTFTCTE-STE-001 — Extract least-significant-bit payloads",
@@ -3103,6 +4663,20 @@
       "tactic": "CTFT-TA-STE",
       "path": "countertechniques/CTFTCTE-STE-009.md"
     },
+    "CTFTCTE-STE-010": {
+      "name": "CTFTCTE-STE-010 — Detect and decode audio-domain stego",
+      "technique_id": "CTFTTE-STE-010",
+      "technique_name": "CTFTTE-STE-010 — Audio-domain stego beyond spectrograms (LSB/phase/DTMF/SSTV)",
+      "tactic": "CTFT-TA-STE",
+      "path": "countertechniques/CTFTCTE-STE-010.md"
+    },
+    "CTFTCTE-STE-011": {
+      "name": "CTFTCTE-STE-011 — Analyze bitplanes and palette-based LSB",
+      "technique_id": "CTFTTE-STE-011",
+      "technique_name": "CTFTTE-STE-011 — Palette / bitplane LSB tricks",
+      "tactic": "CTFT-TA-STE",
+      "path": "countertechniques/CTFTCTE-STE-011.md"
+    },
     "CTFTCTE-WEB-001": {
       "name": "CTFTCTE-WEB-001 — Content discovery and source review",
       "technique_id": "CTFTTE-WEB-001",
@@ -3165,6 +4739,62 @@
       "technique_name": "CTFTTE-WEB-009 — Web configuration secret exposure",
       "tactic": "CTFT-TA-WEB",
       "path": "countertechniques/CTFTCTE-WEB-009.md"
+    },
+    "CTFTCTE-WEB-010": {
+      "name": "CTFTCTE-WEB-010 — Exploit LFI to RCE or flag read",
+      "technique_id": "CTFTTE-WEB-010",
+      "technique_name": "CTFTTE-WEB-010 — LFI / log poisoning / php-filter chains",
+      "tactic": "CTFT-TA-WEB",
+      "path": "countertechniques/CTFTCTE-WEB-010.md"
+    },
+    "CTFTCTE-WEB-011": {
+      "name": "CTFTCTE-WEB-011 — Traverse filtered paths (PHP labyrinth)",
+      "technique_id": "CTFTTE-WEB-011",
+      "technique_name": "CTFTTE-WEB-011 — Directory-traversal maze",
+      "tactic": "CTFT-TA-WEB",
+      "path": "countertechniques/CTFTCTE-WEB-011.md"
+    },
+    "CTFTCTE-WEB-012": {
+      "name": "CTFTCTE-WEB-012 — Craft XSS payloads (stored/reflected/DOM)",
+      "technique_id": "CTFTTE-WEB-012",
+      "technique_name": "CTFTTE-WEB-012 — XSS-driven flag exfiltration",
+      "tactic": "CTFT-TA-WEB",
+      "path": "countertechniques/CTFTCTE-WEB-012.md"
+    },
+    "CTFTCTE-WEB-013": {
+      "name": "CTFTCTE-WEB-013 — Forge cross-site requests",
+      "technique_id": "CTFTTE-WEB-013",
+      "technique_name": "CTFTTE-WEB-013 — CSRF-gated state change",
+      "tactic": "CTFT-TA-WEB",
+      "path": "countertechniques/CTFTCTE-WEB-013.md"
+    },
+    "CTFTCTE-WEB-014": {
+      "name": "CTFTCTE-WEB-014 — Intercept and decode WebSocket traffic",
+      "technique_id": "CTFTTE-WEB-014",
+      "technique_name": "CTFTTE-WEB-014 — WebSocket message hiding",
+      "tactic": "CTFT-TA-WEB",
+      "path": "countertechniques/CTFTCTE-WEB-014.md"
+    },
+    "CTFTCTE-WEB-015": {
+      "name": "CTFTCTE-WEB-015 — Enumerate and exploit WordPress (wpscan)",
+      "technique_id": "CTFTTE-WEB-015",
+      "technique_name": "CTFTTE-WEB-015 — CMS / WordPress plugin flaw",
+      "tactic": "CTFT-TA-WEB",
+      "path": "countertechniques/CTFTCTE-WEB-015.md"
+    },
+    "CTFTCTE-WEB-016": {
+      "name": "CTFTCTE-WEB-016 — Inject Mongo/NoSQL queries",
+      "technique_id": "CTFTTE-WEB-016",
+      "technique_name": "CTFTTE-WEB-016 — NoSQL injection",
+      "tactic": "CTFT-TA-WEB",
+      "path": "countertechniques/CTFTCTE-WEB-016.md"
+    },
+    "CTFTCTE-WEB-017": {
+      "name": "CTFTCTE-WEB-017 — Fuzz vhosts and host headers",
+      "technique_id": "CTFTTE-WEB-017",
+      "technique_name": "CTFTTE-WEB-017 — Host-header / vhost fuzzing",
+      "tactic": "CTFT-TA-WEB",
+      "path": "countertechniques/CTFTCTE-WEB-017.md"
     }
   }
 }

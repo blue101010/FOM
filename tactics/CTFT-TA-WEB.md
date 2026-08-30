@@ -2,7 +2,7 @@
 
 > **Tactic ID:** `CTFT-TA-WEB`  
 > **HTB mapping:** HTB: Web  
-> **Techniques:** 9
+> **Techniques:** 17
 
 ## Description
 
@@ -33,6 +33,14 @@ rely on. CTFT never re-labels an existing ATT&CK technique.
 | [CTFTTE-WEB-007](../techniques/CTFTTE-WEB-007.md) | Deployment metadata index disclosure | [CTFTCTE-WEB-007](../countertechniques/CTFTCTE-WEB-007.md) | Analyze a disclosed deployment metadata index | CTF deployment-artifact exposure. |
 | [CTFTTE-WEB-008](../techniques/CTFTTE-WEB-008.md) | Legacy short-name namespace disclosure | [CTFTCTE-WEB-008](../countertechniques/CTFTCTE-WEB-008.md) | Reconcile a disclosed short-name namespace | CTF compatibility-layer disclosure. |
 | [CTFTTE-WEB-009](../techniques/CTFTTE-WEB-009.md) | Web configuration secret exposure | [CTFTCTE-WEB-009](../countertechniques/CTFTCTE-WEB-009.md) | Classify a configuration secret exposure | CTF configuration-hygiene exposure. |
+| [CTFTTE-WEB-010](../techniques/CTFTTE-WEB-010.md) | LFI / log poisoning / php-filter chains | [CTFTCTE-WEB-010](../countertechniques/CTFTCTE-WEB-010.md) | Exploit LFI to RCE or flag read | T1190 |
+| [CTFTTE-WEB-011](../techniques/CTFTTE-WEB-011.md) | Directory-traversal maze | [CTFTCTE-WEB-011](../countertechniques/CTFTCTE-WEB-011.md) | Traverse filtered paths (PHP labyrinth) | T1190 |
+| [CTFTTE-WEB-012](../techniques/CTFTTE-WEB-012.md) | XSS-driven flag exfiltration | [CTFTCTE-WEB-012](../countertechniques/CTFTCTE-WEB-012.md) | Craft XSS payloads (stored/reflected/DOM) | T1059.007 |
+| [CTFTTE-WEB-013](../techniques/CTFTTE-WEB-013.md) | CSRF-gated state change | [CTFTCTE-WEB-013](../countertechniques/CTFTCTE-WEB-013.md) | Forge cross-site requests | T1606 |
+| [CTFTTE-WEB-014](../techniques/CTFTTE-WEB-014.md) | WebSocket message hiding | [CTFTCTE-WEB-014](../countertechniques/CTFTCTE-WEB-014.md) | Intercept and decode WebSocket traffic | T1071.001 |
+| [CTFTTE-WEB-015](../techniques/CTFTTE-WEB-015.md) | CMS / WordPress plugin flaw | [CTFTCTE-WEB-015](../countertechniques/CTFTCTE-WEB-015.md) | Enumerate and exploit WordPress (wpscan) | T1190 |
+| [CTFTTE-WEB-016](../techniques/CTFTTE-WEB-016.md) | NoSQL injection | [CTFTCTE-WEB-016](../countertechniques/CTFTCTE-WEB-016.md) | Inject Mongo/NoSQL queries | T1190 |
+| [CTFTTE-WEB-017](../techniques/CTFTTE-WEB-017.md) | Host-header / vhost fuzzing | [CTFTCTE-WEB-017](../countertechniques/CTFTCTE-WEB-017.md) | Fuzz vhosts and host headers | T1083 |
 
 
 ---

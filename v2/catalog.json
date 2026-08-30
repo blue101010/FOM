@@ -2,8 +2,8 @@
   "model": "CTFT",
   "schema_version": "2.0",
   "collection": "catalog",
-  "generated_at": "2026-08-30T19:33:04+00:00",
-  "source_sha256": "bff6a30ead5895cd6ba52c0871032b74087e88e55fac745d1f8f866eab3ad07b",
+  "generated_at": "2026-08-30T21:58:17+00:00",
+  "source_sha256": "7a7db4e03588679a6fcf13ac54ec53330f62e845fdfff2cdb2cbbe2192212225",
   "items": [
     {
       "id": "CTFTPAIR-AIM-001",
@@ -106,6 +106,50 @@
         "id": "CTFTCTE-AIM-005",
         "name": "CTFTCTE-AIM-005 — Recover secrets through model inversion",
         "path": "countertechniques/CTFTCTE-AIM-005.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-AIM-006",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-AIM",
+      "technique": {
+        "id": "CTFTTE-AIM-006",
+        "name": "CTFTTE-AIM-006 — Self-hosted LLM platform misconfiguration",
+        "path": "techniques/CTFTTE-AIM-006.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-AIM-006",
+        "name": "CTFTCTE-AIM-006 — Audit ollama/oobabooga deployments for exposed endpoints",
+        "path": "countertechniques/CTFTCTE-AIM-006.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-AIM-007",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-AIM",
+      "technique": {
+        "id": "CTFTTE-AIM-007",
+        "name": "CTFTTE-AIM-007 — Agent / tool-calling guardrail bypass",
+        "path": "techniques/CTFTTE-AIM-007.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-AIM-007",
+        "name": "CTFTCTE-AIM-007 — Bypass agent tool policies",
+        "path": "countertechniques/CTFTCTE-AIM-007.md"
       },
       "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [
@@ -336,6 +380,72 @@
       ]
     },
     {
+      "id": "CTFTPAIR-CLD-006",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-CLD",
+      "technique": {
+        "id": "CTFTTE-CLD-006",
+        "name": "CTFTTE-CLD-006 — Cross-account role chaining / trust abuse",
+        "path": "techniques/CTFTTE-CLD-006.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-CLD-006",
+        "name": "CTFTCTE-CLD-006 — Chain sts:AssumeRole across accounts",
+        "path": "countertechniques/CTFTCTE-CLD-006.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-CLD-007",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-CLD",
+      "technique": {
+        "id": "CTFTTE-CLD-007",
+        "name": "CTFTTE-CLD-007 — Cloud NoSQL-store misconfiguration",
+        "path": "techniques/CTFTTE-CLD-007.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-CLD-007",
+        "name": "CTFTCTE-CLD-007 — Enumerate and query exposed cloud databases",
+        "path": "countertechniques/CTFTCTE-CLD-007.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-CLD-008",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-CLD",
+      "technique": {
+        "id": "CTFTTE-CLD-008",
+        "name": "CTFTTE-CLD-008 — Azure management-plane misconfiguration",
+        "path": "techniques/CTFTTE-CLD-008.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-CLD-008",
+        "name": "CTFTCTE-CLD-008 — Enumerate Azure AD/VM/storage from credentials",
+        "path": "countertechniques/CTFTCTE-CLD-008.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
       "id": "CTFTPAIR-COD-001",
       "schema_version": "2.0",
       "tactic": "CTFT-TA-COD",
@@ -436,6 +546,50 @@
         "id": "CTFTCTE-COD-005",
         "name": "CTFTCTE-COD-005 — Extract constraints and solve with Z3 / angr",
         "path": "countertechniques/CTFTCTE-COD-005.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-COD-006",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-COD",
+      "technique": {
+        "id": "CTFTTE-COD-006",
+        "name": "CTFTTE-COD-006 — Combinatorial enumeration puzzle",
+        "path": "techniques/CTFTTE-COD-006.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-COD-006",
+        "name": "CTFTCTE-COD-006 — Generate permutations/combinations efficiently",
+        "path": "countertechniques/CTFTCTE-COD-006.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-COD-007",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-COD",
+      "technique": {
+        "id": "CTFTTE-COD-007",
+        "name": "CTFTTE-COD-007 — Grid/logic-constraint puzzle (Sudoku)",
+        "path": "techniques/CTFTTE-COD-007.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-COD-007",
+        "name": "CTFTCTE-COD-007 — Solve constraint grids programmatically",
+        "path": "countertechniques/CTFTCTE-COD-007.md"
       },
       "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [
@@ -590,6 +744,138 @@
         "id": "CTFTCTE-CRY-007",
         "name": "CTFTCTE-CRY-007 — Assess and predict recoverable PRNG state",
         "path": "countertechniques/CTFTCTE-CRY-007.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-CRY-008",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-CRY",
+      "technique": {
+        "id": "CTFTTE-CRY-008",
+        "name": "CTFTTE-CRY-008 — Block-cipher mode / AES implementation weakness",
+        "path": "techniques/CTFTTE-CRY-008.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-CRY-008",
+        "name": "CTFTCTE-CRY-008 — Attack AES modes (padding oracle, IV flaws)",
+        "path": "countertechniques/CTFTCTE-CRY-008.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-CRY-009",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-CRY",
+      "technique": {
+        "id": "CTFTTE-CRY-009",
+        "name": "CTFTTE-CRY-009 — Stream-cipher keystream reuse (Salsa20)",
+        "path": "techniques/CTFTTE-CRY-009.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-CRY-009",
+        "name": "CTFTCTE-CRY-009 — Exploit keystream reuse to recover plaintext",
+        "path": "countertechniques/CTFTCTE-CRY-009.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-CRY-010",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-CRY",
+      "technique": {
+        "id": "CTFTTE-CRY-010",
+        "name": "CTFTTE-CRY-010 — Certificate / PEM / ASN.1 field hiding",
+        "path": "techniques/CTFTTE-CRY-010.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-CRY-010",
+        "name": "CTFTCTE-CRY-010 — Parse certificates and extract hidden fields",
+        "path": "countertechniques/CTFTCTE-CRY-010.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-CRY-011",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-CRY",
+      "technique": {
+        "id": "CTFTTE-CRY-011",
+        "name": "CTFTTE-CRY-011 — Protocol implementation flaw (Heartbleed-style)",
+        "path": "techniques/CTFTTE-CRY-011.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-CRY-011",
+        "name": "CTFTCTE-CRY-011 — Reproduce protocol memory-leak vulnerabilities",
+        "path": "countertechniques/CTFTCTE-CRY-011.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-CRY-012",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-CRY",
+      "technique": {
+        "id": "CTFTTE-CRY-012",
+        "name": "CTFTTE-CRY-012 — Hash-cracking maze with constraints",
+        "path": "techniques/CTFTTE-CRY-012.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-CRY-012",
+        "name": "CTFTCTE-CRY-012 — Crack hashes under masks/rules",
+        "path": "countertechniques/CTFTCTE-CRY-012.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-CRY-013",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-CRY",
+      "technique": {
+        "id": "CTFTTE-CRY-013",
+        "name": "CTFTTE-CRY-013 — Nonstandard-alphabet substitution (braille, cetacean)",
+        "path": "techniques/CTFTTE-CRY-013.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-CRY-013",
+        "name": "CTFTCTE-CRY-013 — Transcode nonstandard alphabets",
+        "path": "countertechniques/CTFTCTE-CRY-013.md"
       },
       "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [
@@ -961,6 +1247,182 @@
       "missing_for_typed_recommendation": []
     },
     {
+      "id": "CTFTPAIR-FOR-019",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-FOR",
+      "technique": {
+        "id": "CTFTTE-FOR-019",
+        "name": "CTFTTE-FOR-019 — JPEG marker / DCT coefficient corruption",
+        "path": "techniques/CTFTTE-FOR-019.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-FOR-019",
+        "name": "CTFTCTE-FOR-019 — Repair JPEG segments and decode DCT coefficients",
+        "path": "countertechniques/CTFTCTE-FOR-019.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-FOR-020",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-FOR",
+      "technique": {
+        "id": "CTFTTE-FOR-020",
+        "name": "CTFTTE-FOR-020 — LUKS-encrypted volume concealment",
+        "path": "techniques/CTFTTE-FOR-020.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-FOR-020",
+        "name": "CTFTCTE-FOR-020 — Recover LUKS headers/keyslots, bruteforce passphrase",
+        "path": "countertechniques/CTFTCTE-FOR-020.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-FOR-021",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-FOR",
+      "technique": {
+        "id": "CTFTTE-FOR-021",
+        "name": "CTFTTE-FOR-021 — LVM fragment/concat volume labyrinth",
+        "path": "techniques/CTFTTE-FOR-021.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-FOR-021",
+        "name": "CTFTCTE-FOR-021 — Reassemble LVM logical volumes and mount",
+        "path": "countertechniques/CTFTCTE-FOR-021.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-FOR-022",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-FOR",
+      "technique": {
+        "id": "CTFTTE-FOR-022",
+        "name": "CTFTTE-FOR-022 — Deleted-file / open-handle recovery",
+        "path": "techniques/CTFTTE-FOR-022.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-FOR-022",
+        "name": "CTFTCTE-FOR-022 — Recover deleted files via /proc handles, journal, carving",
+        "path": "countertechniques/CTFTCTE-FOR-022.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-FOR-023",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-FOR",
+      "technique": {
+        "id": "CTFTTE-FOR-023",
+        "name": "CTFTTE-FOR-023 — SELinux context-based concealment",
+        "path": "techniques/CTFTTE-FOR-023.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-FOR-023",
+        "name": "CTFTCTE-FOR-023 — Analyze SELinux contexts blocking artifacts",
+        "path": "countertechniques/CTFTCTE-FOR-023.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-FOR-024",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-FOR",
+      "technique": {
+        "id": "CTFTTE-FOR-024",
+        "name": "CTFTTE-FOR-024 — Browser-profile artifact concealment",
+        "path": "techniques/CTFTTE-FOR-024.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-FOR-024",
+        "name": "CTFTCTE-FOR-024 — Parse Firefox/SQLite artifacts (places, logins, cookies)",
+        "path": "countertechniques/CTFTCTE-FOR-024.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-FOR-025",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-FOR",
+      "technique": {
+        "id": "CTFTTE-FOR-025",
+        "name": "CTFTTE-FOR-025 — PDF object/stream hiding",
+        "path": "techniques/CTFTTE-FOR-025.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-FOR-025",
+        "name": "CTFTCTE-FOR-025 — Parse PDF xref, streams and filters",
+        "path": "countertechniques/CTFTCTE-FOR-025.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-FOR-026",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-FOR",
+      "technique": {
+        "id": "CTFTTE-FOR-026",
+        "name": "CTFTTE-FOR-026 — Memory-image OS-artifact recovery",
+        "path": "techniques/CTFTTE-FOR-026.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-FOR-026",
+        "name": "CTFTCTE-FOR-026 — Extract registry/services/process artifacts from memory images",
+        "path": "countertechniques/CTFTCTE-FOR-026.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
       "id": "CTFTPAIR-FPN-001",
       "schema_version": "2.0",
       "tactic": "CTFT-TA-FPN",
@@ -1115,6 +1577,72 @@
       ]
     },
     {
+      "id": "CTFTPAIR-FPN-008",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-FPN",
+      "technique": {
+        "id": "CTFTTE-FPN-008",
+        "name": "CTFTTE-FPN-008 — Linux local privesc chain (SUID, ACLs, sudo, capabilities)",
+        "path": "techniques/CTFTTE-FPN-008.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-FPN-008",
+        "name": "CTFTCTE-FPN-008 — Enumerate and chain Linux privesc vectors",
+        "path": "countertechniques/CTFTCTE-FPN-008.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-FPN-009",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-FPN",
+      "technique": {
+        "id": "CTFTTE-FPN-009",
+        "name": "CTFTTE-FPN-009 — Redis/NoSQL service misconfiguration chain",
+        "path": "techniques/CTFTTE-FPN-009.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-FPN-009",
+        "name": "CTFTCTE-FPN-009 — Enumerate Redis/Mongo/MySQL, dump or RCE",
+        "path": "countertechniques/CTFTCTE-FPN-009.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-FPN-010",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-FPN",
+      "technique": {
+        "id": "CTFTTE-FPN-010",
+        "name": "CTFTTE-FPN-010 — Reverse-shell delivery & listener operations",
+        "path": "techniques/CTFTTE-FPN-010.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-FPN-010",
+        "name": "CTFTCTE-FPN-010 — Catch, upgrade and persist reverse shells",
+        "path": "countertechniques/CTFTCTE-FPN-010.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
       "id": "CTFTPAIR-GAM-001",
       "schema_version": "2.0",
       "tactic": "CTFT-TA-GAM",
@@ -1215,6 +1743,72 @@
         "id": "CTFTCTE-GAM-005",
         "name": "CTFTCTE-GAM-005 — Record, replay, or race the server sequence precisely",
         "path": "countertechniques/CTFTCTE-GAM-005.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-GAM-006",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-GAM",
+      "technique": {
+        "id": "CTFTTE-GAM-006",
+        "name": "CTFTTE-GAM-006 — Chatbot / choice-path bot puzzle",
+        "path": "techniques/CTFTTE-GAM-006.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-GAM-006",
+        "name": "CTFTCTE-GAM-006 — Script a bot interaction to reach the win branch",
+        "path": "countertechniques/CTFTCTE-GAM-006.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-HWR-001",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-HWR",
+      "technique": {
+        "id": "CTFTTE-HWR-001",
+        "name": "CTFTTE-HWR-001 — USB HID keystroke concealment",
+        "path": "techniques/CTFTTE-HWR-001.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-HWR-001",
+        "name": "CTFTCTE-HWR-001 — Reconstruct keystrokes from captured USB HID traffic",
+        "path": "countertechniques/CTFTCTE-HWR-001.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-HWR-002",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-HWR",
+      "technique": {
+        "id": "CTFTTE-HWR-002",
+        "name": "CTFTTE-HWR-002 — Badge / embedded-device firmware concealment",
+        "path": "techniques/CTFTTE-HWR-002.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-HWR-002",
+        "name": "CTFTCTE-HWR-002 — Dump and reverse badge firmware",
+        "path": "countertechniques/CTFTCTE-HWR-002.md"
       },
       "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [
@@ -1445,6 +2039,28 @@
       ]
     },
     {
+      "id": "CTFTPAIR-JAL-006",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-JAL",
+      "technique": {
+        "id": "CTFTTE-JAL-006",
+        "name": "CTFTTE-JAL-006 — WSL-interop sandbox escape",
+        "path": "techniques/CTFTTE-JAL-006.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-JAL-006",
+        "name": "CTFTCTE-JAL-006 — Escape WSL-interop boundaries",
+        "path": "countertechniques/CTFTCTE-JAL-006.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
       "id": "CTFTPAIR-MOB-001",
       "schema_version": "2.0",
       "tactic": "CTFT-TA-MOB",
@@ -1545,6 +2161,160 @@
         "id": "CTFTCTE-MOB-005",
         "name": "CTFTCTE-MOB-005 — Hook the app to satisfy runtime checks",
         "path": "countertechniques/CTFTCTE-MOB-005.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-NET-001",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-NET",
+      "technique": {
+        "id": "CTFTTE-NET-001",
+        "name": "CTFTTE-NET-001 — Port/service discovery maze",
+        "path": "techniques/CTFTTE-NET-001.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-NET-001",
+        "name": "CTFTCTE-NET-001 — Systematic port/service enumeration",
+        "path": "countertechniques/CTFTCTE-NET-001.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-NET-002",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-NET",
+      "technique": {
+        "id": "CTFTTE-NET-002",
+        "name": "CTFTTE-NET-002 — DNS covert channel / tunnel",
+        "path": "techniques/CTFTTE-NET-002.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-NET-002",
+        "name": "CTFTCTE-NET-002 — Detect DNS tunneling and beaconing in PCAPs",
+        "path": "countertechniques/CTFTCTE-NET-002.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-NET-003",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-NET",
+      "technique": {
+        "id": "CTFTTE-NET-003",
+        "name": "CTFTTE-NET-003 — SMB enumeration barrier",
+        "path": "techniques/CTFTTE-NET-003.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-NET-003",
+        "name": "CTFTCTE-NET-003 — Enumerate SMB shares/versions",
+        "path": "countertechniques/CTFTCTE-NET-003.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-NET-004",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-NET",
+      "technique": {
+        "id": "CTFTTE-NET-004",
+        "name": "CTFTTE-NET-004 — Wi-Fi capture / handshake concealment",
+        "path": "techniques/CTFTTE-NET-004.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-NET-004",
+        "name": "CTFTCTE-NET-004 — Crack WPA2 handshakes, decode Wi-Fi captures",
+        "path": "countertechniques/CTFTCTE-NET-004.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-NET-005",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-NET",
+      "technique": {
+        "id": "CTFTTE-NET-005",
+        "name": "CTFTTE-NET-005 — Traffic tunnel / port-forwarding relay",
+        "path": "techniques/CTFTTE-NET-005.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-NET-005",
+        "name": "CTFTCTE-NET-005 — Pivot via ssh -L/-R, chisel",
+        "path": "countertechniques/CTFTCTE-NET-005.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-NET-006",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-NET",
+      "technique": {
+        "id": "CTFTTE-NET-006",
+        "name": "CTFTTE-NET-006 — TTL / protocol-field covert channel",
+        "path": "techniques/CTFTTE-NET-006.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-NET-006",
+        "name": "CTFTCTE-NET-006 — Decode TTL/ICMP/padding channels",
+        "path": "countertechniques/CTFTCTE-NET-006.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-NET-007",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-NET",
+      "technique": {
+        "id": "CTFTTE-NET-007",
+        "name": "CTFTTE-NET-007 — Packet-capture forensics maze",
+        "path": "techniques/CTFTTE-NET-007.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-NET-007",
+        "name": "CTFTCTE-NET-007 — Run beaconing/exfil/credential detectors over PCAPs",
+        "path": "countertechniques/CTFTCTE-NET-007.md"
       },
       "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [
@@ -1665,6 +2435,72 @@
       ]
     },
     {
+      "id": "CTFTPAIR-OSI-006",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-OSI",
+      "technique": {
+        "id": "CTFTTE-OSI-006",
+        "name": "CTFTTE-OSI-006 — Git-repository archaeology",
+        "path": "techniques/CTFTTE-OSI-006.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-OSI-006",
+        "name": "CTFTCTE-OSI-006 — Mine git history, objects and reflog",
+        "path": "countertechniques/CTFTCTE-OSI-006.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-OSI-007",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-OSI",
+      "technique": {
+        "id": "CTFTTE-OSI-007",
+        "name": "CTFTTE-OSI-007 — Search-engine mining (dorking)",
+        "path": "techniques/CTFTTE-OSI-007.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-OSI-007",
+        "name": "CTFTCTE-OSI-007 — Run advanced dorks and search operators",
+        "path": "countertechniques/CTFTCTE-OSI-007.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-OSI-008",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-OSI",
+      "technique": {
+        "id": "CTFTTE-OSI-008",
+        "name": "CTFTTE-OSI-008 — ASN / IP-range / subdomain recon",
+        "path": "techniques/CTFTTE-OSI-008.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-OSI-008",
+        "name": "CTFTCTE-OSI-008 — Map ASN, ranges, subdomains (bbot, assetfinder)",
+        "path": "countertechniques/CTFTCTE-OSI-008.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
       "id": "CTFTPAIR-PWN-001",
       "schema_version": "2.0",
       "tactic": "CTFT-TA-PWN",
@@ -1775,6 +2611,72 @@
       ]
     },
     {
+      "id": "CTFTPAIR-PWN-006",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-PWN",
+      "technique": {
+        "id": "CTFTTE-PWN-006",
+        "name": "CTFTTE-PWN-006 — Stack canary / PIE / ASLR hardening puzzle",
+        "path": "techniques/CTFTTE-PWN-006.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-PWN-006",
+        "name": "CTFTCTE-PWN-006 — Leak canary/PIE base, ret2libc",
+        "path": "countertechniques/CTFTCTE-PWN-006.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-PWN-007",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-PWN",
+      "technique": {
+        "id": "CTFTTE-PWN-007",
+        "name": "CTFTTE-PWN-007 — Kernel/mseal-guarded memory puzzle",
+        "path": "techniques/CTFTTE-PWN-007.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-PWN-007",
+        "name": "CTFTCTE-PWN-007 — Exploit kernel-module or mseal protections",
+        "path": "countertechniques/CTFTCTE-PWN-007.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-PWN-008",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-PWN",
+      "technique": {
+        "id": "CTFTTE-PWN-008",
+        "name": "CTFTTE-PWN-008 — Shellcode craft & encoding constraints",
+        "path": "techniques/CTFTTE-PWN-008.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-PWN-008",
+        "name": "CTFTCTE-PWN-008 — Generate/encode shellcode (alphanumeric, null-free)",
+        "path": "countertechniques/CTFTCTE-PWN-008.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
       "id": "CTFTPAIR-REV-001",
       "schema_version": "2.0",
       "tactic": "CTFT-TA-REV",
@@ -1875,6 +2777,116 @@
         "id": "CTFTCTE-REV-005",
         "name": "CTFTCTE-REV-005 — Solve the check with an SMT/symbolic engine",
         "path": "countertechniques/CTFTCTE-REV-005.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-REV-006",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-REV",
+      "technique": {
+        "id": "CTFTTE-REV-006",
+        "name": "CTFTTE-REV-006 — Java bytecode / JAR obfuscation",
+        "path": "techniques/CTFTTE-REV-006.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-REV-006",
+        "name": "CTFTCTE-REV-006 — Decompile and deobfuscate JVM bytecode",
+        "path": "countertechniques/CTFTCTE-REV-006.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-REV-007",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-REV",
+      "technique": {
+        "id": "CTFTTE-REV-007",
+        "name": "CTFTTE-REV-007 — Python bytecode (.pyc/.pyo) concealment",
+        "path": "techniques/CTFTTE-REV-007.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-REV-007",
+        "name": "CTFTCTE-REV-007 — Decompile Python bytecode",
+        "path": "countertechniques/CTFTCTE-REV-007.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-REV-008",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-REV",
+      "technique": {
+        "id": "CTFTTE-REV-008",
+        "name": "CTFTTE-REV-008 — Functional-language binary concealment",
+        "path": "techniques/CTFTTE-REV-008.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-REV-008",
+        "name": "CTFTCTE-REV-008 — Reverse Haskell/functional compiled artifacts",
+        "path": "countertechniques/CTFTCTE-REV-008.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-REV-009",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-REV",
+      "technique": {
+        "id": "CTFTTE-REV-009",
+        "name": "CTFTTE-REV-009 — Assembly-level code-golf / shellcode RE",
+        "path": "techniques/CTFTTE-REV-009.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-REV-009",
+        "name": "CTFTCTE-REV-009 — Disassemble and annotate asm snippets",
+        "path": "countertechniques/CTFTCTE-REV-009.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-SDR-001",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-SDR",
+      "technique": {
+        "id": "CTFTTE-SDR-001",
+        "name": "CTFTTE-SDR-001 — RF/SDR signal embedding",
+        "path": "techniques/CTFTTE-SDR-001.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-SDR-001",
+        "name": "CTFTCTE-SDR-001 — Demodulate and decode RF captures",
+        "path": "countertechniques/CTFTCTE-SDR-001.md"
       },
       "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [
@@ -2083,6 +3095,50 @@
       ]
     },
     {
+      "id": "CTFTPAIR-STE-010",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-STE",
+      "technique": {
+        "id": "CTFTTE-STE-010",
+        "name": "CTFTTE-STE-010 — Audio-domain stego beyond spectrograms (LSB/phase/DTMF/SSTV)",
+        "path": "techniques/CTFTTE-STE-010.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-STE-010",
+        "name": "CTFTCTE-STE-010 — Detect and decode audio-domain stego",
+        "path": "countertechniques/CTFTCTE-STE-010.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-STE-011",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-STE",
+      "technique": {
+        "id": "CTFTTE-STE-011",
+        "name": "CTFTTE-STE-011 — Palette / bitplane LSB tricks",
+        "path": "techniques/CTFTTE-STE-011.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-STE-011",
+        "name": "CTFTCTE-STE-011 — Analyze bitplanes and palette-based LSB",
+        "path": "countertechniques/CTFTCTE-STE-011.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
       "id": "CTFTPAIR-WEB-001",
       "schema_version": "2.0",
       "tactic": "CTFT-TA-WEB",
@@ -2271,6 +3327,182 @@
         "id": "CTFTCTE-WEB-009",
         "name": "CTFTCTE-WEB-009 — Classify a configuration secret exposure",
         "path": "countertechniques/CTFTCTE-WEB-009.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-WEB-010",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-WEB",
+      "technique": {
+        "id": "CTFTTE-WEB-010",
+        "name": "CTFTTE-WEB-010 — LFI / log poisoning / php-filter chains",
+        "path": "techniques/CTFTTE-WEB-010.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-WEB-010",
+        "name": "CTFTCTE-WEB-010 — Exploit LFI to RCE or flag read",
+        "path": "countertechniques/CTFTCTE-WEB-010.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-WEB-011",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-WEB",
+      "technique": {
+        "id": "CTFTTE-WEB-011",
+        "name": "CTFTTE-WEB-011 — Directory-traversal maze",
+        "path": "techniques/CTFTTE-WEB-011.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-WEB-011",
+        "name": "CTFTCTE-WEB-011 — Traverse filtered paths (PHP labyrinth)",
+        "path": "countertechniques/CTFTCTE-WEB-011.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-WEB-012",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-WEB",
+      "technique": {
+        "id": "CTFTTE-WEB-012",
+        "name": "CTFTTE-WEB-012 — XSS-driven flag exfiltration",
+        "path": "techniques/CTFTTE-WEB-012.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-WEB-012",
+        "name": "CTFTCTE-WEB-012 — Craft XSS payloads (stored/reflected/DOM)",
+        "path": "countertechniques/CTFTCTE-WEB-012.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-WEB-013",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-WEB",
+      "technique": {
+        "id": "CTFTTE-WEB-013",
+        "name": "CTFTTE-WEB-013 — CSRF-gated state change",
+        "path": "techniques/CTFTTE-WEB-013.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-WEB-013",
+        "name": "CTFTCTE-WEB-013 — Forge cross-site requests",
+        "path": "countertechniques/CTFTCTE-WEB-013.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-WEB-014",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-WEB",
+      "technique": {
+        "id": "CTFTTE-WEB-014",
+        "name": "CTFTTE-WEB-014 — WebSocket message hiding",
+        "path": "techniques/CTFTTE-WEB-014.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-WEB-014",
+        "name": "CTFTCTE-WEB-014 — Intercept and decode WebSocket traffic",
+        "path": "countertechniques/CTFTCTE-WEB-014.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-WEB-015",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-WEB",
+      "technique": {
+        "id": "CTFTTE-WEB-015",
+        "name": "CTFTTE-WEB-015 — CMS / WordPress plugin flaw",
+        "path": "techniques/CTFTTE-WEB-015.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-WEB-015",
+        "name": "CTFTCTE-WEB-015 — Enumerate and exploit WordPress (wpscan)",
+        "path": "countertechniques/CTFTCTE-WEB-015.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-WEB-016",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-WEB",
+      "technique": {
+        "id": "CTFTTE-WEB-016",
+        "name": "CTFTTE-WEB-016 — NoSQL injection",
+        "path": "techniques/CTFTTE-WEB-016.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-WEB-016",
+        "name": "CTFTCTE-WEB-016 — Inject Mongo/NoSQL queries",
+        "path": "countertechniques/CTFTCTE-WEB-016.md"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "indicators",
+        "preconditions",
+        "reviewed_tool_bindings",
+        "evaluation_case"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-WEB-017",
+      "schema_version": "2.0",
+      "tactic": "CTFT-TA-WEB",
+      "technique": {
+        "id": "CTFTTE-WEB-017",
+        "name": "CTFTTE-WEB-017 — Host-header / vhost fuzzing",
+        "path": "techniques/CTFTTE-WEB-017.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-WEB-017",
+        "name": "CTFTCTE-WEB-017 — Fuzz vhosts and host headers",
+        "path": "countertechniques/CTFTCTE-WEB-017.md"
       },
       "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [
