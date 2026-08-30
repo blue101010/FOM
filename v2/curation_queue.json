@@ -2,8 +2,8 @@
   "model": "CTFT",
   "schema_version": "2.0",
   "collection": "curation_queue",
-  "generated_at": "2026-08-30T00:59:46+00:00",
-  "source_sha256": "6dbe1bfb740a27b2e9d623c73523d651c86dccf8cc09358ba94a73c14be91e81",
+  "generated_at": "2026-08-30T19:33:04+00:00",
+  "source_sha256": "bff6a30ead5895cd6ba52c0871032b74087e88e55fac745d1f8f866eab3ad07b",
   "pending_count": 98,
   "by_tactic": {
     "CTFT-TA-AIM": [

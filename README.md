@@ -22,7 +22,7 @@ puzzle-craft) detail ATT&CK omits, and the nearest ATT&CK anchor where one exist
 | Design / Hide technique | `CTFTTE-<CAT>-NNN` | `CTFTTE-FOR-001` |
 | Counter-technique | `CTFTCTE-<CAT>-NNN` | `CTFTCTE-FOR-001` |
 
-## Tactics (16 active categories)
+## Tactics (17 active categories)
 
 Order and short labels follow the challenge-category picker.
 
@@ -44,6 +44,7 @@ Order and short labels follow the challenge-category picker.
 | 14 | [CTFT-TA-GAM](tactics/CTFT-TA-GAM.md) | Game/Proto | Game / Protocol Automation | HTB: GamePwn | 5 |
 | 15 | [CTFT-TA-COD](tactics/CTFT-TA-COD.md) | Coding | Coding / Programming Puzzle | HTB: Coding | 5 |
 | 16 | [CTFT-TA-FPN](tactics/CTFT-TA-FPN.md) | Full Pwn | Full Pwn / Multi-Stage | HTB: Fullpwn | 7 |
+| 17 | [CTFT-TA-SDR](tactics/CTFT-TA-SDR.md) | SDR / RF | Software-Defined Radio | HTB: Hardware | 0 |
 | | | | **Total** | | **105** |
 
 **Reserved:** [CTFT-TA-HWR](tactics/CTFT-TA-HWR.md) - Hardware (HTB: Hardware) is
@@ -67,7 +68,7 @@ FOM/
   fom-migrate.py              migration utility
   v2/render_taxonomy_docs.py  renders CORRELATION.md and HIERARCHY.md from the files
   v2/catalog_audit.py         synchronizes index.json and writes coverage manifest
-  tactics/                    tactic pages (CTFT-TA-<CAT>.md), 16 active + HWR reserved
+  tactics/                    tactic pages (CTFT-TA-<CAT>.md), 17 active + HWR reserved
   techniques/                 design/hide techniques (CTFTTE-<CAT>-NNN.md)
     subtechniques.md          sub-technique index
   countertechniques/          counter-techniques (CTFTCTE-<CAT>-NNN.md)
@@ -107,7 +108,7 @@ IDs are deterministic (`uuid5`) so regeneration is stable and diff-friendly.
 
 ## Catalogue integrity
 
-The corpus contains **105 complete technique/counter-technique pairs** across 16 active
+The corpus contains **105 complete technique/counter-technique pairs** across 17 active
 tactics (plus the empty `HWR` placeholder). `CORRELATION.md` and `HIERARCHY.md` are
 **generated**, never hand-edited: the markdown entry files are the source of truth, so a
 renamed technique can never drift from the matrix. After adding or renaming an entry:

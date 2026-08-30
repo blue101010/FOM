@@ -42,6 +42,7 @@ CANONICAL_ORDER: list[tuple[str, str]] = [
     ("GAM", "Game/Proto"),
     ("COD", "Coding"),
     ("FPN", "Full Pwn"),
+    ("SDR", "SDR / RF"),
 ]
 # Declared but not offered in the picker and currently empty.
 RESERVED: list[tuple[str, str]] = [("HWR", "Hardware")]

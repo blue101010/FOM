@@ -1,10 +1,10 @@
 {
   "model": "CTFT",
   "schema_version": "2.0",
-  "generated_at": "2026-08-30T19:19:39+00:00",
+  "generated_at": "2026-08-30T19:33:04+00:00",
   "source": {
-    "correlation_sha256": "5280007e74cd648519ed16808e0b3743193947131a919be75935073b331570ad",
-    "legacy_index_sha256": "61c834751e4f5af0ebdb9c396b6d2d89a18b09c2f5d143034530dcb8a7c85c21"
+    "correlation_sha256": "bff6a30ead5895cd6ba52c0871032b74087e88e55fac745d1f8f866eab3ad07b",
+    "legacy_index_sha256": "925894fce89a1ea0de3854ae1c0a3ba9919d1f535d4bd86355744724450d1a6e"
   },
   "taxonomy": {
     "tactics": [
@@ -23,10 +23,11 @@
       "OSI",
       "PWN",
       "REV",
+      "SDR",
       "STE",
       "WEB"
     ],
-    "tactic_count": 17,
+    "tactic_count": 18,
     "technique_count": 105,
     "counter_technique_count": 105,
     "complete_pairs": 105,

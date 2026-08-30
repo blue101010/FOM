@@ -4,8 +4,8 @@ Every **Design / Hide Technique** (`CTFTTE-<CAT>-NNN`) and the
 **Counter-Technique** (`CTFTCTE-<CAT>-NNN`) that recovers it, grouped by tactic.
 IDs pair one-to-one: `CTFTTE-FOR-004` is always answered by `CTFTCTE-FOR-004`.
 
-> Generated from the files in `techniques/` and `countertechniques/` on 2026-08-30T19:18:13+00:00
-> by `v2/render_taxonomy_docs.py`. **105 complete pairs** across **16 active tactics**. Do not hand-edit: rename the entry, then re-render.
+> Generated from the files in `techniques/` and `countertechniques/` on 2026-08-30T19:33:04+00:00
+> by `v2/render_taxonomy_docs.py`. **105 complete pairs** across **17 active tactics**. Do not hand-edit: rename the entry, then re-render.
 
 ---
 
@@ -31,6 +31,7 @@ Order follows the challenge-category picker.
 | 14 | [`GAM`](#ctft-ta-gam) | Game/Proto | Game / Protocol Automation (GamePwn) | 5 |
 | 15 | [`COD`](#ctft-ta-cod) | Coding | Coding / Programming Puzzle | 5 |
 | 16 | [`FPN`](#ctft-ta-fpn) | Full Pwn | Full Pwn / Multi-Stage | 7 |
+| 17 | [`SDR`](#ctft-ta-sdr) | SDR / RF | Software-Defined Radio | 0 |
 | | | | **Total** | **105** |
 
 **Reserved / not yet populated**
@@ -274,6 +275,13 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 | 5 | [CTFTTE-FPN-005](techniques/CTFTTE-FPN-005.md) | Cloud-integrated fullpwn | [CTFTCTE-FPN-005](countertechniques/CTFTCTE-FPN-005.md) | Pivot from on-prem to cloud IAM to retrieve the secret |
 | 6 | [CTFTTE-FPN-006](techniques/CTFTTE-FPN-006.md) | Chained database trust-context escalation | [CTFTCTE-FPN-006](countertechniques/CTFTCTE-FPN-006.md) | Map database trust contexts and privilege boundaries |
 | 7 | [CTFTTE-FPN-007](techniques/CTFTTE-FPN-007.md) | Uninventoried dual-stack management path | [CTFTCTE-FPN-007](countertechniques/CTFTCTE-FPN-007.md) | Reconcile dual-stack management exposure |
+
+
+## <a id="ctft-ta-sdr"></a>`CTFT-TA-SDR` — Software-Defined Radio
+
+> [tactic page](tactics/CTFT-TA-SDR.md) · 0 pairs · HTB: Hardware
+
+_No entries yet._
 
 
 ---

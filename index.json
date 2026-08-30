@@ -1,7 +1,7 @@
 {
   "model": "CTFT",
   "version": "1.2",
-  "generated": "2026-08-30T19:19:39+00:00",
+  "generated": "2026-08-30T19:33:04+00:00",
   "complements": "MITRE ATT&CK",
   "tactics": [
     {
@@ -93,6 +93,12 @@
       "name": "REV — Reverse Engineering",
       "path": "tactics/CTFT-TA-REV.md",
       "count": 5
+    },
+    {
+      "id": "CTFT-TA-SDR",
+      "name": "SDR — Software-Defined Radio",
+      "path": "tactics/CTFT-TA-SDR.md",
+      "count": 0
     },
     {
       "id": "CTFT-TA-STE",
