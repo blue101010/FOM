@@ -1,0 +1,97 @@
+#!/usr/bin/env python3
+"""Wrap bare URLs in angle brackets across the markdown corpus (markdownlint MD034).
+
+Per AGENTS.md "Markdown cleanup": never leave a bare URL. This tool wraps any
+`https?://` occurrence that is not already inside `<...>`, a `[label](...)`
+link, or a Markdown link target, preserving trailing punctuation outside the
+brackets. Idempotent.
+
+Usage:
+    python v2/fix_bare_urls.py            # dry run: list violations
+    python v2/fix_bare_urls.py --write    # apply fixes
+"""
+from __future__ import annotations
+
+import argparse
+import re
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+
+URL_RE = re.compile(r"(?<![(<])https?://[^\s<>()]+")
+TRAILING = ".,;:!?"
+
+TARGETS = [
+    ROOT / "techniques",
+    ROOT / "countertechniques",
+    ROOT / "tactics",
+    ROOT / "tools",
+    ROOT / "to_categorize",
+    ROOT / "v2",
+]
+ROOT_FILES = ["README.md", "TODO.md", "SCHEMA_V2.md", "AGENTS.md", "CLAUDE.md",
+              "CORRELATION.md", "HIERARCHY.md"]
+
+
+def fix_line(line: str) -> str:
+    def repl(match: re.Match[str]) -> str:
+        url = match.group(0)
+        trailing = ""
+        while url and url[-1] in TRAILING:
+            trailing = url[-1] + trailing
+            url = url[:-1]
+        return f"<{url}>{trailing}"
+    return URL_RE.sub(repl, line)
+
+
+def markdown_files() -> list[Path]:
+    files = [ROOT / name for name in ROOT_FILES if (ROOT / name).exists()]
+    for target in TARGETS:
+        if target.exists():
+            files.extend(sorted(target.rglob("*.md")))
+    return [f for f in files if "backup" not in f.parts]
+
+
+def scan(path: Path) -> list[tuple[int, str]]:
+    hits = []
+    for lineno, line in enumerate(path.read_text(encoding="utf-8", errors="replace").splitlines(), start=1):
+        if URL_RE.search(line):
+            hits.append((lineno, line.strip()))
+    return hits
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--write", action="store_true", help="apply fixes (default: dry run)")
+    args = parser.parse_args()
+
+    files = markdown_files()
+    changed, total = [], 0
+    for path in files:
+        text = path.read_text(encoding="utf-8", errors="replace")
+        new = "\n".join(fix_line(line) for line in text.splitlines())
+        if text.endswith("\n"):
+            new += "\n"
+        if new != text:
+            hits = scan(path)
+            total += len(hits)
+            changed.append(path)
+            if args.write:
+                path.write_text(new, encoding="utf-8")
+            else:
+                first = hits[0] if hits else ("-", "")
+                print(f"{len(hits):>3}  {path.relative_to(ROOT)}  e.g. L{first[0]}: {first[1][:80]}")
+
+    mode = "Fixed" if args.write else "Would fix"
+    print(f"{mode} {total} bare URL(s) across {len(changed)} file(s).")
+
+    if args.write:
+        remaining = [(p, h) for p in files for h in [scan(p)] if h]
+        print(f"Remaining violations: {sum(len(h) for _, h in remaining)}")
+        for p, h in remaining:
+            for lineno, line in h[:5]:
+                print(f"  {p.relative_to(ROOT)}:{lineno}: {line[:80]}")
+
+
+if __name__ == "__main__":
+    main()

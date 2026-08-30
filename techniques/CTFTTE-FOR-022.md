@@ -25,5 +25,5 @@ The flag file is deleted but still open by a process, or recoverable from journa
 
 ## References
 
-- https://github.com/sleuthkit/sleuthkit
+- <https://github.com/sleuthkit/sleuthkit>
 - Add challenge write-up link

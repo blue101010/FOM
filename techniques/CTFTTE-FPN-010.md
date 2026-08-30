@@ -24,5 +24,5 @@ The flag requires a stable reverse shell through restricted channels (firewalls,
 
 ## References
 
-- https://github.com/calebstewart/pwncat
+- <https://github.com/calebstewart/pwncat>
 - Add challenge write-up link

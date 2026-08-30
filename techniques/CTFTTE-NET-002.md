@@ -25,5 +25,5 @@ Flag data is moved through DNS queries (labels encode chunks) or hidden in beaco
 
 ## References
 
-- https://github.com/iagox86/dnscat2
+- <https://github.com/iagox86/dnscat2>
 - Add challenge write-up link

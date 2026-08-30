@@ -24,5 +24,5 @@ The flag is wrapped in stacked classical ciphers (ROT/Caesar, Vigenere, substitu
 
 ## References
 
-- https://gchq.github.io/CyberChef/
+- <https://gchq.github.io/CyberChef/>
 - Add challenge write-up link

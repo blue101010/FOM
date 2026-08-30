@@ -43,5 +43,5 @@ proof of a recovered file's content or provenance.
 
 ## References
 
-- https://learn.microsoft.com/windows/win32/devnotes/master-file-table
-- https://www.sleuthkit.org/
+- <https://learn.microsoft.com/windows/win32/devnotes/master-file-table>
+- <https://www.sleuthkit.org/>

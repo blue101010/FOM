@@ -28,5 +28,5 @@ Aggregating metadata across artifacts reconstructs the subject's footprint.
 
 ## References
 
-- https://exiftool.org/
+- <https://exiftool.org/>
 - Add challenge write-up link

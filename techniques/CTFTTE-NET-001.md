@@ -25,5 +25,5 @@ The flag sits behind a service on an unusual port, or the challenge hides which 
 
 ## References
 
-- https://nmap.org/book/
+- <https://nmap.org/book/>
 - Add challenge write-up link

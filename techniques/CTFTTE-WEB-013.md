@@ -23,5 +23,5 @@ The flag is released only after a state change that requires a forged cross-site
 
 ## References
 
-- https://owasp.org/www-community/attacks/csrf
+- <https://owasp.org/www-community/attacks/csrf>
 - Add challenge write-up link

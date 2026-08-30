@@ -24,5 +24,5 @@ Data is XORed with a short repeating key, or encrypted in ECB so identical block
 
 ## References
 
-- https://github.com/hellman/xortool
+- <https://github.com/hellman/xortool>
 - Add challenge write-up link

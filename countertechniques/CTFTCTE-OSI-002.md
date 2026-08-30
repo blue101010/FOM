@@ -27,5 +27,5 @@ Profile correlation documents the linkage between disparate online identities.
 
 ## References
 
-- https://github.com/sherlock-project/sherlock
+- <https://github.com/sherlock-project/sherlock>
 - Add challenge write-up link

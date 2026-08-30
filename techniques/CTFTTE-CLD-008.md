@@ -24,5 +24,5 @@ Leaked Azure credentials unlock management-plane access where the flag sits (AD 
 
 ## References
 
-- https://learn.microsoft.com/en-us/cli/azure/
+- <https://learn.microsoft.com/en-us/cli/azure/>
 - Add challenge write-up link

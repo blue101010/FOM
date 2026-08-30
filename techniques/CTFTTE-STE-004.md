@@ -24,5 +24,5 @@ The secret sits in EXIF/XMP/ID3 comment, GPS or maker-note fields rather than th
 
 ## References
 
-- https://exiftool.org/
+- <https://exiftool.org/>
 - Add challenge write-up link

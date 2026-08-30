@@ -25,5 +25,5 @@ The flag check lives in obfuscated or compiled Java (JAR/class); strings and con
 
 ## References
 
-- https://github.com/leibnitz27/cfr
+- <https://github.com/leibnitz27/cfr>
 - Add challenge write-up link

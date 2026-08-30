@@ -25,5 +25,5 @@ Only compiled .pyc/.pyo files ship; the flag logic is bytecode-only.
 
 ## References
 
-- https://github.com/zrax/pycdc
+- <https://github.com/zrax/pycdc>
 - Add challenge write-up link

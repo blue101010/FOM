@@ -4,7 +4,7 @@ Every **Design / Hide Technique** (`CTFTTE-<CAT>-NNN`) and the
 **Counter-Technique** (`CTFTCTE-<CAT>-NNN`) that recovers it, grouped by tactic.
 IDs pair one-to-one: `CTFTTE-FOR-004` is always answered by `CTFTCTE-FOR-004`.
 
-> Generated from the files in `techniques/` and `countertechniques/` on 2026-08-30T21:58:15+00:00
+> Generated from the files in `techniques/` and `countertechniques/` on 2026-08-30T22:35:39+00:00
 > by `v2/render_taxonomy_docs.py`. **161 complete pairs** across **19 active tactics**. Do not hand-edit: rename the entry, then re-render.
 
 ---

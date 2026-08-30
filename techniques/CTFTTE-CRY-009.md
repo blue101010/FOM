@@ -24,5 +24,5 @@ Two messages are encrypted under the same Salsa20 key/nonce; the XOR of cipherte
 
 ## References
 
-- https://github.com/SpiderLabs/cribdrag
+- <https://github.com/SpiderLabs/cribdrag>
 - Add challenge write-up link

@@ -26,6 +26,6 @@ The flag resides on a Domain Controller; reaching it requires a chain of AD-spec
 
 ## References
 
-- https://github.com/BloodHoundAD/BloodHound
-- https://github.com/fortra/impacket
+- <https://github.com/BloodHoundAD/BloodHound>
+- <https://github.com/fortra/impacket>
 - Add challenge write-up link

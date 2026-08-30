@@ -40,4 +40,4 @@ version and extraction result so an apparent clue can be reproduced or rejected.
 
 ## References
 
-- https://exiftool.org/
+- <https://exiftool.org/>

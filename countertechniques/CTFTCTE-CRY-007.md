@@ -42,5 +42,5 @@ silently change the model.
 
 ## References
 
-- https://csrc.nist.gov/pubs/sp/800/90/a/r1/final
-- https://docs.python.org/3/library/random.html
+- <https://csrc.nist.gov/pubs/sp/800/90/a/r1/final>
+- <https://docs.python.org/3/library/random.html>

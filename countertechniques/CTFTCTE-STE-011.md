@@ -28,5 +28,5 @@ Bitplane/palette analysis is standard steganalysis; visual inspection of planes 
 
 ## References
 
-- https://github.com/zed-0xff/zsteg
+- <https://github.com/zed-0xff/zsteg>
 - Add challenge write-up link

@@ -24,5 +24,5 @@ The flag travels over a WebSocket channel; plain HTTP tools miss it.
 
 ## References
 
-- https://github.com/vi/websocat
+- <https://github.com/vi/websocat>
 - Add challenge write-up link

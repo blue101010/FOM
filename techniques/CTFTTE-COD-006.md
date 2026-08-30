@@ -23,5 +23,5 @@ The flag key is a permutation/combination of inputs; naive search is too slow.
 
 ## References
 
-- https://docs.python.org/3/library/itertools.html
+- <https://docs.python.org/3/library/itertools.html>
 - Add challenge write-up link

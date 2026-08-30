@@ -27,5 +27,5 @@ XSS artifacts live in page source, logs and browser history; CSP reports corrobo
 
 ## References
 
-- https://portswigger.net/web-security/cross-site-scripting
+- <https://portswigger.net/web-security/cross-site-scripting>
 - Add challenge write-up link

@@ -23,5 +23,5 @@ The flag content is indexed but only findable through precise search operators.
 
 ## References
 
-- https://www.exploit-db.com/google-hacking-database
+- <https://www.exploit-db.com/google-hacking-database>
 - Add challenge write-up link

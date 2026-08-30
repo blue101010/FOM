@@ -24,5 +24,5 @@ The flag is stashed in certificate fields (subject, extensions, serial) or in th
 
 ## References
 
-- https://www.openssl.org/
+- <https://www.openssl.org/>
 - Add challenge write-up link

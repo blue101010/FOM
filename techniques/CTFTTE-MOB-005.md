@@ -23,5 +23,5 @@ The flag only renders when device/root/emulator/time conditions are met.
 
 ## References
 
-- https://frida.re/
+- <https://frida.re/>
 - Add challenge write-up link

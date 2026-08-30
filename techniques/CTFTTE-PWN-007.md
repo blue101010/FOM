@@ -25,5 +25,5 @@ The flag requires a kernel-module exploit or bypassing new memory protections (m
 
 ## References
 
-- https://www.kernel.org/doc/
+- <https://www.kernel.org/doc/>
 - Add challenge write-up link

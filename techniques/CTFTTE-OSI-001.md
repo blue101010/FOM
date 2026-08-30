@@ -24,5 +24,5 @@ Identifying data is scattered across file metadata and post artifacts rather tha
 
 ## References
 
-- https://exiftool.org/
+- <https://exiftool.org/>
 - Add challenge write-up link

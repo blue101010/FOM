@@ -25,5 +25,5 @@ The flag exists only in a Windows/Linux memory dump: registry hives, services, c
 
 ## References
 
-- https://github.com/volatilityfoundation/volatility3
+- <https://github.com/volatilityfoundation/volatility3>
 - Add challenge write-up link

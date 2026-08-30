@@ -23,5 +23,5 @@ A MAC built as H(secret || message) with a Merkle-Damgard hash lets an attacker 
 
 ## References
 
-- https://github.com/iagox86/hash_extender
+- <https://github.com/iagox86/hash_extender>
 - Add challenge write-up link

@@ -29,5 +29,5 @@ Access logs of the discovery sweep document how the hidden surface was found.
 
 ## References
 
-- https://github.com/ffuf/ffuf
+- <https://github.com/ffuf/ffuf>
 - Add challenge write-up link

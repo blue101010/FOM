@@ -27,5 +27,5 @@ The vulnerability report attributes forgery to the insecure secret-prefix MAC co
 
 ## References
 
-- https://github.com/iagox86/hash_extender
+- <https://github.com/iagox86/hash_extender>
 - Add challenge write-up link

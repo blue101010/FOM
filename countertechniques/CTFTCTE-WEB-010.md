@@ -28,5 +28,5 @@ Web logs retain LFI probe fingerprints; filter-chain requests are distinctive.
 
 ## References
 
-- https://github.com/synacktiv/php_filter_chain_generator
+- <https://github.com/synacktiv/php_filter_chain_generator>
 - Add challenge write-up link

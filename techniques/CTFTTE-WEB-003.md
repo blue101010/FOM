@@ -24,5 +24,5 @@ The flag sits behind auth using a JWT with alg=none, a weak HMAC secret, or key 
 
 ## References
 
-- https://github.com/ticarpi/jwt_tool
+- <https://github.com/ticarpi/jwt_tool>
 - Add challenge write-up link

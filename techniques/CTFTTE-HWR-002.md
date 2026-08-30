@@ -25,5 +25,5 @@ The flag lives in an electronic badge or embedded device: in firmware, EEPROM, o
 
 ## References
 
-- https://github.com/ReFirmLabs/binwalk
+- <https://github.com/ReFirmLabs/binwalk>
 - Add challenge write-up link

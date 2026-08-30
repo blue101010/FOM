@@ -29,6 +29,6 @@ Metadata-endpoint credential theft is a documented cloud attack pattern; AWS IMD
 
 ## References
 
-- https://github.com/RhinoSecurityLabs/pacu
-- https://github.com/BishopFox/cloudfox
+- <https://github.com/RhinoSecurityLabs/pacu>
+- <https://github.com/BishopFox/cloudfox>
 - Add challenge write-up link

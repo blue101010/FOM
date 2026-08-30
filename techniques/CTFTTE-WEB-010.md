@@ -24,5 +24,5 @@ A local file include lets the solver read the flag or reach RCE through log pois
 
 ## References
 
-- https://github.com/synacktiv/php_filter_chain_generator
+- <https://github.com/synacktiv/php_filter_chain_generator>
 - Add challenge write-up link

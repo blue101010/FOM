@@ -28,5 +28,5 @@ Repeated ciphertext blocks are a tell-tale of ECB and of structural leakage in t
 
 ## References
 
-- https://github.com/hellman/xortool
+- <https://github.com/hellman/xortool>
 - Add challenge write-up link

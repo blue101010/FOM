@@ -29,5 +29,5 @@ Bit-plane and chi-square analysis flags non-natural LSB distributions characteri
 
 ## References
 
-- https://github.com/zed-0xff/zsteg
+- <https://github.com/zed-0xff/zsteg>
 - Add challenge write-up link

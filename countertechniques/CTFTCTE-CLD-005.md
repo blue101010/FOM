@@ -28,5 +28,5 @@ Layer diffing reveals files and history entries containing the secret.
 
 ## References
 
-- https://github.com/wagoodman/dive
+- <https://github.com/wagoodman/dive>
 - Add challenge write-up link

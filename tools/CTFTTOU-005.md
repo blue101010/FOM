@@ -11,5 +11,5 @@ embed their commands or authorize access to any target.
 
 ## URLs
 
-- https://ericzimmerman.github.io/
-- https://www.sleuthkit.org/
+- <https://ericzimmerman.github.io/>
+- <https://www.sleuthkit.org/>

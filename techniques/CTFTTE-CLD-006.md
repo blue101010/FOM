@@ -24,5 +24,5 @@ The flag is in a second AWS account reachable only by chaining role assumptions 
 
 ## References
 
-- https://github.com/RhinoSecurityLabs/pacu
+- <https://github.com/RhinoSecurityLabs/pacu>
 - Add challenge write-up link

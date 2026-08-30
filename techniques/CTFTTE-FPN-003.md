@@ -26,5 +26,5 @@ The flag host sits on a network segment not directly reachable from the attacker
 
 ## References
 
-- https://github.com/jpillora/chisel
+- <https://github.com/jpillora/chisel>
 - Add challenge write-up link

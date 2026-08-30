@@ -25,5 +25,5 @@ JPEG structure is tampered: extraneous bytes before the EOI marker, corrupted qu
 
 ## References
 
-- https://github.com/corkami/pics
+- <https://github.com/corkami/pics>
 - Add challenge write-up link

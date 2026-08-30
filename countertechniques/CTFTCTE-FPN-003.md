@@ -30,5 +30,5 @@ Pivot tunnels leave characteristic artefacts: unexpected outbound SOCKS connecti
 
 ## References
 
-- https://github.com/jpillora/chisel
+- <https://github.com/jpillora/chisel>
 - Add challenge write-up link

@@ -24,5 +24,5 @@ The flag query is gated by a NoSQL (Mongo) filter; operator injection bypasses i
 
 ## References
 
-- https://github.com/codingo/NoSQLMap
+- <https://github.com/codingo/NoSQLMap>
 - Add challenge write-up link

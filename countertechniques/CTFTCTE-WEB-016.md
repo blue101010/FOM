@@ -28,5 +28,5 @@ NoSQL payloads ($ operators) appear in application logs; unusual query shapes ar
 
 ## References
 
-- https://github.com/codingo/NoSQLMap
+- <https://github.com/codingo/NoSQLMap>
 - Add challenge write-up link

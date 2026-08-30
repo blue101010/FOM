@@ -28,5 +28,5 @@ Extracting the constraint set proves how the flag was derived rather than stored
 
 ## References
 
-- https://github.com/Z3Prover/z3
+- <https://github.com/Z3Prover/z3>
 - Add challenge write-up link

@@ -25,5 +25,5 @@ An unreferenced function prints the flag/spawns a shell, gated behind a vulnerab
 
 ## References
 
-- https://github.com/Gallopsled/pwntools
+- <https://github.com/Gallopsled/pwntools>
 - Add challenge write-up link

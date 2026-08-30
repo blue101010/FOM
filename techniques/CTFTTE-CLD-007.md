@@ -24,5 +24,5 @@ A cloud NoSQL store (DynamoDB or similar) is exposed or over-permissioned and ho
 
 ## References
 
-- https://boto3.amazonaws.com/v1/documentation/api/latest/index.html
+- <https://boto3.amazonaws.com/v1/documentation/api/latest/index.html>
 - Add challenge write-up link

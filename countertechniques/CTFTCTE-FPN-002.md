@@ -30,6 +30,6 @@ BloodHound attack-path analysis is also a defensive tool; DFIR teams use it to i
 
 ## References
 
-- https://github.com/BloodHoundAD/BloodHound
-- https://github.com/fortra/impacket
+- <https://github.com/BloodHoundAD/BloodHound>
+- <https://github.com/fortra/impacket>
 - Add challenge write-up link

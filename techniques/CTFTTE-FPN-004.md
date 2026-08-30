@@ -25,5 +25,5 @@ The flag requires chaining a service-level misconfiguration (weak credentials, e
 
 ## References
 
-- https://github.com/stealthcopter/deepce
+- <https://github.com/stealthcopter/deepce>
 - Add challenge write-up link

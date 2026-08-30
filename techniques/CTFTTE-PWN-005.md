@@ -24,5 +24,5 @@ execve is filtered, so a shell is impossible; only file I/O syscalls remain.
 
 ## References
 
-- https://github.com/david942j/seccomp-tools
+- <https://github.com/david942j/seccomp-tools>
 - Add challenge write-up link

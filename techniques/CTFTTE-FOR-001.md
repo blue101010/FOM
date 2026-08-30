@@ -25,5 +25,5 @@ The author corrupts or swaps the file's magic header (e.g. flips PNG 89504E47 to
 
 ## References
 
-- https://www.garykessler.net/library/file_sigs.html
+- <https://www.garykessler.net/library/file_sigs.html>
 - Add challenge write-up link

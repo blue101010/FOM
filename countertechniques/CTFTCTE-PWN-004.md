@@ -28,5 +28,5 @@ The chain shows how existing code was repurposed despite NX/no convenient symbol
 
 ## References
 
-- https://github.com/JonathanSalwan/ROPgadget
+- <https://github.com/JonathanSalwan/ROPgadget>
 - Add challenge write-up link

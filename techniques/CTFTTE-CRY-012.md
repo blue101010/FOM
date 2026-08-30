@@ -24,5 +24,5 @@ The flag is a hash whose preimage satisfies extra constraints (mask, salt, chars
 
 ## References
 
-- https://hashcat.net/hashcat/
+- <https://hashcat.net/hashcat/>
 - Add challenge write-up link

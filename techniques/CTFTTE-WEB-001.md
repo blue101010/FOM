@@ -25,5 +25,5 @@ The flag route is unlinked, hinted in comments, robots.txt, JS bundles or backup
 
 ## References
 
-- https://github.com/ffuf/ffuf
+- <https://github.com/ffuf/ffuf>
 - Add challenge write-up link

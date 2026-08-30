@@ -29,5 +29,5 @@ The exploit path documents the missing bounds check enabling control-flow hijack
 
 ## References
 
-- https://github.com/Gallopsled/pwntools
+- <https://github.com/Gallopsled/pwntools>
 - Add challenge write-up link

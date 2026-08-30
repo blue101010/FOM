@@ -25,5 +25,5 @@ Data hides in audio beyond the spectrogram: LSB of samples, phase coding, DTMF t
 
 ## References
 
-- https://github.com/EliasOenal/multimon-ng
+- <https://github.com/EliasOenal/multimon-ng>
 - Add challenge write-up link

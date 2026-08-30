@@ -28,5 +28,5 @@ Weak-mode signatures (repeated blocks) identify misconfigured crypto in artifact
 
 ## References
 
-- https://github.com/AonCyberLabs/PadBuster
+- <https://github.com/AonCyberLabs/PadBuster>
 - Add challenge write-up link

@@ -28,5 +28,5 @@ Full metadata extraction surfaces author-injected fields and inconsistencies ver
 
 ## References
 
-- https://exiftool.org/
+- <https://exiftool.org/>
 - Add challenge write-up link

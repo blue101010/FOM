@@ -24,5 +24,5 @@ Path filters block traversal; the flag file is reachable only through filter qui
 
 ## References
 
-- https://github.com/ffuf/ffuf
+- <https://github.com/ffuf/ffuf>
 - Add challenge write-up link

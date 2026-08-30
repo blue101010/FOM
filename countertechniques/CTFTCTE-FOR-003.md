@@ -29,5 +29,5 @@ Cross-reference MFT, $LogFile/$UsnJrnl, registry and event logs; timestamps that
 
 ## References
 
-- https://github.com/sleuthkit/sleuthkit
+- <https://github.com/sleuthkit/sleuthkit>
 - Add challenge write-up link

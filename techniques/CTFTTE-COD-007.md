@@ -23,5 +23,5 @@ The flag requires solving a Sudoku or constraint grid programmatically.
 
 ## References
 
-- https://github.com/Z3Prover/z3
+- <https://github.com/Z3Prover/z3>
 - Add challenge write-up link

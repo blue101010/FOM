@@ -29,5 +29,5 @@ Mapping the guards documents the binary's evasive intent and how analysis was re
 
 ## References
 
-- https://ghidra-sre.org/
+- <https://ghidra-sre.org/>
 - Add challenge write-up link

@@ -26,5 +26,5 @@ The flag service is only reachable through a pivot host; direct connections fail
 
 ## References
 
-- https://github.com/jpillora/chisel
+- <https://github.com/jpillora/chisel>
 - Add challenge write-up link

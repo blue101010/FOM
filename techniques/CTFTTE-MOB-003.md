@@ -24,5 +24,5 @@ TLS pinning prevents intercepting the request/response that carries the flag.
 
 ## References
 
-- https://frida.re/
+- <https://frida.re/>
 - Add challenge write-up link

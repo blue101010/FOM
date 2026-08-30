@@ -27,5 +27,5 @@ A restricted shell escape reveals that the confinement relied on a blocklist rat
 
 ## References
 
-- https://gtfobins.github.io/
+- <https://gtfobins.github.io/>
 - Add challenge write-up link

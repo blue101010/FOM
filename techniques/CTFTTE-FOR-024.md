@@ -24,5 +24,5 @@ The flag is inside a browser profile: bookmarks, history, saved logins, cookies 
 
 ## References
 
-- https://support.mozilla.org/en-US/kb/profiles-where-firefox-stores-user-data
+- <https://support.mozilla.org/en-US/kb/profiles-where-firefox-stores-user-data>
 - Add challenge write-up link

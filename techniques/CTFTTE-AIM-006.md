@@ -24,5 +24,5 @@ A self-hosted LLM (ollama/oobabooga) is exposed or misconfigured; the flag hides
 
 ## References
 
-- https://github.com/ollama/ollama
+- <https://github.com/ollama/ollama>
 - Add challenge write-up link

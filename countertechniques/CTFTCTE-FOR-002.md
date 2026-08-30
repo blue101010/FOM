@@ -30,5 +30,5 @@ Treat the image at the block level; carving + manual cluster inspection recovers
 
 ## References
 
-- https://github.com/ReFirmLabs/binwalk
+- <https://github.com/ReFirmLabs/binwalk>
 - Add challenge write-up link

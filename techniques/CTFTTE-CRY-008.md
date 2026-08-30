@@ -24,5 +24,5 @@ AES is used with a weak mode (ECB patterns, predictable IV, padding oracle); the
 
 ## References
 
-- https://github.com/AonCyberLabs/PadBuster
+- <https://github.com/AonCyberLabs/PadBuster>
 - Add challenge write-up link

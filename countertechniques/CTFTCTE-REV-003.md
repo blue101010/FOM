@@ -29,5 +29,5 @@ Recovering the real CFG documents the obfuscation scheme and the intended logic.
 
 ## References
 
-- https://angr.io/
+- <https://angr.io/>
 - Add challenge write-up link

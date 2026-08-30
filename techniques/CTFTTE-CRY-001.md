@@ -24,5 +24,5 @@ The author ships RSA with an exploitable weakness: tiny e, close primes, shared 
 
 ## References
 
-- https://github.com/RsaCtfTool/RsaCtfTool
+- <https://github.com/RsaCtfTool/RsaCtfTool>
 - Add challenge write-up link

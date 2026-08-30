@@ -25,5 +25,5 @@ The flag requires defeating canary, PIE and ASLR in a binary with a stack overfl
 
 ## References
 
-- https://github.com/Gallopsled/pwntools
+- <https://github.com/Gallopsled/pwntools>
 - Add challenge write-up link

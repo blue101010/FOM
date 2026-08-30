@@ -29,5 +29,5 @@ Volatility plugins reconstruct process lists, network state, command history and
 
 ## References
 
-- https://github.com/volatilityfoundation/volatility3
+- <https://github.com/volatilityfoundation/volatility3>
 - Add challenge write-up link

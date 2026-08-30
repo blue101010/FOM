@@ -23,5 +23,5 @@ A limited shell (rbash, menu shell, or custom restricted interpreter) is placed 
 
 ## References
 
-- https://gtfobins.github.io/
+- <https://gtfobins.github.io/>
 - Add challenge write-up link

@@ -24,5 +24,5 @@ The flag (or a credential) is in git history: old commits, dangling objects, or 
 
 ## References
 
-- https://github.com/trufflesecurity/trufflehog
+- <https://github.com/trufflesecurity/trufflehog>
 - Add challenge write-up link

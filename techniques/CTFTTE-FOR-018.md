@@ -26,5 +26,5 @@ while residual record, attribute, or allocation evidence remains in the image.
 
 ## References
 
-- https://learn.microsoft.com/windows/win32/devnotes/master-file-table
-- https://www.sleuthkit.org/
+- <https://learn.microsoft.com/windows/win32/devnotes/master-file-table>
+- <https://www.sleuthkit.org/>

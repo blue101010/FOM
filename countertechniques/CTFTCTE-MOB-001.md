@@ -28,5 +28,5 @@ Static review of the package documents secrets shipped inside the artifact.
 
 ## References
 
-- https://github.com/skylot/jadx
+- <https://github.com/skylot/jadx>
 - Add challenge write-up link

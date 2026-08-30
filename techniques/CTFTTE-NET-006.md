@@ -24,5 +24,5 @@ Each packet's TTL (or ICMP type / payload padding) encodes one character; the fl
 
 ## References
 
-- https://scapy.net/
+- <https://scapy.net/>
 - Add challenge write-up link

@@ -25,5 +25,5 @@ The flag exists only in RAM (process heap, clipboard, decrypted blob) and never 
 
 ## References
 
-- https://github.com/volatilityfoundation/volatility3
+- <https://github.com/volatilityfoundation/volatility3>
 - Add challenge write-up link

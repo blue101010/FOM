@@ -29,5 +29,5 @@ Entropy + signature scanning reveals additional file structures beyond the decla
 
 ## References
 
-- https://github.com/ReFirmLabs/binwalk
+- <https://github.com/ReFirmLabs/binwalk>
 - Add challenge write-up link

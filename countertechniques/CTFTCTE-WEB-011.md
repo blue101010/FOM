@@ -28,5 +28,5 @@ Traversal attempts appear as ../ patterns in access logs.
 
 ## References
 
-- https://github.com/ffuf/ffuf
+- <https://github.com/ffuf/ffuf>
 - Add challenge write-up link

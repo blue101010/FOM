@@ -27,5 +27,5 @@ CSRF attempts are visible as cross-origin referer mismatches and suspicious requ
 
 ## References
 
-- https://owasp.org/www-community/attacks/csrf
+- <https://owasp.org/www-community/attacks/csrf>
 - Add challenge write-up link

@@ -25,5 +25,5 @@ The flag lives on infrastructure hidden among an ASN/IP range or a forgotten sub
 
 ## References
 
-- https://github.com/blacklanternsecurity/bbot
+- <https://github.com/blacklanternsecurity/bbot>
 - Add challenge write-up link

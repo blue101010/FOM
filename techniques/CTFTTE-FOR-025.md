@@ -25,5 +25,5 @@ The flag is inside PDF objects/streams (FlateDecode), hidden annotations, or app
 
 ## References
 
-- https://blog.didierstevens.com/programs/pdf-tools/
+- <https://blog.didierstevens.com/programs/pdf-tools/>
 - Add challenge write-up link

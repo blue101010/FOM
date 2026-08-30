@@ -25,5 +25,5 @@ The binary detects debuggers/VMs/timing and alters behaviour or refuses to revea
 
 ## References
 
-- https://ghidra-sre.org/
+- <https://ghidra-sre.org/>
 - Add challenge write-up link

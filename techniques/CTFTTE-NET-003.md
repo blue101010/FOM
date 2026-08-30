@@ -25,5 +25,5 @@ The flag is inside an SMB share whose name or permissions are part of the puzzle
 
 ## References
 
-- https://www.samba.org/
+- <https://www.samba.org/>
 - Add challenge write-up link

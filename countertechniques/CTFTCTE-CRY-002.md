@@ -28,5 +28,5 @@ Statistical language analysis identifies cipher families and confirms successful
 
 ## References
 
-- https://gchq.github.io/CyberChef/
+- <https://gchq.github.io/CyberChef/>
 - Add challenge write-up link

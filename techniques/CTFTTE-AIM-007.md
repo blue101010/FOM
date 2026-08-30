@@ -23,5 +23,5 @@ An agent is constrained by guardrails over its tools; the flag requires coaxing 
 
 ## References
 
-- https://github.com/microsoft/autogen
+- <https://github.com/microsoft/autogen>
 - Add challenge write-up link

@@ -28,5 +28,5 @@ Reading the seccomp policy reveals the allowed syscall surface that the solve re
 
 ## References
 
-- https://github.com/david942j/seccomp-tools
+- <https://github.com/david942j/seccomp-tools>
 - Add challenge write-up link

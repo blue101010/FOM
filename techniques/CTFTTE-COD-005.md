@@ -24,6 +24,6 @@ The correct flag input is the unique solution to a system of mathematical or Boo
 
 ## References
 
-- https://github.com/angr/angr
-- https://github.com/Z3Prover/z3
+- <https://github.com/angr/angr>
+- <https://github.com/Z3Prover/z3>
 - Add challenge write-up link

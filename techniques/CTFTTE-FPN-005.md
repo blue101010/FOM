@@ -25,6 +25,6 @@ The flag is stored in a cloud resource (S3 bucket, Secrets Manager, Lambda envir
 
 ## References
 
-- https://github.com/RhinoSecurityLabs/pacu
-- https://github.com/BishopFox/cloudfox
+- <https://github.com/RhinoSecurityLabs/pacu>
+- <https://github.com/BishopFox/cloudfox>
 - Add challenge write-up link

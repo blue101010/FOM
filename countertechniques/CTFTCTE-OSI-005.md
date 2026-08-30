@@ -28,5 +28,5 @@ Commit history and timestamps document when and where the secret was exposed.
 
 ## References
 
-- https://github.com/trufflesecurity/trufflehog
+- <https://github.com/trufflesecurity/trufflehog>
 - Add challenge write-up link

@@ -25,5 +25,5 @@ Bits of the secret are written into the least-significant bits of pixel channels
 
 ## References
 
-- https://github.com/zed-0xff/zsteg
+- <https://github.com/zed-0xff/zsteg>
 - Add challenge write-up link

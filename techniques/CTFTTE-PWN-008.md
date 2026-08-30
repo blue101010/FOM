@@ -24,5 +24,5 @@ The exploit must deliver shellcode under constraints: no nulls, alphanumeric onl
 
 ## References
 
-- https://github.com/Gallopsled/pwntools
+- <https://github.com/Gallopsled/pwntools>
 - Add challenge write-up link

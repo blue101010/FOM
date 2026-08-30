@@ -24,5 +24,5 @@ The flag is encoded in a layer's weights/embedding rather than any text field.
 
 ## References
 
-- https://github.com/lutzroeder/netron
+- <https://github.com/lutzroeder/netron>
 - Add challenge write-up link

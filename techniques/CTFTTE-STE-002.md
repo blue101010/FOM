@@ -25,5 +25,5 @@ A second file (zip, flag.txt) is concatenated after a valid image's end-of-image
 
 ## References
 
-- https://github.com/ReFirmLabs/binwalk
+- <https://github.com/ReFirmLabs/binwalk>
 - Add challenge write-up link

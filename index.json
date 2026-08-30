@@ -1,7 +1,7 @@
 {
   "model": "CTFT",
   "version": "1.2",
-  "generated": "2026-08-30T21:58:17+00:00",
+  "generated": "2026-08-30T22:35:39+00:00",
   "complements": "MITRE ATT&CK",
   "tactics": [
     {

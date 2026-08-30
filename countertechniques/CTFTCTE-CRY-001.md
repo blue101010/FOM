@@ -28,5 +28,5 @@ Documenting the parameter weakness explains how plaintext was recoverable withou
 
 ## References
 
-- https://github.com/RsaCtfTool/RsaCtfTool
+- <https://github.com/RsaCtfTool/RsaCtfTool>
 - Add challenge write-up link

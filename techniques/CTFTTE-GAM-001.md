@@ -23,5 +23,5 @@ The flag requires playing or solving many rounds of a networked game or custom p
 
 ## References
 
-- https://github.com/Gallopsled/pwntools
+- <https://github.com/Gallopsled/pwntools>
 - Add challenge write-up link

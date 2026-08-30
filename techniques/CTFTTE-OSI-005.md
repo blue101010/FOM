@@ -24,5 +24,5 @@ The flag/secret was committed to a public repo, paste, or document and later ass
 
 ## References
 
-- https://github.com/trufflesecurity/trufflehog
+- <https://github.com/trufflesecurity/trufflehog>
 - Add challenge write-up link

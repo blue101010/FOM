@@ -28,5 +28,5 @@ WebSocket sessions are full-duplex artifacts; frame capture requires the upgrade
 
 ## References
 
-- https://github.com/vi/websocat
+- <https://github.com/vi/websocat>
 - Add challenge write-up link

@@ -28,5 +28,5 @@ Instrumentation logs show where validation was disabled to enable capture.
 
 ## References
 
-- https://frida.re/
+- <https://frida.re/>
 - Add challenge write-up link

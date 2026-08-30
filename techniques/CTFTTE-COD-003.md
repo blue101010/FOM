@@ -24,5 +24,5 @@ The flag is awarded only after completing a very large number of stateful rounds
 
 ## References
 
-- https://github.com/Gallopsled/pwntools
+- <https://github.com/Gallopsled/pwntools>
 - Add challenge write-up link

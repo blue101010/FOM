@@ -24,5 +24,5 @@ The binary validates input against arithmetic/bitwise constraints rather than co
 
 ## References
 
-- https://github.com/Z3Prover/z3
+- <https://github.com/Z3Prover/z3>
 - Add challenge write-up link

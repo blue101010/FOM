@@ -25,5 +25,5 @@ Flattening, junk branches and opaque predicates make the real path hard to follo
 
 ## References
 
-- https://angr.io/
+- <https://angr.io/>
 - Add challenge write-up link

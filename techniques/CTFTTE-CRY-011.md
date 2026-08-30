@@ -23,5 +23,5 @@ The challenge emulates a protocol memory-leak flaw (Heartbleed-style); the flag 
 
 ## References
 
-- https://heartbleed.com/
+- <https://heartbleed.com/>
 - Add challenge write-up link

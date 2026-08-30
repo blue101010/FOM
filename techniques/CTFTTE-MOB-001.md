@@ -24,5 +24,5 @@ Keys/flags are embedded in resources, strings, or smali rather than fetched at r
 
 ## References
 
-- https://github.com/skylot/jadx
+- <https://github.com/skylot/jadx>
 - Add challenge write-up link

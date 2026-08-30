@@ -26,5 +26,5 @@ Flag data is written into file slack, unallocated clusters, or between partition
 
 ## References
 
-- https://github.com/ReFirmLabs/binwalk
+- <https://github.com/ReFirmLabs/binwalk>
 - Add challenge write-up link

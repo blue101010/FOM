@@ -25,5 +25,5 @@ Flag text is typed by a (simulated) USB keyboard; only HID report bytes — scan
 
 ## References
 
-- https://wiki.wireshark.org/CaptureSetup/USB
+- <https://wiki.wireshark.org/CaptureSetup/USB>
 - Add challenge write-up link

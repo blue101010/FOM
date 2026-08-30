@@ -29,5 +29,5 @@ During carving, signature-based recovery reconstructs files whose extension or h
 
 ## References
 
-- https://www.garykessler.net/library/file_sigs.html
+- <https://www.garykessler.net/library/file_sigs.html>
 - Add challenge write-up link

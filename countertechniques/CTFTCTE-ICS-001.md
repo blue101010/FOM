@@ -27,5 +27,5 @@ Register reads document the unauthenticated data exposure typical of Modbus.
 
 ## References
 
-- https://github.com/pymodbus-dev/pymodbus
+- <https://github.com/pymodbus-dev/pymodbus>
 - Add challenge write-up link

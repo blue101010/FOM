@@ -28,5 +28,5 @@ The automation pattern documents server interaction that is indistinguishable fr
 
 ## References
 
-- https://github.com/Gallopsled/pwntools
+- <https://github.com/Gallopsled/pwntools>
 - Add challenge write-up link

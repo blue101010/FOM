@@ -24,5 +24,5 @@ A seccomp BPF profile or AppArmor policy blocks the direct syscalls (e.g. `execv
 
 ## References
 
-- https://github.com/david942j/seccomp-tools
+- <https://github.com/david942j/seccomp-tools>
 - Add challenge write-up link

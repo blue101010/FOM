@@ -28,5 +28,5 @@ The pivot documents incomplete syscall coverage in the seccomp policy; a robust 
 
 ## References
 
-- https://github.com/david942j/seccomp-tools
+- <https://github.com/david942j/seccomp-tools>
 - Add challenge write-up link

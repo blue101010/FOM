@@ -27,5 +27,5 @@ Scripted game clients are indistinguishable from legitimate fast players; in pro
 
 ## References
 
-- https://github.com/Gallopsled/pwntools
+- <https://github.com/Gallopsled/pwntools>
 - Add challenge write-up link

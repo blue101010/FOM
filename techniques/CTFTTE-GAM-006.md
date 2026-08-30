@@ -23,5 +23,5 @@ A chatbot or choice-path bot hides the flag behind a specific interaction branch
 
 ## References
 
-- https://github.com/Gallopsled/pwntools
+- <https://github.com/Gallopsled/pwntools>
 - Add challenge write-up link

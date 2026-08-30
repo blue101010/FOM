@@ -103,7 +103,7 @@ engine.
   "indicators": ["IND-FOR-magic-mismatch", "IND-FOR-ext-type-conflict"], // -> Layer 2 retrieval
   "difficulty": 2,                                // 1..5, author-effort / obscurity
   "prevalence": 0.7,                              // 0..1, how common in real CTFs (retrieval prior)
-  "references": ["https://www.garykessler.net/library/file_sigs.html"]
+  "references": ["<https://www.garykessler.net/library/file_sigs.html"]>
 }
 ```
 
@@ -182,7 +182,7 @@ engine.
   "success_criteria": "Recovered file opens as its true type and yields the next artifact.",
   "fallbacks": ["CTFTCTE-FOR-appended-data", "CTFTCTE-STE-lsb"],  // next best playbooks
   "tools": ["TOOL-xxd", "TOOL-file", "TOOL-binwalk", "TOOL-python-struct"],
-  "references": ["https://www.garykessler.net/library/file_sigs.html"]
+  "references": ["<https://www.garykessler.net/library/file_sigs.html"]>
 }
 ```
 

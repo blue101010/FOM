@@ -26,5 +26,5 @@ The flag is transmitted or stored as a modulated RF signal (AM/FM/FSK/PSK), an S
 
 ## References
 
-- https://github.com/jopohl/urh
+- <https://github.com/jopohl/urh>
 - Add challenge write-up link

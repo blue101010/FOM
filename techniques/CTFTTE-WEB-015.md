@@ -24,5 +24,5 @@ The flag hides behind a vulnerable WordPress plugin/theme or weak admin credenti
 
 ## References
 
-- https://wpscan.com/wordpress-security-scanner
+- <https://wpscan.com/wordpress-security-scanner>
 - Add challenge write-up link

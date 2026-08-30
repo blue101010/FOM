@@ -24,5 +24,5 @@ The flag is baked into a container layer or left in a pushed image's history.
 
 ## References
 
-- https://github.com/wagoodman/dive
+- <https://github.com/wagoodman/dive>
 - Add challenge write-up link

@@ -28,5 +28,5 @@ Token validation logs reveal accepted tokens with unexpected alg/signature.
 
 ## References
 
-- https://github.com/ticarpi/jwt_tool
+- <https://github.com/ticarpi/jwt_tool>
 - Add challenge write-up link

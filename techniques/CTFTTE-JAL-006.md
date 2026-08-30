@@ -24,5 +24,5 @@ The flag is on the Windows host or on the other side of a WSL interop boundary; 
 
 ## References
 
-- https://learn.microsoft.com/en-us/windows/wsl/
+- <https://learn.microsoft.com/en-us/windows/wsl/>
 - Add challenge write-up link

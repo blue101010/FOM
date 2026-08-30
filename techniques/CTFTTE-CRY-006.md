@@ -23,5 +23,5 @@ The flag is buried under stacked encodings (base64/base85/base32/hex/url) to loo
 
 ## References
 
-- https://gchq.github.io/CyberChef/
+- <https://gchq.github.io/CyberChef/>
 - Add challenge write-up link

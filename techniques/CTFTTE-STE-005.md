@@ -24,5 +24,5 @@ Zero-width or whitespace characters encode bits inside otherwise normal text.
 
 ## References
 
-- https://gchq.github.io/CyberChef/
+- <https://gchq.github.io/CyberChef/>
 - Add challenge write-up link

@@ -24,5 +24,5 @@ A stripped, statically linked binary forces a return-oriented chain instead of a
 
 ## References
 
-- https://github.com/JonathanSalwan/ROPgadget
+- <https://github.com/JonathanSalwan/ROPgadget>
 - Add challenge write-up link

@@ -25,5 +25,5 @@ The flag sits in an LVM volume assembled from scattered physical volumes or frag
 
 ## References
 
-- https://man7.org/linux/man-pages/man8/lvm.8.html
+- <https://man7.org/linux/man-pages/man8/lvm.8.html>
 - Add challenge write-up link

@@ -25,5 +25,5 @@ An internal DB service is misconfigured (no auth, weak credentials); the flag is
 
 ## References
 
-- https://redis.io/docs/latest/commands/
+- <https://redis.io/docs/latest/commands/>
 - Add challenge write-up link

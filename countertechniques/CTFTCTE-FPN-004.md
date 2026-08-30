@@ -29,5 +29,5 @@ The two-stage chain documents a defence-in-depth failure: neither the service ha
 
 ## References
 
-- https://github.com/stealthcopter/deepce
+- <https://github.com/stealthcopter/deepce>
 - Add challenge write-up link

@@ -27,5 +27,5 @@ Hook traces document which checks gated the flag and how they were satisfied.
 
 ## References
 
-- https://frida.re/
+- <https://frida.re/>
 - Add challenge write-up link

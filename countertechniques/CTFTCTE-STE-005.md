@@ -28,5 +28,5 @@ Unicode code-point inspection reveals non-printing characters that should not ap
 
 ## References
 
-- https://gchq.github.io/CyberChef/
+- <https://gchq.github.io/CyberChef/>
 - Add challenge write-up link

@@ -27,5 +27,5 @@ An encoding chain is recoverable without a key and is distinguished from genuine
 
 ## References
 
-- https://gchq.github.io/CyberChef/
+- <https://gchq.github.io/CyberChef/>
 - Add challenge write-up link

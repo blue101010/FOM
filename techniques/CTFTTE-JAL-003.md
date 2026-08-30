@@ -24,5 +24,5 @@ The flag resides on the host filesystem; the player lands inside a container wit
 
 ## References
 
-- https://github.com/stealthcopter/deepce
+- <https://github.com/stealthcopter/deepce>
 - Add challenge write-up link

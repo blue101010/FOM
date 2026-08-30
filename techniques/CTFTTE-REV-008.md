@@ -24,5 +24,5 @@ The binary is compiled Haskell (GHC runtime); closures and lazy evaluation obscu
 
 ## References
 
-- https://github.com/radareorg/radare2
+- <https://github.com/radareorg/radare2>
 - Add challenge write-up link

@@ -23,5 +23,5 @@ The flag is stored across Modbus holding/input registers on a simulated PLC.
 
 ## References
 
-- https://github.com/pymodbus-dev/pymodbus
+- <https://github.com/pymodbus-dev/pymodbus>
 - Add challenge write-up link

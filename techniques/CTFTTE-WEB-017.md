@@ -24,5 +24,5 @@ The flag app is served only under a specific Host header or virtual host.
 
 ## References
 
-- https://github.com/ffuf/ffuf
+- <https://github.com/ffuf/ffuf>
 - Add challenge write-up link

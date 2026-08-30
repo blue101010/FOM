@@ -23,5 +23,5 @@ The flag is delivered to an admin/bot that visits attacker-controlled content; X
 
 ## References
 
-- https://portswigger.net/web-security/cross-site-scripting
+- <https://portswigger.net/web-security/cross-site-scripting>
 - Add challenge write-up link

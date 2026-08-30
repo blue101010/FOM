@@ -24,5 +24,5 @@ The flag hides in bitplanes or palette indexes of an image (LSB across planes, p
 
 ## References
 
-- https://github.com/zed-0xff/zsteg
+- <https://github.com/zed-0xff/zsteg>
 - Add challenge write-up link

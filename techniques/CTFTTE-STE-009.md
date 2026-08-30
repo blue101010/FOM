@@ -25,4 +25,4 @@ single top-level metadata listing is incomplete.
 
 ## References
 
-- https://exiftool.org/
+- <https://exiftool.org/>

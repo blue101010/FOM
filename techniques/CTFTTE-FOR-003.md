@@ -25,5 +25,5 @@ Author rewrites file timestamps so the relevant artifact blends into a noisy tim
 
 ## References
 
-- https://github.com/sleuthkit/sleuthkit
+- <https://github.com/sleuthkit/sleuthkit>
 - Add challenge write-up link

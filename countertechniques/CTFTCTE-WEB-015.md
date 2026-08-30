@@ -28,5 +28,5 @@ CMS logs record plugin-abuse patterns; version banners pin the vulnerable surfac
 
 ## References
 
-- https://wpscan.com/wordpress-security-scanner
+- <https://wpscan.com/wordpress-security-scanner>
 - Add challenge write-up link

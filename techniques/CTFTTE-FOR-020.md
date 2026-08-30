@@ -25,5 +25,5 @@ A partition is LUKS-encrypted and the passphrase (or a keyslot) is part of the p
 
 ## References
 
-- https://gitlab.com/cryptsetup/cryptsetup
+- <https://gitlab.com/cryptsetup/cryptsetup>
 - Add challenge write-up link

@@ -25,5 +25,5 @@ The flag is root-only; escalation requires chaining SUID binaries, ACLs, sudo ru
 
 ## References
 
-- https://gtfobins.github.io/
+- <https://gtfobins.github.io/>
 - Add challenge write-up link

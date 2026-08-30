@@ -23,5 +23,5 @@ The target's presence is split across many platforms under varying handles.
 
 ## References
 
-- https://github.com/sherlock-project/sherlock
+- <https://github.com/sherlock-project/sherlock>
 - Add challenge write-up link

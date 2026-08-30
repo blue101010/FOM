@@ -24,5 +24,5 @@ The flag is encoded in a nonstandard alphabet: Braille, cetacean/whale-speak, or
 
 ## References
 
-- https://www.dcode.fr/
+- <https://www.dcode.fr/>
 - Add challenge write-up link

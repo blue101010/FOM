@@ -28,5 +28,5 @@ The escape documents a deliberate misconfiguration (excessive capability, expose
 
 ## References
 
-- https://github.com/stealthcopter/deepce
+- <https://github.com/stealthcopter/deepce>
 - Add challenge write-up link

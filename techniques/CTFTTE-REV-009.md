@@ -25,5 +25,5 @@ The flag check is a raw asm snippet or mini shellcode; brevity and tricks obscur
 
 ## References
 
-- https://www.nasm.us/
+- <https://www.nasm.us/>
 - Add challenge write-up link
