@@ -1,0 +1,215 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ctft/v3/schemas/playbook.schema.json",
+  "title": "CTFT Playbook (executable counter-technique)",
+  "type": "object",
+  "required": [
+    "id",
+    "schema_version",
+    "name",
+    "domain",
+    "counters",
+    "triggers",
+    "steps",
+    "priority"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^CTFTCTE-[A-Z]{3}-[0-9]{3}$"
+    },
+    "schema_version": {
+      "const": "3.0"
+    },
+    "name": {
+      "type": "string"
+    },
+    "tactic": {
+      "type": "string",
+      "pattern": "^CTFT-TA-[A-Z]{3}$",
+      "deprecated": true,
+      "description": "Legacy name of the subject axis, kept as a stable compatibility alias. Use `domain`."
+    },
+    "counters": {
+      "type": "string",
+      "pattern": "^CTFTTE-[A-Z]{3}-[0-9]{3}$"
+    },
+    "attack_related": {
+      "type": "array",
+      "description": "MITRE ATT&CK techniques potentially related to this playbook; rendered on the counter-technique page as a Related MITRE ATT&CK table.",
+      "items": {
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^T[0-9]{4}(\\.[0-9]{3})?$"
+          },
+          "name": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "triggers": {
+      "type": "object",
+      "properties": {
+        "all_of": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "any_of": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "none_of": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "preconditions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "desc"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "desc": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "inputs": {
+      "type": "object"
+    },
+    "outputs": {
+      "type": "object"
+    },
+    "steps": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "action"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "action": {
+            "type": "string"
+          },
+          "tool": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "produces": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "validates": {
+            "type": "string"
+          },
+          "success_when": {
+            "type": "string"
+          },
+          "on_true": {
+            "type": "string"
+          },
+          "on_false": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "priority": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 10
+    },
+    "cost": {
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "automation": {
+      "enum": [
+        "full",
+        "assisted",
+        "manual"
+      ]
+    },
+    "confidence_prior": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "false_positives": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "success_criteria": {
+      "type": "string"
+    },
+    "fallbacks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tools": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^TOOL-"
+      }
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "domain": {
+      "type": "string",
+      "pattern": "^[A-Z]{3}$",
+      "description": "Subject axis (ex-`tactic`). Derived from the ID prefix by v3/catalog_audit.py — never hand-written. See SCHEMA_V3 §3.6."
+    },
+    "role": {
+      "const": "resolution",
+      "description": "Ontological role. The public key stays `CTFTCTE-*` and the directory stays `countertechniques/`; only the vocabulary moves (archive A-5)."
+    }
+  },
+  "additionalProperties": false
+}

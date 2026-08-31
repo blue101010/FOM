@@ -1,6 +1,6 @@
 {
   "type": "bundle",
-  "id": "bundle--a8d95e65-1139-58aa-bcfa-326768e2dfb8",
+  "id": "bundle--020e08e3-f4d8-5a30-871f-78af3826957b",
   "objects": [
     {
       "type": "identity",
@@ -10,7 +10,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "name": "CTFT Project",
       "identity_class": "organization",
-      "description": "Capture-The-Flag Techniques - complementary to MITRE ATT&CK, generalized from FOM."
+      "description": "Capture-The-Flag Techniques - an ontology of CTF solving behaviour. Relates to MITRE ATT&CK, CAPEC and CWE as per-entry anchors; not a parallel ATT&CK. Generalized from FOM."
     },
     {
       "type": "x-ctft-tactic",
@@ -21,6 +21,7 @@
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "Cloud",
       "x_ctft_shortname": "cld",
+      "x_ctft_domain": "CLD",
       "description": "Cloud misconfiguration concealment and enumeration-based recovery. (HTB: Cloud)",
       "external_references": [
         {
@@ -37,7 +38,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTTE-CLD-001 - Misconfigured object-storage exposure",
-      "description": "The flag object sits in a world-readable or weakly-named bucket the author assumes is private. | ATT&CK complementarity: Complements T1530 (Data from Cloud Storage) with CTF enumeration procedure.",
+      "description": "The flag object sits in a world-readable or weakly-named bucket the author assumes is private.",
       "kill_chain_phases": [
         {
           "kill_chain_name": "ctft",
@@ -45,11 +46,17 @@
         }
       ],
       "x_ctft_category": "CLD",
+      "x_ctft_domain": "CLD",
       "x_ctft_role": "design-hide",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTTE-CLD-001"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1530",
+          "description": "Data from Cloud Storage Object"
         }
       ]
     },
@@ -61,13 +68,19 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-CLD-001 - Enumerate and list public buckets",
-      "description": "OFFENSIVE (solver): Enumerate bucket names and list/download objects anonymously. || FORENSIC (analyst): Storage access logs document anonymous reads of the exposed objects.",
+      "description": "Enumerate bucket names and list/download objects anonymously.",
       "x_ctft_category": "CLD",
-      "x_ctft_role": "counter-technique",
+      "x_ctft_domain": "CLD",
+      "x_ctft_role": "resolution",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTCTE-CLD-001"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1530",
+          "description": "Data from Cloud Storage Object"
         }
       ]
     },
@@ -79,9 +92,10 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
       "source_ref": "course-of-action--75e0ea7b-30d7-5b8d-8273-924bf7757782",
       "target_ref": "attack-pattern--cc4a7f4b-cdb3-59d0-90e0-381f3fbb06ae",
-      "description": "Counter-technique recovers/defeats the paired design technique."
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     },
     {
       "type": "attack-pattern",
@@ -91,7 +105,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTTE-CLD-002 - Over-permissive IAM role",
-      "description": "A role/policy grants more than intended, letting solvers pivot to the flag resource. | ATT&CK complementarity: Complements T1078.004 (Cloud Accounts) with CTF permission-mapping steps.",
+      "description": "A role/policy grants more than intended, letting solvers pivot to the flag resource.",
       "kill_chain_phases": [
         {
           "kill_chain_name": "ctft",
@@ -99,11 +113,17 @@
         }
       ],
       "x_ctft_category": "CLD",
+      "x_ctft_domain": "CLD",
       "x_ctft_role": "design-hide",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTTE-CLD-002"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1078.004",
+          "description": "Cloud Accounts"
         }
       ]
     },
@@ -115,13 +135,19 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-CLD-002 - Enumerate and assume reachable roles",
-      "description": "OFFENSIVE (solver): Enumerate effective permissions and assume the role to reach the protected resource. || FORENSIC (analyst): CloudTrail-style logs show the privilege enumeration and assume-role calls.",
+      "description": "Enumerate effective permissions and assume the role to reach the protected resource.",
       "x_ctft_category": "CLD",
-      "x_ctft_role": "counter-technique",
+      "x_ctft_domain": "CLD",
+      "x_ctft_role": "resolution",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTCTE-CLD-002"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1078.004",
+          "description": "Cloud Accounts"
         }
       ]
     },
@@ -133,9 +159,10 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
       "source_ref": "course-of-action--f5f88319-99d2-58c3-a62e-aa744d770626",
       "target_ref": "attack-pattern--44ce10e1-a301-52c1-aa8d-fa2230991b78",
-      "description": "Counter-technique recovers/defeats the paired design technique."
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     },
     {
       "type": "attack-pattern",
@@ -145,7 +172,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTTE-CLD-003 - Instance metadata service exposure",
-      "description": "An SSRF-able app sits beside the metadata endpoint holding role credentials. | ATT&CK complementarity: Complements T1552.005 (Cloud Instance Metadata API) with the SSRF retrieval recipe.",
+      "description": "An SSRF-able app sits beside the metadata endpoint holding role credentials.",
       "kill_chain_phases": [
         {
           "kill_chain_name": "ctft",
@@ -153,11 +180,17 @@
         }
       ],
       "x_ctft_category": "CLD",
+      "x_ctft_domain": "CLD",
       "x_ctft_role": "design-hide",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTTE-CLD-003"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1552.005",
+          "description": "Cloud Instance Metadata API"
         }
       ]
     },
@@ -169,13 +202,19 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-CLD-003 - Retrieve credentials via SSRF to IMDS",
-      "description": "OFFENSIVE (solver): Force a request to the metadata endpoint and harvest temporary credentials. || FORENSIC (analyst): Metadata requests from an application context flag SSRF-to-IMDS abuse.",
+      "description": "Force a request to the metadata endpoint and harvest temporary credentials.",
       "x_ctft_category": "CLD",
-      "x_ctft_role": "counter-technique",
+      "x_ctft_domain": "CLD",
+      "x_ctft_role": "resolution",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTCTE-CLD-003"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1552.005",
+          "description": "Cloud Instance Metadata API"
         }
       ]
     },
@@ -187,9 +226,10 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
       "source_ref": "course-of-action--e8988315-d9bf-52b7-83bd-1648c7634f30",
       "target_ref": "attack-pattern--c2485c69-a3b0-504b-9804-3fc07454b864",
-      "description": "Counter-technique recovers/defeats the paired design technique."
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     },
     {
       "type": "attack-pattern",
@@ -199,7 +239,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTTE-CLD-004 - Secrets in function config / layers",
-      "description": "Secrets/flags live in environment variables, layers, or build artifacts of a function. | ATT&CK complementarity: No direct ATT&CK technique.",
+      "description": "Secrets/flags live in environment variables, layers, or build artifacts of a function.",
       "kill_chain_phases": [
         {
           "kill_chain_name": "ctft",
@@ -207,11 +247,17 @@
         }
       ],
       "x_ctft_category": "CLD",
+      "x_ctft_domain": "CLD",
       "x_ctft_role": "design-hide",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTTE-CLD-004"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1552",
+          "description": "Unsecured Credentials"
         }
       ]
     },
@@ -223,13 +269,19 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-CLD-004 - Dump serverless configuration and layers",
-      "description": "OFFENSIVE (solver): Read the function configuration, environment and layers to extract embedded secrets. || FORENSIC (analyst): Configuration extraction documents secrets shipped in the deployment package.",
+      "description": "Read the function configuration, environment and layers to extract embedded secrets.",
       "x_ctft_category": "CLD",
-      "x_ctft_role": "counter-technique",
+      "x_ctft_domain": "CLD",
+      "x_ctft_role": "resolution",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTCTE-CLD-004"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1552",
+          "description": "Unsecured Credentials"
         }
       ]
     },
@@ -241,9 +293,10 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
       "source_ref": "course-of-action--3958ffe2-8247-5593-8c01-c69677516b49",
       "target_ref": "attack-pattern--04ae93c3-b2c9-52b4-88dc-75ba0492f8bb",
-      "description": "Counter-technique recovers/defeats the paired design technique."
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     },
     {
       "type": "attack-pattern",
@@ -253,7 +306,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTTE-CLD-005 - Container image / registry leak",
-      "description": "The flag is baked into a container layer or left in a pushed image's history. | ATT&CK complementarity: No direct ATT&CK technique.",
+      "description": "The flag is baked into a container layer or left in a pushed image's history.",
       "kill_chain_phases": [
         {
           "kill_chain_name": "ctft",
@@ -261,11 +314,17 @@
         }
       ],
       "x_ctft_category": "CLD",
+      "x_ctft_domain": "CLD",
       "x_ctft_role": "design-hide",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTTE-CLD-005"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1613",
+          "description": "Container and Resource Discovery"
         }
       ]
     },
@@ -277,13 +336,19 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-CLD-005 - Pull and inspect image layers",
-      "description": "OFFENSIVE (solver): Pull the image and inspect layer history/filesystem for the artifact. || FORENSIC (analyst): Layer diffing reveals files and history entries containing the secret.",
+      "description": "Pull the image and inspect layer history/filesystem for the artifact.",
       "x_ctft_category": "CLD",
-      "x_ctft_role": "counter-technique",
+      "x_ctft_domain": "CLD",
+      "x_ctft_role": "resolution",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTCTE-CLD-005"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1613",
+          "description": "Container and Resource Discovery"
         }
       ]
     },
@@ -295,9 +360,211 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
       "source_ref": "course-of-action--e4cc5739-0ea9-5b31-a7e7-a5bf5a6eac9e",
       "target_ref": "attack-pattern--9ca2d6e3-1333-5307-90b8-3a84d597beef",
-      "description": "Counter-technique recovers/defeats the paired design technique."
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--6f8a77c7-0ec6-581c-9d03-0d0514cc08d2",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-CLD-006 - Cross-account role chaining / trust abuse",
+      "description": "The flag is in a second AWS account reachable only by chaining role assumptions through trust relationships.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "cld"
+        }
+      ],
+      "x_ctft_category": "CLD",
+      "x_ctft_domain": "CLD",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-CLD-006"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1078.004",
+          "description": "Cloud Accounts"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--a36101cc-e9a1-5987-a3a7-101eead86f64",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-CLD-006 - Chain sts:AssumeRole across accounts",
+      "description": "Enumerate roles, chain sts:AssumeRole across accounts, and reach the target resources.",
+      "x_ctft_category": "CLD",
+      "x_ctft_domain": "CLD",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-CLD-006"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1078.004",
+          "description": "Cloud Accounts"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--6b78f75a-7f89-5f77-92af-3b131991e78b",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--a36101cc-e9a1-5987-a3a7-101eead86f64",
+      "target_ref": "attack-pattern--6f8a77c7-0ec6-581c-9d03-0d0514cc08d2",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--fed8f553-f2aa-595a-beac-fd9ad8874a25",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-CLD-007 - Cloud NoSQL-store misconfiguration",
+      "description": "A cloud NoSQL store (DynamoDB or similar) is exposed or over-permissioned and holds the flag.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "cld"
+        }
+      ],
+      "x_ctft_category": "CLD",
+      "x_ctft_domain": "CLD",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-CLD-007"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1213",
+          "description": "Data from Information Repositories"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--e00c5788-a023-5c1c-9656-d477f05b2a7d",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-CLD-007 - Enumerate and query exposed cloud databases",
+      "description": "Enumerate the table/index, query it with the available permissions, and read the flag.",
+      "x_ctft_category": "CLD",
+      "x_ctft_domain": "CLD",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-CLD-007"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1213",
+          "description": "Data from Information Repositories"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--c2ede0f5-aefc-5da0-9b53-cf6f0125ce38",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--e00c5788-a023-5c1c-9656-d477f05b2a7d",
+      "target_ref": "attack-pattern--fed8f553-f2aa-595a-beac-fd9ad8874a25",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--fec78781-dd3d-5705-9090-f336247a3cf6",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-CLD-008 - Azure management-plane misconfiguration",
+      "description": "Leaked Azure credentials unlock management-plane access where the flag sits (AD users, VMs, storage).",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "cld"
+        }
+      ],
+      "x_ctft_category": "CLD",
+      "x_ctft_domain": "CLD",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-CLD-008"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1078.004",
+          "description": "Cloud Accounts"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--2501a9e4-e212-511c-8c5f-dddc5e1678c1",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-CLD-008 - Enumerate Azure AD/VM/storage from credentials",
+      "description": "Use the credentials against the management plane: enumerate AD, VMs and storage accounts, and extract the flag.",
+      "x_ctft_category": "CLD",
+      "x_ctft_domain": "CLD",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-CLD-008"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1078.004",
+          "description": "Cloud Accounts"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--59b63e26-0d63-5546-8209-29ad72e626e7",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--2501a9e4-e212-511c-8c5f-dddc5e1678c1",
+      "target_ref": "attack-pattern--fec78781-dd3d-5705-9090-f336247a3cf6",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     }
   ]
 }

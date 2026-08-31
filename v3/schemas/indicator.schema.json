@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ctft/v3/schemas/indicator.schema.json",
+  "title": "CTFT Indicator (observable signal)",
+  "type": "object",
+  "required": ["id", "schema_version", "name", "applies_to", "signal_type", "weight"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^IND-[A-Z]{3}-" },
+    "schema_version": { "const": "3.0" },
+    "name": { "type": "string" },
+    "applies_to": { "type": "array", "items": { "type": "string" } },
+    "signal_type": { "enum": ["boolean", "numeric", "categorical"] },
+    "detector": {
+      "type": "object",
+      "properties": {
+        "method": { "enum": ["tool", "regex", "heuristic", "manual"] },
+        "tool": { "type": ["string", "null"] },
+        "expr": { "type": "string" }
+      }
+    },
+    "weight": { "type": "number", "minimum": 0, "maximum": 1 }
+  },
+  "additionalProperties": false
+}

@@ -1,6 +1,6 @@
 {
   "type": "bundle",
-  "id": "bundle--6e8d290a-efdd-551e-93bb-a78531add7a4",
+  "id": "bundle--c80fde06-6e72-5ed9-b098-4f15d7ebb8c3",
   "objects": [
     {
       "type": "identity",
@@ -10,7 +10,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "name": "CTFT Project",
       "identity_class": "organization",
-      "description": "Capture-The-Flag Techniques - complementary to MITRE ATT&CK, generalized from FOM."
+      "description": "Capture-The-Flag Techniques - an ontology of CTF solving behaviour. Relates to MITRE ATT&CK, CAPEC and CWE as per-entry anchors; not a parallel ATT&CK. Generalized from FOM."
     },
     {
       "type": "x-ctft-tactic",
@@ -21,7 +21,8 @@
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "Steganography",
       "x_ctft_shortname": "ste",
-      "description": "Embedding data in carriers (image/audio/text) and extracting it. (HTB: Forensics/Misc (Stego))",
+      "x_ctft_domain": "STE",
+      "description": "Challenges where a payload is embedded inside an otherwise valid carrier — image bitplanes, audio spectrograms, metadata containers, invisible characters or the wording of a text — so that the carrier stays openable and looks untouched. Recovery works on the carrier's representation rather than its content. (HTB: Forensics/Misc (Stego))",
       "external_references": [
         {
           "source_name": "ctft",
@@ -37,7 +38,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTTE-STE-001 - LSB image steganography",
-      "description": "Bits of the secret are written into the least-significant bits of pixel channels, leaving the image visually unchanged. | ATT&CK complementarity: No ATT&CK equivalent; pure steganalysis.",
+      "description": "Bits of the secret are written into the least-significant bits of pixel channels, leaving the image visually unchanged.",
       "kill_chain_phases": [
         {
           "kill_chain_name": "ctft",
@@ -45,11 +46,17 @@
         }
       ],
       "x_ctft_category": "STE",
+      "x_ctft_domain": "STE",
       "x_ctft_role": "design-hide",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTTE-STE-001"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1001.002",
+          "description": "Steganography"
         }
       ]
     },
@@ -61,13 +68,19 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-STE-001 - Extract least-significant-bit payloads",
-      "description": "OFFENSIVE (solver): Run LSB extractors across channels/bit-planes; visual bit-plane inspection reveals embedded structure. || FORENSIC (analyst): Bit-plane and chi-square analysis flags non-natural LSB distributions characteristic of embedding.",
+      "description": "Run LSB extractors across channels/bit-planes; visual bit-plane inspection reveals embedded structure.",
       "x_ctft_category": "STE",
-      "x_ctft_role": "counter-technique",
+      "x_ctft_domain": "STE",
+      "x_ctft_role": "resolution",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTCTE-STE-001"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1001.002",
+          "description": "Steganography"
         }
       ]
     },
@@ -79,9 +92,10 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
       "source_ref": "course-of-action--05aced62-880f-5a5f-ac42-f2a200a73246",
       "target_ref": "attack-pattern--1630d465-1f57-55ae-a7f9-e448e696e392",
-      "description": "Counter-technique recovers/defeats the paired design technique."
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     },
     {
       "type": "attack-pattern",
@@ -91,7 +105,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTTE-STE-002 - Appended data / polyglot after EOF",
-      "description": "A second file (zip, flag.txt) is concatenated after a valid image's end-of-image marker, so viewers ignore it. | ATT&CK complementarity: No ATT&CK equivalent.",
+      "description": "A second file (zip, flag.txt) is concatenated after a valid image's end-of-image marker, so viewers ignore it.",
       "kill_chain_phases": [
         {
           "kill_chain_name": "ctft",
@@ -99,11 +113,17 @@
         }
       ],
       "x_ctft_category": "STE",
+      "x_ctft_domain": "STE",
       "x_ctft_role": "design-hide",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTTE-STE-002"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1001.002",
+          "description": "Steganography"
         }
       ]
     },
@@ -115,13 +135,19 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-STE-002 - Detect and split appended/embedded files",
-      "description": "OFFENSIVE (solver): Scan for embedded signatures and carve the trailing file; unzip/extract it. || FORENSIC (analyst): Entropy + signature scanning reveals additional file structures beyond the declared container length.",
+      "description": "Scan for embedded signatures and carve the trailing file; unzip/extract it.",
       "x_ctft_category": "STE",
-      "x_ctft_role": "counter-technique",
+      "x_ctft_domain": "STE",
+      "x_ctft_role": "resolution",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTCTE-STE-002"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1001.002",
+          "description": "Steganography"
         }
       ]
     },
@@ -133,9 +159,10 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
       "source_ref": "course-of-action--543b6b3c-17a5-5653-8175-78b453234f73",
       "target_ref": "attack-pattern--b3ec85fb-cae9-559d-9d50-2f04af6b13f9",
-      "description": "Counter-technique recovers/defeats the paired design technique."
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     },
     {
       "type": "attack-pattern",
@@ -145,7 +172,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTTE-STE-003 - Audio spectrogram hiding",
-      "description": "Text or a QR is drawn into frequency content so it is inaudible but visible in a spectrogram. | ATT&CK complementarity: No ATT&CK equivalent.",
+      "description": "Text or a QR is drawn into frequency content so it is inaudible but visible in a spectrogram.",
       "kill_chain_phases": [
         {
           "kill_chain_name": "ctft",
@@ -153,11 +180,17 @@
         }
       ],
       "x_ctft_category": "STE",
+      "x_ctft_domain": "STE",
       "x_ctft_role": "design-hide",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTTE-STE-003"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1001.002",
+          "description": "Steganography"
         }
       ]
     },
@@ -169,13 +202,19 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-STE-003 - Reveal data in the audio spectrogram",
-      "description": "OFFENSIVE (solver): Open the file in a spectrogram view and adjust window/contrast to read the embedded content. || FORENSIC (analyst): Spectral analysis exposes synthetic frequency artifacts that natural audio would not contain.",
+      "description": "Open the file in a spectrogram view and adjust window/contrast to read the embedded content.",
       "x_ctft_category": "STE",
-      "x_ctft_role": "counter-technique",
+      "x_ctft_domain": "STE",
+      "x_ctft_role": "resolution",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTCTE-STE-003"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1001.002",
+          "description": "Steganography"
         }
       ]
     },
@@ -187,9 +226,10 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
       "source_ref": "course-of-action--fd83cb66-705b-507f-9209-5ea2fd0d7782",
       "target_ref": "attack-pattern--1ae42870-faaf-5446-ae48-875c9dd92e02",
-      "description": "Counter-technique recovers/defeats the paired design technique."
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     },
     {
       "type": "attack-pattern",
@@ -199,7 +239,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTTE-STE-004 - Metadata / EXIF embedding",
-      "description": "The secret sits in EXIF/XMP/ID3 comment, GPS or maker-note fields rather than the visible content. | ATT&CK complementarity: No ATT&CK equivalent.",
+      "description": "The secret sits in EXIF/XMP/ID3 comment, GPS or maker-note fields rather than the visible content.",
       "kill_chain_phases": [
         {
           "kill_chain_name": "ctft",
@@ -207,11 +247,17 @@
         }
       ],
       "x_ctft_category": "STE",
+      "x_ctft_domain": "STE",
       "x_ctft_role": "design-hide",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTTE-STE-004"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1001.002",
+          "description": "Steganography"
         }
       ]
     },
@@ -223,13 +269,19 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-STE-004 - Extract concealed metadata fields",
-      "description": "OFFENSIVE (solver): Dump all metadata and inspect comment/user fields and GPS tags. || FORENSIC (analyst): Full metadata extraction surfaces author-injected fields and inconsistencies versus the file's apparent origin.",
+      "description": "Dump all metadata and inspect comment/user fields and GPS tags.",
       "x_ctft_category": "STE",
-      "x_ctft_role": "counter-technique",
+      "x_ctft_domain": "STE",
+      "x_ctft_role": "resolution",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTCTE-STE-004"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1001.002",
+          "description": "Steganography"
         }
       ]
     },
@@ -241,9 +293,10 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
       "source_ref": "course-of-action--daa08734-4b54-54f3-bb79-83523b75839f",
       "target_ref": "attack-pattern--0716f798-5c4e-5878-a2e7-a41a756260ab",
-      "description": "Counter-technique recovers/defeats the paired design technique."
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     },
     {
       "type": "attack-pattern",
@@ -253,7 +306,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTTE-STE-005 - Zero-width / whitespace text steganography",
-      "description": "Zero-width or whitespace characters encode bits inside otherwise normal text. | ATT&CK complementarity: No ATT&CK equivalent.",
+      "description": "Zero-width or whitespace characters encode bits inside otherwise normal text.",
       "kill_chain_phases": [
         {
           "kill_chain_name": "ctft",
@@ -261,11 +314,17 @@
         }
       ],
       "x_ctft_category": "STE",
+      "x_ctft_domain": "STE",
       "x_ctft_role": "design-hide",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTTE-STE-005"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1001.002",
+          "description": "Steganography"
         }
       ]
     },
@@ -277,13 +336,19 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-STE-005 - Decode invisible-character payloads",
-      "description": "OFFENSIVE (solver): Normalize/inspect code points and map zero-width sequences back to bits/characters. || FORENSIC (analyst): Unicode code-point inspection reveals non-printing characters that should not appear in plain prose.",
+      "description": "Normalize/inspect code points and map zero-width sequences back to bits/characters.",
       "x_ctft_category": "STE",
-      "x_ctft_role": "counter-technique",
+      "x_ctft_domain": "STE",
+      "x_ctft_role": "resolution",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTCTE-STE-005"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1001.002",
+          "description": "Steganography"
         }
       ]
     },
@@ -295,9 +360,412 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
       "source_ref": "course-of-action--bdbf929b-0c2f-5f60-99ae-ddc622fb366e",
       "target_ref": "attack-pattern--b9cbf437-e053-5402-aa1a-585bc76dface",
-      "description": "Counter-technique recovers/defeats the paired design technique."
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--342d02f9-e8eb-505b-9a84-8232ae58db80",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-STE-006 - Conceal information within digital media with **linguistic** steganography",
+      "description": "Conceal information within digital media with linguistic steganography",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "ste"
+        }
+      ],
+      "x_ctft_category": "STE",
+      "x_ctft_domain": "STE",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-STE-006"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1001.002",
+          "description": "Steganography"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--0f80bc8f-390c-571c-bcb8-d3ceb7f4a84c",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-STE-006 - Detect and decode linguistic steganography",
+      "description": "Linguistic steganography hides the payload in the choice of words, not in the bytes that carry them. Work on the text as a sequence of decisions: first letters of each line, sentence or paragraph (acrostic), every n-th word, synonym substitution against a plausible baseline, or deliberate misspellings. Reconstruct the candidate string for each rule and test it against the expected flag format before trying the next.",
+      "x_ctft_category": "STE",
+      "x_ctft_domain": "STE",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-STE-006"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1001.002",
+          "description": "Steganography"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--ba50d18b-1d7e-5e35-bf03-99d534d19dbc",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--0f80bc8f-390c-571c-bcb8-d3ceb7f4a84c",
+      "target_ref": "attack-pattern--342d02f9-e8eb-505b-9a84-8232ae58db80",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--e1e7b9a5-16e6-59e4-91cb-93e542931c18",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-STE-007 - Conceal information within digital media with **technical** steganography",
+      "description": "Conceal information within digital media with technical steganography.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "ste"
+        }
+      ],
+      "x_ctft_category": "STE",
+      "x_ctft_domain": "STE",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-STE-007"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1001.002",
+          "description": "Steganography"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--91d2d608-954f-5940-bf6a-309702ec426a",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-STE-007 - Detect and extract technical steganography",
+      "description": "Technical steganography hides the payload in the carrier's physical or format-level structure rather than in its meaning. Enumerate the containers the format allows: appended data after EOF, unused header fields, palette or colour-table entries, chunk padding, and metadata segments. Compare the file against a clean file produced by the same encoder — the diff isolates the carrier.",
+      "x_ctft_category": "STE",
+      "x_ctft_domain": "STE",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-STE-007"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1001.002",
+          "description": "Steganography"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--dff256f6-1f14-5792-831e-6be700b844e5",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--91d2d608-954f-5940-bf6a-309702ec426a",
+      "target_ref": "attack-pattern--e1e7b9a5-16e6-59e4-91cb-93e542931c18",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--3a0a93d8-7dc2-5a33-9bda-2bbda1f1e7f4",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-STE-008 - Conceal via **technical text** steganography",
+      "description": "Conceal via technical text steganography Text steganography conceals a secret message inside a piece of text. The simplest version of text steganography might use the first letter in each sentence to form the hidden message. Other text steganography techniques might include adding meaningful typos or encoding information through punctuation.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "ste"
+        }
+      ],
+      "x_ctft_category": "STE",
+      "x_ctft_domain": "STE",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-STE-008"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1001.002",
+          "description": "Steganography"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--eb54dfbe-ce27-5848-9568-0ffa37af020c",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-STE-008 - Decode technical text steganography",
+      "description": "Text steganography conceals a message inside a piece of text through position and formatting rather than wording. Check, in order: the first letter of each sentence or line, meaningful typos, punctuation patterns, trailing whitespace, tab-vs-space runs, and zero-width or homoglyph characters (see CTFTCTE-STE-005 for the invisible-character case). Normalise the text and diff against the original to expose non-printing carriers.",
+      "x_ctft_category": "STE",
+      "x_ctft_domain": "STE",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-STE-008"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1001.002",
+          "description": "Steganography"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--4f051bc8-5fa2-558c-9a10-73ce38ce3a31",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--eb54dfbe-ce27-5848-9568-0ffa37af020c",
+      "target_ref": "attack-pattern--3a0a93d8-7dc2-5a33-9bda-2bbda1f1e7f4",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--d4451cd8-5af3-5028-a4ad-ab0fd80364a6",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-STE-009 - Nested metadata-container embedding",
+      "description": "The challenge places clues across nested metadata containers, such as embedded documents, thumbnails, sidecar records, or recursively embedded media, so a single top-level metadata listing is incomplete.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "ste"
+        }
+      ],
+      "x_ctft_category": "STE",
+      "x_ctft_domain": "STE",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-STE-009"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1001.002",
+          "description": "Steganography"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--f311ec23-e2b8-593e-ba43-5faad417741d",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-STE-009 - Recursively inspect nested metadata containers",
+      "description": "Extract metadata from the supplied artifact and each declared embedded container, preserving the parent-child relation and checking whether a recovered value advances the challenge.",
+      "x_ctft_category": "STE",
+      "x_ctft_domain": "STE",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-STE-009"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1001.002",
+          "description": "Steganography"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--d6b43a6c-e00d-570f-b886-8bdbe0f12c4c",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--f311ec23-e2b8-593e-ba43-5faad417741d",
+      "target_ref": "attack-pattern--d4451cd8-5af3-5028-a4ad-ab0fd80364a6",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--5e7a99a0-59c9-5388-a144-856f26291cdd",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-STE-010 - Audio-domain stego beyond spectrograms (LSB/phase/DTMF/SSTV)",
+      "description": "Data hides in audio beyond the spectrogram: LSB of samples, phase coding, DTMF tones, or SSTV frames.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "ste"
+        }
+      ],
+      "x_ctft_category": "STE",
+      "x_ctft_domain": "STE",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-STE-010"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1001.002",
+          "description": "Steganography"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--9212ebc8-c1fb-53a1-92cb-1d8154d0a07d",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-STE-010 - Detect and decode audio-domain stego",
+      "description": "Analyze waveform/spectrum, decode DTMF/SSTV, or extract LSB/phase payloads.",
+      "x_ctft_category": "STE",
+      "x_ctft_domain": "STE",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-STE-010"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1001.002",
+          "description": "Steganography"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--5645eae1-e574-5e92-bea2-0892e3a214eb",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--9212ebc8-c1fb-53a1-92cb-1d8154d0a07d",
+      "target_ref": "attack-pattern--5e7a99a0-59c9-5388-a144-856f26291cdd",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--729f1219-7b92-5c8b-bb5f-72a4e64a56ba",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-STE-011 - Palette / bitplane LSB tricks",
+      "description": "The flag hides in bitplanes or palette indexes of an image (LSB across planes, palette reordering).",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "ste"
+        }
+      ],
+      "x_ctft_category": "STE",
+      "x_ctft_domain": "STE",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-STE-011"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1001.002",
+          "description": "Steganography"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--efd1d028-47d9-5544-81f8-07371b0bb754",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-STE-011 - Analyze bitplanes and palette-based LSB",
+      "description": "Split bitplanes, analyze palette anomalies, and extract the hidden bits.",
+      "x_ctft_category": "STE",
+      "x_ctft_domain": "STE",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-STE-011"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1001.002",
+          "description": "Steganography"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--26a55e1d-c82e-5205-aa50-63781baca97c",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--efd1d028-47d9-5544-81f8-07371b0bb754",
+      "target_ref": "attack-pattern--729f1219-7b92-5c8b-bb5f-72a4e64a56ba",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     }
   ]
 }

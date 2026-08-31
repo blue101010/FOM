@@ -1,6 +1,6 @@
 # MOB — Mobile
 
-> **Tactic ID:** `CTFT-TA-MOB`  
+> **Domain ID:** `CTFT-TA-MOB`  
 > **HTB mapping:** HTB: Mobile  
 > **Techniques:** 5
 
@@ -8,28 +8,29 @@
 
 Secrets concealed in mobile apps and runtime, recovered statically/dynamically.
 
-## Relation to MITRE ATT&CK
+## Positioning and external anchors
 
-CTFT tactics are a CTF-specific layer that *complements* MITRE ATT&CK. ATT&CK
-models real adversary behaviour at the campaign level; CTFT models the
-challenge-craft (forensic, cryptographic, steganographic and puzzle) detail
-that ATT&CK intentionally leaves out, and that CTF solvers and DFIR analysts
-rely on. CTFT never re-labels an existing ATT&CK technique.
+A domain is a **subject** axis: it answers *what kind of challenge is this*, not
+*what is the player trying to achieve*. The player-objective axis is tracked
+separately and is deliberately still underived (SCHEMA_V3 §3.9).
 
-> Per-entry related ATT&CK IDs are rendered on every technique and
-> counter-technique page as a `Related MITRE ATT&CK` table (SCHEMA_V2 §3.5).
+CTFT relates to external catalogues — MITRE ATT&CK, CAPEC, CWE, OWASP WSTG —
+without deriving from any of them. External identifiers are **anchors carried
+per entry**, never the definition of an entry.
 
+> Each technique and resolution-technique page carries its own
+> `Related MITRE ATT&CK` table (SCHEMA_V3 §3.5). The `ATT&CK` column below is an
+> orientation excerpt of those tables, nothing more.
 
-## Techniques ↔ Counter-techniques
+## Techniques ↔ Resolution-techniques
 
-| Technique | Hide / Design name | Counter-technique | Counter name | ATT&CK note (excerpt) |
+| Technique | Hide / Design name | Resolution-technique | Recovery action | ATT&CK |
 | --- | --- | --- | --- | --- |
-| [CTFTTE-MOB-001](../techniques/CTFTTE-MOB-001.md) | Hardcoded secrets in app resources | [CTFTCTE-MOB-001](../countertechniques/CTFTCTE-MOB-001.md) | Decompile the APK and extract secrets | No direct ATT&CK technique |
-| [CTFTTE-MOB-002](../techniques/CTFTTE-MOB-002.md) | Native-library logic hiding | [CTFTCTE-MOB-002](../countertechniques/CTFTCTE-MOB-002.md) | Reverse the native .so | No direct ATT&CK technique. |
-| [CTFTTE-MOB-003](../techniques/CTFTTE-MOB-003.md) | Certificate pinning as capture barrier | [CTFTCTE-MOB-003](../countertechniques/CTFTCTE-MOB-003.md) | Bypass pinning to observe traffic | No direct ATT&CK technique. |
-| [CTFTTE-MOB-004](../techniques/CTFTTE-MOB-004.md) | DEX obfuscation | [CTFTCTE-MOB-004](../countertechniques/CTFTCTE-MOB-004.md) | Deobfuscate renamed/obfuscated bytecode | No direct ATT&CK technique. |
-| [CTFTTE-MOB-005](../techniques/CTFTTE-MOB-005.md) | Runtime/device-conditioned flag | [CTFTCTE-MOB-005](../countertechniques/CTFTCTE-MOB-005.md) | Hook the app to satisfy runtime checks | No direct ATT&CK technique. |
-
+| [CTFTTE-MOB-001](../techniques/CTFTTE-MOB-001.md) | Hardcoded secrets in app resources | [CTFTCTE-MOB-001](../countertechniques/CTFTCTE-MOB-001.md) | Decompile the APK and extract secrets | T1552.001 |
+| [CTFTTE-MOB-002](../techniques/CTFTTE-MOB-002.md) | Native-library logic hiding | [CTFTCTE-MOB-002](../countertechniques/CTFTCTE-MOB-002.md) | Reverse the native .so | T1406 |
+| [CTFTTE-MOB-003](../techniques/CTFTTE-MOB-003.md) | Certificate pinning as capture barrier | [CTFTCTE-MOB-003](../countertechniques/CTFTCTE-MOB-003.md) | Bypass pinning to observe traffic | T1557 |
+| [CTFTTE-MOB-004](../techniques/CTFTTE-MOB-004.md) | DEX obfuscation | [CTFTCTE-MOB-004](../countertechniques/CTFTCTE-MOB-004.md) | Deobfuscate renamed/obfuscated bytecode | T1406 |
+| [CTFTTE-MOB-005](../techniques/CTFTTE-MOB-005.md) | Runtime/device-conditioned flag | [CTFTCTE-MOB-005](../countertechniques/CTFTCTE-MOB-005.md) | Hook the app to satisfy runtime checks | T1497 |
 
 ---
 *See [CORRELATION.md](../CORRELATION.md) for the full cross-reference matrix.*

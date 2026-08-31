@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ctft/v3/schemas/relation.schema.json",
+  "title": "CTFT relation",
+  "description": "One edge of the CTFT graph. `solves` edges are DERIVED from the 1:1 markdown pairing and must not be hand-written; every other type is curated in v3/relations.curated.json (SCHEMA_V3 §4.2).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "schema_version",
+    "type",
+    "source",
+    "target",
+    "origin"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^REL-[A-Z-]+-[A-Z0-9-]+$"
+    },
+    "schema_version": {
+      "const": "3.0"
+    },
+    "type": {
+      "enum": [
+        "solves",
+        "is-a",
+        "implements",
+        "can-follow",
+        "uses-tool",
+        "requires",
+        "related-to"
+      ]
+    },
+    "source": {
+      "type": "string",
+      "pattern": "^(CTFTTE|CTFTCTE|CTFTTOU)-"
+    },
+    "target": {
+      "type": "string",
+      "pattern": "^(CTFTTE|CTFTCTE|CTFTTOU)-"
+    },
+    "origin": {
+      "enum": [
+        "derived",
+        "curated"
+      ],
+      "description": "derived = generated from the markdown corpus; curated = written by a human in relations.curated.json."
+    },
+    "confidence": {
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "note": {
+      "type": "string"
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

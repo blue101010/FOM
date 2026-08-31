@@ -1,6 +1,6 @@
 {
   "type": "bundle",
-  "id": "bundle--33b17896-5500-5ada-8b1a-7566f6193c04",
+  "id": "bundle--3674507e-f1be-5cf5-997a-f0d2f42658c2",
   "objects": [
     {
       "type": "identity",
@@ -10,7 +10,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "name": "CTFT Project",
       "identity_class": "organization",
-      "description": "Capture-The-Flag Techniques - complementary to MITRE ATT&CK, generalized from FOM."
+      "description": "Capture-The-Flag Techniques - an ontology of CTF solving behaviour. Relates to MITRE ATT&CK, CAPEC and CWE as per-entry anchors; not a parallel ATT&CK. Generalized from FOM."
     },
     {
       "type": "x-ctft-tactic",
@@ -21,6 +21,7 @@
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "Hardware",
       "x_ctft_shortname": "hwr",
+      "x_ctft_domain": "HWR",
       "description": "Hiding data in embedded interfaces/signals and physically extracting it. (HTB: Hardware)",
       "external_references": [
         {
@@ -28,6 +29,140 @@
           "external_id": "CTFT-TA-HWR"
         }
       ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--7e116824-406e-5aaa-b78d-13e719163fe4",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-HWR-001 - USB HID keystroke concealment",
+      "description": "Flag text is typed by a (simulated) USB keyboard; only HID report bytes — scan codes, not characters — are captured, hiding the keystrokes behind the HID protocol.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "hwr"
+        }
+      ],
+      "x_ctft_category": "HWR",
+      "x_ctft_domain": "HWR",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-HWR-001"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1056.001",
+          "description": "Keylogging"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--ad6c80d9-e600-5e37-bb8c-7297d41e4283",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-HWR-001 - Reconstruct keystrokes from captured USB HID traffic",
+      "description": "Decode the USB HID report descriptor and translate scan codes back into characters, including modifiers and non-US layouts.",
+      "x_ctft_category": "HWR",
+      "x_ctft_domain": "HWR",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-HWR-001"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1056.001",
+          "description": "Keylogging"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--9a040408-8a05-5215-87a2-19a59439f7e6",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--ad6c80d9-e600-5e37-bb8c-7297d41e4283",
+      "target_ref": "attack-pattern--7e116824-406e-5aaa-b78d-13e719163fe4",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--130f70c1-d0ba-5284-a603-162e044e5c41",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-HWR-002 - Badge / embedded-device firmware concealment",
+      "description": "The flag lives in an electronic badge or embedded device: in firmware, EEPROM, or behind a hidden UART/JTAG/SPI interface.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "hwr"
+        }
+      ],
+      "x_ctft_category": "HWR",
+      "x_ctft_domain": "HWR",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-HWR-002"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--c2617c9b-c397-5db0-aa72-0a7d76cc345e",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-HWR-002 - Dump and reverse badge firmware",
+      "description": "Identify the exposed interfaces (UART/JTAG/SPI), dump firmware or memory, and reverse it for strings and logic.",
+      "x_ctft_category": "HWR",
+      "x_ctft_domain": "HWR",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-HWR-002"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--8ccb7adf-f7a5-55c8-9983-b0f2ac86c436",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--c2617c9b-c397-5db0-aa72-0a7d76cc345e",
+      "target_ref": "attack-pattern--130f70c1-d0ba-5284-a603-162e044e5c41",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     }
   ]
 }

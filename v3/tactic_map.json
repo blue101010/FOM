@@ -1,0 +1,16 @@
+{
+  "model": "CTFT",
+  "schema_version": "3.0",
+  "collection": "resolution_tactics",
+  "status": "underived",
+  "vocabulary": [
+    "Discover",
+    "Reveal",
+    "Gain Access",
+    "Gain Control",
+    "Expand Reach",
+    "Capture Objective"
+  ],
+  "note": "Empty by design. The vocabulary above is the HYPOTHESIS to test, not a decision: an objective is admitted only once it covers >= 5 core techniques and is not constant across a domain (TODO 2.4, archive A-1). Labelling comes from v3/evidence.json, so this file stays empty until challenges are curated.",
+  "items": {}
+}

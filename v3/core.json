@@ -1,0 +1,187 @@
+{
+  "model": "CTFT",
+  "schema_version": "3.0",
+  "collection": "core",
+  "revised_on": "2026-08-30",
+  "note": "Curated profile, not a restructuring: the 162 pairs stay where they are. Membership here means the entry is a promotion candidate. Maturity is NOT stored here - it is computed by v3/catalog_audit.py from v3/evidence.json and the typed v3 objects, so the two can never disagree.",
+  "selection_rationale": "One entry per recurring solver behaviour across the domains that actually appear in Jeopardy CTFs, chosen so that no two members describe the same action at the same abstraction level.",
+  "items": [
+    {
+      "technique": "CTFTTE-FOR-001",
+      "name": "Magic-byte / file-signature tampering",
+      "concept": "magic-header recovery"
+    },
+    {
+      "technique": "CTFTTE-FOR-002",
+      "name": "Slack-space and unallocated-area concealment",
+      "concept": "file carving"
+    },
+    {
+      "technique": "CTFTTE-FOR-003",
+      "name": "Timestomping (MACB manipulation)",
+      "concept": "timestomp detection"
+    },
+    {
+      "technique": "CTFTTE-FOR-006",
+      "name": "PCAP payload obfuscation",
+      "concept": "PCAP stream reassembly"
+    },
+    {
+      "technique": "CTFTTE-STE-001",
+      "name": "LSB image steganography",
+      "concept": "LSB extraction"
+    },
+    {
+      "technique": "CTFTTE-STE-003",
+      "name": "Audio spectrogram hiding",
+      "concept": "spectrogram analysis"
+    },
+    {
+      "technique": "CTFTTE-STE-004",
+      "name": "Metadata / EXIF embedding",
+      "concept": "metadata extraction"
+    },
+    {
+      "technique": "CTFTTE-CRY-001",
+      "name": "Weak RSA parameter design",
+      "concept": "RSA weak-parameter recovery"
+    },
+    {
+      "technique": "CTFTTE-CRY-002",
+      "name": "Classical cipher layering",
+      "concept": "frequency analysis"
+    },
+    {
+      "technique": "CTFTTE-CRY-003",
+      "name": "Repeating-key XOR / ECB pattern",
+      "concept": "XOR crib-dragging"
+    },
+    {
+      "technique": "CTFTTE-CRY-005",
+      "name": "Hash length-extension exposure",
+      "concept": "length-extension attack"
+    },
+    {
+      "technique": "CTFTTE-CRY-008",
+      "name": "Block-cipher mode / AES implementation weakness",
+      "concept": "padding-oracle attack",
+      "note": "approximate: CRY-008 is the broader block-cipher-mode entry; split out a dedicated padding-oracle entry if the evidence separates them"
+    },
+    {
+      "technique": "CTFTTE-CRY-012",
+      "name": "Hash-cracking maze with constraints",
+      "concept": "hash cracking"
+    },
+    {
+      "technique": "CTFTTE-WEB-002",
+      "name": "IDOR / predictable object obscurity",
+      "concept": "IDOR enumeration"
+    },
+    {
+      "technique": "CTFTTE-WEB-003",
+      "name": "JWT misconfiguration",
+      "concept": "JWT forgery"
+    },
+    {
+      "technique": "CTFTTE-WEB-004",
+      "name": "Blind / WAF-evaded SQL injection",
+      "concept": "SQLi side-channel"
+    },
+    {
+      "technique": "CTFTTE-WEB-010",
+      "name": "LFI / log poisoning / php-filter chains",
+      "concept": "LFI filter bypass"
+    },
+    {
+      "technique": "CTFTTE-WEB-012",
+      "name": "XSS-driven flag exfiltration",
+      "concept": "XSS exfiltration"
+    },
+    {
+      "technique": "CTFTTE-CLD-001",
+      "name": "Misconfigured object-storage exposure",
+      "concept": "bucket enumeration"
+    },
+    {
+      "technique": "CTFTTE-CLD-002",
+      "name": "Over-permissive IAM role",
+      "concept": "IAM role chaining"
+    },
+    {
+      "technique": "CTFTTE-CLD-003",
+      "name": "Instance metadata service exposure",
+      "concept": "SSRF/IMDS retrieval"
+    },
+    {
+      "technique": "CTFTTE-PWN-002",
+      "name": "Format-string information hiding",
+      "concept": "format-string leak"
+    },
+    {
+      "technique": "CTFTTE-PWN-003",
+      "name": "Heap-grooming puzzle",
+      "concept": "heap grooming"
+    },
+    {
+      "technique": "CTFTTE-PWN-004",
+      "name": "Stripped/static gadget search",
+      "concept": "ROP construction"
+    },
+    {
+      "technique": "CTFTTE-PWN-005",
+      "name": "seccomp-restricted shell puzzle",
+      "concept": "seccomp ORW"
+    },
+    {
+      "technique": "CTFTTE-REV-001",
+      "name": "Anti-debugging / anti-analysis guards",
+      "concept": "anti-debug bypass"
+    },
+    {
+      "technique": "CTFTTE-REV-002",
+      "name": "Packing / runtime self-modification",
+      "concept": "unpacking"
+    },
+    {
+      "technique": "CTFTTE-REV-004",
+      "name": "Custom VM / bytecode interpreter",
+      "concept": "VM bytecode lifting"
+    },
+    {
+      "technique": "CTFTTE-REV-005",
+      "name": "Constraint-gated flag check",
+      "concept": "SMT constraint solving",
+      "note": "overlaps COD-005 by design; recorded as related-to in v3/relations.json"
+    },
+    {
+      "technique": "CTFTTE-GAM-001",
+      "name": "Networked game / protocol automation",
+      "concept": "protocol automation"
+    },
+    {
+      "technique": "CTFTTE-FPN-003",
+      "name": "Multi-hop network pivot",
+      "concept": "pivot tunneling"
+    },
+    {
+      "technique": "CTFTTE-FPN-008",
+      "name": "Linux local privesc chain (SUID, ACLs, sudo, capabilities)",
+      "concept": "privesc enumeration"
+    },
+    {
+      "technique": "CTFTTE-OSI-006",
+      "name": "Git-repository archaeology",
+      "concept": "git archaeology"
+    },
+    {
+      "technique": "CTFTTE-OSI-007",
+      "name": "Search-engine mining (dorking)",
+      "concept": "dork mining"
+    },
+    {
+      "technique": "CTFTTE-OSI-008",
+      "name": "ASN / IP-range / subdomain recon",
+      "concept": "subdomain / ASN recon"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "type": "bundle",
-  "id": "bundle--990e55aa-8d0b-523f-97fb-bc4167efe8bc",
+  "id": "bundle--40a7f39f-ee6b-5d58-a717-c3568119718a",
   "objects": [
     {
       "type": "identity",
@@ -10,7 +10,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "name": "CTFT Project",
       "identity_class": "organization",
-      "description": "Capture-The-Flag Techniques - complementary to MITRE ATT&CK, generalized from FOM."
+      "description": "Capture-The-Flag Techniques - an ontology of CTF solving behaviour. Relates to MITRE ATT&CK, CAPEC and CWE as per-entry anchors; not a parallel ATT&CK. Generalized from FOM."
     },
     {
       "type": "x-ctft-tactic",
@@ -21,6 +21,7 @@
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "Mobile",
       "x_ctft_shortname": "mob",
+      "x_ctft_domain": "MOB",
       "description": "Secrets concealed in mobile apps and runtime, recovered statically/dynamically. (HTB: Mobile)",
       "external_references": [
         {
@@ -37,7 +38,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTTE-MOB-001 - Hardcoded secrets in app resources",
-      "description": "Keys/flags are embedded in resources, strings, or smali rather than fetched at runtime. | ATT&CK complementarity: No direct ATT&CK technique; mobile RE craft.",
+      "description": "Keys/flags are embedded in resources, strings, or smali rather than fetched at runtime.",
       "kill_chain_phases": [
         {
           "kill_chain_name": "ctft",
@@ -45,11 +46,17 @@
         }
       ],
       "x_ctft_category": "MOB",
+      "x_ctft_domain": "MOB",
       "x_ctft_role": "design-hide",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTTE-MOB-001"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1552.001",
+          "description": "Credentials in Files"
         }
       ]
     },
@@ -61,13 +68,19 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-MOB-001 - Decompile the APK and extract secrets",
-      "description": "OFFENSIVE (solver): Decompile to Java/smali and grep resources/strings for the secret. || FORENSIC (analyst): Static review of the package documents secrets shipped inside the artifact.",
+      "description": "Decompile to Java/smali and grep resources/strings for the secret.",
       "x_ctft_category": "MOB",
-      "x_ctft_role": "counter-technique",
+      "x_ctft_domain": "MOB",
+      "x_ctft_role": "resolution",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTCTE-MOB-001"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1552.001",
+          "description": "Credentials in Files"
         }
       ]
     },
@@ -79,9 +92,10 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
       "source_ref": "course-of-action--b4b841af-cf54-580e-a771-b51356d54103",
       "target_ref": "attack-pattern--643a9db6-3ceb-5b05-9f1f-17e884577466",
-      "description": "Counter-technique recovers/defeats the paired design technique."
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     },
     {
       "type": "attack-pattern",
@@ -91,7 +105,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTTE-MOB-002 - Native-library logic hiding",
-      "description": "Sensitive logic is pushed into a compiled native library to evade Java-level inspection. | ATT&CK complementarity: No direct ATT&CK technique.",
+      "description": "Sensitive logic is pushed into a compiled native library to evade Java-level inspection.",
       "kill_chain_phases": [
         {
           "kill_chain_name": "ctft",
@@ -99,11 +113,17 @@
         }
       ],
       "x_ctft_category": "MOB",
+      "x_ctft_domain": "MOB",
       "x_ctft_role": "design-hide",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTTE-MOB-002"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1406",
+          "description": "Obfuscated Files or Information (Mobile)"
         }
       ]
     },
@@ -115,13 +135,19 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-MOB-002 - Reverse the native .so",
-      "description": "OFFENSIVE (solver): Disassemble the ARM/AArch64 library and reverse the routine that produces the flag. || FORENSIC (analyst): Native reversing recovers logic invisible to bytecode-only analysis.",
+      "description": "Disassemble the ARM/AArch64 library and reverse the routine that produces the flag.",
       "x_ctft_category": "MOB",
-      "x_ctft_role": "counter-technique",
+      "x_ctft_domain": "MOB",
+      "x_ctft_role": "resolution",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTCTE-MOB-002"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1406",
+          "description": "Obfuscated Files or Information (Mobile)"
         }
       ]
     },
@@ -133,9 +159,10 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
       "source_ref": "course-of-action--5edadf54-553c-5bac-b142-0ee835b84530",
       "target_ref": "attack-pattern--3eab832b-61a4-5491-a392-4fcf0d850f33",
-      "description": "Counter-technique recovers/defeats the paired design technique."
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     },
     {
       "type": "attack-pattern",
@@ -145,7 +172,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTTE-MOB-003 - Certificate pinning as capture barrier",
-      "description": "TLS pinning prevents intercepting the request/response that carries the flag. | ATT&CK complementarity: No direct ATT&CK technique.",
+      "description": "TLS pinning prevents intercepting the request/response that carries the flag.",
       "kill_chain_phases": [
         {
           "kill_chain_name": "ctft",
@@ -153,11 +180,17 @@
         }
       ],
       "x_ctft_category": "MOB",
+      "x_ctft_domain": "MOB",
       "x_ctft_role": "design-hide",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTTE-MOB-003"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1557",
+          "description": "Man-in-the-Middle"
         }
       ]
     },
@@ -169,13 +202,19 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-MOB-003 - Bypass pinning to observe traffic",
-      "description": "OFFENSIVE (solver): Hook the pinning/validation logic at runtime to allow a proxy to read the traffic. || FORENSIC (analyst): Instrumentation logs show where validation was disabled to enable capture.",
+      "description": "Hook the pinning/validation logic at runtime to allow a proxy to read the traffic.",
       "x_ctft_category": "MOB",
-      "x_ctft_role": "counter-technique",
+      "x_ctft_domain": "MOB",
+      "x_ctft_role": "resolution",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTCTE-MOB-003"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1557",
+          "description": "Man-in-the-Middle"
         }
       ]
     },
@@ -187,9 +226,10 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
       "source_ref": "course-of-action--9caee03f-7061-5d25-bc81-56e3fe44356c",
       "target_ref": "attack-pattern--32301229-0251-5b03-85b5-e612290100d8",
-      "description": "Counter-technique recovers/defeats the paired design technique."
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     },
     {
       "type": "attack-pattern",
@@ -199,7 +239,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTTE-MOB-004 - DEX obfuscation",
-      "description": "ProGuard/R8 renaming and string encryption hide the flag-producing method. | ATT&CK complementarity: No direct ATT&CK technique.",
+      "description": "ProGuard/R8 renaming and string encryption hide the flag-producing method.",
       "kill_chain_phases": [
         {
           "kill_chain_name": "ctft",
@@ -207,11 +247,17 @@
         }
       ],
       "x_ctft_category": "MOB",
+      "x_ctft_domain": "MOB",
       "x_ctft_role": "design-hide",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTTE-MOB-004"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1406",
+          "description": "Obfuscated Files or Information (Mobile)"
         }
       ]
     },
@@ -223,13 +269,19 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-MOB-004 - Deobfuscate renamed/obfuscated bytecode",
-      "description": "OFFENSIVE (solver): Decompile and rename systematically, decrypting strings to locate the logic. || FORENSIC (analyst): A reconstructed call graph documents the obfuscation and the recovered routine.",
+      "description": "Decompile and rename systematically, decrypting strings to locate the logic.",
       "x_ctft_category": "MOB",
-      "x_ctft_role": "counter-technique",
+      "x_ctft_domain": "MOB",
+      "x_ctft_role": "resolution",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTCTE-MOB-004"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1406",
+          "description": "Obfuscated Files or Information (Mobile)"
         }
       ]
     },
@@ -241,9 +293,10 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
       "source_ref": "course-of-action--8ef73bea-63c6-5bf4-8778-bd04b277e1c5",
       "target_ref": "attack-pattern--124f80ed-1e87-5d6d-979b-7d874623991f",
-      "description": "Counter-technique recovers/defeats the paired design technique."
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     },
     {
       "type": "attack-pattern",
@@ -253,7 +306,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTTE-MOB-005 - Runtime/device-conditioned flag",
-      "description": "The flag only renders when device/root/emulator/time conditions are met. | ATT&CK complementarity: No direct ATT&CK technique.",
+      "description": "The flag only renders when device/root/emulator/time conditions are met.",
       "kill_chain_phases": [
         {
           "kill_chain_name": "ctft",
@@ -261,11 +314,17 @@
         }
       ],
       "x_ctft_category": "MOB",
+      "x_ctft_domain": "MOB",
       "x_ctft_role": "design-hide",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTTE-MOB-005"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1497",
+          "description": "Virtualization/Sandbox Evasion"
         }
       ]
     },
@@ -277,13 +336,19 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-MOB-005 - Hook the app to satisfy runtime checks",
-      "description": "OFFENSIVE (solver): Hook the conditional methods to force the success branch and read the value. || FORENSIC (analyst): Hook traces document which checks gated the flag and how they were satisfied.",
+      "description": "Hook the conditional methods to force the success branch and read the value.",
       "x_ctft_category": "MOB",
-      "x_ctft_role": "counter-technique",
+      "x_ctft_domain": "MOB",
+      "x_ctft_role": "resolution",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTCTE-MOB-005"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1497",
+          "description": "Virtualization/Sandbox Evasion"
         }
       ]
     },
@@ -295,9 +360,10 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
       "source_ref": "course-of-action--acfb5ce3-a235-561e-b9e8-33101cd02bce",
       "target_ref": "attack-pattern--a2b68da0-5241-5fa6-b766-86d89b5fe42b",
-      "description": "Counter-technique recovers/defeats the paired design technique."
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     }
   ]
 }

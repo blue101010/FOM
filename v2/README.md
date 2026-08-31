@@ -1,5 +1,12 @@
 # CTFT v2 — reference implementation (Forensics slice)
 
+> **FROZEN — v2 reference slice.** Superseded by [`../v3/`](../v3/README.md) and
+> [`../SCHEMA_V3.md`](../SCHEMA_V3.md). Kept unchanged so the published v2 objects and the
+> Forensics proof-of-concept stay reproducible. **Do not edit, and do not run the scripts in
+> this directory** — `v2/render_taxonomy_docs.py` and `v2/catalog_audit.py` still write the
+> root `CORRELATION.md`, `HIERARCHY.md` and `index.json`, and would revert them to v2 output.
+> Use the `v3/` equivalents.
+
 Working proof that [`../SCHEMA_V2.md`](../SCHEMA_V2.md) is executable, not just descriptive.
 Covers 7 curated Forensics techniques end to end: taxonomy → indicators → executable playbooks →
 retrieval → agent loop.

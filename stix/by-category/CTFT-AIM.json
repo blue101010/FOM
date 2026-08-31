@@ -1,6 +1,6 @@
 {
   "type": "bundle",
-  "id": "bundle--56684aa7-b9e3-5399-8120-42f676e02393",
+  "id": "bundle--30653ce9-bcd4-5abe-a3d0-26faca520c9c",
   "objects": [
     {
       "type": "identity",
@@ -10,7 +10,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "name": "CTFT Project",
       "identity_class": "organization",
-      "description": "Capture-The-Flag Techniques - complementary to MITRE ATT&CK, generalized from FOM."
+      "description": "Capture-The-Flag Techniques - an ontology of CTF solving behaviour. Relates to MITRE ATT&CK, CAPEC and CWE as per-entry anchors; not a parallel ATT&CK. Generalized from FOM."
     },
     {
       "type": "x-ctft-tactic",
@@ -21,6 +21,7 @@
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "AI / ML",
       "x_ctft_shortname": "aim",
+      "x_ctft_domain": "AIM",
       "description": "Secrets inside models/prompts/serialized artifacts and their extraction. (HTB: AI-ML)",
       "external_references": [
         {
@@ -37,7 +38,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTTE-AIM-001 - Secret embedded in model weights",
-      "description": "The flag is encoded in a layer's weights/embedding rather than any text field. | ATT&CK complementarity: No ATT&CK equivalent.",
+      "description": "The flag is encoded in a layer's weights/embedding rather than any text field.",
       "kill_chain_phases": [
         {
           "kill_chain_name": "ctft",
@@ -45,11 +46,17 @@
         }
       ],
       "x_ctft_category": "AIM",
+      "x_ctft_domain": "AIM",
       "x_ctft_role": "design-hide",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTTE-AIM-001"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1552",
+          "description": "Unsecured Credentials"
         }
       ]
     },
@@ -61,13 +68,19 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-AIM-001 - Extract tensors and inspect weights",
-      "description": "OFFENSIVE (solver): Load the model, dump tensors, and decode the embedded bytes/strings. || FORENSIC (analyst): Tensor inspection documents non-functional data smuggled into the model file.",
+      "description": "Load the model, dump tensors, and decode the embedded bytes/strings.",
       "x_ctft_category": "AIM",
-      "x_ctft_role": "counter-technique",
+      "x_ctft_domain": "AIM",
+      "x_ctft_role": "resolution",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTCTE-AIM-001"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1552",
+          "description": "Unsecured Credentials"
         }
       ]
     },
@@ -79,9 +92,10 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
       "source_ref": "course-of-action--fe18f034-6c3b-567c-9584-30e7857e64ae",
       "target_ref": "attack-pattern--cb65ec10-71f0-5abd-9f30-9ad115913106",
-      "description": "Counter-technique recovers/defeats the paired design technique."
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     },
     {
       "type": "attack-pattern",
@@ -91,7 +105,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTTE-AIM-002 - Prompt-injection-gated flag",
-      "description": "An LLM-backed app holds the flag in its instructions/context behind guardrails. | ATT&CK complementarity: No ATT&CK equivalent; emerging LLM-security craft.",
+      "description": "An LLM-backed app holds the flag in its instructions/context behind guardrails.",
       "kill_chain_phases": [
         {
           "kill_chain_name": "ctft",
@@ -99,11 +113,17 @@
         }
       ],
       "x_ctft_category": "AIM",
+      "x_ctft_domain": "AIM",
       "x_ctft_role": "design-hide",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTTE-AIM-002"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1190",
+          "description": "Exploit Public-Facing Application"
         }
       ]
     },
@@ -115,13 +135,19 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-AIM-002 - Extract the flag via crafted prompts",
-      "description": "OFFENSIVE (solver): Craft inputs that bypass the guardrails to make the model reveal the protected content. || FORENSIC (analyst): Logged prompts/responses document the injection that defeated the controls.",
+      "description": "Craft inputs that bypass the guardrails to make the model reveal the protected content.",
       "x_ctft_category": "AIM",
-      "x_ctft_role": "counter-technique",
+      "x_ctft_domain": "AIM",
+      "x_ctft_role": "resolution",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTCTE-AIM-002"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1190",
+          "description": "Exploit Public-Facing Application"
         }
       ]
     },
@@ -133,9 +159,10 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
       "source_ref": "course-of-action--dffe0581-6d6f-57cd-8a23-ca0924dddd27",
       "target_ref": "attack-pattern--844c7526-0007-595c-922f-cb10a043ee48",
-      "description": "Counter-technique recovers/defeats the paired design technique."
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     },
     {
       "type": "attack-pattern",
@@ -145,7 +172,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTTE-AIM-003 - Adversarial-input requirement",
-      "description": "The flag unlocks only when a classifier is driven to a specific (incorrect) prediction. | ATT&CK complementarity: No ATT&CK equivalent.",
+      "description": "The flag unlocks only when a classifier is driven to a specific (incorrect) prediction.",
       "kill_chain_phases": [
         {
           "kill_chain_name": "ctft",
@@ -153,6 +180,7 @@
         }
       ],
       "x_ctft_category": "AIM",
+      "x_ctft_domain": "AIM",
       "x_ctft_role": "design-hide",
       "external_references": [
         {
@@ -169,9 +197,10 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-AIM-003 - Generate an adversarial example",
-      "description": "OFFENSIVE (solver): Use gradient/black-box methods to craft an input that forces the target class. || FORENSIC (analyst): The crafted input documents the model's decision-boundary fragility.",
+      "description": "Use gradient/black-box methods to craft an input that forces the target class.",
       "x_ctft_category": "AIM",
-      "x_ctft_role": "counter-technique",
+      "x_ctft_domain": "AIM",
+      "x_ctft_role": "resolution",
       "external_references": [
         {
           "source_name": "ctft",
@@ -187,9 +216,10 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
       "source_ref": "course-of-action--b0a17f3d-8d22-5e53-a98f-15d97fede44c",
       "target_ref": "attack-pattern--60fc45f5-491b-50e5-859e-8f55032c93d9",
-      "description": "Counter-technique recovers/defeats the paired design technique."
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     },
     {
       "type": "attack-pattern",
@@ -199,7 +229,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTTE-AIM-004 - Malicious / opaque serialized model",
-      "description": "A pickle/serialized model hides logic or data that executes/loads on deserialization. | ATT&CK complementarity: Complements T1204/T1027 conceptually; CTFT adds safe-pickle-inspection procedure.",
+      "description": "A pickle/serialized model hides logic or data that executes/loads on deserialization.",
       "kill_chain_phases": [
         {
           "kill_chain_name": "ctft",
@@ -207,11 +237,17 @@
         }
       ],
       "x_ctft_category": "AIM",
+      "x_ctft_domain": "AIM",
       "x_ctft_role": "design-hide",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTTE-AIM-004"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1190",
+          "description": "Exploit Public-Facing Application"
         }
       ]
     },
@@ -223,13 +259,19 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-AIM-004 - Safely inspect serialized model files",
-      "description": "OFFENSIVE (solver): Statically inspect the serialized opcodes without executing them to recover content. || FORENSIC (analyst): Opcode-level inspection documents embedded payloads without triggering them.",
+      "description": "Statically inspect the serialized opcodes without executing them to recover content.",
       "x_ctft_category": "AIM",
-      "x_ctft_role": "counter-technique",
+      "x_ctft_domain": "AIM",
+      "x_ctft_role": "resolution",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTCTE-AIM-004"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1190",
+          "description": "Exploit Public-Facing Application"
         }
       ]
     },
@@ -241,9 +283,10 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
       "source_ref": "course-of-action--700c4c27-5115-5f1d-98ae-d7f195326cf0",
       "target_ref": "attack-pattern--5f7a91cc-be0a-5549-9818-b94284504133",
-      "description": "Counter-technique recovers/defeats the paired design technique."
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     },
     {
       "type": "attack-pattern",
@@ -253,7 +296,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTTE-AIM-005 - Training-data leakage via queries",
-      "description": "A secret memorized in training is reachable only by probing the model's outputs. | ATT&CK complementarity: No ATT&CK equivalent.",
+      "description": "A secret memorized in training is reachable only by probing the model's outputs.",
       "kill_chain_phases": [
         {
           "kill_chain_name": "ctft",
@@ -261,11 +304,17 @@
         }
       ],
       "x_ctft_category": "AIM",
+      "x_ctft_domain": "AIM",
       "x_ctft_role": "design-hide",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTTE-AIM-005"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1213",
+          "description": "Data from Information Repositories"
         }
       ]
     },
@@ -277,13 +326,19 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-AIM-005 - Recover secrets through model inversion",
-      "description": "OFFENSIVE (solver): Query systematically (membership/inversion) to reconstruct the memorized value. || FORENSIC (analyst): The query-response trail evidences memorization-based leakage.",
+      "description": "Query systematically (membership/inversion) to reconstruct the memorized value.",
       "x_ctft_category": "AIM",
-      "x_ctft_role": "counter-technique",
+      "x_ctft_domain": "AIM",
+      "x_ctft_role": "resolution",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTCTE-AIM-005"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1213",
+          "description": "Data from Information Repositories"
         }
       ]
     },
@@ -295,9 +350,134 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
       "source_ref": "course-of-action--ea8a5ae9-d55f-57fc-8c0f-bd54bec274d2",
       "target_ref": "attack-pattern--96abe745-602f-523f-b436-df711d55e74a",
-      "description": "Counter-technique recovers/defeats the paired design technique."
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--92b8e23c-95db-56ae-9a26-bb842fea4511",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-AIM-006 - Self-hosted LLM platform misconfiguration",
+      "description": "A self-hosted LLM (ollama/oobabooga) is exposed or misconfigured; the flag hides in model outputs, endpoints, or host files.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "aim"
+        }
+      ],
+      "x_ctft_category": "AIM",
+      "x_ctft_domain": "AIM",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-AIM-006"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1190",
+          "description": "Exploit Public-Facing Application"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--e299ce98-ac75-5ba5-ae67-616005e921e1",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-AIM-006 - Audit ollama/oobabooga deployments for exposed endpoints",
+      "description": "Enumerate the exposed endpoints/APIs, query the model, and pivot to the host if the deployment is over-permissive.",
+      "x_ctft_category": "AIM",
+      "x_ctft_domain": "AIM",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-AIM-006"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1190",
+          "description": "Exploit Public-Facing Application"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--1a84a5f6-f3b7-524b-b130-958316f3c4ee",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--e299ce98-ac75-5ba5-ae67-616005e921e1",
+      "target_ref": "attack-pattern--92b8e23c-95db-56ae-9a26-bb842fea4511",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--a7884588-f9e2-5eaa-b7b0-54aedd3a3759",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-AIM-007 - Agent / tool-calling guardrail bypass",
+      "description": "An agent is constrained by guardrails over its tools; the flag requires coaxing it past the policy.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "aim"
+        }
+      ],
+      "x_ctft_category": "AIM",
+      "x_ctft_domain": "AIM",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-AIM-007"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--38595eaa-3090-587e-9b39-8bdee417ca82",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-AIM-007 - Bypass agent tool policies",
+      "description": "Craft prompts/tool-call sequences that bypass the guardrails and retrieve the flag.",
+      "x_ctft_category": "AIM",
+      "x_ctft_domain": "AIM",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-AIM-007"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--557e2e37-071d-586f-b3c4-344903c7ef08",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--38595eaa-3090-587e-9b39-8bdee417ca82",
+      "target_ref": "attack-pattern--a7884588-f9e2-5eaa-b7b0-54aedd3a3759",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     }
   ]
 }

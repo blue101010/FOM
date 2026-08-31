@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ctft/v3/schemas/fingerprint.schema.json",
+  "title": "CTFT Fingerprint (retrieval query)",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "artifact_type"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "3.0"
+    },
+    "label": {
+      "type": "string"
+    },
+    "artifact_type": {
+      "enum": [
+        "http-service",
+        "elf",
+        "pe",
+        "apk",
+        "pcap",
+        "memory-image",
+        "disk-image",
+        "qr",
+        "audio",
+        "image",
+        "video",
+        "archive",
+        "document",
+        "contract",
+        "firmware",
+        "rf-capture",
+        "source-code",
+        "binary-blob",
+        "file",
+        "web",
+        "text"
+      ],
+      "description": "Same controlled vocabulary as technique.artifact_types (SCHEMA_V3 §3.7)."
+    },
+    "protocol": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "runtime": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "protections": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "hints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "indicator",
+          "value"
+        ],
+        "properties": {
+          "indicator": {
+            "type": "string",
+            "pattern": "^IND-"
+          },
+          "value": {}
+        }
+      }
+    },
+    "expected": {
+      "type": "array",
+      "description": "Ground truth for evaluation: the technique id(s) a correct retrieval should return. Required in a hold-out set, optional elsewhere.",
+      "items": {
+        "type": "string",
+        "pattern": "^CTFTTE-[A-Z]{3}-[0-9]{3}$"
+      }
+    },
+    "provenance": {
+      "type": "string",
+      "description": "Where the case came from. A hold-out case must cite a write-up that was NOT used during curation."
+    }
+  },
+  "additionalProperties": false
+}

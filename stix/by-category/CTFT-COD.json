@@ -1,0 +1,463 @@
+{
+  "type": "bundle",
+  "id": "bundle--c94116c8-727c-514b-b61c-956de8f6eee3",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "name": "CTFT Project",
+      "identity_class": "organization",
+      "description": "Capture-The-Flag Techniques - an ontology of CTF solving behaviour. Relates to MITRE ATT&CK, CAPEC and CWE as per-entry anchors; not a parallel ATT&CK. Generalized from FOM."
+    },
+    {
+      "type": "x-ctft-tactic",
+      "spec_version": "2.1",
+      "id": "x-ctft-tactic--b49d5e13-98dd-5112-a503-45b73b643591",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "Coding / Programming Puzzle",
+      "x_ctft_shortname": "cod",
+      "x_ctft_domain": "COD",
+      "description": "Challenges where the flag is gated behind a programming or algorithmic problem: an esoteric language, a time-bounded algorithm, a scripted marathon of protocol rounds, a polyglot/code-golf constraint, or a constraint-satisfaction puzzle solvable with symbolic execution. (HTB: Coding)",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFT-TA-COD"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--5ae9b49b-d618-5ba1-843c-5ef8c5cec07d",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-COD-001 - Esolang / unusual-encoding puzzle",
+      "description": "The flag is expressed in an esoteric programming language (Brainfuck, Malbolge, Whitespace) or an unusual data representation that must be interpreted or decoded before the flag becomes readable.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "cod"
+        }
+      ],
+      "x_ctft_category": "COD",
+      "x_ctft_domain": "COD",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-COD-001"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1140",
+          "description": "Deobfuscate/Decode Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--8d93fc34-4ade-55c8-a774-92e4d3199b6e",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-COD-001 - Interpret or transpile the encoding",
+      "description": "Identify the esoteric language or encoding from its characteristic syntax (e.g. Brainfuck's +-<>[].,, Whitespace's invisible characters), find or implement an interpreter, and run the program to extract the flag output.",
+      "x_ctft_category": "COD",
+      "x_ctft_domain": "COD",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-COD-001"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1140",
+          "description": "Deobfuscate/Decode Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--edaac9b4-3cb8-574f-880f-e33b094baf6f",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--8d93fc34-4ade-55c8-a774-92e4d3199b6e",
+      "target_ref": "attack-pattern--5ae9b49b-d618-5ba1-843c-5ef8c5cec07d",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--6c54f513-e244-561c-8e69-c3cda0a472da",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-COD-002 - Algorithm optimisation challenge",
+      "description": "The server presents a large input instance and enforces a strict time or computation budget; a naïve brute-force approach will time out, requiring the solver to identify and implement the correct polynomial-time algorithm.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "cod"
+        }
+      ],
+      "x_ctft_category": "COD",
+      "x_ctft_domain": "COD",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-COD-002"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--f15dfd04-a19f-5c75-a539-a5b3bef3d7de",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-COD-002 - Implement an efficient algorithm to satisfy the server",
+      "description": "Identify the problem class (shortest-path, dynamic programming, number theory), implement the correct algorithm in PyPy or C, and submit the answer within the server's time budget.",
+      "x_ctft_category": "COD",
+      "x_ctft_domain": "COD",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-COD-002"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--0ca67106-1e3e-526b-bd39-1362d9aee173",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--f15dfd04-a19f-5c75-a539-a5b3bef3d7de",
+      "target_ref": "attack-pattern--6c54f513-e244-561c-8e69-c3cda0a472da",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--2fbc8568-a660-5497-800c-267f9efe5701",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-COD-003 - Scripted protocol / automation marathon",
+      "description": "The flag is awarded only after completing a very large number of stateful rounds of a binary or network protocol interaction — far beyond what manual solving allows within the server's timeout.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "cod"
+        }
+      ],
+      "x_ctft_category": "COD",
+      "x_ctft_domain": "COD",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-COD-003"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1071",
+          "description": "Application Layer Protocol"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--9ba44459-72cf-5505-b7d0-051de392f0a9",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-COD-003 - Write a pwntools script to complete all rounds",
+      "description": "Write a pwntools remote or process script that parses each server prompt, computes the answer (arithmetic, parsing, encoding), and responds within the timeout for every round until the flag is released.",
+      "x_ctft_category": "COD",
+      "x_ctft_domain": "COD",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-COD-003"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1071",
+          "description": "Application Layer Protocol"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--52dcda25-1cf3-57ec-a552-7d6aaa9c3d7e",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--9ba44459-72cf-5505-b7d0-051de392f0a9",
+      "target_ref": "attack-pattern--2fbc8568-a660-5497-800c-267f9efe5701",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--2703c757-f00e-5481-a518-63256c931535",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-COD-004 - Code-golf / polyglot code puzzle",
+      "description": "The submitted program must simultaneously pass several syntactic or semantic constraints (valid in multiple languages, under a byte limit, must not contain specific characters) while producing the correct output.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "cod"
+        }
+      ],
+      "x_ctft_category": "COD",
+      "x_ctft_domain": "COD",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-COD-004"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--68904f61-4070-59f3-97bb-9d70ed25e385",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-COD-004 - Craft a minimal polyglot that satisfies every parser",
+      "description": "Study each parser's grammar and find overlapping syntax: begin with the most restrictive language and layer compatible constructs. Use comments, string literals, and no-op tokens to satisfy parsers that would otherwise reject the code.",
+      "x_ctft_category": "COD",
+      "x_ctft_domain": "COD",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-COD-004"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--49c2f2c5-f975-5b42-85b7-e0dc269a2701",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--68904f61-4070-59f3-97bb-9d70ed25e385",
+      "target_ref": "attack-pattern--2703c757-f00e-5481-a518-63256c931535",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--3d55d556-cbd1-5658-8318-4abbff673208",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-COD-005 - Symbolic-execution / SMT-solver puzzle",
+      "description": "The correct flag input is the unique solution to a system of mathematical or Boolean constraints embedded in the binary's verification routine; no amount of manual guessing will reach it.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "cod"
+        }
+      ],
+      "x_ctft_category": "COD",
+      "x_ctft_domain": "COD",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-COD-005"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--302537d7-15d1-59f1-8e6b-bb8273e23c42",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-COD-005 - Extract constraints and solve with Z3 / angr",
+      "description": "Decompile the binary to identify the constraint system (comparisons, XOR chains, arithmetic relationships), model them as Z3 bit-vector equations, and call solver.check() to obtain the satisfying flag input. For complex control flow, use angr's symbolic execution with find/avoid addresses.",
+      "x_ctft_category": "COD",
+      "x_ctft_domain": "COD",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-COD-005"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--abb3bab7-78ee-5544-850b-6cd2c26923d5",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--302537d7-15d1-59f1-8e6b-bb8273e23c42",
+      "target_ref": "attack-pattern--3d55d556-cbd1-5658-8318-4abbff673208",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--9a3cbf32-fc62-592c-9583-211405498eb7",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-COD-006 - Combinatorial enumeration puzzle",
+      "description": "The flag key is a permutation/combination of inputs; naive search is too slow.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "cod"
+        }
+      ],
+      "x_ctft_category": "COD",
+      "x_ctft_domain": "COD",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-COD-006"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--47ebcd4f-3e73-5a45-b498-a42be1df3dd5",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-COD-006 - Generate permutations/combinations efficiently",
+      "description": "Generate permutations/combinations efficiently (itertools, backtracking) to find the satisfying one.",
+      "x_ctft_category": "COD",
+      "x_ctft_domain": "COD",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-COD-006"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--47efac13-20fb-5efe-a0fe-d9fec1ed4932",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--47ebcd4f-3e73-5a45-b498-a42be1df3dd5",
+      "target_ref": "attack-pattern--9a3cbf32-fc62-592c-9583-211405498eb7",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--c0f0727a-cf03-53d9-b181-51956277e93e",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-COD-007 - Grid/logic-constraint puzzle (Sudoku)",
+      "description": "The flag requires solving a Sudoku or constraint grid programmatically.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "cod"
+        }
+      ],
+      "x_ctft_category": "COD",
+      "x_ctft_domain": "COD",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-COD-007"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--c5bed01b-b9b4-5b23-b71e-e443a8f16a57",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-COD-007 - Solve constraint grids programmatically",
+      "description": "Model the constraints (backtracking/SAT) and solve the grid to extract the flag.",
+      "x_ctft_category": "COD",
+      "x_ctft_domain": "COD",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-COD-007"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--82c83d81-dd80-59a8-9902-80180ef27433",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--c5bed01b-b9b4-5b23-b71e-e443a8f16a57",
+      "target_ref": "attack-pattern--c0f0727a-cf03-53d9-b181-51956277e93e",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    }
+  ]
+}

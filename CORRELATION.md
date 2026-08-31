@@ -1,21 +1,21 @@
 # CTFT Correlation Matrix
 
 Every **Design / Hide Technique** (`CTFTTE-<CAT>-NNN`) and the
-**Counter-Technique** (`CTFTCTE-<CAT>-NNN`) that recovers it, grouped by tactic.
+**Resolution-Technique** (`CTFTCTE-<CAT>-NNN`) that recovers it, grouped by domain.
 IDs pair one-to-one: `CTFTTE-FOR-004` is always answered by `CTFTCTE-FOR-004`.
 
-> Generated from the files in `techniques/` and `countertechniques/` on 2026-08-30T22:35:39+00:00
-> by `v2/render_taxonomy_docs.py`. **161 complete pairs** across **19 active tactics**. Do not hand-edit: rename the entry, then re-render.
+> Generated from the files in `techniques/` and `countertechniques/` — corpus fingerprint `bf310fd1d4d392bd`
+> by `v3/render_taxonomy_docs.py`. **162 complete pairs** across **19 active domains**. Do not hand-edit: rename the entry, then re-render.
 
 ---
 
-## Tactics at a glance
+## Domains at a glance
 
 Order follows the challenge-category picker.
 
-| # | Code | Picker label | Tactic | Pairs |
+| # | Code | Picker label | Domain | Pairs |
 | --- | --- | --- | --- | --- |
-| 1 | [`FOR`](#ctft-ta-for) | Forensics | Forensics | 26 |
+| 1 | [`FOR`](#ctft-ta-for) | Forensics | Forensics | 27 |
 | 2 | [`WEB`](#ctft-ta-web) | Web | Web Exploitation | 17 |
 | 3 | [`CRY`](#ctft-ta-cry) | Crypto | Cryptography | 13 |
 | 4 | [`PWN`](#ctft-ta-pwn) | Binary | Binary Exploitation | 8 |
@@ -34,19 +34,19 @@ Order follows the challenge-category picker.
 | 17 | [`FPN`](#ctft-ta-fpn) | Full Pwn | Full Pwn / Multi-Stage | 10 |
 | 18 | [`HWR`](#ctft-ta-hwr) | Hardware | Hardware | 2 |
 | 19 | [`SDR`](#ctft-ta-sdr) | SDR / RF | Software-Defined Radio | 1 |
-| | | | **Total** | **161** |
+| | | | **Total** | **162** |
 
 **Retired — do not use.** `MSC` (Misc) was a catch-all whose entries all
-duplicated a precise tactic; file those challenges under `JAL`, `COD`, `GAM`
+duplicated a precise domain; file those challenges under `JAL`, `COD`, `GAM`
 or `FPN` instead. See the [supersession map](#retired-categories) below.
 
 ---
 
 ## <a id="ctft-ta-for"></a>`CTFT-TA-FOR` — Forensics
 
-> [tactic page](tactics/CTFT-TA-FOR.md) · 26 pairs · HTB: Forensics
+> [domain page](tactics/CTFT-TA-FOR.md) · 27 pairs · HTB: Forensics
 
-| # | Technique ID | Hide / Design name | Counter-technique ID | Counter name |
+| # | Technique ID | Hide / Design name | Resolution-technique ID | Recovery action |
 | --- | --- | --- | --- | --- |
 | 1 | [CTFTTE-FOR-001](techniques/CTFTTE-FOR-001.md) | Magic-byte / file-signature tampering | [CTFTCTE-FOR-001](countertechniques/CTFTCTE-FOR-001.md) | Recover the legitimate file signature |
 | 2 | [CTFTTE-FOR-002](techniques/CTFTTE-FOR-002.md) | Slack-space and unallocated-area concealment | [CTFTCTE-FOR-002](countertechniques/CTFTCTE-FOR-002.md) | Carve hidden files from slack/unallocated space |
@@ -55,13 +55,13 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 | 5 | [CTFTTE-FOR-005](techniques/CTFTTE-FOR-005.md) | Memory-resident artifact concealment | [CTFTCTE-FOR-005](countertechniques/CTFTCTE-FOR-005.md) | Recover secrets from a memory image |
 | 6 | [CTFTTE-FOR-006](techniques/CTFTTE-FOR-006.md) | PCAP payload obfuscation | [CTFTCTE-FOR-006](countertechniques/CTFTCTE-FOR-006.md) | Reassemble and decode hidden network payloads |
 | 7 | [CTFTTE-FOR-007](techniques/CTFTTE-FOR-007.md) | Modify legitimate header signature of a file | [CTFTCTE-FOR-007](countertechniques/CTFTCTE-FOR-007.md) | Recover legitimate signature of a file |
-| 8 | [CTFTTE-FOR-008](techniques/CTFTTE-FOR-008.md) | Modify legitimate header signature of a file via python script | [CTFTCTE-FOR-008](countertechniques/CTFTCTE-FOR-008.md) | Recover legitimate header signature of an OpenEXR image file |
-| 9 | [CTFTTE-FOR-009](techniques/CTFTTE-FOR-009.md) | Corrupt Image file magic signature | [CTFTCTE-FOR-009](countertechniques/CTFTCTE-FOR-009.md) | Counter — Corrupt Image file magic signature |
-| 10 | [CTFTTE-FOR-010](techniques/CTFTTE-FOR-010.md) | Use special encoding system to hide data with visual, machine-readable form. | [CTFTCTE-FOR-010](countertechniques/CTFTCTE-FOR-010.md) | Retrieve information from QR codes ⚠ |
-| 11 | [CTFTTE-FOR-011](techniques/CTFTTE-FOR-011.md) | Use special encoding system to hide data with QR codes | [CTFTCTE-FOR-011](countertechniques/CTFTCTE-FOR-011.md) | Retrieve information from rMQR codes ⚠ |
-| 12 | [CTFTTE-FOR-012](techniques/CTFTTE-FOR-012.md) | Use special encoding system to hide data with RMQR codes | [CTFTCTE-FOR-012](countertechniques/CTFTCTE-FOR-012.md) | Retrieve information from JAB QR codes (2D color bar code) ⚠ |
-| 13 | [CTFTTE-FOR-013](techniques/CTFTTE-FOR-013.md) | Conceal information with diagrams encoding | [CTFTCTE-FOR-013](countertechniques/CTFTCTE-FOR-013.md) | Retrieve information from Mengenlehreuhr diagrams encoding ⚠ |
-| 14 | [CTFTTE-FOR-014](techniques/CTFTTE-FOR-014.md) | Conceal information with Mengenlehreuhr diagrams encoding | [CTFTCTE-FOR-014](countertechniques/CTFTCTE-FOR-014.md) | Counter — Conceal information with Mengenlehreuhr diagrams encoding |
+| 8 | [CTFTTE-FOR-008](techniques/CTFTTE-FOR-008.md) | OpenEXR header-signature tampering | [CTFTCTE-FOR-008](countertechniques/CTFTCTE-FOR-008.md) | Recover legitimate header signature of an OpenEXR image file |
+| 9 | [CTFTTE-FOR-009](techniques/CTFTTE-FOR-009.md) | Corrupt Image file magic signature | [CTFTCTE-FOR-009](countertechniques/CTFTCTE-FOR-009.md) | Repair a corrupted image magic signature |
+| 10 | [CTFTTE-FOR-010](techniques/CTFTTE-FOR-010.md) | Use special encoding system to hide data with visual, machine-readable form. | [CTFTCTE-FOR-010](countertechniques/CTFTCTE-FOR-010.md) | Retrieve information from visual machine-readable encodings |
+| 11 | [CTFTTE-FOR-011](techniques/CTFTTE-FOR-011.md) | Use special encoding system to hide data with QR codes | [CTFTCTE-FOR-011](countertechniques/CTFTCTE-FOR-011.md) | Retrieve information from QR codes |
+| 12 | [CTFTTE-FOR-012](techniques/CTFTTE-FOR-012.md) | Use special encoding system to hide data with RMQR codes | [CTFTCTE-FOR-012](countertechniques/CTFTCTE-FOR-012.md) | Retrieve information from rMQR codes |
+| 13 | [CTFTTE-FOR-013](techniques/CTFTTE-FOR-013.md) | Conceal information with diagrams encoding | [CTFTCTE-FOR-013](countertechniques/CTFTCTE-FOR-013.md) | Retrieve information from diagram encodings |
+| 14 | [CTFTTE-FOR-014](techniques/CTFTTE-FOR-014.md) | Conceal information with Mengenlehreuhr diagrams encoding | [CTFTCTE-FOR-014](countertechniques/CTFTCTE-FOR-014.md) | Retrieve information from Mengenlehreuhr diagram encodings |
 | 15 | [CTFTTE-FOR-015](techniques/CTFTTE-FOR-015.md) | Conceal information with packagers | [CTFTCTE-FOR-015](countertechniques/CTFTCTE-FOR-015.md) | Recover from packager obfuscations |
 | 16 | [CTFTTE-FOR-016](techniques/CTFTTE-FOR-016.md) | Conceal information with date and time representations | [CTFTCTE-FOR-016](countertechniques/CTFTCTE-FOR-016.md) | Recover information with date and time representations |
 | 17 | [CTFTTE-FOR-017](techniques/CTFTTE-FOR-017.md) | Conceal text data strings in ELF binary | [CTFTCTE-FOR-017](countertechniques/CTFTCTE-FOR-017.md) | Recover text data strings from ELF binary |
@@ -74,13 +74,14 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 | 24 | [CTFTTE-FOR-024](techniques/CTFTTE-FOR-024.md) | Browser-profile artifact concealment | [CTFTCTE-FOR-024](countertechniques/CTFTCTE-FOR-024.md) | Parse Firefox/SQLite artifacts (places, logins, cookies) |
 | 25 | [CTFTTE-FOR-025](techniques/CTFTTE-FOR-025.md) | PDF object/stream hiding | [CTFTCTE-FOR-025](countertechniques/CTFTCTE-FOR-025.md) | Parse PDF xref, streams and filters |
 | 26 | [CTFTTE-FOR-026](techniques/CTFTTE-FOR-026.md) | Memory-image OS-artifact recovery | [CTFTCTE-FOR-026](countertechniques/CTFTCTE-FOR-026.md) | Extract registry/services/process artifacts from memory images |
+| 27 | [CTFTTE-FOR-027](techniques/CTFTTE-FOR-027.md) | Use JAB colour 2D codes to hide data | [CTFTCTE-FOR-027](countertechniques/CTFTCTE-FOR-027.md) | Retrieve information from JAB colour codes |
 
 
 ## <a id="ctft-ta-web"></a>`CTFT-TA-WEB` — Web Exploitation
 
-> [tactic page](tactics/CTFT-TA-WEB.md) · 17 pairs · HTB: Web
+> [domain page](tactics/CTFT-TA-WEB.md) · 17 pairs · HTB: Web
 
-| # | Technique ID | Hide / Design name | Counter-technique ID | Counter name |
+| # | Technique ID | Hide / Design name | Resolution-technique ID | Recovery action |
 | --- | --- | --- | --- | --- |
 | 1 | [CTFTTE-WEB-001](techniques/CTFTTE-WEB-001.md) | Obscured endpoint / source-comment hiding | [CTFTCTE-WEB-001](countertechniques/CTFTCTE-WEB-001.md) | Content discovery and source review |
 | 2 | [CTFTTE-WEB-002](techniques/CTFTTE-WEB-002.md) | IDOR / predictable object obscurity | [CTFTCTE-WEB-002](countertechniques/CTFTCTE-WEB-002.md) | Enumerate insecure direct object references |
@@ -103,9 +104,9 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 
 ## <a id="ctft-ta-cry"></a>`CTFT-TA-CRY` — Cryptography
 
-> [tactic page](tactics/CTFT-TA-CRY.md) · 13 pairs · HTB: Crypto
+> [domain page](tactics/CTFT-TA-CRY.md) · 13 pairs · HTB: Crypto
 
-| # | Technique ID | Hide / Design name | Counter-technique ID | Counter name |
+| # | Technique ID | Hide / Design name | Resolution-technique ID | Recovery action |
 | --- | --- | --- | --- | --- |
 | 1 | [CTFTTE-CRY-001](techniques/CTFTTE-CRY-001.md) | Weak RSA parameter design | [CTFTCTE-CRY-001](countertechniques/CTFTCTE-CRY-001.md) | Recover the RSA private key from weak parameters |
 | 2 | [CTFTTE-CRY-002](techniques/CTFTTE-CRY-002.md) | Classical cipher layering | [CTFTCTE-CRY-002](countertechniques/CTFTCTE-CRY-002.md) | Break layered classical ciphers |
@@ -124,9 +125,9 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 
 ## <a id="ctft-ta-pwn"></a>`CTFT-TA-PWN` — Binary Exploitation
 
-> [tactic page](tactics/CTFT-TA-PWN.md) · 8 pairs · HTB: Pwn
+> [domain page](tactics/CTFT-TA-PWN.md) · 8 pairs · HTB: Pwn
 
-| # | Technique ID | Hide / Design name | Counter-technique ID | Counter name |
+| # | Technique ID | Hide / Design name | Resolution-technique ID | Recovery action |
 | --- | --- | --- | --- | --- |
 | 1 | [CTFTTE-PWN-001](techniques/CTFTTE-PWN-001.md) | Hidden win-function backdoor | [CTFTCTE-PWN-001](countertechniques/CTFTCTE-PWN-001.md) | Redirect execution to the win function |
 | 2 | [CTFTTE-PWN-002](techniques/CTFTTE-PWN-002.md) | Format-string information hiding | [CTFTCTE-PWN-002](countertechniques/CTFTCTE-PWN-002.md) | Leak and overwrite via format string |
@@ -140,9 +141,9 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 
 ## <a id="ctft-ta-rev"></a>`CTFT-TA-REV` — Reverse Engineering
 
-> [tactic page](tactics/CTFT-TA-REV.md) · 9 pairs · HTB: Reversing
+> [domain page](tactics/CTFT-TA-REV.md) · 9 pairs · HTB: Reversing
 
-| # | Technique ID | Hide / Design name | Counter-technique ID | Counter name |
+| # | Technique ID | Hide / Design name | Resolution-technique ID | Recovery action |
 | --- | --- | --- | --- | --- |
 | 1 | [CTFTTE-REV-001](techniques/CTFTTE-REV-001.md) | Anti-debugging / anti-analysis guards | [CTFTCTE-REV-001](countertechniques/CTFTCTE-REV-001.md) | Bypass anti-analysis to reach the check |
 | 2 | [CTFTTE-REV-002](techniques/CTFTTE-REV-002.md) | Packing / runtime self-modification | [CTFTCTE-REV-002](countertechniques/CTFTCTE-REV-002.md) | Unpack and dump the real code |
@@ -157,18 +158,18 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 
 ## <a id="ctft-ta-ste"></a>`CTFT-TA-STE` — Steganography
 
-> [tactic page](tactics/CTFT-TA-STE.md) · 11 pairs · HTB: Forensics/Misc (Stego)
+> [domain page](tactics/CTFT-TA-STE.md) · 11 pairs · HTB: Forensics/Misc (Stego)
 
-| # | Technique ID | Hide / Design name | Counter-technique ID | Counter name |
+| # | Technique ID | Hide / Design name | Resolution-technique ID | Recovery action |
 | --- | --- | --- | --- | --- |
 | 1 | [CTFTTE-STE-001](techniques/CTFTTE-STE-001.md) | LSB image steganography | [CTFTCTE-STE-001](countertechniques/CTFTCTE-STE-001.md) | Extract least-significant-bit payloads |
 | 2 | [CTFTTE-STE-002](techniques/CTFTTE-STE-002.md) | Appended data / polyglot after EOF | [CTFTCTE-STE-002](countertechniques/CTFTCTE-STE-002.md) | Detect and split appended/embedded files |
 | 3 | [CTFTTE-STE-003](techniques/CTFTTE-STE-003.md) | Audio spectrogram hiding | [CTFTCTE-STE-003](countertechniques/CTFTCTE-STE-003.md) | Reveal data in the audio spectrogram |
 | 4 | [CTFTTE-STE-004](techniques/CTFTTE-STE-004.md) | Metadata / EXIF embedding | [CTFTCTE-STE-004](countertechniques/CTFTCTE-STE-004.md) | Extract concealed metadata fields |
 | 5 | [CTFTTE-STE-005](techniques/CTFTTE-STE-005.md) | Zero-width / whitespace text steganography | [CTFTCTE-STE-005](countertechniques/CTFTCTE-STE-005.md) | Decode invisible-character payloads |
-| 6 | [CTFTTE-STE-006](techniques/CTFTTE-STE-006.md) | Conceal information within digital media with **linguistic** steganography | [CTFTCTE-STE-006](countertechniques/CTFTCTE-STE-006.md) | Counter — Conceal information within digital media with **linguistic** steganography |
-| 7 | [CTFTTE-STE-007](techniques/CTFTTE-STE-007.md) | Conceal information within digital media with **technical** steganography | [CTFTCTE-STE-007](countertechniques/CTFTCTE-STE-007.md) | Counter — Conceal information within digital media with **technical** steganography |
-| 8 | [CTFTTE-STE-008](techniques/CTFTTE-STE-008.md) | Conceal via **technical text** steganography | [CTFTCTE-STE-008](countertechniques/CTFTCTE-STE-008.md) | Counter — Conceal via **technical text** steganography |
+| 6 | [CTFTTE-STE-006](techniques/CTFTTE-STE-006.md) | Conceal information within digital media with **linguistic** steganography | [CTFTCTE-STE-006](countertechniques/CTFTCTE-STE-006.md) | Detect and decode linguistic steganography |
+| 7 | [CTFTTE-STE-007](techniques/CTFTTE-STE-007.md) | Conceal information within digital media with **technical** steganography | [CTFTCTE-STE-007](countertechniques/CTFTCTE-STE-007.md) | Detect and extract technical steganography |
+| 8 | [CTFTTE-STE-008](techniques/CTFTTE-STE-008.md) | Conceal via **technical text** steganography | [CTFTCTE-STE-008](countertechniques/CTFTCTE-STE-008.md) | Decode technical text steganography |
 | 9 | [CTFTTE-STE-009](techniques/CTFTTE-STE-009.md) | Nested metadata-container embedding | [CTFTCTE-STE-009](countertechniques/CTFTCTE-STE-009.md) | Recursively inspect nested metadata containers |
 | 10 | [CTFTTE-STE-010](techniques/CTFTTE-STE-010.md) | Audio-domain stego beyond spectrograms (LSB/phase/DTMF/SSTV) | [CTFTCTE-STE-010](countertechniques/CTFTCTE-STE-010.md) | Detect and decode audio-domain stego |
 | 11 | [CTFTTE-STE-011](techniques/CTFTTE-STE-011.md) | Palette / bitplane LSB tricks | [CTFTCTE-STE-011](countertechniques/CTFTCTE-STE-011.md) | Analyze bitplanes and palette-based LSB |
@@ -176,9 +177,9 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 
 ## <a id="ctft-ta-osi"></a>`CTFT-TA-OSI` — OSINT
 
-> [tactic page](tactics/CTFT-TA-OSI.md) · 8 pairs · HTB: OSINT
+> [domain page](tactics/CTFT-TA-OSI.md) · 8 pairs · HTB: OSINT
 
-| # | Technique ID | Hide / Design name | Counter-technique ID | Counter name |
+| # | Technique ID | Hide / Design name | Resolution-technique ID | Recovery action |
 | --- | --- | --- | --- | --- |
 | 1 | [CTFTTE-OSI-001](techniques/CTFTTE-OSI-001.md) | Metadata-dispersed identity/location | [CTFTCTE-OSI-001](countertechniques/CTFTCTE-OSI-001.md) | Correlate leaked metadata |
 | 2 | [CTFTTE-OSI-002](techniques/CTFTTE-OSI-002.md) | Cross-platform username pivot | [CTFTCTE-OSI-002](countertechniques/CTFTCTE-OSI-002.md) | Enumerate accounts across platforms |
@@ -192,9 +193,9 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 
 ## <a id="ctft-ta-cld"></a>`CTFT-TA-CLD` — Cloud
 
-> [tactic page](tactics/CTFT-TA-CLD.md) · 8 pairs · HTB: Cloud
+> [domain page](tactics/CTFT-TA-CLD.md) · 8 pairs · HTB: Cloud
 
-| # | Technique ID | Hide / Design name | Counter-technique ID | Counter name |
+| # | Technique ID | Hide / Design name | Resolution-technique ID | Recovery action |
 | --- | --- | --- | --- | --- |
 | 1 | [CTFTTE-CLD-001](techniques/CTFTTE-CLD-001.md) | Misconfigured object-storage exposure | [CTFTCTE-CLD-001](countertechniques/CTFTCTE-CLD-001.md) | Enumerate and list public buckets |
 | 2 | [CTFTTE-CLD-002](techniques/CTFTTE-CLD-002.md) | Over-permissive IAM role | [CTFTCTE-CLD-002](countertechniques/CTFTCTE-CLD-002.md) | Enumerate and assume reachable roles |
@@ -208,9 +209,9 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 
 ## <a id="ctft-ta-blk"></a>`CTFT-TA-BLK` — Blockchain
 
-> [tactic page](tactics/CTFT-TA-BLK.md) · 5 pairs · HTB: Blockchain
+> [domain page](tactics/CTFT-TA-BLK.md) · 5 pairs · HTB: Blockchain
 
-| # | Technique ID | Hide / Design name | Counter-technique ID | Counter name |
+| # | Technique ID | Hide / Design name | Resolution-technique ID | Recovery action |
 | --- | --- | --- | --- | --- |
 | 1 | [CTFTTE-BLK-001](techniques/CTFTTE-BLK-001.md) | Private storage-variable concealment | [CTFTCTE-BLK-001](countertechniques/CTFTCTE-BLK-001.md) | Read contract storage slots directly |
 | 2 | [CTFTTE-BLK-002](techniques/CTFTTE-BLK-002.md) | Reentrancy-gated flag | [CTFTCTE-BLK-002](countertechniques/CTFTCTE-BLK-002.md) | Exploit reentrancy to set the flag |
@@ -221,9 +222,9 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 
 ## <a id="ctft-ta-aim"></a>`CTFT-TA-AIM` — AI / ML
 
-> [tactic page](tactics/CTFT-TA-AIM.md) · 7 pairs · HTB: AI-ML
+> [domain page](tactics/CTFT-TA-AIM.md) · 7 pairs · HTB: AI-ML
 
-| # | Technique ID | Hide / Design name | Counter-technique ID | Counter name |
+| # | Technique ID | Hide / Design name | Resolution-technique ID | Recovery action |
 | --- | --- | --- | --- | --- |
 | 1 | [CTFTTE-AIM-001](techniques/CTFTTE-AIM-001.md) | Secret embedded in model weights | [CTFTCTE-AIM-001](countertechniques/CTFTCTE-AIM-001.md) | Extract tensors and inspect weights |
 | 2 | [CTFTTE-AIM-002](techniques/CTFTTE-AIM-002.md) | Prompt-injection-gated flag | [CTFTCTE-AIM-002](countertechniques/CTFTCTE-AIM-002.md) | Extract the flag via crafted prompts |
@@ -236,9 +237,9 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 
 ## <a id="ctft-ta-ics"></a>`CTFT-TA-ICS` — ICS / SCADA
 
-> [tactic page](tactics/CTFT-TA-ICS.md) · 5 pairs · HTB: ICS
+> [domain page](tactics/CTFT-TA-ICS.md) · 5 pairs · HTB: ICS
 
-| # | Technique ID | Hide / Design name | Counter-technique ID | Counter name |
+| # | Technique ID | Hide / Design name | Resolution-technique ID | Recovery action |
 | --- | --- | --- | --- | --- |
 | 1 | [CTFTTE-ICS-001](techniques/CTFTTE-ICS-001.md) | Modbus holding-register concealment | [CTFTCTE-ICS-001](countertechniques/CTFTCTE-ICS-001.md) | Read Modbus registers |
 | 2 | [CTFTTE-ICS-002](techniques/CTFTTE-ICS-002.md) | S7comm PLC memory hiding | [CTFTCTE-ICS-002](countertechniques/CTFTCTE-ICS-002.md) | Read S7 data blocks |
@@ -249,9 +250,9 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 
 ## <a id="ctft-ta-mob"></a>`CTFT-TA-MOB` — Mobile
 
-> [tactic page](tactics/CTFT-TA-MOB.md) · 5 pairs · HTB: Mobile
+> [domain page](tactics/CTFT-TA-MOB.md) · 5 pairs · HTB: Mobile
 
-| # | Technique ID | Hide / Design name | Counter-technique ID | Counter name |
+| # | Technique ID | Hide / Design name | Resolution-technique ID | Recovery action |
 | --- | --- | --- | --- | --- |
 | 1 | [CTFTTE-MOB-001](techniques/CTFTTE-MOB-001.md) | Hardcoded secrets in app resources | [CTFTCTE-MOB-001](countertechniques/CTFTCTE-MOB-001.md) | Decompile the APK and extract secrets |
 | 2 | [CTFTTE-MOB-002](techniques/CTFTTE-MOB-002.md) | Native-library logic hiding | [CTFTCTE-MOB-002](countertechniques/CTFTCTE-MOB-002.md) | Reverse the native .so |
@@ -262,9 +263,9 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 
 ## <a id="ctft-ta-jal"></a>`CTFT-TA-JAL` — Jail / Sandbox Escape
 
-> [tactic page](tactics/CTFT-TA-JAL.md) · 6 pairs · HTB: Misc (Jail)
+> [domain page](tactics/CTFT-TA-JAL.md) · 6 pairs · HTB: Misc (Jail)
 
-| # | Technique ID | Hide / Design name | Counter-technique ID | Counter name |
+| # | Technique ID | Hide / Design name | Resolution-technique ID | Recovery action |
 | --- | --- | --- | --- | --- |
 | 1 | [CTFTTE-JAL-001](techniques/CTFTTE-JAL-001.md) | Python jail (pyjail) confinement | [CTFTCTE-JAL-001](countertechniques/CTFTCTE-JAL-001.md) | Escape the Python sandbox |
 | 2 | [CTFTTE-JAL-002](techniques/CTFTTE-JAL-002.md) | Restricted-shell confinement | [CTFTCTE-JAL-002](countertechniques/CTFTCTE-JAL-002.md) | Escape the restricted shell |
@@ -276,9 +277,9 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 
 ## <a id="ctft-ta-gam"></a>`CTFT-TA-GAM` — Game / Protocol Automation (GamePwn)
 
-> [tactic page](tactics/CTFT-TA-GAM.md) · 6 pairs · HTB: GamePwn
+> [domain page](tactics/CTFT-TA-GAM.md) · 6 pairs · HTB: GamePwn
 
-| # | Technique ID | Hide / Design name | Counter-technique ID | Counter name |
+| # | Technique ID | Hide / Design name | Resolution-technique ID | Recovery action |
 | --- | --- | --- | --- | --- |
 | 1 | [CTFTTE-GAM-001](techniques/CTFTTE-GAM-001.md) | Networked game / protocol automation | [CTFTCTE-GAM-001](countertechniques/CTFTCTE-GAM-001.md) | Script a client to beat the protocol |
 | 2 | [CTFTTE-GAM-002](techniques/CTFTTE-GAM-002.md) | Game save-state / memory manipulation | [CTFTCTE-GAM-002](countertechniques/CTFTCTE-GAM-002.md) | Hex-edit the save file or patch in-memory values |
@@ -290,9 +291,9 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 
 ## <a id="ctft-ta-cod"></a>`CTFT-TA-COD` — Coding / Programming Puzzle
 
-> [tactic page](tactics/CTFT-TA-COD.md) · 7 pairs · HTB: Coding
+> [domain page](tactics/CTFT-TA-COD.md) · 7 pairs · HTB: Coding
 
-| # | Technique ID | Hide / Design name | Counter-technique ID | Counter name |
+| # | Technique ID | Hide / Design name | Resolution-technique ID | Recovery action |
 | --- | --- | --- | --- | --- |
 | 1 | [CTFTTE-COD-001](techniques/CTFTTE-COD-001.md) | Esolang / unusual-encoding puzzle | [CTFTCTE-COD-001](countertechniques/CTFTCTE-COD-001.md) | Interpret or transpile the encoding |
 | 2 | [CTFTTE-COD-002](techniques/CTFTTE-COD-002.md) | Algorithm optimisation challenge | [CTFTCTE-COD-002](countertechniques/CTFTCTE-COD-002.md) | Implement an efficient algorithm to satisfy the server |
@@ -305,9 +306,9 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 
 ## <a id="ctft-ta-net"></a>`CTFT-TA-NET` — Network
 
-> [tactic page](tactics/CTFT-TA-NET.md) · 7 pairs · HTB: Misc (Network)
+> [domain page](tactics/CTFT-TA-NET.md) · 7 pairs · HTB: Misc (Network)
 
-| # | Technique ID | Hide / Design name | Counter-technique ID | Counter name |
+| # | Technique ID | Hide / Design name | Resolution-technique ID | Recovery action |
 | --- | --- | --- | --- | --- |
 | 1 | [CTFTTE-NET-001](techniques/CTFTTE-NET-001.md) | Port/service discovery maze | [CTFTCTE-NET-001](countertechniques/CTFTCTE-NET-001.md) | Systematic port/service enumeration |
 | 2 | [CTFTTE-NET-002](techniques/CTFTTE-NET-002.md) | DNS covert channel / tunnel | [CTFTCTE-NET-002](countertechniques/CTFTCTE-NET-002.md) | Detect DNS tunneling and beaconing in PCAPs |
@@ -320,9 +321,9 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 
 ## <a id="ctft-ta-fpn"></a>`CTFT-TA-FPN` — Full Pwn / Multi-Stage
 
-> [tactic page](tactics/CTFT-TA-FPN.md) · 10 pairs · HTB: Fullpwn
+> [domain page](tactics/CTFT-TA-FPN.md) · 10 pairs · HTB: Fullpwn
 
-| # | Technique ID | Hide / Design name | Counter-technique ID | Counter name |
+| # | Technique ID | Hide / Design name | Resolution-technique ID | Recovery action |
 | --- | --- | --- | --- | --- |
 | 1 | [CTFTTE-FPN-001](techniques/CTFTTE-FPN-001.md) | Multi-stage chained challenge | [CTFTCTE-FPN-001](countertechniques/CTFTCTE-FPN-001.md) | Chain enumeration, foothold and privilege escalation |
 | 2 | [CTFTTE-FPN-002](techniques/CTFTTE-FPN-002.md) | Windows Active Directory fullpwn | [CTFTCTE-FPN-002](countertechniques/CTFTCTE-FPN-002.md) | Enumerate AD, abuse delegation or ACL paths to the DC |
@@ -338,9 +339,9 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 
 ## <a id="ctft-ta-hwr"></a>`CTFT-TA-HWR` — Hardware
 
-> [tactic page](tactics/CTFT-TA-HWR.md) · 2 pairs · HTB: Hardware
+> [domain page](tactics/CTFT-TA-HWR.md) · 2 pairs · HTB: Hardware
 
-| # | Technique ID | Hide / Design name | Counter-technique ID | Counter name |
+| # | Technique ID | Hide / Design name | Resolution-technique ID | Recovery action |
 | --- | --- | --- | --- | --- |
 | 1 | [CTFTTE-HWR-001](techniques/CTFTTE-HWR-001.md) | USB HID keystroke concealment | [CTFTCTE-HWR-001](countertechniques/CTFTCTE-HWR-001.md) | Reconstruct keystrokes from captured USB HID traffic |
 | 2 | [CTFTTE-HWR-002](techniques/CTFTTE-HWR-002.md) | Badge / embedded-device firmware concealment | [CTFTCTE-HWR-002](countertechniques/CTFTCTE-HWR-002.md) | Dump and reverse badge firmware |
@@ -348,9 +349,9 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 
 ## <a id="ctft-ta-sdr"></a>`CTFT-TA-SDR` — Software-Defined Radio
 
-> [tactic page](tactics/CTFT-TA-SDR.md) · 1 pairs · HTB: Hardware
+> [domain page](tactics/CTFT-TA-SDR.md) · 1 pairs · HTB: Hardware
 
-| # | Technique ID | Hide / Design name | Counter-technique ID | Counter name |
+| # | Technique ID | Hide / Design name | Resolution-technique ID | Recovery action |
 | --- | --- | --- | --- | --- |
 | 1 | [CTFTTE-SDR-001](techniques/CTFTTE-SDR-001.md) | RF/SDR signal embedding | [CTFTCTE-SDR-001](countertechniques/CTFTCTE-SDR-001.md) | Demodulate and decode RF captures |
 
@@ -380,22 +381,7 @@ them back as live entries.
 
 ## Pairs flagged for review
 
-⚠ **Subject mismatch** — the counter-technique does not answer the technique it is paired with. Fixing this is an editorial change to the entry content, not to this matrix.
-
-| Pair | Issue |
-| --- | --- |
-| `CTFTTE-FOR-010` / `CTFTCTE-FOR-010` | technique is the generic parent (visual machine-readable encoding); counter answers QR only |
-| `CTFTTE-FOR-011` / `CTFTCTE-FOR-011` | technique covers QR codes; counter answers rMQR codes |
-| `CTFTTE-FOR-012` / `CTFTCTE-FOR-012` | technique covers rMQR codes; counter answers JAB (colour) codes |
-| `CTFTTE-FOR-013` / `CTFTCTE-FOR-013` | technique is the generic parent (diagram encoding); counter answers Mengenlehreuhr only |
-
-**Placeholder counter names** — titled `Counter — <technique name>` instead of naming the recovery action:
-
-- `CTFTCTE-FOR-009`
-- `CTFTCTE-FOR-014`
-- `CTFTCTE-STE-006`
-- `CTFTCTE-STE-007`
-- `CTFTCTE-STE-008`
+None.
 
 ---
 
@@ -407,8 +393,8 @@ them back as live entries.
 4. Re-render and re-index:
 
 ```bash
-python v2/render_taxonomy_docs.py --write
-python v2/catalog_audit.py --write --write-index --write-catalog --check
+python v3/render_taxonomy_docs.py --write
+python v3/catalog_audit.py --write --write-index --write-catalog --check
 ```
 
 See [README.md](README.md) for the model, and `HIERARCHY.md` (rendered locally by the same script) for the flat listing.

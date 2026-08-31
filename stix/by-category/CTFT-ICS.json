@@ -1,6 +1,6 @@
 {
   "type": "bundle",
-  "id": "bundle--a4945e31-af02-542e-8a36-0b313de3e58f",
+  "id": "bundle--3d42d8a9-a6e9-52d4-a4a5-4a322c356f7c",
   "objects": [
     {
       "type": "identity",
@@ -10,7 +10,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "name": "CTFT Project",
       "identity_class": "organization",
-      "description": "Capture-The-Flag Techniques - complementary to MITRE ATT&CK, generalized from FOM."
+      "description": "Capture-The-Flag Techniques - an ontology of CTF solving behaviour. Relates to MITRE ATT&CK, CAPEC and CWE as per-entry anchors; not a parallel ATT&CK. Generalized from FOM."
     },
     {
       "type": "x-ctft-tactic",
@@ -21,6 +21,7 @@
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "ICS / SCADA",
       "x_ctft_shortname": "ics",
+      "x_ctft_domain": "ICS",
       "description": "Industrial-protocol register/memory hiding and protocol-level extraction. (HTB: ICS)",
       "external_references": [
         {
@@ -37,7 +38,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTTE-ICS-001 - Modbus holding-register concealment",
-      "description": "The flag is stored across Modbus holding/input registers on a simulated PLC. | ATT&CK complementarity: No direct ATT&CK technique; complements ATT&CK for ICS at the protocol-recovery level.",
+      "description": "The flag is stored across Modbus holding/input registers on a simulated PLC.",
       "kill_chain_phases": [
         {
           "kill_chain_name": "ctft",
@@ -45,11 +46,17 @@
         }
       ],
       "x_ctft_category": "ICS",
+      "x_ctft_domain": "ICS",
       "x_ctft_role": "design-hide",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTTE-ICS-001"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T0861",
+          "description": "Point & Tag Identification"
         }
       ]
     },
@@ -61,13 +68,19 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-ICS-001 - Read Modbus registers",
-      "description": "OFFENSIVE (solver): Connect and read the register range, then reassemble the bytes into the flag. || FORENSIC (analyst): Register reads document the unauthenticated data exposure typical of Modbus.",
+      "description": "Connect and read the register range, then reassemble the bytes into the flag.",
       "x_ctft_category": "ICS",
-      "x_ctft_role": "counter-technique",
+      "x_ctft_domain": "ICS",
+      "x_ctft_role": "resolution",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTCTE-ICS-001"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T0861",
+          "description": "Point & Tag Identification"
         }
       ]
     },
@@ -79,9 +92,10 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
       "source_ref": "course-of-action--48ec3386-e0f9-5d42-b890-192fc94c8ec1",
       "target_ref": "attack-pattern--373a99d1-5567-5414-8429-d1429080ec5c",
-      "description": "Counter-technique recovers/defeats the paired design technique."
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     },
     {
       "type": "attack-pattern",
@@ -91,7 +105,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTTE-ICS-002 - S7comm PLC memory hiding",
-      "description": "Data is concealed inside S7 PLC data blocks reachable over S7comm. | ATT&CK complementarity: No direct ATT&CK technique.",
+      "description": "Data is concealed inside S7 PLC data blocks reachable over S7comm.",
       "kill_chain_phases": [
         {
           "kill_chain_name": "ctft",
@@ -99,11 +113,17 @@
         }
       ],
       "x_ctft_category": "ICS",
+      "x_ctft_domain": "ICS",
       "x_ctft_role": "design-hide",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTTE-ICS-002"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T0861",
+          "description": "Point & Tag Identification"
         }
       ]
     },
@@ -115,13 +135,19 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-ICS-002 - Read S7 data blocks",
-      "description": "OFFENSIVE (solver): Use an S7 client to read the relevant data block and extract the value. || FORENSIC (analyst): Data-block reads document the accessible memory regions of the device.",
+      "description": "Use an S7 client to read the relevant data block and extract the value.",
       "x_ctft_category": "ICS",
-      "x_ctft_role": "counter-technique",
+      "x_ctft_domain": "ICS",
+      "x_ctft_role": "resolution",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTCTE-ICS-002"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T0861",
+          "description": "Point & Tag Identification"
         }
       ]
     },
@@ -133,9 +159,10 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
       "source_ref": "course-of-action--a61c55ee-3463-52b3-b1bd-68c320e8ff24",
       "target_ref": "attack-pattern--960bfbe6-b253-5bdf-8f1c-60002cbc7dc2",
-      "description": "Counter-technique recovers/defeats the paired design technique."
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     },
     {
       "type": "attack-pattern",
@@ -145,7 +172,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTTE-ICS-003 - Proprietary-protocol capture concealment",
-      "description": "The flag rides a less-common industrial protocol inside a provided capture. | ATT&CK complementarity: No direct ATT&CK technique.",
+      "description": "The flag rides a less-common industrial protocol inside a provided capture.",
       "kill_chain_phases": [
         {
           "kill_chain_name": "ctft",
@@ -153,11 +180,17 @@
         }
       ],
       "x_ctft_category": "ICS",
+      "x_ctft_domain": "ICS",
       "x_ctft_role": "design-hide",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTTE-ICS-003"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T0842",
+          "description": "Network Sniffing"
         }
       ]
     },
@@ -169,13 +202,19 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-ICS-003 - Dissect industrial protocol captures",
-      "description": "OFFENSIVE (solver): Apply protocol dissectors to decode fields and extract the payload. || FORENSIC (analyst): Dissection documents the protocol semantics carrying the hidden data.",
+      "description": "Apply protocol dissectors to decode fields and extract the payload.",
       "x_ctft_category": "ICS",
-      "x_ctft_role": "counter-technique",
+      "x_ctft_domain": "ICS",
+      "x_ctft_role": "resolution",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTCTE-ICS-003"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T0842",
+          "description": "Network Sniffing"
         }
       ]
     },
@@ -187,9 +226,10 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
       "source_ref": "course-of-action--5a056d3a-c6bb-5fd1-9c76-24a32782bb2e",
       "target_ref": "attack-pattern--66066f28-6358-5bb2-8d93-b1299f8935a8",
-      "description": "Counter-technique recovers/defeats the paired design technique."
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     },
     {
       "type": "attack-pattern",
@@ -199,7 +239,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTTE-ICS-004 - HMI project-file secrets",
-      "description": "Credentials/flags are stored in an HMI or SCADA project/configuration file. | ATT&CK complementarity: No direct ATT&CK technique.",
+      "description": "Credentials/flags are stored in an HMI or SCADA project/configuration file.",
       "kill_chain_phases": [
         {
           "kill_chain_name": "ctft",
@@ -207,11 +247,17 @@
         }
       ],
       "x_ctft_category": "ICS",
+      "x_ctft_domain": "ICS",
       "x_ctft_role": "design-hide",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTTE-ICS-004"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T0843",
+          "description": "Program Download"
         }
       ]
     },
@@ -223,13 +269,19 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-ICS-004 - Parse HMI/SCADA project files",
-      "description": "OFFENSIVE (solver): Open/parse the project file structure to extract embedded values. || FORENSIC (analyst): Project-file analysis documents secrets persisted by the engineering tool.",
+      "description": "Open/parse the project file structure to extract embedded values.",
       "x_ctft_category": "ICS",
-      "x_ctft_role": "counter-technique",
+      "x_ctft_domain": "ICS",
+      "x_ctft_role": "resolution",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTCTE-ICS-004"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T0843",
+          "description": "Program Download"
         }
       ]
     },
@@ -241,9 +293,10 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
       "source_ref": "course-of-action--3fe34fbf-8cbc-5c2f-b6ca-4c7552771bd7",
       "target_ref": "attack-pattern--6fdd8f6c-8829-52b9-8c9b-d350aec7e173",
-      "description": "Counter-technique recovers/defeats the paired design technique."
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     },
     {
       "type": "attack-pattern",
@@ -253,7 +306,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTTE-ICS-005 - DNP3 / BACnet object enumeration",
-      "description": "The flag is an object/point value exposed by a DNP3 or BACnet device. | ATT&CK complementarity: No direct ATT&CK technique.",
+      "description": "The flag is an object/point value exposed by a DNP3 or BACnet device.",
       "kill_chain_phases": [
         {
           "kill_chain_name": "ctft",
@@ -261,11 +314,17 @@
         }
       ],
       "x_ctft_category": "ICS",
+      "x_ctft_domain": "ICS",
       "x_ctft_role": "design-hide",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTTE-ICS-005"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T0861",
+          "description": "Point & Tag Identification"
         }
       ]
     },
@@ -277,13 +336,19 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-ICS-005 - Enumerate protocol objects",
-      "description": "OFFENSIVE (solver): Enumerate objects/points and read the value carrying the flag. || FORENSIC (analyst): Object enumeration documents the device's exposed data model.",
+      "description": "Enumerate objects/points and read the value carrying the flag.",
       "x_ctft_category": "ICS",
-      "x_ctft_role": "counter-technique",
+      "x_ctft_domain": "ICS",
+      "x_ctft_role": "resolution",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTCTE-ICS-005"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T0861",
+          "description": "Point & Tag Identification"
         }
       ]
     },
@@ -295,9 +360,10 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
       "source_ref": "course-of-action--5577003d-2a44-59f4-bf7f-77d30e3e9de1",
       "target_ref": "attack-pattern--76306181-0a94-5cf0-b51a-529c913c5873",
-      "description": "Counter-technique recovers/defeats the paired design technique."
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     }
   ]
 }

@@ -1,0 +1,436 @@
+{
+  "type": "bundle",
+  "id": "bundle--52116f74-5acd-5d4e-9710-e56a3b676d28",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "name": "CTFT Project",
+      "identity_class": "organization",
+      "description": "Capture-The-Flag Techniques - an ontology of CTF solving behaviour. Relates to MITRE ATT&CK, CAPEC and CWE as per-entry anchors; not a parallel ATT&CK. Generalized from FOM."
+    },
+    {
+      "type": "x-ctft-tactic",
+      "spec_version": "2.1",
+      "id": "x-ctft-tactic--78ecb10d-a9fb-5d86-9be0-4d2bb5c6e9d2",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "Jail / Sandbox Escape",
+      "x_ctft_shortname": "jal",
+      "x_ctft_domain": "JAL",
+      "description": "Challenges where the author constructs a restricted execution environment — a language-level sandbox, a limited shell, or an OS/kernel isolation boundary — to prevent direct flag access. Solvers must find a path out of the confinement. (HTB: Misc (Jail))",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFT-TA-JAL"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--d8d2a8a3-932d-5fb9-abca-f4c11b90915d",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-JAL-001 - Python jail (pyjail) confinement",
+      "description": "Input is eval'd or exec'd in a restricted Python namespace with builtins stripped or whitelisted, preventing direct import of os, subprocess, or open file reads.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "jal"
+        }
+      ],
+      "x_ctft_category": "JAL",
+      "x_ctft_domain": "JAL",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-JAL-001"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1059.006",
+          "description": "Python"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--46440d98-10eb-50af-9984-822940309b05",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-JAL-001 - Escape the Python sandbox",
+      "description": "Reach builtins or OS access via object traversal: walk class.mro and subclasses() to find io.FileIO or os, then open and read the flag file. When is blocked, use getattr or string indexing on dir([])[0].",
+      "x_ctft_category": "JAL",
+      "x_ctft_domain": "JAL",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-JAL-001"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1059.006",
+          "description": "Python"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--9a57c650-a78a-581c-80dc-553f8bc26da7",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--46440d98-10eb-50af-9984-822940309b05",
+      "target_ref": "attack-pattern--d8d2a8a3-932d-5fb9-abca-f4c11b90915d",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--7eb7026f-d656-55cb-91f2-b0ed943dbf3c",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-JAL-002 - Restricted-shell confinement",
+      "description": "A limited shell (rbash, menu shell, or custom restricted interpreter) is placed between the player and the flag, blocking path traversal and forbidden commands.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "jal"
+        }
+      ],
+      "x_ctft_category": "JAL",
+      "x_ctft_domain": "JAL",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-JAL-002"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1059",
+          "description": "Command and Scripting Interpreter"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--ea9aefda-c530-5d9d-bc5d-d56b3579b218",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-JAL-002 - Escape the restricted shell",
+      "description": "Use GTFOBins to find a binary permitted by the shell that spawns an unrestricted subshell, or abuse PATH manipulation, editor shell-escape (:!/bin/sh), or SUID binaries to bypass the restriction.",
+      "x_ctft_category": "JAL",
+      "x_ctft_domain": "JAL",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-JAL-002"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1059",
+          "description": "Command and Scripting Interpreter"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--6bd20fd5-51f7-5cd3-9829-771defa084c1",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--ea9aefda-c530-5d9d-bc5d-d56b3579b218",
+      "target_ref": "attack-pattern--7eb7026f-d656-55cb-91f2-b0ed943dbf3c",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--48a899eb-acb6-5b24-999d-c6cafd339ca2",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-JAL-003 - Docker / container escape",
+      "description": "The flag resides on the host filesystem; the player lands inside a container with a deliberate misconfiguration (privileged mode, exposed Docker socket, writable host mount, excessive Linux capability).",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "jal"
+        }
+      ],
+      "x_ctft_category": "JAL",
+      "x_ctft_domain": "JAL",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-JAL-003"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1611",
+          "description": "Escape to Host"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--eb463a87-d5ed-51e9-9dd5-48ea5bf8057d",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-JAL-003 - Break out of the container to the host",
+      "description": "Enumerate container capabilities with amicontained; if --privileged, mount the host filesystem or load a kernel module. If the Docker socket is mounted, use it to spin up a new container with a host-root bind-mount. If a writable host path is mounted, write an SUID binary or modify a cron job.",
+      "x_ctft_category": "JAL",
+      "x_ctft_domain": "JAL",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-JAL-003"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1611",
+          "description": "Escape to Host"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--40888095-08b3-50c5-8c3e-32d9d5f5e724",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--eb463a87-d5ed-51e9-9dd5-48ea5bf8057d",
+      "target_ref": "attack-pattern--48a899eb-acb6-5b24-999d-c6cafd339ca2",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--f3b5ed9b-d6ff-5387-a229-75bf7e6f82b6",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-JAL-004 - JavaScript browser-sandbox jail",
+      "description": "A sandboxed JavaScript eval context strips or proxies window, Function, eval, and dangerous globals, requiring prototype-chain or constructor traversal to reach native execution.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "jal"
+        }
+      ],
+      "x_ctft_category": "JAL",
+      "x_ctft_domain": "JAL",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-JAL-004"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1059.007",
+          "description": "JavaScript"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--ad4b71e8-0bd2-54d9-bf4f-d0e1da3a6b4d",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-JAL-004 - Traverse the prototype chain to escape",
+      "description": "Walk the prototype chain via ({}).proto.proto.constructor or access Function through array methods to reconstruct a callable that reaches the flag. Use with statements or template-literal tags when eval is blocked.",
+      "x_ctft_category": "JAL",
+      "x_ctft_domain": "JAL",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-JAL-004"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1059.007",
+          "description": "JavaScript"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--4728ffdc-d7b3-5ff1-b7e9-77e51922d08c",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--ad4b71e8-0bd2-54d9-bf4f-d0e1da3a6b4d",
+      "target_ref": "attack-pattern--f3b5ed9b-d6ff-5387-a229-75bf7e6f82b6",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--6ffaff3e-7225-5ed7-93e1-f262a84d7b38",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-JAL-005 - Seccomp / AppArmor policy confinement",
+      "description": "A seccomp BPF profile or AppArmor policy blocks the direct syscalls (e.g. execve, open) needed to read the flag, forcing the solver to find an equivalent permitted path.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "jal"
+        }
+      ],
+      "x_ctft_category": "JAL",
+      "x_ctft_domain": "JAL",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-JAL-005"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1055",
+          "description": "Process Injection"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--69f81c54-8399-5c57-8615-17ec7d959e4f",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-JAL-005 - Identify allowed syscalls and pivot around the filter",
+      "description": "Use seccomp-tools dump to disassemble the BPF filter and enumerate permitted syscalls. If openat is blocked but open is not (or vice versa), use the allowed variant. Alternatively pivot to mmap+read or use processvmreadv if permitted.",
+      "x_ctft_category": "JAL",
+      "x_ctft_domain": "JAL",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-JAL-005"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1055",
+          "description": "Process Injection"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--f1a9c525-143a-50ae-ae11-ca045df09099",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--69f81c54-8399-5c57-8615-17ec7d959e4f",
+      "target_ref": "attack-pattern--6ffaff3e-7225-5ed7-93e1-f262a84d7b38",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--32df7960-1d2f-5c0e-a6d6-c12b57d08581",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-JAL-006 - WSL-interop sandbox escape",
+      "description": "The flag is on the Windows host or on the other side of a WSL interop boundary; the WSL shell is confined.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "jal"
+        }
+      ],
+      "x_ctft_category": "JAL",
+      "x_ctft_domain": "JAL",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-JAL-006"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1611",
+          "description": "Escape to Host"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--5c67449f-6620-56ae-9286-a852d0137be2",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-JAL-006 - Escape WSL-interop boundaries",
+      "description": "Abuse WSL interop (interop binaries, mounts) to cross the boundary and read the host flag.",
+      "x_ctft_category": "JAL",
+      "x_ctft_domain": "JAL",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-JAL-006"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1611",
+          "description": "Escape to Host"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--cb3ba81a-a319-5a4d-9842-f22046041b51",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--5c67449f-6620-56ae-9286-a852d0137be2",
+      "target_ref": "attack-pattern--32df7960-1d2f-5c0e-a6d6-c12b57d08581",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    }
+  ]
+}

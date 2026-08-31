@@ -1,0 +1,48 @@
+{
+  "model": "CTFT",
+  "schema_version": "3.0",
+  "collection": "relations_curated",
+  "note": "Hand-written edges only. `solves` is derived from the markdown pairing and is rejected here. Merged with the derived edges into v3/relations.json by `catalog_audit.py --write-relations`.",
+  "items": [
+    {
+      "id": "REL-RELATED-TO-PWN-005-JAL-005",
+      "schema_version": "3.0",
+      "type": "related-to",
+      "source": "CTFTTE-PWN-005",
+      "target": "CTFTTE-JAL-005",
+      "origin": "curated",
+      "confidence": "high",
+      "note": "Both are seccomp syscall-filter confinement; PWN frames it as an exploitation constraint, JAL as a sandbox boundary. Same mechanism, two domains."
+    },
+    {
+      "id": "REL-RELATED-TO-COD-005-REV-005",
+      "schema_version": "3.0",
+      "type": "related-to",
+      "source": "CTFTTE-COD-005",
+      "target": "CTFTTE-REV-005",
+      "origin": "curated",
+      "confidence": "high",
+      "note": "Identical solver behaviour: extract constraints, discharge with Z3/angr. COD frames it as a puzzle, REV as a flag check."
+    },
+    {
+      "id": "REL-RELATED-TO-COD-003-GAM-001",
+      "schema_version": "3.0",
+      "type": "related-to",
+      "source": "CTFTTE-COD-003",
+      "target": "CTFTTE-GAM-001",
+      "origin": "curated",
+      "confidence": "high",
+      "note": "Both require scripting a client to satisfy a networked protocol faster than a human."
+    },
+    {
+      "id": "REL-RELATED-TO-JAL-003-FPN-004",
+      "schema_version": "3.0",
+      "type": "related-to",
+      "source": "CTFTTE-JAL-003",
+      "target": "CTFTTE-FPN-004",
+      "origin": "curated",
+      "confidence": "medium",
+      "note": "Container escape appears as the whole challenge in JAL and as one link of the chain in FPN."
+    }
+  ]
+}

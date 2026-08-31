@@ -1,4 +1,4 @@
-# CTFTCTE-STE-008 — Counter — Conceal via **technical text** steganography
+# CTFTCTE-STE-008 — Decode technical text steganography
 
 > **Type:** Counter-Technique  
 > **Tactic:** [`CTFT-TA-STE`](../tactics/CTFT-TA-STE.md) — Steganography  
@@ -8,11 +8,16 @@
 
 ## Offensive Recovery (CTF practitioner / solver)
 
-_This counter-technique entry was auto-generated as a stub for `CTFTTE-STE-008`. Add offensive recovery and forensic details here._
+Text steganography conceals a message inside a piece of text through position and formatting
+rather than wording. Check, in order: the first letter of each sentence or line, meaningful
+typos, punctuation patterns, trailing whitespace, tab-vs-space runs, and zero-width or
+homoglyph characters (see [`CTFTCTE-STE-005`](CTFTCTE-STE-005.md) for the invisible-character
+case). Normalise the text and diff against the original to expose non-printing carriers.
 
 ## Forensic / Blue-Team Perspective (DFIR analyst)
 
-_Add blue-team / DFIR perspective here._
+Copy-paste preserves zero-width and whitespace carriers, so the payload often survives into
+tickets, chat logs and documents. Hexdump the raw bytes rather than reading the rendered text.
 
 ## Related MITRE ATT&CK
 
@@ -22,8 +27,16 @@ _Add blue-team / DFIR perspective here._
 
 ## Tools
 
-_See references._
+- xxd
+- CyberChef
+- unicode normalisation scripts
 
 ## References
 
-_None documented yet._
+**Sources**
+
+- (1) [Steganography — Wikipedia](https://en.wikipedia.org/wiki/Steganography)
+
+**Writeups**
+
+- Add challenge write-up link

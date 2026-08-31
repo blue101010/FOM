@@ -1,4 +1,4 @@
-# CTFTCTE-FOR-011 — Retrieve information from rMQR codes
+# CTFTCTE-FOR-011 — Retrieve information from QR codes
 
 > **Type:** Counter-Technique  
 > **Tactic:** [`CTFT-TA-FOR`](../tactics/CTFT-TA-FOR.md) — Forensics  
@@ -8,11 +8,15 @@
 
 ## Offensive Recovery (CTF practitioner / solver)
 
-Retrieve information from QR codes based on the legitimate specifications and extra methods (like stegnography or specific algorithms).
+Retrieve information from QR codes based on the legitimate specifications and extra methods
+(like steganography or specific algorithms). Damaged symbols often still decode: Reed-Solomon
+error correction tolerates up to 30% loss at level H, so repair the finder patterns and retry
+before assuming the payload is unrecoverable.
 
 ## Forensic / Blue-Team Perspective (DFIR analyst)
 
-_See sources and writeups for forensic analysis context._
+A decoded QR payload is attacker-controlled input. Record the raw modules alongside the decoded
+string so the decode can be reproduced independently.
 
 ## Related MITRE ATT&CK
 
@@ -25,6 +29,10 @@ _See sources and writeups for forensic analysis context._
 Use [FOMTOU004 - ZXingReader](https://github.com/blue101010/FOM/blob/main/tools/FOMTOU004.md) like in CTF Writeup ref (1)
 
 ## References
+
+**Sources**
+
+- (1) [QR Code Model 2 Structure and Algorithms](https://franckybox.com/wp-content/uploads/qrcode.pdf)
 
 **Writeups**
 

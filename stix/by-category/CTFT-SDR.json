@@ -1,0 +1,101 @@
+{
+  "type": "bundle",
+  "id": "bundle--3b603585-a392-5c6d-ac24-873ff8f8bb97",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "name": "CTFT Project",
+      "identity_class": "organization",
+      "description": "Capture-The-Flag Techniques - an ontology of CTF solving behaviour. Relates to MITRE ATT&CK, CAPEC and CWE as per-entry anchors; not a parallel ATT&CK. Generalized from FOM."
+    },
+    {
+      "type": "x-ctft-tactic",
+      "spec_version": "2.1",
+      "id": "x-ctft-tactic--bbdde102-f780-5ea3-b4da-cda14ca14a36",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "Software-Defined Radio",
+      "x_ctft_shortname": "sdr",
+      "x_ctft_domain": "SDR",
+      "description": "Hiding data in RF captures and modulated signals, and recovering it through SDR demodulation and decoding. Split from HWR (Hardware), which keeps embedded-device and physical-interface concealment. (HTB: Hardware)",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFT-TA-SDR"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--82b13c22-f19c-5525-8528-dbeeeb823628",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-SDR-001 - RF/SDR signal embedding",
+      "description": "The flag is transmitted or stored as a modulated RF signal (AM/FM/FSK/PSK), an SDR IQ capture, or a hidden frequency in an audio/RF file; identifying the modulation is the first barrier.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "sdr"
+        }
+      ],
+      "x_ctft_category": "SDR",
+      "x_ctft_domain": "SDR",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-SDR-001"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1001.002",
+          "description": "Steganography"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--5a03fd48-d4bc-59aa-b3ce-00d9bd02fee2",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-SDR-001 - Demodulate and decode RF captures",
+      "description": "Load the IQ capture in Gqrx/GNU Radio, identify the modulation from the waterfall and constellation, demodulate, and decode the recovered bitstream into the flag.",
+      "x_ctft_category": "SDR",
+      "x_ctft_domain": "SDR",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-SDR-001"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1001.002",
+          "description": "Steganography"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--22000c89-bd62-52c5-affb-d0240ae46b74",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--5a03fd48-d4bc-59aa-b3ce-00d9bd02fee2",
+      "target_ref": "attack-pattern--82b13c22-f19c-5525-8528-dbeeeb823628",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    }
+  ]
+}

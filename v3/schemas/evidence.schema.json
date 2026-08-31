@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ctft/v3/schemas/evidence.schema.json",
+  "title": "CTFT evidence record",
+  "description": "Attested support for one technique: the challenges that exercised it, plus the editorial boundaries a curator must state before it can be promoted.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "schema_version", "technique", "challenges", "status"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^EVID-[A-Z]{3}-[0-9]{3}$" },
+    "schema_version": { "const": "3.0" },
+    "technique": {
+      "type": "string",
+      "pattern": "^CTFTTE-[A-Z]{3}-[0-9]{3}$",
+      "description": "Must exist in index.json."
+    },
+    "challenges": {
+      "type": "array",
+      "description": "Independent challenge write-ups. Two entries are independent when they come from different CTF events.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["writeup"],
+        "properties": {
+          "ctf": { "type": ["string", "null"] },
+          "challenge": { "type": ["string", "null"] },
+          "year": { "type": ["integer", "null"], "minimum": 1990, "maximum": 2100 },
+          "writeup": { "type": "string", "format": "uri" },
+          "extracted_from": {
+            "type": "string",
+            "description": "Corpus file the link was harvested from, when auto-seeded."
+          }
+        }
+      }
+    },
+    "references": {
+      "type": "array",
+      "description": "Specifications and background material. Never counts toward independence.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["url"],
+        "properties": {
+          "label": { "type": "string" },
+          "url": { "type": "string", "format": "uri" }
+        }
+      }
+    },
+    "positives": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Observations that place a challenge inside this technique."
+    },
+    "negatives": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Counter-examples: near misses that must NOT be filed here."
+    },
+    "boundaries": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Explicit frontier with neighbouring techniques, each naming the neighbour ID."
+    },
+    "abstraction": { "enum": ["technique", "subtechnique", "procedure"] },
+    "synonyms": { "type": "array", "items": { "type": "string" } },
+    "external_mappings": {
+      "type": "array",
+      "description": "Typed anchors to external catalogues, each with a confidence and a justification.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["framework", "id", "confidence", "justification"],
+        "properties": {
+          "framework": { "enum": ["ATTACK", "CAPEC", "CWE", "WSTG"] },
+          "id": { "type": "string" },
+          "confidence": { "enum": ["low", "medium", "high"] },
+          "justification": { "type": "string", "minLength": 10 }
+        }
+      }
+    },
+    "curator": { "type": ["string", "null"] },
+    "reviewed_on": { "type": ["string", "null"], "format": "date" },
+    "status": {
+      "enum": ["seeded", "pending", "attested"],
+      "description": "seeded = auto-harvested links only; pending = under curation; attested = meets every promotion criterion (SCHEMA_V3 Curation)."
+    }
+  }
+}

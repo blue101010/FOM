@@ -1,4 +1,4 @@
-# CTFTCTE-FOR-012 — Retrieve information from JAB QR codes (2D color bar code)
+# CTFTCTE-FOR-012 — Retrieve information from rMQR codes
 
 > **Type:** Counter-Technique  
 > **Tactic:** [`CTFT-TA-FOR`](../tactics/CTFT-TA-FOR.md) — Forensics  
@@ -8,11 +8,14 @@
 
 ## Offensive Recovery (CTF practitioner / solver)
 
-_See details below._
+rMQR (rectangular Micro QR) uses a rectangular grid that most consumer decoders reject. Use a
+reader that implements the ISO/IEC 23941 layout — ZXingReader decodes rMQR where zbarimg does
+not — or reconstruct the module grid manually and apply the rMQR version table.
 
 ## Forensic / Blue-Team Perspective (DFIR analyst)
 
-_See sources and writeups for forensic analysis context._
+An rMQR symbol in evidence is a strong authorship signal: the format is rare outside deliberate
+concealment, and its presence is itself worth recording.
 
 ## Related MITRE ATT&CK
 
@@ -22,11 +25,17 @@ _See sources and writeups for forensic analysis context._
 
 ## Tools
 
-JAB Code (Just Another Barcode) is a colour 2D matrix symbology made of colour squares arranged in either square or rectangle grids.
+Use [FOMTOU004 - ZXingReader](https://github.com/blue101010/FOM/blob/main/tools/FOMTOU004.md) like in CTF Writeup ref (1)
 
 ## References
 
 **Writeups**
 
-- (1) <https://en.wikipedia.org/wiki/JAB_Code>
-- (2) <https://github.com/jabcode/jabcode>
+- (1) [NAHAMCONF 2024 RMQR challenge](https://github.com/blue101010/writeups/blob/main/2024/NAHAMCONF/qrrrrrr/README.md)
+- (2) [QRRRRRRRR — NahamCon CTF](https://medium.com/@inferiorak/qrrrrrrrr-nahamcon-ctf-2024-writeup-by-inferiorak-063406df187e)
+
+**Sources**
+
+- (1) [QR Code Model 2 Structure and Algorithms](https://franckybox.com/wp-content/uploads/qrcode.pdf)
+
+<https://en.wikipedia.org/wiki/JAB_Code>

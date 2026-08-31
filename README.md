@@ -1,34 +1,66 @@
 # CTFT - Capture-The-Flag Techniques
 
-A MITRE ATT&CK-**complementary** knowledge base of specialized CTF techniques.
+An **ontology of CTF solving behaviour**: how a challenge author conceals a flag or artifact,
+and how a solver recovers it.
 
 Every entry **pairs**:
 
-- a **Design / Hide Technique** (`CTFTTE-<CAT>-NNN`) - how a challenge author conceals a flag or artifact, and
-- a **Counter-Technique** (`CTFTCTE-<CAT>-NNN`) - how it is recovered, split into:
+- a **Design / Hide Technique** (`CTFTTE-<CAT>-NNN`) - the concealment the author builds, and
+- a **Resolution-Technique** (`CTFTCTE-<CAT>-NNN`) - the recovery that defeats it, split into:
   - **Offensive Recovery** - the CTF practitioner / solver, and
   - **Forensic Perspective** - the blue-team / DFIR analyst.
 
-CTFT does **not** duplicate MITRE ATT&CK: every technique **and** counter-technique page
-carries a `Related MITRE ATT&CK` table listing potentially related ATT&CK techniques with a
-*complementarity* note — the CTF-specific (forensic / cryptographic / steganographic /
-puzzle-craft) detail ATT&CK omits, and the nearest ATT&CK anchor where one exists.
+The pair is the editorial unit: nothing enters the catalogue as a concealment without a
+documented recovery.
+
+## Positioning
+
+CTFT models **challenge-craft** - the forensic, cryptographic, steganographic and puzzle detail
+that makes a CTF challenge solvable - at the level of a reusable, tool-independent solver action.
+
+It **relates to** the existing standards without being derived from any of them, and it is not a
+parallel ATT&CK:
+
+| Framework | What it models | Role in CTFT |
+| --- | --- | --- |
+| MITRE ATT&CK | real adversary behaviour at campaign level | anchor, per entry |
+| CAPEC / CWE | attack patterns and weaknesses | anchor, per entry |
+| OWASP WSTG | versioned web test scenarios | anchor, per entry |
+| STIX 2.1 | interchange format | export |
+
+External identifiers are **anchors carried per entry with a confidence and a justification**, not
+the definition of an entry. An entry is defined by the behaviour it names and by the challenges
+that attest it - see [SCHEMA_V3.md](SCHEMA_V3.md) §8 for the promotion criteria. Every technique
+and resolution-technique page carries its own `Related MITRE ATT&CK` table; the `ATT&CK` column on
+a domain page is an orientation excerpt of those tables, nothing more.
+
+Entries are described along axes that vary independently - **domain** (subject), **artifact**
+(what the flag hides in), **format** (competition shape) and the player-objective axis, which is
+deliberately still underived. Conflating the subject with the objective was the defect v3 exists
+to fix.
 
 ## Nomenclature
 
 | Object | ID format | Example |
 | --- | --- | --- |
-| Tactic (category) | `CTFT-TA-<CAT>` | `CTFT-TA-FOR` |
+| Domain (category) | `CTFT-TA-<CAT>` | `CTFT-TA-FOR` |
 | Design / Hide technique | `CTFTTE-<CAT>-NNN` | `CTFTTE-FOR-001` |
-| Counter-technique | `CTFTCTE-<CAT>-NNN` | `CTFTCTE-FOR-001` |
+| Resolution-technique | `CTFTCTE-<CAT>-NNN` | `CTFTCTE-FOR-001` |
 
-## Tactics (19 active categories)
+v3 vocabulary: what v1 called a *tactic* is a **domain** (a subject), and a *counter-technique* is
+a **resolution-technique** (it *solves* a challenge, it does not *mitigate* a threat). The
+identifiers, the file paths and the `countertechniques/` directory are unchanged - renaming them
+would break every published link for no semantic gain. The player-objective axis that the word
+"tactic" implies is tracked separately and is deliberately still underived; see
+[SCHEMA_V3.md](SCHEMA_V3.md).
+
+## Domains (19 active categories)
 
 Order and short labels follow the challenge-category picker.
 
-| # | Tactic | Label | Name | HTB | Pairs |
+| # | Domain | Label | Name | HTB | Pairs |
 | --- | --- | --- | --- | --- | --- |
-| 1 | [CTFT-TA-FOR](tactics/CTFT-TA-FOR.md) | Forensics | Forensics | HTB: Forensics | 26 |
+| 1 | [CTFT-TA-FOR](tactics/CTFT-TA-FOR.md) | Forensics | Forensics | HTB: Forensics | 27 |
 | 2 | [CTFT-TA-WEB](tactics/CTFT-TA-WEB.md) | Web | Web Exploitation | HTB: Web | 17 |
 | 3 | [CTFT-TA-CRY](tactics/CTFT-TA-CRY.md) | Crypto | Cryptography | HTB: Crypto | 13 |
 | 4 | [CTFT-TA-PWN](tactics/CTFT-TA-PWN.md) | Binary | Binary Exploitation | HTB: Pwn | 8 |
@@ -47,7 +79,7 @@ Order and short labels follow the challenge-category picker.
 | 17 | [CTFT-TA-FPN](tactics/CTFT-TA-FPN.md) | Full Pwn | Full Pwn / Multi-Stage | HTB: Fullpwn | 10 |
 | 18 | [CTFT-TA-HWR](tactics/CTFT-TA-HWR.md) | Hardware | Hardware | HTB: Hardware | 2 |
 | 19 | [CTFT-TA-SDR](tactics/CTFT-TA-SDR.md) | SDR / RF | Software-Defined Radio | HTB: Hardware | 1 |
-| | | | **Total** | | **161** |
+| | | | **Total** | | **162** |
 
 **Retired:** `CTFT-TA-MSC` (Misc) is **removed**. It was a catch-all and every entry
 it held duplicated a precise tactic. Do not create `MSC` entries; file the challenge
@@ -60,14 +92,27 @@ or `FPN` (multi-stage host compromise). The supersession map is in
 ```
 FOM/
   README.md                   this file
-  HIERARCHY.md                full design ↔ counter listing
-  CORRELATION.md              master technique ↔ counter-technique cross-reference
-  index.json                  machine-readable index (pairs/by_id maps)
+  CORRELATION.md              master technique ↔ counter-technique cross-reference - GENERATED
+  HIERARCHY.md                flat design ↔ counter listing - GENERATED, local only (gitignored)
+  index.json                  machine-readable index (pairs/by_id maps) - GENERATED
+  SCHEMA_V3.md                active data model
+  SCHEMA_V2.md                previous data model - frozen, kept for reproducibility
+  TODO.md                     progress, residual backlog, and archived design decisions
+  LICENSE
   ctft-generator.py           guarded legacy fixture generator
   fom-migrate.py              migration utility
-  v2/render_taxonomy_docs.py  renders CORRELATION.md and HIERARCHY.md from the files
-  v2/catalog_audit.py         synchronizes index.json and writes coverage manifest
-  tactics/                    tactic pages (CTFT-TA-<CAT>.md), 19 active
+  v3/                         ACTIVE model layer - schemas, generators, typed objects
+    render_taxonomy_docs.py   renders CORRELATION.md, HIERARCHY.md and the tactic pages
+    catalog_audit.py          index, catalogue, relations, integrity + semantic lint
+    render_stix.py            STIX 2.1 bundles from index.json
+    build_evidence.py         seeds evidence.json from write-up links in the corpus
+    solve.py                  retrieval engine, validation, precision@k
+    core.json                 the 35-entry normative profile
+    evidence.json             attestation records
+    relations.json            derived `solves` + curated cross-domain edges
+  v2/                         FROZEN reference slice - do not edit, do not run
+  .github/workflows/ci.yml    catalogue gate (drift, integrity, lint, schemas, STIX)
+  tactics/                    tactic pages (CTFT-TA-<CAT>.md), 19 active - GENERATED
   techniques/                 design/hide techniques (CTFTTE-<CAT>-NNN.md)
     subtechniques.md          sub-technique index
   countertechniques/          counter-techniques (CTFTCTE-<CAT>-NNN.md)
@@ -98,46 +143,66 @@ See [CORRELATION.md](CORRELATION.md) for the complete matrix.
 
 ## STIX 2.1 mapping
 
-- Design technique  -> `attack-pattern` (kill_chain_name `ctft`, phase = category)
-- Counter-technique -> `course-of-action`
-- Link              -> `relationship` of type `mitigates` (counter mitigates design)
-- Tactic            -> custom `x-ctft-tactic`
+- Design technique  -> `attack-pattern` (kill_chain_name `ctft`, phase = domain), `x_ctft_role: design-hide`
+- Counter-technique -> `course-of-action`, `x_ctft_role: resolution`
+- Link              -> `relationship` of type `mitigates` **plus** `x_ctft_relation: "solves"`
+- Domain            -> custom `x-ctft-tactic`
+- ATT&CK anchor     -> `external_references[source_name: mitre-attack]`
 
-IDs are deterministic (`uuid5`) so regeneration is stable and diff-friendly.
+`mitigates` is semantically wrong for a CTF - a counter-technique *solves* a puzzle, it does not
+mitigate a threat - but it is kept so ATT&CK Navigator and OpenCTI can still read the graph;
+`x_ctft_relation` carries the correct meaning.
+
+IDs are deterministic (`uuid5`) and timestamps are fixed, so regenerating an unchanged corpus
+produces no diff. Regenerate with `python v3/render_stix.py --write`.
 
 ## Catalogue integrity
 
-The corpus contains **161 complete technique/counter-technique pairs** across 19 active
-tactics. `CORRELATION.md` and `HIERARCHY.md` are
-**generated**, never hand-edited: the markdown entry files are the source of truth, so a
-renamed technique can never drift from the matrix. After adding or renaming an entry:
+The corpus contains **162 complete technique/counter-technique pairs** across 19 domains.
+`CORRELATION.md`, `HIERARCHY.md` **and every tactic page** are generated, never hand-edited: the
+markdown entry files are the source of truth, so a renamed technique cannot drift from the matrix.
+After adding or renaming an entry:
 
 ```bash
-python v2/render_taxonomy_docs.py --write
-python v2/catalog_audit.py --write --write-index --write-catalog --check
+python v3/render_taxonomy_docs.py --write
+python v3/catalog_audit.py --write --write-index --write-catalog --write-relations --check
+python v3/render_stix.py --write
 ```
 
-The renderer refuses to run if a tactic directory is missing from its `CANONICAL_ORDER`
-list, or if a retired tactic (`MSC`) reappears - so a new category has to be declared
-deliberately rather than drifting in.
+The renderer refuses to run if a tactic directory is missing from its `CANONICAL_ORDER` list, or
+if a retired tactic (`MSC`) reappears, so a new domain has to be declared deliberately rather than
+drifting in. Generated documents carry a **corpus fingerprint** instead of a timestamp, so
+`--check` detects real drift and an unchanged regeneration is a git no-op.
 
-`--check` validates structural consistency only. It deliberately reports placeholders
-and the smaller typed v2 slice as coverage debt until curated entries are available.
-The legacy generator is guarded because its embedded 14-tactic corpus is incomplete;
-use it only with `--legacy-rebuild` to generate an isolated fixture.
+`--check` gates structural integrity (unpaired entries, matrix/index divergence), the relation
+graph, and a semantic lint (tool names or implementation details in technique titles, placeholder
+counter names, dangling evidence or core references).
 
-`catalog.json` contains every complete pair with a maturity marker. Only entries marked
-`typed` have validated indicators and playbook metadata; entries marked `taxonomy_only`
-remain discoverable but are not executable recommendations.
+### Maturity
+
+One vocabulary, computed - never stored on an entry, so the catalogue and the evidence cannot
+disagree:
+
+| Maturity | Meaning | Count today |
+| --- | --- | --- |
+| `taxonomy_only` | identifiers and paired prose only | 155 |
+| `attested` | >= 2 independent CTF events + curated positives, negatives, boundaries | 0 |
+| `typed` | schema-valid typed objects, participates in retrieval | 7 |
+
+No maturity level authorizes automatic execution. A consumer may display a tool reference or a
+human-readable step; execution belongs to a separately authorized laboratory runner.
 
 ### Known coverage debt
 
-- The STIX bundle under `stix/` predates the current corpus: it carries 63 pairs and 13
-  tactics against the 105 pairs and 16 tactics in the markdown taxonomy. `MSC` has been
-  purged from it, but it still needs a full regeneration from `index.json`.
-- `CORRELATION.md` lists the pairs whose counter-technique does not answer the technique
-  it is filed against, and the counters still named `Counter - <technique name>`. Both
-  need an editorial pass on the entry content.
+- **Evidence is the bottleneck.** 238 of 324 entry files still carry the `Add challenge write-up
+  link` marker, and the 35-entry core profile (`v3/core.json`) has 0 entries backed by two
+  independent CTF events - across the whole corpus only `FOR-008` cites two distinct CTFs. The
+  promotion pipeline is built and enforced; what is missing is collected evidence.
+- **`v3/holdout.json` is empty**, so `precision@k` is undefined. A case may only be added if its
+  write-up was not used while curating the technique it targets - otherwise the metric measures
+  memorisation.
+- **The resolution-tactic axis is underived** (`v3/tactic_map.json`, `status: "underived"`). The
+  six candidate objectives are a hypothesis to test against labelled evidence, not a decision.
 
 ## License
 

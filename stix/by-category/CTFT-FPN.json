@@ -1,0 +1,764 @@
+{
+  "type": "bundle",
+  "id": "bundle--d0cd12ea-9de9-5ff1-a8f2-069f620b2f21",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "name": "CTFT Project",
+      "identity_class": "organization",
+      "description": "Capture-The-Flag Techniques - an ontology of CTF solving behaviour. Relates to MITRE ATT&CK, CAPEC and CWE as per-entry anchors; not a parallel ATT&CK. Generalized from FOM."
+    },
+    {
+      "type": "x-ctft-tactic",
+      "spec_version": "2.1",
+      "id": "x-ctft-tactic--e8e6085e-c2ee-5f86-b093-755462ffd666",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "Full Pwn / Multi-Stage",
+      "x_ctft_shortname": "fpn",
+      "x_ctft_domain": "FPN",
+      "description": "Challenges that require a complete host or infrastructure compromise across multiple stages — reconnaissance, foothold, and privilege escalation — before the flag is reachable. The flag is reachable only at the end of the chain, so no single technique solves the challenge. (HTB: Fullpwn)",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFT-TA-FPN"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--2da0cd87-fe6f-5919-ad19-2543d21d7a08",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FPN-001 - Multi-stage chained challenge",
+      "description": "The flag(s) require a full host compromise: external reconnaissance, initial foothold, and privilege escalation — each gate concealed by a separate vulnerability or design decision.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "fpn"
+        }
+      ],
+      "x_ctft_category": "FPN",
+      "x_ctft_domain": "FPN",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FPN-001"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1190",
+          "description": "Exploit Public-Facing Application"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1078",
+          "description": "Valid Accounts"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--b00a7514-1523-5cfb-aa72-11eb834e5f22",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FPN-001 - Chain enumeration, foothold and privilege escalation",
+      "description": "Run port and service enumeration, exploit the exposed service for a foothold, then run local enumeration scripts (linpeas/winpeas) to identify the privilege-escalation path. Chain each stage methodically until the root/administrator flag is reached.",
+      "x_ctft_category": "FPN",
+      "x_ctft_domain": "FPN",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FPN-001"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1190",
+          "description": "Exploit Public-Facing Application"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1078",
+          "description": "Valid Accounts"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--a3ee6b59-916c-5e2e-b54a-8d160f01203d",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--b00a7514-1523-5cfb-aa72-11eb834e5f22",
+      "target_ref": "attack-pattern--2da0cd87-fe6f-5919-ad19-2543d21d7a08",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--73af612a-cf23-5b1e-ad7d-45cacf67cce9",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FPN-002 - Windows Active Directory fullpwn",
+      "description": "The flag resides on a Domain Controller; reaching it requires a chain of AD-specific attacks (Kerberoasting, AS-REP Roasting, delegation abuse, or ACL exploitation) rather than a single CVE.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "fpn"
+        }
+      ],
+      "x_ctft_category": "FPN",
+      "x_ctft_domain": "FPN",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FPN-002"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1558",
+          "description": "Steal or Forge Kerberos Tickets"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1482",
+          "description": "Domain Trust Discovery"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--818ad92a-ed55-5b2e-8d66-bcd08f199439",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FPN-002 - Enumerate AD, abuse delegation or ACL paths to the DC",
+      "description": "Run BloodHound/SharpHound to map the AD graph; identify shortest attack paths (Kerberoastable service accounts, ACL GenericWrite, unconstrained delegation). Follow the path: crack the hash → lateral movement → DCSync or SeBackupPrivilege to dump NTDS.",
+      "x_ctft_category": "FPN",
+      "x_ctft_domain": "FPN",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FPN-002"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1558",
+          "description": "Steal or Forge Kerberos Tickets"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1482",
+          "description": "Domain Trust Discovery"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--5ee32695-2bb4-5fc6-9273-0eb23d4b230a",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--818ad92a-ed55-5b2e-8d66-bcd08f199439",
+      "target_ref": "attack-pattern--73af612a-cf23-5b1e-ad7d-45cacf67cce9",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--55c45ca6-4ae1-5a4a-95d6-2d1218edf7b3",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FPN-003 - Multi-hop network pivot",
+      "description": "The flag host sits on a network segment not directly reachable from the attacker; reaching it requires traversing one or more intermediate compromised hosts via tunnelling or proxying.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "fpn"
+        }
+      ],
+      "x_ctft_category": "FPN",
+      "x_ctft_domain": "FPN",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FPN-003"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1572",
+          "description": "Protocol Tunneling"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1090",
+          "description": "Proxy"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--bca147c4-8967-5674-87db-a16eef1eddec",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FPN-003 - Tunnel through compromised hosts to reach the flag",
+      "description": "Deploy a lightweight SOCKS5 tunnel (chisel server/client) or SSH dynamic-forward through each compromised host; chain proxychains to route all tool traffic through the tunnel stack until the flag host is reachable.",
+      "x_ctft_category": "FPN",
+      "x_ctft_domain": "FPN",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FPN-003"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1572",
+          "description": "Protocol Tunneling"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1090",
+          "description": "Proxy"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--3b8033cc-7f6b-5b25-b736-66750f38631a",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--bca147c4-8967-5674-87db-a16eef1eddec",
+      "target_ref": "attack-pattern--55c45ca6-4ae1-5a4a-95d6-2d1218edf7b3",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--cc3ebe01-72dc-516a-a2b5-1069599f79de",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FPN-004 - Container / service misconfiguration chain",
+      "description": "The flag requires chaining a service-level misconfiguration (weak credentials, exposed API, SSRF) with a container-escape technique to break out to the host filesystem.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "fpn"
+        }
+      ],
+      "x_ctft_category": "FPN",
+      "x_ctft_domain": "FPN",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FPN-004"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1611",
+          "description": "Escape to Host"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1190",
+          "description": "Exploit Public-Facing Application"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--d6fd69a1-2b63-5d1b-ab0c-b1304a081bd5",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FPN-004 - Chain service misconfig and container escape to host",
+      "description": "Exploit the exposed service (weak credentials, SSRF, command injection) to gain container-level execution, then apply the appropriate container-escape technique (privileged mode, socket mount, writable host path) to reach the host flag.",
+      "x_ctft_category": "FPN",
+      "x_ctft_domain": "FPN",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FPN-004"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1611",
+          "description": "Escape to Host"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1190",
+          "description": "Exploit Public-Facing Application"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--e6664466-f109-5d6f-a7f8-5046aa7578f3",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--d6fd69a1-2b63-5d1b-ab0c-b1304a081bd5",
+      "target_ref": "attack-pattern--cc3ebe01-72dc-516a-a2b5-1069599f79de",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--3d52f338-e0e9-5093-85a9-098a19d729e0",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FPN-005 - Cloud-integrated fullpwn",
+      "description": "The flag is stored in a cloud resource (S3 bucket, Secrets Manager, Lambda environment variable) that is reachable only after compromising an on-premises host and pivoting through its attached cloud credentials.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "fpn"
+        }
+      ],
+      "x_ctft_category": "FPN",
+      "x_ctft_domain": "FPN",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FPN-005"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1078.004",
+          "description": "Cloud Accounts"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1552.005",
+          "description": "Cloud Instance Metadata API"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--2eb42a82-0a93-5ab9-bde9-5e1194351e7b",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FPN-005 - Pivot from on-prem to cloud IAM to retrieve the secret",
+      "description": "After gaining on-premises access, query the cloud instance metadata endpoint (e.g. 169.254.169.254) for IAM role credentials, enumerate the role's permissions with aws iam, and retrieve the flag from the authorised cloud resource (S3, Secrets Manager, Parameter Store).",
+      "x_ctft_category": "FPN",
+      "x_ctft_domain": "FPN",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FPN-005"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1078.004",
+          "description": "Cloud Accounts"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1552.005",
+          "description": "Cloud Instance Metadata API"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--c03bc8b1-8699-5e3d-a807-bf18e7bd5216",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--2eb42a82-0a93-5ab9-bde9-5e1194351e7b",
+      "target_ref": "attack-pattern--3d52f338-e0e9-5093-85a9-098a19d729e0",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--89735a14-9be7-5d97-bd36-d806066260c8",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FPN-006 - Chained database trust-context escalation",
+      "description": "Several declared database services trust one another with different execution contexts. A low-privilege entry can traverse a chain whose effective identity has more privileges than the initial identity. The challenge models the trust relation and privilege boundary; it does not embed a query or credential.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "fpn"
+        }
+      ],
+      "x_ctft_category": "FPN",
+      "x_ctft_domain": "FPN",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FPN-006"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1213",
+          "description": "Data from Information Repositories"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--f48df439-ef5d-5013-a870-fa213f574595",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FPN-006 - Map database trust contexts and privilege boundaries",
+      "description": "Build a graph from the challenge's declared service links and redacted identity observations. Rank only paths whose trust edge, effective context and target privilege boundary are all evidenced.",
+      "x_ctft_category": "FPN",
+      "x_ctft_domain": "FPN",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FPN-006"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1213",
+          "description": "Data from Information Repositories"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--bf57821c-c49c-5576-8311-d4e3780f0363",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--f48df439-ef5d-5013-a870-fa213f574595",
+      "target_ref": "attack-pattern--89735a14-9be7-5d97-bd36-d806066260c8",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--83832878-a0f3-5fe3-9b54-99a1f2312a77",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FPN-007 - Uninventoried dual-stack management path",
+      "description": "A management service is declared on an address family absent from the primary inventory. The challenge requires reconciling interface records, service binds and access policy before treating the alternate route as a possible path.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "fpn"
+        }
+      ],
+      "x_ctft_category": "FPN",
+      "x_ctft_domain": "FPN",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FPN-007"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1083",
+          "description": "File and Directory Discovery"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--adecc5ba-f020-5087-a983-09d308942a0d",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FPN-007 - Reconcile dual-stack management exposure",
+      "description": "Compare the supplied interface inventory, service binds and policy declarations. Create a candidate route only when all three name the same authorized challenge asset and access boundary.",
+      "x_ctft_category": "FPN",
+      "x_ctft_domain": "FPN",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FPN-007"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1083",
+          "description": "File and Directory Discovery"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--fa9caeef-ba48-5b45-8b33-f6a52e4a106c",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--adecc5ba-f020-5087-a983-09d308942a0d",
+      "target_ref": "attack-pattern--83832878-a0f3-5fe3-9b54-99a1f2312a77",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--6f4f80de-9237-579b-aac7-94055d4c151d",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FPN-008 - Linux local privesc chain (SUID, ACLs, sudo, capabilities)",
+      "description": "The flag is root-only; escalation requires chaining SUID binaries, ACLs, sudo rules or capabilities.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "fpn"
+        }
+      ],
+      "x_ctft_category": "FPN",
+      "x_ctft_domain": "FPN",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FPN-008"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1068",
+          "description": "Exploitation for Privilege Escalation"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1548",
+          "description": "Abuse Elevation Control Mechanism"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--5834021b-3953-5608-b827-5afe32a54515",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FPN-008 - Enumerate and chain Linux privesc vectors",
+      "description": "Enumerate privesc vectors (linpeas), exploit one or chain several, and read the flag.",
+      "x_ctft_category": "FPN",
+      "x_ctft_domain": "FPN",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FPN-008"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1068",
+          "description": "Exploitation for Privilege Escalation"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1548",
+          "description": "Abuse Elevation Control Mechanism"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--64578b03-7886-5f7b-b2e2-5a08092d61f5",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--5834021b-3953-5608-b827-5afe32a54515",
+      "target_ref": "attack-pattern--6f4f80de-9237-579b-aac7-94055d4c151d",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--5b64276b-4771-5a4a-bec6-9ca26acdec00",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FPN-009 - Redis/NoSQL service misconfiguration chain",
+      "description": "An internal DB service is misconfigured (no auth, weak credentials); the flag is in the data or reachable via RCE.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "fpn"
+        }
+      ],
+      "x_ctft_category": "FPN",
+      "x_ctft_domain": "FPN",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FPN-009"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1213",
+          "description": "Data from Information Repositories"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--c0d85035-bb40-5f4c-8e64-95b79fd5758e",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FPN-009 - Enumerate Redis/Mongo/MySQL, dump or RCE",
+      "description": "Enumerate the service, dump data or achieve code execution, and pivot to the flag.",
+      "x_ctft_category": "FPN",
+      "x_ctft_domain": "FPN",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FPN-009"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1213",
+          "description": "Data from Information Repositories"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--3c41ded3-6bb8-5208-9232-a964d8ad8455",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--c0d85035-bb40-5f4c-8e64-95b79fd5758e",
+      "target_ref": "attack-pattern--5b64276b-4771-5a4a-bec6-9ca26acdec00",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--1b07194f-91dd-586c-bf85-b245395ddc07",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FPN-010 - Reverse-shell delivery & listener operations",
+      "description": "The flag requires a stable reverse shell through restricted channels (firewalls, encodings).",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "fpn"
+        }
+      ],
+      "x_ctft_category": "FPN",
+      "x_ctft_domain": "FPN",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FPN-010"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1059",
+          "description": "Command and Scripting Interpreter"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--fa6d700a-c344-5ebf-8465-d6d6adce4922",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FPN-010 - Catch, upgrade and persist reverse shells",
+      "description": "Deliver a reverse shell (bash/python/php), catch it with a listener, upgrade to a PTY, and persist.",
+      "x_ctft_category": "FPN",
+      "x_ctft_domain": "FPN",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FPN-010"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1059",
+          "description": "Command and Scripting Interpreter"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--f2309aaf-33ef-5a49-aafb-c7969ed19516",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--fa6d700a-c344-5ebf-8465-d6d6adce4922",
+      "target_ref": "attack-pattern--1b07194f-91dd-586c-bf85-b245395ddc07",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    }
+  ]
+}

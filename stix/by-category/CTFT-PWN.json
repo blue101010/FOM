@@ -1,6 +1,6 @@
 {
   "type": "bundle",
-  "id": "bundle--8aec72af-42a8-5e44-bb45-cb267ecc47ce",
+  "id": "bundle--3356f84c-2f45-5607-bb07-3b8405346196",
   "objects": [
     {
       "type": "identity",
@@ -10,7 +10,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "name": "CTFT Project",
       "identity_class": "organization",
-      "description": "Capture-The-Flag Techniques - complementary to MITRE ATT&CK, generalized from FOM."
+      "description": "Capture-The-Flag Techniques - an ontology of CTF solving behaviour. Relates to MITRE ATT&CK, CAPEC and CWE as per-entry anchors; not a parallel ATT&CK. Generalized from FOM."
     },
     {
       "type": "x-ctft-tactic",
@@ -21,6 +21,7 @@
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "Binary Exploitation",
       "x_ctft_shortname": "pwn",
+      "x_ctft_domain": "PWN",
       "description": "Hiding flags behind memory-corruption gates and constrained runtime puzzles. (HTB: Pwn)",
       "external_references": [
         {
@@ -37,7 +38,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTTE-PWN-001 - Hidden win-function backdoor",
-      "description": "An unreferenced function prints the flag/spawns a shell, gated behind a vulnerable input. | ATT&CK complementarity: No ATT&CK equivalent; exploitation mechanics, not adversary behaviour.",
+      "description": "An unreferenced function prints the flag/spawns a shell, gated behind a vulnerable input.",
       "kill_chain_phases": [
         {
           "kill_chain_name": "ctft",
@@ -45,11 +46,17 @@
         }
       ],
       "x_ctft_category": "PWN",
+      "x_ctft_domain": "PWN",
       "x_ctft_role": "design-hide",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTTE-PWN-001"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1068",
+          "description": "Exploitation for Privilege Escalation"
         }
       ]
     },
@@ -61,13 +68,19 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-PWN-001 - Redirect execution to the win function",
-      "description": "OFFENSIVE (solver): Overflow saved control data and redirect execution (ret2win), defeating any leak/canary first. || FORENSIC (analyst): The exploit path documents the missing bounds check enabling control-flow hijack.",
+      "description": "Overflow saved control data and redirect execution (ret2win), defeating any leak/canary first.",
       "x_ctft_category": "PWN",
-      "x_ctft_role": "counter-technique",
+      "x_ctft_domain": "PWN",
+      "x_ctft_role": "resolution",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTCTE-PWN-001"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1068",
+          "description": "Exploitation for Privilege Escalation"
         }
       ]
     },
@@ -79,9 +92,10 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
       "source_ref": "course-of-action--184aa0e1-1dce-5a5d-9f7b-913f7a3b7546",
       "target_ref": "attack-pattern--9e3ae839-7de6-5cd0-af11-e70b060125ad",
-      "description": "Counter-technique recovers/defeats the paired design technique."
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     },
     {
       "type": "attack-pattern",
@@ -91,7 +105,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTTE-PWN-002 - Format-string information hiding",
-      "description": "A user-controlled format string both leaks memory (secrets/canary) and enables targeted writes. | ATT&CK complementarity: No ATT&CK equivalent.",
+      "description": "A user-controlled format string both leaks memory (secrets/canary) and enables targeted writes.",
       "kill_chain_phases": [
         {
           "kill_chain_name": "ctft",
@@ -99,11 +113,17 @@
         }
       ],
       "x_ctft_category": "PWN",
+      "x_ctft_domain": "PWN",
       "x_ctft_role": "design-hide",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTTE-PWN-002"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1068",
+          "description": "Exploitation for Privilege Escalation"
         }
       ]
     },
@@ -115,13 +135,19 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-PWN-002 - Leak and overwrite via format string",
-      "description": "OFFENSIVE (solver): Use %p/%s to leak, then %n-style writes to redirect execution or overwrite the GOT. || FORENSIC (analyst): The vulnerability report attributes the leak/overwrite to unsanitized format arguments.",
+      "description": "Use %p/%s to leak, then %n-style writes to redirect execution or overwrite the GOT.",
       "x_ctft_category": "PWN",
-      "x_ctft_role": "counter-technique",
+      "x_ctft_domain": "PWN",
+      "x_ctft_role": "resolution",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTCTE-PWN-002"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1068",
+          "description": "Exploitation for Privilege Escalation"
         }
       ]
     },
@@ -133,9 +159,10 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
       "source_ref": "course-of-action--be448e99-2ca8-5e0f-814c-1dd4fcd19003",
       "target_ref": "attack-pattern--2a5e6697-7309-542d-a75d-45522c18a1f7",
-      "description": "Counter-technique recovers/defeats the paired design technique."
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     },
     {
       "type": "attack-pattern",
@@ -145,7 +172,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTTE-PWN-003 - Heap-grooming puzzle",
-      "description": "The flag/control is reachable only by manipulating allocator metadata (use-after-free, tcache). | ATT&CK complementarity: No ATT&CK equivalent.",
+      "description": "The flag/control is reachable only by manipulating allocator metadata (use-after-free, tcache).",
       "kill_chain_phases": [
         {
           "kill_chain_name": "ctft",
@@ -153,11 +180,17 @@
         }
       ],
       "x_ctft_category": "PWN",
+      "x_ctft_domain": "PWN",
       "x_ctft_role": "design-hide",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTTE-PWN-003"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1068",
+          "description": "Exploitation for Privilege Escalation"
         }
       ]
     },
@@ -169,13 +202,19 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-PWN-003 - Groom the heap to corrupt allocator metadata",
-      "description": "OFFENSIVE (solver): Shape allocations to trigger overlapping chunks or arbitrary write, then hijack a pointer. || FORENSIC (analyst): Documenting the allocation sequence explains the metadata corruption primitive.",
+      "description": "Shape allocations to trigger overlapping chunks or arbitrary write, then hijack a pointer.",
       "x_ctft_category": "PWN",
-      "x_ctft_role": "counter-technique",
+      "x_ctft_domain": "PWN",
+      "x_ctft_role": "resolution",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTCTE-PWN-003"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1068",
+          "description": "Exploitation for Privilege Escalation"
         }
       ]
     },
@@ -187,9 +226,10 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
       "source_ref": "course-of-action--6b7fb987-945f-59af-b697-270f4a0749b3",
       "target_ref": "attack-pattern--72fee9ea-5901-525b-9ff2-3a2d3b80e7ae",
-      "description": "Counter-technique recovers/defeats the paired design technique."
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     },
     {
       "type": "attack-pattern",
@@ -199,7 +239,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTTE-PWN-004 - Stripped/static gadget search",
-      "description": "A stripped, statically linked binary forces a return-oriented chain instead of a simple call. | ATT&CK complementarity: No ATT&CK equivalent.",
+      "description": "A stripped, statically linked binary forces a return-oriented chain instead of a simple call.",
       "kill_chain_phases": [
         {
           "kill_chain_name": "ctft",
@@ -207,11 +247,17 @@
         }
       ],
       "x_ctft_category": "PWN",
+      "x_ctft_domain": "PWN",
       "x_ctft_role": "design-hide",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTTE-PWN-004"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1211",
+          "description": "Exploitation for Defense Evasion"
         }
       ]
     },
@@ -223,13 +269,19 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-PWN-004 - Build a ROP chain from available gadgets",
-      "description": "OFFENSIVE (solver): Enumerate gadgets and assemble a ROP chain to call execve or print the flag. || FORENSIC (analyst): The chain shows how existing code was repurposed despite NX/no convenient symbols.",
+      "description": "Enumerate gadgets and assemble a ROP chain to call execve or print the flag.",
       "x_ctft_category": "PWN",
-      "x_ctft_role": "counter-technique",
+      "x_ctft_domain": "PWN",
+      "x_ctft_role": "resolution",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTCTE-PWN-004"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1211",
+          "description": "Exploitation for Defense Evasion"
         }
       ]
     },
@@ -241,9 +293,10 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
       "source_ref": "course-of-action--7f02214d-bab1-5702-bc96-9159b9505f02",
       "target_ref": "attack-pattern--b6d1dfca-b4d1-5530-9ca7-24c76effd7aa",
-      "description": "Counter-technique recovers/defeats the paired design technique."
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     },
     {
       "type": "attack-pattern",
@@ -253,7 +306,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTTE-PWN-005 - seccomp-restricted shell puzzle",
-      "description": "execve is filtered, so a shell is impossible; only file I/O syscalls remain. | ATT&CK complementarity: No ATT&CK equivalent.",
+      "description": "execve is filtered, so a shell is impossible; only file I/O syscalls remain.",
       "kill_chain_phases": [
         {
           "kill_chain_name": "ctft",
@@ -261,11 +314,17 @@
         }
       ],
       "x_ctft_category": "PWN",
+      "x_ctft_domain": "PWN",
       "x_ctft_role": "design-hide",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTTE-PWN-005"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1059",
+          "description": "Command and Scripting Interpreter"
         }
       ]
     },
@@ -277,13 +336,19 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-PWN-005 - Open-Read-Write the flag under seccomp",
-      "description": "OFFENSIVE (solver): Build an ORW chain (open, read, write) via ROP/shellcode to read the flag file directly. || FORENSIC (analyst): Reading the seccomp policy reveals the allowed syscall surface that the solve relied on.",
+      "description": "Build an ORW chain (open, read, write) via ROP/shellcode to read the flag file directly.",
       "x_ctft_category": "PWN",
-      "x_ctft_role": "counter-technique",
+      "x_ctft_domain": "PWN",
+      "x_ctft_role": "resolution",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTCTE-PWN-005"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1059",
+          "description": "Command and Scripting Interpreter"
         }
       ]
     },
@@ -295,9 +360,211 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
       "source_ref": "course-of-action--52af0c28-4995-5737-9a05-c4ae95b74b16",
       "target_ref": "attack-pattern--01155871-80cb-5e89-ad2c-d4d27cc20f6c",
-      "description": "Counter-technique recovers/defeats the paired design technique."
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--c7d459fa-708a-5875-bd39-8cddbe3248eb",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-PWN-006 - Stack canary / PIE / ASLR hardening puzzle",
+      "description": "The flag requires defeating canary, PIE and ASLR in a binary with a stack overflow.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "pwn"
+        }
+      ],
+      "x_ctft_category": "PWN",
+      "x_ctft_domain": "PWN",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-PWN-006"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1068",
+          "description": "Exploitation for Privilege Escalation"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--23f2af07-aecc-5513-ab2b-12323edbaa25",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-PWN-006 - Leak canary/PIE base, ret2libc",
+      "description": "Leak the canary and PIE base via format/read leaks, then ret2libc to the win path.",
+      "x_ctft_category": "PWN",
+      "x_ctft_domain": "PWN",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-PWN-006"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1068",
+          "description": "Exploitation for Privilege Escalation"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--911643c7-89b8-5719-b83c-76bdff193f5c",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--23f2af07-aecc-5513-ab2b-12323edbaa25",
+      "target_ref": "attack-pattern--c7d459fa-708a-5875-bd39-8cddbe3248eb",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--c3c84d39-e3d2-5e16-9e37-315465b5901e",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-PWN-007 - Kernel/mseal-guarded memory puzzle",
+      "description": "The flag requires a kernel-module exploit or bypassing new memory protections (mseal, KASLR).",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "pwn"
+        }
+      ],
+      "x_ctft_category": "PWN",
+      "x_ctft_domain": "PWN",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-PWN-007"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1068",
+          "description": "Exploitation for Privilege Escalation"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--8f1d2979-b306-5249-b70f-92895d7d64a8",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-PWN-007 - Exploit kernel-module or mseal protections",
+      "description": "Analyze the module/interface, bypass mseal/KASLR, and escalate to read the flag.",
+      "x_ctft_category": "PWN",
+      "x_ctft_domain": "PWN",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-PWN-007"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1068",
+          "description": "Exploitation for Privilege Escalation"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--eb64c106-50e2-575b-a02a-6aec293900e2",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--8f1d2979-b306-5249-b70f-92895d7d64a8",
+      "target_ref": "attack-pattern--c3c84d39-e3d2-5e16-9e37-315465b5901e",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--626982c7-87a3-53d6-ab2a-03d6aead09a4",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-PWN-008 - Shellcode craft & encoding constraints",
+      "description": "The exploit must deliver shellcode under constraints: no nulls, alphanumeric only, or length limits.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "pwn"
+        }
+      ],
+      "x_ctft_category": "PWN",
+      "x_ctft_domain": "PWN",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-PWN-008"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1055",
+          "description": "Process Injection"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--0030586c-1b04-5e5f-9342-95a26b514c4b",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-PWN-008 - Generate/encode shellcode (alphanumeric, null-free)",
+      "description": "Generate or encode shellcode (msfvenom, custom encoders) and deliver it through the constrained path.",
+      "x_ctft_category": "PWN",
+      "x_ctft_domain": "PWN",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-PWN-008"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1055",
+          "description": "Process Injection"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--37648a48-36f8-5a06-a169-ac7a5b96ebd6",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--0030586c-1b04-5e5f-9342-95a26b514c4b",
+      "target_ref": "attack-pattern--626982c7-87a3-53d6-ab2a-03d6aead09a4",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     }
   ]
 }

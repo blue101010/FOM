@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ctft/v3/schemas/technique.schema.json",
+  "title": "CTFT Technique (design/hide)",
+  "type": "object",
+  "required": [
+    "id",
+    "schema_version",
+    "name",
+    "domain",
+    "paired_counter",
+    "indicators"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^CTFTTE-[A-Z]{3}-[0-9]{3}$"
+    },
+    "schema_version": {
+      "const": "3.0"
+    },
+    "name": {
+      "type": "string"
+    },
+    "tactic": {
+      "type": "string",
+      "pattern": "^CTFT-TA-[A-Z]{3}$",
+      "deprecated": true,
+      "description": "Legacy name of the subject axis, kept as a stable compatibility alias. Use `domain`."
+    },
+    "category": {
+      "type": "string",
+      "pattern": "^[A-Z]{3}$"
+    },
+    "paired_counter": {
+      "type": "string",
+      "pattern": "^CTFTCTE-[A-Z]{3}-[0-9]{3}$"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "artifact_types": {
+      "type": "array",
+      "description": "What the flag is hidden inside. Controlled vocabulary; required for `typed` entries.",
+      "items": {
+        "type": "string",
+        "enum": [
+          "http-service",
+          "elf",
+          "pe",
+          "apk",
+          "pcap",
+          "memory-image",
+          "disk-image",
+          "qr",
+          "audio",
+          "image",
+          "video",
+          "archive",
+          "document",
+          "contract",
+          "firmware",
+          "rf-capture",
+          "source-code",
+          "binary-blob",
+          "file",
+          "web",
+          "text"
+        ]
+      }
+    },
+    "attack_complement": {
+      "type": "object",
+      "deprecated": true,
+      "description": "Legacy single closest-technique prose. Superseded by attack_related (per-entry MITRE ATT&CK display, SCHEMA_V3 §3.5).",
+      "properties": {
+        "closest": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        }
+      }
+    },
+    "attack_related": {
+      "type": "array",
+      "description": "MITRE ATT&CK techniques potentially related to this entry; rendered on the technique page as a Related MITRE ATT&CK table.",
+      "items": {
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^T[0-9]{4}(\\.[0-9]{3})?$"
+          },
+          "name": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "indicators": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^IND-"
+      }
+    },
+    "difficulty": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5
+    },
+    "prevalence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "domain": {
+      "type": "string",
+      "pattern": "^[A-Z]{3}$",
+      "description": "Subject axis (ex-`tactic`). Derived from the ID prefix by v3/catalog_audit.py — never hand-written. See SCHEMA_V3 §3.6."
+    },
+    "format": {
+      "type": "array",
+      "description": "Competition format the entry has actually been observed in. Only set from a cited challenge in v3/evidence.json (SCHEMA_V3 §3.8).",
+      "items": {
+        "type": "string",
+        "enum": [
+          "jeopardy",
+          "attack-defense",
+          "wargame"
+        ]
+      }
+    }
+  },
+  "additionalProperties": false
+}

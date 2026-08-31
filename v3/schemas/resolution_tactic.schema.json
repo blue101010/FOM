@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ctft/v3/schemas/resolution_tactic.schema.json",
+  "title": "CTFT resolution tactic map",
+  "description": "technique id -> player objective. Populated only from labelled evidence (TODO 2.4). An empty items map is the correct state until then.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "model",
+    "schema_version",
+    "collection",
+    "status",
+    "items"
+  ],
+  "properties": {
+    "model": {
+      "const": "CTFT"
+    },
+    "schema_version": {
+      "const": "3.0"
+    },
+    "collection": {
+      "const": "resolution_tactics"
+    },
+    "status": {
+      "enum": [
+        "underived",
+        "partial",
+        "derived"
+      ]
+    },
+    "vocabulary": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "Discover",
+          "Reveal",
+          "Gain Access",
+          "Gain Control",
+          "Expand Reach",
+          "Capture Objective"
+        ],
+        "description": "Player objective. NOT stored on the entry — this definition exists so v3/tactic_map.json can be validated once the axis is derived from labelled evidence (TODO 2.4). Assigning it before that is forbidden."
+      }
+    },
+    "note": {
+      "type": "string"
+    },
+    "items": {
+      "type": "object",
+      "propertyNames": {
+        "pattern": "^CTFTTE-[A-Z]{3}-[0-9]{3}$"
+      },
+      "additionalProperties": {
+        "enum": [
+          "Discover",
+          "Reveal",
+          "Gain Access",
+          "Gain Control",
+          "Expand Reach",
+          "Capture Objective"
+        ],
+        "description": "Player objective. NOT stored on the entry — this definition exists so v3/tactic_map.json can be validated once the axis is derived from labelled evidence (TODO 2.4). Assigning it before that is forbidden."
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 {
   "type": "bundle",
-  "id": "bundle--cf35e603-fd7d-56a8-8f42-26200ad87bc4",
+  "id": "bundle--277872e4-69d4-5906-bb7a-15f2fa5b462d",
   "objects": [
     {
       "type": "identity",
@@ -10,7 +10,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "name": "CTFT Project",
       "identity_class": "organization",
-      "description": "Capture-The-Flag Techniques - complementary to MITRE ATT&CK, generalized from FOM."
+      "description": "Capture-The-Flag Techniques - an ontology of CTF solving behaviour. Relates to MITRE ATT&CK, CAPEC and CWE as per-entry anchors; not a parallel ATT&CK. Generalized from FOM."
     },
     {
       "type": "x-ctft-tactic",
@@ -21,7 +21,8 @@
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "Forensics",
       "x_ctft_shortname": "for",
-      "description": "Disk/memory/network artifact concealment and DFIR recovery. (HTB: Forensics)",
+      "x_ctft_domain": "FOR",
+      "description": "Challenges where the flag survives in an artifact but not in plain sight: tampered file signatures, slack and unallocated space, falsified timestamps, alternate data streams, memory images, packet captures and unusual encodings. Recovery is structural — read what the container actually is, not what it claims to be. (HTB: Forensics)",
       "external_references": [
         {
           "source_name": "ctft",
@@ -37,7 +38,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTTE-FOR-001 - Magic-byte / file-signature tampering",
-      "description": "The author corrupts or swaps the file's magic header (e.g. flips PNG 89504E47 to a bogus value) so type detection and viewers fail. | ATT&CK complementarity: Closest ATT&CK context is T1027 (Obfuscated Files), but ATT&CK omits the byte-level magic-header recovery detail that defines this CTF technique.",
+      "description": "The author corrupts or swaps the file's magic header (e.g. flips PNG 89504E47 to a bogus value) so type detection and viewers fail.",
       "kill_chain_phases": [
         {
           "kill_chain_name": "ctft",
@@ -45,11 +46,17 @@
         }
       ],
       "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
       "x_ctft_role": "design-hide",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTTE-FOR-001"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
         }
       ]
     },
@@ -61,13 +68,19 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-FOR-001 - Recover the legitimate file signature",
-      "description": "OFFENSIVE (solver): Compare bytes against a signature table, identify the true type from structure/footers, and patch the header with a hex editor or python. || FORENSIC (analyst): During carving, signature-based recovery reconstructs files whose extension or header was altered; corroborate with internal structure, not just the leading bytes.",
+      "description": "Compare bytes against a signature table, identify the true type from structure/footers, and patch the header with a hex editor or python.",
       "x_ctft_category": "FOR",
-      "x_ctft_role": "counter-technique",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "resolution",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTCTE-FOR-001"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
         }
       ]
     },
@@ -79,9 +92,10 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
       "source_ref": "course-of-action--440b5e86-7089-5328-820d-b0bd6667220a",
       "target_ref": "attack-pattern--732e248e-0754-5780-b1cd-b7e64470d487",
-      "description": "Counter-technique recovers/defeats the paired design technique."
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     },
     {
       "type": "attack-pattern",
@@ -91,7 +105,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTTE-FOR-002 - Slack-space and unallocated-area concealment",
-      "description": "Flag data is written into file slack, unallocated clusters, or between partitions where directory entries do not point. | ATT&CK complementarity: No ATT&CK equivalent; this is media-forensics carving craft.",
+      "description": "Flag data is written into file slack, unallocated clusters, or between partitions where directory entries do not point.",
       "kill_chain_phases": [
         {
           "kill_chain_name": "ctft",
@@ -99,11 +113,17 @@
         }
       ],
       "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
       "x_ctft_role": "design-hide",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTTE-FOR-002"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1564",
+          "description": "Hide Artifacts"
         }
       ]
     },
@@ -115,13 +135,19 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-FOR-002 - Carve hidden files from slack/unallocated space",
-      "description": "OFFENSIVE (solver): Run file-carving over the raw image to extract artifacts independent of the filesystem index. || FORENSIC (analyst): Treat the image at the block level; carving + manual cluster inspection recovers data the filesystem no longer references.",
+      "description": "Run file-carving over the raw image to extract artifacts independent of the filesystem index.",
       "x_ctft_category": "FOR",
-      "x_ctft_role": "counter-technique",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "resolution",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTCTE-FOR-002"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1564",
+          "description": "Hide Artifacts"
         }
       ]
     },
@@ -133,9 +159,10 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
       "source_ref": "course-of-action--70b4daaa-6779-548d-913e-1474472e8549",
       "target_ref": "attack-pattern--7cfbc45a-206b-54d8-906a-f1c0bc20ba31",
-      "description": "Counter-technique recovers/defeats the paired design technique."
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     },
     {
       "type": "attack-pattern",
@@ -145,7 +172,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTTE-FOR-003 - Timestomping (MACB manipulation)",
-      "description": "Author rewrites file timestamps so the relevant artifact blends into a noisy timeline or appears older/newer than reality. | ATT&CK complementarity: Complements T1070.006 (Timestomp) but adds the CTF-grade MFT attribute-diff recovery procedure.",
+      "description": "Author rewrites file timestamps so the relevant artifact blends into a noisy timeline or appears older/newer than reality.",
       "kill_chain_phases": [
         {
           "kill_chain_name": "ctft",
@@ -153,11 +180,17 @@
         }
       ],
       "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
       "x_ctft_role": "design-hide",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTTE-FOR-003"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1070.006",
+          "description": "Timestomp"
         }
       ]
     },
@@ -169,13 +202,19 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-FOR-003 - Detect and reconstruct true timestamps",
-      "description": "OFFENSIVE (solver): On NTFS, compare $STANDARD_INFORMATION vs $FILE_NAME timestamps; mismatches reveal manipulation and often the real ordering. || FORENSIC (analyst): Cross-reference MFT, $LogFile/$UsnJrnl, registry and event logs; timestamps that disagree across sources expose the stomped value.",
+      "description": "On NTFS, compare $STANDARDINFORMATION vs $FILENAME timestamps; mismatches reveal manipulation and often the real ordering.",
       "x_ctft_category": "FOR",
-      "x_ctft_role": "counter-technique",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "resolution",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTCTE-FOR-003"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1070.006",
+          "description": "Timestomp"
         }
       ]
     },
@@ -187,9 +226,10 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
       "source_ref": "course-of-action--424711e6-78ac-51ae-8d9a-3947b6b97a0f",
       "target_ref": "attack-pattern--bcfaac61-d50e-5d3a-a9e8-cc41e2acf606",
-      "description": "Counter-technique recovers/defeats the paired design technique."
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     },
     {
       "type": "attack-pattern",
@@ -199,7 +239,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTTE-FOR-004 - NTFS Alternate Data Stream hiding",
-      "description": "Payload is stored in a named ADS (file.txt:secret) that is invisible to ordinary directory listings. | ATT&CK complementarity: Complements T1564.004 (NTFS File Attributes); CTFT adds the extraction recipe and MFT-attribute view.",
+      "description": "Payload is stored in a named ADS (file.txt:secret) that is invisible to ordinary directory listings.",
       "kill_chain_phases": [
         {
           "kill_chain_name": "ctft",
@@ -207,11 +247,17 @@
         }
       ],
       "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
       "x_ctft_role": "design-hide",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTTE-FOR-004"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1564.004",
+          "description": "NTFS File Attributes"
         }
       ]
     },
@@ -223,13 +269,19 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-FOR-004 - Enumerate and extract Alternate Data Streams",
-      "description": "OFFENSIVE (solver): List streams (dir /r, Get-Item -Stream) and read the named stream directly. || FORENSIC (analyst): Enumerate $DATA attributes per MFT record; non-default named streams are immediate indicators of concealment.",
+      "description": "List streams (dir /r, Get-Item -Stream) and read the named stream directly.",
       "x_ctft_category": "FOR",
-      "x_ctft_role": "counter-technique",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "resolution",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTCTE-FOR-004"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1564.004",
+          "description": "NTFS File Attributes"
         }
       ]
     },
@@ -241,9 +293,10 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
       "source_ref": "course-of-action--e676b045-651f-56d8-a2ff-af8ba3d46d03",
       "target_ref": "attack-pattern--db5d70cb-2377-5960-ba8a-f4255afa08db",
-      "description": "Counter-technique recovers/defeats the paired design technique."
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     },
     {
       "type": "attack-pattern",
@@ -253,7 +306,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTTE-FOR-005 - Memory-resident artifact concealment",
-      "description": "The flag exists only in RAM (process heap, clipboard, decrypted blob) and never touches disk in plaintext. | ATT&CK complementarity: No ATT&CK technique; this is volatile-memory DFIR.",
+      "description": "The flag exists only in RAM (process heap, clipboard, decrypted blob) and never touches disk in plaintext.",
       "kill_chain_phases": [
         {
           "kill_chain_name": "ctft",
@@ -261,11 +314,17 @@
         }
       ],
       "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
       "x_ctft_role": "design-hide",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTTE-FOR-005"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1014",
+          "description": "Rootkit"
         }
       ]
     },
@@ -277,13 +336,19 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-FOR-005 - Recover secrets from a memory image",
-      "description": "OFFENSIVE (solver): Profile the dump, list processes, scan for strings/patterns, and dump the owning process's address space. || FORENSIC (analyst): Volatility plugins reconstruct process lists, network state, command history and injected regions to locate transient secrets.",
+      "description": "Profile the dump, list processes, scan for strings/patterns, and dump the owning process's address space.",
       "x_ctft_category": "FOR",
-      "x_ctft_role": "counter-technique",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "resolution",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTCTE-FOR-005"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1014",
+          "description": "Rootkit"
         }
       ]
     },
@@ -295,9 +360,10 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
       "source_ref": "course-of-action--1debf2c7-8722-5080-9460-55ece6262556",
       "target_ref": "attack-pattern--8e53c973-2750-5825-94df-b8cd5c45dff1",
-      "description": "Counter-technique recovers/defeats the paired design technique."
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     },
     {
       "type": "attack-pattern",
@@ -307,7 +373,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTTE-FOR-006 - PCAP payload obfuscation",
-      "description": "Flag is split across packets, tunnelled in odd fields (ICMP data, DNS labels), or encoded before transmission. | ATT&CK complementarity: Complements C2/exfil tactics conceptually but the CTFT entry is about packet-level reassembly and decoding.",
+      "description": "Flag is split across packets, tunnelled in odd fields (ICMP data, DNS labels), or encoded before transmission.",
       "kill_chain_phases": [
         {
           "kill_chain_name": "ctft",
@@ -315,11 +381,17 @@
         }
       ],
       "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
       "x_ctft_role": "design-hide",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTTE-FOR-006"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1573",
+          "description": "Encrypted Channel"
         }
       ]
     },
@@ -331,13 +403,19 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-FOR-006 - Reassemble and decode hidden network payloads",
-      "description": "OFFENSIVE (solver): Follow streams, filter by protocol, export objects, then decode the reassembled payload. || FORENSIC (analyst): Reconstruct sessions and extract transferred objects; covert channels show up as anomalous field usage or unusual protocol volume.",
+      "description": "Follow streams, filter by protocol, export objects, then decode the reassembled payload.",
       "x_ctft_category": "FOR",
-      "x_ctft_role": "counter-technique",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "resolution",
       "external_references": [
         {
           "source_name": "ctft",
           "external_id": "CTFTCTE-FOR-006"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1573",
+          "description": "Encrypted Channel"
         }
       ]
     },
@@ -349,9 +427,1417 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
       "source_ref": "course-of-action--2de66fe4-d5fa-5bb2-bb1f-58b24c32c146",
       "target_ref": "attack-pattern--b901c743-3053-570f-9abf-b555601b616c",
-      "description": "Counter-technique recovers/defeats the paired design technique."
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--24a46eae-2167-510d-aebe-0b204ade7e31",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FOR-007 - Modify legitimate header signature of a file",
+      "description": "Modify legitimate header signature of a file.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "for"
+        }
+      ],
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FOR-007"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--7c6a29d7-6253-5d60-98fd-1c54dd9663ed",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FOR-007 - Recover legitimate signature of a file",
+      "description": "Recover legitimate signature of a file, often called magic headers. Magic headers, also known as file signatures, are specific byte sequences located at the beginning of a file that help identify the file type. These headers are used by operating systems and applications to determine how to process or open a file.",
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FOR-007"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--fb269c09-a84a-5f60-95dc-0aa49686f6a7",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--7c6a29d7-6253-5d60-98fd-1c54dd9663ed",
+      "target_ref": "attack-pattern--24a46eae-2167-510d-aebe-0b204ade7e31",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--9dfd087e-09ce-5cd7-8176-5aad288ffeeb",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FOR-008 - OpenEXR header-signature tampering",
+      "description": "Modify magic headers via python script import zlib import struct def fixpngfile(filepath, outputpath): with open(filepath, 'rb') as file: data = file.read() # Replace modified header modifiedheader = b'\\x89RNG' correctheader = b'\\x89PNG' if data.startswith(modifiedheader): data = correctheader + data[len(modifiedheader):] else: print(\"Modified header not found.\") return # Function to check and fix CRCs of PNG chunks def fixcrc(data): pos = 8 # Skip the first 8 bytes (header) fixeddata = data[:pos] while pos < len(data): chunklength = struct.unpack('>I', data[pos:pos+4])[0] chunktype = data[pos+4:pos+8] chunkdata = data[pos+8:pos+8+chunklength] chunkcrc = struct.unpack('>I', data[pos+8+chunklength:pos+12+chunklength])[0] # Calculate the correct CRC calculatedcrc = zlib.crc32(chunktype) calculatedcrc = zlib.crc32(chunkdata, calculatedcrc) calculatedcrc = calculatedcrc & 0xffffffff if chunkcrc != calculatedcrc: print(f\"Fixing CRC for chunk: {chunktype.decode('ascii')}\") fixeddata += struct.pack('>I', chunklength) + chunktype + chunkdata + struct.pack('>I', calculatedcrc) else: fixeddata += data[pos:pos+12+chunklength] pos += 12 + chunklength return fixeddata # Fix CRCs data = fixcrc(data) # Save the fixed file with open(outputpath, 'wb') as outputfile: outputfile.write(data) print(f\"File saved as {outputpath}\") # Use the function with your file fixpngfile('magicrepairman.png', '2fixedmagicrepairman.png')",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "for"
+        }
+      ],
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FOR-008"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--700c0aa2-0f4e-5012-af06-c34b63d619ac",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FOR-008 - Recover legitimate header signature of an OpenEXR image file",
+      "description": "Fix the legitimate magic header for an EXR file (1) with FOMTOU001 - hexed.it",
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FOR-008"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--b3858a6b-97ff-5416-a6d0-2957775f9dac",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--700c0aa2-0f4e-5012-af06-c34b63d619ac",
+      "target_ref": "attack-pattern--9dfd087e-09ce-5cd7-8176-5aad288ffeeb",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--ebf25f33-b629-56f6-afff-e2669f14b2b7",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FOR-009 - Corrupt Image file magic signature",
+      "description": "Modify or Corrupt legitimate magic headers of an image file.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "for"
+        }
+      ],
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FOR-009"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--bfe9548f-4c93-5e83-8f4f-11413d3e993f",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FOR-009 - Repair a corrupted image magic signature",
+      "description": "Read the first bytes with a hex editor and compare them against the signature table for the extension claimed by the file name. When the magic is corrupted rather than merely wrong, the rest of the container is usually intact: rewrite the expected signature in place and re-open the file. For PNG also check the IHDR chunk and the trailing IEND; for JPEG the SOI/EOI markers. If several candidate types fit, carve the file and let the structural parser decide.",
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FOR-009"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--235cde87-fef8-5797-a3e2-119626d7fe96",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--bfe9548f-4c93-5e83-8f4f-11413d3e993f",
+      "target_ref": "attack-pattern--ebf25f33-b629-56f6-afff-e2669f14b2b7",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--838b9ef2-7485-5f8c-bb9c-ab49e57f749a",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FOR-010 - Use special encoding system to hide data with visual, machine-readable form.",
+      "description": "Use special encoding system to hide data with visual, machine-readable form",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "for"
+        }
+      ],
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FOR-010"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--25be7403-f3b3-54e3-b10e-3c5080c3b996",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FOR-010 - Retrieve information from visual machine-readable encodings",
+      "description": "Identify which visual symbology carries the payload before attempting any decode: matrix geometry (square vs rectangular), module count, finding/alignment patterns, colour depth and quiet-zone geometry each narrow the family. Once the symbology is known, delegate to the specific counter-technique: QR (CTFTCTE-FOR-011), rMQR (CTFTCTE-FOR-012) or JAB colour codes (CTFTCTE-FOR-027). When no decoder recognises the symbol, treat the grid as raw bits and reconstruct the encoding from the published specification.",
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FOR-010"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--6923fd59-c0af-581c-bbe7-b312caa3e044",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--25be7403-f3b3-54e3-b10e-3c5080c3b996",
+      "target_ref": "attack-pattern--838b9ef2-7485-5f8c-bb9c-ab49e57f749a",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--4980869b-14c4-5faf-a25d-77912123fcb1",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FOR-011 - Use special encoding system to hide data with QR codes",
+      "description": "Use QR codes to hide data. Refer to SST:",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "for"
+        }
+      ],
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FOR-011"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--03c068da-ba52-54bd-95f0-8ad81abee7b0",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FOR-011 - Retrieve information from QR codes",
+      "description": "Retrieve information from QR codes based on the legitimate specifications and extra methods (like steganography or specific algorithms). Damaged symbols often still decode: Reed-Solomon error correction tolerates up to 30% loss at level H, so repair the finder patterns and retry before assuming the payload is unrecoverable.",
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FOR-011"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--fbd68373-b774-520c-b894-d768c8222bd2",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--03c068da-ba52-54bd-95f0-8ad81abee7b0",
+      "target_ref": "attack-pattern--4980869b-14c4-5faf-a25d-77912123fcb1",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--c470a5a0-a135-515f-8b12-e2021982a81f",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FOR-012 - Use special encoding system to hide data with RMQR codes",
+      "description": "Use special encoding system to hide data with Rectangular rMQR codes.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "for"
+        }
+      ],
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FOR-012"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--7bab56f4-cdc2-55df-a24b-690700faf054",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FOR-012 - Retrieve information from rMQR codes",
+      "description": "rMQR (rectangular Micro QR) uses a rectangular grid that most consumer decoders reject. Use a reader that implements the ISO/IEC 23941 layout — ZXingReader decodes rMQR where zbarimg does not — or reconstruct the module grid manually and apply the rMQR version table.",
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FOR-012"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--a578736f-55c8-5af5-9f95-636d6b8d1039",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--7bab56f4-cdc2-55df-a24b-690700faf054",
+      "target_ref": "attack-pattern--c470a5a0-a135-515f-8b12-e2021982a81f",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--c896937b-9303-5db8-8fe4-5e2c5d399e61",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FOR-013 - Conceal information with diagrams encoding",
+      "description": "Conceal information with diagrams encoding",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "for"
+        }
+      ],
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FOR-013"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--164266ca-bd1b-548c-9629-b926a3570629",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FOR-013 - Retrieve information from diagram encodings",
+      "description": "Treat the diagram as a positional code rather than a picture: establish the alphabet (how many distinct states a cell can take), the reading order, and the grouping that maps cells to symbols. Clock-like and lamp-row diagrams encode digits per row; colour or fill state usually carries the value. For the Mengenlehreuhr family see CTFTCTE-FOR-014.",
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FOR-013"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--9de086a1-a096-55ba-a69b-519f2391e718",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--164266ca-bd1b-548c-9629-b926a3570629",
+      "target_ref": "attack-pattern--c896937b-9303-5db8-8fe4-5e2c5d399e61",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--5abd519b-d5b7-576c-9169-0562e2169656",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FOR-014 - Conceal information with Mengenlehreuhr diagrams encoding",
+      "description": "Conceal information with Mengenlehreuhr diagrams encoding. Exemple: !alt text See 2024 - NSEC - Dorsolateral Challenge",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "for"
+        }
+      ],
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FOR-014"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--9662638a-598d-5b87-a3c9-489b09314732",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FOR-014 - Retrieve information from Mengenlehreuhr diagram encodings",
+      "description": "Retrieve information with Mengenlehreuhr diagram encoding. The clock has five rows: seconds (blinking), 5-hour, 1-hour, 5-minute and 1-minute blocks. Count the lit cells per row and recombine to the encoded value. Example: see 2024 - NSEC - Dorsolateral Challenge",
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FOR-014"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--942e5367-550f-5c4b-bd46-35d1ff5e6040",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--9662638a-598d-5b87-a3c9-489b09314732",
+      "target_ref": "attack-pattern--5abd519b-d5b7-576c-9169-0562e2169656",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--afc26bed-c686-503a-bcf6-696f7591c6cf",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FOR-015 - Conceal information with packagers",
+      "description": "Conceal information with diagrams encoding",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "for"
+        }
+      ],
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FOR-015"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027.002",
+          "description": "Software Packing"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--0f7c8801-5d46-57ac-96d2-60af77b9771d",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FOR-015 - Recover from packager obfuscations",
+      "description": "Recover from packagers obfuscations",
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FOR-015"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027.002",
+          "description": "Software Packing"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--35e2099f-2161-5468-99c1-2067cf73e59e",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--0f7c8801-5d46-57ac-96d2-60af77b9771d",
+      "target_ref": "attack-pattern--afc26bed-c686-503a-bcf6-696f7591c6cf",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--a349c24a-1fb8-56cf-903d-d5e20b96fb21",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FOR-016 - Conceal information with date and time representations",
+      "description": "Conceal information with diagrams encoding",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "for"
+        }
+      ],
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FOR-016"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--40ae3a6a-001b-5fd1-ad41-7b64fbf32aca",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FOR-016 - Recover information with date and time representations",
+      "description": "Conceal information with diagrams encoding",
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FOR-016"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--3324f21f-f9d4-5af6-a3e9-9bc5e1389953",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--40ae3a6a-001b-5fd1-ad41-7b64fbf32aca",
+      "target_ref": "attack-pattern--a349c24a-1fb8-56cf-903d-d5e20b96fb21",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--130342c2-5432-5ba7-afce-8a5e6e2fb43b",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FOR-017 - Conceal text data strings in ELF binary",
+      "description": "Conceal text data strings in ELF binary.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "for"
+        }
+      ],
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FOR-017"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--11dfcca5-8fc8-5b2c-b6fd-a9547dec4232",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FOR-017 - Recover text data strings from ELF binary",
+      "description": "Recover text data strings from ELF binary with tools like - strings (linux)",
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FOR-017"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--e08bfcfa-a7de-5222-bee6-6da4c7ec850f",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--11dfcca5-8fc8-5b2c-b6fd-a9547dec4232",
+      "target_ref": "attack-pattern--130342c2-5432-5ba7-afce-8a5e6e2fb43b",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--8a711248-9976-56bb-9220-e8be8f660c80",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FOR-018 - MFT record and attribute tampering",
+      "description": "The challenge modifies, unlinks, or partially corrupts NTFS Master File Table records so that the expected file is absent from normal directory traversal while residual record, attribute, or allocation evidence remains in the image.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "for"
+        }
+      ],
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FOR-018"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1564.001",
+          "description": "Hidden Files and Directories"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--b0ca9cce-f6a3-5574-b1d8-76856aea2d6f",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FOR-018 - Analyze orphaned MFT records and raw attributes",
+      "description": "Inspect the supplied NTFS image at record and attribute level, correlate unlinked records with allocation evidence, and recover only artifacts supported by the image.",
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FOR-018"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1564.001",
+          "description": "Hidden Files and Directories"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--12369653-e322-5957-9b91-f6a5d6f072e7",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--b0ca9cce-f6a3-5574-b1d8-76856aea2d6f",
+      "target_ref": "attack-pattern--8a711248-9976-56bb-9220-e8be8f660c80",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--b2049e84-eabd-5347-aef2-c3442bc21ca1",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FOR-019 - JPEG marker / DCT coefficient corruption",
+      "description": "JPEG structure is tampered: extraneous bytes before the EOI marker, corrupted quantization tables, or DCT-coefficient tricks hide data.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "for"
+        }
+      ],
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FOR-019"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--57163e38-0c13-5fe3-9652-72082eb808ff",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FOR-019 - Repair JPEG segments and decode DCT coefficients",
+      "description": "Parse JPEG segments (SOI..EOI), locate the real image data, repair markers and quantization tables, and decode DCT coefficients.",
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FOR-019"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--3b763435-f43c-597b-bd4f-c8723bdf3af6",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--57163e38-0c13-5fe3-9652-72082eb808ff",
+      "target_ref": "attack-pattern--b2049e84-eabd-5347-aef2-c3442bc21ca1",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--1a3b8ef7-2957-52a0-8882-a89fa18608bb",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FOR-020 - LUKS-encrypted volume concealment",
+      "description": "A partition is LUKS-encrypted and the passphrase (or a keyslot) is part of the puzzle; the flag is inside the decrypted filesystem.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "for"
+        }
+      ],
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FOR-020"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1486",
+          "description": "Data Encrypted for Impact"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--fbfcb4e1-b9ea-5784-9d30-9e7efe786bcb",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FOR-020 - Recover LUKS headers/keyslots, bruteforce passphrase",
+      "description": "Identify LUKS headers/keyslots, attack the passphrase (dictionary/bruteforce via luks2john), unlock and mount the volume.",
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FOR-020"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1486",
+          "description": "Data Encrypted for Impact"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--8c802222-f7e3-59cf-b75c-bff201e67d5f",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--fbfcb4e1-b9ea-5784-9d30-9e7efe786bcb",
+      "target_ref": "attack-pattern--1a3b8ef7-2957-52a0-8882-a89fa18608bb",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--0f61a328-02f8-5675-a505-cb52e238de86",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FOR-021 - LVM fragment/concat volume labyrinth",
+      "description": "The flag sits in an LVM volume assembled from scattered physical volumes or fragmented extents; naive mounting fails.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "for"
+        }
+      ],
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FOR-021"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1564",
+          "description": "Hide Artifacts"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--96003d4b-c5cb-54ba-92ac-d300791f1f10",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FOR-021 - Reassemble LVM logical volumes and mount",
+      "description": "Scan PVs/LVs, assemble the volume group, and mount the logical volume to read the flag.",
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FOR-021"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1564",
+          "description": "Hide Artifacts"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--38c45225-926d-5d66-ad12-adfb013c0d43",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--96003d4b-c5cb-54ba-92ac-d300791f1f10",
+      "target_ref": "attack-pattern--0f61a328-02f8-5675-a505-cb52e238de86",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--f9e5b72a-f8d9-50de-9f25-f7b52bd66ddd",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FOR-022 - Deleted-file / open-handle recovery",
+      "description": "The flag file is deleted but still open by a process, or recoverable from journal/extent remnants.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "for"
+        }
+      ],
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FOR-022"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1070.004",
+          "description": "File Deletion"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--dd30f00e-47ec-53d2-aec7-425f0b1ad9d9",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FOR-022 - Recover deleted files via /proc handles, journal, carving",
+      "description": "Recover via /proc/<pid>/fd open handles, extundelete, journal replay, or raw carving.",
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FOR-022"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1070.004",
+          "description": "File Deletion"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--ff9c6d77-e899-526d-a516-acf604d23a39",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--dd30f00e-47ec-53d2-aec7-425f0b1ad9d9",
+      "target_ref": "attack-pattern--f9e5b72a-f8d9-50de-9f25-f7b52bd66ddd",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--189634c8-65e9-595f-ba86-7816898dcc24",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FOR-023 - SELinux context-based concealment",
+      "description": "Files are labeled with SELinux contexts that deny access; the flag is present but context-blocked.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "for"
+        }
+      ],
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FOR-023"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1562",
+          "description": "Impair Defenses"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--bdd24a28-5874-5968-90ec-87b87907446e",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FOR-023 - Analyze SELinux contexts blocking artifacts",
+      "description": "Inspect contexts (ls -Z), identify the blocking policy, and read the file through allowed contexts or policy relaxation.",
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FOR-023"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1562",
+          "description": "Impair Defenses"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--f13e9570-8c6a-51e2-b422-1be9ad14e7c2",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--bdd24a28-5874-5968-90ec-87b87907446e",
+      "target_ref": "attack-pattern--189634c8-65e9-595f-ba86-7816898dcc24",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--7f9696e5-33b5-5d5b-b1f6-39a4cb2b308e",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FOR-024 - Browser-profile artifact concealment",
+      "description": "The flag is inside a browser profile: bookmarks, history, saved logins, cookies or localStorage.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "for"
+        }
+      ],
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FOR-024"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1217",
+          "description": "Browser Information Discovery"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--1216a2e0-3f6a-5080-bd45-a0621e8f69aa",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FOR-024 - Parse Firefox/SQLite artifacts (places, logins, cookies)",
+      "description": "Open the profile's SQLite databases (places.sqlite, logins.json, cookies) and extract the flag.",
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FOR-024"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1217",
+          "description": "Browser Information Discovery"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--36556805-6068-5866-9cd5-e7ba71f35896",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--1216a2e0-3f6a-5080-bd45-a0621e8f69aa",
+      "target_ref": "attack-pattern--7f9696e5-33b5-5d5b-b1f6-39a4cb2b308e",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--9f40ecc2-67aa-533b-90d0-681ce42fcfa6",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FOR-025 - PDF object/stream hiding",
+      "description": "The flag is inside PDF objects/streams (FlateDecode), hidden annotations, or appended after %%EOF.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "for"
+        }
+      ],
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FOR-025"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--fd7f4be0-83ec-5539-ab44-4c15887bb845",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FOR-025 - Parse PDF xref, streams and filters",
+      "description": "Parse the xref, decompress streams (qpdf/pdftk), and dump objects for strings.",
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FOR-025"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--7cf3b51c-b25b-5034-91d1-f477d1c32ac3",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--fd7f4be0-83ec-5539-ab44-4c15887bb845",
+      "target_ref": "attack-pattern--9f40ecc2-67aa-533b-90d0-681ce42fcfa6",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--81b8b6d3-8a4f-5e6b-be34-955496e43108",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FOR-026 - Memory-image OS-artifact recovery",
+      "description": "The flag exists only in a Windows/Linux memory dump: registry hives, services, console history or process memory.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "for"
+        }
+      ],
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FOR-026"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1003",
+          "description": "OS Credential Dumping"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--822cc09d-521a-54d5-837c-2b5589436599",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FOR-026 - Extract registry/services/process artifacts from memory images",
+      "description": "Profile the image (volatility3), enumerate processes/registry, scan strings, and dump the owning structures.",
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FOR-026"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1003",
+          "description": "OS Credential Dumping"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--255b5764-b2e6-5bb1-9c3a-76f0325d59df",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--822cc09d-521a-54d5-837c-2b5589436599",
+      "target_ref": "attack-pattern--81b8b6d3-8a4f-5e6b-be34-955496e43108",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--17de658d-3336-5f9e-8a9d-4d0b4cd193b1",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FOR-027 - Use JAB colour 2D codes to hide data",
+      "description": "The payload is encoded as a JAB Code (Just Another Barcode): a colour 2D matrix symbology whose modules are coloured squares laid out on square or rectangular grids. Because the data lives in the colour channel rather than in black-and-white modules, ordinary QR readers ignore the symbol entirely, and a greyscale conversion or an aggressive JPEG recompression destroys the payload without any visible sign of damage.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "for"
+        }
+      ],
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FOR-027"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--a01b90b5-ae99-510e-b4b0-4244f7c9c4b9",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FOR-027 - Retrieve information from JAB colour codes",
+      "description": "JAB Code (Just Another Barcode) is a colour 2D matrix symbology made of colour squares arranged in either square or rectangular grids. Decode with the reference jabcode reader rather than a QR library. Work from the highest-fidelity copy available: the colour palette carries data, so any greyscale conversion, palette reduction or lossy recompression is destructive.",
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FOR-027"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--6f832984-091d-5925-bfbd-b1fe63b32c2b",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--a01b90b5-ae99-510e-b4b0-4244f7c9c4b9",
+      "target_ref": "attack-pattern--17de658d-3336-5f9e-8a9d-4d0b4cd193b1",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     }
   ]
 }

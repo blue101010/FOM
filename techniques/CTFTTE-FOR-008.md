@@ -1,4 +1,4 @@
-# CTFTTE-FOR-008 — Modify legitimate header signature of a file via python script
+# CTFTTE-FOR-008 — OpenEXR header-signature tampering
 
 > **Type:** Design / Hide Technique  
 > **Tactic:** [`CTFT-TA-FOR`](../tactics/CTFT-TA-FOR.md) — Forensics  

@@ -1,0 +1,426 @@
+{
+  "type": "bundle",
+  "id": "bundle--4a458d50-505e-50f6-853f-7ef9f9853639",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "name": "CTFT Project",
+      "identity_class": "organization",
+      "description": "Capture-The-Flag Techniques - an ontology of CTF solving behaviour. Relates to MITRE ATT&CK, CAPEC and CWE as per-entry anchors; not a parallel ATT&CK. Generalized from FOM."
+    },
+    {
+      "type": "x-ctft-tactic",
+      "spec_version": "2.1",
+      "id": "x-ctft-tactic--b3fabc0f-2062-5d1e-bdd8-a76d55e431ad",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "Game / Protocol Automation (GamePwn)",
+      "x_ctft_shortname": "gam",
+      "x_ctft_domain": "GAM",
+      "description": "Challenges built around a game binary or networked game server. The author hides the flag behind game mechanics that require automation, binary patching, memory manipulation, AI defeat, or protocol sequence exploitation rather than raw exploit code. (HTB: GamePwn)",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFT-TA-GAM"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--9ab53643-ce2f-5a84-8bd7-1c305acc31c3",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-GAM-001 - Networked game / protocol automation",
+      "description": "The flag requires playing or solving many rounds of a networked game or custom protocol faster than is humanly feasible without automation.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "gam"
+        }
+      ],
+      "x_ctft_category": "GAM",
+      "x_ctft_domain": "GAM",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-GAM-001"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1071",
+          "description": "Application Layer Protocol"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--8a7b8410-ebc5-5687-a6ee-eee8116d8928",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-GAM-001 - Script a client to beat the protocol",
+      "description": "Reverse the game protocol (from traffic capture or source), implement a pwntools/socket script that parses server state and responds optimally for every round, and run until the server releases the flag.",
+      "x_ctft_category": "GAM",
+      "x_ctft_domain": "GAM",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-GAM-001"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1071",
+          "description": "Application Layer Protocol"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--fe7449bb-aa37-5603-96c3-7173fbc2f367",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--8a7b8410-ebc5-5687-a6ee-eee8116d8928",
+      "target_ref": "attack-pattern--9ab53643-ce2f-5a84-8bd7-1c305acc31c3",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--f9b0a589-3537-54a6-8218-0e17fc4ba29f",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-GAM-002 - Game save-state / memory manipulation",
+      "description": "The flag is gated behind an in-game condition (score, item count, level unlock) stored in a save file or process memory that cannot be legitimately reached through normal gameplay.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "gam"
+        }
+      ],
+      "x_ctft_category": "GAM",
+      "x_ctft_domain": "GAM",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-GAM-002"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1213",
+          "description": "Data from Information Repositories"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--781b51f7-9184-57b2-8c63-75753cd69a1f",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-GAM-002 - Hex-edit the save file or patch in-memory values",
+      "description": "Parse the save-file format (often a binary blob or JSON), locate the target field (score, item count, unlock flag), and overwrite it to the winning value — or use Cheat Engine to find and patch the live in-memory representation.",
+      "x_ctft_category": "GAM",
+      "x_ctft_domain": "GAM",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-GAM-002"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1213",
+          "description": "Data from Information Repositories"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--3cef109e-dbd5-5a30-82ed-708cbeb58852",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--781b51f7-9184-57b2-8c63-75753cd69a1f",
+      "target_ref": "attack-pattern--f9b0a589-3537-54a6-8218-0e17fc4ba29f",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--e524ec95-681d-5a1f-bbac-cde4c4dd8b7a",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-GAM-003 - Bot-vs-AI / ML-opponent challenge",
+      "description": "The flag is awarded only by defeating a machine-learning or rule-based opponent in a game scenario that appears unbeatable under standard play.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "gam"
+        }
+      ],
+      "x_ctft_category": "GAM",
+      "x_ctft_domain": "GAM",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-GAM-003"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--769f67fb-64cc-5c11-a81a-d7b9f8f95034",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-GAM-003 - Exploit AI weaknesses or craft adversarial inputs",
+      "description": "Probe the AI's decision boundary by submitting edge-case inputs; if rule-based, enumerate the decision tree. If ML-based, craft adversarial feature vectors or exploit training-data biases (e.g. always-win states the model was never trained on) to consistently win.",
+      "x_ctft_category": "GAM",
+      "x_ctft_domain": "GAM",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-GAM-003"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--2333cf88-40ec-5517-bd59-44bcae986ec0",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--769f67fb-64cc-5c11-a81a-d7b9f8f95034",
+      "target_ref": "attack-pattern--e524ec95-681d-5a1f-bbac-cde4c4dd8b7a",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--2d30d414-cb3e-5b78-ba2b-9a1bd7e27332",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-GAM-004 - Game binary win-condition bypass",
+      "description": "The win condition is hardcoded in the game binary (e.g. score must reach an astronomically high value) and is unreachable through legitimate play, requiring binary patching to bypass the comparison.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "gam"
+        }
+      ],
+      "x_ctft_category": "GAM",
+      "x_ctft_domain": "GAM",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-GAM-004"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1055",
+          "description": "Process Injection"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--639ba44e-ae97-549f-84be-672e592a5edf",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-GAM-004 - Patch the jump / comparison to force a win state",
+      "description": "Decompile the game binary, locate the win-condition comparison (e.g. cmp score, 0x7FFFFFFF), and patch the conditional jump to an unconditional one — or NOP the comparison so the branch is always taken.",
+      "x_ctft_category": "GAM",
+      "x_ctft_domain": "GAM",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-GAM-004"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1055",
+          "description": "Process Injection"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--367dcd01-8e24-5c02-ac5f-4108ff93d6d1",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--639ba44e-ae97-549f-84be-672e592a5edf",
+      "target_ref": "attack-pattern--2d30d414-cb3e-5b78-ba2b-9a1bd7e27332",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--0dcc5321-cbb2-5c2f-9f18-a58b52ac76b8",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-GAM-005 - Protocol sequence replay / race",
+      "description": "The server validates a precise sequence or timing of game-protocol actions; the flag is only released when a specific state-machine path is triggered under strict timing constraints.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "gam"
+        }
+      ],
+      "x_ctft_category": "GAM",
+      "x_ctft_domain": "GAM",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-GAM-005"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1071",
+          "description": "Application Layer Protocol"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--7cff0bb9-3bf1-5029-b917-9c76cf061e6f",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-GAM-005 - Record, replay, or race the server sequence precisely",
+      "description": "Capture a valid game session with Wireshark, identify the critical state-machine path, then replay the exact byte sequence (adjusted for any session tokens) with precise inter-packet timing using a Python socket script or pwntools.",
+      "x_ctft_category": "GAM",
+      "x_ctft_domain": "GAM",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-GAM-005"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1071",
+          "description": "Application Layer Protocol"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--de7f2787-8bf5-5716-ad5a-9fdf91bc0d08",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--7cff0bb9-3bf1-5029-b917-9c76cf061e6f",
+      "target_ref": "attack-pattern--0dcc5321-cbb2-5c2f-9f18-a58b52ac76b8",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--e6faf359-1b2d-5bd5-86fb-fa771c9be9f0",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-GAM-006 - Chatbot / choice-path bot puzzle",
+      "description": "A chatbot or choice-path bot hides the flag behind a specific interaction branch.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "gam"
+        }
+      ],
+      "x_ctft_category": "GAM",
+      "x_ctft_domain": "GAM",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-GAM-006"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1071",
+          "description": "Application Layer Protocol"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--110276a2-2868-5097-bff7-2f39dfead4b5",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-GAM-006 - Script a bot interaction to reach the win branch",
+      "description": "Script the interaction (automate the choices) to reach the win branch and capture the flag.",
+      "x_ctft_category": "GAM",
+      "x_ctft_domain": "GAM",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-GAM-006"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1071",
+          "description": "Application Layer Protocol"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--3fcfef77-4270-52a9-9697-5cc5c7b453b6",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--110276a2-2868-5097-bff7-2f39dfead4b5",
+      "target_ref": "attack-pattern--e6faf359-1b2d-5bd5-86fb-fa771c9be9f0",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    }
+  ]
+}

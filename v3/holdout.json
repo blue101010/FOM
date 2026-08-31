@@ -1,0 +1,7 @@
+{
+  "model": "CTFT",
+  "schema_version": "3.0",
+  "collection": "holdout",
+  "note": "Evaluation set for `python v3/solve.py --evaluate v3/holdout.json`. A case may be added ONLY if its write-up was not consulted while curating the technique it targets — otherwise precision@k measures memorisation. Empty is the correct state until such write-ups are collected (TODO 4.1).",
+  "items": []
+}

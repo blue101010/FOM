@@ -1,0 +1,1171 @@
+{
+  "model": "CTFT",
+  "schema_version": "3.0",
+  "collection": "curation_queue",
+  "generated_at": "2026-08-31T00:08:51+00:00",
+  "source_sha256": "9cd098bbd8f97fe8760147d81db13add2c965a76690796805d57cca125ae0154",
+  "pending_count": 155,
+  "by_tactic": {
+    "CTFT-TA-AIM": [
+      {
+        "pair_id": "CTFTPAIR-AIM-001",
+        "counter_technique": "CTFTCTE-AIM-001",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-AIM-002",
+        "counter_technique": "CTFTCTE-AIM-002",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-AIM-003",
+        "counter_technique": "CTFTCTE-AIM-003",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-AIM-004",
+        "counter_technique": "CTFTCTE-AIM-004",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-AIM-005",
+        "counter_technique": "CTFTCTE-AIM-005",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-AIM-006",
+        "counter_technique": "CTFTCTE-AIM-006",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-AIM-007",
+        "counter_technique": "CTFTCTE-AIM-007",
+        "missing": [
+          "evidence_record"
+        ]
+      }
+    ],
+    "CTFT-TA-BLK": [
+      {
+        "pair_id": "CTFTPAIR-BLK-001",
+        "counter_technique": "CTFTCTE-BLK-001",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-BLK-002",
+        "counter_technique": "CTFTCTE-BLK-002",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-BLK-003",
+        "counter_technique": "CTFTCTE-BLK-003",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-BLK-004",
+        "counter_technique": "CTFTCTE-BLK-004",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-BLK-005",
+        "counter_technique": "CTFTCTE-BLK-005",
+        "missing": [
+          "evidence_record"
+        ]
+      }
+    ],
+    "CTFT-TA-CLD": [
+      {
+        "pair_id": "CTFTPAIR-CLD-001",
+        "counter_technique": "CTFTCTE-CLD-001",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-CLD-002",
+        "counter_technique": "CTFTCTE-CLD-002",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-CLD-003",
+        "counter_technique": "CTFTCTE-CLD-003",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-CLD-004",
+        "counter_technique": "CTFTCTE-CLD-004",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-CLD-005",
+        "counter_technique": "CTFTCTE-CLD-005",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-CLD-006",
+        "counter_technique": "CTFTCTE-CLD-006",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-CLD-007",
+        "counter_technique": "CTFTCTE-CLD-007",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-CLD-008",
+        "counter_technique": "CTFTCTE-CLD-008",
+        "missing": [
+          "evidence_record"
+        ]
+      }
+    ],
+    "CTFT-TA-COD": [
+      {
+        "pair_id": "CTFTPAIR-COD-001",
+        "counter_technique": "CTFTCTE-COD-001",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-COD-002",
+        "counter_technique": "CTFTCTE-COD-002",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-COD-003",
+        "counter_technique": "CTFTCTE-COD-003",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-COD-004",
+        "counter_technique": "CTFTCTE-COD-004",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-COD-005",
+        "counter_technique": "CTFTCTE-COD-005",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-COD-006",
+        "counter_technique": "CTFTCTE-COD-006",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-COD-007",
+        "counter_technique": "CTFTCTE-COD-007",
+        "missing": [
+          "evidence_record"
+        ]
+      }
+    ],
+    "CTFT-TA-CRY": [
+      {
+        "pair_id": "CTFTPAIR-CRY-001",
+        "counter_technique": "CTFTCTE-CRY-001",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-CRY-002",
+        "counter_technique": "CTFTCTE-CRY-002",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-CRY-003",
+        "counter_technique": "CTFTCTE-CRY-003",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-CRY-004",
+        "counter_technique": "CTFTCTE-CRY-004",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-CRY-005",
+        "counter_technique": "CTFTCTE-CRY-005",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-CRY-006",
+        "counter_technique": "CTFTCTE-CRY-006",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-CRY-007",
+        "counter_technique": "CTFTCTE-CRY-007",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-CRY-008",
+        "counter_technique": "CTFTCTE-CRY-008",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-CRY-009",
+        "counter_technique": "CTFTCTE-CRY-009",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-CRY-010",
+        "counter_technique": "CTFTCTE-CRY-010",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-CRY-011",
+        "counter_technique": "CTFTCTE-CRY-011",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-CRY-012",
+        "counter_technique": "CTFTCTE-CRY-012",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-CRY-013",
+        "counter_technique": "CTFTCTE-CRY-013",
+        "missing": [
+          "evidence_record"
+        ]
+      }
+    ],
+    "CTFT-TA-FOR": [
+      {
+        "pair_id": "CTFTPAIR-FOR-003",
+        "counter_technique": "CTFTCTE-FOR-003",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-FOR-004",
+        "counter_technique": "CTFTCTE-FOR-004",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-FOR-007",
+        "counter_technique": "CTFTCTE-FOR-007",
+        "missing": [
+          "second_independent_challenge",
+          "positives",
+          "negatives",
+          "boundaries"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-FOR-008",
+        "counter_technique": "CTFTCTE-FOR-008",
+        "missing": [
+          "positives",
+          "negatives",
+          "boundaries"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-FOR-009",
+        "counter_technique": "CTFTCTE-FOR-009",
+        "missing": [
+          "second_independent_challenge",
+          "positives",
+          "negatives",
+          "boundaries"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-FOR-011",
+        "counter_technique": "CTFTCTE-FOR-011",
+        "missing": [
+          "second_independent_challenge",
+          "positives",
+          "negatives",
+          "boundaries"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-FOR-012",
+        "counter_technique": "CTFTCTE-FOR-012",
+        "missing": [
+          "second_independent_challenge",
+          "positives",
+          "negatives",
+          "boundaries"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-FOR-013",
+        "counter_technique": "CTFTCTE-FOR-013",
+        "missing": [
+          "second_independent_challenge",
+          "positives",
+          "negatives",
+          "boundaries"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-FOR-014",
+        "counter_technique": "CTFTCTE-FOR-014",
+        "missing": [
+          "second_independent_challenge",
+          "positives",
+          "negatives",
+          "boundaries"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-FOR-015",
+        "counter_technique": "CTFTCTE-FOR-015",
+        "missing": [
+          "second_independent_challenge",
+          "positives",
+          "negatives",
+          "boundaries"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-FOR-016",
+        "counter_technique": "CTFTCTE-FOR-016",
+        "missing": [
+          "second_independent_challenge",
+          "positives",
+          "negatives",
+          "boundaries"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-FOR-019",
+        "counter_technique": "CTFTCTE-FOR-019",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-FOR-020",
+        "counter_technique": "CTFTCTE-FOR-020",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-FOR-021",
+        "counter_technique": "CTFTCTE-FOR-021",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-FOR-022",
+        "counter_technique": "CTFTCTE-FOR-022",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-FOR-023",
+        "counter_technique": "CTFTCTE-FOR-023",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-FOR-024",
+        "counter_technique": "CTFTCTE-FOR-024",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-FOR-025",
+        "counter_technique": "CTFTCTE-FOR-025",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-FOR-026",
+        "counter_technique": "CTFTCTE-FOR-026",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-FOR-027",
+        "counter_technique": "CTFTCTE-FOR-027",
+        "missing": [
+          "second_independent_challenge",
+          "positives",
+          "negatives",
+          "boundaries"
+        ]
+      }
+    ],
+    "CTFT-TA-FPN": [
+      {
+        "pair_id": "CTFTPAIR-FPN-001",
+        "counter_technique": "CTFTCTE-FPN-001",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-FPN-002",
+        "counter_technique": "CTFTCTE-FPN-002",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-FPN-003",
+        "counter_technique": "CTFTCTE-FPN-003",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-FPN-004",
+        "counter_technique": "CTFTCTE-FPN-004",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-FPN-005",
+        "counter_technique": "CTFTCTE-FPN-005",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-FPN-006",
+        "counter_technique": "CTFTCTE-FPN-006",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-FPN-007",
+        "counter_technique": "CTFTCTE-FPN-007",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-FPN-008",
+        "counter_technique": "CTFTCTE-FPN-008",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-FPN-009",
+        "counter_technique": "CTFTCTE-FPN-009",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-FPN-010",
+        "counter_technique": "CTFTCTE-FPN-010",
+        "missing": [
+          "evidence_record"
+        ]
+      }
+    ],
+    "CTFT-TA-GAM": [
+      {
+        "pair_id": "CTFTPAIR-GAM-001",
+        "counter_technique": "CTFTCTE-GAM-001",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-GAM-002",
+        "counter_technique": "CTFTCTE-GAM-002",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-GAM-003",
+        "counter_technique": "CTFTCTE-GAM-003",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-GAM-004",
+        "counter_technique": "CTFTCTE-GAM-004",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-GAM-005",
+        "counter_technique": "CTFTCTE-GAM-005",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-GAM-006",
+        "counter_technique": "CTFTCTE-GAM-006",
+        "missing": [
+          "evidence_record"
+        ]
+      }
+    ],
+    "CTFT-TA-HWR": [
+      {
+        "pair_id": "CTFTPAIR-HWR-001",
+        "counter_technique": "CTFTCTE-HWR-001",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-HWR-002",
+        "counter_technique": "CTFTCTE-HWR-002",
+        "missing": [
+          "evidence_record"
+        ]
+      }
+    ],
+    "CTFT-TA-ICS": [
+      {
+        "pair_id": "CTFTPAIR-ICS-001",
+        "counter_technique": "CTFTCTE-ICS-001",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-ICS-002",
+        "counter_technique": "CTFTCTE-ICS-002",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-ICS-003",
+        "counter_technique": "CTFTCTE-ICS-003",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-ICS-004",
+        "counter_technique": "CTFTCTE-ICS-004",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-ICS-005",
+        "counter_technique": "CTFTCTE-ICS-005",
+        "missing": [
+          "evidence_record"
+        ]
+      }
+    ],
+    "CTFT-TA-JAL": [
+      {
+        "pair_id": "CTFTPAIR-JAL-001",
+        "counter_technique": "CTFTCTE-JAL-001",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-JAL-002",
+        "counter_technique": "CTFTCTE-JAL-002",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-JAL-003",
+        "counter_technique": "CTFTCTE-JAL-003",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-JAL-004",
+        "counter_technique": "CTFTCTE-JAL-004",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-JAL-005",
+        "counter_technique": "CTFTCTE-JAL-005",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-JAL-006",
+        "counter_technique": "CTFTCTE-JAL-006",
+        "missing": [
+          "evidence_record"
+        ]
+      }
+    ],
+    "CTFT-TA-MOB": [
+      {
+        "pair_id": "CTFTPAIR-MOB-001",
+        "counter_technique": "CTFTCTE-MOB-001",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-MOB-002",
+        "counter_technique": "CTFTCTE-MOB-002",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-MOB-003",
+        "counter_technique": "CTFTCTE-MOB-003",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-MOB-004",
+        "counter_technique": "CTFTCTE-MOB-004",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-MOB-005",
+        "counter_technique": "CTFTCTE-MOB-005",
+        "missing": [
+          "evidence_record"
+        ]
+      }
+    ],
+    "CTFT-TA-NET": [
+      {
+        "pair_id": "CTFTPAIR-NET-001",
+        "counter_technique": "CTFTCTE-NET-001",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-NET-002",
+        "counter_technique": "CTFTCTE-NET-002",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-NET-003",
+        "counter_technique": "CTFTCTE-NET-003",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-NET-004",
+        "counter_technique": "CTFTCTE-NET-004",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-NET-005",
+        "counter_technique": "CTFTCTE-NET-005",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-NET-006",
+        "counter_technique": "CTFTCTE-NET-006",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-NET-007",
+        "counter_technique": "CTFTCTE-NET-007",
+        "missing": [
+          "evidence_record"
+        ]
+      }
+    ],
+    "CTFT-TA-OSI": [
+      {
+        "pair_id": "CTFTPAIR-OSI-001",
+        "counter_technique": "CTFTCTE-OSI-001",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-OSI-002",
+        "counter_technique": "CTFTCTE-OSI-002",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-OSI-003",
+        "counter_technique": "CTFTCTE-OSI-003",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-OSI-004",
+        "counter_technique": "CTFTCTE-OSI-004",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-OSI-005",
+        "counter_technique": "CTFTCTE-OSI-005",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-OSI-006",
+        "counter_technique": "CTFTCTE-OSI-006",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-OSI-007",
+        "counter_technique": "CTFTCTE-OSI-007",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-OSI-008",
+        "counter_technique": "CTFTCTE-OSI-008",
+        "missing": [
+          "evidence_record"
+        ]
+      }
+    ],
+    "CTFT-TA-PWN": [
+      {
+        "pair_id": "CTFTPAIR-PWN-001",
+        "counter_technique": "CTFTCTE-PWN-001",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-PWN-002",
+        "counter_technique": "CTFTCTE-PWN-002",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-PWN-003",
+        "counter_technique": "CTFTCTE-PWN-003",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-PWN-004",
+        "counter_technique": "CTFTCTE-PWN-004",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-PWN-005",
+        "counter_technique": "CTFTCTE-PWN-005",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-PWN-006",
+        "counter_technique": "CTFTCTE-PWN-006",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-PWN-007",
+        "counter_technique": "CTFTCTE-PWN-007",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-PWN-008",
+        "counter_technique": "CTFTCTE-PWN-008",
+        "missing": [
+          "evidence_record"
+        ]
+      }
+    ],
+    "CTFT-TA-REV": [
+      {
+        "pair_id": "CTFTPAIR-REV-001",
+        "counter_technique": "CTFTCTE-REV-001",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-REV-002",
+        "counter_technique": "CTFTCTE-REV-002",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-REV-003",
+        "counter_technique": "CTFTCTE-REV-003",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-REV-004",
+        "counter_technique": "CTFTCTE-REV-004",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-REV-005",
+        "counter_technique": "CTFTCTE-REV-005",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-REV-006",
+        "counter_technique": "CTFTCTE-REV-006",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-REV-007",
+        "counter_technique": "CTFTCTE-REV-007",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-REV-008",
+        "counter_technique": "CTFTCTE-REV-008",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-REV-009",
+        "counter_technique": "CTFTCTE-REV-009",
+        "missing": [
+          "evidence_record"
+        ]
+      }
+    ],
+    "CTFT-TA-SDR": [
+      {
+        "pair_id": "CTFTPAIR-SDR-001",
+        "counter_technique": "CTFTCTE-SDR-001",
+        "missing": [
+          "evidence_record"
+        ]
+      }
+    ],
+    "CTFT-TA-STE": [
+      {
+        "pair_id": "CTFTPAIR-STE-001",
+        "counter_technique": "CTFTCTE-STE-001",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-STE-002",
+        "counter_technique": "CTFTCTE-STE-002",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-STE-003",
+        "counter_technique": "CTFTCTE-STE-003",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-STE-004",
+        "counter_technique": "CTFTCTE-STE-004",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-STE-005",
+        "counter_technique": "CTFTCTE-STE-005",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-STE-006",
+        "counter_technique": "CTFTCTE-STE-006",
+        "missing": [
+          "second_independent_challenge",
+          "positives",
+          "negatives",
+          "boundaries"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-STE-007",
+        "counter_technique": "CTFTCTE-STE-007",
+        "missing": [
+          "second_independent_challenge",
+          "positives",
+          "negatives",
+          "boundaries"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-STE-008",
+        "counter_technique": "CTFTCTE-STE-008",
+        "missing": [
+          "second_independent_challenge",
+          "positives",
+          "negatives",
+          "boundaries"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-STE-009",
+        "counter_technique": "CTFTCTE-STE-009",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-STE-010",
+        "counter_technique": "CTFTCTE-STE-010",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-STE-011",
+        "counter_technique": "CTFTCTE-STE-011",
+        "missing": [
+          "evidence_record"
+        ]
+      }
+    ],
+    "CTFT-TA-WEB": [
+      {
+        "pair_id": "CTFTPAIR-WEB-001",
+        "counter_technique": "CTFTCTE-WEB-001",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-WEB-002",
+        "counter_technique": "CTFTCTE-WEB-002",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-WEB-003",
+        "counter_technique": "CTFTCTE-WEB-003",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-WEB-004",
+        "counter_technique": "CTFTCTE-WEB-004",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-WEB-005",
+        "counter_technique": "CTFTCTE-WEB-005",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-WEB-006",
+        "counter_technique": "CTFTCTE-WEB-006",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-WEB-007",
+        "counter_technique": "CTFTCTE-WEB-007",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-WEB-008",
+        "counter_technique": "CTFTCTE-WEB-008",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-WEB-009",
+        "counter_technique": "CTFTCTE-WEB-009",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-WEB-010",
+        "counter_technique": "CTFTCTE-WEB-010",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-WEB-011",
+        "counter_technique": "CTFTCTE-WEB-011",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-WEB-012",
+        "counter_technique": "CTFTCTE-WEB-012",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-WEB-013",
+        "counter_technique": "CTFTCTE-WEB-013",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-WEB-014",
+        "counter_technique": "CTFTCTE-WEB-014",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-WEB-015",
+        "counter_technique": "CTFTCTE-WEB-015",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-WEB-016",
+        "counter_technique": "CTFTCTE-WEB-016",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-WEB-017",
+        "counter_technique": "CTFTCTE-WEB-017",
+        "missing": [
+          "evidence_record"
+        ]
+      }
+    ]
+  }
+}

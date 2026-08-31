@@ -1,0 +1,418 @@
+{
+  "model": "CTFT",
+  "schema_version": "3.0",
+  "collection": "evidence",
+  "generated_at": "2026-08-30T23:46:08+00:00",
+  "note": "Auto-seeded from links already present in the corpus. No entry is attested until a curator supplies positives, negatives and boundaries.",
+  "items": [
+    {
+      "id": "EVID-FOR-007",
+      "schema_version": "3.0",
+      "technique": "CTFTTE-FOR-007",
+      "challenges": [
+        {
+          "ctf": null,
+          "challenge": "Joep van Steen. (2021, Mars 23). Some thoughts on signature based file recovery. Retrieved January 14, 2024.",
+          "year": null,
+          "writeup": "https://www.disktuna.com/some-thoughts-on-signature-based-file-recovery/",
+          "extracted_from": "countertechniques/CTFTCTE-FOR-007.md"
+        },
+        {
+          "ctf": null,
+          "challenge": "GCK'S FILE SIGNATURES TABLE",
+          "year": null,
+          "writeup": "https://www.garykessler.net/library/file_sigs.html",
+          "extracted_from": "countertechniques/CTFTCTE-FOR-007.md"
+        },
+        {
+          "ctf": "LEVELEFFECTCDA2024",
+          "challenge": "Forensics",
+          "year": 2024,
+          "writeup": "https://github.com/blue101010/writeups/blob/main/2024/LEVELEFFECTCDA2024/Forensics/Magic_repairman/README.md",
+          "extracted_from": "countertechniques/CTFTCTE-FOR-007.md"
+        }
+      ],
+      "references": [],
+      "positives": [],
+      "negatives": [],
+      "boundaries": [],
+      "synonyms": [],
+      "external_mappings": [],
+      "curator": null,
+      "reviewed_on": null,
+      "status": "seeded"
+    },
+    {
+      "id": "EVID-FOR-008",
+      "schema_version": "3.0",
+      "technique": "CTFTTE-FOR-008",
+      "challenges": [
+        {
+          "ctf": "LEVELEFFECTCDA2024",
+          "challenge": "Forensics",
+          "year": 2024,
+          "writeup": "https://github.com/blue101010/writeups/blob/main/2024/LEVELEFFECTCDA2024/Forensics/Magic_repairman/README.md",
+          "extracted_from": "techniques/CTFTTE-FOR-008.md"
+        },
+        {
+          "ctf": null,
+          "challenge": "garykessler.net. (2024, January 13). GCK'S FILE SIGNATURES TABLE. Retrieved January 13, 2024.",
+          "year": null,
+          "writeup": "https://www.garykessler.net/library/file_sigs.html",
+          "extracted_from": "countertechniques/CTFTCTE-FOR-008.md"
+        },
+        {
+          "ctf": "AsisCTF",
+          "challenge": "SOLVED",
+          "year": 2023,
+          "writeup": "https://github.com/blue101010/writeups/blob/main/2023/AsisCTF/SOLVED/white_and_blank/analysis/white_and_blank.md",
+          "extracted_from": "countertechniques/CTFTCTE-FOR-008.md"
+        }
+      ],
+      "references": [],
+      "positives": [],
+      "negatives": [],
+      "boundaries": [],
+      "synonyms": [],
+      "external_mappings": [],
+      "curator": null,
+      "reviewed_on": null,
+      "status": "seeded"
+    },
+    {
+      "id": "EVID-FOR-009",
+      "schema_version": "3.0",
+      "technique": "CTFTTE-FOR-009",
+      "challenges": [],
+      "references": [
+        {
+          "label": "Jason (jxb5151). (2021, January 28). findapihash.py. Retrieved August 22, 2022.",
+          "url": "https://github.com/MITRECND/malchive/blob/main/malchive/utilities/findapihash.py"
+        },
+        {
+          "label": "File Signatures table",
+          "url": "https://www.garykessler.net/library/file_sigs.html"
+        }
+      ],
+      "positives": [],
+      "negatives": [],
+      "boundaries": [],
+      "synonyms": [],
+      "external_mappings": [],
+      "curator": null,
+      "reviewed_on": null,
+      "status": "seeded"
+    },
+    {
+      "id": "EVID-FOR-010",
+      "schema_version": "3.0",
+      "technique": "CTFTTE-FOR-010",
+      "challenges": [
+        {
+          "ctf": null,
+          "challenge": "QRRRRRRRR — NahamCon CTF",
+          "year": null,
+          "writeup": "https://medium.com/@inferiorak/qrrrrrrrr-nahamcon-ctf-2024-writeup-by-inferiorak-063406df187e",
+          "extracted_from": "techniques/CTFTTE-FOR-010.md"
+        }
+      ],
+      "references": [
+        {
+          "label": "Jason (jxb5151). (2021, January 28). findapihash.py. Retrieved August 22, 2022.",
+          "url": "https://github.com/MITRECND/malchive/blob/main/malchive/utilities/findapihash.py"
+        },
+        {
+          "label": "QR Code Model 2 Structure and Algorithms",
+          "url": "https://franckybox.com/wp-content/uploads/qrcode.pdf"
+        },
+        {
+          "label": "JAB Code specification",
+          "url": "https://github.com/jabcode/jabcode"
+        }
+      ],
+      "positives": [],
+      "negatives": [],
+      "boundaries": [],
+      "synonyms": [],
+      "external_mappings": [],
+      "curator": null,
+      "reviewed_on": null,
+      "status": "seeded"
+    },
+    {
+      "id": "EVID-FOR-011",
+      "schema_version": "3.0",
+      "technique": "CTFTTE-FOR-011",
+      "challenges": [
+        {
+          "ctf": null,
+          "challenge": "QRRRRRRRR — NahamCon CTF",
+          "year": null,
+          "writeup": "https://medium.com/@inferiorak/qrrrrrrrr-nahamcon-ctf-2024-writeup-by-inferiorak-063406df187e",
+          "extracted_from": "countertechniques/CTFTCTE-FOR-011.md"
+        }
+      ],
+      "references": [
+        {
+          "label": "QR Code Model 2 Structure and Algorithms",
+          "url": "https://franckybox.com/wp-content/uploads/qrcode.pdf"
+        }
+      ],
+      "positives": [],
+      "negatives": [],
+      "boundaries": [],
+      "synonyms": [],
+      "external_mappings": [],
+      "curator": null,
+      "reviewed_on": null,
+      "status": "seeded"
+    },
+    {
+      "id": "EVID-FOR-012",
+      "schema_version": "3.0",
+      "technique": "CTFTTE-FOR-012",
+      "challenges": [
+        {
+          "ctf": "NAHAMCONF",
+          "challenge": "qrrrrrr",
+          "year": 2024,
+          "writeup": "https://github.com/blue101010/writeups/blob/main/2024/NAHAMCONF/qrrrrrr/README.md",
+          "extracted_from": "countertechniques/CTFTCTE-FOR-012.md"
+        },
+        {
+          "ctf": null,
+          "challenge": "QRRRRRRRR — NahamCon CTF",
+          "year": null,
+          "writeup": "https://medium.com/@inferiorak/qrrrrrrrr-nahamcon-ctf-2024-writeup-by-inferiorak-063406df187e",
+          "extracted_from": "countertechniques/CTFTCTE-FOR-012.md"
+        }
+      ],
+      "references": [
+        {
+          "label": "QR Code Model 2 Structure and Algorithms",
+          "url": "https://franckybox.com/wp-content/uploads/qrcode.pdf"
+        }
+      ],
+      "positives": [],
+      "negatives": [],
+      "boundaries": [],
+      "synonyms": [],
+      "external_mappings": [],
+      "curator": null,
+      "reviewed_on": null,
+      "status": "seeded"
+    },
+    {
+      "id": "EVID-FOR-013",
+      "schema_version": "3.0",
+      "technique": "CTFTTE-FOR-013",
+      "challenges": [],
+      "references": [
+        {
+          "label": "Mengenlehreuhr Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Mengenlehreuhr"
+        }
+      ],
+      "positives": [],
+      "negatives": [],
+      "boundaries": [],
+      "synonyms": [],
+      "external_mappings": [],
+      "curator": null,
+      "reviewed_on": null,
+      "status": "seeded"
+    },
+    {
+      "id": "EVID-FOR-014",
+      "schema_version": "3.0",
+      "technique": "CTFTTE-FOR-014",
+      "challenges": [
+        {
+          "ctf": "NSEC",
+          "challenge": "Dorsolateral",
+          "year": 2024,
+          "writeup": "https://github.com/blue101010/writeups/blob/main/2024/NSEC/Dorsolateral/dorsolateral.md",
+          "extracted_from": "techniques/CTFTTE-FOR-014.md"
+        }
+      ],
+      "references": [
+        {
+          "label": "Mengenlehreuhr dodona.be",
+          "url": "https://dodona.be/en/courses/1/series/279/activities/527398301/"
+        },
+        {
+          "label": "Mengenlehreuhr Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Mengenlehreuhr"
+        }
+      ],
+      "positives": [],
+      "negatives": [],
+      "boundaries": [],
+      "synonyms": [],
+      "external_mappings": [],
+      "curator": null,
+      "reviewed_on": null,
+      "status": "seeded"
+    },
+    {
+      "id": "EVID-FOR-015",
+      "schema_version": "3.0",
+      "technique": "CTFTTE-FOR-015",
+      "challenges": [
+        {
+          "ctf": null,
+          "challenge": "Joep van Steen. (2021, Mars 23). Some thoughts on signature based file recovery. Retrieved January 14, 2024.",
+          "year": null,
+          "writeup": "https://www.disktuna.com/some-thoughts-on-signature-based-file-recovery/",
+          "extracted_from": "countertechniques/CTFTCTE-FOR-015.md"
+        },
+        {
+          "ctf": null,
+          "challenge": null,
+          "year": null,
+          "writeup": "https://cujo.com/blog/upx-anti-unpacking-techniques-in-iot-malware/",
+          "extracted_from": "countertechniques/CTFTCTE-FOR-015.md"
+        }
+      ],
+      "references": [],
+      "positives": [],
+      "negatives": [],
+      "boundaries": [],
+      "synonyms": [],
+      "external_mappings": [],
+      "curator": null,
+      "reviewed_on": null,
+      "status": "seeded"
+    },
+    {
+      "id": "EVID-FOR-016",
+      "schema_version": "3.0",
+      "technique": "CTFTTE-FOR-016",
+      "challenges": [
+        {
+          "ctf": "LEVELEFFECTCDA2024",
+          "challenge": "Forensics",
+          "year": 2024,
+          "writeup": "https://github.com/blue101010/writeups/blob/main/2024/LEVELEFFECTCDA2024/Forensics/thatsepoch/README.md",
+          "extracted_from": "countertechniques/CTFTCTE-FOR-016.md"
+        }
+      ],
+      "references": [],
+      "positives": [],
+      "negatives": [],
+      "boundaries": [],
+      "synonyms": [],
+      "external_mappings": [],
+      "curator": null,
+      "reviewed_on": null,
+      "status": "seeded"
+    },
+    {
+      "id": "EVID-FOR-017",
+      "schema_version": "3.0",
+      "technique": "CTFTTE-FOR-017",
+      "challenges": [
+        {
+          "ctf": null,
+          "challenge": "LEVELEFFECTCDA2024 snek challenge",
+          "year": null,
+          "writeup": "https://github.com/blue101010/writeups/tree/main/2024/LEVELEFFECTCDA2024/Forensics/snek",
+          "extracted_from": "techniques/CTFTTE-FOR-017.md"
+        }
+      ],
+      "references": [],
+      "positives": [],
+      "negatives": [],
+      "boundaries": [],
+      "synonyms": [],
+      "external_mappings": [],
+      "curator": null,
+      "reviewed_on": null,
+      "status": "seeded"
+    },
+    {
+      "id": "EVID-FOR-027",
+      "schema_version": "3.0",
+      "technique": "CTFTTE-FOR-027",
+      "challenges": [],
+      "references": [
+        {
+          "label": "https://en.wikipedia.org/wiki/JAB_Code",
+          "url": "https://en.wikipedia.org/wiki/JAB_Code"
+        },
+        {
+          "label": "https://github.com/jabcode/jabcode",
+          "url": "https://github.com/jabcode/jabcode"
+        }
+      ],
+      "positives": [],
+      "negatives": [],
+      "boundaries": [],
+      "synonyms": [],
+      "external_mappings": [],
+      "curator": null,
+      "reviewed_on": null,
+      "status": "seeded"
+    },
+    {
+      "id": "EVID-STE-006",
+      "schema_version": "3.0",
+      "technique": "CTFTTE-STE-006",
+      "challenges": [],
+      "references": [
+        {
+          "label": "Steganography — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Steganography"
+        }
+      ],
+      "positives": [],
+      "negatives": [],
+      "boundaries": [],
+      "synonyms": [],
+      "external_mappings": [],
+      "curator": null,
+      "reviewed_on": null,
+      "status": "seeded"
+    },
+    {
+      "id": "EVID-STE-007",
+      "schema_version": "3.0",
+      "technique": "CTFTTE-STE-007",
+      "challenges": [],
+      "references": [
+        {
+          "label": "Steganography — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Steganography"
+        }
+      ],
+      "positives": [],
+      "negatives": [],
+      "boundaries": [],
+      "synonyms": [],
+      "external_mappings": [],
+      "curator": null,
+      "reviewed_on": null,
+      "status": "seeded"
+    },
+    {
+      "id": "EVID-STE-008",
+      "schema_version": "3.0",
+      "technique": "CTFTTE-STE-008",
+      "challenges": [],
+      "references": [
+        {
+          "label": "Steganography — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Steganography"
+        }
+      ],
+      "positives": [],
+      "negatives": [],
+      "boundaries": [],
+      "synonyms": [],
+      "external_mappings": [],
+      "curator": null,
+      "reviewed_on": null,
+      "status": "seeded"
+    }
+  ]
+}

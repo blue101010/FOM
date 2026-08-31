@@ -1,0 +1,513 @@
+{
+  "type": "bundle",
+  "id": "bundle--33b520d5-af34-5406-9bf1-058e1339f676",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "name": "CTFT Project",
+      "identity_class": "organization",
+      "description": "Capture-The-Flag Techniques - an ontology of CTF solving behaviour. Relates to MITRE ATT&CK, CAPEC and CWE as per-entry anchors; not a parallel ATT&CK. Generalized from FOM."
+    },
+    {
+      "type": "x-ctft-tactic",
+      "spec_version": "2.1",
+      "id": "x-ctft-tactic--b1f17234-2dab-59cd-b6e1-f090db31abef",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "Network",
+      "x_ctft_shortname": "net",
+      "x_ctft_domain": "NET",
+      "description": "Hiding flags behind network discovery, sniffing, tunneling and protocol-barrier puzzles. (HTB: Misc (Network))",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFT-TA-NET"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--4f31e0b4-65cb-5a6b-86b8-0651c622add8",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-NET-001 - Port/service discovery maze",
+      "description": "The flag sits behind a service on an unusual port, or the challenge hides which port is real among decoys; versions and banners mislead.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "net"
+        }
+      ],
+      "x_ctft_category": "NET",
+      "x_ctft_domain": "NET",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-NET-001"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1046",
+          "description": "Network Service Discovery"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--362ae08d-c49e-5641-b351-9e0ea59e8fb7",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-NET-001 - Systematic port/service enumeration",
+      "description": "Enumerate TCP/UDP ports with nmap/rustscan/masscan, fingerprint versions, then focus on the anomalous service.",
+      "x_ctft_category": "NET",
+      "x_ctft_domain": "NET",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-NET-001"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1046",
+          "description": "Network Service Discovery"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--84cfe955-78e1-5b99-9e88-02a5c49de807",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--362ae08d-c49e-5641-b351-9e0ea59e8fb7",
+      "target_ref": "attack-pattern--4f31e0b4-65cb-5a6b-86b8-0651c622add8",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--e5d5c64a-85d2-5d34-976f-0b8f13210d44",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-NET-002 - DNS covert channel / tunnel",
+      "description": "Flag data is moved through DNS queries (labels encode chunks) or hidden in beacon intervals inside a capture.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "net"
+        }
+      ],
+      "x_ctft_category": "NET",
+      "x_ctft_domain": "NET",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-NET-002"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1071.004",
+          "description": "DNS"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--a28f3ea6-bf54-5a79-826c-2676346330bf",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-NET-002 - Detect DNS tunneling and beaconing in PCAPs",
+      "description": "Parse DNS queries with tshark/zeek, decode label entropy, and reassemble the tunneled payload.",
+      "x_ctft_category": "NET",
+      "x_ctft_domain": "NET",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-NET-002"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1071.004",
+          "description": "DNS"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--1e79d54c-9bfb-500c-976f-b2bde8b7878a",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--a28f3ea6-bf54-5a79-826c-2676346330bf",
+      "target_ref": "attack-pattern--e5d5c64a-85d2-5d34-976f-0b8f13210d44",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--0efd932d-27a0-5a4b-b604-320a172d588b",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-NET-003 - SMB enumeration barrier",
+      "description": "The flag is inside an SMB share whose name or permissions are part of the puzzle; protocol version mismatches hide content.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "net"
+        }
+      ],
+      "x_ctft_category": "NET",
+      "x_ctft_domain": "NET",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-NET-003"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1021.002",
+          "description": "SMB/Windows Admin Shares"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--16065132-6005-5ebc-907f-227f06b238e1",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-NET-003 - Enumerate SMB shares/versions",
+      "description": "Enumerate shares and dialect with smbclient/nmap scripts, list anonymously, and download the flag file.",
+      "x_ctft_category": "NET",
+      "x_ctft_domain": "NET",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-NET-003"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1021.002",
+          "description": "SMB/Windows Admin Shares"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--fccfd9e3-4da2-55b3-9192-fc7169b3f0d3",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--16065132-6005-5ebc-907f-227f06b238e1",
+      "target_ref": "attack-pattern--0efd932d-27a0-5a4b-b604-320a172d588b",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--fc164c7c-7872-5bcc-9d07-f67c1c89bd9e",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-NET-004 - Wi-Fi capture / handshake concealment",
+      "description": "The flag rides over Wi-Fi: the challenge ships a .cap with a WPA handshake or encrypted frames, and the passphrase is the gate.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "net"
+        }
+      ],
+      "x_ctft_category": "NET",
+      "x_ctft_domain": "NET",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-NET-004"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1040",
+          "description": "Network Sniffing"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--8e3a21e3-9c37-58f4-afa3-42def72b0b65",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-NET-004 - Crack WPA2 handshakes, decode Wi-Fi captures",
+      "description": "Extract the EAPOL 4-way handshake, run dictionary attacks (aircrack/hashcat mode 22000), then decrypt frames to read the flag.",
+      "x_ctft_category": "NET",
+      "x_ctft_domain": "NET",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-NET-004"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1040",
+          "description": "Network Sniffing"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--bdb4dc06-35a1-5f8c-8fd6-98d31b89f4ea",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--8e3a21e3-9c37-58f4-afa3-42def72b0b65",
+      "target_ref": "attack-pattern--fc164c7c-7872-5bcc-9d07-f67c1c89bd9e",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--159b78c0-f33b-5788-8b77-81d44aa71ca1",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-NET-005 - Traffic tunnel / port-forwarding relay",
+      "description": "The flag service is only reachable through a pivot host; direct connections fail.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "net"
+        }
+      ],
+      "x_ctft_category": "NET",
+      "x_ctft_domain": "NET",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-NET-005"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1572",
+          "description": "Protocol Tunneling"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1090",
+          "description": "Proxy"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--29071cee-31a7-59ce-8af1-5de3dacf9f89",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-NET-005 - Pivot via ssh -L/-R, chisel",
+      "description": "Relay traffic through the pivot (ssh -L/-R, chisel, socat) and reach the internal service.",
+      "x_ctft_category": "NET",
+      "x_ctft_domain": "NET",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-NET-005"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1572",
+          "description": "Protocol Tunneling"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1090",
+          "description": "Proxy"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--6428c9f4-d3d8-5120-b6e3-9cb4a169ff98",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--29071cee-31a7-59ce-8af1-5de3dacf9f89",
+      "target_ref": "attack-pattern--159b78c0-f33b-5788-8b77-81d44aa71ca1",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--462d7f72-fcc9-573f-8736-a3da94376c33",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-NET-006 - TTL / protocol-field covert channel",
+      "description": "Each packet's TTL (or ICMP type / payload padding) encodes one character; the flag is spread across a capture's protocol fields.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "net"
+        }
+      ],
+      "x_ctft_category": "NET",
+      "x_ctft_domain": "NET",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-NET-006"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1095",
+          "description": "Non-Application Layer Protocol"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--23a8b511-c6bf-5557-9f25-ade3df6fa4ee",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-NET-006 - Decode TTL/ICMP/padding channels",
+      "description": "Extract per-packet fields with tshark/scapy, map TTL deltas to characters, and reassemble the message.",
+      "x_ctft_category": "NET",
+      "x_ctft_domain": "NET",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-NET-006"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1095",
+          "description": "Non-Application Layer Protocol"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--57db8024-5f65-5538-816c-412e2fc38294",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--23a8b511-c6bf-5557-9f25-ade3df6fa4ee",
+      "target_ref": "attack-pattern--462d7f72-fcc9-573f-8736-a3da94376c33",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--6fa609d1-186d-5b21-8126-984c28f73525",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-NET-007 - Packet-capture forensics maze",
+      "description": "The flag is split among many packets or buried in protocol noise; the capture mixes decoys and real artifacts.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "net"
+        }
+      ],
+      "x_ctft_category": "NET",
+      "x_ctft_domain": "NET",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-NET-007"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1040",
+          "description": "Network Sniffing"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--2b1e78a3-5cd9-5162-ad71-89036e6c076b",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-NET-007 - Run beaconing/exfil/credential detectors over PCAPs",
+      "description": "Profile the capture (endpoints, protocols, timing), run detectors (beaconing, DNS tunnel, credentials, exfiltration) and pivot on the anomalies.",
+      "x_ctft_category": "NET",
+      "x_ctft_domain": "NET",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-NET-007"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1040",
+          "description": "Network Sniffing"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--ecd493b4-e86f-587a-ba6f-178f56b87b1a",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--2b1e78a3-5cd9-5162-ad71-89036e6c076b",
+      "target_ref": "attack-pattern--6fa609d1-186d-5b21-8126-984c28f73525",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    }
+  ]
+}
