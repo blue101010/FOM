@@ -1,10 +1,10 @@
 {
   "model": "CTFT",
   "schema_version": "3.0",
-  "generated_at": "2026-08-31T01:09:26+00:00",
+  "generated_at": "2026-08-31T01:38:35+00:00",
   "source": {
-    "correlation_sha256": "9cd098bbd8f97fe8760147d81db13add2c965a76690796805d57cca125ae0154",
-    "legacy_index_sha256": "609de4e9c71139930ec5f415e2cbb4e266db83440108366593c615b7f2948008"
+    "correlation_sha256": "497b0f05faaf3c8db636d4f907c85fcfb90a0f63b667a3e48363271fbb574b88",
+    "legacy_index_sha256": "3e3baf85c8afd05f495c7839c8df7b7405d61abd1e5da2380647951b4ed27f4f"
   },
   "taxonomy": {
     "tactics": [
@@ -29,16 +29,16 @@
       "WEB"
     ],
     "tactic_count": 19,
-    "technique_count": 162,
-    "counter_technique_count": 162,
-    "complete_pairs": 162,
+    "technique_count": 164,
+    "counter_technique_count": 164,
+    "complete_pairs": 164,
     "by_tactic": {
       "AIM": 7,
       "BLK": 5,
       "CLD": 8,
       "COD": 7,
       "CRY": 13,
-      "FOR": 27,
+      "FOR": 29,
       "FPN": 10,
       "GAM": 6,
       "HWR": 2,
@@ -62,13 +62,14 @@
       "tools": 9
     },
     "maturity": {
-      "taxonomy_only": 155,
+      "attested": 1,
+      "taxonomy_only": 156,
       "typed": 7
     },
     "core": {
       "size": 35,
-      "with_evidence_record": 0,
-      "with_two_independent_events": 0,
+      "with_evidence_record": 2,
+      "with_two_independent_events": 2,
       "placeholder_free": 0
     },
     "stix_object_types": {
@@ -115,6 +116,8 @@
       "countertechniques/CTFTCTE-FOR-009.md",
       "countertechniques/CTFTCTE-FOR-015.md",
       "countertechniques/CTFTCTE-FOR-027.md",
+      "countertechniques/CTFTCTE-FOR-028.md",
+      "countertechniques/CTFTCTE-FOR-029.md",
       "countertechniques/CTFTCTE-FPN-001.md",
       "countertechniques/CTFTCTE-FPN-002.md",
       "countertechniques/CTFTCTE-FPN-003.md",
@@ -232,6 +235,8 @@
       "techniques/CTFTTE-FOR-025.md",
       "techniques/CTFTTE-FOR-026.md",
       "techniques/CTFTTE-FOR-027.md",
+      "techniques/CTFTTE-FOR-028.md",
+      "techniques/CTFTTE-FOR-029.md",
       "techniques/CTFTTE-FPN-001.md",
       "techniques/CTFTTE-FPN-002.md",
       "techniques/CTFTTE-FPN-003.md",
@@ -323,13 +328,13 @@
   "integrity": {
     "techniques_without_counter": [],
     "counters_without_technique": [],
-    "correlation_pair_count": 162,
+    "correlation_pair_count": 164,
     "correlation_pairs_missing_from_files": [],
     "correlation_pairs_not_identity": [],
     "pairs_missing_from_correlation": [],
     "legacy_index_tactics_missing_from_files": [],
     "tactics_missing_from_legacy_index": [],
-    "legacy_index_pair_count": 162,
+    "legacy_index_pair_count": 164,
     "legacy_index_pairs_missing_from_files": [],
     "relation_problems": [],
     "lint_problems": [],

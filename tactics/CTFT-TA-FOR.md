@@ -2,7 +2,7 @@
 
 > **Domain ID:** `CTFT-TA-FOR`  
 > **HTB mapping:** HTB: Forensics  
-> **Techniques:** 27
+> **Techniques:** 29
 
 ## Description
 
@@ -53,6 +53,8 @@ per entry**, never the definition of an entry.
 | [CTFTTE-FOR-025](../techniques/CTFTTE-FOR-025.md) | PDF object/stream hiding | [CTFTCTE-FOR-025](../countertechniques/CTFTCTE-FOR-025.md) | Parse PDF xref, streams and filters | T1027 |
 | [CTFTTE-FOR-026](../techniques/CTFTTE-FOR-026.md) | Memory-image OS-artifact recovery | [CTFTCTE-FOR-026](../countertechniques/CTFTCTE-FOR-026.md) | Extract registry/services/process artifacts from memory images | T1003 |
 | [CTFTTE-FOR-027](../techniques/CTFTTE-FOR-027.md) | Use JAB colour 2D codes to hide data | [CTFTCTE-FOR-027](../countertechniques/CTFTCTE-FOR-027.md) | Retrieve information from JAB colour codes | T1027 |
+| [CTFTTE-FOR-028](../techniques/CTFTTE-FOR-028.md) | Windows event-log evidence concealment | [CTFTCTE-FOR-028](../countertechniques/CTFTCTE-FOR-028.md) | Reconstruct the timeline from Windows event logs | T1070.001, T1562.002 |
+| [CTFTTE-FOR-029](../techniques/CTFTTE-FOR-029.md) | Registry-hive persistence artifact concealment | [CTFTCTE-FOR-029](../countertechniques/CTFTCTE-FOR-029.md) | Extract and analyse registry hives from a forensic image | T1547.001, T1027.010, T1562.001 |
 
 ---
 *See [CORRELATION.md](../CORRELATION.md) for the full cross-reference matrix.*

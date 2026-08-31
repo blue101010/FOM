@@ -1,0 +1,157 @@
+{
+  "model": "CTFT",
+  "schema_version": "3.0",
+  "collection": "evidence_curated",
+  "note": "Hand-verified attestation. Every record here was confirmed by READING the cited write-up, not by matching a keyword. Merged with the auto-seeded records into v3/evidence.json by `v3/build_evidence.py`; a curated record wins over a seeded one for the same technique.",
+  "method": "Candidates came from the local base github.com/blue101010/ctf, restricted to files that repository actually tracks (94 of 152 markdown write-ups) and matched on prose only — fenced code, JSON dumps and certificate blobs excluded. Every surviving candidate was then read. Rejections are recorded below so they are not re-proposed.",
+  "items": [
+    {
+      "id": "EVID-CRY-012",
+      "schema_version": "3.0",
+      "technique": "CTFTTE-CRY-012",
+      "challenges": [
+        {
+          "ctf": "DRAGOS",
+          "challenge": "BAD What Three Words - 600",
+          "year": 2024,
+          "writeup": "https://github.com/blue101010/ctf/blob/main/2024/DRAGOS/EmbeddedDevices/BAD_three_words/bad3.md",
+          "extracted_from": "read and confirmed: sha256crypt hash extracted from an embedded device, hashcat -m 7400 against rockyou, then a rule-based pass"
+        },
+        {
+          "ctf": "HTB Pro Labs",
+          "challenge": "POO",
+          "year": null,
+          "writeup": "https://github.com/blue101010/ctf/blob/main/HTBPRO/__POO/poo.md",
+          "extracted_from": "read and confirmed: Kerberoast TGS-REP hash, hashcat -m 13100 against seclists, Status: Cracked"
+        }
+      ],
+      "references": [],
+      "positives": [
+        "the challenge yields a hash in a documented format and the flag is the plaintext behind it (sha256crypt $5$, Kerberos 5 TGS-REP etype 23)",
+        "the constraint is the candidate space, not the algorithm: mode selection plus the right wordlist or rule set is the whole solve",
+        "a rule pass (best64) or a themed wordlist succeeds where a plain wordlist exhausts"
+      ],
+      "negatives": [
+        "online credential brute-force against a login form (hydra against http-post-form) — no hash is ever recovered, the oracle is the application",
+        "a hash whose plaintext is irrelevant because the challenge only needs the hash as an identifier",
+        "recovering a key by exploiting the cipher's structure rather than by search — that is CTFTTE-CRY-001 or CTFTTE-CRY-003"
+      ],
+      "boundaries": [
+        "distinct from CTFTTE-CRY-001 (weak RSA parameters): there the key falls to arithmetic, here only to search",
+        "distinct from CTFTTE-CRY-004 (nonce reuse): no cryptanalytic relation is exploited",
+        "online brute-force is NOT this technique and has no CTFT entry yet — see the candidate list in TODO.md"
+      ],
+      "abstraction": "technique",
+      "synonyms": ["password cracking", "hash cracking", "Kerberoasting (as the hash source)"],
+      "external_mappings": [
+        {
+          "framework": "ATTACK",
+          "id": "T1110.002",
+          "confidence": "high",
+          "justification": "Password Cracking is the exact ATT&CK behaviour; CTFT adds the mode-selection and wordlist-constraint craft ATT&CK omits."
+        },
+        {
+          "framework": "CWE",
+          "id": "CWE-916",
+          "confidence": "medium",
+          "justification": "Use of a password hash with insufficient computational effort is what makes the search tractable."
+        }
+      ],
+      "curator": "blue101010",
+      "reviewed_on": "2026-08-30",
+      "status": "attested"
+    },
+    {
+      "id": "EVID-FOR-006",
+      "schema_version": "3.0",
+      "technique": "CTFTTE-FOR-006",
+      "challenges": [
+        {
+          "ctf": "DRAGOS",
+          "challenge": "discovery",
+          "year": 2024,
+          "writeup": "https://github.com/blue101010/ctf/blob/main/2024/DRAGOS/discovery/discovery1.md",
+          "extracted_from": "read and confirmed: a single PCAP carries five questions; the asset naming convention and the target hostname are recovered from the scan traffic"
+        },
+        {
+          "ctf": "HackTheBoo",
+          "challenge": "whatchtowerofmists",
+          "year": 2025,
+          "writeup": "https://github.com/blue101010/ctf/blob/main/2025/HACKTHEBOO/forensics/whatchtowerofmists/whatchtowerofmists.md",
+          "extracted_from": "read and confirmed: tshark -r capture.pcap --export-objects http reassembles the transferred objects that carry the flag"
+        }
+      ],
+      "references": [],
+      "positives": [
+        "the payload exists only as a reassembled stream or exported object, never in a single packet",
+        "the capture is legitimate traffic and the concealment is dilution: the answer is one conversation among many",
+        "the solve is a reassembly and export operation, not a decode of one field"
+      ],
+      "negatives": [
+        "a flag readable in a single packet payload with `strings` — no reassembly is required",
+        "a link to a packet-capture resource or a mention of pcap tooling in a threat-intel note — describing the format is not exercising the technique",
+        "a covert channel in protocol header fields, which is CTFTTE-NET-006"
+      ],
+      "boundaries": [
+        "distinct from CTFTTE-NET-007 (packet-capture forensics maze): NET frames the network puzzle, FOR frames artifact reassembly from the capture",
+        "distinct from CTFTTE-NET-002 (DNS covert channel): there the carrier is the protocol, here the carrier is the stream",
+        "distinct from CTFTTE-STE-002 (appended data): the container is a capture, not a file with trailing bytes"
+      ],
+      "abstraction": "technique",
+      "synonyms": ["stream reassembly", "HTTP object export", "network forensics"],
+      "external_mappings": [
+        {
+          "framework": "ATTACK",
+          "id": "T1071",
+          "confidence": "medium",
+          "justification": "Application Layer Protocol is the carrier ATT&CK models; ATT&CK omits the reassembly and export craft that defines the CTF technique."
+        }
+      ],
+      "curator": "blue101010",
+      "reviewed_on": "2026-08-30",
+      "status": "attested"
+    }
+  ],
+  "rejected": [
+    {
+      "technique": "CTFTTE-REV-002",
+      "candidate": "2025/DEATHCON/cli-got-99-problems-but-obfuscation-aint-one/cligot99.md",
+      "reason": "the `unpack` match is `bag_unpack(ASRConfig)`, a KQL function in a hunting query — nothing is unpacked"
+    },
+    {
+      "technique": "CTFTTE-REV-002",
+      "candidate": "HTBPRO/__POO/poo.md",
+      "reason": "the `unpack` match is dpkg output (`Preparing to unpack libreadline-dev.deb`)"
+    },
+    {
+      "technique": "CTFTTE-FPN-008",
+      "candidate": "HTBPRO/__ACTIVE/active.md",
+      "reason": "a real Privilege Escalation section, but Active Directory (ldapsearch, UserAccountControl) — that attests CTFTTE-FPN-002, not the Linux SUID/sudo chain"
+    },
+    {
+      "technique": "CTFTTE-FPN-008",
+      "candidate": "2025/DEATHCON/threat-hunting-from-hypothesis-to-testing/deathcon-threat-hunt.md",
+      "reason": "describes REMCOS malware features including privilege escalation; the solver never escalates"
+    },
+    {
+      "technique": "CTFTTE-CRY-012",
+      "candidate": "2024/NSEC2024/Photographic_Memory_System/photographic.md",
+      "reason": "hydra against an http-post-form login — online brute-force, no hash is recovered; a different behaviour that CTFT does not yet declare"
+    },
+    {
+      "technique": "CTFTTE-FOR-006",
+      "candidate": "2025/DEATHCON/my-detection-machine/my-detection-machine.md",
+      "reason": "the pcap mention is a link to malware-traffic-analysis.net, not a capture the author analysed"
+    },
+    {
+      "technique": "CTFTTE-CRY-001 / CRY-003 / CRY-008 / PWN-004 / REV-005 / WEB-010 / OSI-008",
+      "candidate": "2025/DEATHCON/they-can-run-but-they-cant-hide-adversarial-infrastructure-hunting/run_hide.md",
+      "reason": "one 15 KB threat-intel note containing a Shodan JSON dump; RSA, ROP, Z3 and padding-oracle all matched inside an embedded TLS certificate (sha256WithRSAEncryption, ECDHE-RSA-CHACHA20). Attests none of them"
+    },
+    {
+      "technique": "candidate CRY entry for ECDSA / elliptic curve",
+      "candidate": "HTBPRO/CHEMISTRY, CONVERSOR, LLAMA, READY, CONTROL",
+      "reason": "every match is an nmap ssh-hostkey banner line (`256 ... (ECDSA)`). No elliptic-curve cryptanalysis anywhere in the base — the gap is real but has zero local evidence, so no entry was created"
+    }
+  ]
+}

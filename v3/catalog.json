@@ -2,8 +2,8 @@
   "model": "CTFT",
   "schema_version": "3.0",
   "collection": "catalog",
-  "generated_at": "2026-08-31T01:09:27+00:00",
-  "source_sha256": "9cd098bbd8f97fe8760147d81db13add2c965a76690796805d57cca125ae0154",
+  "generated_at": "2026-08-31T01:38:36+00:00",
+  "source_sha256": "497b0f05faaf3c8db636d4f907c85fcfb90a0f63b667a3e48363271fbb574b88",
   "items": [
     {
       "id": "CTFTPAIR-AIM-001",
@@ -858,9 +858,11 @@
         "path": "countertechniques/CTFTCTE-CRY-012.md",
         "role": "resolution"
       },
-      "maturity": "taxonomy_only",
+      "maturity": "attested",
       "missing_for_typed_recommendation": [
-        "evidence_record"
+        "indicators",
+        "reviewed_tool_bindings",
+        "evaluation_case"
       ]
     },
     {
@@ -1492,6 +1494,50 @@
         "positives",
         "negatives",
         "boundaries"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-FOR-028",
+      "schema_version": "3.0",
+      "domain": "FOR",
+      "tactic": "CTFT-TA-FOR",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-FOR-028",
+        "name": "Windows event-log evidence concealment",
+        "path": "techniques/CTFTTE-FOR-028.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-FOR-028",
+        "name": "Reconstruct the timeline from Windows event logs",
+        "path": "countertechniques/CTFTCTE-FOR-028.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-FOR-029",
+      "schema_version": "3.0",
+      "domain": "FOR",
+      "tactic": "CTFT-TA-FOR",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-FOR-029",
+        "name": "Registry-hive persistence artifact concealment",
+        "path": "techniques/CTFTTE-FOR-029.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-FOR-029",
+        "name": "Extract and analyse registry hives from a forensic image",
+        "path": "countertechniques/CTFTCTE-FOR-029.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
       ]
     },
     {

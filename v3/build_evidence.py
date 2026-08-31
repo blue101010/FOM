@@ -114,13 +114,29 @@ def main() -> int:
     for record in records:
         record.pop("_independent_events", None)
 
+    # A curated record was written after reading the write-up; it replaces the
+    # keyword-seeded one for the same technique. Seeding can propose, only a human
+    # can attest.
+    curated = json.loads(
+        (V3 / "evidence.curated.json").read_text(encoding="utf-8")
+    )["items"] if (V3 / "evidence.curated.json").exists() else []
+    by_technique = {r["technique"]: r for r in records}
+    for record in curated:
+        by_technique[record["technique"]] = record
+    records = [by_technique[k] for k in sorted(by_technique)]
+
     payload = {
         "model": "CTFT",
         "schema_version": "3.0",
         "collection": "evidence",
         "generated_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
-        "note": "Auto-seeded from links already present in the corpus. No entry is "
-                "attested until a curator supplies positives, negatives and boundaries.",
+        "note": "Seeded from links already present in the corpus, then overridden by "
+                "v3/evidence.curated.json where a curator read the write-up. No entry is "
+                "attested until positives, negatives and boundaries are written by hand.",
+        "counts": {
+            "curated": len(curated),
+            "attested": sum(1 for r in records if r.get("status") == "attested"),
+        },
         "items": records,
     }
     if args.write:

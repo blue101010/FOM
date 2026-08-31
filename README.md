@@ -60,7 +60,7 @@ Order and short labels follow the challenge-category picker.
 
 | # | Domain | Label | Name | HTB | Pairs |
 | --- | --- | --- | --- | --- | --- |
-| 1 | [CTFT-TA-FOR](tactics/CTFT-TA-FOR.md) | Forensics | Forensics | HTB: Forensics | 27 |
+| 1 | [CTFT-TA-FOR](tactics/CTFT-TA-FOR.md) | Forensics | Forensics | HTB: Forensics | 29 |
 | 2 | [CTFT-TA-WEB](tactics/CTFT-TA-WEB.md) | Web | Web Exploitation | HTB: Web | 17 |
 | 3 | [CTFT-TA-CRY](tactics/CTFT-TA-CRY.md) | Crypto | Cryptography | HTB: Crypto | 13 |
 | 4 | [CTFT-TA-PWN](tactics/CTFT-TA-PWN.md) | Binary | Binary Exploitation | HTB: Pwn | 8 |
@@ -79,7 +79,7 @@ Order and short labels follow the challenge-category picker.
 | 17 | [CTFT-TA-FPN](tactics/CTFT-TA-FPN.md) | Full Pwn | Full Pwn / Multi-Stage | HTB: Fullpwn | 10 |
 | 18 | [CTFT-TA-HWR](tactics/CTFT-TA-HWR.md) | Hardware | Hardware | HTB: Hardware | 2 |
 | 19 | [CTFT-TA-SDR](tactics/CTFT-TA-SDR.md) | SDR / RF | Software-Defined Radio | HTB: Hardware | 1 |
-| | | | **Total** | | **162** |
+| | | | **Total** | | **164** |
 
 **Retired:** `CTFT-TA-MSC` (Misc) is **removed**. It was a catch-all and every entry
 it held duplicated a precise tactic. Do not create `MSC` entries; file the challenge
@@ -157,7 +157,7 @@ produces no diff. Regenerate with `python v3/render_stix.py --write`.
 
 ## Catalogue integrity
 
-The corpus contains **162 complete technique/counter-technique pairs** across 19 domains.
+The corpus contains **164 complete technique/counter-technique pairs** across 19 domains.
 `CORRELATION.md`, `HIERARCHY.md` **and every tactic page** are generated, never hand-edited: the
 markdown entry files are the source of truth, so a renamed technique cannot drift from the matrix.
 After adding or renaming an entry:
@@ -184,8 +184,11 @@ disagree:
 
 | Maturity | Meaning | Count today |
 | --- | --- | --- |
-| `taxonomy_only` | identifiers and paired prose only | 155 |
-| `attested` | >= 2 independent CTF events + curated positives, negatives, boundaries | 0 |
+| `taxonomy_only` | identifiers and paired prose only | 156 |
+| `attested` | >= 2 independent CTF events + curated positives, negatives, boundaries | 1 |
+
+Two techniques were attested by reading the write-ups (`CRY-012`, `FOR-006`); `FOR-006` shows
+as `typed` because that level outranks `attested`.
 | `typed` | schema-valid typed objects, participates in retrieval | 7 |
 
 No maturity level authorizes automatic execution. A consumer may display a tool reference or a
@@ -193,10 +196,10 @@ human-readable step; execution belongs to a separately authorized laboratory run
 
 ### Known coverage debt
 
-- **Evidence is the bottleneck.** 238 of 324 entry files still carry the `Add challenge write-up
-  link` marker, and the 35-entry core profile (`v3/core.json`) has 0 entries backed by two
-  independent CTF events - across the whole corpus only `FOR-008` cites two distinct CTFs. The
-  promotion pipeline is built and enforced; what is missing is collected evidence.
+- **Evidence is the bottleneck.** 242 of 328 entry files still carry the `Add challenge write-up
+  link` marker. Mining the local write-up base attested **2** core techniques (`CRY-012`,
+  `FOR-006`); the remaining 33 need sources that do not exist locally. `v3/evidence.curated.json`
+  records the rejected candidates and why, so they are not re-proposed.
 - **`v3/holdout.json` is empty**, so `precision@k` is undefined. A case may only be added if its
   write-up was not used while curating the technique it targets - otherwise the metric measures
   memorisation.

@@ -469,6 +469,31 @@ moved or deleted by the v3 migration.
 
 ---
 
+## 9bis. Scope: detection and telemetry challenges
+
+Detection-focused events (DEATHCON-style hunting labs, purple-team ranges) sit inside CTFT, with
+one boundary.
+
+**In scope.** A challenge where an adversary action was performed and the player must find it in
+telemetry has exactly the CTFT shape: something was placed to be missed, something recovers it.
+The technique describes the concealment — volume, channel choice, cleared logs, an unremarkable
+provider; the resolution-technique describes the recovery — normalise, pivot, correlate. The
+artifact is a log or telemetry stream, which the `artifact` vocabulary already carries. This is
+what `CTFTTE-FOR-028` records.
+
+**Out of scope.** Detection *engineering* as a deliverable: writing a Sigma rule, tuning a SIEM,
+measuring coverage against a framework. Those produce a control, not a recovered flag, and they
+are already normalised elsewhere (Sigma, ATT&CK coverage tooling). CTFT would add nothing and
+would inherit a second taxonomy to keep in sync.
+
+**The test.** If removing the concealment makes the challenge trivial, it is CTFT. If the
+challenge is graded on the quality of a rule the player wrote, it is not.
+
+A consequence worth stating: the blue-team half of every resolution-technique page already carries
+the analyst framing. Detection challenges enrich that half; they do not justify a new domain.
+
+---
+
 ## 10. Deliberate non-goals
 
 | Not done | Why |

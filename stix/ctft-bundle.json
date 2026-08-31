@@ -4776,6 +4776,170 @@
     {
       "type": "attack-pattern",
       "spec_version": "2.1",
+      "id": "attack-pattern--a8e3f3c7-42e0-56bc-983a-8e495d5015d4",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FOR-028 - Windows event-log evidence concealment",
+      "description": "The answer lives in the Windows event logs and nowhere else: the author supplies a full Logs/ tree of .evtx channels and hides the decisive record among tens of thousands of routine ones. Concealment is by volume and by channel choice — the interesting event sits in an operational or application channel rather than Security, its provider is unremarkable, and neighbouring records are legitimate. Variants clear a channel, disable a provider, or roll the log so the record survives only in a companion channel.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "for"
+        }
+      ],
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FOR-028"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1070.001",
+          "description": "Clear Windows Event Logs"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1562.002",
+          "description": "Disable Windows Event Logging"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--3ae701a0-1e3c-5ec6-9ed2-c6c877322280",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FOR-028 - Reconstruct the timeline from Windows event logs",
+      "description": "Do not read channels one by one. Normalise the whole Logs/ tree into a single time-ordered table (EvtxECmd to CSV, or python-evtx to JSON), then pivot: filter on the window the challenge frames, then on providers that should be quiet. Records that matter are usually the ones whose channel does not match their content — a scripting engine event in an application channel, a service install outside a maintenance window. Gaps matter as much as records: a channel that stops and resumes marks a clearing.",
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FOR-028"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1070.001",
+          "description": "Clear Windows Event Logs"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1562.002",
+          "description": "Disable Windows Event Logging"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--78cce593-6e23-5f25-a599-0f19a52f72c9",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--3ae701a0-1e3c-5ec6-9ed2-c6c877322280",
+      "target_ref": "attack-pattern--a8e3f3c7-42e0-56bc-983a-8e495d5015d4",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--a13372f6-83a5-5e20-8030-a795de12e98c",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FOR-029 - Registry-hive persistence artifact concealment",
+      "description": "The flag or the decisive indicator is a persistence entry inside a Windows registry hive, and the hive is delivered inside a forensic container (AD1, E01, raw) rather than as a loose file. The author counts on two barriers: the container format, which ordinary tools will not open, and the value itself, whose payload is encoded — typically a Run key holding a base64 PowerShell stager. The surrounding hive is legitimate, so nothing looks out of place until the value is decoded.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "for"
+        }
+      ],
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FOR-029"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1547.001",
+          "description": "Registry Run Keys / Startup Folder"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027.010",
+          "description": "Command Obfuscation"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1562.001",
+          "description": "Impair Defenses"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--cdbd1973-4ce4-542e-9fbb-ec8bc2d599cf",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FOR-029 - Extract and analyse registry hives from a forensic image",
+      "description": "Open the container first: AD1 is AccessData's logical image format and FTK Imager exports its tree directly; for E01 use ewfmount, for raw images mount read-only. Extract SOFTWARE, SYSTEM, NTUSER.DAT and their transaction logs, then parse offline with Registry Explorer or python-registry. Go straight to the autostart surface — Run, RunOnce, Services, scheduled task caches — and decode every value that is not plain text. A base64 blob in a Run value is the payload, not the answer: decode it and read what it does.",
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FOR-029"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1547.001",
+          "description": "Registry Run Keys / Startup Folder"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027.010",
+          "description": "Command Obfuscation"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1562.001",
+          "description": "Impair Defenses"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--2ffa6d3a-53dc-54b6-b92c-dbc5fa7ea546",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--cdbd1973-4ce4-542e-9fbb-ec8bc2d599cf",
+      "target_ref": "attack-pattern--a13372f6-83a5-5e20-8030-a795de12e98c",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
       "id": "attack-pattern--2da0cd87-fe6f-5919-ad19-2543d21d7a08",
       "created": "2026-06-10T18:01:52.000Z",
       "modified": "2026-06-10T18:01:52.000Z",

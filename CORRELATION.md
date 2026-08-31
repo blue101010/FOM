@@ -4,8 +4,8 @@ Every **Design / Hide Technique** (`CTFTTE-<CAT>-NNN`) and the
 **Resolution-Technique** (`CTFTCTE-<CAT>-NNN`) that recovers it, grouped by domain.
 IDs pair one-to-one: `CTFTTE-FOR-004` is always answered by `CTFTCTE-FOR-004`.
 
-> Generated from the files in `techniques/` and `countertechniques/` — corpus fingerprint `bf310fd1d4d392bd`
-> by `v3/render_taxonomy_docs.py`. **162 complete pairs** across **19 active domains**. Do not hand-edit: rename the entry, then re-render.
+> Generated from the files in `techniques/` and `countertechniques/` — corpus fingerprint `e880652f89bad86a`
+> by `v3/render_taxonomy_docs.py`. **164 complete pairs** across **19 active domains**. Do not hand-edit: rename the entry, then re-render.
 
 ---
 
@@ -15,7 +15,7 @@ Order follows the challenge-category picker.
 
 | # | Code | Picker label | Domain | Pairs |
 | --- | --- | --- | --- | --- |
-| 1 | [`FOR`](#ctft-ta-for) | Forensics | Forensics | 27 |
+| 1 | [`FOR`](#ctft-ta-for) | Forensics | Forensics | 29 |
 | 2 | [`WEB`](#ctft-ta-web) | Web | Web Exploitation | 17 |
 | 3 | [`CRY`](#ctft-ta-cry) | Crypto | Cryptography | 13 |
 | 4 | [`PWN`](#ctft-ta-pwn) | Binary | Binary Exploitation | 8 |
@@ -34,7 +34,7 @@ Order follows the challenge-category picker.
 | 17 | [`FPN`](#ctft-ta-fpn) | Full Pwn | Full Pwn / Multi-Stage | 10 |
 | 18 | [`HWR`](#ctft-ta-hwr) | Hardware | Hardware | 2 |
 | 19 | [`SDR`](#ctft-ta-sdr) | SDR / RF | Software-Defined Radio | 1 |
-| | | | **Total** | **162** |
+| | | | **Total** | **164** |
 
 **Retired — do not use.** `MSC` (Misc) was a catch-all whose entries all
 duplicated a precise domain; file those challenges under `JAL`, `COD`, `GAM`
@@ -44,7 +44,7 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 
 ## <a id="ctft-ta-for"></a>`CTFT-TA-FOR` — Forensics
 
-> [domain page](tactics/CTFT-TA-FOR.md) · 27 pairs · HTB: Forensics
+> [domain page](tactics/CTFT-TA-FOR.md) · 29 pairs · HTB: Forensics
 
 | # | Technique ID | Hide / Design name | Resolution-technique ID | Recovery action |
 | --- | --- | --- | --- | --- |
@@ -75,6 +75,8 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 | 25 | [CTFTTE-FOR-025](techniques/CTFTTE-FOR-025.md) | PDF object/stream hiding | [CTFTCTE-FOR-025](countertechniques/CTFTCTE-FOR-025.md) | Parse PDF xref, streams and filters |
 | 26 | [CTFTTE-FOR-026](techniques/CTFTTE-FOR-026.md) | Memory-image OS-artifact recovery | [CTFTCTE-FOR-026](countertechniques/CTFTCTE-FOR-026.md) | Extract registry/services/process artifacts from memory images |
 | 27 | [CTFTTE-FOR-027](techniques/CTFTTE-FOR-027.md) | Use JAB colour 2D codes to hide data | [CTFTCTE-FOR-027](countertechniques/CTFTCTE-FOR-027.md) | Retrieve information from JAB colour codes |
+| 28 | [CTFTTE-FOR-028](techniques/CTFTTE-FOR-028.md) | Windows event-log evidence concealment | [CTFTCTE-FOR-028](countertechniques/CTFTCTE-FOR-028.md) | Reconstruct the timeline from Windows event logs |
+| 29 | [CTFTTE-FOR-029](techniques/CTFTTE-FOR-029.md) | Registry-hive persistence artifact concealment | [CTFTCTE-FOR-029](countertechniques/CTFTCTE-FOR-029.md) | Extract and analyse registry hives from a forensic image |
 
 
 ## <a id="ctft-ta-web"></a>`CTFT-TA-WEB` — Web Exploitation

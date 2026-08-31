@@ -1,7 +1,7 @@
 {
   "model": "CTFT",
   "version": "1.2",
-  "generated": "2026-08-31T01:09:26+00:00",
+  "generated": "2026-08-31T01:38:35+00:00",
   "relates_to": [
     "MITRE ATT&CK",
     "CAPEC",
@@ -44,7 +44,7 @@
       "id": "CTFT-TA-FOR",
       "name": "Forensics",
       "path": "tactics/CTFT-TA-FOR.md",
-      "count": 27
+      "count": 29
     },
     {
       "id": "CTFT-TA-FPN",
@@ -125,7 +125,7 @@
       "count": 17
     }
   ],
-  "total_techniques": 162,
+  "total_techniques": 164,
   "techniques": [
     {
       "tactic": "CTFT-TA-AIM",
@@ -1063,6 +1063,34 @@
         "id": "CTFTCTE-FOR-027",
         "name": "Retrieve information from JAB colour codes",
         "path": "countertechniques/CTFTCTE-FOR-027.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-FOR",
+      "category": "FOR",
+      "technique": {
+        "id": "CTFTTE-FOR-028",
+        "name": "Windows event-log evidence concealment",
+        "path": "techniques/CTFTTE-FOR-028.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-FOR-028",
+        "name": "Reconstruct the timeline from Windows event logs",
+        "path": "countertechniques/CTFTCTE-FOR-028.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-FOR",
+      "category": "FOR",
+      "technique": {
+        "id": "CTFTTE-FOR-029",
+        "name": "Registry-hive persistence artifact concealment",
+        "path": "techniques/CTFTTE-FOR-029.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-FOR-029",
+        "name": "Extract and analyse registry hives from a forensic image",
+        "path": "countertechniques/CTFTCTE-FOR-029.md"
       }
     },
     {
@@ -2464,6 +2492,8 @@
     "CTFTTE-FOR-025": "CTFTCTE-FOR-025",
     "CTFTTE-FOR-026": "CTFTCTE-FOR-026",
     "CTFTTE-FOR-027": "CTFTCTE-FOR-027",
+    "CTFTTE-FOR-028": "CTFTCTE-FOR-028",
+    "CTFTTE-FOR-029": "CTFTCTE-FOR-029",
     "CTFTTE-FPN-001": "CTFTCTE-FPN-001",
     "CTFTTE-FPN-002": "CTFTCTE-FPN-002",
     "CTFTTE-FPN-003": "CTFTCTE-FPN-003",
@@ -3029,6 +3059,20 @@
       "counter_name": "Retrieve information from JAB colour codes",
       "tactic": "CTFT-TA-FOR",
       "path": "techniques/CTFTTE-FOR-027.md"
+    },
+    "CTFTTE-FOR-028": {
+      "name": "Windows event-log evidence concealment",
+      "counter_id": "CTFTCTE-FOR-028",
+      "counter_name": "Reconstruct the timeline from Windows event logs",
+      "tactic": "CTFT-TA-FOR",
+      "path": "techniques/CTFTTE-FOR-028.md"
+    },
+    "CTFTTE-FOR-029": {
+      "name": "Registry-hive persistence artifact concealment",
+      "counter_id": "CTFTCTE-FOR-029",
+      "counter_name": "Extract and analyse registry hives from a forensic image",
+      "tactic": "CTFT-TA-FOR",
+      "path": "techniques/CTFTTE-FOR-029.md"
     },
     "CTFTTE-FPN-001": {
       "name": "Multi-stage chained challenge",
@@ -4165,6 +4209,20 @@
       "technique_name": "Use JAB colour 2D codes to hide data",
       "tactic": "CTFT-TA-FOR",
       "path": "countertechniques/CTFTCTE-FOR-027.md"
+    },
+    "CTFTCTE-FOR-028": {
+      "name": "Reconstruct the timeline from Windows event logs",
+      "technique_id": "CTFTTE-FOR-028",
+      "technique_name": "Windows event-log evidence concealment",
+      "tactic": "CTFT-TA-FOR",
+      "path": "countertechniques/CTFTCTE-FOR-028.md"
+    },
+    "CTFTCTE-FOR-029": {
+      "name": "Extract and analyse registry hives from a forensic image",
+      "technique_id": "CTFTTE-FOR-029",
+      "technique_name": "Registry-hive persistence artifact concealment",
+      "tactic": "CTFT-TA-FOR",
+      "path": "countertechniques/CTFTCTE-FOR-029.md"
     },
     "CTFTCTE-FPN-001": {
       "name": "Chain enumeration, foothold and privilege escalation",
