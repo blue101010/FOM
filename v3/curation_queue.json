@@ -2,7 +2,7 @@
   "model": "CTFT",
   "schema_version": "3.0",
   "collection": "curation_queue",
-  "generated_at": "2026-08-31T00:46:40+00:00",
+  "generated_at": "2026-08-31T01:09:27+00:00",
   "source_sha256": "9cd098bbd8f97fe8760147d81db13add2c965a76690796805d57cca125ae0154",
   "pending_count": 155,
   "by_tactic": {

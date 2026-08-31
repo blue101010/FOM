@@ -356,7 +356,7 @@ def main() -> None:
 
     if args.write:
         for path, _old, new in changed:
-            path.write_text(new, encoding="utf-8")
+            path.write_text(new, encoding="utf-8", newline="\n")
         print(f"Applied {len(changed)} updates.")
 
 

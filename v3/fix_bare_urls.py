@@ -84,7 +84,7 @@ def scan(path: Path) -> list[tuple[int, str]]:
     return hits
 
 
-def main() -> None:
+def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--write", action="store_true", help="apply fixes (default: dry run)")
     args = parser.parse_args()
@@ -101,7 +101,7 @@ def main() -> None:
             total += len(hits)
             changed.append(path)
             if args.write:
-                path.write_text(new, encoding="utf-8")
+                path.write_text(new, encoding="utf-8", newline="\n")
             else:
                 first = hits[0] if hits else ("-", "")
                 print(f"{len(hits):>3}  {path.relative_to(ROOT)}  e.g. L{first[0]}: {first[1][:80]}")
@@ -109,13 +109,22 @@ def main() -> None:
     mode = "Fixed" if args.write else "Would fix"
     print(f"{mode} {total} bare URL(s) across {len(changed)} file(s).")
 
+    # Dry run is the CI gate: violations must fail the build. Without this the step
+    # always exited 0 and could never catch anything.
+    if not args.write and total:
+        print("Run `python v3/fix_bare_urls.py --write` to fix them.")
+        return 1
+
     if args.write:
         remaining = [(p, h) for p in files for h in [scan(p)] if h]
         print(f"Remaining violations: {sum(len(h) for _, h in remaining)}")
         for p, h in remaining:
             for lineno, line in h[:5]:
                 print(f"  {p.relative_to(ROOT)}:{lineno}: {line[:80]}")
+        if remaining:
+            return 1
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

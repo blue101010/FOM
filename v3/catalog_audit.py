@@ -751,25 +751,27 @@ def main() -> int:
     if args.write_index:
         (ROOT / "index.json").write_text(
             json.dumps(build_legacy_index(), indent=2, ensure_ascii=False) + "\n",
-            encoding="utf-8",
+            encoding="utf-8", newline="\n",
         )
     if args.write_relations:
         (V3 / "relations.json").write_text(
             json.dumps(build_relations(), indent=2, ensure_ascii=False) + "\n",
-            encoding="utf-8",
+            encoding="utf-8", newline="\n",
         )
     report = audit()
     rendered = json.dumps(report, indent=2, ensure_ascii=False) + "\n"
     if args.write:
-        (V3 / "catalog_manifest.json").write_text(rendered, encoding="utf-8")
+        (V3 / "catalog_manifest.json").write_text(
+            rendered, encoding="utf-8", newline="\n"
+        )
     if args.write_catalog:
         catalog = build_v3_catalog()
         (V3 / "catalog.json").write_text(
-            json.dumps(catalog, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+            json.dumps(catalog, indent=2, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n"
         )
         (V3 / "curation_queue.json").write_text(
             json.dumps(build_curation_queue(catalog), indent=2, ensure_ascii=False) + "\n",
-            encoding="utf-8",
+            encoding="utf-8", newline="\n",
         )
     print(rendered, end="")
     return 1 if args.check and has_integrity_failures(report) else 0

@@ -1,0 +1,10 @@
+# Deterministic line endings: the CI runner is Linux and compares generated
+# files byte for byte, so the repository stores LF everywhere.
+* text=auto eol=lf
+
+# Binary assets git must not touch
+*.png binary
+*.jpg binary
+*.evtx binary
+*.bin binary
+*.ad1 binary

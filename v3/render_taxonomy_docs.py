@@ -14,6 +14,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import re
+import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -389,6 +390,21 @@ def render_tactic_page(corpus: Corpus, code: str) -> str:
     return "\n".join(out)
 
 
+def _is_git_ignored(path: Path) -> bool:
+    """True when git excludes the path, so it is absent from a fresh checkout.
+
+    Returns False when git is unavailable, which keeps a missing file reported as
+    drift rather than silently skipped.
+    """
+    try:
+        return subprocess.run(
+            ["git", "check-ignore", "-q", str(path)],
+            cwd=ROOT, capture_output=True, timeout=15,
+        ).returncode == 0
+    except (OSError, subprocess.SubprocessError):
+        return False
+
+
 def render_hierarchy(corpus: Corpus) -> str:
     active = [code for code, _ in CANONICAL_ORDER]
     total = len(corpus.paired)
@@ -445,9 +461,22 @@ def main() -> int:
     for path, text in documents.items():
         if args.write:
             path.write_text(text, encoding="utf-8", newline="\n")
+            status = "wrote"
+        elif not path.exists():
+            # A generated document that git excludes (HIERARCHY.md) is simply absent from
+            # a fresh checkout — that is not drift, and reading it would crash CI.
+            # A *published* document that is missing IS drift.
+            if _is_git_ignored(path):
+                status = "skipped (not published)"
+            else:
+                drifted.append(path.name)
+                status = "MISSING"
         elif path.read_text(encoding="utf-8").replace("\r\n", "\n") != text:
             drifted.append(path.name)
-        print(f"{'wrote' if args.write else 'would write'} {path.name}: {len(text)} chars")
+            status = "would write"
+        else:
+            status = "up to date"
+        print(f"{status} {path.name}: {len(text)} chars")
 
     if args.check and drifted:
         print(f"DRIFT: {len(drifted)} document(s) differ from the corpus: "

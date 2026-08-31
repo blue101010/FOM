@@ -125,7 +125,7 @@ def main() -> int:
     }
     if args.write:
         (V3 / "evidence.json").write_text(
-            json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+            json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n"
         )
     verb = "wrote" if args.write else "would write"
     hosts = {urlparse(c["writeup"]).netloc

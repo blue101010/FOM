@@ -199,7 +199,7 @@ def main() -> int:
             print(f"removed stale {path.relative_to(ROOT).as_posix()}")
         for path, payload in targets.items():
             path.write_text(
-                json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+                json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n"
             )
 
     from collections import Counter

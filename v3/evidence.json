@@ -2,7 +2,7 @@
   "model": "CTFT",
   "schema_version": "3.0",
   "collection": "evidence",
-  "generated_at": "2026-08-31T00:22:29+00:00",
+  "generated_at": "2026-08-31T01:07:45+00:00",
   "note": "Auto-seeded from links already present in the corpus. No entry is attested until a curator supplies positives, negatives and boundaries.",
   "items": [
     {
