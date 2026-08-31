@@ -24,29 +24,29 @@ _See references._
 
 ## Tactics
 
-[FOM tactics](https://github.com/blue101010/FOM/blob/main/tactics/tactics.md)
+[CTFT correlation matrix](../CORRELATION.md)
 
 | FOM related tactics  |
 | --------------------------------------- |
-| [FOMTA007 - Use special encoding system to hide data](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA007.md)   |
+| `FOMTA007` (FOM) -> [CTFT-TA-FOR](../tactics/CTFT-TA-FOR.md) - Use special encoding system to hide data   |
 
 ## Fom Related Sub Sub-Techniques (Sst)
 
 | FOM Sub-techniques ID and description  |
 | --------------------------------------- |
-| [FOMTE007.001.001.md - Hide data with QR codes](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE007.001.001.md)   |
+| `FOMTE007.001.001` (FOM, superseded)   |
 
 ## Fom Related Sub-Techniques (St)
 
 | FOM Sub-techniques ID and description  |
 | --------------------------------------- |
-| [FOMTE007.001 - Use special encoding system to hide data with RMQR codes](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE007.001.md)   |
+| `FOMTE007.001` (FOM) -> [CTFTTE-FOR-011](CTFTTE-FOR-011.md) - Use special encoding system to hide data with RMQR codes   |
 
 ## Fom Counter-Techniques (Ct)
 
 | FOM Counter-Techniques ID  and description  |
 | --------------------------------------- |
-| [FOMTCTE007.001 - Retrieve information from rMQR codes](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMTCTE007.001.md) |
+| `FOMTCTE007.001` (FOM) -> [CTFTCTE-FOR-011](../countertechniques/CTFTCTE-FOR-011.md) - Retrieve information from rMQR codes |
 
 **Sources**
 

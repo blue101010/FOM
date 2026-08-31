@@ -20,23 +20,23 @@ Conceal text data strings in ELF binary.
 
 | Related tools |
 | --------------------------------------- |
-| [FOMTA008 - Conceal data in binary format](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA008.md)   |
+| `FOMTA008` (FOM) -> [CTFT-TA-FOR](../tactics/CTFT-TA-FOR.md) - Conceal data in binary format   |
 
 ## References
 
 ## Tactics
 
-[FOM tactics](https://github.com/blue101010/FOM/blob/main/tactics/tactics.md)
+[CTFT correlation matrix](../CORRELATION.md)
 
 | FOM related tactics  |
 | --------------------------------------- |
-| [FOMTA008 - Conceal data in binary format](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA008.md)   |
+| `FOMTA008` (FOM) -> [CTFT-TA-FOR](../tactics/CTFT-TA-FOR.md) - Conceal data in binary format   |
 
 ## Techniques And Counter-Techniques
 
 | Related Techniques IDs and names  | Counter-Techniques names and descriptions  |
 | -----------------------------------|  -----------------------------------------|
-| [FOMTE013 - Conceal text data strings in ELF binary](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE013.md) |  [FOMCTE011 - Recover text data strings from ELF binary  ](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE011.md)                                        |
+| `FOMTE013` (FOM, superseded) |  `FOMCTE011` (FOM) -> [CTFTCTE-FOR-017](../countertechniques/CTFTCTE-FOR-017.md) - Recover text data strings from ELF binary                                        |
 
 **Writeups**
 

@@ -24,24 +24,24 @@ _See references._
 
 ## Tactics
 
-[FOM tactics](https://github.com/blue101010/FOM/blob/main/tactics/tactics.md)
+[CTFT correlation matrix](../CORRELATION.md)
 
 | FOM related tactics  |
 | --------------------------------------- |
-| [FOMTA007 - Use special encoding system to hide data  ](https://github.com/blue101010/FOM/blob/main/techniques/FOMTA007.md)   |
+| `FOMTA007` (FOM) -> [CTFT-TA-FOR](../tactics/CTFT-TA-FOR.md) - Use special encoding system to hide data   |
 
 ## Fom Related Techniques (St)
 
 | FOM Sub-techniques ID and description  |
 | --------------------------------------- |
-| [FOMTE010 - Conceal information with diagrams encoding](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE010.md) |
+| `FOMTE010` (FOM) -> [CTFTTE-FOR-013](CTFTTE-FOR-013.md) - Conceal information with diagrams encoding |
 
 ## Fom Related Sub-Techniques (St)
 
 | FOM Sub-techniques ID and description  |
 | --------------------------------------- |
-| [FOMTE007.001 - Hide data with QR codes](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE007.001.md)   |
-| [FOMTE010.001 - Conceal information with Mengenlehreuhr diagrams encoding](https://github.com/blue101010/FOM/blob/main/techniques/FOMTE010.md) |
+| `FOMTE007.001` (FOM) -> [CTFTTE-FOR-011](CTFTTE-FOR-011.md) - Hide data with QR codes   |
+| `FOMTE010.001` (FOM) -> [CTFTTE-FOR-014](CTFTTE-FOR-014.md) - Conceal information with Mengenlehreuhr diagrams encoding |
 
 ## Fom Counter-Techniques (Ct)
 

@@ -24,19 +24,19 @@ _See references._
 
 ## Tactics
 
-[FOM tactics](https://github.com/blue101010/FOM/blob/main/tactics/tactics.md)
+[CTFT correlation matrix](../CORRELATION.md)
 
 ## Fom Related Sub-Techniques (St)
 
 | FOM Sub-techniques ID and description  |
 | --------------------------------------- |
-| [FOMTE009.001 - Conceal via **technical text** steganography](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.md)   |
+| `FOMTE009.001` (FOM) -> [CTFTTE-STE-008](CTFTTE-STE-008.md) - Conceal via **technical text** steganography   |
 
 ## Fom Counter-Techniques (Ct)
 
 | FOM Counter-Techniques ID and description  |
 | --------------------------------------- |
-| [FOMCTE001 - Recover legitimate signature of a file](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.md)   |
+| `FOMCTE001` (FOM, superseded — cross-domain provenance to review)   |
 
 **Writeups**
 

@@ -81,11 +81,11 @@ _See references._
 
 ## Tactics
 
-[FOM tactics](https://github.com/blue101010/FOM/blob/main/tactics/tactics.md)
+[CTFT correlation matrix](../CORRELATION.md)
 
 | FOM related tactics  |
 | --------------------------------------- |
-| [FOMTA001](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA001.md) - Binary hexadecimal format modifications   |
+| `FOMTA001` (FOM) -> [CTFT-TA-FOR](../tactics/CTFT-TA-FOR.md) - Binary hexadecimal format modifications   |
 
 ## Fom  Related Counter-Techniques (Ct)
 
@@ -93,7 +93,7 @@ Counter-technique and sub-technique can use similar approaches.
 
 | FOM Counter-Techniques ID and description  |
 | --------------------------------------- |
-| [FOMCTE001 - Recover legitimate signature of a file](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.md)   |
+| `FOMCTE001` (FOM) -> [CTFTCTE-FOR-007](../countertechniques/CTFTCTE-FOR-007.md) - Recover legitimate signature of a file   |
 
 ## Sub-Technique Or Counter-Technique
 

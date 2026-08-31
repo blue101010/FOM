@@ -30,11 +30,11 @@ _See references._
 
 ## Tactics
 
-[FOM tactics](https://github.com/blue101010/FOM/blob/main/tactics/tactics.md)
+[CTFT correlation matrix](../CORRELATION.md)
 
 | FOM related tactics  |
 | --------------------------------------- |
-| [FOMTA007 - Use special encoding system to hide data](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA007.md)  |
+| `FOMTA007` (FOM) -> [CTFT-TA-FOR](../tactics/CTFT-TA-FOR.md) - Use special encoding system to hide data  |
 
 ## Fom Related Sub-Techniques (St)
 
@@ -46,7 +46,7 @@ _See references._
 
 | FOM Counter-Techniques ID and description  |
 | --------------------------------------- |
-| [FOMCTE010.001 - Retrieve information from Mengenlehreuhr diagrams encoding](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE010.001.md)   |
+| `FOMCTE010.001` (FOM) -> [CTFTCTE-FOR-013](../countertechniques/CTFTCTE-FOR-013.md) - Retrieve information from Mengenlehreuhr diagrams encoding   |
 
 **Sources**
 

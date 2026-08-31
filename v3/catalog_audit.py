@@ -11,7 +11,9 @@ import argparse
 import hashlib
 import json
 import re
+import subprocess
 from collections import Counter
+from functools import lru_cache
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -458,6 +460,92 @@ def wording_problems() -> list[str]:
     return problems
 
 
+MD_LINK_RE = re.compile(r"\[[^\]]*\]\(([^)\s]+)\)")
+SELF_URL_RE = re.compile(
+    r"https?://github\.com/blue101010/FOM/(?:blob|tree)/[^/]+/([^)\s>\]]+)"
+)
+
+
+@lru_cache(maxsize=1)
+def _unpublished_paths() -> frozenset[str]:
+    """Repo-relative paths git excludes, i.e. what an external reader never receives.
+
+    One `git check-ignore` call for the whole tree — invoking it per link is minutes
+    of process spawning. Returns an empty set when git is unavailable, so the audit
+    stays runnable offline in a plain directory copy.
+    """
+    candidates = [
+        p.relative_to(ROOT).as_posix()
+        for p in ROOT.rglob("*")
+        if p.is_file() and ".git" not in p.parts
+    ]
+    # NUL-separated, in bytes: text mode would translate the separators to CRLF on
+    # Windows and git would receive every path with a trailing CR.
+    try:
+        result = subprocess.run(
+            ["git", "check-ignore", "-z", "--stdin"],
+            cwd=ROOT, input="\0".join(candidates).encode("utf-8"),
+            capture_output=True, timeout=60,
+        )
+    except (OSError, subprocess.SubprocessError):
+        return frozenset()
+    return frozenset(
+        chunk.decode("utf-8", "replace").replace("\\", "/")
+        for chunk in result.stdout.split(b"\0") if chunk
+    )
+
+
+def _is_unpublished(path: Path) -> bool:
+    try:
+        return path.resolve().relative_to(ROOT).as_posix() in _unpublished_paths()
+    except ValueError:      # outside the repository
+        return False
+
+
+def link_problems() -> list[str]:
+    """Every link that can be checked offline must resolve.
+
+    Two classes, and the second is the one a naive checker skips: a link that points
+    back at this repository through its GitHub URL is verifiable locally, and 59 of
+    them were dead after the FOM -> CTFT rename because nothing checked them.
+    """
+    problems: list[str] = []
+    pages = [ROOT / "README.md", ROOT / "SCHEMA_V3.md", ROOT / "CORRELATION.md",
+             ROOT / "TODO.md"]
+    for directory in ("techniques", "countertechniques", "tactics", "tools", "to_categorize"):
+        base = ROOT / directory
+        if base.exists():
+            pages += sorted(base.rglob("*.md"))
+
+    for page in pages:
+        if not page.exists() or "backup" in page.parts:
+            continue
+        text = page.read_text(encoding="utf-8", errors="replace")
+
+        for target in MD_LINK_RE.findall(text):
+            if target.startswith(("http", "#", "mailto:")):
+                continue
+            resolved = (page.parent / target.split("#")[0]).resolve()
+            if not resolved.exists():
+                problems.append(
+                    f"{page.relative_to(ROOT).as_posix()}: dead relative link {target!r}"
+                )
+            elif _is_unpublished(resolved) and not _is_unpublished(page):
+                # resolves locally, 404 for anyone who only has the published repo
+                problems.append(
+                    f"{page.relative_to(ROOT).as_posix()}: links to {target!r}, which is "
+                    "git-ignored and therefore absent from the published repository"
+                )
+
+        for repo_path in SELF_URL_RE.findall(text):
+            if not (ROOT / repo_path.rstrip(").,")).exists():
+                problems.append(
+                    f"{page.relative_to(ROOT).as_posix()}: self-link to a path that no "
+                    f"longer exists: {repo_path!r} (use a relative link)"
+                )
+    return problems
+
+
 def schema_problems() -> list[str]:
     """Cross-schema invariants that no single schema can express."""
     problems: list[str] = []
@@ -626,6 +714,7 @@ def audit() -> dict[str, Any]:
             "readme_problems": readme_problems(),
             "schema_problems": schema_problems(),
             "wording_problems": wording_problems(),
+            "link_problems": link_problems(),
         },
     }
 
@@ -646,6 +735,7 @@ def has_integrity_failures(report: dict[str, Any]) -> bool:
         "readme_problems",
         "schema_problems",
         "wording_problems",
+        "link_problems",
     ))
 
 

@@ -2,7 +2,7 @@
   "model": "CTFT",
   "schema_version": "3.0",
   "collection": "relations",
-  "generated_at": "2026-08-31T00:08:51+00:00",
+  "generated_at": "2026-08-31T00:46:39+00:00",
   "note": "Generated. Derived `solves` edges come from the markdown pairing; edit v3/relations.curated.json for anything else.",
   "counts": {
     "derived": 162,

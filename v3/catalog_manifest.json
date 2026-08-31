@@ -1,10 +1,10 @@
 {
   "model": "CTFT",
   "schema_version": "3.0",
-  "generated_at": "2026-08-31T00:08:51+00:00",
+  "generated_at": "2026-08-31T00:46:39+00:00",
   "source": {
     "correlation_sha256": "9cd098bbd8f97fe8760147d81db13add2c965a76690796805d57cca125ae0154",
-    "legacy_index_sha256": "0f556ef23e599959f61e797399432805b64510db85b9087af1b02619a350ea32"
+    "legacy_index_sha256": "c099e1388c3e82835d9ae0f2395658ea7d57e21402ab614f566ccec4aa783300"
   },
   "taxonomy": {
     "tactics": [
@@ -335,6 +335,7 @@
     "lint_problems": [],
     "readme_problems": [],
     "schema_problems": [],
-    "wording_problems": []
+    "wording_problems": [],
+    "link_problems": []
   }
 }

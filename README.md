@@ -97,7 +97,6 @@ FOM/
   index.json                  machine-readable index (pairs/by_id maps) - GENERATED
   SCHEMA_V3.md                active data model
   SCHEMA_V2.md                previous data model - frozen, kept for reproducibility
-  TODO.md                     progress, residual backlog, and archived design decisions
   LICENSE
   ctft-generator.py           guarded legacy fixture generator
   fom-migrate.py              migration utility

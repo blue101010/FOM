@@ -20,7 +20,7 @@ jobs:
       - name: Generated documents match the corpus
         run: python v3/render_taxonomy_docs.py --check
 
-      - name: Integrity, relations, README, schema, wording and semantic lint
+      - name: Integrity, links, relations, README, schema, wording and semantic lint
         run: python v3/catalog_audit.py --check
 
       - name: Typed v3 objects validate against their schemas

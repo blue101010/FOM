@@ -8,7 +8,7 @@
 
 ## Offensive Recovery (CTF practitioner / solver)
 
-Fix the legitimate magic header for an EXR file (1) with [FOMTOU001 - hexed.it](https://github.com/blue101010/FOM/blob/main/tools/FOMTOU001.md)
+Fix the legitimate magic header for an EXR file (1) with `FOMTOU001` (FOM) -> [CTFTTOU-001](../tools/CTFTTOU-001.md) - hexed.it
 
 |Hex Signature | ASCII Signature | File Extension | File Description      |
 |--------------|-----------------|----------------| ----------------------|
@@ -28,8 +28,8 @@ _See sources and writeups for forensic analysis context._
 
 | Useful tools|
 | ------------------------------------------------------------ |
-| [FOMTOU001 - hexed.it](https://github.com/blue101010/FOM/blob/main/tools/FOMTOU001.md)  |
-| [FOMTOU002 - imhex](https://github.com/blue101010/FOM/blob/main/tools/FOMTOU002.md) |
+| `FOMTOU001` (FOM) -> [CTFTTOU-001](../tools/CTFTTOU-001.md) - hexed.it  |
+| `FOMTOU002` (FOM) -> [CTFTTOU-002](../tools/CTFTTOU-002.md) - imhex |
 
 Recover the legitimate "magic number" header signature of the OpenEXR bitmap image format with hexadecimals tools.
 

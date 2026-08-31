@@ -3471,7 +3471,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-FOR-008 - Recover legitimate header signature of an OpenEXR image file",
-      "description": "Fix the legitimate magic header for an EXR file (1) with FOMTOU001 - hexed.it",
+      "description": "Fix the legitimate magic header for an EXR file (1) with FOMTOU001 (FOM) -> CTFTTOU-001 - hexed.it",
       "x_ctft_category": "FOR",
       "x_ctft_domain": "FOR",
       "x_ctft_role": "resolution",

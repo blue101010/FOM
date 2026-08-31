@@ -1,15 +1,26 @@
-
 #  Agents directions
 
 AGENTS.md
 CLAUDE.md
 
-# Migration tooling — not part of the published knowledge base
+# Migration and one-shot tooling — not part of the published knowledge base.
+# Their output is already in the corpus; an external reader has no use for them, and
+# the CI gates prevent what they produced or fixed from regressing.
 fom-migrate.py
 ctft-generator.py
+fix_legacy_links.py
+create_todo_entries.py
 ORIGIN_MAP.md
+
+# Local working files
 HIERARCHY.md
 backup/
 CTFT/
 to_categorize/
 
+# Build artefacts
+__pycache__/
+*.pyc
+
+# Internal planning — not part of the published knowledge base
+TODO.md

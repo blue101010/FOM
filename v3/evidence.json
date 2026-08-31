@@ -2,7 +2,7 @@
   "model": "CTFT",
   "schema_version": "3.0",
   "collection": "evidence",
-  "generated_at": "2026-08-30T23:46:08+00:00",
+  "generated_at": "2026-08-31T00:22:29+00:00",
   "note": "Auto-seeded from links already present in the corpus. No entry is attested until a curator supplies positives, negatives and boundaries.",
   "items": [
     {
@@ -145,6 +145,20 @@
       "technique": "CTFTTE-FOR-011",
       "challenges": [
         {
+          "ctf": "NAHAMCONF",
+          "challenge": "qrrrrrr",
+          "year": 2024,
+          "writeup": "https://github.com/blue101010/writeups/blob/main/2024/NAHAMCONF/qrrrrrr/README.md",
+          "extracted_from": "countertechniques/CTFTCTE-FOR-011.md"
+        },
+        {
+          "ctf": null,
+          "challenge": "QR Code Model 2 Structure and Algorithms",
+          "year": null,
+          "writeup": "https://franckybox.com/wp-content/uploads/qrcode.pdf",
+          "extracted_from": "countertechniques/CTFTCTE-FOR-011.md"
+        },
+        {
           "ctf": null,
           "challenge": "QRRRRRRRR — NahamCon CTF",
           "year": null,
@@ -152,12 +166,7 @@
           "extracted_from": "countertechniques/CTFTCTE-FOR-011.md"
         }
       ],
-      "references": [
-        {
-          "label": "QR Code Model 2 Structure and Algorithms",
-          "url": "https://franckybox.com/wp-content/uploads/qrcode.pdf"
-        }
-      ],
+      "references": [],
       "positives": [],
       "negatives": [],
       "boundaries": [],
@@ -191,6 +200,10 @@
         {
           "label": "QR Code Model 2 Structure and Algorithms",
           "url": "https://franckybox.com/wp-content/uploads/qrcode.pdf"
+        },
+        {
+          "label": "https://en.wikipedia.org/wiki/JAB_Code",
+          "url": "https://en.wikipedia.org/wiki/JAB_Code"
         }
       ],
       "positives": [],
@@ -211,6 +224,14 @@
         {
           "label": "Mengenlehreuhr Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Mengenlehreuhr"
+        },
+        {
+          "label": "Mengenlehreuhr dodona.be",
+          "url": "https://dodona.be/en/courses/1/series/279/activities/527398301/"
+        },
+        {
+          "label": "2024 - NSEC -  Dorsolateral Challenge",
+          "url": "https://github.com/blue101010/writeups/blob/main/2024/NSEC/Dorsolateral/dorsolateral.md"
         }
       ],
       "positives": [],

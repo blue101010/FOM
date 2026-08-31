@@ -24,11 +24,11 @@ _See references._
 
 ## Tactics
 
-[FOM tactics](https://github.com/blue101010/FOM/blob/main/tactics/tactics.md)
+[CTFT correlation matrix](../CORRELATION.md)
 
 | FOM related tactics  |
 | --------------------------------------- |
-| [FOMTA007 - Use special encoding system to hide data](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA007.md) |
+| `FOMTA007` (FOM) -> [CTFT-TA-FOR](../tactics/CTFT-TA-FOR.md) - Use special encoding system to hide data |
 
 ## Fom Related Sub-Techniques (St)
 

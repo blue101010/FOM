@@ -29,23 +29,23 @@ _See references._
 
 ## Tactics
 
-[FOM tactics](https://github.com/blue101010/FOM/blob/main/tactics/tactics.md)
+[CTFT correlation matrix](../CORRELATION.md)
 
 | FOM related tactics  |
 | --------------------------------------- |
-| [FOMTA002](https://github.com/blue101010/FOM/blob/main/tactics/FOMTA002.md) - Conceal information within digital media with steganography  |
+| `FOMTA002` (FOM) -> [CTFT-TA-STE](../tactics/CTFT-TA-STE.md) - Conceal information within digital media with steganography  |
 
 ## Fom Related Sub-Techniques (St)
 
 | FOM Sub-techniques ID and description  |
 | --------------------------------------- |
-| [FOMTE009.001 - Conceal via **technical text** steganography](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.md)   |
+| `FOMTE009.001` (FOM, superseded)   |
 
 ## Fom Counter-Techniques (Ct)
 
 | FOM Sub-techniques ID  and description  |
 | --------------------------------------- |
-| [FOMCTE001 - Recover legitimate signature of a file](https://github.com/blue101010/FOM/blob/main/countertechniques/FOMCTE001.md)   |
+| `FOMCTE001` (FOM, superseded — cross-domain provenance to review)   |
 
 **Writeups**
 

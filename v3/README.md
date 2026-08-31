@@ -34,7 +34,6 @@ generated documents.
 | `render_stix.py` | STIX 2.1 bundles from `index.json`, deterministic IDs |
 | `build_evidence.py` | seeds `evidence.json` from write-up links already present in the corpus |
 | `attach_attack_related.py` | per-entry `Related MITRE ATT&CK` tables |
-| `create_todo_entries.py` | scaffolds new pairs |
 | `fix_bare_urls.py` | MD034, fence-aware |
 | `solve.py` | retrieval engine, schema validation, `precision@k` evaluation |
 

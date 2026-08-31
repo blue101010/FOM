@@ -26,7 +26,7 @@ string so the decode can be reproduced independently.
 
 ## Tools
 
-Use [FOMTOU004 - ZXingReader](https://github.com/blue101010/FOM/blob/main/tools/FOMTOU004.md) like in CTF Writeup ref (1)
+Use `FOMTOU004` (FOM) -> [CTFTTOU-004](../tools/CTFTTOU-004.md) - ZXingReader like in CTF Writeup ref (1)
 
 ## References
 
