@@ -1,10 +1,10 @@
 {
   "model": "CTFT",
   "schema_version": "3.0",
-  "generated_at": "2026-08-31T01:38:35+00:00",
+  "generated_at": "2026-10-12T15:51:11+00:00",
   "source": {
-    "correlation_sha256": "497b0f05faaf3c8db636d4f907c85fcfb90a0f63b667a3e48363271fbb574b88",
-    "legacy_index_sha256": "3e3baf85c8afd05f495c7839c8df7b7405d61abd1e5da2380647951b4ed27f4f"
+    "correlation_sha256": "5222a77cee7d555e9be96d517e683d95a3c7946a00e85d273f36c11277de8517",
+    "legacy_index_sha256": "961c324140b56340d9e29bcd23fcbfae0729e1784dc8c167cf543977717982ec"
   },
   "taxonomy": {
     "tactics": [
@@ -29,9 +29,9 @@
       "WEB"
     ],
     "tactic_count": 19,
-    "technique_count": 164,
-    "counter_technique_count": 164,
-    "complete_pairs": 164,
+    "technique_count": 173,
+    "counter_technique_count": 173,
+    "complete_pairs": 173,
     "by_tactic": {
       "AIM": 7,
       "BLK": 5,
@@ -40,18 +40,18 @@
       "CRY": 13,
       "FOR": 29,
       "FPN": 10,
-      "GAM": 6,
+      "GAM": 8,
       "HWR": 2,
       "ICS": 5,
       "JAL": 6,
       "MOB": 5,
-      "NET": 7,
-      "OSI": 8,
+      "NET": 8,
+      "OSI": 9,
       "PWN": 8,
       "REV": 9,
       "SDR": 1,
       "STE": 11,
-      "WEB": 17
+      "WEB": 22
     }
   },
   "coverage": {
@@ -63,7 +63,7 @@
     },
     "maturity": {
       "attested": 1,
-      "taxonomy_only": 156,
+      "taxonomy_only": 165,
       "typed": 7
     },
     "core": {
@@ -73,10 +73,10 @@
       "placeholder_free": 0
     },
     "stix_object_types": {
-      "attack-pattern": 162,
-      "course-of-action": 162,
+      "attack-pattern": 164,
+      "course-of-action": 164,
       "identity": 1,
-      "relationship": 162,
+      "relationship": 164,
       "x-ctft-tactic": 19
     },
     "placeholder_entries": [
@@ -128,6 +128,8 @@
       "countertechniques/CTFTCTE-GAM-003.md",
       "countertechniques/CTFTCTE-GAM-004.md",
       "countertechniques/CTFTCTE-GAM-005.md",
+      "countertechniques/CTFTCTE-GAM-007.md",
+      "countertechniques/CTFTCTE-GAM-008.md",
       "countertechniques/CTFTCTE-ICS-001.md",
       "countertechniques/CTFTCTE-ICS-002.md",
       "countertechniques/CTFTCTE-ICS-003.md",
@@ -143,11 +145,13 @@
       "countertechniques/CTFTCTE-MOB-003.md",
       "countertechniques/CTFTCTE-MOB-004.md",
       "countertechniques/CTFTCTE-MOB-005.md",
+      "countertechniques/CTFTCTE-NET-008.md",
       "countertechniques/CTFTCTE-OSI-001.md",
       "countertechniques/CTFTCTE-OSI-002.md",
       "countertechniques/CTFTCTE-OSI-003.md",
       "countertechniques/CTFTCTE-OSI-004.md",
       "countertechniques/CTFTCTE-OSI-005.md",
+      "countertechniques/CTFTCTE-OSI-009.md",
       "countertechniques/CTFTCTE-PWN-001.md",
       "countertechniques/CTFTCTE-PWN-002.md",
       "countertechniques/CTFTCTE-PWN-003.md",
@@ -181,6 +185,11 @@
       "countertechniques/CTFTCTE-WEB-014.md",
       "countertechniques/CTFTCTE-WEB-015.md",
       "countertechniques/CTFTCTE-WEB-016.md",
+      "countertechniques/CTFTCTE-WEB-018.md",
+      "countertechniques/CTFTCTE-WEB-019.md",
+      "countertechniques/CTFTCTE-WEB-020.md",
+      "countertechniques/CTFTCTE-WEB-021.md",
+      "countertechniques/CTFTCTE-WEB-022.md",
       "techniques/CTFTTE-AIM-001.md",
       "techniques/CTFTTE-AIM-002.md",
       "techniques/CTFTTE-AIM-003.md",
@@ -251,6 +260,8 @@
       "techniques/CTFTTE-GAM-004.md",
       "techniques/CTFTTE-GAM-005.md",
       "techniques/CTFTTE-GAM-006.md",
+      "techniques/CTFTTE-GAM-007.md",
+      "techniques/CTFTTE-GAM-008.md",
       "techniques/CTFTTE-HWR-001.md",
       "techniques/CTFTTE-HWR-002.md",
       "techniques/CTFTTE-ICS-001.md",
@@ -276,6 +287,7 @@
       "techniques/CTFTTE-NET-005.md",
       "techniques/CTFTTE-NET-006.md",
       "techniques/CTFTTE-NET-007.md",
+      "techniques/CTFTTE-NET-008.md",
       "techniques/CTFTTE-OSI-001.md",
       "techniques/CTFTTE-OSI-002.md",
       "techniques/CTFTTE-OSI-003.md",
@@ -284,6 +296,7 @@
       "techniques/CTFTTE-OSI-006.md",
       "techniques/CTFTTE-OSI-007.md",
       "techniques/CTFTTE-OSI-008.md",
+      "techniques/CTFTTE-OSI-009.md",
       "techniques/CTFTTE-PWN-001.md",
       "techniques/CTFTTE-PWN-002.md",
       "techniques/CTFTTE-PWN-003.md",
@@ -322,23 +335,37 @@
       "techniques/CTFTTE-WEB-014.md",
       "techniques/CTFTTE-WEB-015.md",
       "techniques/CTFTTE-WEB-016.md",
-      "techniques/CTFTTE-WEB-017.md"
+      "techniques/CTFTTE-WEB-017.md",
+      "techniques/CTFTTE-WEB-018.md",
+      "techniques/CTFTTE-WEB-019.md",
+      "techniques/CTFTTE-WEB-020.md",
+      "techniques/CTFTTE-WEB-021.md",
+      "techniques/CTFTTE-WEB-022.md"
     ]
   },
   "integrity": {
     "techniques_without_counter": [],
     "counters_without_technique": [],
-    "correlation_pair_count": 164,
+    "correlation_pair_count": 173,
     "correlation_pairs_missing_from_files": [],
     "correlation_pairs_not_identity": [],
     "pairs_missing_from_correlation": [],
     "legacy_index_tactics_missing_from_files": [],
     "tactics_missing_from_legacy_index": [],
-    "legacy_index_pair_count": 164,
+    "legacy_index_pair_count": 173,
     "legacy_index_pairs_missing_from_files": [],
     "relation_problems": [],
     "lint_problems": [],
-    "readme_problems": [],
+    "readme_problems": [
+      "README.md: GAM claims 6 pairs, corpus has 8",
+      "README.md: NET claims 7 pairs, corpus has 8",
+      "README.md: OSI claims 8 pairs, corpus has 9",
+      "README.md: WEB claims 17 pairs, corpus has 22",
+      "README.md: domain-table total says 164, corpus has 173",
+      "README.md: pair count in prose says 164, corpus has 173",
+      "README.md: maturity `taxonomy_only` says 156, computed 165",
+      "README.md: coverage debt says 242 of 328 entry files, corpus has 260 of 346"
+    ],
     "schema_problems": [],
     "wording_problems": [],
     "link_problems": []

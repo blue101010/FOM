@@ -565,6 +565,63 @@
       "source_ref": "course-of-action--58213fba-c9f1-582a-a370-02d2f224d449",
       "target_ref": "attack-pattern--2ac374f4-70ec-5992-bb55-f373f25c7bb5",
       "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--34632d4f-c94d-5990-89b2-40c49e00baee",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-OSI-009 - Historical-infrastructure lure",
+      "description": "Years of OSINT sediment accumulate around a challenge domain: old AWS addresses, broken DNS delegations, expired certificates, archived virtual hosts. Whether planted or simply abandoned, this historical surface absorbs active effort — port scans, passive collection, write-up archaeology — while the current first-party site holds the door. The lure is time itself, not a planted artifact.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "osi"
+        }
+      ],
+      "x_ctft_category": "OSI",
+      "x_ctft_domain": "OSI",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-OSI-009"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--22efc981-5cf8-5ee6-b805-de96afee9737",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-OSI-009 - Gate historical OSINT behind current-surface checks",
+      "description": "Finish the first-party inventory (routes, assets, interactions) before touching historical leads. Before any action on an old target, require current attribution: reachability on indicative ports, then a targeted scan with reasons, and a full scan only with a specific question it will answer. Timebox passive sources and treat every absence as ambiguous, never as confirmation.",
+      "x_ctft_category": "OSI",
+      "x_ctft_domain": "OSI",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-OSI-009"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--812ec67a-14cd-5557-b358-a4e27b4efb08",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--22efc981-5cf8-5ee6-b805-de96afee9737",
+      "target_ref": "attack-pattern--34632d4f-c94d-5990-89b2-40c49e00baee",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     }
   ]
 }

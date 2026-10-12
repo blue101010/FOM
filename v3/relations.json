@@ -2,10 +2,10 @@
   "model": "CTFT",
   "schema_version": "3.0",
   "collection": "relations",
-  "generated_at": "2026-08-31T01:38:35+00:00",
+  "generated_at": "2026-10-12T15:51:10+00:00",
   "note": "Generated. Derived `solves` edges come from the markdown pairing; edit v3/relations.curated.json for anything else.",
   "counts": {
-    "derived": 164,
+    "derived": 173,
     "curated": 4
   },
   "items": [
@@ -775,6 +775,24 @@
       "confidence": "high"
     },
     {
+      "id": "REL-SOLVES-GAM-007",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-GAM-007",
+      "target": "CTFTTE-GAM-007",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
+      "id": "REL-SOLVES-GAM-008",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-GAM-008",
+      "target": "CTFTTE-GAM-008",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
       "id": "REL-SOLVES-HWR-001",
       "schema_version": "3.0",
       "type": "solves",
@@ -1000,6 +1018,15 @@
       "confidence": "high"
     },
     {
+      "id": "REL-SOLVES-NET-008",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-NET-008",
+      "target": "CTFTTE-NET-008",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
       "id": "REL-SOLVES-OSI-001",
       "schema_version": "3.0",
       "type": "solves",
@@ -1068,6 +1095,15 @@
       "type": "solves",
       "source": "CTFTCTE-OSI-008",
       "target": "CTFTTE-OSI-008",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
+      "id": "REL-SOLVES-OSI-009",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-OSI-009",
+      "target": "CTFTTE-OSI-009",
       "origin": "derived",
       "confidence": "high"
     },
@@ -1482,6 +1518,51 @@
       "type": "solves",
       "source": "CTFTCTE-WEB-017",
       "target": "CTFTTE-WEB-017",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
+      "id": "REL-SOLVES-WEB-018",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-WEB-018",
+      "target": "CTFTTE-WEB-018",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
+      "id": "REL-SOLVES-WEB-019",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-WEB-019",
+      "target": "CTFTTE-WEB-019",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
+      "id": "REL-SOLVES-WEB-020",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-WEB-020",
+      "target": "CTFTTE-WEB-020",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
+      "id": "REL-SOLVES-WEB-021",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-WEB-021",
+      "target": "CTFTTE-WEB-021",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
+      "id": "REL-SOLVES-WEB-022",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-WEB-022",
+      "target": "CTFTTE-WEB-022",
       "origin": "derived",
       "confidence": "high"
     },

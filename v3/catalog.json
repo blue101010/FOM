@@ -2,8 +2,8 @@
   "model": "CTFT",
   "schema_version": "3.0",
   "collection": "catalog",
-  "generated_at": "2026-08-31T01:38:36+00:00",
-  "source_sha256": "497b0f05faaf3c8db636d4f907c85fcfb90a0f63b667a3e48363271fbb574b88",
+  "generated_at": "2026-10-12T15:51:11+00:00",
+  "source_sha256": "5222a77cee7d555e9be96d517e683d95a3c7946a00e85d273f36c11277de8517",
   "items": [
     {
       "id": "CTFTPAIR-AIM-001",
@@ -1515,7 +1515,10 @@
       },
       "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [
-        "evidence_record"
+        "second_independent_challenge",
+        "positives",
+        "negatives",
+        "boundaries"
       ]
     },
     {
@@ -1537,7 +1540,10 @@
       },
       "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [
-        "evidence_record"
+        "second_independent_challenge",
+        "positives",
+        "negatives",
+        "boundaries"
       ]
     },
     {
@@ -1885,6 +1891,50 @@
         "id": "CTFTCTE-GAM-006",
         "name": "Script a bot interaction to reach the win branch",
         "path": "countertechniques/CTFTCTE-GAM-006.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-GAM-007",
+      "schema_version": "3.0",
+      "domain": "GAM",
+      "tactic": "CTFT-TA-GAM",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-GAM-007",
+        "name": "Interactive object hidden in a page scene",
+        "path": "techniques/CTFTTE-GAM-007.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-GAM-007",
+        "name": "Inventory per-page assets and enumerate interactions",
+        "path": "countertechniques/CTFTCTE-GAM-007.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-GAM-008",
+      "schema_version": "3.0",
+      "domain": "GAM",
+      "tactic": "CTFT-TA-GAM",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-GAM-008",
+        "name": "In-browser simulated OS / virtual-machine stage",
+        "path": "techniques/CTFTTE-GAM-008.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-GAM-008",
+        "name": "Treat the simulated stage as a chained puzzle",
+        "path": "countertechniques/CTFTCTE-GAM-008.md",
         "role": "resolution"
       },
       "maturity": "taxonomy_only",
@@ -2443,6 +2493,28 @@
       ]
     },
     {
+      "id": "CTFTPAIR-NET-008",
+      "schema_version": "3.0",
+      "domain": "NET",
+      "tactic": "CTFT-TA-NET",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-NET-008",
+        "name": "Anonymous FTP without chroot",
+        "path": "techniques/CTFTTE-NET-008.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-NET-008",
+        "name": "Walk the FTP tree and read outside the root",
+        "path": "countertechniques/CTFTCTE-NET-008.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
       "id": "CTFTPAIR-OSI-001",
       "schema_version": "3.0",
       "domain": "OSI",
@@ -2611,6 +2683,28 @@
         "id": "CTFTCTE-OSI-008",
         "name": "Map ASN, ranges, subdomains (bbot, assetfinder)",
         "path": "countertechniques/CTFTCTE-OSI-008.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-OSI-009",
+      "schema_version": "3.0",
+      "domain": "OSI",
+      "tactic": "CTFT-TA-OSI",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-OSI-009",
+        "name": "Historical-infrastructure lure",
+        "path": "techniques/CTFTTE-OSI-009.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-OSI-009",
+        "name": "Gate historical OSINT behind current-surface checks",
+        "path": "countertechniques/CTFTCTE-OSI-009.md",
         "role": "resolution"
       },
       "maturity": "taxonomy_only",
@@ -3632,6 +3726,116 @@
         "id": "CTFTCTE-WEB-017",
         "name": "Fuzz vhosts and host headers",
         "path": "countertechniques/CTFTCTE-WEB-017.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-WEB-018",
+      "schema_version": "3.0",
+      "domain": "WEB",
+      "tactic": "CTFT-TA-WEB",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-WEB-018",
+        "name": "Interaction-gated asset loading",
+        "path": "techniques/CTFTTE-WEB-018.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-WEB-018",
+        "name": "Capture pre-load browser traffic and correlate interactions",
+        "path": "countertechniques/CTFTCTE-WEB-018.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-WEB-019",
+      "schema_version": "3.0",
+      "domain": "WEB",
+      "tactic": "CTFT-TA-WEB",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-WEB-019",
+        "name": "Decoy obfuscated asset / empty-safe lure",
+        "path": "techniques/CTFTTE-WEB-019.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-WEB-019",
+        "name": "Timeboxed deobfuscation triage",
+        "path": "countertechniques/CTFTCTE-WEB-019.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-WEB-020",
+      "schema_version": "3.0",
+      "domain": "WEB",
+      "tactic": "CTFT-TA-WEB",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-WEB-020",
+        "name": "Uniform soft-404 / deceptive HTTP responses",
+        "path": "techniques/CTFTTE-WEB-020.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-WEB-020",
+        "name": "Fingerprint HTTP responses against a baseline",
+        "path": "countertechniques/CTFTCTE-WEB-020.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-WEB-021",
+      "schema_version": "3.0",
+      "domain": "WEB",
+      "tactic": "CTFT-TA-WEB",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-WEB-021",
+        "name": "OS command injection in a wrapped utility",
+        "path": "techniques/CTFTTE-WEB-021.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-WEB-021",
+        "name": "Run the command-injection micro-runbook",
+        "path": "countertechniques/CTFTCTE-WEB-021.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-WEB-022",
+      "schema_version": "3.0",
+      "domain": "WEB",
+      "tactic": "CTFT-TA-WEB",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-WEB-022",
+        "name": "Public source-map bait",
+        "path": "techniques/CTFTTE-WEB-022.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-WEB-022",
+        "name": "Enumerate and triage source maps",
+        "path": "countertechniques/CTFTCTE-WEB-022.md",
         "role": "resolution"
       },
       "maturity": "taxonomy_only",

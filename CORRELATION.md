@@ -4,8 +4,8 @@ Every **Design / Hide Technique** (`CTFTTE-<CAT>-NNN`) and the
 **Resolution-Technique** (`CTFTCTE-<CAT>-NNN`) that recovers it, grouped by domain.
 IDs pair one-to-one: `CTFTTE-FOR-004` is always answered by `CTFTCTE-FOR-004`.
 
-> Generated from the files in `techniques/` and `countertechniques/` — corpus fingerprint `e880652f89bad86a`
-> by `v3/render_taxonomy_docs.py`. **164 complete pairs** across **19 active domains**. Do not hand-edit: rename the entry, then re-render.
+> Generated from the files in `techniques/` and `countertechniques/` — corpus fingerprint `199a911ec03b15bc`
+> by `v3/render_taxonomy_docs.py`. **173 complete pairs** across **19 active domains**. Do not hand-edit: rename the entry, then re-render.
 
 ---
 
@@ -16,25 +16,25 @@ Order follows the challenge-category picker.
 | # | Code | Picker label | Domain | Pairs |
 | --- | --- | --- | --- | --- |
 | 1 | [`FOR`](#ctft-ta-for) | Forensics | Forensics | 29 |
-| 2 | [`WEB`](#ctft-ta-web) | Web | Web Exploitation | 17 |
+| 2 | [`WEB`](#ctft-ta-web) | Web | Web Exploitation | 22 |
 | 3 | [`CRY`](#ctft-ta-cry) | Crypto | Cryptography | 13 |
 | 4 | [`PWN`](#ctft-ta-pwn) | Binary | Binary Exploitation | 8 |
 | 5 | [`REV`](#ctft-ta-rev) | Reverse | Reverse Engineering | 9 |
 | 6 | [`STE`](#ctft-ta-ste) | Stego | Steganography | 11 |
-| 7 | [`OSI`](#ctft-ta-osi) | OSINT | OSINT | 8 |
+| 7 | [`OSI`](#ctft-ta-osi) | OSINT | OSINT | 9 |
 | 8 | [`CLD`](#ctft-ta-cld) | Cloud | Cloud | 8 |
 | 9 | [`BLK`](#ctft-ta-blk) | Blockchain | Blockchain | 5 |
 | 10 | [`AIM`](#ctft-ta-aim) | AI/ML | AI / ML | 7 |
 | 11 | [`ICS`](#ctft-ta-ics) | ICS/SCADA | ICS / SCADA | 5 |
 | 12 | [`MOB`](#ctft-ta-mob) | Mobile | Mobile | 5 |
 | 13 | [`JAL`](#ctft-ta-jal) | Jail escape | Jail / Sandbox Escape | 6 |
-| 14 | [`GAM`](#ctft-ta-gam) | Game/Proto | Game / Protocol Automation (GamePwn) | 6 |
+| 14 | [`GAM`](#ctft-ta-gam) | Game/Proto | Game / Protocol Automation (GamePwn) | 8 |
 | 15 | [`COD`](#ctft-ta-cod) | Coding | Coding / Programming Puzzle | 7 |
-| 16 | [`NET`](#ctft-ta-net) | Network | Network | 7 |
+| 16 | [`NET`](#ctft-ta-net) | Network | Network | 8 |
 | 17 | [`FPN`](#ctft-ta-fpn) | Full Pwn | Full Pwn / Multi-Stage | 10 |
 | 18 | [`HWR`](#ctft-ta-hwr) | Hardware | Hardware | 2 |
 | 19 | [`SDR`](#ctft-ta-sdr) | SDR / RF | Software-Defined Radio | 1 |
-| | | | **Total** | **164** |
+| | | | **Total** | **173** |
 
 **Retired — do not use.** `MSC` (Misc) was a catch-all whose entries all
 duplicated a precise domain; file those challenges under `JAL`, `COD`, `GAM`
@@ -81,7 +81,7 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 
 ## <a id="ctft-ta-web"></a>`CTFT-TA-WEB` — Web Exploitation
 
-> [domain page](tactics/CTFT-TA-WEB.md) · 17 pairs · HTB: Web
+> [domain page](tactics/CTFT-TA-WEB.md) · 22 pairs · HTB: Web
 
 | # | Technique ID | Hide / Design name | Resolution-technique ID | Recovery action |
 | --- | --- | --- | --- | --- |
@@ -102,6 +102,11 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 | 15 | [CTFTTE-WEB-015](techniques/CTFTTE-WEB-015.md) | CMS / WordPress plugin flaw | [CTFTCTE-WEB-015](countertechniques/CTFTCTE-WEB-015.md) | Enumerate and exploit WordPress (wpscan) |
 | 16 | [CTFTTE-WEB-016](techniques/CTFTTE-WEB-016.md) | NoSQL injection | [CTFTCTE-WEB-016](countertechniques/CTFTCTE-WEB-016.md) | Inject Mongo/NoSQL queries |
 | 17 | [CTFTTE-WEB-017](techniques/CTFTTE-WEB-017.md) | Host-header / vhost fuzzing | [CTFTCTE-WEB-017](countertechniques/CTFTCTE-WEB-017.md) | Fuzz vhosts and host headers |
+| 18 | [CTFTTE-WEB-018](techniques/CTFTTE-WEB-018.md) | Interaction-gated asset loading | [CTFTCTE-WEB-018](countertechniques/CTFTCTE-WEB-018.md) | Capture pre-load browser traffic and correlate interactions |
+| 19 | [CTFTTE-WEB-019](techniques/CTFTTE-WEB-019.md) | Decoy obfuscated asset / empty-safe lure | [CTFTCTE-WEB-019](countertechniques/CTFTCTE-WEB-019.md) | Timeboxed deobfuscation triage |
+| 20 | [CTFTTE-WEB-020](techniques/CTFTTE-WEB-020.md) | Uniform soft-404 / deceptive HTTP responses | [CTFTCTE-WEB-020](countertechniques/CTFTCTE-WEB-020.md) | Fingerprint HTTP responses against a baseline |
+| 21 | [CTFTTE-WEB-021](techniques/CTFTTE-WEB-021.md) | OS command injection in a wrapped utility | [CTFTCTE-WEB-021](countertechniques/CTFTCTE-WEB-021.md) | Run the command-injection micro-runbook |
+| 22 | [CTFTTE-WEB-022](techniques/CTFTTE-WEB-022.md) | Public source-map bait | [CTFTCTE-WEB-022](countertechniques/CTFTCTE-WEB-022.md) | Enumerate and triage source maps |
 
 
 ## <a id="ctft-ta-cry"></a>`CTFT-TA-CRY` — Cryptography
@@ -179,7 +184,7 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 
 ## <a id="ctft-ta-osi"></a>`CTFT-TA-OSI` — OSINT
 
-> [domain page](tactics/CTFT-TA-OSI.md) · 8 pairs · HTB: OSINT
+> [domain page](tactics/CTFT-TA-OSI.md) · 9 pairs · HTB: OSINT
 
 | # | Technique ID | Hide / Design name | Resolution-technique ID | Recovery action |
 | --- | --- | --- | --- | --- |
@@ -191,6 +196,7 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 | 6 | [CTFTTE-OSI-006](techniques/CTFTTE-OSI-006.md) | Git-repository archaeology | [CTFTCTE-OSI-006](countertechniques/CTFTCTE-OSI-006.md) | Mine git history, objects and reflog |
 | 7 | [CTFTTE-OSI-007](techniques/CTFTTE-OSI-007.md) | Search-engine mining (dorking) | [CTFTCTE-OSI-007](countertechniques/CTFTCTE-OSI-007.md) | Run advanced dorks and search operators |
 | 8 | [CTFTTE-OSI-008](techniques/CTFTTE-OSI-008.md) | ASN / IP-range / subdomain recon | [CTFTCTE-OSI-008](countertechniques/CTFTCTE-OSI-008.md) | Map ASN, ranges, subdomains (bbot, assetfinder) |
+| 9 | [CTFTTE-OSI-009](techniques/CTFTTE-OSI-009.md) | Historical-infrastructure lure | [CTFTCTE-OSI-009](countertechniques/CTFTCTE-OSI-009.md) | Gate historical OSINT behind current-surface checks |
 
 
 ## <a id="ctft-ta-cld"></a>`CTFT-TA-CLD` — Cloud
@@ -279,7 +285,7 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 
 ## <a id="ctft-ta-gam"></a>`CTFT-TA-GAM` — Game / Protocol Automation (GamePwn)
 
-> [domain page](tactics/CTFT-TA-GAM.md) · 6 pairs · HTB: GamePwn
+> [domain page](tactics/CTFT-TA-GAM.md) · 8 pairs · HTB: GamePwn
 
 | # | Technique ID | Hide / Design name | Resolution-technique ID | Recovery action |
 | --- | --- | --- | --- | --- |
@@ -289,6 +295,8 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 | 4 | [CTFTTE-GAM-004](techniques/CTFTTE-GAM-004.md) | Game binary win-condition bypass | [CTFTCTE-GAM-004](countertechniques/CTFTCTE-GAM-004.md) | Patch the jump / comparison to force a win state |
 | 5 | [CTFTTE-GAM-005](techniques/CTFTTE-GAM-005.md) | Protocol sequence replay / race | [CTFTCTE-GAM-005](countertechniques/CTFTCTE-GAM-005.md) | Record, replay, or race the server sequence precisely |
 | 6 | [CTFTTE-GAM-006](techniques/CTFTTE-GAM-006.md) | Chatbot / choice-path bot puzzle | [CTFTCTE-GAM-006](countertechniques/CTFTCTE-GAM-006.md) | Script a bot interaction to reach the win branch |
+| 7 | [CTFTTE-GAM-007](techniques/CTFTTE-GAM-007.md) | Interactive object hidden in a page scene | [CTFTCTE-GAM-007](countertechniques/CTFTCTE-GAM-007.md) | Inventory per-page assets and enumerate interactions |
+| 8 | [CTFTTE-GAM-008](techniques/CTFTTE-GAM-008.md) | In-browser simulated OS / virtual-machine stage | [CTFTCTE-GAM-008](countertechniques/CTFTCTE-GAM-008.md) | Treat the simulated stage as a chained puzzle |
 
 
 ## <a id="ctft-ta-cod"></a>`CTFT-TA-COD` — Coding / Programming Puzzle
@@ -308,7 +316,7 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 
 ## <a id="ctft-ta-net"></a>`CTFT-TA-NET` — Network
 
-> [domain page](tactics/CTFT-TA-NET.md) · 7 pairs · HTB: Misc (Network)
+> [domain page](tactics/CTFT-TA-NET.md) · 8 pairs · HTB: Misc (Network)
 
 | # | Technique ID | Hide / Design name | Resolution-technique ID | Recovery action |
 | --- | --- | --- | --- | --- |
@@ -319,6 +327,7 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 | 5 | [CTFTTE-NET-005](techniques/CTFTTE-NET-005.md) | Traffic tunnel / port-forwarding relay | [CTFTCTE-NET-005](countertechniques/CTFTCTE-NET-005.md) | Pivot via ssh -L/-R, chisel |
 | 6 | [CTFTTE-NET-006](techniques/CTFTTE-NET-006.md) | TTL / protocol-field covert channel | [CTFTCTE-NET-006](countertechniques/CTFTCTE-NET-006.md) | Decode TTL/ICMP/padding channels |
 | 7 | [CTFTTE-NET-007](techniques/CTFTTE-NET-007.md) | Packet-capture forensics maze | [CTFTCTE-NET-007](countertechniques/CTFTCTE-NET-007.md) | Run beaconing/exfil/credential detectors over PCAPs |
+| 8 | [CTFTTE-NET-008](techniques/CTFTTE-NET-008.md) | Anonymous FTP without chroot | [CTFTCTE-NET-008](countertechniques/CTFTCTE-NET-008.md) | Walk the FTP tree and read outside the root |
 
 
 ## <a id="ctft-ta-fpn"></a>`CTFT-TA-FPN` — Full Pwn / Multi-Stage

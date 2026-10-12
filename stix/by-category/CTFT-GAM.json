@@ -421,6 +421,140 @@
       "source_ref": "course-of-action--110276a2-2868-5097-bff7-2f39dfead4b5",
       "target_ref": "attack-pattern--e6faf359-1b2d-5bd5-86fb-fa771c9be9f0",
       "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--f0b9c1ca-20a5-595d-a942-c061629ed4ef",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-GAM-007 - Interactive object hidden in a page scene",
+      "description": "A challenge machine or object is embedded in the decorative imagery of a linked page: the solver must move into the scene and press an interaction key (a displayed Press E) to activate it. The DOM may expose easter-egg text, but the real surface is the interactive object and the assets it then loads. The route is public — the interaction is the gate.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "gam"
+        }
+      ],
+      "x_ctft_category": "GAM",
+      "x_ctft_domain": "GAM",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-GAM-007"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1564",
+          "description": "Hide Artifacts"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--46da57d4-81d1-5752-a261-020c248d549a",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-GAM-007 - Inventory per-page assets and enumerate interactions",
+      "description": "Build a per-page asset graph (links, scripts, stylesheets, inline JSON, modules) and score each asset by rarity, page-uniqueness, size/entropy anomaly, thematic naming and post-interaction loading — not by expected vocabulary. Enumerate interactable elements and drive them: keys, clicks, hover, movement into scenes.",
+      "x_ctft_category": "GAM",
+      "x_ctft_domain": "GAM",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-GAM-007"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1564",
+          "description": "Hide Artifacts"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--bb94fc5f-0746-598e-8658-e5c01840e35b",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--46da57d4-81d1-5752-a261-020c248d549a",
+      "target_ref": "attack-pattern--f0b9c1ca-20a5-595d-a942-c061629ed4ef",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--0a7d453d-0471-5cd5-bfdf-d22cfe58fb15",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-GAM-008 - In-browser simulated OS / virtual-machine stage",
+      "description": "The author ships a fake operating system — a FreeDOS-style filesystem and command set — implemented in JavaScript inside the page. The whole flag chain runs against simulated services and simulated files (an internal FTP, a vulnerable login utility, a token file), not against the host. Every attack is performed on in-simulation logic, whose privilege boundaries are part of the puzzle.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "gam"
+        }
+      ],
+      "x_ctft_category": "GAM",
+      "x_ctft_domain": "GAM",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-GAM-008"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1036",
+          "description": "Masquerading"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--dee76929-0c61-590f-befc-959c9569bb00",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-GAM-008 - Treat the simulated stage as a chained puzzle",
+      "description": "Enumerate the simulated command set and filesystem first, then apply the standard runbooks against the simulated services: walk the fake FTP, inject the simulated login, run the command-injection micro-runbook on the wrapped utility, crack and forge the simulated tokens. The privilege boundaries inside the simulation are part of the puzzle — observe, then exploit each in turn.",
+      "x_ctft_category": "GAM",
+      "x_ctft_domain": "GAM",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-GAM-008"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1036",
+          "description": "Masquerading"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--50a35c79-1852-5f68-92f5-d9bd865d041e",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--dee76929-0c61-590f-befc-959c9569bb00",
+      "target_ref": "attack-pattern--0a7d453d-0471-5cd5-bfdf-d22cfe58fb15",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     }
   ]
 }

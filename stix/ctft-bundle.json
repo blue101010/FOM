@@ -6062,6 +6062,140 @@
     {
       "type": "attack-pattern",
       "spec_version": "2.1",
+      "id": "attack-pattern--f0b9c1ca-20a5-595d-a942-c061629ed4ef",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-GAM-007 - Interactive object hidden in a page scene",
+      "description": "A challenge machine or object is embedded in the decorative imagery of a linked page: the solver must move into the scene and press an interaction key (a displayed Press E) to activate it. The DOM may expose easter-egg text, but the real surface is the interactive object and the assets it then loads. The route is public — the interaction is the gate.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "gam"
+        }
+      ],
+      "x_ctft_category": "GAM",
+      "x_ctft_domain": "GAM",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-GAM-007"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1564",
+          "description": "Hide Artifacts"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--46da57d4-81d1-5752-a261-020c248d549a",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-GAM-007 - Inventory per-page assets and enumerate interactions",
+      "description": "Build a per-page asset graph (links, scripts, stylesheets, inline JSON, modules) and score each asset by rarity, page-uniqueness, size/entropy anomaly, thematic naming and post-interaction loading — not by expected vocabulary. Enumerate interactable elements and drive them: keys, clicks, hover, movement into scenes.",
+      "x_ctft_category": "GAM",
+      "x_ctft_domain": "GAM",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-GAM-007"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1564",
+          "description": "Hide Artifacts"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--bb94fc5f-0746-598e-8658-e5c01840e35b",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--46da57d4-81d1-5752-a261-020c248d549a",
+      "target_ref": "attack-pattern--f0b9c1ca-20a5-595d-a942-c061629ed4ef",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--0a7d453d-0471-5cd5-bfdf-d22cfe58fb15",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-GAM-008 - In-browser simulated OS / virtual-machine stage",
+      "description": "The author ships a fake operating system — a FreeDOS-style filesystem and command set — implemented in JavaScript inside the page. The whole flag chain runs against simulated services and simulated files (an internal FTP, a vulnerable login utility, a token file), not against the host. Every attack is performed on in-simulation logic, whose privilege boundaries are part of the puzzle.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "gam"
+        }
+      ],
+      "x_ctft_category": "GAM",
+      "x_ctft_domain": "GAM",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-GAM-008"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1036",
+          "description": "Masquerading"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--dee76929-0c61-590f-befc-959c9569bb00",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-GAM-008 - Treat the simulated stage as a chained puzzle",
+      "description": "Enumerate the simulated command set and filesystem first, then apply the standard runbooks against the simulated services: walk the fake FTP, inject the simulated login, run the command-injection micro-runbook on the wrapped utility, crack and forge the simulated tokens. The privilege boundaries inside the simulation are part of the puzzle — observe, then exploit each in turn.",
+      "x_ctft_category": "GAM",
+      "x_ctft_domain": "GAM",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-GAM-008"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1036",
+          "description": "Masquerading"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--50a35c79-1852-5f68-92f5-d9bd865d041e",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--dee76929-0c61-590f-befc-959c9569bb00",
+      "target_ref": "attack-pattern--0a7d453d-0471-5cd5-bfdf-d22cfe58fb15",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
       "id": "attack-pattern--7e116824-406e-5aaa-b78d-13e719163fe4",
       "created": "2026-06-10T18:01:52.000Z",
       "modified": "2026-06-10T18:01:52.000Z",
@@ -7747,6 +7881,73 @@
     {
       "type": "attack-pattern",
       "spec_version": "2.1",
+      "id": "attack-pattern--d00d8363-a49a-55a1-a8de-6a402d7a0eee",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-NET-008 - Anonymous FTP without chroot",
+      "description": "An anonymous FTP service is configured without a chroot: the interesting files (configuration, dictionaries, operator databases, token material) sit above the anonymous root, reachable by walking out of the jail. The files disclosed are fuel for the next stages, not necessarily the final flag.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "net"
+        }
+      ],
+      "x_ctft_category": "NET",
+      "x_ctft_domain": "NET",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-NET-008"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1078",
+          "description": "Valid Accounts"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--e7e1522b-f070-5f58-be4e-2b84be8b6b3d",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-NET-008 - Walk the FTP tree and read outside the root",
+      "description": "Log in anonymously, list recursively, then attempt traversal out of the anonymous root. Harvest the configuration, dictionaries and databases disclosed — they are the fuel for the following stages, not the flag itself.",
+      "x_ctft_category": "NET",
+      "x_ctft_domain": "NET",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-NET-008"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1078",
+          "description": "Valid Accounts"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--b2b1c4f8-7975-588d-9a50-c3074090d965",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--e7e1522b-f070-5f58-be4e-2b84be8b6b3d",
+      "target_ref": "attack-pattern--d00d8363-a49a-55a1-a8de-6a402d7a0eee",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
       "id": "attack-pattern--b5fbc959-8772-517c-9d4a-89787c50d99b",
       "created": "2026-06-10T18:01:52.000Z",
       "modified": "2026-06-10T18:01:52.000Z",
@@ -8278,6 +8479,63 @@
       "x_ctft_relation": "solves",
       "source_ref": "course-of-action--58213fba-c9f1-582a-a370-02d2f224d449",
       "target_ref": "attack-pattern--2ac374f4-70ec-5992-bb55-f373f25c7bb5",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--34632d4f-c94d-5990-89b2-40c49e00baee",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-OSI-009 - Historical-infrastructure lure",
+      "description": "Years of OSINT sediment accumulate around a challenge domain: old AWS addresses, broken DNS delegations, expired certificates, archived virtual hosts. Whether planted or simply abandoned, this historical surface absorbs active effort — port scans, passive collection, write-up archaeology — while the current first-party site holds the door. The lure is time itself, not a planted artifact.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "osi"
+        }
+      ],
+      "x_ctft_category": "OSI",
+      "x_ctft_domain": "OSI",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-OSI-009"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--22efc981-5cf8-5ee6-b805-de96afee9737",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-OSI-009 - Gate historical OSINT behind current-surface checks",
+      "description": "Finish the first-party inventory (routes, assets, interactions) before touching historical leads. Before any action on an old target, require current attribution: reachability on indicative ports, then a targeted scan with reasons, and a full scan only with a specific question it will answer. Timebox passive sources and treat every absence as ambiguous, never as confirmation.",
+      "x_ctft_category": "OSI",
+      "x_ctft_domain": "OSI",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-OSI-009"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--812ec67a-14cd-5557-b358-a4e27b4efb08",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--22efc981-5cf8-5ee6-b805-de96afee9737",
+      "target_ref": "attack-pattern--34632d4f-c94d-5990-89b2-40c49e00baee",
       "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     },
     {
@@ -11360,6 +11618,341 @@
       "x_ctft_relation": "solves",
       "source_ref": "course-of-action--4942398a-dc4a-5857-b34e-d4b0e01e4c2d",
       "target_ref": "attack-pattern--6a708fc2-2845-538b-88c0-f7de90d7310f",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--5813c39e-c00d-5c9c-8014-6a8ef9e3252a",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-WEB-018 - Interaction-gated asset loading",
+      "description": "The page itself is public and linked, but the key modules, JSON configuration or data files load only after an explicit interaction — keypress, click, hover or movement into a scene — so link crawlers, curl and asset extractors never see them. The challenge surface sits behind the interaction, not behind the route.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "web"
+        }
+      ],
+      "x_ctft_category": "WEB",
+      "x_ctft_domain": "WEB",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-WEB-018"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1564",
+          "description": "Hide Artifacts"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--6e57f808-7ddb-5659-b2c9-1a6c523a61c6",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-WEB-018 - Capture pre-load browser traffic and correlate interactions",
+      "description": "Instrument the browser before page.goto(): subscribe to requests, responses, failures, WebSockets, console errors, DOM mutations and storage writes; drive the page by clicking, pressing keys and moving into scenes; correlate every interaction with the assets it triggers.",
+      "x_ctft_category": "WEB",
+      "x_ctft_domain": "WEB",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-WEB-018"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1564",
+          "description": "Hide Artifacts"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--2d007db9-f9e0-58a5-b120-d969845a8424",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--6e57f808-7ddb-5659-b2c9-1a6c523a61c6",
+      "target_ref": "attack-pattern--5813c39e-c00d-5c9c-8014-6a8ef9e3252a",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--d753f59c-8be5-556e-b2a3-03d32c37dc53",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-WEB-019 - Decoy obfuscated asset / empty-safe lure",
+      "description": "A prominent asset is deliberately obfuscated (string-array rotation, control-flow flattening, console neutralization — the typical javascript-obfuscator signature) so it looks like the payload, while containing no host, no secret and no network side effect. Decorative \"hint\" commands on the page reinforce the lure. The asset is an empty safe: the obfuscation is the decoy, not the protection.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "web"
+        }
+      ],
+      "x_ctft_category": "WEB",
+      "x_ctft_domain": "WEB",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-WEB-019"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--e92c1925-2a21-5514-84b3-3ad43068a06a",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-WEB-019 - Timeboxed deobfuscation triage",
+      "description": "Pipeline per asset: hash, size and provenance; grep for URLs, Web APIs and high-entropy strings; fetch the source map when referenced; run webcrack; scan the formatted AST for fetch/XHR/WebSocket/import/storage/crypto/DOM side effects. Promote the asset only on a page-specific or observable effect; otherwise close it within a bounded budget — obfuscation alone earns no deep-RE time.",
+      "x_ctft_category": "WEB",
+      "x_ctft_domain": "WEB",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-WEB-019"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--9c0e11eb-5d3e-5b9c-b8e2-7fbd1bf0a1ce",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--e92c1925-2a21-5514-84b3-3ad43068a06a",
+      "target_ref": "attack-pattern--d753f59c-8be5-556e-b2a3-03d32c37dc53",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--772e2303-ea37-5baa-8b6a-7a84e626b3cb",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-WEB-020 - Uniform soft-404 / deceptive HTTP responses",
+      "description": "Every missing path returns an identical body (same bytes, same length), so diff-less discovery cannot distinguish a real route from a soft 404. Redirect chains between bare domain and www create browser CORS false negatives, and standard edge responses (RFC 8164 endpoints, generic provider pages) look like findings. The real route drowns in uniform noise.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "web"
+        }
+      ],
+      "x_ctft_category": "WEB",
+      "x_ctft_domain": "WEB",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-WEB-020"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1036",
+          "description": "Masquerading"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--73532f8c-f8b2-54b7-b9b2-da346bd6cc37",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-WEB-020 - Fingerprint HTTP responses against a baseline",
+      "description": "Record per URL: initial and final URL, redirect chain, status, content-type, size, normalized body hash, title, server, timings, and the test origin (browser vs CLI client). Compare against a random route and a random hostname; classify as unique content, redirect, soft 404, uniform refusal, standard edge response, CORS-only false negative, or timeout.",
+      "x_ctft_category": "WEB",
+      "x_ctft_domain": "WEB",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-WEB-020"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1036",
+          "description": "Masquerading"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--d20bba95-aa73-5edc-a586-74cdc585056f",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--73532f8c-f8b2-54b7-b9b2-da346bd6cc37",
+      "target_ref": "attack-pattern--772e2303-ea37-5baa-8b6a-7a84e626b3cb",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--6931a5ad-ddaa-5e2f-b58d-38a59e7120be",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-WEB-021 - OS command injection in a wrapped utility",
+      "description": "A utility program (login prompt, ping wrapper, report generator) concatenates user input into a shell command line, and the flag or the token it protects sits in files readable only through that concatenation. The wrapper's privilege context is part of the puzzle: the injection is the gate, not the goal.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "web"
+        }
+      ],
+      "x_ctft_category": "WEB",
+      "x_ctft_domain": "WEB",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-WEB-021"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1059",
+          "description": "Command and Scripting Interpreter"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--4acdb69c-88b7-575d-842e-8188ac7670d8",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-WEB-021 - Run the command-injection micro-runbook",
+      "description": "Identify the concatenation; find the minimal working separator; prove execution with a no-op command; then perform a single targeted read. Note the wrapper's privilege context and use it rather than aiming for broad execution. Automate only after a reproducible manual difference.",
+      "x_ctft_category": "WEB",
+      "x_ctft_domain": "WEB",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-WEB-021"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1059",
+          "description": "Command and Scripting Interpreter"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--0cc27371-44b8-5e1d-952e-1c809f758aaf",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--4acdb69c-88b7-575d-842e-8188ac7670d8",
+      "target_ref": "attack-pattern--6931a5ad-ddaa-5e2f-b58d-38a59e7120be",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--bc2cd109-3eea-53e8-a80d-92ae153deaaf",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-WEB-022 - Public source-map bait",
+      "description": "Source maps are deliberately public and confirm thematic sections — terminal styles, hidden-file sections, reward animations — while leaking no logic, endpoint or data. The map invites deep source review that yields only vocabulary: structure is disclosed, substance is not.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "web"
+        }
+      ],
+      "x_ctft_category": "WEB",
+      "x_ctft_domain": "WEB",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-WEB-022"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1213",
+          "description": "Data from Information Repositories"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--5b04ff12-eaac-5769-9d66-721719587117",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-WEB-022 - Enumerate and triage source maps",
+      "description": "Request the referenced .map for every asset; recover the original sources; classify each as structural (styles, section names) or functional (logic, endpoints, data). Treat section vocabulary as hint material for the next inventory, never as proof of the payload.",
+      "x_ctft_category": "WEB",
+      "x_ctft_domain": "WEB",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-WEB-022"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1213",
+          "description": "Data from Information Repositories"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--bc8a0e72-1abe-5bc5-b322-158a41e7fb01",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--5b04ff12-eaac-5769-9d66-721719587117",
+      "target_ref": "attack-pattern--bc2cd109-3eea-53e8-a80d-92ae153deaaf",
       "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     }
   ]

@@ -2,7 +2,7 @@
 
 > **Domain ID:** `CTFT-TA-GAM`  
 > **HTB mapping:** HTB: GamePwn  
-> **Techniques:** 6
+> **Techniques:** 8
 
 ## Description
 
@@ -32,6 +32,8 @@ per entry**, never the definition of an entry.
 | [CTFTTE-GAM-004](../techniques/CTFTTE-GAM-004.md) | Game binary win-condition bypass | [CTFTCTE-GAM-004](../countertechniques/CTFTCTE-GAM-004.md) | Patch the jump / comparison to force a win state | T1055 |
 | [CTFTTE-GAM-005](../techniques/CTFTTE-GAM-005.md) | Protocol sequence replay / race | [CTFTCTE-GAM-005](../countertechniques/CTFTCTE-GAM-005.md) | Record, replay, or race the server sequence precisely | T1071 |
 | [CTFTTE-GAM-006](../techniques/CTFTTE-GAM-006.md) | Chatbot / choice-path bot puzzle | [CTFTCTE-GAM-006](../countertechniques/CTFTCTE-GAM-006.md) | Script a bot interaction to reach the win branch | T1071 |
+| [CTFTTE-GAM-007](../techniques/CTFTTE-GAM-007.md) | Interactive object hidden in a page scene | [CTFTCTE-GAM-007](../countertechniques/CTFTCTE-GAM-007.md) | Inventory per-page assets and enumerate interactions | T1564 |
+| [CTFTTE-GAM-008](../techniques/CTFTTE-GAM-008.md) | In-browser simulated OS / virtual-machine stage | [CTFTCTE-GAM-008](../countertechniques/CTFTCTE-GAM-008.md) | Treat the simulated stage as a chained puzzle | T1036 |
 
 ---
 *See [CORRELATION.md](../CORRELATION.md) for the full cross-reference matrix.*
