@@ -2,7 +2,7 @@
 
 > **Domain ID:** `CTFT-TA-NET`  
 > **HTB mapping:** HTB: Misc (Network)  
-> **Techniques:** 7
+> **Techniques:** 8
 
 ## Description
 
@@ -33,6 +33,7 @@ per entry**, never the definition of an entry.
 | [CTFTTE-NET-005](../techniques/CTFTTE-NET-005.md) | Traffic tunnel / port-forwarding relay | [CTFTCTE-NET-005](../countertechniques/CTFTCTE-NET-005.md) | Pivot via ssh -L/-R, chisel | T1572, T1090 |
 | [CTFTTE-NET-006](../techniques/CTFTTE-NET-006.md) | TTL / protocol-field covert channel | [CTFTCTE-NET-006](../countertechniques/CTFTCTE-NET-006.md) | Decode TTL/ICMP/padding channels | T1095 |
 | [CTFTTE-NET-007](../techniques/CTFTTE-NET-007.md) | Packet-capture forensics maze | [CTFTCTE-NET-007](../countertechniques/CTFTCTE-NET-007.md) | Run beaconing/exfil/credential detectors over PCAPs | T1040 |
+| [CTFTTE-NET-008](../techniques/CTFTTE-NET-008.md) | Anonymous FTP without chroot | [CTFTCTE-NET-008](../countertechniques/CTFTCTE-NET-008.md) | Walk the FTP tree and read outside the root | T1078 |
 
 ---
 *See [CORRELATION.md](../CORRELATION.md) for the full cross-reference matrix.*

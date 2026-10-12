@@ -1,7 +1,7 @@
 {
   "model": "CTFT",
   "version": "1.2",
-  "generated": "2026-08-31T01:38:35+00:00",
+  "generated": "2026-10-12T15:57:03+00:00",
   "relates_to": [
     "MITRE ATT&CK",
     "CAPEC",
@@ -56,7 +56,7 @@
       "id": "CTFT-TA-GAM",
       "name": "Game / Protocol Automation (GamePwn)",
       "path": "tactics/CTFT-TA-GAM.md",
-      "count": 6
+      "count": 8
     },
     {
       "id": "CTFT-TA-HWR",
@@ -86,13 +86,13 @@
       "id": "CTFT-TA-NET",
       "name": "Network",
       "path": "tactics/CTFT-TA-NET.md",
-      "count": 7
+      "count": 8
     },
     {
       "id": "CTFT-TA-OSI",
       "name": "OSINT",
       "path": "tactics/CTFT-TA-OSI.md",
-      "count": 8
+      "count": 9
     },
     {
       "id": "CTFT-TA-PWN",
@@ -122,10 +122,10 @@
       "id": "CTFT-TA-WEB",
       "name": "Web Exploitation",
       "path": "tactics/CTFT-TA-WEB.md",
-      "count": 17
+      "count": 22
     }
   ],
-  "total_techniques": 164,
+  "total_techniques": 173,
   "techniques": [
     {
       "tactic": "CTFT-TA-AIM",
@@ -1318,6 +1318,34 @@
       }
     },
     {
+      "tactic": "CTFT-TA-GAM",
+      "category": "GAM",
+      "technique": {
+        "id": "CTFTTE-GAM-007",
+        "name": "Interactive object hidden in a page scene",
+        "path": "techniques/CTFTTE-GAM-007.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-GAM-007",
+        "name": "Inventory per-page assets and enumerate interactions",
+        "path": "countertechniques/CTFTCTE-GAM-007.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-GAM",
+      "category": "GAM",
+      "technique": {
+        "id": "CTFTTE-GAM-008",
+        "name": "In-browser simulated OS / virtual-machine stage",
+        "path": "techniques/CTFTTE-GAM-008.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-GAM-008",
+        "name": "Treat the simulated stage as a chained puzzle",
+        "path": "countertechniques/CTFTCTE-GAM-008.md"
+      }
+    },
+    {
       "tactic": "CTFT-TA-HWR",
       "category": "HWR",
       "technique": {
@@ -1668,6 +1696,20 @@
       }
     },
     {
+      "tactic": "CTFT-TA-NET",
+      "category": "NET",
+      "technique": {
+        "id": "CTFTTE-NET-008",
+        "name": "Anonymous FTP without chroot",
+        "path": "techniques/CTFTTE-NET-008.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-NET-008",
+        "name": "Walk the FTP tree and read outside the root",
+        "path": "countertechniques/CTFTCTE-NET-008.md"
+      }
+    },
+    {
       "tactic": "CTFT-TA-OSI",
       "category": "OSI",
       "technique": {
@@ -1777,6 +1819,20 @@
         "id": "CTFTCTE-OSI-008",
         "name": "Map ASN, ranges, subdomains (bbot, assetfinder)",
         "path": "countertechniques/CTFTCTE-OSI-008.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-OSI",
+      "category": "OSI",
+      "technique": {
+        "id": "CTFTTE-OSI-009",
+        "name": "Historical-infrastructure lure",
+        "path": "techniques/CTFTTE-OSI-009.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-OSI-009",
+        "name": "Gate historical OSINT behind current-surface checks",
+        "path": "countertechniques/CTFTCTE-OSI-009.md"
       }
     },
     {
@@ -2422,6 +2478,76 @@
         "name": "Fuzz vhosts and host headers",
         "path": "countertechniques/CTFTCTE-WEB-017.md"
       }
+    },
+    {
+      "tactic": "CTFT-TA-WEB",
+      "category": "WEB",
+      "technique": {
+        "id": "CTFTTE-WEB-018",
+        "name": "Interaction-gated asset loading",
+        "path": "techniques/CTFTTE-WEB-018.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-WEB-018",
+        "name": "Capture pre-load browser traffic and correlate interactions",
+        "path": "countertechniques/CTFTCTE-WEB-018.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-WEB",
+      "category": "WEB",
+      "technique": {
+        "id": "CTFTTE-WEB-019",
+        "name": "Decoy obfuscated asset / empty-safe lure",
+        "path": "techniques/CTFTTE-WEB-019.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-WEB-019",
+        "name": "Timeboxed deobfuscation triage",
+        "path": "countertechniques/CTFTCTE-WEB-019.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-WEB",
+      "category": "WEB",
+      "technique": {
+        "id": "CTFTTE-WEB-020",
+        "name": "Uniform soft-404 / deceptive HTTP responses",
+        "path": "techniques/CTFTTE-WEB-020.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-WEB-020",
+        "name": "Fingerprint HTTP responses against a baseline",
+        "path": "countertechniques/CTFTCTE-WEB-020.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-WEB",
+      "category": "WEB",
+      "technique": {
+        "id": "CTFTTE-WEB-021",
+        "name": "OS command injection in a wrapped utility",
+        "path": "techniques/CTFTTE-WEB-021.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-WEB-021",
+        "name": "Run the command-injection micro-runbook",
+        "path": "countertechniques/CTFTCTE-WEB-021.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-WEB",
+      "category": "WEB",
+      "technique": {
+        "id": "CTFTTE-WEB-022",
+        "name": "Public source-map bait",
+        "path": "techniques/CTFTTE-WEB-022.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-WEB-022",
+        "name": "Enumerate and triage source maps",
+        "path": "countertechniques/CTFTCTE-WEB-022.md"
+      }
     }
   ],
   "pairs": {
@@ -2510,6 +2636,8 @@
     "CTFTTE-GAM-004": "CTFTCTE-GAM-004",
     "CTFTTE-GAM-005": "CTFTCTE-GAM-005",
     "CTFTTE-GAM-006": "CTFTCTE-GAM-006",
+    "CTFTTE-GAM-007": "CTFTCTE-GAM-007",
+    "CTFTTE-GAM-008": "CTFTCTE-GAM-008",
     "CTFTTE-HWR-001": "CTFTCTE-HWR-001",
     "CTFTTE-HWR-002": "CTFTCTE-HWR-002",
     "CTFTTE-ICS-001": "CTFTCTE-ICS-001",
@@ -2535,6 +2663,7 @@
     "CTFTTE-NET-005": "CTFTCTE-NET-005",
     "CTFTTE-NET-006": "CTFTCTE-NET-006",
     "CTFTTE-NET-007": "CTFTCTE-NET-007",
+    "CTFTTE-NET-008": "CTFTCTE-NET-008",
     "CTFTTE-OSI-001": "CTFTCTE-OSI-001",
     "CTFTTE-OSI-002": "CTFTCTE-OSI-002",
     "CTFTTE-OSI-003": "CTFTCTE-OSI-003",
@@ -2543,6 +2672,7 @@
     "CTFTTE-OSI-006": "CTFTCTE-OSI-006",
     "CTFTTE-OSI-007": "CTFTCTE-OSI-007",
     "CTFTTE-OSI-008": "CTFTCTE-OSI-008",
+    "CTFTTE-OSI-009": "CTFTCTE-OSI-009",
     "CTFTTE-PWN-001": "CTFTCTE-PWN-001",
     "CTFTTE-PWN-002": "CTFTCTE-PWN-002",
     "CTFTTE-PWN-003": "CTFTCTE-PWN-003",
@@ -2588,7 +2718,12 @@
     "CTFTTE-WEB-014": "CTFTCTE-WEB-014",
     "CTFTTE-WEB-015": "CTFTCTE-WEB-015",
     "CTFTTE-WEB-016": "CTFTCTE-WEB-016",
-    "CTFTTE-WEB-017": "CTFTCTE-WEB-017"
+    "CTFTTE-WEB-017": "CTFTCTE-WEB-017",
+    "CTFTTE-WEB-018": "CTFTCTE-WEB-018",
+    "CTFTTE-WEB-019": "CTFTCTE-WEB-019",
+    "CTFTTE-WEB-020": "CTFTCTE-WEB-020",
+    "CTFTTE-WEB-021": "CTFTCTE-WEB-021",
+    "CTFTTE-WEB-022": "CTFTCTE-WEB-022"
   },
   "by_technique_id": {
     "CTFTTE-AIM-001": {
@@ -3186,6 +3321,20 @@
       "tactic": "CTFT-TA-GAM",
       "path": "techniques/CTFTTE-GAM-006.md"
     },
+    "CTFTTE-GAM-007": {
+      "name": "Interactive object hidden in a page scene",
+      "counter_id": "CTFTCTE-GAM-007",
+      "counter_name": "Inventory per-page assets and enumerate interactions",
+      "tactic": "CTFT-TA-GAM",
+      "path": "techniques/CTFTTE-GAM-007.md"
+    },
+    "CTFTTE-GAM-008": {
+      "name": "In-browser simulated OS / virtual-machine stage",
+      "counter_id": "CTFTCTE-GAM-008",
+      "counter_name": "Treat the simulated stage as a chained puzzle",
+      "tactic": "CTFT-TA-GAM",
+      "path": "techniques/CTFTTE-GAM-008.md"
+    },
     "CTFTTE-HWR-001": {
       "name": "USB HID keystroke concealment",
       "counter_id": "CTFTCTE-HWR-001",
@@ -3361,6 +3510,13 @@
       "tactic": "CTFT-TA-NET",
       "path": "techniques/CTFTTE-NET-007.md"
     },
+    "CTFTTE-NET-008": {
+      "name": "Anonymous FTP without chroot",
+      "counter_id": "CTFTCTE-NET-008",
+      "counter_name": "Walk the FTP tree and read outside the root",
+      "tactic": "CTFT-TA-NET",
+      "path": "techniques/CTFTTE-NET-008.md"
+    },
     "CTFTTE-OSI-001": {
       "name": "Metadata-dispersed identity/location",
       "counter_id": "CTFTCTE-OSI-001",
@@ -3416,6 +3572,13 @@
       "counter_name": "Map ASN, ranges, subdomains (bbot, assetfinder)",
       "tactic": "CTFT-TA-OSI",
       "path": "techniques/CTFTTE-OSI-008.md"
+    },
+    "CTFTTE-OSI-009": {
+      "name": "Historical-infrastructure lure",
+      "counter_id": "CTFTCTE-OSI-009",
+      "counter_name": "Gate historical OSINT behind current-surface checks",
+      "tactic": "CTFT-TA-OSI",
+      "path": "techniques/CTFTTE-OSI-009.md"
     },
     "CTFTTE-PWN-001": {
       "name": "Hidden win-function backdoor",
@@ -3738,6 +3901,41 @@
       "counter_name": "Fuzz vhosts and host headers",
       "tactic": "CTFT-TA-WEB",
       "path": "techniques/CTFTTE-WEB-017.md"
+    },
+    "CTFTTE-WEB-018": {
+      "name": "Interaction-gated asset loading",
+      "counter_id": "CTFTCTE-WEB-018",
+      "counter_name": "Capture pre-load browser traffic and correlate interactions",
+      "tactic": "CTFT-TA-WEB",
+      "path": "techniques/CTFTTE-WEB-018.md"
+    },
+    "CTFTTE-WEB-019": {
+      "name": "Decoy obfuscated asset / empty-safe lure",
+      "counter_id": "CTFTCTE-WEB-019",
+      "counter_name": "Timeboxed deobfuscation triage",
+      "tactic": "CTFT-TA-WEB",
+      "path": "techniques/CTFTTE-WEB-019.md"
+    },
+    "CTFTTE-WEB-020": {
+      "name": "Uniform soft-404 / deceptive HTTP responses",
+      "counter_id": "CTFTCTE-WEB-020",
+      "counter_name": "Fingerprint HTTP responses against a baseline",
+      "tactic": "CTFT-TA-WEB",
+      "path": "techniques/CTFTTE-WEB-020.md"
+    },
+    "CTFTTE-WEB-021": {
+      "name": "OS command injection in a wrapped utility",
+      "counter_id": "CTFTCTE-WEB-021",
+      "counter_name": "Run the command-injection micro-runbook",
+      "tactic": "CTFT-TA-WEB",
+      "path": "techniques/CTFTTE-WEB-021.md"
+    },
+    "CTFTTE-WEB-022": {
+      "name": "Public source-map bait",
+      "counter_id": "CTFTCTE-WEB-022",
+      "counter_name": "Enumerate and triage source maps",
+      "tactic": "CTFT-TA-WEB",
+      "path": "techniques/CTFTTE-WEB-022.md"
     }
   },
   "by_counter_id": {
@@ -4336,6 +4534,20 @@
       "tactic": "CTFT-TA-GAM",
       "path": "countertechniques/CTFTCTE-GAM-006.md"
     },
+    "CTFTCTE-GAM-007": {
+      "name": "Inventory per-page assets and enumerate interactions",
+      "technique_id": "CTFTTE-GAM-007",
+      "technique_name": "Interactive object hidden in a page scene",
+      "tactic": "CTFT-TA-GAM",
+      "path": "countertechniques/CTFTCTE-GAM-007.md"
+    },
+    "CTFTCTE-GAM-008": {
+      "name": "Treat the simulated stage as a chained puzzle",
+      "technique_id": "CTFTTE-GAM-008",
+      "technique_name": "In-browser simulated OS / virtual-machine stage",
+      "tactic": "CTFT-TA-GAM",
+      "path": "countertechniques/CTFTCTE-GAM-008.md"
+    },
     "CTFTCTE-HWR-001": {
       "name": "Reconstruct keystrokes from captured USB HID traffic",
       "technique_id": "CTFTTE-HWR-001",
@@ -4511,6 +4723,13 @@
       "tactic": "CTFT-TA-NET",
       "path": "countertechniques/CTFTCTE-NET-007.md"
     },
+    "CTFTCTE-NET-008": {
+      "name": "Walk the FTP tree and read outside the root",
+      "technique_id": "CTFTTE-NET-008",
+      "technique_name": "Anonymous FTP without chroot",
+      "tactic": "CTFT-TA-NET",
+      "path": "countertechniques/CTFTCTE-NET-008.md"
+    },
     "CTFTCTE-OSI-001": {
       "name": "Correlate leaked metadata",
       "technique_id": "CTFTTE-OSI-001",
@@ -4566,6 +4785,13 @@
       "technique_name": "ASN / IP-range / subdomain recon",
       "tactic": "CTFT-TA-OSI",
       "path": "countertechniques/CTFTCTE-OSI-008.md"
+    },
+    "CTFTCTE-OSI-009": {
+      "name": "Gate historical OSINT behind current-surface checks",
+      "technique_id": "CTFTTE-OSI-009",
+      "technique_name": "Historical-infrastructure lure",
+      "tactic": "CTFT-TA-OSI",
+      "path": "countertechniques/CTFTCTE-OSI-009.md"
     },
     "CTFTCTE-PWN-001": {
       "name": "Redirect execution to the win function",
@@ -4888,6 +5114,41 @@
       "technique_name": "Host-header / vhost fuzzing",
       "tactic": "CTFT-TA-WEB",
       "path": "countertechniques/CTFTCTE-WEB-017.md"
+    },
+    "CTFTCTE-WEB-018": {
+      "name": "Capture pre-load browser traffic and correlate interactions",
+      "technique_id": "CTFTTE-WEB-018",
+      "technique_name": "Interaction-gated asset loading",
+      "tactic": "CTFT-TA-WEB",
+      "path": "countertechniques/CTFTCTE-WEB-018.md"
+    },
+    "CTFTCTE-WEB-019": {
+      "name": "Timeboxed deobfuscation triage",
+      "technique_id": "CTFTTE-WEB-019",
+      "technique_name": "Decoy obfuscated asset / empty-safe lure",
+      "tactic": "CTFT-TA-WEB",
+      "path": "countertechniques/CTFTCTE-WEB-019.md"
+    },
+    "CTFTCTE-WEB-020": {
+      "name": "Fingerprint HTTP responses against a baseline",
+      "technique_id": "CTFTTE-WEB-020",
+      "technique_name": "Uniform soft-404 / deceptive HTTP responses",
+      "tactic": "CTFT-TA-WEB",
+      "path": "countertechniques/CTFTCTE-WEB-020.md"
+    },
+    "CTFTCTE-WEB-021": {
+      "name": "Run the command-injection micro-runbook",
+      "technique_id": "CTFTTE-WEB-021",
+      "technique_name": "OS command injection in a wrapped utility",
+      "tactic": "CTFT-TA-WEB",
+      "path": "countertechniques/CTFTCTE-WEB-021.md"
+    },
+    "CTFTCTE-WEB-022": {
+      "name": "Enumerate and triage source maps",
+      "technique_id": "CTFTTE-WEB-022",
+      "technique_name": "Public source-map bait",
+      "tactic": "CTFT-TA-WEB",
+      "path": "countertechniques/CTFTCTE-WEB-022.md"
     }
   }
 }

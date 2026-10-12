@@ -508,6 +508,73 @@
       "source_ref": "course-of-action--2b1e78a3-5cd9-5162-ad71-89036e6c076b",
       "target_ref": "attack-pattern--6fa609d1-186d-5b21-8126-984c28f73525",
       "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--d00d8363-a49a-55a1-a8de-6a402d7a0eee",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-NET-008 - Anonymous FTP without chroot",
+      "description": "An anonymous FTP service is configured without a chroot: the interesting files (configuration, dictionaries, operator databases, token material) sit above the anonymous root, reachable by walking out of the jail. The files disclosed are fuel for the next stages, not necessarily the final flag.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "net"
+        }
+      ],
+      "x_ctft_category": "NET",
+      "x_ctft_domain": "NET",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-NET-008"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1078",
+          "description": "Valid Accounts"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--e7e1522b-f070-5f58-be4e-2b84be8b6b3d",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-NET-008 - Walk the FTP tree and read outside the root",
+      "description": "Log in anonymously, list recursively, then attempt traversal out of the anonymous root. Harvest the configuration, dictionaries and databases disclosed — they are the fuel for the following stages, not the flag itself.",
+      "x_ctft_category": "NET",
+      "x_ctft_domain": "NET",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-NET-008"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1078",
+          "description": "Valid Accounts"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--b2b1c4f8-7975-588d-9a50-c3074090d965",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--e7e1522b-f070-5f58-be4e-2b84be8b6b3d",
+      "target_ref": "attack-pattern--d00d8363-a49a-55a1-a8de-6a402d7a0eee",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     }
   ]
 }

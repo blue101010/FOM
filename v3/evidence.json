@@ -2,10 +2,10 @@
   "model": "CTFT",
   "schema_version": "3.0",
   "collection": "evidence",
-  "generated_at": "2026-08-31T01:38:36+00:00",
+  "generated_at": "2026-10-12T15:56:56+00:00",
   "note": "Seeded from links already present in the corpus, then overridden by v3/evidence.curated.json where a curator read the write-up. No entry is attested until positives, negatives and boundaries are written by hand.",
   "counts": {
-    "curated": 2,
+    "curated": 3,
     "attested": 2
   },
   "items": [
@@ -532,6 +532,53 @@
       "curator": null,
       "reviewed_on": null,
       "status": "seeded"
+    },
+    {
+      "id": "EVID-GAM-007",
+      "schema_version": "3.0",
+      "technique": "CTFTTE-GAM-007",
+      "challenges": [
+        {
+          "ctf": "Hackfest",
+          "challenge": "Hidden-site CTF 2026 (LavaFTP terminal)",
+          "year": 2026,
+          "writeup": "2026/HF/ctfcache/ctfcache.md (local casebook, workspace C:\\DATA\\CTF)",
+          "extracted_from": "read and confirmed: the door is /hackfest-schedule, a linked page whose night-scene decor contains an interactive computer activated with 'Press E'; activation then loads hf-schedule-fx.json and the terminal scripts"
+        }
+      ],
+      "references": [],
+      "positives": [
+        "the route is public and linked; the gate is an interaction inside the page scene, not a hidden path",
+        "the decisive signal is a per-page asset inventory: the interaction-only loader and its unique assets surface by rarity, not by keyword",
+        "activating the object unlocks a multi-stage chain whose next surfaces only exist after the interaction"
+      ],
+      "negatives": [
+        "an unlinked route found by fuzzing — that is CTFTTE-WEB-001, no interaction is required",
+        "an asset that loads on page load and merely looks interactive — the gate must be the interaction",
+        "a keyboard shortcut documented for a real OS or a genuine easter egg without a challenge surface"
+      ],
+      "boundaries": [
+        "distinct from CTFTTE-WEB-001 (obscured endpoint): the route is linked and public; only the interactive object is hidden",
+        "distinct from CTFTTE-WEB-018 (interaction-gated asset loading): GAM-007 frames the hidden object itself, WEB-018 frames the deferred loading mechanism",
+        "distinct from CTFTTE-GAM-008 (simulated OS stage): the stage is the machine's internals; this entry is the gate that reveals it"
+      ],
+      "abstraction": "technique",
+      "synonyms": [
+        "scene-embedded interactive object",
+        "Press E gate",
+        "interactive decor door"
+      ],
+      "external_mappings": [
+        {
+          "framework": "ATTACK",
+          "id": "T1564",
+          "confidence": "medium",
+          "justification": "Hide Artifacts is the closest echo; ATT&CK has no browser-interaction trigger for disclosure."
+        }
+      ],
+      "curator": "local (ctfcache casebook)",
+      "reviewed_on": "2026-10-12",
+      "status": "curated"
     },
     {
       "id": "EVID-STE-006",

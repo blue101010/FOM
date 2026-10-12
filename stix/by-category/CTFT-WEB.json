@@ -1168,6 +1168,341 @@
       "source_ref": "course-of-action--4942398a-dc4a-5857-b34e-d4b0e01e4c2d",
       "target_ref": "attack-pattern--6a708fc2-2845-538b-88c0-f7de90d7310f",
       "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--5813c39e-c00d-5c9c-8014-6a8ef9e3252a",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-WEB-018 - Interaction-gated asset loading",
+      "description": "The page itself is public and linked, but the key modules, JSON configuration or data files load only after an explicit interaction — keypress, click, hover or movement into a scene — so link crawlers, curl and asset extractors never see them. The challenge surface sits behind the interaction, not behind the route.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "web"
+        }
+      ],
+      "x_ctft_category": "WEB",
+      "x_ctft_domain": "WEB",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-WEB-018"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1564",
+          "description": "Hide Artifacts"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--6e57f808-7ddb-5659-b2c9-1a6c523a61c6",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-WEB-018 - Capture pre-load browser traffic and correlate interactions",
+      "description": "Instrument the browser before page.goto(): subscribe to requests, responses, failures, WebSockets, console errors, DOM mutations and storage writes; drive the page by clicking, pressing keys and moving into scenes; correlate every interaction with the assets it triggers.",
+      "x_ctft_category": "WEB",
+      "x_ctft_domain": "WEB",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-WEB-018"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1564",
+          "description": "Hide Artifacts"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--2d007db9-f9e0-58a5-b120-d969845a8424",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--6e57f808-7ddb-5659-b2c9-1a6c523a61c6",
+      "target_ref": "attack-pattern--5813c39e-c00d-5c9c-8014-6a8ef9e3252a",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--d753f59c-8be5-556e-b2a3-03d32c37dc53",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-WEB-019 - Decoy obfuscated asset / empty-safe lure",
+      "description": "A prominent asset is deliberately obfuscated (string-array rotation, control-flow flattening, console neutralization — the typical javascript-obfuscator signature) so it looks like the payload, while containing no host, no secret and no network side effect. Decorative \"hint\" commands on the page reinforce the lure. The asset is an empty safe: the obfuscation is the decoy, not the protection.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "web"
+        }
+      ],
+      "x_ctft_category": "WEB",
+      "x_ctft_domain": "WEB",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-WEB-019"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--e92c1925-2a21-5514-84b3-3ad43068a06a",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-WEB-019 - Timeboxed deobfuscation triage",
+      "description": "Pipeline per asset: hash, size and provenance; grep for URLs, Web APIs and high-entropy strings; fetch the source map when referenced; run webcrack; scan the formatted AST for fetch/XHR/WebSocket/import/storage/crypto/DOM side effects. Promote the asset only on a page-specific or observable effect; otherwise close it within a bounded budget — obfuscation alone earns no deep-RE time.",
+      "x_ctft_category": "WEB",
+      "x_ctft_domain": "WEB",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-WEB-019"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--9c0e11eb-5d3e-5b9c-b8e2-7fbd1bf0a1ce",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--e92c1925-2a21-5514-84b3-3ad43068a06a",
+      "target_ref": "attack-pattern--d753f59c-8be5-556e-b2a3-03d32c37dc53",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--772e2303-ea37-5baa-8b6a-7a84e626b3cb",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-WEB-020 - Uniform soft-404 / deceptive HTTP responses",
+      "description": "Every missing path returns an identical body (same bytes, same length), so diff-less discovery cannot distinguish a real route from a soft 404. Redirect chains between bare domain and www create browser CORS false negatives, and standard edge responses (RFC 8164 endpoints, generic provider pages) look like findings. The real route drowns in uniform noise.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "web"
+        }
+      ],
+      "x_ctft_category": "WEB",
+      "x_ctft_domain": "WEB",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-WEB-020"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1036",
+          "description": "Masquerading"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--73532f8c-f8b2-54b7-b9b2-da346bd6cc37",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-WEB-020 - Fingerprint HTTP responses against a baseline",
+      "description": "Record per URL: initial and final URL, redirect chain, status, content-type, size, normalized body hash, title, server, timings, and the test origin (browser vs CLI client). Compare against a random route and a random hostname; classify as unique content, redirect, soft 404, uniform refusal, standard edge response, CORS-only false negative, or timeout.",
+      "x_ctft_category": "WEB",
+      "x_ctft_domain": "WEB",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-WEB-020"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1036",
+          "description": "Masquerading"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--d20bba95-aa73-5edc-a586-74cdc585056f",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--73532f8c-f8b2-54b7-b9b2-da346bd6cc37",
+      "target_ref": "attack-pattern--772e2303-ea37-5baa-8b6a-7a84e626b3cb",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--6931a5ad-ddaa-5e2f-b58d-38a59e7120be",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-WEB-021 - OS command injection in a wrapped utility",
+      "description": "A utility program (login prompt, ping wrapper, report generator) concatenates user input into a shell command line, and the flag or the token it protects sits in files readable only through that concatenation. The wrapper's privilege context is part of the puzzle: the injection is the gate, not the goal.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "web"
+        }
+      ],
+      "x_ctft_category": "WEB",
+      "x_ctft_domain": "WEB",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-WEB-021"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1059",
+          "description": "Command and Scripting Interpreter"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--4acdb69c-88b7-575d-842e-8188ac7670d8",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-WEB-021 - Run the command-injection micro-runbook",
+      "description": "Identify the concatenation; find the minimal working separator; prove execution with a no-op command; then perform a single targeted read. Note the wrapper's privilege context and use it rather than aiming for broad execution. Automate only after a reproducible manual difference.",
+      "x_ctft_category": "WEB",
+      "x_ctft_domain": "WEB",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-WEB-021"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1059",
+          "description": "Command and Scripting Interpreter"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--0cc27371-44b8-5e1d-952e-1c809f758aaf",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--4acdb69c-88b7-575d-842e-8188ac7670d8",
+      "target_ref": "attack-pattern--6931a5ad-ddaa-5e2f-b58d-38a59e7120be",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--bc2cd109-3eea-53e8-a80d-92ae153deaaf",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-WEB-022 - Public source-map bait",
+      "description": "Source maps are deliberately public and confirm thematic sections — terminal styles, hidden-file sections, reward animations — while leaking no logic, endpoint or data. The map invites deep source review that yields only vocabulary: structure is disclosed, substance is not.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "web"
+        }
+      ],
+      "x_ctft_category": "WEB",
+      "x_ctft_domain": "WEB",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-WEB-022"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1213",
+          "description": "Data from Information Repositories"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--5b04ff12-eaac-5769-9d66-721719587117",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-WEB-022 - Enumerate and triage source maps",
+      "description": "Request the referenced .map for every asset; recover the original sources; classify each as structural (styles, section names) or functional (logic, endpoints, data). Treat section vocabulary as hint material for the next inventory, never as proof of the payload.",
+      "x_ctft_category": "WEB",
+      "x_ctft_domain": "WEB",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-WEB-022"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1213",
+          "description": "Data from Information Repositories"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--bc8a0e72-1abe-5bc5-b322-158a41e7fb01",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--5b04ff12-eaac-5769-9d66-721719587117",
+      "target_ref": "attack-pattern--bc2cd109-3eea-53e8-a80d-92ae153deaaf",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     }
   ]
 }

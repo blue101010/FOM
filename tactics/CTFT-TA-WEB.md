@@ -2,7 +2,7 @@
 
 > **Domain ID:** `CTFT-TA-WEB`  
 > **HTB mapping:** HTB: Web  
-> **Techniques:** 17
+> **Techniques:** 22
 
 ## Description
 
@@ -43,6 +43,11 @@ per entry**, never the definition of an entry.
 | [CTFTTE-WEB-015](../techniques/CTFTTE-WEB-015.md) | CMS / WordPress plugin flaw | [CTFTCTE-WEB-015](../countertechniques/CTFTCTE-WEB-015.md) | Enumerate and exploit WordPress (wpscan) | T1190 |
 | [CTFTTE-WEB-016](../techniques/CTFTTE-WEB-016.md) | NoSQL injection | [CTFTCTE-WEB-016](../countertechniques/CTFTCTE-WEB-016.md) | Inject Mongo/NoSQL queries | T1190 |
 | [CTFTTE-WEB-017](../techniques/CTFTTE-WEB-017.md) | Host-header / vhost fuzzing | [CTFTCTE-WEB-017](../countertechniques/CTFTCTE-WEB-017.md) | Fuzz vhosts and host headers | T1083 |
+| [CTFTTE-WEB-018](../techniques/CTFTTE-WEB-018.md) | Interaction-gated asset loading | [CTFTCTE-WEB-018](../countertechniques/CTFTCTE-WEB-018.md) | Capture pre-load browser traffic and correlate interactions | T1564 |
+| [CTFTTE-WEB-019](../techniques/CTFTTE-WEB-019.md) | Decoy obfuscated asset / empty-safe lure | [CTFTCTE-WEB-019](../countertechniques/CTFTCTE-WEB-019.md) | Timeboxed deobfuscation triage | T1027 |
+| [CTFTTE-WEB-020](../techniques/CTFTTE-WEB-020.md) | Uniform soft-404 / deceptive HTTP responses | [CTFTCTE-WEB-020](../countertechniques/CTFTCTE-WEB-020.md) | Fingerprint HTTP responses against a baseline | T1036 |
+| [CTFTTE-WEB-021](../techniques/CTFTTE-WEB-021.md) | OS command injection in a wrapped utility | [CTFTCTE-WEB-021](../countertechniques/CTFTCTE-WEB-021.md) | Run the command-injection micro-runbook | T1059 |
+| [CTFTTE-WEB-022](../techniques/CTFTTE-WEB-022.md) | Public source-map bait | [CTFTCTE-WEB-022](../countertechniques/CTFTCTE-WEB-022.md) | Enumerate and triage source maps | T1213 |
 
 ---
 *See [CORRELATION.md](../CORRELATION.md) for the full cross-reference matrix.*
