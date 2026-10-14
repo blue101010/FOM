@@ -19,4 +19,27 @@ Reference tools used across CTFT techniques and counter-techniques.
 | [CTFTTOU-013](CTFTTOU-013.md) | ffuf | <https://github.com/ffuf/ffuf> | CTFTCTE-WEB-001, CTFTCTE-WEB-017, CTFTCTE-WEB-020 |
 | [CTFTTOU-014](CTFTTOU-014.md) | sqlmap | <https://sqlmap.org/> | CTFTTE-WEB-004, CTFTCTE-WEB-004, CTFTCTE-WEB-021 |
 | [CTFTTOU-015](CTFTTOU-015.md) | hashcat | <https://hashcat.net/hashcat/> | CTFTCTE-CRY-012, CTFTTE-WEB-003 |
+| [CTFTTOU-016](CTFTTOU-016.md) | netexec | <https://github.com/Pennyw0rth/NetExec> | CTFTTE-FPN-015, CTFTCTE-FPN-015, CTFTTE-FPN-018, CTFTCTE-FPN-018, CTFTTE-FPN-019, CTFTCTE-FPN-019 |
+| [CTFTTOU-017](CTFTTOU-017.md) | BloodHound / SharpHound | <https://github.com/SpecterOps/BloodHound> | CTFTTE-FPN-011, CTFTCTE-FPN-011, CTFTTE-FPN-013, CTFTCTE-FPN-013, CTFTTE-FPN-018, CTFTCTE-FPN-018 |
+| [CTFTTOU-018](CTFTTOU-018.md) | pywhisker | <https://github.com/ShutdownRepo/pywhisker> | CTFTTE-FPN-011, CTFTCTE-FPN-011 |
+| [CTFTTOU-019](CTFTTOU-019.md) | PKINITtools | <https://github.com/dirkjanm/PKINITtools> | CTFTTE-FPN-011, CTFTCTE-FPN-011 |
+| [CTFTTOU-020](CTFTTOU-020.md) | certipy | <https://github.com/ly4k/Certipy> | CTFTTE-FPN-011, CTFTCTE-FPN-011, CTFTTE-FPN-013, CTFTCTE-FPN-013 |
+| [CTFTTOU-021](CTFTTOU-021.md) | gettgtpkinit.py | <https://github.com/dirkjanm/PKINITtools/blob/master/gettgtpkinit.py> | CTFTTE-FPN-012, CTFTCTE-FPN-012 |
+| [CTFTTOU-022](CTFTTOU-022.md) | getnthash.py | <https://github.com/dirkjanm/PKINITtools/blob/master/getnthash.py> | CTFTTE-FPN-012, CTFTCTE-FPN-012 |
+| [CTFTTOU-023](CTFTTOU-023.md) | openssl | <https://www.openssl.org/> | CTFTTE-FPN-013 |
+| [CTFTTOU-024](CTFTTOU-024.md) | evil-winrm | <https://github.com/Hackplayers/evil-winrm> | CTFTTE-FPN-014, CTFTCTE-FPN-014, CTFTTE-FPN-019, CTFTCTE-FPN-019 |
+| [CTFTTOU-025](CTFTTOU-025.md) | Enter-PSSession / New-PSSession | <https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enter-pssession> | CTFTTE-FPN-014, CTFTCTE-FPN-014 |
+| [CTFTTOU-026](CTFTTOU-026.md) | mssqlclient.py | <https://github.com/fortra/impacket/blob/master/examples/mssqlclient.py> | CTFTTE-FPN-015, CTFTCTE-FPN-015 |
+| [CTFTTOU-027](CTFTTOU-027.md) | SecLists | <https://github.com/danielmiessler/SecLists> | CTFTTE-FPN-015, CTFTCTE-FPN-015 |
+| [CTFTTOU-028](CTFTTOU-028.md) | PetitPotato | <https://github.com/wh0amitz/PetitPotato> | CTFTTE-FPN-016, CTFTCTE-FPN-016 |
+| [CTFTTOU-029](CTFTTOU-029.md) | UPX | <https://upx.github.io/> | CTFTTE-FPN-016, CTFTCTE-FPN-016 |
+| [CTFTTOU-030](CTFTTOU-030.md) | Rubeus | <https://github.com/GhostPack/Rubeus> | CTFTTE-FPN-017, CTFTCTE-FPN-017 |
+| [CTFTTOU-031](CTFTTOU-031.md) | printerbug.py | <https://github.com/dirkjanm/krbrelayx/blob/master/printerbug.py> | CTFTTE-FPN-017, CTFTCTE-FPN-017 |
+| [CTFTTOU-032](CTFTTOU-032.md) | getST.py | <https://github.com/fortra/impacket/blob/master/examples/getST.py> | CTFTTE-FPN-017, CTFTCTE-FPN-017 |
+| [CTFTTOU-033](CTFTTOU-033.md) | nmap | <https://nmap.org/> | CTFTTE-FPN-018, CTFTCTE-FPN-018 |
+| [CTFTTOU-034](CTFTTOU-034.md) | Get-PSReadlineOption | <https://learn.microsoft.com/en-us/powershell/module/psreadline/get-psreadlineoption> | CTFTTE-FPN-019, CTFTCTE-FPN-019 |
+| [CTFTTOU-035](CTFTTOU-035.md) | ldapdomaindump | <https://github.com/dirkjanm/ldapdomaindump> | CTFTTE-FPN-020, CTFTCTE-FPN-020 |
+| [CTFTTOU-036](CTFTTOU-036.md) | grep | <https://www.gnu.org/software/grep/> | CTFTTE-FPN-020, CTFTCTE-FPN-020 |
+| [CTFTTOU-037](CTFTTOU-037.md) | jq | <https://jqlang.github.io/jq/> | CTFTTE-FPN-020, CTFTCTE-FPN-020 |
+| [CTFTTOU-038](CTFTTOU-038.md) | curl | <https://curl.se/> | CTFTTE-FPN-016, CTFTCTE-FPN-016 |
 

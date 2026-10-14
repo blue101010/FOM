@@ -54,8 +54,8 @@ The same commands without `--write` are the CI gate (`.github/workflows/ci.yml`)
 
 `catalog_audit.py --check` on the current corpus:
 
-- **173 complete pairs, 19 domains**, structural integrity clean, semantic lint clean;
-- maturity: **165 `taxonomy_only`, 7 `typed`, 1 `attested`**;
+- **183 complete pairs, 19 domains**, structural integrity clean, semantic lint clean;
+- maturity: **175 `taxonomy_only`, 7 `typed`, 1 `attested`**;
 - core profile: 35 selected, **0 backed by two independent CTF events**;
 - `holdout.json`: empty, so `precision@k` is undefined.
 

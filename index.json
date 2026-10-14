@@ -1,7 +1,11 @@
 {
   "model": "CTFT",
   "version": "1.2",
+<<<<<<< HEAD
   "generated": "2026-10-12T15:51:10+00:00",
+=======
+  "generated": "2026-10-12T15:57:03+00:00",
+>>>>>>> 1d31fd047e9f24c9031130cb2442237a7eafc532
   "relates_to": [
     "MITRE ATT&CK",
     "CAPEC",
