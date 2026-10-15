@@ -430,11 +430,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTTE-GAM-007 - Interactive object hidden in a page scene",
-<<<<<<< HEAD
-      "description": "A challenge machine or object is embedded in the decorative imagery of a linked page: the solver must move into the scene and press an interaction key (a displayed Press E) to activate it. The DOM may expose easter-egg text, but the real surface is the interactive object and the assets it then loads. The route is public — the interaction is the gate.",
-=======
       "description": "A challenge machine or object is embedded in the decorative imagery of a linked page: the solver must move into the scene and press an interaction key (example a displayed Press E) to activate it. The DOM may expose easter-egg text, but the real surface is the interactive object and the assets it then loads. The route is public — the interaction is the gate.",
->>>>>>> 1d31fd047e9f24c9031130cb2442237a7eafc532
       "kill_chain_phases": [
         {
           "kill_chain_name": "ctft",

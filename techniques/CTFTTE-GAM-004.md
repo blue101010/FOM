@@ -18,7 +18,7 @@ The win condition is hardcoded in the game binary (e.g. score must reach an astr
 
 ## Tools
 
-- ghidra / ida
+- [ghidra](../tools/CTFTTOU-073.md) / ida
 - binary patching scripts
 - pwntools
 

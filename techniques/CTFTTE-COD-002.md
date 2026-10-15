@@ -18,8 +18,8 @@ The server presents a large input instance and enforces a strict time or computa
 
 ## Tools
 
-- python / pypy
-- numpy / scipy
+- [python](../tools/CTFTTOU-050.md) / [pypy](../tools/CTFTTOU-049.md)
+- [numpy](../tools/CTFTTOU-039.md) / [scipy](../tools/CTFTTOU-051.md)
 
 ## References
 

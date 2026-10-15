@@ -21,7 +21,7 @@ The binary detects debuggers/VMs/timing and alters behaviour or refuses to revea
 - GDB+GEF
 - x64dbg
 - Frida
-- Ghidra
+- [Ghidra](../tools/CTFTTOU-073.md)
 
 ## References
 

@@ -22,9 +22,9 @@ Tensor inspection documents non-functional data smuggled into the model file.
 
 ## Tools
 
-- numpy
-- torch/onnx
-- netron
+- [numpy](../tools/CTFTTOU-039.md)
+- [torch](../tools/CTFTTOU-040.md) / [onnx](../tools/CTFTTOU-041.md)
+- [netron](../tools/CTFTTOU-042.md)
 
 ## References
 

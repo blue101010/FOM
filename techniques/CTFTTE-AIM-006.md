@@ -18,9 +18,9 @@ A self-hosted LLM (ollama/oobabooga) is exposed or misconfigured; the flag hides
 
 ## Tools
 
-- ollama CLI
-- curl
-- nmap
+- [ollama](../tools/CTFTTOU-047.md) CLI
+- [curl](../tools/CTFTTOU-038.md)
+- [nmap](../tools/CTFTTOU-033.md)
 
 ## References
 

@@ -18,8 +18,8 @@ The flag requires solving a Sudoku or constraint grid programmatically.
 
 ## Tools
 
-- Python
-- z3
+- [python](../tools/CTFTTOU-050.md)
+- [z3-solver](../tools/CTFTTOU-052.md)
 
 ## References
 

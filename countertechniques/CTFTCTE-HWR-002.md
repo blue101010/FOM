@@ -25,7 +25,7 @@ Hardware triage records pinouts and interface activity; firmware dumps are hashe
 - minicom
 - flashrom
 - binwalk
-- ghidra
+- [ghidra](../tools/CTFTTOU-073.md)
 
 ## References
 

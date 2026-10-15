@@ -18,7 +18,7 @@ The flag key is a permutation/combination of inputs; naive search is too slow.
 
 ## Tools
 
-- Python itertools
+- [python](../tools/CTFTTOU-050.md) itertools
 - C++
 
 ## References

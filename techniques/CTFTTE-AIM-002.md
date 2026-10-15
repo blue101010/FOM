@@ -18,9 +18,17 @@ An LLM-backed app holds the flag in its instructions/context behind guardrails.
 
 ## Tools
 
-- the target chat interface
-- prompt tooling
+- [curl](../tools/CTFTTOU-038.md) / [requests](../tools/CTFTTOU-067.md)
+- [garak](../tools/CTFTTOU-062.md)
+- [promptfoo](../tools/CTFTTOU-063.md)
+- [PyRIT](../tools/CTFTTOU-064.md)
+- [Pandoras Box](../tools/CTFTTOU-065.md)
+- [promptmap](../tools/CTFTTOU-066.md)
+- [ollama](../tools/CTFTTOU-047.md)
+- [Playwright](../tools/CTFTTOU-008.md)
 
 ## References
 
-- Add challenge write-up link
+- <https://genai.owasp.org/llm-top-10/>
+- <https://simonwillison.net/series/prompt-injection/>
+- <https://github.com/NVIDIA/garak>

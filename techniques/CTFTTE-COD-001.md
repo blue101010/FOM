@@ -19,8 +19,8 @@ The flag is expressed in an esoteric programming language (Brainfuck, Malbolge, 
 ## Tools
 
 - esolang interpreters
-- CyberChef
-- python
+- [CyberChef](../tools/CTFTTOU-048.md)
+- [python](../tools/CTFTTOU-050.md)
 
 ## References
 

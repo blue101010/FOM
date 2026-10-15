@@ -23,8 +23,8 @@ The esolang documents how a challenge author can obfuscate computation; in a rea
 ## Tools
 
 - esolang interpreters
-- CyberChef
-- python
+- [CyberChef](../tools/CTFTTOU-048.md)
+- [python](../tools/CTFTTOU-050.md)
 
 ## References
 

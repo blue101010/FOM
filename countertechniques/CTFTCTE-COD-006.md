@@ -22,7 +22,7 @@ Combinatorial solutions are deterministic; the program is the evidence of the me
 
 ## Tools
 
-- Python itertools
+- [python](../tools/CTFTTOU-050.md) itertools
 - C++
 
 ## References

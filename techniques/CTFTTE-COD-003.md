@@ -18,9 +18,9 @@ The flag is awarded only after completing a very large number of stateful rounds
 
 ## Tools
 
-- pwntools
-- python sockets
-- telnetlib
+- [pwntools](../tools/CTFTTOU-053.md)
+- [python](../tools/CTFTTOU-050.md) sockets
+- [telnetlib](../tools/CTFTTOU-054.md)
 
 ## References
 

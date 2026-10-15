@@ -18,9 +18,9 @@ The flag is encoded in a layer's weights/embedding rather than any text field.
 
 ## Tools
 
-- numpy
-- torch/onnx
-- netron
+- [numpy](../tools/CTFTTOU-039.md)
+- [torch](../tools/CTFTTOU-040.md) / [onnx](../tools/CTFTTOU-041.md)
+- [netron](../tools/CTFTTOU-042.md)
 
 ## References
 

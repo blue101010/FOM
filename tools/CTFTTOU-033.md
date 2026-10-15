@@ -1,7 +1,7 @@
 # CTFTTOU-033 — nmap
 
 > **Tool ID:** `CTFTTOU-033`  
-> **Related techniques/counters:** CTFTTE-FPN-018, CTFTCTE-FPN-018
+> **Related techniques/counters:** CTFTTE-FPN-018, CTFTCTE-FPN-018, CTFTTE-AIM-006, CTFTCTE-AIM-006
 
 ## Description
 
@@ -13,4 +13,4 @@ Port scanner and service fingerprinting engine. Used to map a newly discovered d
 
 ## Related Techniques
 
-CTFTTE-FPN-018, CTFTCTE-FPN-018
+CTFTTE-FPN-018, CTFTCTE-FPN-018, CTFTTE-AIM-006, CTFTCTE-AIM-006

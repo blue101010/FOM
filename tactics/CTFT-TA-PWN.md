@@ -2,7 +2,7 @@
 
 > **Domain ID:** `CTFT-TA-PWN`  
 > **HTB mapping:** HTB: Pwn  
-> **Techniques:** 8
+> **Techniques:** 10
 
 ## Description
 
@@ -34,6 +34,8 @@ per entry**, never the definition of an entry.
 | [CTFTTE-PWN-006](../techniques/CTFTTE-PWN-006.md) | Stack canary / PIE / ASLR hardening puzzle | [CTFTCTE-PWN-006](../countertechniques/CTFTCTE-PWN-006.md) | Leak canary/PIE base, ret2libc | T1068 |
 | [CTFTTE-PWN-007](../techniques/CTFTTE-PWN-007.md) | Kernel/mseal-guarded memory puzzle | [CTFTCTE-PWN-007](../countertechniques/CTFTCTE-PWN-007.md) | Exploit kernel-module or mseal protections | T1068 |
 | [CTFTTE-PWN-008](../techniques/CTFTTE-PWN-008.md) | Shellcode craft & encoding constraints | [CTFTCTE-PWN-008](../countertechniques/CTFTCTE-PWN-008.md) | Generate/encode shellcode (alphanumeric, null-free) | T1055 |
+| [CTFTTE-PWN-009](../techniques/CTFTTE-PWN-009.md) | Fixed-name output symlink redirect | [CTFTCTE-PWN-009](../countertechniques/CTFTCTE-PWN-009.md) | Pre-plant a symlink over a privileged fixed-name output path | T1222.002 |
+| [CTFTTE-PWN-010](../techniques/CTFTTE-PWN-010.md) | Archive hierarchy-reconstruction path traversal | [CTFTCTE-PWN-010](../countertechniques/CTFTCTE-PWN-010.md) | Craft sibling entries whose reconstructed parent path traverses | T1190 |
 
 ---
 *See [CORRELATION.md](../CORRELATION.md) for the full cross-reference matrix.*

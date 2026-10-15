@@ -22,9 +22,9 @@ Timing-bounded server challenges verify that the client has sufficient computati
 
 ## Tools
 
-- python / pypy
-- numpy / scipy
-- z3-solver (for combinatorial instances)
+- [python](../tools/CTFTTOU-050.md) / [pypy](../tools/CTFTTOU-049.md)
+- [numpy](../tools/CTFTTOU-039.md) / [scipy](../tools/CTFTTOU-051.md)
+- [z3-solver](../tools/CTFTTOU-052.md) (for combinatorial instances)
 
 ## References
 

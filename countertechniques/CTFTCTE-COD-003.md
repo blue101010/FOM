@@ -22,9 +22,9 @@ The automation pattern documents server interaction that is indistinguishable fr
 
 ## Tools
 
-- pwntools
-- python sockets
-- telnetlib
+- [pwntools](../tools/CTFTTOU-053.md)
+- [python](../tools/CTFTTOU-050.md) sockets
+- [telnetlib](../tools/CTFTTOU-054.md)
 
 ## References
 

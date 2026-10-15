@@ -565,6 +565,140 @@
       "source_ref": "course-of-action--0030586c-1b04-5e5f-9342-95a26b514c4b",
       "target_ref": "attack-pattern--626982c7-87a3-53d6-ab2a-03d6aead09a4",
       "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--9ac12558-edfb-5bed-8653-108bbce390ac",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-PWN-009 - Fixed-name output symlink redirect",
+      "description": "A privileged helper (SUID binary, root-owned service) writes its results to a hard-coded, predictable relative path such as ./extracted, created relative to the caller's current working directory. The bug is not a memory corruption but a filesystem redirect: any user can pre-plant a symlink with that fixed name pointing anywhere on the filesystem, and the privileged process follows it when creating the directory or writing files through it. The flag is never reachable directly — the player is steered toward reverse-engineering the binary while the actual win condition is a two-line symlink plus a crafted archive.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "pwn"
+        }
+      ],
+      "x_ctft_category": "PWN",
+      "x_ctft_domain": "PWN",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-PWN-009"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1222.002",
+          "description": "File and Directory Permissions Modification: Linux and Mac"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--19c82238-54c1-5295-a514-bd92cd56b708",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-PWN-009 - Pre-plant a symlink over a privileged fixed-name output path",
+      "description": "1. Inventory every fixed path the privileged binary writes to (strings, Ghidra, or a quick strace -f run): default output folders, config paths, temp names. 2. From a writable directory, pre-plant a symlink with that exact name pointing at the target you cannot write to directly (classic target: /root/.ssh to land an authorizedkeys). 3. Feed the tool an input that makes it write a payload file through the symlink (for an archive extractor: a tar whose root entry is authorizedkeys with your public key). 4. Verify with a low-privilege test write first; keep a second payload entry in the archive in case ordering matters.",
+      "x_ctft_category": "PWN",
+      "x_ctft_domain": "PWN",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-PWN-009"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1222.002",
+          "description": "File and Directory Permissions Modification: Linux and Mac"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--3d228a6c-b84e-566a-b5f8-e3b75ca2d390",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--19c82238-54c1-5295-a514-bd92cd56b708",
+      "target_ref": "attack-pattern--9ac12558-edfb-5bed-8653-108bbce390ac",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--5f1b016c-6c51-5dea-bf56-8525a93ad0f4",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-PWN-010 - Archive hierarchy-reconstruction path traversal",
+      "description": "The extractor rebuilds a directory tree in memory from archive entries: each parsed entry is attached to a previously seen node whose stored path matches the entry's parent directory, and orphans are re-parented under the root. At write time it joins output + stored-parent-path + name without sanitising the stored path. A single entry carrying ../ looks harmless (it becomes a root child with a weird name), but a crafted sibling pair — a directory entry ../../../root/.ssh followed by a file entry whose parent portion exactly matches that stored path — makes the tree hold a traversing parent path, so the final join writes outside the extraction root with the privileged process's rights. The archive passes naive \"no absolute paths, no symlinks\" validation and extracts without a single error message.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "pwn"
+        }
+      ],
+      "x_ctft_category": "PWN",
+      "x_ctft_domain": "PWN",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-PWN-010"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1190",
+          "description": "Exploit Public-Facing Application"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--c130467e-aee9-5dde-9382-9d018542918f",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-PWN-010 - Craft sibling entries whose reconstructed parent path traverses",
+      "description": "1. Reverse (or read, if source is recoverable) the parser's parenting rule: which stored node path must a later entry's parent portion match for the child to attach to it. 2. Craft a sibling pair per target file: first a directory entry whose path is <traversal-prefix><target-dir>, then a file entry whose path is <traversal-prefix><target-dir>/<name>. The traversal prefix must absorb the output folder depth (e.g. ../../../root/.ssh then ../../../root/.ssh/authorizedkeys for a one-level extracted folder). 3. Extract with the privileged tool and verify the write landed outside the output root; then aim the pair at a privileged target (authorizedkeys, cron files, a SUID launcher). 4. Count the ../ components from the observed write location — an off-by-one prefix fails silently inside the extraction folder.",
+      "x_ctft_category": "PWN",
+      "x_ctft_domain": "PWN",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-PWN-010"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1190",
+          "description": "Exploit Public-Facing Application"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--8ecbbcda-2b37-5eea-a441-efa3f6788c58",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--c130467e-aee9-5dde-9382-9d018542918f",
+      "target_ref": "attack-pattern--5f1b016c-6c51-5dea-bf56-8525a93ad0f4",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     }
   ]
 }

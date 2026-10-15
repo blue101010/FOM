@@ -890,6 +890,73 @@
       "source_ref": "course-of-action--65df4801-ecf7-5681-b8ad-18177bb05cc8",
       "target_ref": "attack-pattern--105af58a-b497-5f70-a4c2-86e891d2d203",
       "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--c22f8b49-7898-5bd0-acd3-456f2955c747",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-CRY-014 - Timestamp-keyed XOR",
+      "description": "The ciphertext is a plain repeating-key XOR, but the key is stored nowhere: it is the decimal string of the epoch timestamp at which the writer touched the file (e.g. str(time.Now().Unix())). Generic decoders fail because the key looks like arbitrary digits with unknown provenance. The trap is that the key is leaked by the filesystem itself — the file's last-modification time. A twist: a guardian process may re-encrypt on every read, so the mtime of the last write, not the original one, is the one that matches the final ciphertext.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "cry"
+        }
+      ],
+      "x_ctft_category": "CRY",
+      "x_ctft_domain": "CRY",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-CRY-014"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--078976f9-9a16-54bf-be33-30dc63626d18",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-CRY-014 - Derive the XOR key from file mtime",
+      "description": "1. Read the file's last-modification time with full precision (stat, date -r, or os.stat().stmtime). 2. Convert to epoch seconds and use the decimal string as the repeating XOR key over the hex-decoded ciphertext. 3. If the mtime was disturbed (guardian still running, tool re-writing the file), sweep a ±N-second window around plausible write times and score each candidate key by printable ASCII ratio or a flag-format regex. 4. Beware timezone and truncation variants: try local vs UTC parsing, integer vs sub-second float, and RFC3339-formatted strings as alternative key spellings.",
+      "x_ctft_category": "CRY",
+      "x_ctft_domain": "CRY",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-CRY-014"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--31d6ddcb-5e88-5e66-8a31-5dff1942babd",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--078976f9-9a16-54bf-be33-30dc63626d18",
+      "target_ref": "attack-pattern--c22f8b49-7898-5bd0-acd3-456f2955c747",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     }
   ]
 }

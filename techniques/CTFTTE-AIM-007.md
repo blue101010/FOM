@@ -18,7 +18,7 @@ An agent is constrained by guardrails over its tools; the flag requires coaxing 
 
 ## Tools
 
-- Python
+- [python](../tools/CTFTTOU-050.md)
 - agent CLIs
 
 ## References

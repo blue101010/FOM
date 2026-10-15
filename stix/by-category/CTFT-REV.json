@@ -632,6 +632,73 @@
       "source_ref": "course-of-action--505a32fd-4a00-5817-83cd-a857dca9b707",
       "target_ref": "attack-pattern--9df03d19-910f-5fb8-bbcf-5d506b1ac004",
       "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--032fb65b-ca30-5d39-aa87-e3941d28975b",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-REV-010 - Retained build-path symbol-to-source anchor",
+      "description": "A Go (or Rust/Java) binary keeps full package paths in its symbol table and pclntab even when the challenge ships no source: decompiled frames read github.com/<user>/<repo>/cmd.Execute(). The author effectively publishes the challenge's own source — the upstream repo, sometimes with a dedicated branch (ctf-challenge) holding only the introduced flaw. The concealment relies on players grinding the decompilation instead of correlating binary symbols with public code hosts; a five-minute strings pass collapses the whole RE stage into a branch diff.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "rev"
+        }
+      ],
+      "x_ctft_category": "REV",
+      "x_ctft_domain": "REV",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-REV-010"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1596.003",
+          "description": "Search Open Technical Databases: Code Repositories"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--4f2ef916-6476-5372-88cc-7bfd1c37e13d",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-REV-010 - Pivot from binary symbols to upstream source and diff the challenge branch",
+      "description": "1. In the decompiler (or a plain strings pass), collect full package paths: github.com/<user>/<repo>/... from function names, build IDs and error strings. 2. Search the code host for the repo; clone it and list all branches — challenge builds frequently live on a ctf-challenge-style branch. 3. Diff the challenge branch against the default branch; the delta is the planted flaw (an added output folder, a dropped validation, an extra handler). 4. Review the diff as code instead of asm, but keep the binary as ground truth: the deployed build may lag the branch.",
+      "x_ctft_category": "REV",
+      "x_ctft_domain": "REV",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-REV-010"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1596.003",
+          "description": "Search Open Technical Databases: Code Repositories"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--199b4f4d-4602-5c74-b87e-80c17a8b583e",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--4f2ef916-6476-5372-88cc-7bfd1c37e13d",
+      "target_ref": "attack-pattern--032fb65b-ca30-5d39-aa87-e3941d28975b",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     }
   ]
 }

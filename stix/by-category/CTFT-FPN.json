@@ -759,6 +759,776 @@
       "source_ref": "course-of-action--fa6d700a-c344-5ebf-8465-d6d6adce4922",
       "target_ref": "attack-pattern--1b07194f-91dd-586c-bf85-b245395ddc07",
       "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--3986c066-6171-5770-82fc-ee418ed34517",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FPN-011 - Alternate key-credential backdoor on a machine account",
+      "description": "A domain user is granted GenericWrite over a computer account, but the classic exploitation path (create a fake machine then abuse delegation) is closed by a zero Machine Account Quota. The intended move is to attach an alternate key credential (msDS-KeyCredentialLink) to the computer object and authenticate with the generated certificate, without ever changing the account's password.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "fpn"
+        }
+      ],
+      "x_ctft_category": "FPN",
+      "x_ctft_domain": "FPN",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FPN-011"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1098",
+          "description": "Account Manipulation"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1558",
+          "description": "Steal or Forge Kerberos Tickets"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--18ed8719-e11e-50d7-86b6-947c313b1863",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FPN-011 - Detect and revoke key-credential backdoors",
+      "description": "Confirm the write edge on the computer object, then attach a key credential to it and request a TGT through PKINIT. Derive the NT hash from the PAC. If one collection tool reports no interesting path, re-collect the graph with a second collector and compare coverage before giving up.",
+      "x_ctft_category": "FPN",
+      "x_ctft_domain": "FPN",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FPN-011"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1098",
+          "description": "Account Manipulation"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1558",
+          "description": "Steal or Forge Kerberos Tickets"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--3b449307-7cf7-5311-a7e4-74466d984183",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--18ed8719-e11e-50d7-86b6-947c313b1863",
+      "target_ref": "attack-pattern--3986c066-6171-5770-82fc-ee418ed34517",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--1dec959f-5355-5acd-85f6-8680a23d71b6",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FPN-012 - Certificate-derived Kerberos authentication chain",
+      "description": "The planted or stolen certificate is useless to ordinary password-based tooling. The solver must chain PKINIT authentication (pass the certificate) into a TGT, then extract the account's NT hash from the PAC of the ticket (unPAC the hash) before standard Kerberos and NTLM moves unlock the next hop.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "fpn"
+        }
+      ],
+      "x_ctft_category": "FPN",
+      "x_ctft_domain": "FPN",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FPN-012"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1558",
+          "description": "Steal or Forge Kerberos Tickets"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1649",
+          "description": "Steal or Forge Authentication Certificates"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--8d111b8c-5f60-5f87-bd79-f2b65f2441ed",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FPN-012 - Validate PKINIT trust and extract PAC material",
+      "description": "Load the PFX with its export password and request a TGT for the backdoored account. Keep the AS-REP encryption key printed by the exchange, then extract the NT hash from the PAC of the ticket and switch to hash-based tooling.",
+      "x_ctft_category": "FPN",
+      "x_ctft_domain": "FPN",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FPN-012"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1558",
+          "description": "Steal or Forge Kerberos Tickets"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1649",
+          "description": "Steal or Forge Authentication Certificates"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--fc3a90e1-2e08-5bab-8784-035c2d94de57",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--8d111b8c-5f60-5f87-bd79-f2b65f2441ed",
+      "target_ref": "attack-pattern--1dec959f-5355-5acd-85f6-8680a23d71b6",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--f819220d-cc24-596d-a945-a789164567a5",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FPN-013 - Certificate template reconfiguration for arbitrary enrollment",
+      "description": "A domain user holds WriteDacl over a certificate template. The path is invisible to basic user and share enumeration: it lives in ADCS template ACLs, and only a graph-aware collection reveals it. The solver reconfigures the template (ESC4), enrolls a certificate for an arbitrary identity, and authenticates with it.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "fpn"
+        }
+      ],
+      "x_ctft_category": "FPN",
+      "x_ctft_domain": "FPN",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FPN-013"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1649",
+          "description": "Steal or Forge Authentication Certificates"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1098",
+          "description": "Account Manipulation"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--6f110c59-2dfa-5bf7-8ee8-00d6e909a2cd",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FPN-013 - Lock down certificate template ACLs and enrollment",
+      "description": "Enumerate ADCS with a certificate-aware scanner and list templates whose ACLs allow a controlled account to write. Reconfigure the target template, request a certificate with the desired UPN, then authenticate with the certificate to obtain a TGT or recover the account hash.",
+      "x_ctft_category": "FPN",
+      "x_ctft_domain": "FPN",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FPN-013"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1649",
+          "description": "Steal or Forge Authentication Certificates"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1098",
+          "description": "Account Manipulation"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--87138305-d9ab-5fcc-8854-58d1b3cb49ee",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--6f110c59-2dfa-5bf7-8ee8-00d6e909a2cd",
+      "target_ref": "attack-pattern--f819220d-cc24-596d-a945-a789164567a5",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--e8a30540-3e76-5822-9788-c39e288878cd",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FPN-014 - Injection through a delegated session configuration",
+      "description": "The box is only reachable through a constrained delegation endpoint (JEA) backed by a custom module. A module parameter is concatenated unsafely into a command, so the endpoint becomes an injection gate. The module source itself is distributed through a shared scripts folder, making the review step part of the challenge.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "fpn"
+        }
+      ],
+      "x_ctft_category": "FPN",
+      "x_ctft_domain": "FPN",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FPN-014"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1059.001",
+          "description": "Command and Scripting Interpreter: PowerShell"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1136.001",
+          "description": "Create Account: Local Account"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--406e6cea-d7a8-5aed-9fd0-04912a180350",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FPN-014 - Constrain delegated endpoints and log session commands",
+      "description": "Enumerate startup scripts and shared folders for the constrained endpoint's module source. Audit each module for parameters concatenated into commands, inject through the unsafe parameter to execute commands as the delegated principal, and plant a local persistence account before leaving the endpoint.",
+      "x_ctft_category": "FPN",
+      "x_ctft_domain": "FPN",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FPN-014"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1059.001",
+          "description": "Command and Scripting Interpreter: PowerShell"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1136.001",
+          "description": "Create Account: Local Account"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--a0b00b61-18cc-5d81-911a-e4666ef6deb9",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--406e6cea-d7a8-5aed-9fd0-04912a180350",
+      "target_ref": "attack-pattern--e8a30540-3e76-5822-9788-c39e288878cd",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--76964e44-1f5d-5435-b4d1-35759d15023a",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FPN-015 - Default database credential enabling command execution",
+      "description": "A server exposes an MSSQL instance whose sa account still uses a default password. The only hint is buried in a service account's description text. Once the credential is guessed, the solver escalates through xpcmdshell, which the author left enabled, to run commands as the SQL service account.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "fpn"
+        }
+      ],
+      "x_ctft_category": "FPN",
+      "x_ctft_domain": "FPN",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FPN-015"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1078.001",
+          "description": "Valid Accounts: Default Accounts"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1505.001",
+          "description": "Server Software Component: SQL Stored Procedures"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--70d878d3-7bbf-5da8-bfc4-3b93c4f641c1",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FPN-015 - Enumerate database defaults and disable dangerous procedures",
+      "description": "Read account descriptions for password hints, then brute force the database admin account with default-credential wordlists. Once authenticated, enable or abuse xpcmdshell to execute operating-system commands as the service account and inspect its privileges.",
+      "x_ctft_category": "FPN",
+      "x_ctft_domain": "FPN",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FPN-015"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1078.001",
+          "description": "Valid Accounts: Default Accounts"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1505.001",
+          "description": "Server Software Component: SQL Stored Procedures"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--e6c14034-9917-55ef-9021-9fb6f87f0058",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--70d878d3-7bbf-5da8-bfc4-3b93c4f641c1",
+      "target_ref": "attack-pattern--76964e44-1f5d-5435-b4d1-35759d15023a",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--d4a67452-3b4c-56c6-bd6d-d52e56794d12",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FPN-016 - Packed token-impersonation binary evading endpoint defenses",
+      "description": "The SQL service account holds SeImpersonatePrivilege, the classic potato-class escalation, but endpoint protection is running and known binaries are blocked. The solver must repackage the impersonation binary with a packer so it clears static detection, deliver it over HTTP, and abuse the privileged token to reach SYSTEM.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "fpn"
+        }
+      ],
+      "x_ctft_category": "FPN",
+      "x_ctft_domain": "FPN",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FPN-016"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1134.001",
+          "description": "Access Token Manipulation: Token Impersonation/Theft"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--5d4670dd-1f19-5411-90d1-22a9141f65ed",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FPN-016 - Audit privileged tokens and unpack suspicious binaries",
+      "description": "Enumerate the current account's privileges; when SeImpersonatePrivilege is present, deliver an impersonation binary to the target. If endpoint protection blocks it, repackage the binary with a packer, serve it over HTTP, and execute it to run commands as SYSTEM and plant a local account.",
+      "x_ctft_category": "FPN",
+      "x_ctft_domain": "FPN",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FPN-016"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1134.001",
+          "description": "Access Token Manipulation: Token Impersonation/Theft"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--7fb21524-7ae5-5de0-a2af-02e137e9e205",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--5d4670dd-1f19-5411-90d1-22a9141f65ed",
+      "target_ref": "attack-pattern--d4a67452-3b4c-56c6-bd6d-d52e56794d12",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--b123689f-45da-5567-aafc-75c2a7df1f4f",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FPN-017 - Coerced domain controller authentication toward a delegated host",
+      "description": "A compromised server is configured with unconstrained delegation: any ticket sent to it is cached locally. The author expects the solver to monitor incoming authentication on that server while coercing the domain controller to connect, capturing the DC machine ticket. A case-sensitivity detail in the coercion hostname is the hidden obstacle.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "fpn"
+        }
+      ],
+      "x_ctft_category": "FPN",
+      "x_ctft_domain": "FPN",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FPN-017"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1558",
+          "description": "Steal or Forge Kerberos Tickets"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1187",
+          "description": "Forced Authentication"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--74bde3ea-b773-519c-806e-4ffcb80d5d00",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FPN-017 - Constrain delegation trust and detect coerced authentication",
+      "description": "Start a ticket monitor on the delegated host targeting the domain controller machine account, then trigger the printer-bug coercion with the exact hostname casing. Capture the DC machine ticket, request a service ticket with it, and use the resulting access to dump the domain controller.",
+      "x_ctft_category": "FPN",
+      "x_ctft_domain": "FPN",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FPN-017"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1558",
+          "description": "Steal or Forge Kerberos Tickets"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1187",
+          "description": "Forced Authentication"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--9ce158ad-a7bd-5b81-af53-348aab4c7fca",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--74bde3ea-b773-519c-806e-4ffcb80d5d00",
+      "target_ref": "attack-pattern--b123689f-45da-5567-aafc-75c2a7df1f4f",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--793e4dd3-23cc-55ff-9e66-511768941d33",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FPN-018 - Cross-domain credential reuse after hidden-namespace discovery",
+      "description": "A second domain is never mentioned in the scope handout: it surfaces only in a hosts entry on the first domain controller. The author reuses one account name and password across both domains, so the solver must discover the hidden namespace, map its network records, and replay the harvested credentials.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "fpn"
+        }
+      ],
+      "x_ctft_category": "FPN",
+      "x_ctft_domain": "FPN",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FPN-018"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1078",
+          "description": "Valid Accounts"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1482",
+          "description": "Domain Trust Discovery"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--3a4d9dea-2c86-565e-8855-d9fcf3c0885e",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FPN-018 - Map adjacent namespaces and test credential reuse",
+      "description": "Read hosts entries and DNS zone records on a compromised host to find adjacent namespaces, enumerate their network records, and replay every harvested credential against the new domain. Re-run the graph collection on the second domain before planning the next stage.",
+      "x_ctft_category": "FPN",
+      "x_ctft_domain": "FPN",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FPN-018"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1078",
+          "description": "Valid Accounts"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1482",
+          "description": "Domain Trust Discovery"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--4436c27e-c7b0-5026-84d9-a18e11b43097",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--3a4d9dea-2c86-565e-8855-d9fcf3c0885e",
+      "target_ref": "attack-pattern--793e4dd3-23cc-55ff-9e66-511768941d33",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--fa902cc9-f898-58d0-9103-48d773f12b4b",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FPN-019 - Interactive-shell history and protected credential stores",
+      "description": "The next credentials are not exposed by any service: they sit in the administrator's PowerShell readline history and inside DPAPI-protected scheduled task blobs. The author expects credential archaeology on the first host instead of network exploitation for the next hop.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "fpn"
+        }
+      ],
+      "x_ctft_category": "FPN",
+      "x_ctft_domain": "FPN",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FPN-019"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1552.001",
+          "description": "Unsecured Credentials: Credentials In Files"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1555.004",
+          "description": "Credentials from Password Stores: Windows Credential Manager"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--330f4722-5852-56df-93e4-de450c35e04b",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FPN-019 - Harvest shell histories and decrypt protected stores",
+      "description": "Read the console history file of the administrator profile for typed credentials, then dump DPAPI masterkeys and credential blobs with local administrative rights. Search the decrypted material for domain accounts and their passwords to fuel the next hop.",
+      "x_ctft_category": "FPN",
+      "x_ctft_domain": "FPN",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FPN-019"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1552.001",
+          "description": "Unsecured Credentials: Credentials In Files"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1555.004",
+          "description": "Credentials from Password Stores: Windows Credential Manager"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--a1dddb4d-6cac-593b-a057-f123c8022a30",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--330f4722-5852-56df-93e4-de450c35e04b",
+      "target_ref": "attack-pattern--fa902cc9-f898-58d0-9103-48d773f12b4b",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--67ef0916-f8b2-5596-a5e5-c4e098f2aa56",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FPN-020 - Flag payload embedded in directory object properties",
+      "description": "The final flag is not a file on any host: it is stored in a property of a directory object, reachable only by dumping the whole domain and searching the serialized attributes. Host compromise alone returns nothing; directory-level exfiltration is the required final stage.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "fpn"
+        }
+      ],
+      "x_ctft_category": "FPN",
+      "x_ctft_domain": "FPN",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FPN-020"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1087.002",
+          "description": "Account Discovery: Domain Account"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1213",
+          "description": "Data from Information Repositories"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--605662db-9f29-58df-8580-a2405999d2c7",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FPN-020 - Dump directory attributes and search hidden payloads",
+      "description": "After domain compromise, dump the directory into serialized artifacts and search every field case-insensitively for the flag format. When no flag file exists on any host, treat directory attributes as the payload location.",
+      "x_ctft_category": "FPN",
+      "x_ctft_domain": "FPN",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FPN-020"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1087.002",
+          "description": "Account Discovery: Domain Account"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1213",
+          "description": "Data from Information Repositories"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--64df79c2-50d9-5e75-9b86-511a81cabaf6",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--605662db-9f29-58df-8580-a2405999d2c7",
+      "target_ref": "attack-pattern--67ef0916-f8b2-5596-a5e5-c4e098f2aa56",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     }
   ]
 }

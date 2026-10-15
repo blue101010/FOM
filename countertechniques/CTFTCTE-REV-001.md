@@ -25,7 +25,7 @@ Mapping the guards documents the binary's evasive intent and how analysis was re
 - GDB+GEF
 - x64dbg
 - Frida
-- Ghidra
+- [Ghidra](../tools/CTFTTOU-073.md)
 
 ## References
 

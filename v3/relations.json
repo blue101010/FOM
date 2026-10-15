@@ -2,14 +2,10 @@
   "model": "CTFT",
   "schema_version": "3.0",
   "collection": "relations",
-<<<<<<< HEAD
-  "generated_at": "2026-10-12T15:51:10+00:00",
-=======
-  "generated_at": "2026-10-12T15:57:03+00:00",
->>>>>>> 1d31fd047e9f24c9031130cb2442237a7eafc532
+  "generated_at": "2026-10-15T01:46:29+00:00",
   "note": "Generated. Derived `solves` edges come from the markdown pairing; edit v3/relations.curated.json for anything else.",
   "counts": {
-    "derived": 173,
+    "derived": 192,
     "curated": 4
   },
   "items": [
@@ -374,6 +370,15 @@
       "confidence": "high"
     },
     {
+      "id": "REL-SOLVES-CRY-014",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-CRY-014",
+      "target": "CTFTTE-CRY-014",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
       "id": "REL-SOLVES-FOR-001",
       "schema_version": "3.0",
       "type": "solves",
@@ -635,6 +640,15 @@
       "confidence": "high"
     },
     {
+      "id": "REL-SOLVES-FOR-030",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-FOR-030",
+      "target": "CTFTTE-FOR-030",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
       "id": "REL-SOLVES-FPN-001",
       "schema_version": "3.0",
       "type": "solves",
@@ -721,6 +735,96 @@
       "type": "solves",
       "source": "CTFTCTE-FPN-010",
       "target": "CTFTTE-FPN-010",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
+      "id": "REL-SOLVES-FPN-011",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-FPN-011",
+      "target": "CTFTTE-FPN-011",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
+      "id": "REL-SOLVES-FPN-012",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-FPN-012",
+      "target": "CTFTTE-FPN-012",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
+      "id": "REL-SOLVES-FPN-013",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-FPN-013",
+      "target": "CTFTTE-FPN-013",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
+      "id": "REL-SOLVES-FPN-014",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-FPN-014",
+      "target": "CTFTTE-FPN-014",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
+      "id": "REL-SOLVES-FPN-015",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-FPN-015",
+      "target": "CTFTTE-FPN-015",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
+      "id": "REL-SOLVES-FPN-016",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-FPN-016",
+      "target": "CTFTTE-FPN-016",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
+      "id": "REL-SOLVES-FPN-017",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-FPN-017",
+      "target": "CTFTTE-FPN-017",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
+      "id": "REL-SOLVES-FPN-018",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-FPN-018",
+      "target": "CTFTTE-FPN-018",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
+      "id": "REL-SOLVES-FPN-019",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-FPN-019",
+      "target": "CTFTTE-FPN-019",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
+      "id": "REL-SOLVES-FPN-020",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-FPN-020",
+      "target": "CTFTTE-FPN-020",
       "origin": "derived",
       "confidence": "high"
     },
@@ -856,6 +960,42 @@
       "type": "solves",
       "source": "CTFTCTE-ICS-005",
       "target": "CTFTTE-ICS-005",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
+      "id": "REL-SOLVES-ICS-006",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-ICS-006",
+      "target": "CTFTTE-ICS-006",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
+      "id": "REL-SOLVES-ICS-007",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-ICS-007",
+      "target": "CTFTTE-ICS-007",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
+      "id": "REL-SOLVES-ICS-008",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-ICS-008",
+      "target": "CTFTTE-ICS-008",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
+      "id": "REL-SOLVES-ICS-009",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-ICS-009",
+      "target": "CTFTTE-ICS-009",
       "origin": "derived",
       "confidence": "high"
     },
@@ -1184,6 +1324,24 @@
       "confidence": "high"
     },
     {
+      "id": "REL-SOLVES-PWN-009",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-PWN-009",
+      "target": "CTFTTE-PWN-009",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
+      "id": "REL-SOLVES-PWN-010",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-PWN-010",
+      "target": "CTFTTE-PWN-010",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
       "id": "REL-SOLVES-REV-001",
       "schema_version": "3.0",
       "type": "solves",
@@ -1261,6 +1419,15 @@
       "type": "solves",
       "source": "CTFTCTE-REV-009",
       "target": "CTFTTE-REV-009",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
+      "id": "REL-SOLVES-REV-010",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-REV-010",
+      "target": "CTFTTE-REV-010",
       "origin": "derived",
       "confidence": "high"
     },

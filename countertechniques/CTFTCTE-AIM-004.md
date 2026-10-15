@@ -22,8 +22,8 @@ Opcode-level inspection documents embedded payloads without triggering them.
 
 ## Tools
 
-- fickling
-- python pickletools
+- [fickling](../tools/CTFTTOU-045.md)
+- [python](../tools/CTFTTOU-050.md) [pickletools](../tools/CTFTTOU-046.md)
 
 ## References
 

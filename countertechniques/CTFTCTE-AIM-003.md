@@ -22,9 +22,9 @@ The crafted input documents the model's decision-boundary fragility.
 
 ## Tools
 
-- foolbox
-- ART (adversarial-robustness-toolbox)
-- torch
+- [foolbox](../tools/CTFTTOU-043.md)
+- [ART (Adversarial Robustness Toolbox)](../tools/CTFTTOU-044.md)
+- [torch](../tools/CTFTTOU-040.md)
 
 ## References
 

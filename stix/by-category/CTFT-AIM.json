@@ -135,7 +135,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-AIM-002 - Extract the flag via crafted prompts",
-      "description": "Craft inputs that bypass the guardrails to make the model reveal the protected content.",
+      "description": "Craft inputs that bypass the guardrails: recover the system prompt first, then use role shifts, encoding tricks and indirect context (retrieved documents) to make the model reveal the protected content. Probe the raw API directly, and iterate payloads against a local model before replaying them on the target.",
       "x_ctft_category": "AIM",
       "x_ctft_domain": "AIM",
       "x_ctft_role": "resolution",

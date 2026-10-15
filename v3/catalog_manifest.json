@@ -1,17 +1,10 @@
 {
   "model": "CTFT",
   "schema_version": "3.0",
-<<<<<<< HEAD
-  "generated_at": "2026-10-12T15:51:11+00:00",
+  "generated_at": "2026-10-15T01:58:53+00:00",
   "source": {
-    "correlation_sha256": "5222a77cee7d555e9be96d517e683d95a3c7946a00e85d273f36c11277de8517",
-    "legacy_index_sha256": "961c324140b56340d9e29bcd23fcbfae0729e1784dc8c167cf543977717982ec"
-=======
-  "generated_at": "2026-10-12T15:57:03+00:00",
-  "source": {
-    "correlation_sha256": "5222a77cee7d555e9be96d517e683d95a3c7946a00e85d273f36c11277de8517",
-    "legacy_index_sha256": "05783cadcfd5e24c0f56dc53a171c33818d121047e30d5db156c3b4d40a241a4"
->>>>>>> 1d31fd047e9f24c9031130cb2442237a7eafc532
+    "correlation_sha256": "4568c158bbef210aaff99d598fd902e734645808a56250f08e5113cd72148626",
+    "legacy_index_sha256": "cc66caf48a42cc3aa48780d246f2a67c2f2ccf8cf74152af0e6fbc963917aed1"
   },
   "taxonomy": {
     "tactics": [
@@ -36,26 +29,26 @@
       "WEB"
     ],
     "tactic_count": 19,
-    "technique_count": 173,
-    "counter_technique_count": 173,
-    "complete_pairs": 173,
+    "technique_count": 192,
+    "counter_technique_count": 192,
+    "complete_pairs": 192,
     "by_tactic": {
       "AIM": 7,
       "BLK": 5,
       "CLD": 8,
       "COD": 7,
-      "CRY": 13,
-      "FOR": 29,
-      "FPN": 10,
+      "CRY": 14,
+      "FOR": 30,
+      "FPN": 20,
       "GAM": 8,
       "HWR": 2,
-      "ICS": 5,
+      "ICS": 9,
       "JAL": 6,
       "MOB": 5,
       "NET": 8,
       "OSI": 9,
-      "PWN": 8,
-      "REV": 9,
+      "PWN": 10,
+      "REV": 10,
       "SDR": 1,
       "STE": 11,
       "WEB": 22
@@ -69,26 +62,24 @@
       "tools": 9
     },
     "maturity": {
-      "attested": 1,
-      "taxonomy_only": 165,
+      "taxonomy_only": 185,
       "typed": 7
     },
     "core": {
       "size": 35,
-      "with_evidence_record": 2,
-      "with_two_independent_events": 2,
+      "with_evidence_record": 0,
+      "with_two_independent_events": 0,
       "placeholder_free": 0
     },
     "stix_object_types": {
-      "attack-pattern": 164,
-      "course-of-action": 164,
+      "attack-pattern": 192,
+      "course-of-action": 192,
       "identity": 1,
-      "relationship": 164,
+      "relationship": 192,
       "x-ctft-tactic": 19
     },
     "placeholder_entries": [
       "countertechniques/CTFTCTE-AIM-001.md",
-      "countertechniques/CTFTCTE-AIM-002.md",
       "countertechniques/CTFTCTE-AIM-003.md",
       "countertechniques/CTFTCTE-AIM-004.md",
       "countertechniques/CTFTCTE-AIM-005.md",
@@ -198,7 +189,6 @@
       "countertechniques/CTFTCTE-WEB-021.md",
       "countertechniques/CTFTCTE-WEB-022.md",
       "techniques/CTFTTE-AIM-001.md",
-      "techniques/CTFTTE-AIM-002.md",
       "techniques/CTFTTE-AIM-003.md",
       "techniques/CTFTTE-AIM-004.md",
       "techniques/CTFTTE-AIM-005.md",
@@ -353,26 +343,17 @@
   "integrity": {
     "techniques_without_counter": [],
     "counters_without_technique": [],
-    "correlation_pair_count": 173,
+    "correlation_pair_count": 192,
     "correlation_pairs_missing_from_files": [],
     "correlation_pairs_not_identity": [],
     "pairs_missing_from_correlation": [],
     "legacy_index_tactics_missing_from_files": [],
     "tactics_missing_from_legacy_index": [],
-    "legacy_index_pair_count": 173,
+    "legacy_index_pair_count": 192,
     "legacy_index_pairs_missing_from_files": [],
     "relation_problems": [],
     "lint_problems": [],
-    "readme_problems": [
-      "README.md: GAM claims 6 pairs, corpus has 8",
-      "README.md: NET claims 7 pairs, corpus has 8",
-      "README.md: OSI claims 8 pairs, corpus has 9",
-      "README.md: WEB claims 17 pairs, corpus has 22",
-      "README.md: domain-table total says 164, corpus has 173",
-      "README.md: pair count in prose says 164, corpus has 173",
-      "README.md: maturity `taxonomy_only` says 156, computed 165",
-      "README.md: coverage debt says 242 of 328 entry files, corpus has 260 of 346"
-    ],
+    "readme_problems": [],
     "schema_problems": [],
     "wording_problems": [],
     "link_problems": []

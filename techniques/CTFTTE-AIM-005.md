@@ -18,7 +18,7 @@ A secret memorized in training is reachable only by probing the model's outputs.
 
 ## Tools
 
-- python
+- [python](../tools/CTFTTOU-050.md)
 - model query harness
 
 ## References

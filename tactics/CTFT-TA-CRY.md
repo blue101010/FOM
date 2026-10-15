@@ -2,7 +2,7 @@
 
 > **Domain ID:** `CTFT-TA-CRY`  
 > **HTB mapping:** HTB: Crypto  
-> **Techniques:** 13
+> **Techniques:** 14
 
 ## Description
 
@@ -39,6 +39,7 @@ per entry**, never the definition of an entry.
 | [CTFTTE-CRY-011](../techniques/CTFTTE-CRY-011.md) | Protocol implementation flaw (Heartbleed-style) | [CTFTCTE-CRY-011](../countertechniques/CTFTCTE-CRY-011.md) | Reproduce protocol memory-leak vulnerabilities | T1190 |
 | [CTFTTE-CRY-012](../techniques/CTFTTE-CRY-012.md) | Hash-cracking maze with constraints | [CTFTCTE-CRY-012](../countertechniques/CTFTCTE-CRY-012.md) | Crack hashes under masks/rules | T1110 |
 | [CTFTTE-CRY-013](../techniques/CTFTTE-CRY-013.md) | Nonstandard-alphabet substitution (braille, cetacean) | [CTFTCTE-CRY-013](../countertechniques/CTFTCTE-CRY-013.md) | Transcode nonstandard alphabets | T1140 |
+| [CTFTTE-CRY-014](../techniques/CTFTTE-CRY-014.md) | Timestamp-keyed XOR | [CTFTCTE-CRY-014](../countertechniques/CTFTCTE-CRY-014.md) | Derive the XOR key from file mtime | T1027 |
 
 ---
 *See [CORRELATION.md](../CORRELATION.md) for the full cross-reference matrix.*

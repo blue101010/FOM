@@ -2,7 +2,7 @@
 
 > **Domain ID:** `CTFT-TA-REV`  
 > **HTB mapping:** HTB: Reversing  
-> **Techniques:** 9
+> **Techniques:** 10
 
 ## Description
 
@@ -35,6 +35,7 @@ per entry**, never the definition of an entry.
 | [CTFTTE-REV-007](../techniques/CTFTTE-REV-007.md) | Python bytecode (.pyc/.pyo) concealment | [CTFTCTE-REV-007](../countertechniques/CTFTCTE-REV-007.md) | Decompile Python bytecode | T1027 |
 | [CTFTTE-REV-008](../techniques/CTFTTE-REV-008.md) | Functional-language binary concealment | [CTFTCTE-REV-008](../countertechniques/CTFTCTE-REV-008.md) | Reverse Haskell/functional compiled artifacts | T1027 |
 | [CTFTTE-REV-009](../techniques/CTFTTE-REV-009.md) | Assembly-level code-golf / shellcode RE | [CTFTCTE-REV-009](../countertechniques/CTFTCTE-REV-009.md) | Disassemble and annotate asm snippets | T1027 |
+| [CTFTTE-REV-010](../techniques/CTFTTE-REV-010.md) | Retained build-path symbol-to-source anchor | [CTFTCTE-REV-010](../countertechniques/CTFTCTE-REV-010.md) | Pivot from binary symbols to upstream source and diff the challenge branch | T1596.003 |
 
 ---
 *See [CORRELATION.md](../CORRELATION.md) for the full cross-reference matrix.*

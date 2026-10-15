@@ -18,9 +18,9 @@ The flag unlocks only when a classifier is driven to a specific (incorrect) pred
 
 ## Tools
 
-- foolbox
-- ART (adversarial-robustness-toolbox)
-- torch
+- [foolbox](../tools/CTFTTOU-043.md)
+- [ART (Adversarial Robustness Toolbox)](../tools/CTFTTOU-044.md)
+- [torch](../tools/CTFTTOU-040.md)
 
 ## References
 

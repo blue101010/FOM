@@ -21,7 +21,7 @@ The flag check is a raw asm snippet or mini shellcode; brevity and tricks obscur
 - nasm
 - objdump
 - radare2
-- ghidra
+- [ghidra](../tools/CTFTTOU-073.md)
 
 ## References
 

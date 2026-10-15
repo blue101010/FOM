@@ -2,7 +2,7 @@
 
 > **Domain ID:** `CTFT-TA-FOR`  
 > **HTB mapping:** HTB: Forensics  
-> **Techniques:** 29
+> **Techniques:** 30
 
 ## Description
 
@@ -55,6 +55,7 @@ per entry**, never the definition of an entry.
 | [CTFTTE-FOR-027](../techniques/CTFTTE-FOR-027.md) | Use JAB colour 2D codes to hide data | [CTFTCTE-FOR-027](../countertechniques/CTFTCTE-FOR-027.md) | Retrieve information from JAB colour codes | T1027 |
 | [CTFTTE-FOR-028](../techniques/CTFTTE-FOR-028.md) | Windows event-log evidence concealment | [CTFTCTE-FOR-028](../countertechniques/CTFTCTE-FOR-028.md) | Reconstruct the timeline from Windows event logs | T1070.001, T1562.002 |
 | [CTFTTE-FOR-029](../techniques/CTFTTE-FOR-029.md) | Registry-hive persistence artifact concealment | [CTFTCTE-FOR-029](../countertechniques/CTFTCTE-FOR-029.md) | Extract and analyse registry hives from a forensic image | T1547.001, T1027.010, T1562.001 |
+| [CTFTTE-FOR-030](../techniques/CTFTTE-FOR-030.md) | Read-triggered payload mutation (guardian process) | [CTFTCTE-FOR-030](../countertechniques/CTFTCTE-FOR-030.md) | Detect, stop and snapshot a read-triggered mutator | T1070 |
 
 ---
 *See [CORRELATION.md](../CORRELATION.md) for the full cross-reference matrix.*

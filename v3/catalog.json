@@ -2,12 +2,8 @@
   "model": "CTFT",
   "schema_version": "3.0",
   "collection": "catalog",
-<<<<<<< HEAD
-  "generated_at": "2026-10-12T15:51:11+00:00",
-=======
-  "generated_at": "2026-10-12T15:57:04+00:00",
->>>>>>> 1d31fd047e9f24c9031130cb2442237a7eafc532
-  "source_sha256": "5222a77cee7d555e9be96d517e683d95a3c7946a00e85d273f36c11277de8517",
+  "generated_at": "2026-10-15T01:46:30+00:00",
+  "source_sha256": "4568c158bbef210aaff99d598fd902e734645808a56250f08e5113cd72148626",
   "items": [
     {
       "id": "CTFTPAIR-AIM-001",
@@ -862,11 +858,9 @@
         "path": "countertechniques/CTFTCTE-CRY-012.md",
         "role": "resolution"
       },
-      "maturity": "attested",
+      "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [
-        "indicators",
-        "reviewed_tool_bindings",
-        "evaluation_case"
+        "evidence_record"
       ]
     },
     {
@@ -884,6 +878,28 @@
         "id": "CTFTCTE-CRY-013",
         "name": "Transcode nonstandard alphabets",
         "path": "countertechniques/CTFTCTE-CRY-013.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-CRY-014",
+      "schema_version": "3.0",
+      "domain": "CRY",
+      "tactic": "CTFT-TA-CRY",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-CRY-014",
+        "name": "Timestamp-keyed XOR",
+        "path": "techniques/CTFTTE-CRY-014.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-CRY-014",
+        "name": "Derive the XOR key from file mtime",
+        "path": "countertechniques/CTFTCTE-CRY-014.md",
         "role": "resolution"
       },
       "maturity": "taxonomy_only",
@@ -1034,10 +1050,7 @@
       },
       "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [
-        "second_independent_challenge",
-        "positives",
-        "negatives",
-        "boundaries"
+        "evidence_record"
       ]
     },
     {
@@ -1059,9 +1072,7 @@
       },
       "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [
-        "positives",
-        "negatives",
-        "boundaries"
+        "evidence_record"
       ]
     },
     {
@@ -1083,10 +1094,7 @@
       },
       "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [
-        "second_independent_challenge",
-        "positives",
-        "negatives",
-        "boundaries"
+        "evidence_record"
       ]
     },
     {
@@ -1128,10 +1136,7 @@
       },
       "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [
-        "second_independent_challenge",
-        "positives",
-        "negatives",
-        "boundaries"
+        "evidence_record"
       ]
     },
     {
@@ -1153,10 +1158,7 @@
       },
       "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [
-        "second_independent_challenge",
-        "positives",
-        "negatives",
-        "boundaries"
+        "evidence_record"
       ]
     },
     {
@@ -1178,10 +1180,7 @@
       },
       "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [
-        "second_independent_challenge",
-        "positives",
-        "negatives",
-        "boundaries"
+        "evidence_record"
       ]
     },
     {
@@ -1203,10 +1202,7 @@
       },
       "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [
-        "second_independent_challenge",
-        "positives",
-        "negatives",
-        "boundaries"
+        "evidence_record"
       ]
     },
     {
@@ -1228,10 +1224,7 @@
       },
       "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [
-        "second_independent_challenge",
-        "positives",
-        "negatives",
-        "boundaries"
+        "evidence_record"
       ]
     },
     {
@@ -1253,10 +1246,7 @@
       },
       "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [
-        "second_independent_challenge",
-        "positives",
-        "negatives",
-        "boundaries"
+        "evidence_record"
       ]
     },
     {
@@ -1494,10 +1484,7 @@
       },
       "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [
-        "second_independent_challenge",
-        "positives",
-        "negatives",
-        "boundaries"
+        "evidence_record"
       ]
     },
     {
@@ -1519,10 +1506,7 @@
       },
       "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [
-        "second_independent_challenge",
-        "positives",
-        "negatives",
-        "boundaries"
+        "evidence_record"
       ]
     },
     {
@@ -1544,10 +1528,29 @@
       },
       "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [
-        "second_independent_challenge",
-        "positives",
-        "negatives",
-        "boundaries"
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-FOR-030",
+      "schema_version": "3.0",
+      "domain": "FOR",
+      "tactic": "CTFT-TA-FOR",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-FOR-030",
+        "name": "Read-triggered payload mutation (guardian process)",
+        "path": "techniques/CTFTTE-FOR-030.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-FOR-030",
+        "name": "Detect, stop and snapshot a read-triggered mutator",
+        "path": "countertechniques/CTFTCTE-FOR-030.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
       ]
     },
     {
@@ -1771,6 +1774,226 @@
       ]
     },
     {
+      "id": "CTFTPAIR-FPN-011",
+      "schema_version": "3.0",
+      "domain": "FPN",
+      "tactic": "CTFT-TA-FPN",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-FPN-011",
+        "name": "Alternate key-credential backdoor on a machine account",
+        "path": "techniques/CTFTTE-FPN-011.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-FPN-011",
+        "name": "Detect and revoke key-credential backdoors",
+        "path": "countertechniques/CTFTCTE-FPN-011.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-FPN-012",
+      "schema_version": "3.0",
+      "domain": "FPN",
+      "tactic": "CTFT-TA-FPN",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-FPN-012",
+        "name": "Certificate-derived Kerberos authentication chain",
+        "path": "techniques/CTFTTE-FPN-012.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-FPN-012",
+        "name": "Validate PKINIT trust and extract PAC material",
+        "path": "countertechniques/CTFTCTE-FPN-012.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-FPN-013",
+      "schema_version": "3.0",
+      "domain": "FPN",
+      "tactic": "CTFT-TA-FPN",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-FPN-013",
+        "name": "Certificate template reconfiguration for arbitrary enrollment",
+        "path": "techniques/CTFTTE-FPN-013.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-FPN-013",
+        "name": "Lock down certificate template ACLs and enrollment",
+        "path": "countertechniques/CTFTCTE-FPN-013.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-FPN-014",
+      "schema_version": "3.0",
+      "domain": "FPN",
+      "tactic": "CTFT-TA-FPN",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-FPN-014",
+        "name": "Injection through a delegated session configuration",
+        "path": "techniques/CTFTTE-FPN-014.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-FPN-014",
+        "name": "Constrain delegated endpoints and log session commands",
+        "path": "countertechniques/CTFTCTE-FPN-014.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-FPN-015",
+      "schema_version": "3.0",
+      "domain": "FPN",
+      "tactic": "CTFT-TA-FPN",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-FPN-015",
+        "name": "Default database credential enabling command execution",
+        "path": "techniques/CTFTTE-FPN-015.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-FPN-015",
+        "name": "Enumerate database defaults and disable dangerous procedures",
+        "path": "countertechniques/CTFTCTE-FPN-015.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-FPN-016",
+      "schema_version": "3.0",
+      "domain": "FPN",
+      "tactic": "CTFT-TA-FPN",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-FPN-016",
+        "name": "Packed token-impersonation binary evading endpoint defenses",
+        "path": "techniques/CTFTTE-FPN-016.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-FPN-016",
+        "name": "Audit privileged tokens and unpack suspicious binaries",
+        "path": "countertechniques/CTFTCTE-FPN-016.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-FPN-017",
+      "schema_version": "3.0",
+      "domain": "FPN",
+      "tactic": "CTFT-TA-FPN",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-FPN-017",
+        "name": "Coerced domain controller authentication toward a delegated host",
+        "path": "techniques/CTFTTE-FPN-017.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-FPN-017",
+        "name": "Constrain delegation trust and detect coerced authentication",
+        "path": "countertechniques/CTFTCTE-FPN-017.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-FPN-018",
+      "schema_version": "3.0",
+      "domain": "FPN",
+      "tactic": "CTFT-TA-FPN",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-FPN-018",
+        "name": "Cross-domain credential reuse after hidden-namespace discovery",
+        "path": "techniques/CTFTTE-FPN-018.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-FPN-018",
+        "name": "Map adjacent namespaces and test credential reuse",
+        "path": "countertechniques/CTFTCTE-FPN-018.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-FPN-019",
+      "schema_version": "3.0",
+      "domain": "FPN",
+      "tactic": "CTFT-TA-FPN",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-FPN-019",
+        "name": "Interactive-shell history and protected credential stores",
+        "path": "techniques/CTFTTE-FPN-019.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-FPN-019",
+        "name": "Harvest shell histories and decrypt protected stores",
+        "path": "countertechniques/CTFTCTE-FPN-019.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-FPN-020",
+      "schema_version": "3.0",
+      "domain": "FPN",
+      "tactic": "CTFT-TA-FPN",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-FPN-020",
+        "name": "Flag payload embedded in directory object properties",
+        "path": "techniques/CTFTTE-FPN-020.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-FPN-020",
+        "name": "Dump directory attributes and search hidden payloads",
+        "path": "countertechniques/CTFTCTE-FPN-020.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
       "id": "CTFTPAIR-GAM-001",
       "schema_version": "3.0",
       "domain": "GAM",
@@ -1921,11 +2144,7 @@
       },
       "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [
-<<<<<<< HEAD
         "evidence_record"
-=======
-        "second_independent_challenge"
->>>>>>> 1d31fd047e9f24c9031130cb2442237a7eafc532
       ]
     },
     {
@@ -2097,6 +2316,94 @@
         "id": "CTFTCTE-ICS-005",
         "name": "Enumerate protocol objects",
         "path": "countertechniques/CTFTCTE-ICS-005.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-ICS-006",
+      "schema_version": "3.0",
+      "domain": "ICS",
+      "tactic": "CTFT-TA-ICS",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-ICS-006",
+        "name": "Physical controller-label default credentials",
+        "path": "techniques/CTFTTE-ICS-006.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-ICS-006",
+        "name": "Read the device label and vendor documentation for default credentials",
+        "path": "countertechniques/CTFTCTE-ICS-006.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-ICS-007",
+      "schema_version": "3.0",
+      "domain": "ICS",
+      "tactic": "CTFT-TA-ICS",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-ICS-007",
+        "name": "Engineering-tool process takeover",
+        "path": "techniques/CTFTTE-ICS-007.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-ICS-007",
+        "name": "Connect the vendor engineering tool and drive the process",
+        "path": "countertechniques/CTFTCTE-ICS-007.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-ICS-008",
+      "schema_version": "3.0",
+      "domain": "ICS",
+      "tactic": "CTFT-TA-ICS",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-ICS-008",
+        "name": "Industrial firewall weak credential behind a controller pivot",
+        "path": "techniques/CTFTTE-ICS-008.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-ICS-008",
+        "name": "Pivot through the controller and brute-force the firewall manager",
+        "path": "countertechniques/CTFTCTE-ICS-008.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-ICS-009",
+      "schema_version": "3.0",
+      "domain": "ICS",
+      "tactic": "CTFT-TA-ICS",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-ICS-009",
+        "name": "Field-device identity takeover through MAC-addressed naming",
+        "path": "techniques/CTFTTE-ICS-009.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-ICS-009",
+        "name": "Map device names to MAC addresses and rename the target",
+        "path": "countertechniques/CTFTCTE-ICS-009.md",
         "role": "resolution"
       },
       "maturity": "taxonomy_only",
@@ -2897,6 +3204,50 @@
       ]
     },
     {
+      "id": "CTFTPAIR-PWN-009",
+      "schema_version": "3.0",
+      "domain": "PWN",
+      "tactic": "CTFT-TA-PWN",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-PWN-009",
+        "name": "Fixed-name output symlink redirect",
+        "path": "techniques/CTFTTE-PWN-009.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-PWN-009",
+        "name": "Pre-plant a symlink over a privileged fixed-name output path",
+        "path": "countertechniques/CTFTCTE-PWN-009.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-PWN-010",
+      "schema_version": "3.0",
+      "domain": "PWN",
+      "tactic": "CTFT-TA-PWN",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-PWN-010",
+        "name": "Archive hierarchy-reconstruction path traversal",
+        "path": "techniques/CTFTTE-PWN-010.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-PWN-010",
+        "name": "Craft sibling entries whose reconstructed parent path traverses",
+        "path": "countertechniques/CTFTCTE-PWN-010.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
       "id": "CTFTPAIR-REV-001",
       "schema_version": "3.0",
       "domain": "REV",
@@ -3095,6 +3446,28 @@
       ]
     },
     {
+      "id": "CTFTPAIR-REV-010",
+      "schema_version": "3.0",
+      "domain": "REV",
+      "tactic": "CTFT-TA-REV",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-REV-010",
+        "name": "Retained build-path symbol-to-source anchor",
+        "path": "techniques/CTFTTE-REV-010.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-REV-010",
+        "name": "Pivot from binary symbols to upstream source and diff the challenge branch",
+        "path": "countertechniques/CTFTCTE-REV-010.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
       "id": "CTFTPAIR-SDR-001",
       "schema_version": "3.0",
       "domain": "SDR",
@@ -3245,10 +3618,7 @@
       },
       "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [
-        "second_independent_challenge",
-        "positives",
-        "negatives",
-        "boundaries"
+        "evidence_record"
       ]
     },
     {
@@ -3270,10 +3640,7 @@
       },
       "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [
-        "second_independent_challenge",
-        "positives",
-        "negatives",
-        "boundaries"
+        "evidence_record"
       ]
     },
     {
@@ -3295,10 +3662,7 @@
       },
       "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [
-        "second_independent_challenge",
-        "positives",
-        "negatives",
-        "boundaries"
+        "evidence_record"
       ]
     },
     {

@@ -22,9 +22,9 @@ LLM deployment logs record queries and endpoints; exposure scanning is the same 
 
 ## Tools
 
-- ollama CLI
-- curl
-- nmap
+- [ollama](../tools/CTFTTOU-047.md) CLI
+- [curl](../tools/CTFTTOU-038.md)
+- [nmap](../tools/CTFTTOU-033.md)
 
 ## References
 

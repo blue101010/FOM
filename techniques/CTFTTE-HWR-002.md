@@ -21,7 +21,7 @@ The flag lives in an electronic badge or embedded device: in firmware, EEPROM, o
 - minicom
 - flashrom
 - binwalk
-- ghidra
+- [ghidra](../tools/CTFTTOU-073.md)
 
 ## References
 

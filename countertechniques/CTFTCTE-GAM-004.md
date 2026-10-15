@@ -22,7 +22,7 @@ Binary patching to bypass integrity checks follows the same technique used to cr
 
 ## Tools
 
-- ghidra / ida
+- [ghidra](../tools/CTFTTOU-073.md) / ida
 - binary patching scripts
 - pwntools
 

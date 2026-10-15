@@ -18,7 +18,7 @@ The binary is compiled Haskell (GHC runtime); closures and lazy evaluation obscu
 
 ## Tools
 
-- ghidra
+- [ghidra](../tools/CTFTTOU-073.md)
 - radare2
 - strings
 

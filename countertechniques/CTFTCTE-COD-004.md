@@ -22,9 +22,9 @@ Polyglot files exploit parser ambiguity; the same technique is used by attackers
 
 ## Tools
 
-- python / bash / perl
+- [python](../tools/CTFTTOU-050.md) / bash / perl
 - online polyglot references
-- xxd / hexdump
+- [xxd / hexdump](../tools/CTFTTOU-055.md)
 
 ## References
 

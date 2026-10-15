@@ -22,7 +22,7 @@ The query-response trail evidences memorization-based leakage.
 
 ## Tools
 
-- python
+- [python](../tools/CTFTTOU-050.md)
 - model query harness
 
 ## References

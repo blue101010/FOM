@@ -22,7 +22,7 @@ Functional binaries differ from C: symbol-heavy GHC RTS artifacts still expose s
 
 ## Tools
 
-- ghidra
+- [ghidra](../tools/CTFTTOU-073.md)
 - radare2
 - strings
 

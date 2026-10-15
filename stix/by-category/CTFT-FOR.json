@@ -2002,6 +2002,73 @@
       "source_ref": "course-of-action--cdbd1973-4ce4-542e-9fbb-ec8bc2d599cf",
       "target_ref": "attack-pattern--a13372f6-83a5-5e20-8030-a795de12e98c",
       "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--abbfc157-3677-516c-b4bd-cc94ad6f1ad9",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FOR-030 - Read-triggered payload mutation (guardian process)",
+      "description": "A background guardian process (e.g. flag-defender) watches the flag file and re-encrypts it on every access — XOR with the current time, content doubling in size with each read. The concealment is the act of reading itself: every observation changes the ciphertext, so CyberChef magic, hash comparison and format detection all fail, and naive triage burns instance re-provisionings. The defense punishes the standard forensic loop (open → inspect → decode) and only reveals itself through repeated identical reads producing different bytes.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "for"
+        }
+      ],
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FOR-030"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1070",
+          "description": "Indicator Removal on Host"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--45d836ff-c518-50e7-b066-7a4967913f78",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FOR-030 - Detect, stop and snapshot a read-triggered mutator",
+      "description": "1. Read the file twice with no other access in between; diff the two reads. Growth or change on identical reads proves a mutator — do not waste re-provisionings on decoding. 2. Find the guardian: process inventory (ps auxww), open handles (/proc//fd pointing at the file or its directory), and inotify/fanotify watchers (/proc//fdinfo). 3. Terminate the guardian (as root if needed) and immediately snapshot the file to a timestamped copy outside its watch path. 4. Treat the last-written state as the stable ciphertext and move to key recovery — the mutation often re-encrypts with a time-derived key, so the file's mtime is the next lead (see CTFTCTE-CRY-014).",
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FOR-030"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1070",
+          "description": "Indicator Removal on Host"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--c1ef9078-a06d-5f49-80c4-d507542f8c90",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--45d836ff-c518-50e7-b066-7a4967913f78",
+      "target_ref": "attack-pattern--abbfc157-3677-516c-b4bd-cc94ad6f1ad9",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     }
   ]
 }

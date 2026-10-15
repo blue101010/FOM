@@ -2,7 +2,7 @@
 
 > **Domain ID:** `CTFT-TA-ICS`  
 > **HTB mapping:** HTB: ICS  
-> **Techniques:** 5
+> **Techniques:** 9
 
 ## Description
 
@@ -31,6 +31,10 @@ per entry**, never the definition of an entry.
 | [CTFTTE-ICS-003](../techniques/CTFTTE-ICS-003.md) | Proprietary-protocol capture concealment | [CTFTCTE-ICS-003](../countertechniques/CTFTCTE-ICS-003.md) | Dissect industrial protocol captures | T0842 |
 | [CTFTTE-ICS-004](../techniques/CTFTTE-ICS-004.md) | HMI project-file secrets | [CTFTCTE-ICS-004](../countertechniques/CTFTCTE-ICS-004.md) | Parse HMI/SCADA project files | T0843 |
 | [CTFTTE-ICS-005](../techniques/CTFTTE-ICS-005.md) | DNP3 / BACnet object enumeration | [CTFTCTE-ICS-005](../countertechniques/CTFTCTE-ICS-005.md) | Enumerate protocol objects | T0861 |
+| [CTFTTE-ICS-006](../techniques/CTFTTE-ICS-006.md) | Physical controller-label default credentials | [CTFTCTE-ICS-006](../countertechniques/CTFTCTE-ICS-006.md) | Read the device label and vendor documentation for default credentials | T0859 |
+| [CTFTTE-ICS-007](../techniques/CTFTTE-ICS-007.md) | Engineering-tool process takeover | [CTFTCTE-ICS-007](../countertechniques/CTFTCTE-ICS-007.md) | Connect the vendor engineering tool and drive the process | T0843, T0855 |
+| [CTFTTE-ICS-008](../techniques/CTFTTE-ICS-008.md) | Industrial firewall weak credential behind a controller pivot | [CTFTCTE-ICS-008](../countertechniques/CTFTCTE-ICS-008.md) | Pivot through the controller and brute-force the firewall manager | T0859, T0886 |
+| [CTFTTE-ICS-009](../techniques/CTFTTE-ICS-009.md) | Field-device identity takeover through MAC-addressed naming | [CTFTCTE-ICS-009](../countertechniques/CTFTCTE-ICS-009.md) | Map device names to MAC addresses and rename the target | T0855 |
 
 ---
 *See [CORRELATION.md](../CORRELATION.md) for the full cross-reference matrix.*

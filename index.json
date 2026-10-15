@@ -1,11 +1,7 @@
 {
   "model": "CTFT",
   "version": "1.2",
-<<<<<<< HEAD
-  "generated": "2026-10-12T15:51:10+00:00",
-=======
-  "generated": "2026-10-12T15:57:03+00:00",
->>>>>>> 1d31fd047e9f24c9031130cb2442237a7eafc532
+  "generated": "2026-10-15T01:46:29+00:00",
   "relates_to": [
     "MITRE ATT&CK",
     "CAPEC",
@@ -42,19 +38,19 @@
       "id": "CTFT-TA-CRY",
       "name": "Cryptography",
       "path": "tactics/CTFT-TA-CRY.md",
-      "count": 13
+      "count": 14
     },
     {
       "id": "CTFT-TA-FOR",
       "name": "Forensics",
       "path": "tactics/CTFT-TA-FOR.md",
-      "count": 29
+      "count": 30
     },
     {
       "id": "CTFT-TA-FPN",
       "name": "Full Pwn / Multi-Stage",
       "path": "tactics/CTFT-TA-FPN.md",
-      "count": 10
+      "count": 20
     },
     {
       "id": "CTFT-TA-GAM",
@@ -72,7 +68,7 @@
       "id": "CTFT-TA-ICS",
       "name": "ICS / SCADA",
       "path": "tactics/CTFT-TA-ICS.md",
-      "count": 5
+      "count": 9
     },
     {
       "id": "CTFT-TA-JAL",
@@ -102,13 +98,13 @@
       "id": "CTFT-TA-PWN",
       "name": "Binary Exploitation",
       "path": "tactics/CTFT-TA-PWN.md",
-      "count": 8
+      "count": 10
     },
     {
       "id": "CTFT-TA-REV",
       "name": "Reverse Engineering",
       "path": "tactics/CTFT-TA-REV.md",
-      "count": 9
+      "count": 10
     },
     {
       "id": "CTFT-TA-SDR",
@@ -129,7 +125,7 @@
       "count": 22
     }
   ],
-  "total_techniques": 173,
+  "total_techniques": 192,
   "techniques": [
     {
       "tactic": "CTFT-TA-AIM",
@@ -692,6 +688,20 @@
       }
     },
     {
+      "tactic": "CTFT-TA-CRY",
+      "category": "CRY",
+      "technique": {
+        "id": "CTFTTE-CRY-014",
+        "name": "Timestamp-keyed XOR",
+        "path": "techniques/CTFTTE-CRY-014.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-CRY-014",
+        "name": "Derive the XOR key from file mtime",
+        "path": "countertechniques/CTFTCTE-CRY-014.md"
+      }
+    },
+    {
       "tactic": "CTFT-TA-FOR",
       "category": "FOR",
       "technique": {
@@ -1098,6 +1108,20 @@
       }
     },
     {
+      "tactic": "CTFT-TA-FOR",
+      "category": "FOR",
+      "technique": {
+        "id": "CTFTTE-FOR-030",
+        "name": "Read-triggered payload mutation (guardian process)",
+        "path": "techniques/CTFTTE-FOR-030.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-FOR-030",
+        "name": "Detect, stop and snapshot a read-triggered mutator",
+        "path": "countertechniques/CTFTCTE-FOR-030.md"
+      }
+    },
+    {
       "tactic": "CTFT-TA-FPN",
       "category": "FPN",
       "technique": {
@@ -1235,6 +1259,146 @@
         "id": "CTFTCTE-FPN-010",
         "name": "Catch, upgrade and persist reverse shells",
         "path": "countertechniques/CTFTCTE-FPN-010.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-FPN",
+      "category": "FPN",
+      "technique": {
+        "id": "CTFTTE-FPN-011",
+        "name": "Alternate key-credential backdoor on a machine account",
+        "path": "techniques/CTFTTE-FPN-011.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-FPN-011",
+        "name": "Detect and revoke key-credential backdoors",
+        "path": "countertechniques/CTFTCTE-FPN-011.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-FPN",
+      "category": "FPN",
+      "technique": {
+        "id": "CTFTTE-FPN-012",
+        "name": "Certificate-derived Kerberos authentication chain",
+        "path": "techniques/CTFTTE-FPN-012.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-FPN-012",
+        "name": "Validate PKINIT trust and extract PAC material",
+        "path": "countertechniques/CTFTCTE-FPN-012.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-FPN",
+      "category": "FPN",
+      "technique": {
+        "id": "CTFTTE-FPN-013",
+        "name": "Certificate template reconfiguration for arbitrary enrollment",
+        "path": "techniques/CTFTTE-FPN-013.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-FPN-013",
+        "name": "Lock down certificate template ACLs and enrollment",
+        "path": "countertechniques/CTFTCTE-FPN-013.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-FPN",
+      "category": "FPN",
+      "technique": {
+        "id": "CTFTTE-FPN-014",
+        "name": "Injection through a delegated session configuration",
+        "path": "techniques/CTFTTE-FPN-014.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-FPN-014",
+        "name": "Constrain delegated endpoints and log session commands",
+        "path": "countertechniques/CTFTCTE-FPN-014.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-FPN",
+      "category": "FPN",
+      "technique": {
+        "id": "CTFTTE-FPN-015",
+        "name": "Default database credential enabling command execution",
+        "path": "techniques/CTFTTE-FPN-015.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-FPN-015",
+        "name": "Enumerate database defaults and disable dangerous procedures",
+        "path": "countertechniques/CTFTCTE-FPN-015.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-FPN",
+      "category": "FPN",
+      "technique": {
+        "id": "CTFTTE-FPN-016",
+        "name": "Packed token-impersonation binary evading endpoint defenses",
+        "path": "techniques/CTFTTE-FPN-016.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-FPN-016",
+        "name": "Audit privileged tokens and unpack suspicious binaries",
+        "path": "countertechniques/CTFTCTE-FPN-016.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-FPN",
+      "category": "FPN",
+      "technique": {
+        "id": "CTFTTE-FPN-017",
+        "name": "Coerced domain controller authentication toward a delegated host",
+        "path": "techniques/CTFTTE-FPN-017.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-FPN-017",
+        "name": "Constrain delegation trust and detect coerced authentication",
+        "path": "countertechniques/CTFTCTE-FPN-017.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-FPN",
+      "category": "FPN",
+      "technique": {
+        "id": "CTFTTE-FPN-018",
+        "name": "Cross-domain credential reuse after hidden-namespace discovery",
+        "path": "techniques/CTFTTE-FPN-018.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-FPN-018",
+        "name": "Map adjacent namespaces and test credential reuse",
+        "path": "countertechniques/CTFTCTE-FPN-018.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-FPN",
+      "category": "FPN",
+      "technique": {
+        "id": "CTFTTE-FPN-019",
+        "name": "Interactive-shell history and protected credential stores",
+        "path": "techniques/CTFTTE-FPN-019.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-FPN-019",
+        "name": "Harvest shell histories and decrypt protected stores",
+        "path": "countertechniques/CTFTCTE-FPN-019.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-FPN",
+      "category": "FPN",
+      "technique": {
+        "id": "CTFTTE-FPN-020",
+        "name": "Flag payload embedded in directory object properties",
+        "path": "techniques/CTFTTE-FPN-020.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-FPN-020",
+        "name": "Dump directory attributes and search hidden payloads",
+        "path": "countertechniques/CTFTCTE-FPN-020.md"
       }
     },
     {
@@ -1445,6 +1609,62 @@
         "id": "CTFTCTE-ICS-005",
         "name": "Enumerate protocol objects",
         "path": "countertechniques/CTFTCTE-ICS-005.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-ICS",
+      "category": "ICS",
+      "technique": {
+        "id": "CTFTTE-ICS-006",
+        "name": "Physical controller-label default credentials",
+        "path": "techniques/CTFTTE-ICS-006.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-ICS-006",
+        "name": "Read the device label and vendor documentation for default credentials",
+        "path": "countertechniques/CTFTCTE-ICS-006.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-ICS",
+      "category": "ICS",
+      "technique": {
+        "id": "CTFTTE-ICS-007",
+        "name": "Engineering-tool process takeover",
+        "path": "techniques/CTFTTE-ICS-007.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-ICS-007",
+        "name": "Connect the vendor engineering tool and drive the process",
+        "path": "countertechniques/CTFTCTE-ICS-007.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-ICS",
+      "category": "ICS",
+      "technique": {
+        "id": "CTFTTE-ICS-008",
+        "name": "Industrial firewall weak credential behind a controller pivot",
+        "path": "techniques/CTFTTE-ICS-008.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-ICS-008",
+        "name": "Pivot through the controller and brute-force the firewall manager",
+        "path": "countertechniques/CTFTCTE-ICS-008.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-ICS",
+      "category": "ICS",
+      "technique": {
+        "id": "CTFTTE-ICS-009",
+        "name": "Field-device identity takeover through MAC-addressed naming",
+        "path": "techniques/CTFTTE-ICS-009.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-ICS-009",
+        "name": "Map device names to MAC addresses and rename the target",
+        "path": "countertechniques/CTFTCTE-ICS-009.md"
       }
     },
     {
@@ -1952,6 +2172,34 @@
       }
     },
     {
+      "tactic": "CTFT-TA-PWN",
+      "category": "PWN",
+      "technique": {
+        "id": "CTFTTE-PWN-009",
+        "name": "Fixed-name output symlink redirect",
+        "path": "techniques/CTFTTE-PWN-009.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-PWN-009",
+        "name": "Pre-plant a symlink over a privileged fixed-name output path",
+        "path": "countertechniques/CTFTCTE-PWN-009.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-PWN",
+      "category": "PWN",
+      "technique": {
+        "id": "CTFTTE-PWN-010",
+        "name": "Archive hierarchy-reconstruction path traversal",
+        "path": "techniques/CTFTTE-PWN-010.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-PWN-010",
+        "name": "Craft sibling entries whose reconstructed parent path traverses",
+        "path": "countertechniques/CTFTCTE-PWN-010.md"
+      }
+    },
+    {
       "tactic": "CTFT-TA-REV",
       "category": "REV",
       "technique": {
@@ -2075,6 +2323,20 @@
         "id": "CTFTCTE-REV-009",
         "name": "Disassemble and annotate asm snippets",
         "path": "countertechniques/CTFTCTE-REV-009.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-REV",
+      "category": "REV",
+      "technique": {
+        "id": "CTFTTE-REV-010",
+        "name": "Retained build-path symbol-to-source anchor",
+        "path": "techniques/CTFTTE-REV-010.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-REV-010",
+        "name": "Pivot from binary symbols to upstream source and diff the challenge branch",
+        "path": "countertechniques/CTFTCTE-REV-010.md"
       }
     },
     {
@@ -2595,6 +2857,7 @@
     "CTFTTE-CRY-011": "CTFTCTE-CRY-011",
     "CTFTTE-CRY-012": "CTFTCTE-CRY-012",
     "CTFTTE-CRY-013": "CTFTCTE-CRY-013",
+    "CTFTTE-CRY-014": "CTFTCTE-CRY-014",
     "CTFTTE-FOR-001": "CTFTCTE-FOR-001",
     "CTFTTE-FOR-002": "CTFTCTE-FOR-002",
     "CTFTTE-FOR-003": "CTFTCTE-FOR-003",
@@ -2624,6 +2887,7 @@
     "CTFTTE-FOR-027": "CTFTCTE-FOR-027",
     "CTFTTE-FOR-028": "CTFTCTE-FOR-028",
     "CTFTTE-FOR-029": "CTFTCTE-FOR-029",
+    "CTFTTE-FOR-030": "CTFTCTE-FOR-030",
     "CTFTTE-FPN-001": "CTFTCTE-FPN-001",
     "CTFTTE-FPN-002": "CTFTCTE-FPN-002",
     "CTFTTE-FPN-003": "CTFTCTE-FPN-003",
@@ -2634,6 +2898,16 @@
     "CTFTTE-FPN-008": "CTFTCTE-FPN-008",
     "CTFTTE-FPN-009": "CTFTCTE-FPN-009",
     "CTFTTE-FPN-010": "CTFTCTE-FPN-010",
+    "CTFTTE-FPN-011": "CTFTCTE-FPN-011",
+    "CTFTTE-FPN-012": "CTFTCTE-FPN-012",
+    "CTFTTE-FPN-013": "CTFTCTE-FPN-013",
+    "CTFTTE-FPN-014": "CTFTCTE-FPN-014",
+    "CTFTTE-FPN-015": "CTFTCTE-FPN-015",
+    "CTFTTE-FPN-016": "CTFTCTE-FPN-016",
+    "CTFTTE-FPN-017": "CTFTCTE-FPN-017",
+    "CTFTTE-FPN-018": "CTFTCTE-FPN-018",
+    "CTFTTE-FPN-019": "CTFTCTE-FPN-019",
+    "CTFTTE-FPN-020": "CTFTCTE-FPN-020",
     "CTFTTE-GAM-001": "CTFTCTE-GAM-001",
     "CTFTTE-GAM-002": "CTFTCTE-GAM-002",
     "CTFTTE-GAM-003": "CTFTCTE-GAM-003",
@@ -2649,6 +2923,10 @@
     "CTFTTE-ICS-003": "CTFTCTE-ICS-003",
     "CTFTTE-ICS-004": "CTFTCTE-ICS-004",
     "CTFTTE-ICS-005": "CTFTCTE-ICS-005",
+    "CTFTTE-ICS-006": "CTFTCTE-ICS-006",
+    "CTFTTE-ICS-007": "CTFTCTE-ICS-007",
+    "CTFTTE-ICS-008": "CTFTCTE-ICS-008",
+    "CTFTTE-ICS-009": "CTFTCTE-ICS-009",
     "CTFTTE-JAL-001": "CTFTCTE-JAL-001",
     "CTFTTE-JAL-002": "CTFTCTE-JAL-002",
     "CTFTTE-JAL-003": "CTFTCTE-JAL-003",
@@ -2685,6 +2963,8 @@
     "CTFTTE-PWN-006": "CTFTCTE-PWN-006",
     "CTFTTE-PWN-007": "CTFTCTE-PWN-007",
     "CTFTTE-PWN-008": "CTFTCTE-PWN-008",
+    "CTFTTE-PWN-009": "CTFTCTE-PWN-009",
+    "CTFTTE-PWN-010": "CTFTCTE-PWN-010",
     "CTFTTE-REV-001": "CTFTCTE-REV-001",
     "CTFTTE-REV-002": "CTFTCTE-REV-002",
     "CTFTTE-REV-003": "CTFTCTE-REV-003",
@@ -2694,6 +2974,7 @@
     "CTFTTE-REV-007": "CTFTCTE-REV-007",
     "CTFTTE-REV-008": "CTFTCTE-REV-008",
     "CTFTTE-REV-009": "CTFTCTE-REV-009",
+    "CTFTTE-REV-010": "CTFTCTE-REV-010",
     "CTFTTE-SDR-001": "CTFTCTE-SDR-001",
     "CTFTTE-STE-001": "CTFTCTE-STE-001",
     "CTFTTE-STE-002": "CTFTCTE-STE-002",
@@ -3010,6 +3291,13 @@
       "tactic": "CTFT-TA-CRY",
       "path": "techniques/CTFTTE-CRY-013.md"
     },
+    "CTFTTE-CRY-014": {
+      "name": "Timestamp-keyed XOR",
+      "counter_id": "CTFTCTE-CRY-014",
+      "counter_name": "Derive the XOR key from file mtime",
+      "tactic": "CTFT-TA-CRY",
+      "path": "techniques/CTFTTE-CRY-014.md"
+    },
     "CTFTTE-FOR-001": {
       "name": "Magic-byte / file-signature tampering",
       "counter_id": "CTFTCTE-FOR-001",
@@ -3213,6 +3501,13 @@
       "tactic": "CTFT-TA-FOR",
       "path": "techniques/CTFTTE-FOR-029.md"
     },
+    "CTFTTE-FOR-030": {
+      "name": "Read-triggered payload mutation (guardian process)",
+      "counter_id": "CTFTCTE-FOR-030",
+      "counter_name": "Detect, stop and snapshot a read-triggered mutator",
+      "tactic": "CTFT-TA-FOR",
+      "path": "techniques/CTFTTE-FOR-030.md"
+    },
     "CTFTTE-FPN-001": {
       "name": "Multi-stage chained challenge",
       "counter_id": "CTFTCTE-FPN-001",
@@ -3282,6 +3577,76 @@
       "counter_name": "Catch, upgrade and persist reverse shells",
       "tactic": "CTFT-TA-FPN",
       "path": "techniques/CTFTTE-FPN-010.md"
+    },
+    "CTFTTE-FPN-011": {
+      "name": "Alternate key-credential backdoor on a machine account",
+      "counter_id": "CTFTCTE-FPN-011",
+      "counter_name": "Detect and revoke key-credential backdoors",
+      "tactic": "CTFT-TA-FPN",
+      "path": "techniques/CTFTTE-FPN-011.md"
+    },
+    "CTFTTE-FPN-012": {
+      "name": "Certificate-derived Kerberos authentication chain",
+      "counter_id": "CTFTCTE-FPN-012",
+      "counter_name": "Validate PKINIT trust and extract PAC material",
+      "tactic": "CTFT-TA-FPN",
+      "path": "techniques/CTFTTE-FPN-012.md"
+    },
+    "CTFTTE-FPN-013": {
+      "name": "Certificate template reconfiguration for arbitrary enrollment",
+      "counter_id": "CTFTCTE-FPN-013",
+      "counter_name": "Lock down certificate template ACLs and enrollment",
+      "tactic": "CTFT-TA-FPN",
+      "path": "techniques/CTFTTE-FPN-013.md"
+    },
+    "CTFTTE-FPN-014": {
+      "name": "Injection through a delegated session configuration",
+      "counter_id": "CTFTCTE-FPN-014",
+      "counter_name": "Constrain delegated endpoints and log session commands",
+      "tactic": "CTFT-TA-FPN",
+      "path": "techniques/CTFTTE-FPN-014.md"
+    },
+    "CTFTTE-FPN-015": {
+      "name": "Default database credential enabling command execution",
+      "counter_id": "CTFTCTE-FPN-015",
+      "counter_name": "Enumerate database defaults and disable dangerous procedures",
+      "tactic": "CTFT-TA-FPN",
+      "path": "techniques/CTFTTE-FPN-015.md"
+    },
+    "CTFTTE-FPN-016": {
+      "name": "Packed token-impersonation binary evading endpoint defenses",
+      "counter_id": "CTFTCTE-FPN-016",
+      "counter_name": "Audit privileged tokens and unpack suspicious binaries",
+      "tactic": "CTFT-TA-FPN",
+      "path": "techniques/CTFTTE-FPN-016.md"
+    },
+    "CTFTTE-FPN-017": {
+      "name": "Coerced domain controller authentication toward a delegated host",
+      "counter_id": "CTFTCTE-FPN-017",
+      "counter_name": "Constrain delegation trust and detect coerced authentication",
+      "tactic": "CTFT-TA-FPN",
+      "path": "techniques/CTFTTE-FPN-017.md"
+    },
+    "CTFTTE-FPN-018": {
+      "name": "Cross-domain credential reuse after hidden-namespace discovery",
+      "counter_id": "CTFTCTE-FPN-018",
+      "counter_name": "Map adjacent namespaces and test credential reuse",
+      "tactic": "CTFT-TA-FPN",
+      "path": "techniques/CTFTTE-FPN-018.md"
+    },
+    "CTFTTE-FPN-019": {
+      "name": "Interactive-shell history and protected credential stores",
+      "counter_id": "CTFTCTE-FPN-019",
+      "counter_name": "Harvest shell histories and decrypt protected stores",
+      "tactic": "CTFT-TA-FPN",
+      "path": "techniques/CTFTTE-FPN-019.md"
+    },
+    "CTFTTE-FPN-020": {
+      "name": "Flag payload embedded in directory object properties",
+      "counter_id": "CTFTCTE-FPN-020",
+      "counter_name": "Dump directory attributes and search hidden payloads",
+      "tactic": "CTFT-TA-FPN",
+      "path": "techniques/CTFTTE-FPN-020.md"
     },
     "CTFTTE-GAM-001": {
       "name": "Networked game / protocol automation",
@@ -3387,6 +3752,34 @@
       "counter_name": "Enumerate protocol objects",
       "tactic": "CTFT-TA-ICS",
       "path": "techniques/CTFTTE-ICS-005.md"
+    },
+    "CTFTTE-ICS-006": {
+      "name": "Physical controller-label default credentials",
+      "counter_id": "CTFTCTE-ICS-006",
+      "counter_name": "Read the device label and vendor documentation for default credentials",
+      "tactic": "CTFT-TA-ICS",
+      "path": "techniques/CTFTTE-ICS-006.md"
+    },
+    "CTFTTE-ICS-007": {
+      "name": "Engineering-tool process takeover",
+      "counter_id": "CTFTCTE-ICS-007",
+      "counter_name": "Connect the vendor engineering tool and drive the process",
+      "tactic": "CTFT-TA-ICS",
+      "path": "techniques/CTFTTE-ICS-007.md"
+    },
+    "CTFTTE-ICS-008": {
+      "name": "Industrial firewall weak credential behind a controller pivot",
+      "counter_id": "CTFTCTE-ICS-008",
+      "counter_name": "Pivot through the controller and brute-force the firewall manager",
+      "tactic": "CTFT-TA-ICS",
+      "path": "techniques/CTFTTE-ICS-008.md"
+    },
+    "CTFTTE-ICS-009": {
+      "name": "Field-device identity takeover through MAC-addressed naming",
+      "counter_id": "CTFTCTE-ICS-009",
+      "counter_name": "Map device names to MAC addresses and rename the target",
+      "tactic": "CTFT-TA-ICS",
+      "path": "techniques/CTFTTE-ICS-009.md"
     },
     "CTFTTE-JAL-001": {
       "name": "Python jail (pyjail) confinement",
@@ -3640,6 +4033,20 @@
       "tactic": "CTFT-TA-PWN",
       "path": "techniques/CTFTTE-PWN-008.md"
     },
+    "CTFTTE-PWN-009": {
+      "name": "Fixed-name output symlink redirect",
+      "counter_id": "CTFTCTE-PWN-009",
+      "counter_name": "Pre-plant a symlink over a privileged fixed-name output path",
+      "tactic": "CTFT-TA-PWN",
+      "path": "techniques/CTFTTE-PWN-009.md"
+    },
+    "CTFTTE-PWN-010": {
+      "name": "Archive hierarchy-reconstruction path traversal",
+      "counter_id": "CTFTCTE-PWN-010",
+      "counter_name": "Craft sibling entries whose reconstructed parent path traverses",
+      "tactic": "CTFT-TA-PWN",
+      "path": "techniques/CTFTTE-PWN-010.md"
+    },
     "CTFTTE-REV-001": {
       "name": "Anti-debugging / anti-analysis guards",
       "counter_id": "CTFTCTE-REV-001",
@@ -3702,6 +4109,13 @@
       "counter_name": "Disassemble and annotate asm snippets",
       "tactic": "CTFT-TA-REV",
       "path": "techniques/CTFTTE-REV-009.md"
+    },
+    "CTFTTE-REV-010": {
+      "name": "Retained build-path symbol-to-source anchor",
+      "counter_id": "CTFTCTE-REV-010",
+      "counter_name": "Pivot from binary symbols to upstream source and diff the challenge branch",
+      "tactic": "CTFT-TA-REV",
+      "path": "techniques/CTFTTE-REV-010.md"
     },
     "CTFTTE-SDR-001": {
       "name": "RF/SDR signal embedding",
@@ -4223,6 +4637,13 @@
       "tactic": "CTFT-TA-CRY",
       "path": "countertechniques/CTFTCTE-CRY-013.md"
     },
+    "CTFTCTE-CRY-014": {
+      "name": "Derive the XOR key from file mtime",
+      "technique_id": "CTFTTE-CRY-014",
+      "technique_name": "Timestamp-keyed XOR",
+      "tactic": "CTFT-TA-CRY",
+      "path": "countertechniques/CTFTCTE-CRY-014.md"
+    },
     "CTFTCTE-FOR-001": {
       "name": "Recover the legitimate file signature",
       "technique_id": "CTFTTE-FOR-001",
@@ -4426,6 +4847,13 @@
       "tactic": "CTFT-TA-FOR",
       "path": "countertechniques/CTFTCTE-FOR-029.md"
     },
+    "CTFTCTE-FOR-030": {
+      "name": "Detect, stop and snapshot a read-triggered mutator",
+      "technique_id": "CTFTTE-FOR-030",
+      "technique_name": "Read-triggered payload mutation (guardian process)",
+      "tactic": "CTFT-TA-FOR",
+      "path": "countertechniques/CTFTCTE-FOR-030.md"
+    },
     "CTFTCTE-FPN-001": {
       "name": "Chain enumeration, foothold and privilege escalation",
       "technique_id": "CTFTTE-FPN-001",
@@ -4495,6 +4923,76 @@
       "technique_name": "Reverse-shell delivery & listener operations",
       "tactic": "CTFT-TA-FPN",
       "path": "countertechniques/CTFTCTE-FPN-010.md"
+    },
+    "CTFTCTE-FPN-011": {
+      "name": "Detect and revoke key-credential backdoors",
+      "technique_id": "CTFTTE-FPN-011",
+      "technique_name": "Alternate key-credential backdoor on a machine account",
+      "tactic": "CTFT-TA-FPN",
+      "path": "countertechniques/CTFTCTE-FPN-011.md"
+    },
+    "CTFTCTE-FPN-012": {
+      "name": "Validate PKINIT trust and extract PAC material",
+      "technique_id": "CTFTTE-FPN-012",
+      "technique_name": "Certificate-derived Kerberos authentication chain",
+      "tactic": "CTFT-TA-FPN",
+      "path": "countertechniques/CTFTCTE-FPN-012.md"
+    },
+    "CTFTCTE-FPN-013": {
+      "name": "Lock down certificate template ACLs and enrollment",
+      "technique_id": "CTFTTE-FPN-013",
+      "technique_name": "Certificate template reconfiguration for arbitrary enrollment",
+      "tactic": "CTFT-TA-FPN",
+      "path": "countertechniques/CTFTCTE-FPN-013.md"
+    },
+    "CTFTCTE-FPN-014": {
+      "name": "Constrain delegated endpoints and log session commands",
+      "technique_id": "CTFTTE-FPN-014",
+      "technique_name": "Injection through a delegated session configuration",
+      "tactic": "CTFT-TA-FPN",
+      "path": "countertechniques/CTFTCTE-FPN-014.md"
+    },
+    "CTFTCTE-FPN-015": {
+      "name": "Enumerate database defaults and disable dangerous procedures",
+      "technique_id": "CTFTTE-FPN-015",
+      "technique_name": "Default database credential enabling command execution",
+      "tactic": "CTFT-TA-FPN",
+      "path": "countertechniques/CTFTCTE-FPN-015.md"
+    },
+    "CTFTCTE-FPN-016": {
+      "name": "Audit privileged tokens and unpack suspicious binaries",
+      "technique_id": "CTFTTE-FPN-016",
+      "technique_name": "Packed token-impersonation binary evading endpoint defenses",
+      "tactic": "CTFT-TA-FPN",
+      "path": "countertechniques/CTFTCTE-FPN-016.md"
+    },
+    "CTFTCTE-FPN-017": {
+      "name": "Constrain delegation trust and detect coerced authentication",
+      "technique_id": "CTFTTE-FPN-017",
+      "technique_name": "Coerced domain controller authentication toward a delegated host",
+      "tactic": "CTFT-TA-FPN",
+      "path": "countertechniques/CTFTCTE-FPN-017.md"
+    },
+    "CTFTCTE-FPN-018": {
+      "name": "Map adjacent namespaces and test credential reuse",
+      "technique_id": "CTFTTE-FPN-018",
+      "technique_name": "Cross-domain credential reuse after hidden-namespace discovery",
+      "tactic": "CTFT-TA-FPN",
+      "path": "countertechniques/CTFTCTE-FPN-018.md"
+    },
+    "CTFTCTE-FPN-019": {
+      "name": "Harvest shell histories and decrypt protected stores",
+      "technique_id": "CTFTTE-FPN-019",
+      "technique_name": "Interactive-shell history and protected credential stores",
+      "tactic": "CTFT-TA-FPN",
+      "path": "countertechniques/CTFTCTE-FPN-019.md"
+    },
+    "CTFTCTE-FPN-020": {
+      "name": "Dump directory attributes and search hidden payloads",
+      "technique_id": "CTFTTE-FPN-020",
+      "technique_name": "Flag payload embedded in directory object properties",
+      "tactic": "CTFT-TA-FPN",
+      "path": "countertechniques/CTFTCTE-FPN-020.md"
     },
     "CTFTCTE-GAM-001": {
       "name": "Script a client to beat the protocol",
@@ -4600,6 +5098,34 @@
       "technique_name": "DNP3 / BACnet object enumeration",
       "tactic": "CTFT-TA-ICS",
       "path": "countertechniques/CTFTCTE-ICS-005.md"
+    },
+    "CTFTCTE-ICS-006": {
+      "name": "Read the device label and vendor documentation for default credentials",
+      "technique_id": "CTFTTE-ICS-006",
+      "technique_name": "Physical controller-label default credentials",
+      "tactic": "CTFT-TA-ICS",
+      "path": "countertechniques/CTFTCTE-ICS-006.md"
+    },
+    "CTFTCTE-ICS-007": {
+      "name": "Connect the vendor engineering tool and drive the process",
+      "technique_id": "CTFTTE-ICS-007",
+      "technique_name": "Engineering-tool process takeover",
+      "tactic": "CTFT-TA-ICS",
+      "path": "countertechniques/CTFTCTE-ICS-007.md"
+    },
+    "CTFTCTE-ICS-008": {
+      "name": "Pivot through the controller and brute-force the firewall manager",
+      "technique_id": "CTFTTE-ICS-008",
+      "technique_name": "Industrial firewall weak credential behind a controller pivot",
+      "tactic": "CTFT-TA-ICS",
+      "path": "countertechniques/CTFTCTE-ICS-008.md"
+    },
+    "CTFTCTE-ICS-009": {
+      "name": "Map device names to MAC addresses and rename the target",
+      "technique_id": "CTFTTE-ICS-009",
+      "technique_name": "Field-device identity takeover through MAC-addressed naming",
+      "tactic": "CTFT-TA-ICS",
+      "path": "countertechniques/CTFTCTE-ICS-009.md"
     },
     "CTFTCTE-JAL-001": {
       "name": "Escape the Python sandbox",
@@ -4853,6 +5379,20 @@
       "tactic": "CTFT-TA-PWN",
       "path": "countertechniques/CTFTCTE-PWN-008.md"
     },
+    "CTFTCTE-PWN-009": {
+      "name": "Pre-plant a symlink over a privileged fixed-name output path",
+      "technique_id": "CTFTTE-PWN-009",
+      "technique_name": "Fixed-name output symlink redirect",
+      "tactic": "CTFT-TA-PWN",
+      "path": "countertechniques/CTFTCTE-PWN-009.md"
+    },
+    "CTFTCTE-PWN-010": {
+      "name": "Craft sibling entries whose reconstructed parent path traverses",
+      "technique_id": "CTFTTE-PWN-010",
+      "technique_name": "Archive hierarchy-reconstruction path traversal",
+      "tactic": "CTFT-TA-PWN",
+      "path": "countertechniques/CTFTCTE-PWN-010.md"
+    },
     "CTFTCTE-REV-001": {
       "name": "Bypass anti-analysis to reach the check",
       "technique_id": "CTFTTE-REV-001",
@@ -4915,6 +5455,13 @@
       "technique_name": "Assembly-level code-golf / shellcode RE",
       "tactic": "CTFT-TA-REV",
       "path": "countertechniques/CTFTCTE-REV-009.md"
+    },
+    "CTFTCTE-REV-010": {
+      "name": "Pivot from binary symbols to upstream source and diff the challenge branch",
+      "technique_id": "CTFTTE-REV-010",
+      "technique_name": "Retained build-path symbol-to-source anchor",
+      "tactic": "CTFT-TA-REV",
+      "path": "countertechniques/CTFTCTE-REV-010.md"
     },
     "CTFTCTE-SDR-001": {
       "name": "Demodulate and decode RF captures",

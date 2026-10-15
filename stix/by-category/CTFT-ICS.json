@@ -364,6 +364,294 @@
       "source_ref": "course-of-action--5577003d-2a44-59f4-bf7f-77d30e3e9de1",
       "target_ref": "attack-pattern--76306181-0a94-5cf0-b51a-529c913c5873",
       "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--0302fe37-2522-5a58-9ef9-840bcb3bb676",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-ICS-006 - Physical controller-label default credentials",
+      "description": "The controller is the entry point of the whole track, but its credentials are never handed out: the default password is printed on the device label, next to the MAC address, and the same password unlocks both the web-based manager and SSH. A physical view of the controller — a photo, a label on the table of the SCADA village, the vendor datasheet for the exact model — is part of the intended reconnaissance.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "ics"
+        }
+      ],
+      "x_ctft_category": "ICS",
+      "x_ctft_domain": "ICS",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-ICS-006"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T0859",
+          "description": "Valid Accounts"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--377838a0-407c-5542-88a6-c3c96a492e31",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-ICS-006 - Read the device label and vendor documentation for default credentials",
+      "description": "Identify the exact model from the label, the HMI banner or the service fingerprints, then read its vendor documentation for the default account policy. Check every physical surface of the challenge — device photos, printed labels, handouts — for the password and MAC address. Expect the same credential to unlock both the web-based manager and SSH, and reuse it on every exposed service.",
+      "x_ctft_category": "ICS",
+      "x_ctft_domain": "ICS",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-ICS-006"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T0859",
+          "description": "Valid Accounts"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--6b65bc7e-ba8d-5b76-a0b9-d319d1e25d68",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--377838a0-407c-5542-88a6-c3c96a492e31",
+      "target_ref": "attack-pattern--0302fe37-2522-5a58-9ef9-840bcb3bb676",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--58d38f5d-a2af-5bbe-99b2-952b50f28165",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-ICS-007 - Engineering-tool process takeover",
+      "description": "The flag is gated by a physical process state — a train that must be stopped — and no shell command or web click changes it. Only the vendor engineering tool for the PLC family exposes the start/stop controls, and it runs on a single platform, adding a setup obstacle to the takeover.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "ics"
+        }
+      ],
+      "x_ctft_category": "ICS",
+      "x_ctft_domain": "ICS",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-ICS-007"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T0843",
+          "description": "Program Download"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T0855",
+          "description": "Unauthorized Command Message"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--b104834a-947d-53ba-ae12-9637c38fef71",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-ICS-007 - Connect the vendor engineering tool and drive the process",
+      "description": "Install the vendor engineering tool (a Windows VM when it is platform-locked), create a project for the exact controller model and IP address, connect with the credentials recovered during reconnaissance, and operate the exposed process controls until the target state is reached.",
+      "x_ctft_category": "ICS",
+      "x_ctft_domain": "ICS",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-ICS-007"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T0843",
+          "description": "Program Download"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T0855",
+          "description": "Unauthorized Command Message"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--0b3ffe79-17c0-5709-9555-ce7dfacf619f",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--b104834a-947d-53ba-ae12-9637c38fef71",
+      "target_ref": "attack-pattern--58d38f5d-a2af-5bbe-99b2-952b50f28165",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--fa219921-75df-5848-bd3d-4a7aa53e83b2",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-ICS-008 - Industrial firewall weak credential behind a controller pivot",
+      "description": "The industrial firewall guarding the next flag is unreachable from the player network; only the already-compromised controller can reach it. Its web manager sits behind that pivot with a weak administrative password that happens to be in every public wordlist, so the stage is a tunnel-plus-brute-force exercise.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "ics"
+        }
+      ],
+      "x_ctft_category": "ICS",
+      "x_ctft_domain": "ICS",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-ICS-008"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T0859",
+          "description": "Valid Accounts"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T0886",
+          "description": "Remote Services"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--001ba8a5-c98e-50fb-89ad-2982b61bbd35",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-ICS-008 - Pivot through the controller and brute-force the firewall manager",
+      "description": "Open an SSH tunnel from the compromised controller to the firewall's management port, then brute force the web login with a public wordlist and the obvious administrative usernames. Once authenticated, alter the firewall rules to admit the player network and retrieve the flag.",
+      "x_ctft_category": "ICS",
+      "x_ctft_domain": "ICS",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-ICS-008"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T0859",
+          "description": "Valid Accounts"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T0886",
+          "description": "Remote Services"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--f5ed92e8-5334-566f-b1bb-2a964422c4e5",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--001ba8a5-c98e-50fb-89ad-2982b61bbd35",
+      "target_ref": "attack-pattern--fa219921-75df-5848-bd3d-4a7aa53e83b2",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--fa30879e-a775-57f4-a6fe-c061a412772b",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-ICS-009 - Field-device identity takeover through MAC-addressed naming",
+      "description": "The wind turbines are managed through an Ethernet protocol that binds device names to MAC addresses. Stopping a turbine means renaming its identity, and the renaming command ships in a vendor store package that must be fetched, transferred onto the controller and pointed at the right MAC address.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "ics"
+        }
+      ],
+      "x_ctft_category": "ICS",
+      "x_ctft_domain": "ICS",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-ICS-009"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T0855",
+          "description": "Unauthorized Command Message"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--9fc05998-778a-5792-96b0-44218d04b44a",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-ICS-009 - Map device names to MAC addresses and rename the target",
+      "description": "Enumerate the MAC-to-name bindings of the field devices, fetch the vendor rename utility from its store, transfer it to the controller that shares the field network, and rename the target device. The process state follows the identity change.",
+      "x_ctft_category": "ICS",
+      "x_ctft_domain": "ICS",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-ICS-009"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T0855",
+          "description": "Unauthorized Command Message"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--8ba5f181-9091-5c2b-84b9-8d4ca19db358",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--9fc05998-778a-5792-96b0-44218d04b44a",
+      "target_ref": "attack-pattern--fa30879e-a775-57f4-a6fe-c061a412772b",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     }
   ]
 }

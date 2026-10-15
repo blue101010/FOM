@@ -18,9 +18,9 @@ The correct flag input is the unique solution to a system of mathematical or Boo
 
 ## Tools
 
-- z3-solver
-- angr
-- miasm
+- [z3-solver](../tools/CTFTTOU-052.md)
+- [angr](../tools/CTFTTOU-056.md)
+- [miasm](../tools/CTFTTOU-057.md)
 
 ## References
 

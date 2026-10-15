@@ -22,7 +22,7 @@ Agent logs replay the tool-call trace; guardrail violations are auditable events
 
 ## Tools
 
-- Python
+- [python](../tools/CTFTTOU-050.md)
 - agent CLIs
 
 ## References

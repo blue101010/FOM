@@ -1,7 +1,7 @@
 # CTFTTOU-008 — Playwright
 
 > **Tool ID:** `CTFTTOU-008`  
-> **Related techniques/counters:** CTFTCTE-WEB-018, CTFTCTE-GAM-007, CTFTCTE-WEB-020
+> **Related techniques/counters:** CTFTCTE-WEB-018, CTFTCTE-GAM-007, CTFTCTE-WEB-020, CTFTTE-AIM-002, CTFTCTE-AIM-002
 
 ## Description
 
@@ -13,4 +13,4 @@ Browser automation and instrumentation. Subscribes before `page.goto()` to reque
 
 ## Related Techniques
 
-CTFTCTE-WEB-018, CTFTCTE-GAM-007, CTFTCTE-WEB-020
+CTFTCTE-WEB-018, CTFTCTE-GAM-007, CTFTCTE-WEB-020, CTFTTE-AIM-002, CTFTCTE-AIM-002

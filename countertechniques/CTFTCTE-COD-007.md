@@ -22,8 +22,8 @@ Constraint puzzles are pure computation; solvers double as verifiers.
 
 ## Tools
 
-- Python
-- z3
+- [python](../tools/CTFTTOU-050.md)
+- [z3-solver](../tools/CTFTTOU-052.md)
 
 ## References
 

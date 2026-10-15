@@ -4,8 +4,8 @@ Every **Design / Hide Technique** (`CTFTTE-<CAT>-NNN`) and the
 **Resolution-Technique** (`CTFTCTE-<CAT>-NNN`) that recovers it, grouped by domain.
 IDs pair one-to-one: `CTFTTE-FOR-004` is always answered by `CTFTCTE-FOR-004`.
 
-> Generated from the files in `techniques/` and `countertechniques/` — corpus fingerprint `199a911ec03b15bc`
-> by `v3/render_taxonomy_docs.py`. **173 complete pairs** across **19 active domains**. Do not hand-edit: rename the entry, then re-render.
+> Generated from the files in `techniques/` and `countertechniques/` — corpus fingerprint `7ba74d8878861110`
+> by `v3/render_taxonomy_docs.py`. **192 complete pairs** across **19 active domains**. Do not hand-edit: rename the entry, then re-render.
 
 ---
 
@@ -15,26 +15,26 @@ Order follows the challenge-category picker.
 
 | # | Code | Picker label | Domain | Pairs |
 | --- | --- | --- | --- | --- |
-| 1 | [`FOR`](#ctft-ta-for) | Forensics | Forensics | 29 |
+| 1 | [`FOR`](#ctft-ta-for) | Forensics | Forensics | 30 |
 | 2 | [`WEB`](#ctft-ta-web) | Web | Web Exploitation | 22 |
-| 3 | [`CRY`](#ctft-ta-cry) | Crypto | Cryptography | 13 |
-| 4 | [`PWN`](#ctft-ta-pwn) | Binary | Binary Exploitation | 8 |
-| 5 | [`REV`](#ctft-ta-rev) | Reverse | Reverse Engineering | 9 |
+| 3 | [`CRY`](#ctft-ta-cry) | Crypto | Cryptography | 14 |
+| 4 | [`PWN`](#ctft-ta-pwn) | Binary | Binary Exploitation | 10 |
+| 5 | [`REV`](#ctft-ta-rev) | Reverse | Reverse Engineering | 10 |
 | 6 | [`STE`](#ctft-ta-ste) | Stego | Steganography | 11 |
 | 7 | [`OSI`](#ctft-ta-osi) | OSINT | OSINT | 9 |
 | 8 | [`CLD`](#ctft-ta-cld) | Cloud | Cloud | 8 |
 | 9 | [`BLK`](#ctft-ta-blk) | Blockchain | Blockchain | 5 |
 | 10 | [`AIM`](#ctft-ta-aim) | AI/ML | AI / ML | 7 |
-| 11 | [`ICS`](#ctft-ta-ics) | ICS/SCADA | ICS / SCADA | 5 |
+| 11 | [`ICS`](#ctft-ta-ics) | ICS/SCADA | ICS / SCADA | 9 |
 | 12 | [`MOB`](#ctft-ta-mob) | Mobile | Mobile | 5 |
 | 13 | [`JAL`](#ctft-ta-jal) | Jail escape | Jail / Sandbox Escape | 6 |
 | 14 | [`GAM`](#ctft-ta-gam) | Game/Proto | Game / Protocol Automation (GamePwn) | 8 |
 | 15 | [`COD`](#ctft-ta-cod) | Coding | Coding / Programming Puzzle | 7 |
 | 16 | [`NET`](#ctft-ta-net) | Network | Network | 8 |
-| 17 | [`FPN`](#ctft-ta-fpn) | Full Pwn | Full Pwn / Multi-Stage | 10 |
+| 17 | [`FPN`](#ctft-ta-fpn) | Full Pwn | Full Pwn / Multi-Stage | 20 |
 | 18 | [`HWR`](#ctft-ta-hwr) | Hardware | Hardware | 2 |
 | 19 | [`SDR`](#ctft-ta-sdr) | SDR / RF | Software-Defined Radio | 1 |
-| | | | **Total** | **173** |
+| | | | **Total** | **192** |
 
 **Retired — do not use.** `MSC` (Misc) was a catch-all whose entries all
 duplicated a precise domain; file those challenges under `JAL`, `COD`, `GAM`
@@ -44,7 +44,7 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 
 ## <a id="ctft-ta-for"></a>`CTFT-TA-FOR` — Forensics
 
-> [domain page](tactics/CTFT-TA-FOR.md) · 29 pairs · HTB: Forensics
+> [domain page](tactics/CTFT-TA-FOR.md) · 30 pairs · HTB: Forensics
 
 | # | Technique ID | Hide / Design name | Resolution-technique ID | Recovery action |
 | --- | --- | --- | --- | --- |
@@ -77,6 +77,7 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 | 27 | [CTFTTE-FOR-027](techniques/CTFTTE-FOR-027.md) | Use JAB colour 2D codes to hide data | [CTFTCTE-FOR-027](countertechniques/CTFTCTE-FOR-027.md) | Retrieve information from JAB colour codes |
 | 28 | [CTFTTE-FOR-028](techniques/CTFTTE-FOR-028.md) | Windows event-log evidence concealment | [CTFTCTE-FOR-028](countertechniques/CTFTCTE-FOR-028.md) | Reconstruct the timeline from Windows event logs |
 | 29 | [CTFTTE-FOR-029](techniques/CTFTTE-FOR-029.md) | Registry-hive persistence artifact concealment | [CTFTCTE-FOR-029](countertechniques/CTFTCTE-FOR-029.md) | Extract and analyse registry hives from a forensic image |
+| 30 | [CTFTTE-FOR-030](techniques/CTFTTE-FOR-030.md) | Read-triggered payload mutation (guardian process) | [CTFTCTE-FOR-030](countertechniques/CTFTCTE-FOR-030.md) | Detect, stop and snapshot a read-triggered mutator |
 
 
 ## <a id="ctft-ta-web"></a>`CTFT-TA-WEB` — Web Exploitation
@@ -111,7 +112,7 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 
 ## <a id="ctft-ta-cry"></a>`CTFT-TA-CRY` — Cryptography
 
-> [domain page](tactics/CTFT-TA-CRY.md) · 13 pairs · HTB: Crypto
+> [domain page](tactics/CTFT-TA-CRY.md) · 14 pairs · HTB: Crypto
 
 | # | Technique ID | Hide / Design name | Resolution-technique ID | Recovery action |
 | --- | --- | --- | --- | --- |
@@ -128,11 +129,12 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 | 11 | [CTFTTE-CRY-011](techniques/CTFTTE-CRY-011.md) | Protocol implementation flaw (Heartbleed-style) | [CTFTCTE-CRY-011](countertechniques/CTFTCTE-CRY-011.md) | Reproduce protocol memory-leak vulnerabilities |
 | 12 | [CTFTTE-CRY-012](techniques/CTFTTE-CRY-012.md) | Hash-cracking maze with constraints | [CTFTCTE-CRY-012](countertechniques/CTFTCTE-CRY-012.md) | Crack hashes under masks/rules |
 | 13 | [CTFTTE-CRY-013](techniques/CTFTTE-CRY-013.md) | Nonstandard-alphabet substitution (braille, cetacean) | [CTFTCTE-CRY-013](countertechniques/CTFTCTE-CRY-013.md) | Transcode nonstandard alphabets |
+| 14 | [CTFTTE-CRY-014](techniques/CTFTTE-CRY-014.md) | Timestamp-keyed XOR | [CTFTCTE-CRY-014](countertechniques/CTFTCTE-CRY-014.md) | Derive the XOR key from file mtime |
 
 
 ## <a id="ctft-ta-pwn"></a>`CTFT-TA-PWN` — Binary Exploitation
 
-> [domain page](tactics/CTFT-TA-PWN.md) · 8 pairs · HTB: Pwn
+> [domain page](tactics/CTFT-TA-PWN.md) · 10 pairs · HTB: Pwn
 
 | # | Technique ID | Hide / Design name | Resolution-technique ID | Recovery action |
 | --- | --- | --- | --- | --- |
@@ -144,11 +146,13 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 | 6 | [CTFTTE-PWN-006](techniques/CTFTTE-PWN-006.md) | Stack canary / PIE / ASLR hardening puzzle | [CTFTCTE-PWN-006](countertechniques/CTFTCTE-PWN-006.md) | Leak canary/PIE base, ret2libc |
 | 7 | [CTFTTE-PWN-007](techniques/CTFTTE-PWN-007.md) | Kernel/mseal-guarded memory puzzle | [CTFTCTE-PWN-007](countertechniques/CTFTCTE-PWN-007.md) | Exploit kernel-module or mseal protections |
 | 8 | [CTFTTE-PWN-008](techniques/CTFTTE-PWN-008.md) | Shellcode craft & encoding constraints | [CTFTCTE-PWN-008](countertechniques/CTFTCTE-PWN-008.md) | Generate/encode shellcode (alphanumeric, null-free) |
+| 9 | [CTFTTE-PWN-009](techniques/CTFTTE-PWN-009.md) | Fixed-name output symlink redirect | [CTFTCTE-PWN-009](countertechniques/CTFTCTE-PWN-009.md) | Pre-plant a symlink over a privileged fixed-name output path |
+| 10 | [CTFTTE-PWN-010](techniques/CTFTTE-PWN-010.md) | Archive hierarchy-reconstruction path traversal | [CTFTCTE-PWN-010](countertechniques/CTFTCTE-PWN-010.md) | Craft sibling entries whose reconstructed parent path traverses |
 
 
 ## <a id="ctft-ta-rev"></a>`CTFT-TA-REV` — Reverse Engineering
 
-> [domain page](tactics/CTFT-TA-REV.md) · 9 pairs · HTB: Reversing
+> [domain page](tactics/CTFT-TA-REV.md) · 10 pairs · HTB: Reversing
 
 | # | Technique ID | Hide / Design name | Resolution-technique ID | Recovery action |
 | --- | --- | --- | --- | --- |
@@ -161,6 +165,7 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 | 7 | [CTFTTE-REV-007](techniques/CTFTTE-REV-007.md) | Python bytecode (.pyc/.pyo) concealment | [CTFTCTE-REV-007](countertechniques/CTFTCTE-REV-007.md) | Decompile Python bytecode |
 | 8 | [CTFTTE-REV-008](techniques/CTFTTE-REV-008.md) | Functional-language binary concealment | [CTFTCTE-REV-008](countertechniques/CTFTCTE-REV-008.md) | Reverse Haskell/functional compiled artifacts |
 | 9 | [CTFTTE-REV-009](techniques/CTFTTE-REV-009.md) | Assembly-level code-golf / shellcode RE | [CTFTCTE-REV-009](countertechniques/CTFTCTE-REV-009.md) | Disassemble and annotate asm snippets |
+| 10 | [CTFTTE-REV-010](techniques/CTFTTE-REV-010.md) | Retained build-path symbol-to-source anchor | [CTFTCTE-REV-010](countertechniques/CTFTCTE-REV-010.md) | Pivot from binary symbols to upstream source and diff the challenge branch |
 
 
 ## <a id="ctft-ta-ste"></a>`CTFT-TA-STE` — Steganography
@@ -245,7 +250,7 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 
 ## <a id="ctft-ta-ics"></a>`CTFT-TA-ICS` — ICS / SCADA
 
-> [domain page](tactics/CTFT-TA-ICS.md) · 5 pairs · HTB: ICS
+> [domain page](tactics/CTFT-TA-ICS.md) · 9 pairs · HTB: ICS
 
 | # | Technique ID | Hide / Design name | Resolution-technique ID | Recovery action |
 | --- | --- | --- | --- | --- |
@@ -254,6 +259,10 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 | 3 | [CTFTTE-ICS-003](techniques/CTFTTE-ICS-003.md) | Proprietary-protocol capture concealment | [CTFTCTE-ICS-003](countertechniques/CTFTCTE-ICS-003.md) | Dissect industrial protocol captures |
 | 4 | [CTFTTE-ICS-004](techniques/CTFTTE-ICS-004.md) | HMI project-file secrets | [CTFTCTE-ICS-004](countertechniques/CTFTCTE-ICS-004.md) | Parse HMI/SCADA project files |
 | 5 | [CTFTTE-ICS-005](techniques/CTFTTE-ICS-005.md) | DNP3 / BACnet object enumeration | [CTFTCTE-ICS-005](countertechniques/CTFTCTE-ICS-005.md) | Enumerate protocol objects |
+| 6 | [CTFTTE-ICS-006](techniques/CTFTTE-ICS-006.md) | Physical controller-label default credentials | [CTFTCTE-ICS-006](countertechniques/CTFTCTE-ICS-006.md) | Read the device label and vendor documentation for default credentials |
+| 7 | [CTFTTE-ICS-007](techniques/CTFTTE-ICS-007.md) | Engineering-tool process takeover | [CTFTCTE-ICS-007](countertechniques/CTFTCTE-ICS-007.md) | Connect the vendor engineering tool and drive the process |
+| 8 | [CTFTTE-ICS-008](techniques/CTFTTE-ICS-008.md) | Industrial firewall weak credential behind a controller pivot | [CTFTCTE-ICS-008](countertechniques/CTFTCTE-ICS-008.md) | Pivot through the controller and brute-force the firewall manager |
+| 9 | [CTFTTE-ICS-009](techniques/CTFTTE-ICS-009.md) | Field-device identity takeover through MAC-addressed naming | [CTFTCTE-ICS-009](countertechniques/CTFTCTE-ICS-009.md) | Map device names to MAC addresses and rename the target |
 
 
 ## <a id="ctft-ta-mob"></a>`CTFT-TA-MOB` — Mobile
@@ -332,7 +341,7 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 
 ## <a id="ctft-ta-fpn"></a>`CTFT-TA-FPN` — Full Pwn / Multi-Stage
 
-> [domain page](tactics/CTFT-TA-FPN.md) · 10 pairs · HTB: Fullpwn
+> [domain page](tactics/CTFT-TA-FPN.md) · 20 pairs · HTB: Fullpwn
 
 | # | Technique ID | Hide / Design name | Resolution-technique ID | Recovery action |
 | --- | --- | --- | --- | --- |
@@ -346,6 +355,16 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 | 8 | [CTFTTE-FPN-008](techniques/CTFTTE-FPN-008.md) | Linux local privesc chain (SUID, ACLs, sudo, capabilities) | [CTFTCTE-FPN-008](countertechniques/CTFTCTE-FPN-008.md) | Enumerate and chain Linux privesc vectors |
 | 9 | [CTFTTE-FPN-009](techniques/CTFTTE-FPN-009.md) | Redis/NoSQL service misconfiguration chain | [CTFTCTE-FPN-009](countertechniques/CTFTCTE-FPN-009.md) | Enumerate Redis/Mongo/MySQL, dump or RCE |
 | 10 | [CTFTTE-FPN-010](techniques/CTFTTE-FPN-010.md) | Reverse-shell delivery & listener operations | [CTFTCTE-FPN-010](countertechniques/CTFTCTE-FPN-010.md) | Catch, upgrade and persist reverse shells |
+| 11 | [CTFTTE-FPN-011](techniques/CTFTTE-FPN-011.md) | Alternate key-credential backdoor on a machine account | [CTFTCTE-FPN-011](countertechniques/CTFTCTE-FPN-011.md) | Detect and revoke key-credential backdoors |
+| 12 | [CTFTTE-FPN-012](techniques/CTFTTE-FPN-012.md) | Certificate-derived Kerberos authentication chain | [CTFTCTE-FPN-012](countertechniques/CTFTCTE-FPN-012.md) | Validate PKINIT trust and extract PAC material |
+| 13 | [CTFTTE-FPN-013](techniques/CTFTTE-FPN-013.md) | Certificate template reconfiguration for arbitrary enrollment | [CTFTCTE-FPN-013](countertechniques/CTFTCTE-FPN-013.md) | Lock down certificate template ACLs and enrollment |
+| 14 | [CTFTTE-FPN-014](techniques/CTFTTE-FPN-014.md) | Injection through a delegated session configuration | [CTFTCTE-FPN-014](countertechniques/CTFTCTE-FPN-014.md) | Constrain delegated endpoints and log session commands |
+| 15 | [CTFTTE-FPN-015](techniques/CTFTTE-FPN-015.md) | Default database credential enabling command execution | [CTFTCTE-FPN-015](countertechniques/CTFTCTE-FPN-015.md) | Enumerate database defaults and disable dangerous procedures |
+| 16 | [CTFTTE-FPN-016](techniques/CTFTTE-FPN-016.md) | Packed token-impersonation binary evading endpoint defenses | [CTFTCTE-FPN-016](countertechniques/CTFTCTE-FPN-016.md) | Audit privileged tokens and unpack suspicious binaries |
+| 17 | [CTFTTE-FPN-017](techniques/CTFTTE-FPN-017.md) | Coerced domain controller authentication toward a delegated host | [CTFTCTE-FPN-017](countertechniques/CTFTCTE-FPN-017.md) | Constrain delegation trust and detect coerced authentication |
+| 18 | [CTFTTE-FPN-018](techniques/CTFTTE-FPN-018.md) | Cross-domain credential reuse after hidden-namespace discovery | [CTFTCTE-FPN-018](countertechniques/CTFTCTE-FPN-018.md) | Map adjacent namespaces and test credential reuse |
+| 19 | [CTFTTE-FPN-019](techniques/CTFTTE-FPN-019.md) | Interactive-shell history and protected credential stores | [CTFTCTE-FPN-019](countertechniques/CTFTCTE-FPN-019.md) | Harvest shell histories and decrypt protected stores |
+| 20 | [CTFTTE-FPN-020](techniques/CTFTTE-FPN-020.md) | Flag payload embedded in directory object properties | [CTFTCTE-FPN-020](countertechniques/CTFTCTE-FPN-020.md) | Dump directory attributes and search hidden payloads |
 
 
 ## <a id="ctft-ta-hwr"></a>`CTFT-TA-HWR` — Hardware

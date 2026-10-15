@@ -25,7 +25,7 @@ Raw instruction sequences are analyzed the same way as extracted shellcode evide
 - nasm
 - objdump
 - radare2
-- ghidra
+- [ghidra](../tools/CTFTTOU-073.md)
 
 ## References
 
