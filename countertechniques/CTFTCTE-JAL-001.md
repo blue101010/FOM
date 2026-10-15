@@ -23,7 +23,8 @@ The escape chain documents incomplete sandboxing of the eval context; audit the 
 ## Tools
 
 - python
-- pyjail cheat references
+- [Typhon](../tools/CTFTTOU-276.md)
+- [HackTricks: Bypass Python Sandboxes](../tools/CTFTTOU-277.md)
 
 ## References
 

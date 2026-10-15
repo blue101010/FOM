@@ -2,8 +2,8 @@
   "model": "CTFT",
   "schema_version": "3.0",
   "collection": "catalog",
-  "generated_at": "2026-10-15T03:16:47+00:00",
-  "source_sha256": "6d61434450fa8f83bbb79647de6088046eccf16a4c2413e38833737d0e0dea64",
+  "generated_at": "2026-10-15T03:26:38+00:00",
+  "source_sha256": "67ff71b8d0c08df150ce30f00f0547fa7deb82edb4c7b8a33bf4f6c61b0fcfe1",
   "items": [
     {
       "id": "CTFTPAIR-AIM-001",
@@ -2404,6 +2404,138 @@
         "id": "CTFTCTE-ICS-009",
         "name": "Map device names to MAC addresses and rename the target",
         "path": "countertechniques/CTFTCTE-ICS-009.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-IOT-001",
+      "schema_version": "3.0",
+      "domain": "IOT",
+      "tactic": "CTFT-TA-IOT",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-IOT-001",
+        "name": "Vendor firmware image with hardcoded secrets",
+        "path": "techniques/CTFTTE-IOT-001.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-IOT-001",
+        "name": "Unpack the firmware image and grep the rootfs for secrets",
+        "path": "countertechniques/CTFTCTE-IOT-001.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-IOT-002",
+      "schema_version": "3.0",
+      "domain": "IOT",
+      "tactic": "CTFT-TA-IOT",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-IOT-002",
+        "name": "Device web-admin backdoor / default credential gate",
+        "path": "techniques/CTFTTE-IOT-002.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-IOT-002",
+        "name": "Enumerate the device web stack and abuse its backdoor endpoints",
+        "path": "countertechniques/CTFTCTE-IOT-002.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-IOT-003",
+      "schema_version": "3.0",
+      "domain": "IOT",
+      "tactic": "CTFT-TA-IOT",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-IOT-003",
+        "name": "Unauthenticated MQTT/CoAP broker topic concealment",
+        "path": "techniques/CTFTTE-IOT-003.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-IOT-003",
+        "name": "Enumerate broker topics and capture device traffic",
+        "path": "countertechniques/CTFTCTE-IOT-003.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-IOT-004",
+      "schema_version": "3.0",
+      "domain": "IOT",
+      "tactic": "CTFT-TA-IOT",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-IOT-004",
+        "name": "On-board serial console flag (UART/JTAG exposure)",
+        "path": "techniques/CTFTTE-IOT-004.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-IOT-004",
+        "name": "Identify debug pads and read the serial console",
+        "path": "countertechniques/CTFTCTE-IOT-004.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-IOT-005",
+      "schema_version": "3.0",
+      "domain": "IOT",
+      "tactic": "CTFT-TA-IOT",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-IOT-005",
+        "name": "Short-range IoT radio concealment (Zigbee/BLE/sub-GHz)",
+        "path": "techniques/CTFTTE-IOT-005.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-IOT-005",
+        "name": "Sniff and decode the device radio protocol",
+        "path": "countertechniques/CTFTCTE-IOT-005.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-IOT-006",
+      "schema_version": "3.0",
+      "domain": "IOT",
+      "tactic": "CTFT-TA-IOT",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-IOT-006",
+        "name": "Embedded-binary exploitation behind device emulation (MIPS/ARM)",
+        "path": "techniques/CTFTTE-IOT-006.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-IOT-006",
+        "name": "Emulate the service and exploit the embedded binary",
+        "path": "countertechniques/CTFTCTE-IOT-006.md",
         "role": "resolution"
       },
       "maturity": "taxonomy_only",

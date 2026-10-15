@@ -82,4 +82,6 @@ Reference tools used across CTFT techniques and counter-techniques.
 | [CTFTTOU-076](CTFTTOU-076.md) | inotify-tools | <https://github.com/inotify-tools/inotify-tools> | CTFTTE-FOR-030, CTFTCTE-FOR-030 |
 | [CTFTTOU-271](CTFTTOU-271.md) | graphql-schema-dump.py | [scripts/graphql-schema-dump.py](scripts/graphql-schema-dump.py) | CTFTTE-WEB-023, CTFTCTE-WEB-023 |
 | [CTFTTOU-272](CTFTTOU-272.md) | inql | <https://github.com/doyensec/inql> | CTFTTE-WEB-023, CTFTCTE-WEB-023 |
+| [CTFTTOU-276](CTFTTOU-276.md) | mosquitto clients | <https://mosquitto.org/> | CTFTTE-IOT-003, CTFTCTE-IOT-003 |
+| [CTFTTOU-277](CTFTTOU-277.md) | ubertooth / killerbee | <https://github.com/greatscottgadgets/ubertooth> | CTFTTE-IOT-005, CTFTCTE-IOT-005 |
 

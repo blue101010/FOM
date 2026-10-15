@@ -19,7 +19,8 @@ Input is eval'd or exec'd in a restricted Python namespace with builtins strippe
 ## Tools
 
 - python
-- pyjail cheat references
+- [Typhon](../tools/CTFTTOU-276.md)
+- [HackTricks: Bypass Python Sandboxes](../tools/CTFTTOU-277.md)
 
 ## References
 

@@ -1,7 +1,7 @@
 {
   "model": "CTFT",
   "version": "1.2",
-  "generated": "2026-10-15T03:16:47+00:00",
+  "generated": "2026-10-15T03:26:37+00:00",
   "relates_to": [
     "MITRE ATT&CK",
     "CAPEC",
@@ -71,6 +71,12 @@
       "count": 9
     },
     {
+      "id": "CTFT-TA-IOT",
+      "name": "IoT / Embedded",
+      "path": "tactics/CTFT-TA-IOT.md",
+      "count": 6
+    },
+    {
       "id": "CTFT-TA-JAL",
       "name": "Jail / Sandbox Escape",
       "path": "tactics/CTFT-TA-JAL.md",
@@ -125,7 +131,7 @@
       "count": 23
     }
   ],
-  "total_techniques": 193,
+  "total_techniques": 199,
   "techniques": [
     {
       "tactic": "CTFT-TA-AIM",
@@ -1668,6 +1674,90 @@
       }
     },
     {
+      "tactic": "CTFT-TA-IOT",
+      "category": "IOT",
+      "technique": {
+        "id": "CTFTTE-IOT-001",
+        "name": "Vendor firmware image with hardcoded secrets",
+        "path": "techniques/CTFTTE-IOT-001.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-IOT-001",
+        "name": "Unpack the firmware image and grep the rootfs for secrets",
+        "path": "countertechniques/CTFTCTE-IOT-001.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-IOT",
+      "category": "IOT",
+      "technique": {
+        "id": "CTFTTE-IOT-002",
+        "name": "Device web-admin backdoor / default credential gate",
+        "path": "techniques/CTFTTE-IOT-002.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-IOT-002",
+        "name": "Enumerate the device web stack and abuse its backdoor endpoints",
+        "path": "countertechniques/CTFTCTE-IOT-002.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-IOT",
+      "category": "IOT",
+      "technique": {
+        "id": "CTFTTE-IOT-003",
+        "name": "Unauthenticated MQTT/CoAP broker topic concealment",
+        "path": "techniques/CTFTTE-IOT-003.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-IOT-003",
+        "name": "Enumerate broker topics and capture device traffic",
+        "path": "countertechniques/CTFTCTE-IOT-003.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-IOT",
+      "category": "IOT",
+      "technique": {
+        "id": "CTFTTE-IOT-004",
+        "name": "On-board serial console flag (UART/JTAG exposure)",
+        "path": "techniques/CTFTTE-IOT-004.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-IOT-004",
+        "name": "Identify debug pads and read the serial console",
+        "path": "countertechniques/CTFTCTE-IOT-004.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-IOT",
+      "category": "IOT",
+      "technique": {
+        "id": "CTFTTE-IOT-005",
+        "name": "Short-range IoT radio concealment (Zigbee/BLE/sub-GHz)",
+        "path": "techniques/CTFTTE-IOT-005.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-IOT-005",
+        "name": "Sniff and decode the device radio protocol",
+        "path": "countertechniques/CTFTCTE-IOT-005.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-IOT",
+      "category": "IOT",
+      "technique": {
+        "id": "CTFTTE-IOT-006",
+        "name": "Embedded-binary exploitation behind device emulation (MIPS/ARM)",
+        "path": "techniques/CTFTTE-IOT-006.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-IOT-006",
+        "name": "Emulate the service and exploit the embedded binary",
+        "path": "countertechniques/CTFTCTE-IOT-006.md"
+      }
+    },
+    {
       "tactic": "CTFT-TA-JAL",
       "category": "JAL",
       "technique": {
@@ -2941,6 +3031,12 @@
     "CTFTTE-ICS-007": "CTFTCTE-ICS-007",
     "CTFTTE-ICS-008": "CTFTCTE-ICS-008",
     "CTFTTE-ICS-009": "CTFTCTE-ICS-009",
+    "CTFTTE-IOT-001": "CTFTCTE-IOT-001",
+    "CTFTTE-IOT-002": "CTFTCTE-IOT-002",
+    "CTFTTE-IOT-003": "CTFTCTE-IOT-003",
+    "CTFTTE-IOT-004": "CTFTCTE-IOT-004",
+    "CTFTTE-IOT-005": "CTFTCTE-IOT-005",
+    "CTFTTE-IOT-006": "CTFTCTE-IOT-006",
     "CTFTTE-JAL-001": "CTFTCTE-JAL-001",
     "CTFTTE-JAL-002": "CTFTCTE-JAL-002",
     "CTFTTE-JAL-003": "CTFTCTE-JAL-003",
@@ -3795,6 +3891,48 @@
       "counter_name": "Map device names to MAC addresses and rename the target",
       "tactic": "CTFT-TA-ICS",
       "path": "techniques/CTFTTE-ICS-009.md"
+    },
+    "CTFTTE-IOT-001": {
+      "name": "Vendor firmware image with hardcoded secrets",
+      "counter_id": "CTFTCTE-IOT-001",
+      "counter_name": "Unpack the firmware image and grep the rootfs for secrets",
+      "tactic": "CTFT-TA-IOT",
+      "path": "techniques/CTFTTE-IOT-001.md"
+    },
+    "CTFTTE-IOT-002": {
+      "name": "Device web-admin backdoor / default credential gate",
+      "counter_id": "CTFTCTE-IOT-002",
+      "counter_name": "Enumerate the device web stack and abuse its backdoor endpoints",
+      "tactic": "CTFT-TA-IOT",
+      "path": "techniques/CTFTTE-IOT-002.md"
+    },
+    "CTFTTE-IOT-003": {
+      "name": "Unauthenticated MQTT/CoAP broker topic concealment",
+      "counter_id": "CTFTCTE-IOT-003",
+      "counter_name": "Enumerate broker topics and capture device traffic",
+      "tactic": "CTFT-TA-IOT",
+      "path": "techniques/CTFTTE-IOT-003.md"
+    },
+    "CTFTTE-IOT-004": {
+      "name": "On-board serial console flag (UART/JTAG exposure)",
+      "counter_id": "CTFTCTE-IOT-004",
+      "counter_name": "Identify debug pads and read the serial console",
+      "tactic": "CTFT-TA-IOT",
+      "path": "techniques/CTFTTE-IOT-004.md"
+    },
+    "CTFTTE-IOT-005": {
+      "name": "Short-range IoT radio concealment (Zigbee/BLE/sub-GHz)",
+      "counter_id": "CTFTCTE-IOT-005",
+      "counter_name": "Sniff and decode the device radio protocol",
+      "tactic": "CTFT-TA-IOT",
+      "path": "techniques/CTFTTE-IOT-005.md"
+    },
+    "CTFTTE-IOT-006": {
+      "name": "Embedded-binary exploitation behind device emulation (MIPS/ARM)",
+      "counter_id": "CTFTCTE-IOT-006",
+      "counter_name": "Emulate the service and exploit the embedded binary",
+      "tactic": "CTFT-TA-IOT",
+      "path": "techniques/CTFTTE-IOT-006.md"
     },
     "CTFTTE-JAL-001": {
       "name": "Python jail (pyjail) confinement",
@@ -5148,6 +5286,48 @@
       "technique_name": "Field-device identity takeover through MAC-addressed naming",
       "tactic": "CTFT-TA-ICS",
       "path": "countertechniques/CTFTCTE-ICS-009.md"
+    },
+    "CTFTCTE-IOT-001": {
+      "name": "Unpack the firmware image and grep the rootfs for secrets",
+      "technique_id": "CTFTTE-IOT-001",
+      "technique_name": "Vendor firmware image with hardcoded secrets",
+      "tactic": "CTFT-TA-IOT",
+      "path": "countertechniques/CTFTCTE-IOT-001.md"
+    },
+    "CTFTCTE-IOT-002": {
+      "name": "Enumerate the device web stack and abuse its backdoor endpoints",
+      "technique_id": "CTFTTE-IOT-002",
+      "technique_name": "Device web-admin backdoor / default credential gate",
+      "tactic": "CTFT-TA-IOT",
+      "path": "countertechniques/CTFTCTE-IOT-002.md"
+    },
+    "CTFTCTE-IOT-003": {
+      "name": "Enumerate broker topics and capture device traffic",
+      "technique_id": "CTFTTE-IOT-003",
+      "technique_name": "Unauthenticated MQTT/CoAP broker topic concealment",
+      "tactic": "CTFT-TA-IOT",
+      "path": "countertechniques/CTFTCTE-IOT-003.md"
+    },
+    "CTFTCTE-IOT-004": {
+      "name": "Identify debug pads and read the serial console",
+      "technique_id": "CTFTTE-IOT-004",
+      "technique_name": "On-board serial console flag (UART/JTAG exposure)",
+      "tactic": "CTFT-TA-IOT",
+      "path": "countertechniques/CTFTCTE-IOT-004.md"
+    },
+    "CTFTCTE-IOT-005": {
+      "name": "Sniff and decode the device radio protocol",
+      "technique_id": "CTFTTE-IOT-005",
+      "technique_name": "Short-range IoT radio concealment (Zigbee/BLE/sub-GHz)",
+      "tactic": "CTFT-TA-IOT",
+      "path": "countertechniques/CTFTCTE-IOT-005.md"
+    },
+    "CTFTCTE-IOT-006": {
+      "name": "Emulate the service and exploit the embedded binary",
+      "technique_id": "CTFTTE-IOT-006",
+      "technique_name": "Embedded-binary exploitation behind device emulation (MIPS/ARM)",
+      "tactic": "CTFT-TA-IOT",
+      "path": "countertechniques/CTFTCTE-IOT-006.md"
     },
     "CTFTCTE-JAL-001": {
       "name": "Escape the Python sandbox",

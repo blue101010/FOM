@@ -195,6 +195,24 @@
     {
       "type": "x-ctft-tactic",
       "spec_version": "2.1",
+      "id": "x-ctft-tactic--919d0b0b-ba21-5cc4-8263-b72feaffbb9f",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "IoT / Embedded",
+      "x_ctft_shortname": "iot",
+      "x_ctft_domain": "IOT",
+      "description": "Hiding/recovering flags inside internet-connected devices: consumer firmware images and their embedded web stacks, IoT messaging brokers (MQTT/CoAP), on-board serial consoles, short-range device radio (Zigbee/BLE/sub-GHz), and the emulation of embedded binaries (MIPS/ARM). Distinct from HWR (electronic badges without a network story), ICS (industrial control systems) and SDR (generic RF signal puzzles): the subject here is the consumer/connected device and its firmware-to-cloud chain. (HTB: Misc (IoT))",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFT-TA-IOT"
+        }
+      ]
+    },
+    {
+      "type": "x-ctft-tactic",
+      "spec_version": "2.1",
       "id": "x-ctft-tactic--78ecb10d-a9fb-5d86-9be0-4d2bb5c6e9d2",
       "created": "2026-06-10T18:01:52.000Z",
       "modified": "2026-06-10T18:01:52.000Z",
@@ -7852,6 +7870,408 @@
       "x_ctft_relation": "solves",
       "source_ref": "course-of-action--9fc05998-778a-5792-96b0-44218d04b44a",
       "target_ref": "attack-pattern--fa30879e-a775-57f4-a6fe-c061a412772b",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--ed153f13-fc63-50f9-9256-3d7f8879d529",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-IOT-001 - Vendor firmware image with hardcoded secrets",
+      "description": "The flag is a hardcoded secret inside a device firmware image: a credential, key or flag string baked into the vendor squashfs, a config blob, or an embedded database. The image is handed over as an opaque blob (or fetched off the device); the concealment is the packaging itself — multiple filesystems, offsets and compression layers — plus the assumption the player will not carve the rootfs.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "iot"
+        }
+      ],
+      "x_ctft_category": "IOT",
+      "x_ctft_domain": "IOT",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-IOT-001"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1078.001",
+          "description": "Valid Accounts: Default Accounts"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--75f66151-a65d-50f6-bd89-c3a0ba691772",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-IOT-001 - Unpack the firmware image and grep the rootfs for secrets",
+      "description": "1. Identify the image type and embedded filesystems: binwalk <image>, note offsets and compression (gzip/lzma/xz/squashfs/cramfs). 2. Extract recursively (binwalk -e, then unsquashfs on the carved rootfs) until a real filesystem tree appears. 3. Grep the tree for secrets: credentials, private keys, URLs, flag{-like strings and shadow/passwd entries; check /etc, init scripts and bundled config databases. 4. Validate against the device: recovered credentials should log into the admin interface or unlock the next stage.",
+      "x_ctft_category": "IOT",
+      "x_ctft_domain": "IOT",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-IOT-001"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1078.001",
+          "description": "Valid Accounts: Default Accounts"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--1c4b1dd6-d2e2-5381-a9f9-645249aa4c11",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--75f66151-a65d-50f6-bd89-c3a0ba691772",
+      "target_ref": "attack-pattern--ed153f13-fc63-50f9-9256-3d7f8879d529",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--45994a21-492a-5e3d-9a8a-a77064c14803",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-IOT-002 - Device web-admin backdoor / default credential gate",
+      "description": "The device exposes an embedded web stack (lighttpd/uhttpd/Goahead CGI, BusyBox httpd) with a hidden admin route, a magic parameter, or a login that accepts a default credential the UI never mentions. The flag sits behind the backdoor endpoint or a hidden debug page; the concealment is the assumption that players will only interact with the visible interface and never map the embedded server's routes.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "iot"
+        }
+      ],
+      "x_ctft_category": "IOT",
+      "x_ctft_domain": "IOT",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-IOT-002"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1190",
+          "description": "Exploit Public-Facing Application"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--39d764d2-dfb9-549e-a077-4f8438a5288c",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-IOT-002 - Enumerate the device web stack and abuse its backdoor endpoints",
+      "description": "1. Fingerprint the embedded server from banners and error pages (lighttpd, uhttpd, Goahead, BusyBox httpd); each has known debug/maintenance routes. 2. Map routes beyond the UI: content discovery with embedded-device wordlists (cgi-bin/, debug, admin, api, factory, ota), plus parameter fuzzing for magic switches. 3. Try the vendor's documented default credentials on the login; check the firmware image (IOT-001) for the exact credential if login resists. 4. Validate: the backdoor route or debug page yields the flag or the next stage.",
+      "x_ctft_category": "IOT",
+      "x_ctft_domain": "IOT",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-IOT-002"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1190",
+          "description": "Exploit Public-Facing Application"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--615a9d02-f26e-5241-b582-d8526c9268c4",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--39d764d2-dfb9-549e-a077-4f8438a5288c",
+      "target_ref": "attack-pattern--45994a21-492a-5e3d-9a8a-a77064c14803",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--fa4969b0-abd1-5e70-b6f4-e78a720a93c1",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-IOT-003 - Unauthenticated MQTT/CoAP broker topic concealment",
+      "description": "The device ecosystem publishes telemetry (and the flag) over an MQTT broker or CoAP server with no authentication, or with credentials only implied by the challenge story. The flag transits on a non-obvious topic name (home/garage/secret, a device shadow update, a retained message) or a CoAP resource path; the concealment is that nobody thinks to treat the broker as an information repository and enumerate its topic namespace.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "iot"
+        }
+      ],
+      "x_ctft_category": "IOT",
+      "x_ctft_domain": "IOT",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-IOT-003"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1552",
+          "description": "Unsecured Credentials"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--31eed81b-6691-50f5-a32e-03cd2ed6ad01",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-IOT-003 - Enumerate broker topics and capture device traffic",
+      "description": "1. Find the broker: nmap service scan for 1883/8883 (MQTT), 5683/5684 (CoAP/DTLS). 2. Subscribe with wildcards (mosquittosub -t '#' -v) — retained messages and the full topic namespace usually reveal the device tree immediately. 3. If credentials are required, mine the firmware (IOT-001) and the device story for defaults; many brokers ship with anonymous read ACLs even when write is gated. 4. For CoAP, enumerate resource paths (.well-known/core when enabled) and GET/observe. 5. Validate: capture long enough for periodic telemetry; the flag transits or is retained.",
+      "x_ctft_category": "IOT",
+      "x_ctft_domain": "IOT",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-IOT-003"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1552",
+          "description": "Unsecured Credentials"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--e709b961-b5f4-5d25-bdc0-25c82f7bc301",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--31eed81b-6691-50f5-a32e-03cd2ed6ad01",
+      "target_ref": "attack-pattern--fa4969b0-abd1-5e70-b6f4-e78a720a93c1",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--34367c04-540d-58fa-9825-7f90ca9798c7",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-IOT-004 - On-board serial console flag (UART/JTAG exposure)",
+      "description": "The flag is only reachable through the device's debug interface: a UART console printing it at boot, a U-Boot shell over serial, or a JTAG-exposed memory region. The concealment is physical — unlabelled pads, an uncommon baud rate, a bootlog that scrolls past — and the assumption that players will not pick up a serial adapter.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "iot"
+        }
+      ],
+      "x_ctft_category": "IOT",
+      "x_ctft_domain": "IOT",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-IOT-004"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1200",
+          "description": "Hardware Additions"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--589f4041-9477-521b-a718-9a8c0b6ff792",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-IOT-004 - Identify debug pads and read the serial console",
+      "description": "1. Locate the debug interface: continuity-scan for TX/RX/GND pads (TX idles high); typical baud rates are 115200, 57600, 38400, 9600. 2. Attach a USB-UART adapter, capture the full boot log — flags are often printed by boot scripts before the console is silenced. 3. If the console offers a U-Boot/bootloader shell, dump the environment (printenv), memory (md) and flash; interrupt the boot to reach it. 4. For JTAG exposure, enumerate the chain and read memory via openocd before attempting anything invasive. 5. Validate: the boot log, env or dump contains the flag or points to the next stage.",
+      "x_ctft_category": "IOT",
+      "x_ctft_domain": "IOT",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-IOT-004"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1200",
+          "description": "Hardware Additions"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--90866241-931b-55a5-89a0-4810ec49c69d",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--589f4041-9477-521b-a718-9a8c0b6ff792",
+      "target_ref": "attack-pattern--34367c04-540d-58fa-9825-7f90ca9798c7",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--f1fb4ba6-e66b-5dfa-9a9a-036396dbddbf",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-IOT-005 - Short-range IoT radio concealment (Zigbee/BLE/sub-GHz)",
+      "description": "The flag transits a short-range device radio: a Zigbee sensor network, a BLE GATT characteristic or advertisement, or a sub-GHz (433/868 MHz) remote. The concealment is the air interface: the protocol looks opaque, traffic is periodic and low-volume, and the key material (Zigbee network key, BLE pairing) may be recoverable only from the device firmware. Distinct from SDR-001 (generic RF puzzles) and NET-004 (Wi-Fi): the subject is the IoT protocol ecosystem and its device pairing.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "iot"
+        }
+      ],
+      "x_ctft_category": "IOT",
+      "x_ctft_domain": "IOT",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-IOT-005"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1071",
+          "description": "Application Layer Protocol"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--c85fbbfe-4b1f-597f-a87f-7878214c74e6",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-IOT-005 - Sniff and decode the device radio protocol",
+      "description": "1. Identify the band and protocol from the challenge story and hardware (Zigbee 2.4 GHz OQPSK, BLE advertisements, 433/868 MHz ASK/OOK remotes). 2. Capture: killerbee/ubertooth for Zigbee/BLE, bettercap for BLE GATT, an SDR or rtl433 for sub-GHz remotes. 3. Recover the link keys: Zigbee network keys often ship in the firmware (IOT-001) or via well-known Trust Center defaults; BLE pairing traffic is sniffeable only if captured during pairing — force a re-pair when possible. 4. Decode the frames to application payloads; sensor values and remotes often encode the flag in plain structured bytes. 5. Validate: the decoded payload satisfies the flag format.",
+      "x_ctft_category": "IOT",
+      "x_ctft_domain": "IOT",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-IOT-005"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1071",
+          "description": "Application Layer Protocol"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--600f7269-f3b2-5633-a788-d2ba1425b330",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--c85fbbfe-4b1f-597f-a87f-7878214c74e6",
+      "target_ref": "attack-pattern--f1fb4ba6-e66b-5dfa-9a9a-036396dbddbf",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--1a17280a-5737-59e6-9728-be14c4a8fe21",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-IOT-006 - Embedded-binary exploitation behind device emulation (MIPS/ARM)",
+      "description": "The vulnerable service is an embedded binary — a MIPS or ARM build of a device daemon (lighttpd CGI, a custom TCP service) — shipped either as a loose binary or inside the firmware image. The player must first make it run (qemu-user with the right endianness, libs and page size), then exploit a classic memory-corruption bug on an unfamiliar architecture. The concealment is the emulation barrier plus the architecture: gadgets, calling conventions and exploit primitives all differ from x86.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "iot"
+        }
+      ],
+      "x_ctft_category": "IOT",
+      "x_ctft_domain": "IOT",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-IOT-006"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1210",
+          "description": "Exploitation of Remote Services"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--9ac26324-1a86-532a-a562-a104c0b8bbcd",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-IOT-006 - Emulate the service and exploit the embedded binary",
+      "description": "1. Identify the architecture and endianness (file, ELF header) and the interpreter/libc dependencies (MIPS/ARM musl or uClibc builds differ from glibc). 2. Emulate with qemu-user: qemu-mips{,el} -L <rootfs> ./service — pull the rootfs from the firmware image (IOT-001) when libs are missing. 3. Reverse the service in Ghidra (MIPS/ARM calling conventions: argument registers $a0-$a3 / r0-r3, delay slots on MIPS); locate the bug exactly as on x86. 4. Build the exploit with pwntools on the target architecture: ROP via gadgets in the binary or libc; mind that syscall conventions and bad bytes differ. 5. Validate: the payload executes on the emulated service and yields the flag or a shell.",
+      "x_ctft_category": "IOT",
+      "x_ctft_domain": "IOT",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-IOT-006"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1210",
+          "description": "Exploitation of Remote Services"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--0e4e40a9-131f-5f2a-a72f-54a1159c3218",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--9ac26324-1a86-532a-a562-a104c0b8bbcd",
+      "target_ref": "attack-pattern--1a17280a-5737-59e6-9728-be14c4a8fe21",
       "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     },
     {

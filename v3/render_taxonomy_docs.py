@@ -45,6 +45,7 @@ CANONICAL_ORDER: list[tuple[str, str]] = [
     ("NET", "Network"),
     ("FPN", "Full Pwn"),
     ("HWR", "Hardware"),
+    ("IOT", "IoT / Embedded"),
     ("SDR", "SDR / RF"),
 ]
 # Declared but not offered in the picker and currently empty.
