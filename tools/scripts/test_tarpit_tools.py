@@ -39,7 +39,9 @@ with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as td:
     check("068 archive build exits 0", r.returncode == 0, r.stderr)
     with tarfile.open("evil.tar") as tf:
         names = tf.getnames()
-        data = tf.extractfile("authorized_keys").read()
+        _member = tf.extractfile("authorized_keys")
+        assert _member is not None, "authorized_keys entry missing from archive"
+        data = _member.read()
     check("068 tar has authorized_keys entry", names == ["authorized_keys"], str(names))
     check("068 payload bytes preserved", data == b"ssh-ed25519 AAAAtest123 ctft\n")
 

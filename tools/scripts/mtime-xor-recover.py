@@ -56,7 +56,8 @@ def candidates(base_epoch: int | None, window: int, key_str: str | None):
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    _doc_lines = (__doc__ or "").strip().splitlines()
+    ap = argparse.ArgumentParser(description=_doc_lines[0] if _doc_lines else None)
     ap.add_argument("--file", help="ciphertext file (hex text or raw bytes)")
     ap.add_argument("--data", help="inline hex ciphertext (alternative to --file)")
     ap.add_argument("--mtime", help="override write time, any parseable format")

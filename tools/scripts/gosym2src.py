@@ -69,7 +69,8 @@ def diff_challenge_branch(repo: str) -> int:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    _doc_lines = (__doc__ or "").strip().splitlines()
+    ap = argparse.ArgumentParser(description=_doc_lines[0] if _doc_lines else None)
     ap.add_argument("binary", help="path to the binary to scan")
     ap.add_argument("--verbose", action="store_true", help="list every package path")
     ap.add_argument("--diff", metavar="REPO", help="local clone: diff challenge-like branches")

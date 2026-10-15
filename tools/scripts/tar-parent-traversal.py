@@ -57,7 +57,7 @@ def simulate(output_folder: str, prefix: str, target: str, cwd: str) -> str:
         (f"{prefix}{target_l}", False),
     ]
     nodes: dict[str, str] = {}  # stored path -> parent stored path (root is ".")
-    for path, _is_dir in entries:
+    for path, _ in entries:
         parent = posixpath.dirname(path) or "."
         nodes[path] = parent if (parent in nodes or parent == ".") else "."
     file_path = entries[-1][0]
@@ -67,7 +67,8 @@ def simulate(output_folder: str, prefix: str, target: str, cwd: str) -> str:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    _doc_lines = (__doc__ or "").strip().splitlines()
+    ap = argparse.ArgumentParser(description=_doc_lines[0] if _doc_lines else None)
     ap.add_argument("--target", required=True,
                     help="absolute target file path (e.g. /root/.ssh/authorized_keys)")
     ap.add_argument("--payload-file", required=True,

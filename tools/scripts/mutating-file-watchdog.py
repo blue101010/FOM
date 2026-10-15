@@ -69,7 +69,8 @@ def hunt(path: str) -> list[str]:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    _doc_lines = (__doc__ or "").strip().splitlines()
+    ap = argparse.ArgumentParser(description=_doc_lines[0] if _doc_lines else None)
     ap.add_argument("file", help="file to probe (e.g. flag.txt)")
     ap.add_argument("--reads", type=int, default=3, help="number of probe reads (default: 3)")
     ap.add_argument("--interval", type=float, default=0.3,

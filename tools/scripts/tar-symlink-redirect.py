@@ -38,7 +38,8 @@ def build_archive(output: Path, payload: bytes, payload_name: str) -> None:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    _doc_lines = (__doc__ or "").strip().splitlines()
+    ap = argparse.ArgumentParser(description=_doc_lines[0] if _doc_lines else None)
     ap.add_argument("--target", required=True,
                     help="absolute directory the symlink points at (e.g. /root/.ssh)")
     ap.add_argument("--payload-file", required=True,
