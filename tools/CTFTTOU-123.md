@@ -1,0 +1,16 @@
+# CTFTTOU-123 — tshark
+
+> **Tool ID:** `CTFTTOU-123`  
+> **Related techniques/counters:** CTFTCTE-FOR-006, CTFTCTE-HWR-001, CTFTCTE-ICS-003, CTFTCTE-NET-002, CTFTCTE-NET-006, CTFTCTE-NET-007, CTFTTE-FOR-006, CTFTTE-HWR-001, CTFTTE-ICS-003, CTFTTE-NET-002, CTFTTE-NET-006, CTFTTE-NET-007
+
+## Description
+
+Command-line network protocol analyzer (Wireshark's CLI).
+
+## URL
+
+<https://www.wireshark.org/docs/man-pages/tshark.html>
+
+## Related Techniques
+
+CTFTCTE-FOR-006, CTFTCTE-HWR-001, CTFTCTE-ICS-003, CTFTCTE-NET-002, CTFTCTE-NET-006, CTFTCTE-NET-007, CTFTTE-FOR-006, CTFTTE-HWR-001, CTFTTE-ICS-003, CTFTTE-NET-002, CTFTTE-NET-006, CTFTTE-NET-007

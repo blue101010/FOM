@@ -19,7 +19,10 @@ A secret memorized in training is reachable only by probing the model's outputs.
 ## Tools
 
 - [python](../tools/CTFTTOU-050.md)
-- model query harness
+- [Adversarial Robustness Toolbox](../tools/CTFTTOU-044.md)
+- [ML Privacy Meter](../tools/CTFTTOU-268.md)
+- [TensorFlow Privacy](../tools/CTFTTOU-269.md)
+- [PrivacyRaven](../tools/CTFTTOU-270.md)
 
 ## References
 
