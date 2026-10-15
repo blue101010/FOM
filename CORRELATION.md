@@ -4,7 +4,7 @@ Every **Design / Hide Technique** (`CTFTTE-<CAT>-NNN`) and the
 **Resolution-Technique** (`CTFTCTE-<CAT>-NNN`) that recovers it, grouped by domain.
 IDs pair one-to-one: `CTFTTE-FOR-004` is always answered by `CTFTCTE-FOR-004`.
 
-> Generated from the files in `techniques/` and `countertechniques/` — corpus fingerprint `d491e09a98815d10`
+> Generated from the files in `techniques/` and `countertechniques/` — corpus fingerprint `18b5cdac062a5d40`
 > by `v3/render_taxonomy_docs.py`. **199 complete pairs** across **20 active domains**. Do not hand-edit: rename the entry, then re-render.
 
 ---
@@ -387,7 +387,7 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 | --- | --- | --- | --- | --- |
 | 1 | [CTFTTE-IOT-001](techniques/CTFTTE-IOT-001.md) | Vendor firmware image with hardcoded secrets | [CTFTCTE-IOT-001](countertechniques/CTFTCTE-IOT-001.md) | Unpack the firmware image and grep the rootfs for secrets |
 | 2 | [CTFTTE-IOT-002](techniques/CTFTTE-IOT-002.md) | Device web-admin backdoor / default credential gate | [CTFTCTE-IOT-002](countertechniques/CTFTCTE-IOT-002.md) | Enumerate the device web stack and abuse its backdoor endpoints |
-| 3 | [CTFTTE-IOT-003](techniques/CTFTTE-IOT-003.md) | Unauthenticated MQTT/CoAP broker topic concealment | [CTFTCTE-IOT-003](countertechniques/CTFTCTE-IOT-003.md) | Enumerate broker topics and capture device traffic |
+| 3 | [CTFTTE-IOT-003](techniques/CTFTTE-IOT-003.md) | Unauthenticated message-broker topic/queue concealment | [CTFTCTE-IOT-003](countertechniques/CTFTCTE-IOT-003.md) | Enumerate broker topics/queues and capture service traffic |
 | 4 | [CTFTTE-IOT-004](techniques/CTFTTE-IOT-004.md) | On-board serial console flag (UART/JTAG exposure) | [CTFTCTE-IOT-004](countertechniques/CTFTCTE-IOT-004.md) | Identify debug pads and read the serial console |
 | 5 | [CTFTTE-IOT-005](techniques/CTFTTE-IOT-005.md) | Short-range IoT radio concealment (Zigbee/BLE/sub-GHz) | [CTFTCTE-IOT-005](countertechniques/CTFTCTE-IOT-005.md) | Sniff and decode the device radio protocol |
 | 6 | [CTFTTE-IOT-006](techniques/CTFTTE-IOT-006.md) | Embedded-binary exploitation behind device emulation (MIPS/ARM) | [CTFTCTE-IOT-006](countertechniques/CTFTCTE-IOT-006.md) | Emulate the service and exploit the embedded binary |

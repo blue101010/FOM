@@ -33,7 +33,7 @@ per entry**, never the definition of an entry.
 | --- | --- | --- | --- | --- |
 | [CTFTTE-IOT-001](../techniques/CTFTTE-IOT-001.md) | Vendor firmware image with hardcoded secrets | [CTFTCTE-IOT-001](../countertechniques/CTFTCTE-IOT-001.md) | Unpack the firmware image and grep the rootfs for secrets | T1078.001 |
 | [CTFTTE-IOT-002](../techniques/CTFTTE-IOT-002.md) | Device web-admin backdoor / default credential gate | [CTFTCTE-IOT-002](../countertechniques/CTFTCTE-IOT-002.md) | Enumerate the device web stack and abuse its backdoor endpoints | T1190 |
-| [CTFTTE-IOT-003](../techniques/CTFTTE-IOT-003.md) | Unauthenticated MQTT/CoAP broker topic concealment | [CTFTCTE-IOT-003](../countertechniques/CTFTCTE-IOT-003.md) | Enumerate broker topics and capture device traffic | T1552 |
+| [CTFTTE-IOT-003](../techniques/CTFTTE-IOT-003.md) | Unauthenticated message-broker topic/queue concealment | [CTFTCTE-IOT-003](../countertechniques/CTFTCTE-IOT-003.md) | Enumerate broker topics/queues and capture service traffic | T1552 |
 | [CTFTTE-IOT-004](../techniques/CTFTTE-IOT-004.md) | On-board serial console flag (UART/JTAG exposure) | [CTFTCTE-IOT-004](../countertechniques/CTFTCTE-IOT-004.md) | Identify debug pads and read the serial console | T1200 |
 | [CTFTTE-IOT-005](../techniques/CTFTTE-IOT-005.md) | Short-range IoT radio concealment (Zigbee/BLE/sub-GHz) | [CTFTCTE-IOT-005](../countertechniques/CTFTCTE-IOT-005.md) | Sniff and decode the device radio protocol | T1071 |
 | [CTFTTE-IOT-006](../techniques/CTFTTE-IOT-006.md) | Embedded-binary exploitation behind device emulation (MIPS/ARM) | [CTFTCTE-IOT-006](../countertechniques/CTFTCTE-IOT-006.md) | Emulate the service and exploit the embedded binary | T1210 |

@@ -8013,8 +8013,8 @@
       "created": "2026-06-10T18:01:52.000Z",
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
-      "name": "CTFTTE-IOT-003 - Unauthenticated MQTT/CoAP broker topic concealment",
-      "description": "The device ecosystem publishes telemetry (and the flag) over an MQTT broker or CoAP server with no authentication, or with credentials only implied by the challenge story. The flag transits on a non-obvious topic name (home/garage/secret, a device shadow update, a retained message) or a CoAP resource path; the concealment is that nobody thinks to treat the broker as an information repository and enumerate its topic namespace.",
+      "name": "CTFTTE-IOT-003 - Unauthenticated message-broker topic/queue concealment",
+      "description": "The ecosystem ships a publish/subscribe or message-queue service that accepts anonymous or weakly-authenticated connections — any broker or bus technology (MQTT, CoAP resources, AMQP, Redis pub/sub, a custom device bus). Data the player needs is stored or transits on non-obvious channels: an unpublished topic, a retained message, a device-shadow update, a dead-letter or administrative queue. The concealment is categorial: everyone treats the broker as dumb infrastructure and nobody thinks to enumerate its namespace as an information repository, the way one would enumerate a filesystem or an API.",
       "kill_chain_phases": [
         {
           "kill_chain_name": "ctft",
@@ -8043,8 +8043,8 @@
       "created": "2026-06-10T18:01:52.000Z",
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
-      "name": "CTFTCTE-IOT-003 - Enumerate broker topics and capture device traffic",
-      "description": "1. Find the broker: nmap service scan for 1883/8883 (MQTT), 5683/5684 (CoAP/DTLS). 2. Subscribe with wildcards (mosquittosub -t '#' -v) — retained messages and the full topic namespace usually reveal the device tree immediately. 3. If credentials are required, mine the firmware (IOT-001) and the device story for defaults; many brokers ship with anonymous read ACLs even when write is gated. 4. For CoAP, enumerate resource paths (.well-known/core when enabled) and GET/observe. 5. Validate: capture long enough for periodic telemetry; the flag transits or is retained.",
+      "name": "CTFTCTE-IOT-003 - Enumerate broker topics/queues and capture service traffic",
+      "description": "1. Identify the service and its protocol from the port and banner (nmap service scan; brokers also answer protocol-native PING/INFO probes). 2. Enumerate the namespace the way the protocol allows: wildcard or catch-all subscriptions where supported (MQTT #), resource discovery endpoints (CoAP .well-known/core), queue/channel listing in management interfaces, or brute-force of channel names from challenge vocabulary. 3. Mine the surrounding artifacts for credentials when auth is required: the firmware image (IOT-001), the device story, vendor defaults — read ACLs are often anonymous even where write is gated. 4. Capture long enough for periodic traffic; retained or scheduled messages usually reveal the channel map without any guesswork. 5. Validate: the data found on the channel satisfies the challenge's flag format.",
       "x_ctft_category": "IOT",
       "x_ctft_domain": "IOT",
       "x_ctft_role": "resolution",

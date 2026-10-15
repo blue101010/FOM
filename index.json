@@ -1,7 +1,7 @@
 {
   "model": "CTFT",
   "version": "1.2",
-  "generated": "2026-10-15T03:26:37+00:00",
+  "generated": "2026-10-15T03:32:36+00:00",
   "relates_to": [
     "MITRE ATT&CK",
     "CAPEC",
@@ -1706,12 +1706,12 @@
       "category": "IOT",
       "technique": {
         "id": "CTFTTE-IOT-003",
-        "name": "Unauthenticated MQTT/CoAP broker topic concealment",
+        "name": "Unauthenticated message-broker topic/queue concealment",
         "path": "techniques/CTFTTE-IOT-003.md"
       },
       "counter": {
         "id": "CTFTCTE-IOT-003",
-        "name": "Enumerate broker topics and capture device traffic",
+        "name": "Enumerate broker topics/queues and capture service traffic",
         "path": "countertechniques/CTFTCTE-IOT-003.md"
       }
     },
@@ -3907,9 +3907,9 @@
       "path": "techniques/CTFTTE-IOT-002.md"
     },
     "CTFTTE-IOT-003": {
-      "name": "Unauthenticated MQTT/CoAP broker topic concealment",
+      "name": "Unauthenticated message-broker topic/queue concealment",
       "counter_id": "CTFTCTE-IOT-003",
-      "counter_name": "Enumerate broker topics and capture device traffic",
+      "counter_name": "Enumerate broker topics/queues and capture service traffic",
       "tactic": "CTFT-TA-IOT",
       "path": "techniques/CTFTTE-IOT-003.md"
     },
@@ -5302,9 +5302,9 @@
       "path": "countertechniques/CTFTCTE-IOT-002.md"
     },
     "CTFTCTE-IOT-003": {
-      "name": "Enumerate broker topics and capture device traffic",
+      "name": "Enumerate broker topics/queues and capture service traffic",
       "technique_id": "CTFTTE-IOT-003",
-      "technique_name": "Unauthenticated MQTT/CoAP broker topic concealment",
+      "technique_name": "Unauthenticated message-broker topic/queue concealment",
       "tactic": "CTFT-TA-IOT",
       "path": "countertechniques/CTFTCTE-IOT-003.md"
     },

@@ -1,31 +1,33 @@
-# CTFTTE-IOT-003 — Unauthenticated MQTT/CoAP broker topic concealment
+# CTFTTE-IOT-003 — Unauthenticated message-broker topic/queue concealment
 
 > **Type:** Design / Hide Technique  
 > **Tactic:** [`CTFT-TA-IOT`](../tactics/CTFT-TA-IOT.md) — IoT / Embedded  
-> **Paired counter-technique:** [`CTFTCTE-IOT-003`](../countertechniques/CTFTCTE-IOT-003.md) — Enumerate broker topics and capture device traffic
+> **Paired counter-technique:** [`CTFTCTE-IOT-003`](../countertechniques/CTFTCTE-IOT-003.md) — Enumerate broker topics/queues and capture service traffic
 
 ---
 
 ## How the challenge author hides
 
-The device ecosystem publishes telemetry (and the flag) over an MQTT broker or CoAP server
-with no authentication, or with credentials only implied by the challenge story. The flag
-transits on a non-obvious topic name (`home/garage/secret`, a device shadow update, a
-retained message) or a CoAP resource path; the concealment is that nobody thinks to treat the
-broker as an information repository and enumerate its topic namespace.
+The ecosystem ships a publish/subscribe or message-queue service that accepts anonymous or
+weakly-authenticated connections — any broker or bus technology (MQTT, CoAP resources, AMQP,
+Redis pub/sub, a custom device bus). Data the player needs is stored or transits on
+non-obvious channels: an unpublished topic, a retained message, a device-shadow update, a
+dead-letter or administrative queue. The concealment is categorial: everyone treats the
+broker as dumb infrastructure and nobody thinks to enumerate its namespace as an
+information repository, the way one would enumerate a filesystem or an API.
 
 ## Related MITRE ATT&CK
 
 | ATT&CK ID | ATT&CK technique | Relation note |
 | --- | --- | --- |
-| T1552 | Unsecured Credentials | Retained broker messages and device shadows routinely carry secrets no one classified. |
+| T1552 | Unsecured Credentials | Retained messages, shadows and admin queues routinely carry secrets nobody classified. |
 
 ## Tools
 
-- mosquitto clients ([CTFTTOU-276](../tools/CTFTTOU-276.md))
+- [mosquitto clients](../tools/CTFTTOU-276.md) (MQTT family)
 - [nmap](../tools/CTFTTOU-033.md)
 
 ## References
 
-- <https://mqtt.org/> — protocol semantics (retained messages, wildcards)
+- <https://cwe.mitre.org/data/definitions/1188.html> (CWE-1188: Initialization of a Resource with an Insecure Configuration)
 - Add challenge write-up link
