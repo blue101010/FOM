@@ -80,4 +80,6 @@ Reference tools used across CTFT techniques and counter-techniques.
 | [CTFTTOU-074](CTFTTOU-074.md) | python tarfile | <https://docs.python.org/3/library/tarfile.html> | CTFTTE-PWN-010, CTFTCTE-PWN-010 |
 | [CTFTTOU-075](CTFTTOU-075.md) | ps / /proc | <https://man7.org/linux/man-pages/man1/ps.1.html> | CTFTTE-FOR-030, CTFTCTE-FOR-030 |
 | [CTFTTOU-076](CTFTTOU-076.md) | inotify-tools | <https://github.com/inotify-tools/inotify-tools> | CTFTTE-FOR-030, CTFTCTE-FOR-030 |
+| [CTFTTOU-271](CTFTTOU-271.md) | graphql-schema-dump.py | [scripts/graphql-schema-dump.py](scripts/graphql-schema-dump.py) | CTFTTE-WEB-023, CTFTCTE-WEB-023 |
+| [CTFTTOU-272](CTFTTOU-272.md) | inql | <https://github.com/doyensec/inql> | CTFTTE-WEB-023, CTFTCTE-WEB-023 |
 

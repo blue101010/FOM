@@ -4,8 +4,8 @@ Every **Design / Hide Technique** (`CTFTTE-<CAT>-NNN`) and the
 **Resolution-Technique** (`CTFTCTE-<CAT>-NNN`) that recovers it, grouped by domain.
 IDs pair one-to-one: `CTFTTE-FOR-004` is always answered by `CTFTCTE-FOR-004`.
 
-> Generated from the files in `techniques/` and `countertechniques/` — corpus fingerprint `7ba74d8878861110`
-> by `v3/render_taxonomy_docs.py`. **192 complete pairs** across **19 active domains**. Do not hand-edit: rename the entry, then re-render.
+> Generated from the files in `techniques/` and `countertechniques/` — corpus fingerprint `3467cccedd492783`
+> by `v3/render_taxonomy_docs.py`. **193 complete pairs** across **19 active domains**. Do not hand-edit: rename the entry, then re-render.
 
 ---
 
@@ -16,7 +16,7 @@ Order follows the challenge-category picker.
 | # | Code | Picker label | Domain | Pairs |
 | --- | --- | --- | --- | --- |
 | 1 | [`FOR`](#ctft-ta-for) | Forensics | Forensics | 30 |
-| 2 | [`WEB`](#ctft-ta-web) | Web | Web Exploitation | 22 |
+| 2 | [`WEB`](#ctft-ta-web) | Web | Web Exploitation | 23 |
 | 3 | [`CRY`](#ctft-ta-cry) | Crypto | Cryptography | 14 |
 | 4 | [`PWN`](#ctft-ta-pwn) | Binary | Binary Exploitation | 10 |
 | 5 | [`REV`](#ctft-ta-rev) | Reverse | Reverse Engineering | 10 |
@@ -34,7 +34,7 @@ Order follows the challenge-category picker.
 | 17 | [`FPN`](#ctft-ta-fpn) | Full Pwn | Full Pwn / Multi-Stage | 20 |
 | 18 | [`HWR`](#ctft-ta-hwr) | Hardware | Hardware | 2 |
 | 19 | [`SDR`](#ctft-ta-sdr) | SDR / RF | Software-Defined Radio | 1 |
-| | | | **Total** | **192** |
+| | | | **Total** | **193** |
 
 **Retired — do not use.** `MSC` (Misc) was a catch-all whose entries all
 duplicated a precise domain; file those challenges under `JAL`, `COD`, `GAM`
@@ -82,7 +82,7 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 
 ## <a id="ctft-ta-web"></a>`CTFT-TA-WEB` — Web Exploitation
 
-> [domain page](tactics/CTFT-TA-WEB.md) · 22 pairs · HTB: Web
+> [domain page](tactics/CTFT-TA-WEB.md) · 23 pairs · HTB: Web
 
 | # | Technique ID | Hide / Design name | Resolution-technique ID | Recovery action |
 | --- | --- | --- | --- | --- |
@@ -108,6 +108,7 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 | 20 | [CTFTTE-WEB-020](techniques/CTFTTE-WEB-020.md) | Uniform soft-404 / deceptive HTTP responses | [CTFTCTE-WEB-020](countertechniques/CTFTCTE-WEB-020.md) | Fingerprint HTTP responses against a baseline |
 | 21 | [CTFTTE-WEB-021](techniques/CTFTTE-WEB-021.md) | OS command injection in a wrapped utility | [CTFTCTE-WEB-021](countertechniques/CTFTCTE-WEB-021.md) | Run the command-injection micro-runbook |
 | 22 | [CTFTTE-WEB-022](techniques/CTFTTE-WEB-022.md) | Public source-map bait | [CTFTCTE-WEB-022](countertechniques/CTFTCTE-WEB-022.md) | Enumerate and triage source maps |
+| 23 | [CTFTTE-WEB-023](techniques/CTFTTE-WEB-023.md) | GraphQL introspection disclosure / field-level authorization gap | [CTFTCTE-WEB-023](countertechniques/CTFTCTE-WEB-023.md) | Introspect the schema and over-fetch hidden fields |
 
 
 ## <a id="ctft-ta-cry"></a>`CTFT-TA-CRY` — Cryptography

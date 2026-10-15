@@ -19,7 +19,11 @@ An agent is constrained by guardrails over its tools; the flag requires coaxing 
 ## Tools
 
 - [python](../tools/CTFTTOU-050.md)
-- agent CLIs
+- [AutoGen](../tools/CTFTTOU-273.md)
+- [LangChain](../tools/CTFTTOU-274.md)
+- [CrewAI](../tools/CTFTTOU-275.md)
+- [garak](../tools/CTFTTOU-062.md)
+- [PyRIT](../tools/CTFTTOU-064.md)
 
 ## References
 

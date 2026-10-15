@@ -2,8 +2,8 @@
   "model": "CTFT",
   "schema_version": "3.0",
   "collection": "catalog",
-  "generated_at": "2026-10-15T01:46:30+00:00",
-  "source_sha256": "4568c158bbef210aaff99d598fd902e734645808a56250f08e5113cd72148626",
+  "generated_at": "2026-10-15T03:16:47+00:00",
+  "source_sha256": "6d61434450fa8f83bbb79647de6088046eccf16a4c2413e38833737d0e0dea64",
   "items": [
     {
       "id": "CTFTPAIR-AIM-001",
@@ -4208,6 +4208,28 @@
         "id": "CTFTCTE-WEB-022",
         "name": "Enumerate and triage source maps",
         "path": "countertechniques/CTFTCTE-WEB-022.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-WEB-023",
+      "schema_version": "3.0",
+      "domain": "WEB",
+      "tactic": "CTFT-TA-WEB",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-WEB-023",
+        "name": "GraphQL introspection disclosure / field-level authorization gap",
+        "path": "techniques/CTFTTE-WEB-023.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-WEB-023",
+        "name": "Introspect the schema and over-fetch hidden fields",
+        "path": "countertechniques/CTFTCTE-WEB-023.md",
         "role": "resolution"
       },
       "maturity": "taxonomy_only",

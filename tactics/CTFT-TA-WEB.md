@@ -2,7 +2,7 @@
 
 > **Domain ID:** `CTFT-TA-WEB`  
 > **HTB mapping:** HTB: Web  
-> **Techniques:** 22
+> **Techniques:** 23
 
 ## Description
 
@@ -48,6 +48,7 @@ per entry**, never the definition of an entry.
 | [CTFTTE-WEB-020](../techniques/CTFTTE-WEB-020.md) | Uniform soft-404 / deceptive HTTP responses | [CTFTCTE-WEB-020](../countertechniques/CTFTCTE-WEB-020.md) | Fingerprint HTTP responses against a baseline | T1036 |
 | [CTFTTE-WEB-021](../techniques/CTFTTE-WEB-021.md) | OS command injection in a wrapped utility | [CTFTCTE-WEB-021](../countertechniques/CTFTCTE-WEB-021.md) | Run the command-injection micro-runbook | T1059 |
 | [CTFTTE-WEB-022](../techniques/CTFTTE-WEB-022.md) | Public source-map bait | [CTFTCTE-WEB-022](../countertechniques/CTFTCTE-WEB-022.md) | Enumerate and triage source maps | T1213 |
+| [CTFTTE-WEB-023](../techniques/CTFTTE-WEB-023.md) | GraphQL introspection disclosure / field-level authorization gap | [CTFTCTE-WEB-023](../countertechniques/CTFTCTE-WEB-023.md) | Introspect the schema and over-fetch hidden fields | T1190 |
 
 ---
 *See [CORRELATION.md](../CORRELATION.md) for the full cross-reference matrix.*

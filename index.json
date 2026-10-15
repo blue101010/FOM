@@ -1,7 +1,7 @@
 {
   "model": "CTFT",
   "version": "1.2",
-  "generated": "2026-10-15T01:46:29+00:00",
+  "generated": "2026-10-15T03:16:47+00:00",
   "relates_to": [
     "MITRE ATT&CK",
     "CAPEC",
@@ -122,10 +122,10 @@
       "id": "CTFT-TA-WEB",
       "name": "Web Exploitation",
       "path": "tactics/CTFT-TA-WEB.md",
-      "count": 22
+      "count": 23
     }
   ],
-  "total_techniques": 192,
+  "total_techniques": 193,
   "techniques": [
     {
       "tactic": "CTFT-TA-AIM",
@@ -2814,6 +2814,20 @@
         "name": "Enumerate and triage source maps",
         "path": "countertechniques/CTFTCTE-WEB-022.md"
       }
+    },
+    {
+      "tactic": "CTFT-TA-WEB",
+      "category": "WEB",
+      "technique": {
+        "id": "CTFTTE-WEB-023",
+        "name": "GraphQL introspection disclosure / field-level authorization gap",
+        "path": "techniques/CTFTTE-WEB-023.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-WEB-023",
+        "name": "Introspect the schema and over-fetch hidden fields",
+        "path": "countertechniques/CTFTCTE-WEB-023.md"
+      }
     }
   ],
   "pairs": {
@@ -3008,7 +3022,8 @@
     "CTFTTE-WEB-019": "CTFTCTE-WEB-019",
     "CTFTTE-WEB-020": "CTFTCTE-WEB-020",
     "CTFTTE-WEB-021": "CTFTCTE-WEB-021",
-    "CTFTTE-WEB-022": "CTFTCTE-WEB-022"
+    "CTFTTE-WEB-022": "CTFTCTE-WEB-022",
+    "CTFTTE-WEB-023": "CTFTCTE-WEB-023"
   },
   "by_technique_id": {
     "CTFTTE-AIM-001": {
@@ -4354,6 +4369,13 @@
       "counter_name": "Enumerate and triage source maps",
       "tactic": "CTFT-TA-WEB",
       "path": "techniques/CTFTTE-WEB-022.md"
+    },
+    "CTFTTE-WEB-023": {
+      "name": "GraphQL introspection disclosure / field-level authorization gap",
+      "counter_id": "CTFTCTE-WEB-023",
+      "counter_name": "Introspect the schema and over-fetch hidden fields",
+      "tactic": "CTFT-TA-WEB",
+      "path": "techniques/CTFTTE-WEB-023.md"
     }
   },
   "by_counter_id": {
@@ -5700,6 +5722,13 @@
       "technique_name": "Public source-map bait",
       "tactic": "CTFT-TA-WEB",
       "path": "countertechniques/CTFTCTE-WEB-022.md"
+    },
+    "CTFTCTE-WEB-023": {
+      "name": "Introspect the schema and over-fetch hidden fields",
+      "technique_id": "CTFTTE-WEB-023",
+      "technique_name": "GraphQL introspection disclosure / field-level authorization gap",
+      "tactic": "CTFT-TA-WEB",
+      "path": "countertechniques/CTFTCTE-WEB-023.md"
     }
   }
 }

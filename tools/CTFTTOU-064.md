@@ -1,7 +1,7 @@
 # CTFTTOU-064 — PyRIT
 
 > **Tool ID:** `CTFTTOU-064`  
-> **Related techniques/counters:** CTFTTE-AIM-002, CTFTCTE-AIM-002
+> **Related techniques/counters:** CTFTTE-AIM-002, CTFTCTE-AIM-002, CTFTTE-AIM-007, CTFTCTE-AIM-007
 
 ## Description
 
@@ -9,8 +9,8 @@ Microsoft's Python risk-identification framework for generative AI. Orchestrator
 
 ## URL
 
-<https://github.com/Azure/PyRIT>
+<https://github.com/microsoft/PyRIT>
 
 ## Related Techniques
 
-CTFTTE-AIM-002, CTFTCTE-AIM-002
+CTFTTE-AIM-002, CTFTCTE-AIM-002, CTFTTE-AIM-007, CTFTCTE-AIM-007

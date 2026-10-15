@@ -1,10 +1,10 @@
 {
   "model": "CTFT",
   "schema_version": "3.0",
-  "generated_at": "2026-10-15T01:58:53+00:00",
+  "generated_at": "2026-10-15T03:17:23+00:00",
   "source": {
-    "correlation_sha256": "4568c158bbef210aaff99d598fd902e734645808a56250f08e5113cd72148626",
-    "legacy_index_sha256": "cc66caf48a42cc3aa48780d246f2a67c2f2ccf8cf74152af0e6fbc963917aed1"
+    "correlation_sha256": "6d61434450fa8f83bbb79647de6088046eccf16a4c2413e38833737d0e0dea64",
+    "legacy_index_sha256": "036e7867de70eff96b56e51b10dfdc0d3b5e5c19c8fc7022494adc0532baeed4"
   },
   "taxonomy": {
     "tactics": [
@@ -29,9 +29,9 @@
       "WEB"
     ],
     "tactic_count": 19,
-    "technique_count": 192,
-    "counter_technique_count": 192,
-    "complete_pairs": 192,
+    "technique_count": 193,
+    "counter_technique_count": 193,
+    "complete_pairs": 193,
     "by_tactic": {
       "AIM": 7,
       "BLK": 5,
@@ -51,7 +51,7 @@
       "REV": 10,
       "SDR": 1,
       "STE": 11,
-      "WEB": 22
+      "WEB": 23
     }
   },
   "coverage": {
@@ -62,7 +62,7 @@
       "tools": 9
     },
     "maturity": {
-      "taxonomy_only": 185,
+      "taxonomy_only": 186,
       "typed": 7
     },
     "core": {
@@ -72,10 +72,10 @@
       "placeholder_free": 0
     },
     "stix_object_types": {
-      "attack-pattern": 192,
-      "course-of-action": 192,
+      "attack-pattern": 193,
+      "course-of-action": 193,
       "identity": 1,
-      "relationship": 192,
+      "relationship": 193,
       "x-ctft-tactic": 19
     },
     "placeholder_entries": [
@@ -343,13 +343,13 @@
   "integrity": {
     "techniques_without_counter": [],
     "counters_without_technique": [],
-    "correlation_pair_count": 192,
+    "correlation_pair_count": 193,
     "correlation_pairs_missing_from_files": [],
     "correlation_pairs_not_identity": [],
     "pairs_missing_from_correlation": [],
     "legacy_index_tactics_missing_from_files": [],
     "tactics_missing_from_legacy_index": [],
-    "legacy_index_pair_count": 192,
+    "legacy_index_pair_count": 193,
     "legacy_index_pairs_missing_from_files": [],
     "relation_problems": [],
     "lint_problems": [],

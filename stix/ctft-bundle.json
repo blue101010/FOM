@@ -13347,6 +13347,73 @@
       "source_ref": "course-of-action--5b04ff12-eaac-5769-9d66-721719587117",
       "target_ref": "attack-pattern--bc2cd109-3eea-53e8-a80d-92ae153deaaf",
       "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--a6477f97-b3fe-51b6-9063-e9ff70a61443",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-WEB-023 - GraphQL introspection disclosure / field-level authorization gap",
+      "description": "The flag lives in a sensitive field of a hidden GraphQL object (e.g. postPassword on a post with isHidden: true). The list query the UI uses filters hidden objects out, so the application looks complete and innocent — but the GraphQL endpoint accepts schema introspection, which discloses every type and field name, and the single-object query does not re-apply the list-level filter. Introspection turns authorization-by-obscurity into an open book: the schema names the secret, and a direct query by id reads it. The player is steered toward classic web-vuln hunting while the actual path is schema disclosure plus a field-level authorization gap.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "web"
+        }
+      ],
+      "x_ctft_category": "WEB",
+      "x_ctft_domain": "WEB",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-WEB-023"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1190",
+          "description": "Exploit Public-Facing Application"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--6867df6e-efa4-5cd9-93be-1ecd585d77a1",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-WEB-023 - Introspect the schema and over-fetch hidden fields",
+      "description": "1. Find the GraphQL endpoint: page source, /graphql, /api/graphql, .graphql files, or a framework hint (Apollo, GraphiQL landing page). 2. Introspect: POST the schema { types { name fields { name } } } query; if introspection is disabled, fall back to wordlists of field names and error-message suggestions, or clue mining in client bundles. 3. Triage the schema for sensitive field names (password, hidden, secret, token, admin, flag) and for types the UI never renders — graphql-schema-dump.py automates the dump and the highlight. 4. Compare resolvers: query the list (which the UI filters) and the single-object query by id; enumerate ids the list does not return and over-fetch the sensitive fields on them. 5. Validate: the hidden object's sensitive field satisfies the flag format.",
+      "x_ctft_category": "WEB",
+      "x_ctft_domain": "WEB",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-WEB-023"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1190",
+          "description": "Exploit Public-Facing Application"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--1008ac3b-d188-5afe-9ade-cfeb7d8df10e",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--6867df6e-efa4-5cd9-93be-1ecd585d77a1",
+      "target_ref": "attack-pattern--a6477f97-b3fe-51b6-9063-e9ff70a61443",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     }
   ]
 }
