@@ -2,10 +2,10 @@
   "model": "CTFT",
   "schema_version": "3.0",
   "collection": "relations",
-  "generated_at": "2026-10-15T03:39:43+00:00",
+  "generated_at": "2026-10-17T02:09:09+00:00",
   "note": "Generated. Derived `solves` edges come from the markdown pairing; edit v3/relations.curated.json for anything else.",
   "counts": {
-    "derived": 199,
+    "derived": 203,
     "curated": 4
   },
   "items": [
@@ -645,6 +645,42 @@
       "type": "solves",
       "source": "CTFTCTE-FOR-030",
       "target": "CTFTTE-FOR-030",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
+      "id": "REL-SOLVES-FOR-031",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-FOR-031",
+      "target": "CTFTTE-FOR-031",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
+      "id": "REL-SOLVES-FOR-032",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-FOR-032",
+      "target": "CTFTTE-FOR-032",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
+      "id": "REL-SOLVES-FOR-033",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-FOR-033",
+      "target": "CTFTTE-FOR-033",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
+      "id": "REL-SOLVES-FOR-034",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-FOR-034",
+      "target": "CTFTTE-FOR-034",
       "origin": "derived",
       "confidence": "high"
     },

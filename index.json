@@ -1,7 +1,7 @@
 {
   "model": "CTFT",
   "version": "1.2",
-  "generated": "2026-10-15T03:39:43+00:00",
+  "generated": "2026-10-17T02:09:09+00:00",
   "relates_to": [
     "MITRE ATT&CK",
     "CAPEC",
@@ -44,7 +44,7 @@
       "id": "CTFT-TA-FOR",
       "name": "Forensics",
       "path": "tactics/CTFT-TA-FOR.md",
-      "count": 30
+      "count": 34
     },
     {
       "id": "CTFT-TA-FPN",
@@ -131,7 +131,7 @@
       "count": 23
     }
   ],
-  "total_techniques": 199,
+  "total_techniques": 203,
   "techniques": [
     {
       "tactic": "CTFT-TA-AIM",
@@ -1125,6 +1125,62 @@
         "id": "CTFTCTE-FOR-030",
         "name": "Detect, stop and snapshot a read-triggered mutator",
         "path": "countertechniques/CTFTCTE-FOR-030.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-FOR",
+      "category": "FOR",
+      "technique": {
+        "id": "CTFTTE-FOR-031",
+        "name": "Office VBA macro string concealment",
+        "path": "techniques/CTFTTE-FOR-031.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-FOR-031",
+        "name": "Extract and decode strings from Office VBA macros",
+        "path": "countertechniques/CTFTCTE-FOR-031.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-FOR",
+      "category": "FOR",
+      "technique": {
+        "id": "CTFTTE-FOR-032",
+        "name": "Flag concealed in a haystack of near-identical files",
+        "path": "techniques/CTFTTE-FOR-032.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-FOR-032",
+        "name": "Isolate the outlier file by scalable comparison",
+        "path": "countertechniques/CTFTCTE-FOR-032.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-FOR",
+      "category": "FOR",
+      "technique": {
+        "id": "CTFTTE-FOR-033",
+        "name": "Flag fragments disseminated across filesystem artifacts",
+        "path": "techniques/CTFTTE-FOR-033.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-FOR-033",
+        "name": "Aggregate disseminated flag fragments across files",
+        "path": "countertechniques/CTFTCTE-FOR-033.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-FOR",
+      "category": "FOR",
+      "technique": {
+        "id": "CTFTTE-FOR-034",
+        "name": "Obfuscated client-side script in a web artifact",
+        "path": "techniques/CTFTTE-FOR-034.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-FOR-034",
+        "name": "Deobfuscate and trace client-side script to the payload",
+        "path": "countertechniques/CTFTCTE-FOR-034.md"
       }
     },
     {
@@ -2992,6 +3048,10 @@
     "CTFTTE-FOR-028": "CTFTCTE-FOR-028",
     "CTFTTE-FOR-029": "CTFTCTE-FOR-029",
     "CTFTTE-FOR-030": "CTFTCTE-FOR-030",
+    "CTFTTE-FOR-031": "CTFTCTE-FOR-031",
+    "CTFTTE-FOR-032": "CTFTCTE-FOR-032",
+    "CTFTTE-FOR-033": "CTFTCTE-FOR-033",
+    "CTFTTE-FOR-034": "CTFTCTE-FOR-034",
     "CTFTTE-FPN-001": "CTFTCTE-FPN-001",
     "CTFTTE-FPN-002": "CTFTCTE-FPN-002",
     "CTFTTE-FPN-003": "CTFTCTE-FPN-003",
@@ -3618,6 +3678,34 @@
       "counter_name": "Detect, stop and snapshot a read-triggered mutator",
       "tactic": "CTFT-TA-FOR",
       "path": "techniques/CTFTTE-FOR-030.md"
+    },
+    "CTFTTE-FOR-031": {
+      "name": "Office VBA macro string concealment",
+      "counter_id": "CTFTCTE-FOR-031",
+      "counter_name": "Extract and decode strings from Office VBA macros",
+      "tactic": "CTFT-TA-FOR",
+      "path": "techniques/CTFTTE-FOR-031.md"
+    },
+    "CTFTTE-FOR-032": {
+      "name": "Flag concealed in a haystack of near-identical files",
+      "counter_id": "CTFTCTE-FOR-032",
+      "counter_name": "Isolate the outlier file by scalable comparison",
+      "tactic": "CTFT-TA-FOR",
+      "path": "techniques/CTFTTE-FOR-032.md"
+    },
+    "CTFTTE-FOR-033": {
+      "name": "Flag fragments disseminated across filesystem artifacts",
+      "counter_id": "CTFTCTE-FOR-033",
+      "counter_name": "Aggregate disseminated flag fragments across files",
+      "tactic": "CTFT-TA-FOR",
+      "path": "techniques/CTFTTE-FOR-033.md"
+    },
+    "CTFTTE-FOR-034": {
+      "name": "Obfuscated client-side script in a web artifact",
+      "counter_id": "CTFTCTE-FOR-034",
+      "counter_name": "Deobfuscate and trace client-side script to the payload",
+      "tactic": "CTFT-TA-FOR",
+      "path": "techniques/CTFTTE-FOR-034.md"
     },
     "CTFTTE-FPN-001": {
       "name": "Multi-stage chained challenge",
@@ -5013,6 +5101,34 @@
       "technique_name": "Read-triggered payload mutation (guardian process)",
       "tactic": "CTFT-TA-FOR",
       "path": "countertechniques/CTFTCTE-FOR-030.md"
+    },
+    "CTFTCTE-FOR-031": {
+      "name": "Extract and decode strings from Office VBA macros",
+      "technique_id": "CTFTTE-FOR-031",
+      "technique_name": "Office VBA macro string concealment",
+      "tactic": "CTFT-TA-FOR",
+      "path": "countertechniques/CTFTCTE-FOR-031.md"
+    },
+    "CTFTCTE-FOR-032": {
+      "name": "Isolate the outlier file by scalable comparison",
+      "technique_id": "CTFTTE-FOR-032",
+      "technique_name": "Flag concealed in a haystack of near-identical files",
+      "tactic": "CTFT-TA-FOR",
+      "path": "countertechniques/CTFTCTE-FOR-032.md"
+    },
+    "CTFTCTE-FOR-033": {
+      "name": "Aggregate disseminated flag fragments across files",
+      "technique_id": "CTFTTE-FOR-033",
+      "technique_name": "Flag fragments disseminated across filesystem artifacts",
+      "tactic": "CTFT-TA-FOR",
+      "path": "countertechniques/CTFTCTE-FOR-033.md"
+    },
+    "CTFTCTE-FOR-034": {
+      "name": "Deobfuscate and trace client-side script to the payload",
+      "technique_id": "CTFTTE-FOR-034",
+      "technique_name": "Obfuscated client-side script in a web artifact",
+      "tactic": "CTFT-TA-FOR",
+      "path": "countertechniques/CTFTCTE-FOR-034.md"
     },
     "CTFTCTE-FPN-001": {
       "name": "Chain enumeration, foothold and privilege escalation",

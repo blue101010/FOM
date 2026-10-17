@@ -1,7 +1,7 @@
 # CTFTTOU-055 — xxd / hexdump
 
 > **Tool ID:** `CTFTTOU-055`  
-> **Related techniques/counters:** CTFTTE-COD-004, CTFTCTE-COD-004
+> **Related techniques/counters:** CTFTTE-COD-004, CTFTCTE-COD-004, CTFTTE-FOR-032, CTFTCTE-FOR-032
 
 ## Description
 
@@ -13,4 +13,4 @@ Hex viewers and dumps. Used to inspect raw bytes, extract a polyglot segment or 
 
 ## Related Techniques
 
-CTFTTE-COD-004, CTFTCTE-COD-004
+CTFTTE-COD-004, CTFTCTE-COD-004, CTFTTE-FOR-032, CTFTCTE-FOR-032

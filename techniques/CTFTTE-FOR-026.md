@@ -26,4 +26,4 @@ The flag exists only in a Windows/Linux memory dump: registry hives, services, c
 ## References
 
 - <https://github.com/volatilityfoundation/volatility3>
-- Add challenge write-up link
+- <https://github.com/jselliott/HTBCyberSanta2021/tree/main/forensics/persist> (HTB Cyber Santa 2021 "persist", memory image .raw analysed with Volatility)

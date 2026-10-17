@@ -1,7 +1,7 @@
 # CTFTTOU-036 — grep
 
 > **Tool ID:** `CTFTTOU-036`  
-> **Related techniques/counters:** CTFTTE-FPN-020, CTFTCTE-FPN-020
+> **Related techniques/counters:** CTFTTE-FPN-020, CTFTCTE-FPN-020, CTFTTE-FOR-033, CTFTCTE-FOR-033
 
 ## Description
 
@@ -13,4 +13,4 @@ Text search utility. `grep -Ri hf-` over the serialized domain dump is the final
 
 ## Related Techniques
 
-CTFTTE-FPN-020, CTFTCTE-FPN-020
+CTFTTE-FPN-020, CTFTCTE-FPN-020, CTFTTE-FOR-033, CTFTCTE-FOR-033

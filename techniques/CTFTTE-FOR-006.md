@@ -26,4 +26,4 @@ Flag is split across packets, tunnelled in odd fields (ICMP data, DNS labels), o
 
 ## References
 
-- Add challenge write-up link
+- <https://github.com/jselliott/HTBCyberSanta2021/tree/main/forensics/baby_apt> (HTB Cyber Santa 2021 "baby_apt", base64 commands in PCAP HTTP traffic)

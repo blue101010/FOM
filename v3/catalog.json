@@ -2,8 +2,8 @@
   "model": "CTFT",
   "schema_version": "3.0",
   "collection": "catalog",
-  "generated_at": "2026-10-15T03:39:44+00:00",
-  "source_sha256": "6cbdfcd18e8bf2ffd78567d5baf2ef387a2b5acb898b18aa38a0de1444224c42",
+  "generated_at": "2026-10-17T02:09:09+00:00",
+  "source_sha256": "339019fcfa69f81c1598718df608cf94d159c6f968ba77d9694fb4b802d4784a",
   "items": [
     {
       "id": "CTFTPAIR-AIM-001",
@@ -1546,6 +1546,94 @@
         "id": "CTFTCTE-FOR-030",
         "name": "Detect, stop and snapshot a read-triggered mutator",
         "path": "countertechniques/CTFTCTE-FOR-030.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-FOR-031",
+      "schema_version": "3.0",
+      "domain": "FOR",
+      "tactic": "CTFT-TA-FOR",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-FOR-031",
+        "name": "Office VBA macro string concealment",
+        "path": "techniques/CTFTTE-FOR-031.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-FOR-031",
+        "name": "Extract and decode strings from Office VBA macros",
+        "path": "countertechniques/CTFTCTE-FOR-031.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-FOR-032",
+      "schema_version": "3.0",
+      "domain": "FOR",
+      "tactic": "CTFT-TA-FOR",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-FOR-032",
+        "name": "Flag concealed in a haystack of near-identical files",
+        "path": "techniques/CTFTTE-FOR-032.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-FOR-032",
+        "name": "Isolate the outlier file by scalable comparison",
+        "path": "countertechniques/CTFTCTE-FOR-032.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-FOR-033",
+      "schema_version": "3.0",
+      "domain": "FOR",
+      "tactic": "CTFT-TA-FOR",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-FOR-033",
+        "name": "Flag fragments disseminated across filesystem artifacts",
+        "path": "techniques/CTFTTE-FOR-033.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-FOR-033",
+        "name": "Aggregate disseminated flag fragments across files",
+        "path": "countertechniques/CTFTCTE-FOR-033.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-FOR-034",
+      "schema_version": "3.0",
+      "domain": "FOR",
+      "tactic": "CTFT-TA-FOR",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-FOR-034",
+        "name": "Obfuscated client-side script in a web artifact",
+        "path": "techniques/CTFTTE-FOR-034.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-FOR-034",
+        "name": "Deobfuscate and trace client-side script to the payload",
+        "path": "countertechniques/CTFTCTE-FOR-034.md",
         "role": "resolution"
       },
       "maturity": "taxonomy_only",

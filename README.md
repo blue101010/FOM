@@ -60,7 +60,7 @@ Order and short labels follow the challenge-category picker.
 
 | # | Domain | Label | Name | HTB | Pairs |
 | --- | --- | --- | --- | --- | --- |
-| 1 | [CTFT-TA-FOR](tactics/CTFT-TA-FOR.md) | Forensics | Forensics | HTB: Forensics | 30 |
+| 1 | [CTFT-TA-FOR](tactics/CTFT-TA-FOR.md) | Forensics | Forensics | HTB: Forensics | 34 |
 | 2 | [CTFT-TA-WEB](tactics/CTFT-TA-WEB.md) | Web | Web Exploitation | HTB: Web | 23 |
 | 3 | [CTFT-TA-CRY](tactics/CTFT-TA-CRY.md) | Crypto | Cryptography | HTB: Crypto | 14 |
 | 4 | [CTFT-TA-PWN](tactics/CTFT-TA-PWN.md) | Binary | Binary Exploitation | HTB: Pwn | 10 |
@@ -80,7 +80,7 @@ Order and short labels follow the challenge-category picker.
 | 18 | [CTFT-TA-HWR](tactics/CTFT-TA-HWR.md) | Hardware | Hardware | HTB: Hardware | 2 |
 | 19 | [CTFT-TA-SDR](tactics/CTFT-TA-SDR.md) | SDR / RF | Software-Defined Radio | HTB: Hardware | 1 |
 | 20 | [CTFT-TA-IOT](tactics/CTFT-TA-IOT.md) | IoT / Embedded | Internet of Things | HTB: Misc (IoT) | 6 |
-| | | | **Total** | | **199** |
+| | | | **Total** | | **203** |
 
 **Retired:** `CTFT-TA-MSC` (Misc) is **removed**. It was a catch-all and every entry
 it held duplicated a precise tactic. Do not create `MSC` entries; file the challenge
@@ -158,7 +158,7 @@ produces no diff. Regenerate with `python v3/render_stix.py --write`.
 
 ## Catalogue integrity
 
-The corpus contains **199 complete technique/counter-technique pairs** across 20 domains.
+The corpus contains **203 complete technique/counter-technique pairs** across 20 domains.
 `CORRELATION.md`, `HIERARCHY.md` **and every tactic page** are generated, never hand-edited: the
 markdown entry files are the source of truth, so a renamed technique cannot drift from the matrix.
 After adding or renaming an entry:
@@ -185,7 +185,7 @@ disagree:
 
 | Maturity | Meaning | Count today |
 | --- | --- | --- |
-| `taxonomy_only` | identifiers and paired prose only | 192 |
+| `taxonomy_only` | identifiers and paired prose only | 196 |
 | `attested` | >= 2 independent CTF events + curated positives, negatives, boundaries | 0 |
 
 Two techniques were attested by reading the write-ups (`CRY-012`, `FOR-006`); both currently show
@@ -197,7 +197,7 @@ human-readable step; execution belongs to a separately authorized laboratory run
 
 ### Known coverage debt
 
-- **Evidence is the bottleneck.** 270 of 398 entry files still carry the `Add challenge write-up
+- **Evidence is the bottleneck.** 267 of 406 entry files still carry the `Add challenge write-up
   link` marker. Mining the local write-up base attested **2** core techniques (`CRY-012`,
   `FOR-006`); the remaining 33 need sources that do not exist locally. `v3/evidence.curated.json`
   records the rejected candidates and why, so they are not re-proposed.

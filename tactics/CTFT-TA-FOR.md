@@ -2,7 +2,7 @@
 
 > **Domain ID:** `CTFT-TA-FOR`  
 > **HTB mapping:** HTB: Forensics  
-> **Techniques:** 30
+> **Techniques:** 34
 
 ## Description
 
@@ -56,6 +56,10 @@ per entry**, never the definition of an entry.
 | [CTFTTE-FOR-028](../techniques/CTFTTE-FOR-028.md) | Windows event-log evidence concealment | [CTFTCTE-FOR-028](../countertechniques/CTFTCTE-FOR-028.md) | Reconstruct the timeline from Windows event logs | T1070.001, T1562.002 |
 | [CTFTTE-FOR-029](../techniques/CTFTTE-FOR-029.md) | Registry-hive persistence artifact concealment | [CTFTCTE-FOR-029](../countertechniques/CTFTCTE-FOR-029.md) | Extract and analyse registry hives from a forensic image | T1547.001, T1027.010, T1562.001 |
 | [CTFTTE-FOR-030](../techniques/CTFTTE-FOR-030.md) | Read-triggered payload mutation (guardian process) | [CTFTCTE-FOR-030](../countertechniques/CTFTCTE-FOR-030.md) | Detect, stop and snapshot a read-triggered mutator | T1070 |
+| [CTFTTE-FOR-031](../techniques/CTFTTE-FOR-031.md) | Office VBA macro string concealment | [CTFTCTE-FOR-031](../countertechniques/CTFTCTE-FOR-031.md) | Extract and decode strings from Office VBA macros | T1027, T1059.005 |
+| [CTFTTE-FOR-032](../techniques/CTFTTE-FOR-032.md) | Flag concealed in a haystack of near-identical files | [CTFTCTE-FOR-032](../countertechniques/CTFTCTE-FOR-032.md) | Isolate the outlier file by scalable comparison | T1027 |
+| [CTFTTE-FOR-033](../techniques/CTFTTE-FOR-033.md) | Flag fragments disseminated across filesystem artifacts | [CTFTCTE-FOR-033](../countertechniques/CTFTCTE-FOR-033.md) | Aggregate disseminated flag fragments across files | T1027, T1547.001 |
+| [CTFTTE-FOR-034](../techniques/CTFTTE-FOR-034.md) | Obfuscated client-side script in a web artifact | [CTFTCTE-FOR-034](../countertechniques/CTFTCTE-FOR-034.md) | Deobfuscate and trace client-side script to the payload | T1027, T1059.007 |
 
 ---
 *See [CORRELATION.md](../CORRELATION.md) for the full cross-reference matrix.*

@@ -26,4 +26,5 @@ JPEG structure is tampered: extraneous bytes before the EOI marker, corrupted qu
 ## References
 
 - <https://github.com/corkami/pics>
-- Add challenge write-up link
+- <https://github.com/blue101010/writeups/blob/main/2024/LEVELEFFECTCDA2024/Forensics/doubletake/README.md> (Level Effect CDA 2024 "doubletake", extraneous bytes before the 0xFFD9 EOI marker)
+- <https://github.com/tsg-ut/tsgctf2020/blob/master/misc/poorguy/writeup.en.md> (TSG CTF 2020 "poorguy", corrupted quantization table / DCT coefficients)

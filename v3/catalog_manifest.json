@@ -1,10 +1,10 @@
 {
   "model": "CTFT",
   "schema_version": "3.0",
-  "generated_at": "2026-10-15T03:39:44+00:00",
+  "generated_at": "2026-10-17T02:09:09+00:00",
   "source": {
-    "correlation_sha256": "6cbdfcd18e8bf2ffd78567d5baf2ef387a2b5acb898b18aa38a0de1444224c42",
-    "legacy_index_sha256": "26875c26c699f3998dab8a618de5f0f01c3f162f56a71d02f9a17bbfd82a4f81"
+    "correlation_sha256": "339019fcfa69f81c1598718df608cf94d159c6f968ba77d9694fb4b802d4784a",
+    "legacy_index_sha256": "c02e4dffdec06a53577d39aba28ab395b5de6868babf3f3aeaaf10e00af0450d"
   },
   "taxonomy": {
     "tactics": [
@@ -30,16 +30,16 @@
       "WEB"
     ],
     "tactic_count": 20,
-    "technique_count": 199,
-    "counter_technique_count": 199,
-    "complete_pairs": 199,
+    "technique_count": 203,
+    "counter_technique_count": 203,
+    "complete_pairs": 203,
     "by_tactic": {
       "AIM": 7,
       "BLK": 5,
       "CLD": 8,
       "COD": 7,
       "CRY": 14,
-      "FOR": 30,
+      "FOR": 34,
       "FPN": 20,
       "GAM": 8,
       "HWR": 2,
@@ -64,14 +64,14 @@
       "tools": 9
     },
     "maturity": {
-      "taxonomy_only": 192,
+      "taxonomy_only": 196,
       "typed": 7
     },
     "core": {
       "size": 35,
       "with_evidence_record": 0,
       "with_two_independent_events": 0,
-      "placeholder_free": 0
+      "placeholder_free": 1
     },
     "stix_object_types": {
       "attack-pattern": 199,
@@ -239,15 +239,12 @@
       "techniques/CTFTTE-FOR-003.md",
       "techniques/CTFTTE-FOR-004.md",
       "techniques/CTFTTE-FOR-005.md",
-      "techniques/CTFTTE-FOR-006.md",
-      "techniques/CTFTTE-FOR-019.md",
       "techniques/CTFTTE-FOR-020.md",
       "techniques/CTFTTE-FOR-021.md",
       "techniques/CTFTTE-FOR-022.md",
       "techniques/CTFTTE-FOR-023.md",
       "techniques/CTFTTE-FOR-024.md",
       "techniques/CTFTTE-FOR-025.md",
-      "techniques/CTFTTE-FOR-026.md",
       "techniques/CTFTTE-FOR-027.md",
       "techniques/CTFTTE-FOR-028.md",
       "techniques/CTFTTE-FOR-029.md",
@@ -357,13 +354,13 @@
   "integrity": {
     "techniques_without_counter": [],
     "counters_without_technique": [],
-    "correlation_pair_count": 199,
+    "correlation_pair_count": 203,
     "correlation_pairs_missing_from_files": [],
     "correlation_pairs_not_identity": [],
     "pairs_missing_from_correlation": [],
     "legacy_index_tactics_missing_from_files": [],
     "tactics_missing_from_legacy_index": [],
-    "legacy_index_pair_count": 199,
+    "legacy_index_pair_count": 203,
     "legacy_index_pairs_missing_from_files": [],
     "relation_problems": [],
     "lint_problems": [],

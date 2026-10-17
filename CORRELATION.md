@@ -4,8 +4,8 @@ Every **Design / Hide Technique** (`CTFTTE-<CAT>-NNN`) and the
 **Resolution-Technique** (`CTFTCTE-<CAT>-NNN`) that recovers it, grouped by domain.
 IDs pair one-to-one: `CTFTTE-FOR-004` is always answered by `CTFTCTE-FOR-004`.
 
-> Generated from the files in `techniques/` and `countertechniques/` — corpus fingerprint `18b5cdac062a5d40`
-> by `v3/render_taxonomy_docs.py`. **199 complete pairs** across **20 active domains**. Do not hand-edit: rename the entry, then re-render.
+> Generated from the files in `techniques/` and `countertechniques/` — corpus fingerprint `74704e4dae314161`
+> by `v3/render_taxonomy_docs.py`. **203 complete pairs** across **20 active domains**. Do not hand-edit: rename the entry, then re-render.
 
 ---
 
@@ -15,7 +15,7 @@ Order follows the challenge-category picker.
 
 | # | Code | Picker label | Domain | Pairs |
 | --- | --- | --- | --- | --- |
-| 1 | [`FOR`](#ctft-ta-for) | Forensics | Forensics | 30 |
+| 1 | [`FOR`](#ctft-ta-for) | Forensics | Forensics | 34 |
 | 2 | [`WEB`](#ctft-ta-web) | Web | Web Exploitation | 23 |
 | 3 | [`CRY`](#ctft-ta-cry) | Crypto | Cryptography | 14 |
 | 4 | [`PWN`](#ctft-ta-pwn) | Binary | Binary Exploitation | 10 |
@@ -35,7 +35,7 @@ Order follows the challenge-category picker.
 | 18 | [`HWR`](#ctft-ta-hwr) | Hardware | Hardware | 2 |
 | 19 | [`IOT`](#ctft-ta-iot) | IoT / Embedded | IoT / Embedded | 6 |
 | 20 | [`SDR`](#ctft-ta-sdr) | SDR / RF | Software-Defined Radio | 1 |
-| | | | **Total** | **199** |
+| | | | **Total** | **203** |
 
 **Retired — do not use.** `MSC` (Misc) was a catch-all whose entries all
 duplicated a precise domain; file those challenges under `JAL`, `COD`, `GAM`
@@ -45,7 +45,7 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 
 ## <a id="ctft-ta-for"></a>`CTFT-TA-FOR` — Forensics
 
-> [domain page](tactics/CTFT-TA-FOR.md) · 30 pairs · HTB: Forensics
+> [domain page](tactics/CTFT-TA-FOR.md) · 34 pairs · HTB: Forensics
 
 | # | Technique ID | Hide / Design name | Resolution-technique ID | Recovery action |
 | --- | --- | --- | --- | --- |
@@ -79,6 +79,10 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 | 28 | [CTFTTE-FOR-028](techniques/CTFTTE-FOR-028.md) | Windows event-log evidence concealment | [CTFTCTE-FOR-028](countertechniques/CTFTCTE-FOR-028.md) | Reconstruct the timeline from Windows event logs |
 | 29 | [CTFTTE-FOR-029](techniques/CTFTTE-FOR-029.md) | Registry-hive persistence artifact concealment | [CTFTCTE-FOR-029](countertechniques/CTFTCTE-FOR-029.md) | Extract and analyse registry hives from a forensic image |
 | 30 | [CTFTTE-FOR-030](techniques/CTFTTE-FOR-030.md) | Read-triggered payload mutation (guardian process) | [CTFTCTE-FOR-030](countertechniques/CTFTCTE-FOR-030.md) | Detect, stop and snapshot a read-triggered mutator |
+| 31 | [CTFTTE-FOR-031](techniques/CTFTTE-FOR-031.md) | Office VBA macro string concealment | [CTFTCTE-FOR-031](countertechniques/CTFTCTE-FOR-031.md) | Extract and decode strings from Office VBA macros |
+| 32 | [CTFTTE-FOR-032](techniques/CTFTTE-FOR-032.md) | Flag concealed in a haystack of near-identical files | [CTFTCTE-FOR-032](countertechniques/CTFTCTE-FOR-032.md) | Isolate the outlier file by scalable comparison |
+| 33 | [CTFTTE-FOR-033](techniques/CTFTTE-FOR-033.md) | Flag fragments disseminated across filesystem artifacts | [CTFTCTE-FOR-033](countertechniques/CTFTCTE-FOR-033.md) | Aggregate disseminated flag fragments across files |
+| 34 | [CTFTTE-FOR-034](techniques/CTFTTE-FOR-034.md) | Obfuscated client-side script in a web artifact | [CTFTCTE-FOR-034](countertechniques/CTFTCTE-FOR-034.md) | Deobfuscate and trace client-side script to the payload |
 
 
 ## <a id="ctft-ta-web"></a>`CTFT-TA-WEB` — Web Exploitation
