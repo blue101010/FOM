@@ -83,4 +83,7 @@ Reference tools used across CTFT techniques and counter-techniques.
 | [CTFTTOU-271](CTFTTOU-271.md) | graphql-schema-dump.py | [scripts/graphql-schema-dump.py](scripts/graphql-schema-dump.py) | CTFTTE-WEB-023, CTFTCTE-WEB-023 |
 | [CTFTTOU-272](CTFTTOU-272.md) | inql | <https://github.com/doyensec/inql> | CTFTTE-WEB-023, CTFTCTE-WEB-023 |
 | [CTFTTOU-276](CTFTTOU-276.md) | mosquitto clients | <https://mosquitto.org/> | CTFTTE-IOT-003, CTFTCTE-IOT-003 || [CTFTTOU-277](CTFTTOU-277.md) | ubertooth / killerbee | <https://github.com/greatscottgadgets/ubertooth> | CTFTTE-IOT-005, CTFTCTE-IOT-005 |
+| [CTFTTOU-278](CTFTTOU-278.md) | usbmon | <https://www.kernel.org/doc/html/latest/usb/usbmon.html> | CTFTTE-HWR-001, CTFTCTE-HWR-001 |
+| [CTFTTOU-279](CTFTTOU-279.md) | usbhid-keystroke-decode.py | [scripts/usbhid-keystroke-decode.py](scripts/usbhid-keystroke-decode.py) | CTFTTE-HWR-001, CTFTCTE-HWR-001 |
+| [CTFTTOU-284](CTFTTOU-284.md) | block explorers (Etherscan-style) | <https://etherscan.io/> | CTFTTE-BLK-004, CTFTCTE-BLK-004 |
 

@@ -22,9 +22,9 @@ Decoded logs/calldata reconstruct the off-state data flow of the contract.
 
 ## Tools
 
-- web3.py
-- cast
-- etherscan-style explorers
+- [web3.py](../tools/CTFTTOU-248.md)
+- [cast](../tools/CTFTTOU-250.md)
+- [block explorers (Etherscan-style)](../tools/CTFTTOU-284.md)
 
 ## References
 

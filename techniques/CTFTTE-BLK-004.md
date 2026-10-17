@@ -18,9 +18,9 @@ The flag is emitted in an event or passed in calldata rather than stored visibly
 
 ## Tools
 
-- web3.py
-- cast
-- etherscan-style explorers
+- [web3.py](../tools/CTFTTOU-248.md)
+- [cast](../tools/CTFTTOU-250.md)
+- [block explorers (Etherscan-style)](../tools/CTFTTOU-284.md)
 
 ## References
 

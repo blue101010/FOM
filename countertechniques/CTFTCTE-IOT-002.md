@@ -33,7 +33,7 @@ authentication. CWE-912 and CWE-798 anchor the class.
 
 - [nmap](../tools/CTFTTOU-033.md)
 - [ffuf](../tools/CTFTTOU-013.md)
-- curl ([CTFTTOU-038](../tools/CTFTTOU-038.md))
+- [curl](../tools/CTFTTOU-038.md)
 
 ## References
 

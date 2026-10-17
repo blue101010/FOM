@@ -33,8 +33,8 @@ firmware-shipped network keys as compromised by default.
 
 ## Tools
 
-- ubertooth / killerbee ([CTFTTOU-277](../tools/CTFTTOU-277.md))
-- bettercap
+- [ubertooth / killerbee](../tools/CTFTTOU-277.md)
+- [bettercap](../tools/CTFTTOU-283.md)
 - rtl_433
 
 ## References

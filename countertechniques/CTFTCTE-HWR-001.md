@@ -22,10 +22,10 @@ USB capture analysis treats keyboards as peripheral evidence; scan-code translat
 
 ## Tools
 
-- usbmon
-- Wireshark
-- usbhid-dump
-- tshark
+- [usbmon](../tools/CTFTTOU-278.md)
+- [Wireshark](../tools/CTFTTOU-122.md)
+- [tshark](../tools/CTFTTOU-123.md)
+- [usbhid-keystroke-decode.py](../tools/scripts/usbhid-keystroke-decode.py) ([CTFTTOU-279](../tools/CTFTTOU-279.md))
 
 ## References
 

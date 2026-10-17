@@ -23,8 +23,8 @@ protocol ecosystem and its device pairing.
 
 ## Tools
 
-- ubertooth / killerbee ([CTFTTOU-277](../tools/CTFTTOU-277.md))
-- bettercap
+- [ubertooth / killerbee](../tools/CTFTTOU-277.md)
+- [bettercap](../tools/CTFTTOU-283.md)
 
 ## References
 
