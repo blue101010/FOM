@@ -42,7 +42,11 @@
         "online brute-force is NOT this technique and has no CTFT entry yet — see the candidate list in TODO.md"
       ],
       "abstraction": "technique",
-      "synonyms": ["password cracking", "hash cracking", "Kerberoasting (as the hash source)"],
+      "synonyms": [
+        "password cracking",
+        "hash cracking",
+        "Kerberoasting (as the hash source)"
+      ],
       "external_mappings": [
         {
           "framework": "ATTACK",
@@ -98,7 +102,11 @@
         "distinct from CTFTTE-STE-002 (appended data): the container is a capture, not a file with trailing bytes"
       ],
       "abstraction": "technique",
-      "synonyms": ["stream reassembly", "HTTP object export", "network forensics"],
+      "synonyms": [
+        "stream reassembly",
+        "HTTP object export",
+        "network forensics"
+      ],
       "external_mappings": [
         {
           "framework": "ATTACK",
@@ -141,7 +149,11 @@
         "distinct from CTFTTE-GAM-008 (simulated OS stage): the stage is the machine's internals; this entry is the gate that reveals it"
       ],
       "abstraction": "technique",
-      "synonyms": ["scene-embedded interactive object", "Press E gate", "interactive decor door"],
+      "synonyms": [
+        "scene-embedded interactive object",
+        "Press E gate",
+        "interactive decor door"
+      ],
       "external_mappings": [
         {
           "framework": "ATTACK",
@@ -153,6 +165,33 @@
       "curator": "local (ctfcache casebook)",
       "reviewed_on": "2026-10-12",
       "status": "curated"
+    },
+    {
+      "id": "EVID-PWN-001",
+      "schema_version": "3.0",
+      "technique": "CTFTTE-PWN-001",
+      "challenges": [
+        {
+          "ctf": "HTB Cyber Santa 2021",
+          "challenge": "Pwn :: Mr. Snowy",
+          "year": 2021,
+          "writeup": "https://github.com/jselliott/HTBCyberSanta2021/blob/main/pwn/mr_snowy/README.md",
+          "extracted_from": "read and confirmed: Ghidra shows unreferenced deactivate_camera() printing flag.txt (win function), investigate() reads 0x108 bytes into a 64-byte stack buffer, No PIE/No canary; payload redirects the saved return address to 0x401165. Reproduced locally with GhidraMCP decompilation on 2026-10-15 (fhp)."
+        }
+      ],
+      "references": [
+        "https://github.com/bethington/ghidra-mcp"
+      ],
+      "positives": [
+        "a flag-printing function exists in the binary but has zero callers (confirmed via cross-references), so reaching it requires control-flow hijack",
+        "an unchecked read (264 bytes) into a small stack buffer with No PIE and No canary makes the saved return address directly overwritable",
+        "the whole exploit is one payload: fill buffer, saved rbp, then the fixed win-function address (no leak, no ROP)"
+      ],
+      "negatives": [
+        "ROP chains or ret2libc when the win function is missing - that is CTFTTE-PWN-004 territory",
+        "stack canary/PIE present - that is CTFTTE-PWN-006 (leak first)",
+        "format-string-driven leaks or writes - that is CTFTTE-PWN-002"
+      ]
     }
   ],
   "rejected": [
