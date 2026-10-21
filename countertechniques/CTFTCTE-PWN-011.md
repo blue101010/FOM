@@ -1,22 +1,24 @@
-# CTFTCTE-PWN-011 — Set argument registers via gadgets, then redirect
+# CTFTCTE-PWN-011 — Control argument registers, then redirect
 
-> **Type:** Counter-technique  
+> **Type:** Counter-Technique  
 > **Tactic:** [`CTFT-TA-PWN`](../tactics/CTFT-TA-PWN.md) — Binary Exploitation  
-> **Counters technique:** [`CTFTTE-PWN-011`](../techniques/CTFTTE-PWN-011.md) — Win-function argument gate
+> **Counters technique:** [`CTFTTE-PWN-011`](../techniques/CTFTTE-PWN-011.md) — Argument-gated target function
 
 ---
 
 ## Offensive Recovery (CTF practitioner / solver)
 
-Find the `pop <reg>; ret` gadgets (planted helper or ROPgadget scan), then overflow
-into a chain: `pop rdi; ret` → magic1 → `pop rsi; ret` → magic2 → `pop rdx; ret` →
-magic3 → win. Watch x86-64 stack alignment (an extra `ret` gadget if `win` uses
-`movaps`). Verify the constants from the win prototype in the decompiler, not from
-guessing.
+Read the expected values from the decompiled argument checks, then deliver them at
+the moment of the jump: assemble a register-setting chain from the available
+gadgets (`pop reg; ret`), fall back to call-oriented setup (ret2csu-style) when an
+individual gadget is missing, keep stack alignment for callees using SSE, and on
+i386 pass the arguments on the stack instead. Map parameters to registers by ABI
+order (rdi, rsi, rdx, rcx, r8, r9), never by which constant "looks like" which
+register.
 
 ## Forensic / Blue-Team Perspective (DFIR analyst)
 
-The exploit path documents the register-set chain preceding the guarded call,
+The exploit path documents the argument-forgery chain preceding the guarded call,
 evidence of a deliberate control-flow hijack rather than accidental corruption.
 
 ## Related MITRE ATT&CK
@@ -33,7 +35,7 @@ evidence of a deliberate control-flow hijack rather than accidental corruption.
 
 ## MCP
 
-- [GhidraMCP](../mcp/CTFTTMOU-002.md) — confirm gadget addresses and win's argument constants before building the chain
+- [GhidraMCP](../mcp/CTFTTMOU-002.md) — confirm gadget addresses and the target's argument checks before building the chain
 
 ## References
 

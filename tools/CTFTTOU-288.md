@@ -20,6 +20,11 @@ pwn venv, never system pip on Kali/PEP 668):
 
 <https://github.com/JonathanSalwan/ROPgadget>
 
+## AGENT & SKILLS
+
+- [ropgadget](../../ctf-skills-main/ropgadget/SKILL.md) — tool manual: install (PEP 668 venv), filtering, validation, libc hunting
+- [ctf-pwn-win-arg-gate](../../ctf-skills-main/ctf-pwn-win-arg-gate/SKILL.md) — fine-grained FOM pair PWN-011: argument-gated target function
+
 ## Related Techniques
 
 CTFTTE-PWN-004, CTFTCTE-PWN-004, CTFTTE-PWN-011, CTFTCTE-PWN-011

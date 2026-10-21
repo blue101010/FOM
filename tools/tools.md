@@ -86,4 +86,7 @@ Reference tools used across CTFT techniques and counter-techniques.
 | [CTFTTOU-278](CTFTTOU-278.md) | usbmon | <https://www.kernel.org/doc/html/latest/usb/usbmon.html> | CTFTTE-HWR-001, CTFTCTE-HWR-001 |
 | [CTFTTOU-279](CTFTTOU-279.md) | usbhid-keystroke-decode.py | [scripts/usbhid-keystroke-decode.py](scripts/usbhid-keystroke-decode.py) | CTFTTE-HWR-001, CTFTCTE-HWR-001 |
 | [CTFTTOU-284](CTFTTOU-284.md) | block explorers (Etherscan-style) | <https://etherscan.io/> | CTFTTE-BLK-004, CTFTCTE-BLK-004 |
+| [CTFTTOU-288](CTFTTOU-288.md) | ROPgadget | <https://github.com/JonathanSalwan/ROPgadget> | CTFTTE-PWN-004, CTFTCTE-PWN-004, CTFTTE-PWN-011, CTFTCTE-PWN-011 |
+| [CTFTTOU-289](CTFTTOU-289.md) | checksec | <https://github.com/luke-goddard/checksec.py> | CTFTTE-PWN-001, CTFTTE-PWN-006, CTFTCTE-PWN-001, CTFTCTE-PWN-006, CTFTTE-PWN-011, CTFTTE-PWN-012 |
+| [CTFTTOU-290](CTFTTOU-290.md) | GDB (pwndbg/GEF) | <https://github.com/pwndbg/pwndbg> | CTFTTE-PWN-001, CTFTTE-PWN-006, CTFTTE-PWN-011, CTFTTE-PWN-012, CTFTCTE-PWN-001, CTFTCTE-PWN-006, CTFTCTE-PWN-011, CTFTCTE-PWN-012 |
 
