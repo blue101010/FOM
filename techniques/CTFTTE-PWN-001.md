@@ -23,6 +23,10 @@ An unreferenced function prints the flag/spawns a shell, gated behind a vulnerab
 - checksec
 - ROPgadget
 
+## MCP
+
+- [GhidraMCP](../mcp/CTFTTMOU-002.md) — locate the hidden win function and confirm it has zero callers
+
 ## References
 
 - <https://github.com/Gallopsled/pwntools>

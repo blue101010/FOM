@@ -23,6 +23,10 @@ The binary detects debuggers/VMs/timing and alters behaviour or refuses to revea
 - Frida
 - [Ghidra](../tools/CTFTTOU-073.md)
 
+## MCP
+
+- [GhidraMCP](../mcp/CTFTTMOU-002.md) — decompile anti-analysis-guarded flag logic agent-side
+
 ## References
 
 - <https://ghidra-sre.org/>

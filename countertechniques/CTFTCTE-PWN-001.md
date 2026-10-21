@@ -27,6 +27,10 @@ The exploit path documents the missing bounds check enabling control-flow hijack
 - checksec
 - ROPgadget
 
+## MCP
+
+- [GhidraMCP](../mcp/CTFTTMOU-002.md) — confirm the win function and the overflow target in Ghidra before building the payload
+
 ## References
 
 - <https://github.com/Gallopsled/pwntools>

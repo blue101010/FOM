@@ -25,6 +25,10 @@ Profile correlation documents the linkage between disparate online identities.
 - sherlock
 - maigret
 
+## MCP
+
+- [w0h1v/mcp-maigret](../mcp/CTFTTMOU-001.md) — MCP server exposing maigret to AI agents (`search_username`, `parse_url`)
+
 ## References
 
 - <https://github.com/sherlock-project/sherlock>

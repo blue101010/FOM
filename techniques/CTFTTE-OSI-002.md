@@ -21,6 +21,10 @@ The target's presence is split across many platforms under varying handles.
 - sherlock
 - maigret
 
+## MCP
+
+- [w0h1v/mcp-maigret](../mcp/CTFTTMOU-001.md) — MCP server exposing maigret to AI agents (`search_username`, `parse_url`)
+
 ## References
 
 - <https://github.com/sherlock-project/sherlock>

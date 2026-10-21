@@ -16,6 +16,10 @@ the package-path symbols that pivot to upstream source (CTFTCTE-REV-010).
 
 <https://ghidra-sre.org/>
 
+## MCP
+
+- [GhidraMCP](../mcp/CTFTTMOU-002.md) — headless Ghidra as an MCP server (~190 endpoints + stdio bridge)
+
 ## Related Techniques
 
 CTFTTE-GAM-004, CTFTCTE-GAM-004, CTFTTE-HWR-002, CTFTCTE-HWR-002, CTFTTE-PWN-009,

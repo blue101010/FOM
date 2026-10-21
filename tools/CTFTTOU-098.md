@@ -11,6 +11,10 @@ Collects a profile dossier by username from thousands of sites.
 
 <https://github.com/soxoj/maigret>
 
+## MCP
+
+- [mcp-maigret](../mcp/CTFTTMOU-001.md) — MCP server exposing maigret to AI agents
+
 ## Related Techniques
 
 CTFTCTE-OSI-002, CTFTTE-OSI-002

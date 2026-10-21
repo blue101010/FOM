@@ -27,6 +27,10 @@ Mapping the guards documents the binary's evasive intent and how analysis was re
 - Frida
 - [Ghidra](../tools/CTFTTOU-073.md)
 
+## MCP
+
+- [GhidraMCP](../mcp/CTFTTMOU-002.md) — decompile anti-analysis-guarded flag logic agent-side
+
 ## References
 
 - <https://ghidra-sre.org/>
