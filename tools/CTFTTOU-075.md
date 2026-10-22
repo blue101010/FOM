@@ -1,22 +1,13 @@
 # CTFTTOU-075 — ps / /proc
 
 > **Tool ID:** `CTFTTOU-075`  
-> **Related techniques/counters:** CTFTTE-FOR-030, CTFTCTE-FOR-030
+> **Related techniques/counters:** (historical) CTFTTE-FOR-030, CTFTCTE-FOR-030  
+> **Status:** Archived (2026-10-20) — split into: [ps](CTFTTOU-299.md), [/proc (procfs)](CTFTTOU-300.md)
 
 ## Description
 
-Linux process inventory and the kernel's per-process filesystem. `ps auxww` lists running
-processes (find a guardian daemon by name); `/proc/<pid>/cmdline`, `/proc/<pid>/fd` and
-`/proc/<pid>/fdinfo` expose each process's open file descriptors and inotify/fanotify
-watch descriptors — the direct way to prove which process is holding or watching the
-artifact that mutates on read. The `--hunt` mode of
-[mutating-file-watchdog.py](scripts/mutating-file-watchdog.py) ([CTFTTOU-070](CTFTTOU-070.md))
-automates exactly this scan.
-
-## URL
-
-<https://man7.org/linux/man-pages/man1/ps.1.html> — proc filesystem: <https://docs.kernel.org/filesystems/proc.html>
+Combined sheet SPLIT into one sheet per tool: [ps](CTFTTOU-299.md), [/proc (procfs)](CTFTTOU-300.md). Kept only so the identifier is never silently reused; technique and resolution entries link the individual sheets.
 
 ## Related Techniques
 
-CTFTTE-FOR-030, CTFTCTE-FOR-030
+(historical) CTFTTE-FOR-030, CTFTCTE-FOR-030

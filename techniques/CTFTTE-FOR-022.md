@@ -18,7 +18,7 @@ The flag file is deleted but still open by a process, or recoverable from journa
 
 ## Tools
 
-- ls -l /proc/*/fd
+- [/proc (procfs)](../tools/CTFTTOU-300.md) — `ls -l /proc/*/fd`
 - extundelete
 - debugfs
 - foremost

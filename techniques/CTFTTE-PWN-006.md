@@ -23,6 +23,10 @@ The flag requires defeating canary, PIE and ASLR in a binary with a stack overfl
 - pwninit
 - one_gadget
 
+## MCP
+
+- [MDB-MCP (GDB/LLDB)](../mcp/CTFTTMOU-003.md) — dynamic debugging session (gdb or lldb)
+
 ## References
 
 - <https://github.com/Gallopsled/pwntools>

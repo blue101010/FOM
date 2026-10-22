@@ -38,7 +38,8 @@ pieces written in one burst are correlated by mtime.
 
 - [grep](../tools/CTFTTOU-036.md)
 - [strings](../tools/CTFTTOU-200.md)
-- [diffutils / coreutils comparison set](../tools/CTFTTOU-286.md)
+- [diffutils](../tools/CTFTTOU-303.md)
+- [coreutils](../tools/CTFTTOU-304.md)
 
 ## References
 

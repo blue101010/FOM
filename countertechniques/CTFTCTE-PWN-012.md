@@ -28,11 +28,14 @@ ASLR-defeating payload — evidence of an intended information-disclosure primit
 
 - [pwntools](../tools/CTFTTOU-053.md)
 - [checksec](../tools/CTFTTOU-289.md)
-- [GDB (pwndbg/GEF)](../tools/CTFTTOU-290.md)
+- [gdb](../tools/CTFTTOU-163.md)
+- [pwndbg](../tools/CTFTTOU-292.md)
+- [GEF](../tools/CTFTTOU-293.md)
 
 ## MCP
 
 - [GhidraMCP](../mcp/CTFTTMOU-002.md) — read the leaked global's address and the win offset from the static image
+- [MDB-MCP (GDB/LLDB)](../mcp/CTFTTMOU-003.md) — dynamic debugging session (gdb or lldb)
 
 ## References
 

@@ -27,6 +27,10 @@ Exploit-development notes document the bypass chain; mitigations are the defensi
 - pwninit
 - one_gadget
 
+## MCP
+
+- [MDB-MCP (GDB/LLDB)](../mcp/CTFTTMOU-003.md) — dynamic debugging session (gdb or lldb)
+
 ## References
 
 - <https://github.com/Gallopsled/pwntools>

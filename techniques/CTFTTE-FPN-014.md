@@ -29,7 +29,8 @@ challenge.
 
 ## Tools
 
-- [Enter-PSSession / New-PSSession](../tools/CTFTTOU-025.md)
+- [Enter-PSSession](../tools/CTFTTOU-297.md)
+- [New-PSSession](../tools/CTFTTOU-298.md)
 - [evil-winrm](../tools/CTFTTOU-024.md)
 - [netexec](../tools/CTFTTOU-016.md) (spider_plus module)
 

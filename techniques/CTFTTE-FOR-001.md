@@ -18,7 +18,8 @@ The author corrupts or swaps the file's magic header (e.g. flips PNG 89504E47 to
 
 ## Tools
 
-- xxd / hexedit
+- [xxd](../tools/CTFTTOU-201.md)
+- [hexedit](../tools/CTFTTOU-305.md)
 - file
 - binwalk
 - python struct

@@ -1,16 +1,13 @@
 # CTFTTOU-055 — xxd / hexdump
 
 > **Tool ID:** `CTFTTOU-055`  
-> **Related techniques/counters:** CTFTTE-COD-004, CTFTCTE-COD-004, CTFTTE-FOR-032, CTFTCTE-FOR-032
+> **Related techniques/counters:** (historical) CTFTTE-COD-004, CTFTCTE-COD-004, CTFTTE-FOR-032, CTFTCTE-FOR-032  
+> **Status:** Archived (2026-10-20) — split into: [xxd](CTFTTOU-201.md), [hexdump](CTFTTOU-296.md)
 
 ## Description
 
-Hex viewers and dumps. Used to inspect raw bytes, extract a polyglot segment or verify a crafted file header byte by byte.
-
-## URL
-
-<https://man7.org/linux/man-pages/man1/xxd.1.html>
+Combined sheet SPLIT into one sheet per tool: [xxd](CTFTTOU-201.md), [hexdump](CTFTTOU-296.md). Kept only so the identifier is never silently reused; technique and resolution entries link the individual sheets.
 
 ## Related Techniques
 
-CTFTTE-COD-004, CTFTCTE-COD-004, CTFTTE-FOR-032, CTFTCTE-FOR-032
+(historical) CTFTTE-COD-004, CTFTCTE-COD-004, CTFTTE-FOR-032, CTFTCTE-FOR-032

@@ -34,8 +34,10 @@ heuristic generalises: group by hash, investigate the rare bucket.
 
 ## Tools
 
-- [diffutils / coreutils comparison set](../tools/CTFTTOU-286.md)
-- [xxd / hexdump](../tools/CTFTTOU-055.md)
+- [diffutils](../tools/CTFTTOU-303.md)
+- [coreutils](../tools/CTFTTOU-304.md)
+- [xxd](../tools/CTFTTOU-201.md)
+- [hexdump](../tools/CTFTTOU-296.md)
 - [strings](../tools/CTFTTOU-200.md)
 
 ## References

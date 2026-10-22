@@ -19,13 +19,15 @@ An unreferenced function prints the flag/spawns a shell, gated behind a vulnerab
 ## Tools
 
 - pwntools
-- GDB+pwndbg
+- [gdb](../tools/CTFTTOU-163.md)
+- [pwndbg](../tools/CTFTTOU-292.md)
 - checksec
 - ROPgadget
 
 ## MCP
 
 - [GhidraMCP](../mcp/CTFTTMOU-002.md) — locate the hidden win function and confirm it has zero callers
+- [MDB-MCP (GDB/LLDB)](../mcp/CTFTTMOU-003.md) — dynamic debugging session (gdb or lldb)
 
 ## References
 

@@ -19,7 +19,12 @@ A user-controlled format string both leaks memory (secrets/canary) and enables t
 ## Tools
 
 - pwntools
-- GDB+pwndbg
+- [gdb](../tools/CTFTTOU-163.md)
+- [pwndbg](../tools/CTFTTOU-292.md)
+
+## MCP
+
+- [MDB-MCP (GDB/LLDB)](../mcp/CTFTTMOU-003.md) — dynamic debugging session (gdb or lldb)
 
 ## References
 

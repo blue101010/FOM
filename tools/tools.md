@@ -20,7 +20,6 @@ Reference tools used across CTFT techniques and counter-techniques.
 | [CTFTTOU-014](CTFTTOU-014.md) | sqlmap | <https://sqlmap.org/> | CTFTTE-WEB-004, CTFTCTE-WEB-004, CTFTCTE-WEB-021 |
 | [CTFTTOU-015](CTFTTOU-015.md) | hashcat | <https://hashcat.net/hashcat/> | CTFTCTE-CRY-012, CTFTTE-WEB-003 |
 | [CTFTTOU-016](CTFTTOU-016.md) | netexec | <https://github.com/Pennyw0rth/NetExec> | CTFTTE-FPN-015, CTFTCTE-FPN-015, CTFTTE-FPN-018, CTFTCTE-FPN-018, CTFTTE-FPN-019, CTFTCTE-FPN-019 |
-| [CTFTTOU-017](CTFTTOU-017.md) | BloodHound / SharpHound | <https://github.com/SpecterOps/BloodHound> | CTFTTE-FPN-011, CTFTCTE-FPN-011, CTFTTE-FPN-013, CTFTCTE-FPN-013, CTFTTE-FPN-018, CTFTCTE-FPN-018 |
 | [CTFTTOU-018](CTFTTOU-018.md) | pywhisker | <https://github.com/ShutdownRepo/pywhisker> | CTFTTE-FPN-011, CTFTCTE-FPN-011 |
 | [CTFTTOU-019](CTFTTOU-019.md) | PKINITtools | <https://github.com/dirkjanm/PKINITtools> | CTFTTE-FPN-011, CTFTCTE-FPN-011 |
 | [CTFTTOU-020](CTFTTOU-020.md) | certipy | <https://github.com/ly4k/Certipy> | CTFTTE-FPN-011, CTFTCTE-FPN-011, CTFTTE-FPN-013, CTFTCTE-FPN-013 |
@@ -28,7 +27,6 @@ Reference tools used across CTFT techniques and counter-techniques.
 | [CTFTTOU-022](CTFTTOU-022.md) | getnthash.py | <https://github.com/dirkjanm/PKINITtools/blob/master/getnthash.py> | CTFTTE-FPN-012, CTFTCTE-FPN-012 |
 | [CTFTTOU-023](CTFTTOU-023.md) | openssl | <https://www.openssl.org/> | CTFTTE-FPN-013 |
 | [CTFTTOU-024](CTFTTOU-024.md) | evil-winrm | <https://github.com/Hackplayers/evil-winrm> | CTFTTE-FPN-014, CTFTCTE-FPN-014, CTFTTE-FPN-019, CTFTCTE-FPN-019 |
-| [CTFTTOU-025](CTFTTOU-025.md) | Enter-PSSession / New-PSSession | <https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enter-pssession> | CTFTTE-FPN-014, CTFTCTE-FPN-014 |
 | [CTFTTOU-026](CTFTTOU-026.md) | mssqlclient.py | <https://github.com/fortra/impacket/blob/master/examples/mssqlclient.py> | CTFTTE-FPN-015, CTFTCTE-FPN-015 |
 | [CTFTTOU-027](CTFTTOU-027.md) | SecLists | <https://github.com/danielmiessler/SecLists> | CTFTTE-FPN-015, CTFTCTE-FPN-015 |
 | [CTFTTOU-028](CTFTTOU-028.md) | PetitPotato | <https://github.com/wh0amitz/PetitPotato> | CTFTTE-FPN-016, CTFTCTE-FPN-016 |
@@ -58,7 +56,6 @@ Reference tools used across CTFT techniques and counter-techniques.
 | [CTFTTOU-052](CTFTTOU-052.md) | z3-solver | <https://github.com/Z3Prover/z3> | CTFTTE-COD-005, CTFTCTE-COD-005, CTFTTE-COD-007, CTFTCTE-COD-007, CTFTCTE-COD-002 |
 | [CTFTTOU-053](CTFTTOU-053.md) | pwntools | <https://github.com/Gallopsled/pwntools> | CTFTTE-COD-003, CTFTCTE-COD-003 |
 | [CTFTTOU-054](CTFTTOU-054.md) | telnetlib | <https://docs.python.org/3/library/telnetlib.html> | CTFTTE-COD-003, CTFTCTE-COD-003 |
-| [CTFTTOU-055](CTFTTOU-055.md) | xxd / hexdump | <https://man7.org/linux/man-pages/man1/xxd.1.html> | CTFTTE-COD-004, CTFTCTE-COD-004 |
 | [CTFTTOU-056](CTFTTOU-056.md) | angr | <https://angr.io/> | CTFTTE-COD-005, CTFTCTE-COD-005 |
 | [CTFTTOU-057](CTFTTOU-057.md) | miasm | <https://github.com/cea-sec/miasm> | CTFTTE-COD-005, CTFTCTE-COD-005 |
 | [CTFTTOU-058](CTFTTOU-058.md) | openssh client | <https://www.openssh.com/> | CTFTTE-ICS-006, CTFTCTE-ICS-006, CTFTTE-ICS-008, CTFTCTE-ICS-008, CTFTTE-ICS-009, CTFTCTE-ICS-009 |
@@ -78,7 +75,6 @@ Reference tools used across CTFT techniques and counter-techniques.
 | [CTFTTOU-072](CTFTTOU-072.md) | gosym2src.py | [scripts/gosym2src.py](scripts/gosym2src.py) | CTFTTE-REV-010, CTFTCTE-REV-010 |
 | [CTFTTOU-073](CTFTTOU-073.md) | ghidra | <https://ghidra-sre.org/> | CTFTTE-GAM-004, CTFTCTE-GAM-004, CTFTTE-HWR-002, CTFTCTE-HWR-002, CTFTTE-PWN-009, CTFTCTE-PWN-009, CTFTTE-PWN-010, CTFTCTE-PWN-010, CTFTTE-REV-001, CTFTCTE-REV-001, CTFTTE-REV-008, CTFTCTE-REV-008, CTFTTE-REV-009, CTFTCTE-REV-009, CTFTTE-REV-010, CTFTCTE-REV-010 |
 | [CTFTTOU-074](CTFTTOU-074.md) | python tarfile | <https://docs.python.org/3/library/tarfile.html> | CTFTTE-PWN-010, CTFTCTE-PWN-010 |
-| [CTFTTOU-075](CTFTTOU-075.md) | ps / /proc | <https://man7.org/linux/man-pages/man1/ps.1.html> | CTFTTE-FOR-030, CTFTCTE-FOR-030 |
 | [CTFTTOU-076](CTFTTOU-076.md) | inotify-tools | <https://github.com/inotify-tools/inotify-tools> | CTFTTE-FOR-030, CTFTCTE-FOR-030 |
 | [CTFTTOU-271](CTFTTOU-271.md) | graphql-schema-dump.py | [scripts/graphql-schema-dump.py](scripts/graphql-schema-dump.py) | CTFTTE-WEB-023, CTFTCTE-WEB-023 |
 | [CTFTTOU-272](CTFTTOU-272.md) | inql | <https://github.com/doyensec/inql> | CTFTTE-WEB-023, CTFTCTE-WEB-023 |
@@ -88,5 +84,19 @@ Reference tools used across CTFT techniques and counter-techniques.
 | [CTFTTOU-284](CTFTTOU-284.md) | block explorers (Etherscan-style) | <https://etherscan.io/> | CTFTTE-BLK-004, CTFTCTE-BLK-004 |
 | [CTFTTOU-288](CTFTTOU-288.md) | ROPgadget | <https://github.com/JonathanSalwan/ROPgadget> | CTFTTE-PWN-004, CTFTCTE-PWN-004, CTFTTE-PWN-011, CTFTCTE-PWN-011 |
 | [CTFTTOU-289](CTFTTOU-289.md) | checksec | <https://github.com/luke-goddard/checksec.py> | CTFTTE-PWN-001, CTFTTE-PWN-006, CTFTCTE-PWN-001, CTFTCTE-PWN-006, CTFTTE-PWN-011, CTFTTE-PWN-012 |
-| [CTFTTOU-290](CTFTTOU-290.md) | GDB (pwndbg/GEF) | <https://github.com/pwndbg/pwndbg> | CTFTTE-PWN-001, CTFTTE-PWN-006, CTFTTE-PWN-011, CTFTTE-PWN-012, CTFTCTE-PWN-001, CTFTCTE-PWN-006, CTFTCTE-PWN-011, CTFTCTE-PWN-012 |
-
+| [CTFTTOU-291](CTFTTOU-291.md) | lldb | <https://lldb.llvm.org/> | CTFTTE-PWN-001, CTFTCTE-PWN-001, CTFTTE-REV-001, CTFTCTE-REV-001 |
+| [CTFTTOU-292](CTFTTOU-292.md) | pwndbg | <https://github.com/pwndbg/pwndbg> | CTFTTE-PWN-001, CTFTCTE-PWN-001, CTFTTE-PWN-002, CTFTCTE-PWN-002, CTFTTE-PWN-003, CTFTCTE-PWN-003, CTFTTE-PWN-006, CTFTCTE-PWN-006, CTFTTE-PWN-011, CTFTCTE-PWN-011, CTFTTE-PWN-012, CTFTCTE-PWN-012 |
+| [CTFTTOU-293](CTFTTOU-293.md) | GEF | <https://github.com/hugsy/gef> | CTFTTE-PWN-001, CTFTCTE-PWN-001, CTFTTE-PWN-006, CTFTCTE-PWN-006, CTFTTE-PWN-011, CTFTCTE-PWN-011, CTFTTE-PWN-012, CTFTCTE-PWN-012, CTFTTE-REV-001, CTFTCTE-REV-001 |
+| [CTFTTOU-294](CTFTTOU-294.md) | BloodHound | <https://github.com/SpecterOps/BloodHound> | CTFTTE-FPN-002, CTFTCTE-FPN-002, CTFTTE-FPN-011, CTFTCTE-FPN-011, CTFTTE-FPN-013, CTFTCTE-FPN-013, CTFTTE-FPN-018, CTFTCTE-FPN-018 |
+| [CTFTTOU-295](CTFTTOU-295.md) | SharpHound | <https://github.com/SpecterOps/SharpHound> | CTFTTE-FPN-002, CTFTCTE-FPN-002, CTFTTE-FPN-011, CTFTCTE-FPN-011, CTFTTE-FPN-013, CTFTCTE-FPN-013, CTFTTE-FPN-018, CTFTCTE-FPN-018 |
+| [CTFTTOU-296](CTFTTOU-296.md) | hexdump | <https://man7.org/linux/man-pages/man1/hexdump.1.html> | CTFTTE-COD-004, CTFTCTE-COD-004, CTFTTE-FOR-032, CTFTCTE-FOR-032, CTFTCTE-FOR-009 |
+| [CTFTTOU-297](CTFTTOU-297.md) | Enter-PSSession | <https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enter-pssession> | CTFTTE-FPN-014, CTFTCTE-FPN-014 |
+| [CTFTTOU-298](CTFTTOU-298.md) | New-PSSession | <https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/new-pssession> | CTFTTE-FPN-014, CTFTCTE-FPN-014 |
+| [CTFTTOU-299](CTFTTOU-299.md) | ps | <https://man7.org/linux/man-pages/man1/ps.1.html> | CTFTTE-FOR-030, CTFTCTE-FOR-030 |
+| [CTFTTOU-300](CTFTTOU-300.md) | /proc (procfs) | <https://docs.kernel.org/filesystems/proc.html> | CTFTTE-FOR-022, CTFTCTE-FOR-022, CTFTTE-FOR-030, CTFTCTE-FOR-030 |
+| [CTFTTOU-301](CTFTTOU-301.md) | oletools | <https://github.com/decalage2/oletools> | CTFTTE-FOR-031, CTFTCTE-FOR-031 |
+| [CTFTTOU-302](CTFTTOU-302.md) | oledump.py | <https://blog.didierstevens.com/programs/oledump-py/> | CTFTTE-FOR-031, CTFTCTE-FOR-031 |
+| [CTFTTOU-303](CTFTTOU-303.md) | diffutils | <https://www.gnu.org/software/diffutils/> | CTFTTE-FOR-032, CTFTCTE-FOR-032, CTFTTE-FOR-033, CTFTCTE-FOR-033 |
+| [CTFTTOU-304](CTFTTOU-304.md) | coreutils | <https://www.gnu.org/software/coreutils/> | CTFTTE-FOR-032, CTFTCTE-FOR-032, CTFTTE-FOR-033, CTFTCTE-FOR-033 |
+| [CTFTTOU-305](CTFTTOU-305.md) | hexedit | <https://github.com/pixel/hexedit> | CTFTTE-FOR-001, CTFTCTE-FOR-001 |
+| [CTFTTOU-306](CTFTTOU-306.md) | CAI (cai-framework) | <https://github.com/aliasrobotics/cai> | CTFTTE-PWN-001, CTFTCTE-PWN-001, CTFTTE-REV-001, CTFTCTE-REV-001 |

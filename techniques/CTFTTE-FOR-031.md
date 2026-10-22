@@ -25,7 +25,8 @@ rendered document or lacking Office to "run" the macro.
 
 ## Tools
 
-- [oletools (olevba / oledump)](../tools/CTFTTOU-285.md)
+- [oletools](../tools/CTFTTOU-301.md)
+- [oledump.py](../tools/CTFTTOU-302.md)
 - [CyberChef](../tools/CTFTTOU-048.md)
 - [strings](../tools/CTFTTOU-200.md)
 

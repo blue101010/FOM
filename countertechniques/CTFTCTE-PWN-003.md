@@ -23,8 +23,13 @@ Documenting the allocation sequence explains the metadata corruption primitive.
 ## Tools
 
 - pwntools
-- GDB+pwndbg
+- [gdb](../tools/CTFTTOU-163.md)
+- [pwndbg](../tools/CTFTTOU-292.md)
 - glibc heap viewers
+
+## MCP
+
+- [MDB-MCP (GDB/LLDB)](../mcp/CTFTTMOU-003.md) — dynamic debugging session (gdb or lldb)
 
 ## References
 

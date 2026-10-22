@@ -40,7 +40,8 @@ Least privilege on template ACLs and manager approval remove the write surface.
 ## Tools
 
 - [certipy](../tools/CTFTTOU-020.md)
-- [BloodHound / SharpHound](../tools/CTFTTOU-017.md)
+- [BloodHound](../tools/CTFTTOU-294.md)
+- [SharpHound](../tools/CTFTTOU-295.md)
 
 ## References
 

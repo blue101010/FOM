@@ -1,16 +1,13 @@
 # CTFTTOU-025 — Enter-PSSession / New-PSSession
 
 > **Tool ID:** `CTFTTOU-025`  
-> **Related techniques/counters:** CTFTTE-FPN-014, CTFTCTE-FPN-014
+> **Related techniques/counters:** (historical) CTFTTE-FPN-014, CTFTCTE-FPN-014  
+> **Status:** Archived (2026-10-20) — split into: [Enter-PSSession](CTFTTOU-297.md), [New-PSSession](CTFTTOU-298.md)
 
 ## Description
 
-PowerShell remoting cmdlets. With `-ConfigurationName` they select a constrained (JEA) session configuration; the entered session is where a vulnerable module parameter is injected. `Get-PSSession` and transcript configuration are the corresponding audit surface.
-
-## URL
-
-<https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enter-pssession>
+Combined sheet SPLIT into one sheet per tool: [Enter-PSSession](CTFTTOU-297.md), [New-PSSession](CTFTTOU-298.md). Kept only so the identifier is never silently reused; technique and resolution entries link the individual sheets.
 
 ## Related Techniques
 
-CTFTTE-FPN-014, CTFTCTE-FPN-014
+(historical) CTFTTE-FPN-014, CTFTCTE-FPN-014

@@ -20,7 +20,8 @@ The submitted program must simultaneously pass several syntactic or semantic con
 
 - [python](../tools/CTFTTOU-050.md) / bash / perl
 - online polyglot references
-- [xxd / hexdump](../tools/CTFTTOU-055.md)
+- [xxd](../tools/CTFTTOU-201.md)
+- [hexdump](../tools/CTFTTOU-296.md)
 
 ## References
 

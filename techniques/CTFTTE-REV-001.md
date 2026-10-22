@@ -18,7 +18,8 @@ The binary detects debuggers/VMs/timing and alters behaviour or refuses to revea
 
 ## Tools
 
-- GDB+GEF
+- [gdb](../tools/CTFTTOU-163.md)
+- [GEF](../tools/CTFTTOU-293.md)
 - x64dbg
 - Frida
 - [Ghidra](../tools/CTFTTOU-073.md)
@@ -26,6 +27,7 @@ The binary detects debuggers/VMs/timing and alters behaviour or refuses to revea
 ## MCP
 
 - [GhidraMCP](../mcp/CTFTTMOU-002.md) — decompile anti-analysis-guarded flag logic agent-side
+- [MDB-MCP (GDB/LLDB)](../mcp/CTFTTMOU-003.md) — dynamic debugging session (gdb or lldb)
 
 ## References
 

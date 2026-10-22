@@ -32,7 +32,8 @@ with the generated certificate, without ever changing the account's password.
 - [pywhisker](../tools/CTFTTOU-018.md)
 - [certipy](../tools/CTFTTOU-020.md) (shadow action)
 - [PKINITtools](../tools/CTFTTOU-019.md)
-- [BloodHound / SharpHound](../tools/CTFTTOU-017.md)
+- [BloodHound](../tools/CTFTTOU-294.md)
+- [SharpHound](../tools/CTFTTOU-295.md)
 
 ## References
 

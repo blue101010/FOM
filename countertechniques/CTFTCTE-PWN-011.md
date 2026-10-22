@@ -31,11 +31,14 @@ evidence of a deliberate control-flow hijack rather than accidental corruption.
 
 - [ROPgadget](../tools/CTFTTOU-288.md)
 - [pwntools](../tools/CTFTTOU-053.md)
-- [GDB (pwndbg/GEF)](../tools/CTFTTOU-290.md)
+- [gdb](../tools/CTFTTOU-163.md)
+- [pwndbg](../tools/CTFTTOU-292.md)
+- [GEF](../tools/CTFTTOU-293.md)
 
 ## MCP
 
 - [GhidraMCP](../mcp/CTFTTMOU-002.md) — confirm gadget addresses and the target's argument checks before building the chain
+- [MDB-MCP (GDB/LLDB)](../mcp/CTFTTMOU-003.md) — dynamic debugging session (gdb or lldb)
 
 ## References
 

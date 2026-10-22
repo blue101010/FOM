@@ -22,7 +22,8 @@ During carving, signature-based recovery reconstructs files whose extension or h
 
 ## Tools
 
-- xxd / hexedit
+- [xxd](../tools/CTFTTOU-201.md)
+- [hexedit](../tools/CTFTTOU-305.md)
 - file
 - binwalk
 - python struct

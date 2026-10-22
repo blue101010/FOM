@@ -23,6 +23,10 @@ The flag exists only in a Windows/Linux memory dump: registry hives, services, c
 - yara
 - bulk_extractor
 
+## MCP
+
+- [volatility-mcp](../mcp/CTFTTMOU-004.md) — first-pass Windows memory triage (processes, connections, command lines)
+
 ## References
 
 - <https://github.com/volatilityfoundation/volatility3>

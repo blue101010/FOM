@@ -23,6 +23,10 @@ The flag requires a kernel-module exploit or bypassing new memory protections (m
 - pahole
 - pwntools
 
+## MCP
+
+- [MDB-MCP (GDB/LLDB)](../mcp/CTFTTMOU-003.md) — dynamic debugging session (gdb or lldb)
+
 ## References
 
 - <https://www.kernel.org/doc/>

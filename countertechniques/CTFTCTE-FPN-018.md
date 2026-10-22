@@ -41,7 +41,8 @@ credentials across security boundaries as an immediate remediation item.
 
 - [netexec](../tools/CTFTTOU-016.md) (get-network module)
 - [nmap](../tools/CTFTTOU-033.md)
-- [BloodHound / SharpHound](../tools/CTFTTOU-017.md) collectors
+- [BloodHound](../tools/CTFTTOU-294.md)
+- [SharpHound](../tools/CTFTTOU-295.md) collectors
 
 ## References
 

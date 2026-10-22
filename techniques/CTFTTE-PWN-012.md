@@ -24,11 +24,14 @@ to defeat it, and the solver must do the offset arithmetic.
 
 - [pwntools](../tools/CTFTTOU-053.md)
 - [checksec](../tools/CTFTTOU-289.md)
-- [GDB (pwndbg/GEF)](../tools/CTFTTOU-290.md)
+- [gdb](../tools/CTFTTOU-163.md)
+- [pwndbg](../tools/CTFTTOU-292.md)
+- [GEF](../tools/CTFTTOU-293.md)
 
 ## MCP
 
 - [GhidraMCP](../mcp/CTFTTMOU-002.md) — compute the symbol-to-leak offset (win − leaked global) statically
+- [MDB-MCP (GDB/LLDB)](../mcp/CTFTTMOU-003.md) — dynamic debugging session (gdb or lldb)
 
 ## References
 

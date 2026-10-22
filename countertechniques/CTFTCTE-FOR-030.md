@@ -35,7 +35,8 @@ correlating file mtime updates with unrelated process activity.
 
 - [mutating-file-watchdog.py](../tools/scripts/mutating-file-watchdog.py) ([CTFTTOU-070](../tools/CTFTTOU-070.md))
 - [mtime-xor-recover.py](../tools/scripts/mtime-xor-recover.py) ([CTFTTOU-071](../tools/CTFTTOU-071.md))
-- [ps / /proc](../tools/CTFTTOU-075.md)
+- [ps](../tools/CTFTTOU-299.md)
+- [/proc (procfs)](../tools/CTFTTOU-300.md)
 - [inotify-tools](../tools/CTFTTOU-076.md)
 
 ## References

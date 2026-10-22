@@ -23,6 +23,10 @@ Code is packed (UPX/custom) or decrypts itself at runtime so static strings/logi
 - Ghidra
 - volatility3
 
+## MCP
+
+- [volatility-mcp](../mcp/CTFTTMOU-004.md) — first-pass Windows memory triage (processes, connections, command lines)
+
 ## References
 
 - Add challenge write-up link

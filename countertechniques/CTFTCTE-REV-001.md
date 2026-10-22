@@ -22,7 +22,8 @@ Mapping the guards documents the binary's evasive intent and how analysis was re
 
 ## Tools
 
-- GDB+GEF
+- [gdb](../tools/CTFTTOU-163.md)
+- [GEF](../tools/CTFTTOU-293.md)
 - x64dbg
 - Frida
 - [Ghidra](../tools/CTFTTOU-073.md)
@@ -30,6 +31,7 @@ Mapping the guards documents the binary's evasive intent and how analysis was re
 ## MCP
 
 - [GhidraMCP](../mcp/CTFTTMOU-002.md) — decompile anti-analysis-guarded flag logic agent-side
+- [MDB-MCP (GDB/LLDB)](../mcp/CTFTTMOU-003.md) — dynamic debugging session (gdb or lldb)
 
 ## References
 

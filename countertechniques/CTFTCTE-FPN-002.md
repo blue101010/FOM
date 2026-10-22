@@ -23,7 +23,8 @@ BloodHound attack-path analysis is also a defensive tool; DFIR teams use it to i
 
 ## Tools
 
-- bloodhound / sharphound
+- [BloodHound](../tools/CTFTTOU-294.md)
+- [SharpHound](../tools/CTFTTOU-295.md)
 - impacket
 - kerbrute
 - evil-winrm

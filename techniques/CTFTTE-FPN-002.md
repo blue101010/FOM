@@ -19,7 +19,8 @@ The flag resides on a Domain Controller; reaching it requires a chain of AD-spec
 
 ## Tools
 
-- bloodhound / sharphound
+- [BloodHound](../tools/CTFTTOU-294.md)
+- [SharpHound](../tools/CTFTTOU-295.md)
 - impacket
 - kerbrute
 - evil-winrm

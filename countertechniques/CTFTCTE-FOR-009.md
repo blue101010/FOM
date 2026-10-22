@@ -29,7 +29,8 @@ authorship information.
 
 ## Tools
 
-- xxd / hexdump
+- [xxd](../tools/CTFTTOU-201.md)
+- [hexdump](../tools/CTFTTOU-296.md)
 - file
 - binwalk
 

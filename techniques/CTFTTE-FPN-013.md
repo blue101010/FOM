@@ -30,7 +30,8 @@ with it.
 ## Tools
 
 - [certipy](../tools/CTFTTOU-020.md)
-- [BloodHound / SharpHound](../tools/CTFTTOU-017.md)
+- [BloodHound](../tools/CTFTTOU-294.md)
+- [SharpHound](../tools/CTFTTOU-295.md)
 - [openssl](../tools/CTFTTOU-023.md)
 
 ## References

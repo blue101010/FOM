@@ -27,6 +27,10 @@ Kernel-layer artifacts (modules, memory protections) extend DFIR below userland.
 - pahole
 - pwntools
 
+## MCP
+
+- [MDB-MCP (GDB/LLDB)](../mcp/CTFTTMOU-003.md) — dynamic debugging session (gdb or lldb)
+
 ## References
 
 - <https://www.kernel.org/doc/>

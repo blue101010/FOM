@@ -23,13 +23,15 @@ The exploit path documents the missing bounds check enabling control-flow hijack
 ## Tools
 
 - pwntools
-- GDB+pwndbg
+- [gdb](../tools/CTFTTOU-163.md)
+- [pwndbg](../tools/CTFTTOU-292.md)
 - checksec
 - ROPgadget
 
 ## MCP
 
 - [GhidraMCP](../mcp/CTFTTMOU-002.md) — confirm the win function and the overflow target in Ghidra before building the payload
+- [MDB-MCP (GDB/LLDB)](../mcp/CTFTTMOU-003.md) — dynamic debugging session (gdb or lldb)
 
 ## References
 

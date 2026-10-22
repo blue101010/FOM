@@ -22,7 +22,7 @@ Deleted-file recovery is standard DFIR; open handles and journal remnants outliv
 
 ## Tools
 
-- ls -l /proc/*/fd
+- [/proc (procfs)](../tools/CTFTTOU-300.md) — `ls -l /proc/*/fd`
 - extundelete
 - debugfs
 - foremost
