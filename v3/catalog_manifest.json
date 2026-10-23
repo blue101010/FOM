@@ -1,10 +1,10 @@
 {
   "model": "CTFT",
   "schema_version": "3.0",
-  "generated_at": "2026-10-17T02:09:09+00:00",
+  "generated_at": "2026-10-23T02:47:31+00:00",
   "source": {
-    "correlation_sha256": "339019fcfa69f81c1598718df608cf94d159c6f968ba77d9694fb4b802d4784a",
-    "legacy_index_sha256": "c02e4dffdec06a53577d39aba28ab395b5de6868babf3f3aeaaf10e00af0450d"
+    "correlation_sha256": "b1ce824a729451d04332418719ce7a9435a651e60107d0ce8f911424112d48ea",
+    "legacy_index_sha256": "33ff903d8d3f848933db353e9a25f85607ee5c10cc66e9ce9715fd4bb3231750"
   },
   "taxonomy": {
     "tactics": [
@@ -30,9 +30,9 @@
       "WEB"
     ],
     "tactic_count": 20,
-    "technique_count": 203,
-    "counter_technique_count": 203,
-    "complete_pairs": 203,
+    "technique_count": 206,
+    "counter_technique_count": 206,
+    "complete_pairs": 206,
     "by_tactic": {
       "AIM": 7,
       "BLK": 5,
@@ -42,14 +42,14 @@
       "FOR": 34,
       "FPN": 20,
       "GAM": 8,
-      "HWR": 2,
+      "HWR": 3,
       "ICS": 9,
       "IOT": 6,
       "JAL": 6,
       "MOB": 5,
       "NET": 8,
       "OSI": 9,
-      "PWN": 10,
+      "PWN": 12,
       "REV": 10,
       "SDR": 1,
       "STE": 11,
@@ -64,20 +64,21 @@
       "tools": 9
     },
     "maturity": {
-      "taxonomy_only": 196,
+      "attested": 1,
+      "taxonomy_only": 198,
       "typed": 7
     },
     "core": {
       "size": 35,
-      "with_evidence_record": 0,
-      "with_two_independent_events": 0,
+      "with_evidence_record": 2,
+      "with_two_independent_events": 2,
       "placeholder_free": 1
     },
     "stix_object_types": {
-      "attack-pattern": 199,
-      "course-of-action": 199,
+      "attack-pattern": 206,
+      "course-of-action": 206,
       "identity": 1,
-      "relationship": 199,
+      "relationship": 206,
       "x-ctft-tactic": 20
     },
     "placeholder_entries": [
@@ -354,13 +355,13 @@
   "integrity": {
     "techniques_without_counter": [],
     "counters_without_technique": [],
-    "correlation_pair_count": 203,
+    "correlation_pair_count": 206,
     "correlation_pairs_missing_from_files": [],
     "correlation_pairs_not_identity": [],
     "pairs_missing_from_correlation": [],
     "legacy_index_tactics_missing_from_files": [],
     "tactics_missing_from_legacy_index": [],
-    "legacy_index_pair_count": 203,
+    "legacy_index_pair_count": 206,
     "legacy_index_pairs_missing_from_files": [],
     "relation_problems": [],
     "lint_problems": [],

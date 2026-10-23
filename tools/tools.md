@@ -100,3 +100,8 @@ Reference tools used across CTFT techniques and counter-techniques.
 | [CTFTTOU-304](CTFTTOU-304.md) | coreutils | <https://www.gnu.org/software/coreutils/> | CTFTTE-FOR-032, CTFTCTE-FOR-032, CTFTTE-FOR-033, CTFTCTE-FOR-033 |
 | [CTFTTOU-305](CTFTTOU-305.md) | hexedit | <https://github.com/pixel/hexedit> | CTFTTE-FOR-001, CTFTCTE-FOR-001 |
 | [CTFTTOU-306](CTFTTOU-306.md) | CAI (cai-framework) | <https://github.com/aliasrobotics/cai> | CTFTTE-PWN-001, CTFTCTE-PWN-001, CTFTTE-REV-001, CTFTCTE-REV-001 |
+| [CTFTTOU-307](CTFTTOU-307.md) | tracespace view | <https://tracespace.io/view/> | CTFTTE-HWR-003, CTFTCTE-HWR-003 |
+| [CTFTTOU-308](CTFTTOU-308.md) | gerbv | <https://gerbv.github.io/> | CTFTTE-HWR-003, CTFTCTE-HWR-003 |
+| [CTFTTOU-309](CTFTTOU-309.md) | KiCad GerbView | <https://www.kicad.org/> | CTFTTE-HWR-003, CTFTCTE-HWR-003 |
+| [CTFTTOU-310](CTFTTOU-310.md) | gerber-layer-inspect.py | [scripts/gerber-layer-inspect.py](scripts/gerber-layer-inspect.py) | CTFTTE-HWR-003, CTFTCTE-HWR-003 |
+| [CTFTTOU-311](CTFTTOU-311.md) | gerber-matplotlib-plot.py | [scripts/gerber-matplotlib-plot.py](scripts/gerber-matplotlib-plot.py) | CTFTTE-HWR-003, CTFTCTE-HWR-003 |

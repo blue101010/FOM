@@ -2,7 +2,7 @@
 
 > **Domain ID:** `CTFT-TA-HWR`  
 > **HTB mapping:** HTB: Hardware  
-> **Techniques:** 2
+> **Techniques:** 3
 
 ## Description
 
@@ -28,6 +28,7 @@ per entry**, never the definition of an entry.
 | --- | --- | --- | --- | --- |
 | [CTFTTE-HWR-001](../techniques/CTFTTE-HWR-001.md) | USB HID keystroke concealment | [CTFTCTE-HWR-001](../countertechniques/CTFTCTE-HWR-001.md) | Reconstruct keystrokes from captured USB HID traffic | T1056.001 |
 | [CTFTTE-HWR-002](../techniques/CTFTTE-HWR-002.md) | Badge / embedded-device firmware concealment | [CTFTCTE-HWR-002](../countertechniques/CTFTCTE-HWR-002.md) | Dump and reverse badge firmware | T1027 |
+| [CTFTTE-HWR-003](../techniques/CTFTTE-HWR-003.md) | PCB fabrication-layer concealment | [CTFTCTE-HWR-003](../countertechniques/CTFTCTE-HWR-003.md) | Render and diff every PCB fabrication layer | T1195.003, T1027 |
 
 ---
 *See [CORRELATION.md](../CORRELATION.md) for the full cross-reference matrix.*

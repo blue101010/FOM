@@ -4,8 +4,8 @@ Every **Design / Hide Technique** (`CTFTTE-<CAT>-NNN`) and the
 **Resolution-Technique** (`CTFTCTE-<CAT>-NNN`) that recovers it, grouped by domain.
 IDs pair one-to-one: `CTFTTE-FOR-004` is always answered by `CTFTCTE-FOR-004`.
 
-> Generated from the files in `techniques/` and `countertechniques/` — corpus fingerprint `74704e4dae314161`
-> by `v3/render_taxonomy_docs.py`. **203 complete pairs** across **20 active domains**. Do not hand-edit: rename the entry, then re-render.
+> Generated from the files in `techniques/` and `countertechniques/` — corpus fingerprint `20b455a6728b804e`
+> by `v3/render_taxonomy_docs.py`. **206 complete pairs** across **20 active domains**. Do not hand-edit: rename the entry, then re-render.
 
 ---
 
@@ -18,7 +18,7 @@ Order follows the challenge-category picker.
 | 1 | [`FOR`](#ctft-ta-for) | Forensics | Forensics | 34 |
 | 2 | [`WEB`](#ctft-ta-web) | Web | Web Exploitation | 23 |
 | 3 | [`CRY`](#ctft-ta-cry) | Crypto | Cryptography | 14 |
-| 4 | [`PWN`](#ctft-ta-pwn) | Binary | Binary Exploitation | 10 |
+| 4 | [`PWN`](#ctft-ta-pwn) | Binary | Binary Exploitation | 12 |
 | 5 | [`REV`](#ctft-ta-rev) | Reverse | Reverse Engineering | 10 |
 | 6 | [`STE`](#ctft-ta-ste) | Stego | Steganography | 11 |
 | 7 | [`OSI`](#ctft-ta-osi) | OSINT | OSINT | 9 |
@@ -32,10 +32,10 @@ Order follows the challenge-category picker.
 | 15 | [`COD`](#ctft-ta-cod) | Coding | Coding / Programming Puzzle | 7 |
 | 16 | [`NET`](#ctft-ta-net) | Network | Network | 8 |
 | 17 | [`FPN`](#ctft-ta-fpn) | Full Pwn | Full Pwn / Multi-Stage | 20 |
-| 18 | [`HWR`](#ctft-ta-hwr) | Hardware | Hardware | 2 |
+| 18 | [`HWR`](#ctft-ta-hwr) | Hardware | Hardware | 3 |
 | 19 | [`IOT`](#ctft-ta-iot) | IoT / Embedded | IoT / Embedded | 6 |
 | 20 | [`SDR`](#ctft-ta-sdr) | SDR / RF | Software-Defined Radio | 1 |
-| | | | **Total** | **203** |
+| | | | **Total** | **206** |
 
 **Retired — do not use.** `MSC` (Misc) was a catch-all whose entries all
 duplicated a precise domain; file those challenges under `JAL`, `COD`, `GAM`
@@ -377,12 +377,13 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 
 ## <a id="ctft-ta-hwr"></a>`CTFT-TA-HWR` — Hardware
 
-> [domain page](tactics/CTFT-TA-HWR.md) · 2 pairs · HTB: Hardware
+> [domain page](tactics/CTFT-TA-HWR.md) · 3 pairs · HTB: Hardware
 
 | # | Technique ID | Hide / Design name | Resolution-technique ID | Recovery action |
 | --- | --- | --- | --- | --- |
 | 1 | [CTFTTE-HWR-001](techniques/CTFTTE-HWR-001.md) | USB HID keystroke concealment | [CTFTCTE-HWR-001](countertechniques/CTFTCTE-HWR-001.md) | Reconstruct keystrokes from captured USB HID traffic |
 | 2 | [CTFTTE-HWR-002](techniques/CTFTTE-HWR-002.md) | Badge / embedded-device firmware concealment | [CTFTCTE-HWR-002](countertechniques/CTFTCTE-HWR-002.md) | Dump and reverse badge firmware |
+| 3 | [CTFTTE-HWR-003](techniques/CTFTTE-HWR-003.md) | PCB fabrication-layer concealment | [CTFTCTE-HWR-003](countertechniques/CTFTCTE-HWR-003.md) | Render and diff every PCB fabrication layer |
 
 
 ## <a id="ctft-ta-iot"></a>`CTFT-TA-IOT` — IoT / Embedded

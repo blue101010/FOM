@@ -5092,6 +5092,304 @@
     {
       "type": "attack-pattern",
       "spec_version": "2.1",
+      "id": "attack-pattern--d30a6a7f-f509-5d7b-92db-7740463d27b4",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FOR-031 - Office VBA macro string concealment",
+      "description": "The flag is placed inside a VBA macro embedded in a macro-enabled Office document (.docm, .xlsm, .doc). It is never present as plaintext: the macro rebuilds it at run time from obfuscated pieces — character-code arrays (Chr(72) & Chr(84) & ...), StrReverse, split-and-concatenate, base64 or XOR routines — so opening the document and reading the visible text yields nothing, and the string does not survive a plain strings pass over the ZIP container. The concealment leans on the analyst either trusting the rendered document or lacking Office to \"run\" the macro.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "for"
+        }
+      ],
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FOR-031"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1059.005",
+          "description": "Command and Scripting Interpreter: Visual Basic"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--c79d2522-0d3e-5421-bb4b-67e23f4ad785",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FOR-031 - Extract and decode strings from Office VBA macros",
+      "description": "1. Confirm the container: a .docm/.xlsm is a ZIP — unzip -l lists the parts and word/vbaProject.bin (or xl/vbaProject.bin) is the OLE stream holding the macros. 2. Dump the macro source without Office: olevba <file> extracts the VBA and highlights auto-exec entry points and string-building constructs; oledump.py dumps the raw stream bytes when olevba can't parse a mangled project. 3. Read the deobfuscation olevba already performed; for anything it leaves, reproduce the macro's own transform by hand — evaluate the Chr()/StrReverse/concat chain, or feed the base64/XOR argument to CyberChef. 4. If the macro only reconstructs the string at run time, port the VBA expression to Python (or run it in a sandboxed VBA host) and print the result instead of executing the rest.",
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FOR-031"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1059.005",
+          "description": "Command and Scripting Interpreter: Visual Basic"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--292cac5a-aa41-51d5-9a2c-3346e338df8c",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--c79d2522-0d3e-5421-bb4b-67e23f4ad785",
+      "target_ref": "attack-pattern--d30a6a7f-f509-5d7b-92db-7740463d27b4",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--70f1e9d9-99e9-5819-857a-b90ce4633ad6",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FOR-032 - Flag concealed in a haystack of near-identical files",
+      "description": "The flag (or the one meaningful file) is buried inside a very large archive of thousands of near-duplicate files — same size, same structure, mostly identical bytes — so that no single file stands out and manual inspection is infeasible. The concealment is scale plus sameness: grep for the flag format may miss an encoded fragment, and opening files one by one never terminates. The intended solve is a comparison that is efficient at scale — hash every file and keep the one whose content is unique, or diff against the common baseline — rather than reading each file.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "for"
+        }
+      ],
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FOR-032"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--26c8dcb0-79aa-5419-a419-a75edc88e984",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FOR-032 - Isolate the outlier file by scalable comparison",
+      "description": "1. Do not read files individually. Reduce the haystack by content hash: find . -type f -exec sha256sum {} + | sort | uniq -c -w64 | sort -n — the line with count 1 (or the smallest counts) is the outlier whose bytes differ from the crowd. 2. If every file is unique but shares a common template, diff against a baseline instead: pick any file as reference and cmp/diff the rest, keeping only the one with a non-trivial delta. For fixed-size records, hash a byte range rather than the whole file. 3. When the difference is a single changed region, xxd the outlier and the baseline and compare the dumps to read the injected bytes directly. 4. This is the scalable equivalent of the original C++ comparison loop: hashing is O(n) over the corpus and never holds more than one file in memory, so it finishes on archives of tens of thousands of files.",
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FOR-032"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--01de3f98-b161-5306-b470-e5a752b46b4a",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--26c8dcb0-79aa-5419-a419-a75edc88e984",
+      "target_ref": "attack-pattern--70f1e9d9-99e9-5819-857a-b90ce4633ad6",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--c431c4d1-e147-5a63-bd3d-588d5dfc81b7",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FOR-033 - Flag fragments disseminated across filesystem artifacts",
+      "description": "No single file holds the flag. It is broken into pieces and scattered across many locations — individual characters embedded in shell-persistence files (.bashrc, cron entries, systemd units, /etc/), one letter per file in a tree, or fragments appended to otherwise innocuous logs. Each fragment on its own is meaningless, and the flag only appears once every piece is collected in the correct order. The concealment defeats a single-file search: the analyst has to recognise the dissemination pattern (which files, which position marks ordering) and reassemble, not just locate.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "for"
+        }
+      ],
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FOR-033"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1547.001",
+          "description": "Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--04a323bb-5ad7-5749-a2bf-7cd2117cc72b",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FOR-033 - Aggregate disseminated flag fragments across files",
+      "description": "1. Sweep broadly first: grep -RnoaE 'HTB\\{|flag\\{|[A-Za-z0-9+/=]{3,}' . across the whole tree, and inventory the usual persistence carriers (.bashrc, .profile, crontab -l, /etc/cron., systemd units, /etc/passwd GECOS, log tails) where fragments are planted. 2. Identify the dissemination key — what ties the fragments together and in what order: a line number, a filename index, a timestamp, an array subscript in a script. One character per file usually means the ordering is the filename or path sort. 3. Reassemble deterministically rather than by eye: collect path:fragment pairs, sort by the ordering key, then concatenate the fragment column (sort -t: -k1 | cut -d: -f2 | tr -d '\\n'). Decode the result if it is base64/hex. 4. Validate against the expected flag format; a wrong order or a missed carrier yields near-miss garbage, so re-check the ordering key before brute-forcing permutations.",
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FOR-033"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1547.001",
+          "description": "Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--da14d3ff-a605-5b54-af6c-18c3e713a830",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--04a323bb-5ad7-5749-a2bf-7cd2117cc72b",
+      "target_ref": "attack-pattern--c431c4d1-e147-5a63-bd3d-588d5dfc81b7",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--f9823966-c46c-5541-85f3-e93a5344b011",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FOR-034 - Obfuscated client-side script in a web artifact",
+      "description": "A captured web artifact — a phishing page, a saved HTML file, an email attachment — carries a block of deliberately obfuscated JavaScript. The script is minified to one line, packed (eval(function(p,a,c,k,e,d)...)), and its strings are hex/base64/String.fromCharCode encoded, so the real behaviour (the exfiltration URL, the decoded flag, the dropped payload name) is not visible in the page source. Rendering the page runs the script but hides the mechanism; reading the source shows only noise. The analyst is meant to statically deobfuscate and follow the data flow to the hidden value rather than detonate the page.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "for"
+        }
+      ],
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FOR-034"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1059.007",
+          "description": "Command and Scripting Interpreter: JavaScript"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--2618d469-4767-50f4-b211-a91f58c773ed",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FOR-034 - Deobfuscate and trace client-side script to the payload",
+      "description": "1. Isolate the script from the artifact (the <script> block, the .js file, the HTML attachment) and work on it statically — do not open the page in a live browser. 2. Restore structure first: run it through js-beautify to expand the one-liner, then de4js to unpack eval(p,a,c,k,e,d) and eval/Function wrappers into plain source. 3. Decode the string literals: String.fromCharCode, \\xNN/\\uNNNN, base64 and URL layers go through CyberChef. Follow the data flow to the sink — the fetch/XMLHttpRequest URL, the document.location redirect, or the variable printed/ concatenated into the DOM — which is where the flag or exfil target resolves. 4. If the script self-decodes at run time, neutralise the sink and evaluate it safely: replace eval/network calls with console.log and run under Node in a throwaway sandbox to print the decoded value instead of executing it.",
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FOR-034"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1059.007",
+          "description": "Command and Scripting Interpreter: JavaScript"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--db546726-2c8d-575c-8804-a55a9cc396ec",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--2618d469-4767-50f4-b211-a91f58c773ed",
+      "target_ref": "attack-pattern--f9823966-c46c-5541-85f3-e93a5344b011",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
       "id": "attack-pattern--2da0cd87-fe6f-5919-ad19-2543d21d7a08",
       "created": "2026-06-10T18:01:52.000Z",
       "modified": "2026-06-10T18:01:52.000Z",
@@ -7247,6 +7545,83 @@
       "x_ctft_relation": "solves",
       "source_ref": "course-of-action--c2617c9b-c397-5db0-aa72-0a7d76cc345e",
       "target_ref": "attack-pattern--130f70c1-d0ba-5284-a603-162e044e5c41",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--ffc2fd93-9055-5415-9724-6ab77f53f752",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-HWR-003 - PCB fabrication-layer concealment",
+      "description": "The flag is drawn as geometry inside a circuit board's fabrication data (Gerber, drill, or other manufacturing exports): copper text, artwork, or a pattern placed on a layer that is invisible or overlapped on the finished board, such as inner copper or areas under outer copper, or split across several layers. The files are plain coordinate streams, so the data surfaces only when each layer is plotted on its own.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "hwr"
+        }
+      ],
+      "x_ctft_category": "HWR",
+      "x_ctft_domain": "HWR",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-HWR-003"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1195.003",
+          "description": "Supply Chain Compromise: Compromise Hardware Supply Chain"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--67cbf597-d331-5df9-bbae-3a071ca198a6",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-HWR-003 - Render and diff every PCB fabrication layer",
+      "description": "Identify each file's layer, then render every layer on its own, not only the top/bottom composites. Flag geometry that does not belong to the circuit, such as strokes tied to no pad, via or copper fill. When the original design is available, diff layer by layer against it. Adjust orientation (rotation, mirroring) before reading recovered text.",
+      "x_ctft_category": "HWR",
+      "x_ctft_domain": "HWR",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-HWR-003"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1195.003",
+          "description": "Supply Chain Compromise: Compromise Hardware Supply Chain"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--f33557f7-2c09-571d-919f-cf66cb0d131a",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--67cbf597-d331-5df9-bbae-3a071ca198a6",
+      "target_ref": "attack-pattern--ffc2fd93-9055-5415-9724-6ab77f53f752",
       "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     },
     {
@@ -10818,6 +11193,140 @@
       "x_ctft_relation": "solves",
       "source_ref": "course-of-action--c130467e-aee9-5dde-9382-9d018542918f",
       "target_ref": "attack-pattern--5f1b016c-6c51-5dea-bf56-8525a93ad0f4",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--fc354b0f-dc89-5016-9d35-0cb18b9df0b5",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-PWN-011 - Argument-gated target function",
+      "description": "The sensitive routine (flag print, shell spawn, privileged call) validates its arguments — equality against constants, value ranges, or pointer identity — and bails out otherwise. A saved-return-address overwrite alone lands in the bail-out path: the solver must also place the expected values in the argument registers (rdi, rsi, rdx on x86-64; stack on i386), turning a one-gadget redirect into a register-setting problem. The required gadgets may be planted in the binary or must be hunted anywhere in the image or libc.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "pwn"
+        }
+      ],
+      "x_ctft_category": "PWN",
+      "x_ctft_domain": "PWN",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-PWN-011"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1068",
+          "description": "Exploitation for Privilege Escalation"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--d27be844-cc88-5bf8-979e-4ad54000362f",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-PWN-011 - Control argument registers, then redirect",
+      "description": "Read the expected values from the decompiled argument checks, then deliver them at the moment of the jump: assemble a register-setting chain from the available gadgets (pop reg; ret), fall back to call-oriented setup (ret2csu-style) when an individual gadget is missing, keep stack alignment for callees using SSE, and on i386 pass the arguments on the stack instead. Map parameters to registers by ABI order (rdi, rsi, rdx, rcx, r8, r9), never by which constant \"looks like\" which register.",
+      "x_ctft_category": "PWN",
+      "x_ctft_domain": "PWN",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-PWN-011"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1068",
+          "description": "Exploitation for Privilege Escalation"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--b9457ccc-7c41-554a-8270-7bd4c90f70a7",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--d27be844-cc88-5bf8-979e-4ad54000362f",
+      "target_ref": "attack-pattern--fc354b0f-dc89-5016-9d35-0cb18b9df0b5",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--aa425a74-277d-5eaa-b379-0dd4c22841d4",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-PWN-012 - Author-gifted pointer leak",
+      "description": "The binary deliberately prints a raw pointer before reading input — a stack address (leaking ASLR/stack layout, enabling stack shellcode or ret2win without guessing) or a .data/.bss address (leaking the PIE image base so win's runtime address can be computed). Hardening stays on (PIE/ASLR) but the author hands the one leak needed to defeat it, and the solver must do the offset arithmetic.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "pwn"
+        }
+      ],
+      "x_ctft_category": "PWN",
+      "x_ctft_domain": "PWN",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-PWN-012"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1068",
+          "description": "Exploitation for Privilege Escalation"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--432e9a83-f7a1-50d3-85b5-ab7446893a35",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-PWN-012 - Compute the target address from the leaked pointer",
+      "description": "Parse the printed pointer, identify what it points at (stack slot or named global via the decompiler), then compute: PIE target = leaked address + (symbol − leaked symbol) from the static image; stack target = leaked stack address + fixed delta observed in GDB. Chain the computed address into the overflow payload.",
+      "x_ctft_category": "PWN",
+      "x_ctft_domain": "PWN",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-PWN-012"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1068",
+          "description": "Exploitation for Privilege Escalation"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--1c2b323d-acc1-53eb-9667-035c013ee399",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--432e9a83-f7a1-50d3-85b5-ab7446893a35",
+      "target_ref": "attack-pattern--aa425a74-277d-5eaa-b379-0dd4c22841d4",
       "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     },
     {

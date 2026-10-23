@@ -192,6 +192,60 @@
         "stack canary/PIE present - that is CTFTTE-PWN-006 (leak first)",
         "format-string-driven leaks or writes - that is CTFTTE-PWN-002"
       ]
+    },
+    {
+      "id": "EVID-HWR-003",
+      "schema_version": "3.0",
+      "technique": "CTFTTE-HWR-003",
+      "challenges": [
+        {
+          "ctf": "HTB CTF Try Out (replay of HTB Cyber Apocalypse 2023: The Cursed Mission)",
+          "challenge": "Critical Flight (Hardware)",
+          "year": 2026,
+          "writeup": "2026/HB/TRY/Critical_Flight/critical_flight.md (local casebook, workspace C:\\DATA\\CTF)",
+          "extracted_from": "read and confirmed: KiCad 6.0.9 Gerber package of a sabotaged HadesMicro flight controller; extra copper text strokes on B_Cu (vertical, 0.25 mm, reads HTB{533_7h3_1nn32_w02k1n95 at 270 deg unmirrored) and on inner layer In1_Cu (horizontal, 0.20 mm, reads _0f_313c720n1c5#$@}); flag submitted and accepted. Reproduced 2026-10-22 with FOM tools/scripts/gerber-layer-inspect.py (hunt: exactly 2 clusters, 0 false positives; diff vs upstream pms67/HadesFCS: only these 2 additions)"
+        }
+      ],
+      "references": [
+        "https://ctfbase.com/writeup/20260128_htb_critical_flight",
+        "https://cristi075.github.io/posts/htb-cyber-apocalypse-2023-critical-flight/",
+        "https://github.com/pms67/HadesFCS",
+        "https://tracespace.io/view/"
+      ],
+      "positives": [
+        "the payload is geometry (stroked copper text) inside Gerber fabrication files and exists only once coordinates are plotted; strings/grep on the plain-text files reveal nothing",
+        "the hiding place is a layer invisible on the finished board (inner copper In1_Cu) or one the composite render does not isolate, so a per-layer view is mandatory",
+        "the payload strokes form connected components touching no pad, via or pour, which makes them separable from real traces without any reference design",
+        "the challenge story names a modified open-source design, so the upstream Gerbers serve as a diff baseline"
+      ],
+      "negatives": [
+        "a flag in firmware/EEPROM dumped over UART/JTAG/SPI from a physical or emulated device (CTFTTE-HWR-002): the evidence is executable content, not plotted geometry",
+        "a flag in the board's silkscreen/fab text that is plainly visible in a composite render: no layer-level concealment",
+        "a schematic/netlist puzzle where the secret is a logic function of the circuit rather than drawn geometry"
+      ],
+      "boundaries": [
+        "single event so far (one challenge, replayed): not yet attested, which needs >= 2 independent events",
+        "split payloads across layers need ordering by flag delimiters; one fragment alone can look complete",
+        "cross-version diffs are noisy (KiCad 5 strokes zone fills, KiCad 6 emits G36 regions): only large ADDED clusters are signal"
+      ],
+      "abstraction": "technique",
+      "synonyms": [
+        "hidden text in PCB inner layer",
+        "Gerber steganography",
+        "copper-layer flag",
+        "sabotaged PCB production files"
+      ],
+      "external_mappings": [
+        {
+          "framework": "ATTACK",
+          "id": "T1195.003",
+          "confidence": "medium",
+          "justification": "Compromise Hardware Supply Chain covers tampering with hardware before delivery; CTFT adds the per-layer plotting and reference-diff recovery ATT&CK omits."
+        }
+      ],
+      "curator": "local (critical_flight casebook)",
+      "reviewed_on": "2026-10-22",
+      "status": "curated"
     }
   ],
   "rejected": [

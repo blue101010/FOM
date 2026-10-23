@@ -2,8 +2,8 @@
   "model": "CTFT",
   "schema_version": "3.0",
   "collection": "catalog",
-  "generated_at": "2026-10-17T02:09:09+00:00",
-  "source_sha256": "339019fcfa69f81c1598718df608cf94d159c6f968ba77d9694fb4b802d4784a",
+  "generated_at": "2026-10-23T02:47:32+00:00",
+  "source_sha256": "b1ce824a729451d04332418719ce7a9435a651e60107d0ce8f911424112d48ea",
   "items": [
     {
       "id": "CTFTPAIR-AIM-001",
@@ -858,9 +858,11 @@
         "path": "countertechniques/CTFTCTE-CRY-012.md",
         "role": "resolution"
       },
-      "maturity": "taxonomy_only",
+      "maturity": "attested",
       "missing_for_typed_recommendation": [
-        "evidence_record"
+        "indicators",
+        "reviewed_tool_bindings",
+        "evaluation_case"
       ]
     },
     {
@@ -1050,7 +1052,10 @@
       },
       "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [
-        "evidence_record"
+        "second_independent_challenge",
+        "positives",
+        "negatives",
+        "boundaries"
       ]
     },
     {
@@ -1072,7 +1077,9 @@
       },
       "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [
-        "evidence_record"
+        "positives",
+        "negatives",
+        "boundaries"
       ]
     },
     {
@@ -1094,7 +1101,10 @@
       },
       "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [
-        "evidence_record"
+        "second_independent_challenge",
+        "positives",
+        "negatives",
+        "boundaries"
       ]
     },
     {
@@ -1136,7 +1146,10 @@
       },
       "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [
-        "evidence_record"
+        "second_independent_challenge",
+        "positives",
+        "negatives",
+        "boundaries"
       ]
     },
     {
@@ -1158,7 +1171,10 @@
       },
       "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [
-        "evidence_record"
+        "second_independent_challenge",
+        "positives",
+        "negatives",
+        "boundaries"
       ]
     },
     {
@@ -1180,7 +1196,10 @@
       },
       "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [
-        "evidence_record"
+        "second_independent_challenge",
+        "positives",
+        "negatives",
+        "boundaries"
       ]
     },
     {
@@ -1202,7 +1221,10 @@
       },
       "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [
-        "evidence_record"
+        "second_independent_challenge",
+        "positives",
+        "negatives",
+        "boundaries"
       ]
     },
     {
@@ -1224,7 +1246,10 @@
       },
       "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [
-        "evidence_record"
+        "second_independent_challenge",
+        "positives",
+        "negatives",
+        "boundaries"
       ]
     },
     {
@@ -1246,7 +1271,10 @@
       },
       "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [
-        "evidence_record"
+        "second_independent_challenge",
+        "positives",
+        "negatives",
+        "boundaries"
       ]
     },
     {
@@ -1484,7 +1512,10 @@
       },
       "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [
-        "evidence_record"
+        "second_independent_challenge",
+        "positives",
+        "negatives",
+        "boundaries"
       ]
     },
     {
@@ -1506,7 +1537,10 @@
       },
       "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [
-        "evidence_record"
+        "second_independent_challenge",
+        "positives",
+        "negatives",
+        "boundaries"
       ]
     },
     {
@@ -1528,7 +1562,10 @@
       },
       "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [
-        "evidence_record"
+        "second_independent_challenge",
+        "positives",
+        "negatives",
+        "boundaries"
       ]
     },
     {
@@ -2232,7 +2269,7 @@
       },
       "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [
-        "evidence_record"
+        "second_independent_challenge"
       ]
     },
     {
@@ -2298,7 +2335,29 @@
       },
       "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [
-        "evidence_record"
+        "second_independent_challenge"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-HWR-003",
+      "schema_version": "3.0",
+      "domain": "HWR",
+      "tactic": "CTFT-TA-HWR",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-HWR-003",
+        "name": "PCB fabrication-layer concealment",
+        "path": "techniques/CTFTTE-HWR-003.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-HWR-003",
+        "name": "Render and diff every PCB fabrication layer",
+        "path": "countertechniques/CTFTCTE-HWR-003.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "second_independent_challenge"
       ]
     },
     {
@@ -2364,7 +2423,7 @@
       },
       "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [
-        "evidence_record"
+        "second_independent_challenge"
       ]
     },
     {
@@ -3468,6 +3527,50 @@
       ]
     },
     {
+      "id": "CTFTPAIR-PWN-011",
+      "schema_version": "3.0",
+      "domain": "PWN",
+      "tactic": "CTFT-TA-PWN",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-PWN-011",
+        "name": "Argument-gated target function",
+        "path": "techniques/CTFTTE-PWN-011.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-PWN-011",
+        "name": "Control argument registers, then redirect",
+        "path": "countertechniques/CTFTCTE-PWN-011.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-PWN-012",
+      "schema_version": "3.0",
+      "domain": "PWN",
+      "tactic": "CTFT-TA-PWN",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-PWN-012",
+        "name": "Author-gifted pointer leak",
+        "path": "techniques/CTFTTE-PWN-012.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-PWN-012",
+        "name": "Compute the target address from the leaked pointer",
+        "path": "countertechniques/CTFTCTE-PWN-012.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
       "id": "CTFTPAIR-REV-001",
       "schema_version": "3.0",
       "domain": "REV",
@@ -3838,7 +3941,10 @@
       },
       "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [
-        "evidence_record"
+        "second_independent_challenge",
+        "positives",
+        "negatives",
+        "boundaries"
       ]
     },
     {
@@ -3860,7 +3966,10 @@
       },
       "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [
-        "evidence_record"
+        "second_independent_challenge",
+        "positives",
+        "negatives",
+        "boundaries"
       ]
     },
     {
@@ -3882,7 +3991,10 @@
       },
       "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [
-        "evidence_record"
+        "second_independent_challenge",
+        "positives",
+        "negatives",
+        "boundaries"
       ]
     },
     {

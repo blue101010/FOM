@@ -16,7 +16,9 @@ capture itself stays with [usbmon](CTFTTOU-278.md) and Wireshark/tshark.
 
 ## URL
 
-[scripts/usbhid-keystroke-decode.py](scripts/usbhid-keystroke-decode.py) (local CTFT tool)
+<https://github.com/blue101010/FOM/blob/main/tools/scripts/usbhid-keystroke-decode.py>
+
+Local copy: [scripts/usbhid-keystroke-decode.py](scripts/usbhid-keystroke-decode.py)
 
 ## Related Techniques
 

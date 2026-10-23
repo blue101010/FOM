@@ -163,6 +163,83 @@
       "source_ref": "course-of-action--c2617c9b-c397-5db0-aa72-0a7d76cc345e",
       "target_ref": "attack-pattern--130f70c1-d0ba-5284-a603-162e044e5c41",
       "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--ffc2fd93-9055-5415-9724-6ab77f53f752",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-HWR-003 - PCB fabrication-layer concealment",
+      "description": "The flag is drawn as geometry inside a circuit board's fabrication data (Gerber, drill, or other manufacturing exports): copper text, artwork, or a pattern placed on a layer that is invisible or overlapped on the finished board, such as inner copper or areas under outer copper, or split across several layers. The files are plain coordinate streams, so the data surfaces only when each layer is plotted on its own.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "hwr"
+        }
+      ],
+      "x_ctft_category": "HWR",
+      "x_ctft_domain": "HWR",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-HWR-003"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1195.003",
+          "description": "Supply Chain Compromise: Compromise Hardware Supply Chain"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--67cbf597-d331-5df9-bbae-3a071ca198a6",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-HWR-003 - Render and diff every PCB fabrication layer",
+      "description": "Identify each file's layer, then render every layer on its own, not only the top/bottom composites. Flag geometry that does not belong to the circuit, such as strokes tied to no pad, via or copper fill. When the original design is available, diff layer by layer against it. Adjust orientation (rotation, mirroring) before reading recovered text.",
+      "x_ctft_category": "HWR",
+      "x_ctft_domain": "HWR",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-HWR-003"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1195.003",
+          "description": "Supply Chain Compromise: Compromise Hardware Supply Chain"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--f33557f7-2c09-571d-919f-cf66cb0d131a",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--67cbf597-d331-5df9-bbae-3a071ca198a6",
+      "target_ref": "attack-pattern--ffc2fd93-9055-5415-9724-6ab77f53f752",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     }
   ]
 }

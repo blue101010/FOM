@@ -1,7 +1,7 @@
 {
   "model": "CTFT",
   "version": "1.2",
-  "generated": "2026-10-17T02:09:09+00:00",
+  "generated": "2026-10-23T02:47:31+00:00",
   "relates_to": [
     "MITRE ATT&CK",
     "CAPEC",
@@ -62,7 +62,7 @@
       "id": "CTFT-TA-HWR",
       "name": "Hardware",
       "path": "tactics/CTFT-TA-HWR.md",
-      "count": 2
+      "count": 3
     },
     {
       "id": "CTFT-TA-ICS",
@@ -104,7 +104,7 @@
       "id": "CTFT-TA-PWN",
       "name": "Binary Exploitation",
       "path": "tactics/CTFT-TA-PWN.md",
-      "count": 10
+      "count": 12
     },
     {
       "id": "CTFT-TA-REV",
@@ -131,7 +131,7 @@
       "count": 23
     }
   ],
-  "total_techniques": 203,
+  "total_techniques": 206,
   "techniques": [
     {
       "tactic": "CTFT-TA-AIM",
@@ -1604,6 +1604,20 @@
       }
     },
     {
+      "tactic": "CTFT-TA-HWR",
+      "category": "HWR",
+      "technique": {
+        "id": "CTFTTE-HWR-003",
+        "name": "PCB fabrication-layer concealment",
+        "path": "techniques/CTFTTE-HWR-003.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-HWR-003",
+        "name": "Render and diff every PCB fabrication layer",
+        "path": "countertechniques/CTFTCTE-HWR-003.md"
+      }
+    },
+    {
       "tactic": "CTFT-TA-ICS",
       "category": "ICS",
       "technique": {
@@ -2346,6 +2360,34 @@
       }
     },
     {
+      "tactic": "CTFT-TA-PWN",
+      "category": "PWN",
+      "technique": {
+        "id": "CTFTTE-PWN-011",
+        "name": "Argument-gated target function",
+        "path": "techniques/CTFTTE-PWN-011.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-PWN-011",
+        "name": "Control argument registers, then redirect",
+        "path": "countertechniques/CTFTCTE-PWN-011.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-PWN",
+      "category": "PWN",
+      "technique": {
+        "id": "CTFTTE-PWN-012",
+        "name": "Author-gifted pointer leak",
+        "path": "techniques/CTFTTE-PWN-012.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-PWN-012",
+        "name": "Compute the target address from the leaked pointer",
+        "path": "countertechniques/CTFTCTE-PWN-012.md"
+      }
+    },
+    {
       "tactic": "CTFT-TA-REV",
       "category": "REV",
       "technique": {
@@ -3082,6 +3124,7 @@
     "CTFTTE-GAM-008": "CTFTCTE-GAM-008",
     "CTFTTE-HWR-001": "CTFTCTE-HWR-001",
     "CTFTTE-HWR-002": "CTFTCTE-HWR-002",
+    "CTFTTE-HWR-003": "CTFTCTE-HWR-003",
     "CTFTTE-ICS-001": "CTFTCTE-ICS-001",
     "CTFTTE-ICS-002": "CTFTCTE-ICS-002",
     "CTFTTE-ICS-003": "CTFTCTE-ICS-003",
@@ -3135,6 +3178,8 @@
     "CTFTTE-PWN-008": "CTFTCTE-PWN-008",
     "CTFTTE-PWN-009": "CTFTCTE-PWN-009",
     "CTFTTE-PWN-010": "CTFTCTE-PWN-010",
+    "CTFTTE-PWN-011": "CTFTCTE-PWN-011",
+    "CTFTTE-PWN-012": "CTFTCTE-PWN-012",
     "CTFTTE-REV-001": "CTFTCTE-REV-001",
     "CTFTTE-REV-002": "CTFTCTE-REV-002",
     "CTFTTE-REV-003": "CTFTCTE-REV-003",
@@ -3917,6 +3962,13 @@
       "tactic": "CTFT-TA-HWR",
       "path": "techniques/CTFTTE-HWR-002.md"
     },
+    "CTFTTE-HWR-003": {
+      "name": "PCB fabrication-layer concealment",
+      "counter_id": "CTFTCTE-HWR-003",
+      "counter_name": "Render and diff every PCB fabrication layer",
+      "tactic": "CTFT-TA-HWR",
+      "path": "techniques/CTFTTE-HWR-003.md"
+    },
     "CTFTTE-ICS-001": {
       "name": "Modbus holding-register concealment",
       "counter_id": "CTFTCTE-ICS-001",
@@ -4287,6 +4339,20 @@
       "counter_name": "Craft sibling entries whose reconstructed parent path traverses",
       "tactic": "CTFT-TA-PWN",
       "path": "techniques/CTFTTE-PWN-010.md"
+    },
+    "CTFTTE-PWN-011": {
+      "name": "Argument-gated target function",
+      "counter_id": "CTFTCTE-PWN-011",
+      "counter_name": "Control argument registers, then redirect",
+      "tactic": "CTFT-TA-PWN",
+      "path": "techniques/CTFTTE-PWN-011.md"
+    },
+    "CTFTTE-PWN-012": {
+      "name": "Author-gifted pointer leak",
+      "counter_id": "CTFTCTE-PWN-012",
+      "counter_name": "Compute the target address from the leaked pointer",
+      "tactic": "CTFT-TA-PWN",
+      "path": "techniques/CTFTTE-PWN-012.md"
     },
     "CTFTTE-REV-001": {
       "name": "Anti-debugging / anti-analysis guards",
@@ -5340,6 +5406,13 @@
       "tactic": "CTFT-TA-HWR",
       "path": "countertechniques/CTFTCTE-HWR-002.md"
     },
+    "CTFTCTE-HWR-003": {
+      "name": "Render and diff every PCB fabrication layer",
+      "technique_id": "CTFTTE-HWR-003",
+      "technique_name": "PCB fabrication-layer concealment",
+      "tactic": "CTFT-TA-HWR",
+      "path": "countertechniques/CTFTCTE-HWR-003.md"
+    },
     "CTFTCTE-ICS-001": {
       "name": "Read Modbus registers",
       "technique_id": "CTFTTE-ICS-001",
@@ -5710,6 +5783,20 @@
       "technique_name": "Archive hierarchy-reconstruction path traversal",
       "tactic": "CTFT-TA-PWN",
       "path": "countertechniques/CTFTCTE-PWN-010.md"
+    },
+    "CTFTCTE-PWN-011": {
+      "name": "Control argument registers, then redirect",
+      "technique_id": "CTFTTE-PWN-011",
+      "technique_name": "Argument-gated target function",
+      "tactic": "CTFT-TA-PWN",
+      "path": "countertechniques/CTFTCTE-PWN-011.md"
+    },
+    "CTFTCTE-PWN-012": {
+      "name": "Compute the target address from the leaked pointer",
+      "technique_id": "CTFTTE-PWN-012",
+      "technique_name": "Author-gifted pointer leak",
+      "tactic": "CTFT-TA-PWN",
+      "path": "countertechniques/CTFTCTE-PWN-012.md"
     },
     "CTFTCTE-REV-001": {
       "name": "Bypass anti-analysis to reach the check",

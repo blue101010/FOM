@@ -699,6 +699,140 @@
       "source_ref": "course-of-action--c130467e-aee9-5dde-9382-9d018542918f",
       "target_ref": "attack-pattern--5f1b016c-6c51-5dea-bf56-8525a93ad0f4",
       "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--fc354b0f-dc89-5016-9d35-0cb18b9df0b5",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-PWN-011 - Argument-gated target function",
+      "description": "The sensitive routine (flag print, shell spawn, privileged call) validates its arguments — equality against constants, value ranges, or pointer identity — and bails out otherwise. A saved-return-address overwrite alone lands in the bail-out path: the solver must also place the expected values in the argument registers (rdi, rsi, rdx on x86-64; stack on i386), turning a one-gadget redirect into a register-setting problem. The required gadgets may be planted in the binary or must be hunted anywhere in the image or libc.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "pwn"
+        }
+      ],
+      "x_ctft_category": "PWN",
+      "x_ctft_domain": "PWN",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-PWN-011"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1068",
+          "description": "Exploitation for Privilege Escalation"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--d27be844-cc88-5bf8-979e-4ad54000362f",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-PWN-011 - Control argument registers, then redirect",
+      "description": "Read the expected values from the decompiled argument checks, then deliver them at the moment of the jump: assemble a register-setting chain from the available gadgets (pop reg; ret), fall back to call-oriented setup (ret2csu-style) when an individual gadget is missing, keep stack alignment for callees using SSE, and on i386 pass the arguments on the stack instead. Map parameters to registers by ABI order (rdi, rsi, rdx, rcx, r8, r9), never by which constant \"looks like\" which register.",
+      "x_ctft_category": "PWN",
+      "x_ctft_domain": "PWN",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-PWN-011"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1068",
+          "description": "Exploitation for Privilege Escalation"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--b9457ccc-7c41-554a-8270-7bd4c90f70a7",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--d27be844-cc88-5bf8-979e-4ad54000362f",
+      "target_ref": "attack-pattern--fc354b0f-dc89-5016-9d35-0cb18b9df0b5",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--aa425a74-277d-5eaa-b379-0dd4c22841d4",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-PWN-012 - Author-gifted pointer leak",
+      "description": "The binary deliberately prints a raw pointer before reading input — a stack address (leaking ASLR/stack layout, enabling stack shellcode or ret2win without guessing) or a .data/.bss address (leaking the PIE image base so win's runtime address can be computed). Hardening stays on (PIE/ASLR) but the author hands the one leak needed to defeat it, and the solver must do the offset arithmetic.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "pwn"
+        }
+      ],
+      "x_ctft_category": "PWN",
+      "x_ctft_domain": "PWN",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-PWN-012"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1068",
+          "description": "Exploitation for Privilege Escalation"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--432e9a83-f7a1-50d3-85b5-ab7446893a35",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-PWN-012 - Compute the target address from the leaked pointer",
+      "description": "Parse the printed pointer, identify what it points at (stack slot or named global via the decompiler), then compute: PIE target = leaked address + (symbol − leaked symbol) from the static image; stack target = leaked stack address + fixed delta observed in GDB. Chain the computed address into the overflow payload.",
+      "x_ctft_category": "PWN",
+      "x_ctft_domain": "PWN",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-PWN-012"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1068",
+          "description": "Exploitation for Privilege Escalation"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--1c2b323d-acc1-53eb-9667-035c013ee399",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--432e9a83-f7a1-50d3-85b5-ab7446893a35",
+      "target_ref": "attack-pattern--aa425a74-277d-5eaa-b379-0dd4c22841d4",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     }
   ]
 }
