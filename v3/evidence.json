@@ -2,14 +2,10 @@
   "model": "CTFT",
   "schema_version": "3.0",
   "collection": "evidence",
-<<<<<<< HEAD
   "generated_at": "2026-10-12T15:53:23+00:00",
-=======
-  "generated_at": "2026-10-12T15:56:56+00:00",
->>>>>>> 1d31fd047e9f24c9031130cb2442237a7eafc532
   "note": "Seeded from links already present in the corpus, then overridden by v3/evidence.curated.json where a curator read the write-up. No entry is attested until positives, negatives and boundaries are written by hand.",
   "counts": {
-    "curated": 3,
+    "curated": 5,
     "attested": 2
   },
   "items": [
@@ -643,6 +639,96 @@
       "curator": null,
       "reviewed_on": null,
       "status": "seeded"
+    },
+    {
+      "id": "EVID-ICS-003",
+      "schema_version": "3.0",
+      "technique": "CTFTTE-ICS-003",
+      "challenges": [
+        {
+          "ctf": "HB CTF Try Out",
+          "challenge": "Shush Protocol - 900 (ICS)",
+          "year": 2026,
+          "writeup": "2026/HB/TRY/slush_protocol/slush.md (local casebook, workspace C:\\DATA\\CTF)",
+          "extracted_from": "read and confirmed: flag is the cleartext length-prefixed password the HMI (192.168.178.105) submits to the PLC (192.168.178.23:502) over a vendor diagnostic layer tunneled in Modbus/TCP function code 102 (0x66), sub-function 0x0010, recovered from traffic.pcapng frame 35 with tshark"
+        }
+      ],
+      "references": [],
+      "positives": [
+        "the secret rides a vendor/custom function code over a standard industrial port, so a function-code census isolates the minority traffic pattern",
+        "the custom layer keeps Modbus/TCP MBAP framing plus a 16-bit sub-function code and a length-prefixed ASCII payload, recoverable with tshark field extraction and a one-line decode",
+        "handshake semantics (heartbeat 0x0047, username query 0x0012, password submit 0x0010, post-auth heartbeat 0xe047) are all visible in one capture"
+      ],
+      "negatives": [
+        "a flag readable in a standard Modbus register read (FC 3) — that is CTFTTE-ICS-001 register concealment, no custom function code is exercised",
+        "a dissected standard protocol (S7comm, DNP3, BACnet) where the challenge is field knowledge, not reverse-engineering a proprietary extension"
+      ],
+      "boundaries": [
+        "distinct from CTFTTE-ICS-001 (Modbus holding-register concealment): the carrier is a custom function code and sub-function framing, not register data",
+        "distinct from CTFTTE-NET-007 (packet-capture forensics maze): the capture is small and single-purpose; the craft is protocol dissection, not maze navigation"
+      ],
+      "abstraction": "technique",
+      "synonyms": [
+        "vendor function code tunneling",
+        "Modbus custom diagnostic protocol",
+        "custom protocol over port 502"
+      ],
+      "external_mappings": [
+        {
+          "framework": "ATTACK",
+          "id": "T0842",
+          "confidence": "high",
+          "justification": "Network Sniffing (ICS ATT&CK) is the capture side; CTFT adds the custom function-code dissection craft ATT&CK omits."
+        }
+      ],
+      "curator": "local (slush_protocol casebook)",
+      "reviewed_on": "2026-10-21",
+      "status": "curated"
+    },
+    {
+      "id": "EVID-HWR-002",
+      "schema_version": "3.0",
+      "technique": "CTFTTE-HWR-002",
+      "challenges": [
+        {
+          "ctf": "HB CTF Try Out",
+          "challenge": "It's Oops PM (Hardware)",
+          "year": 2026,
+          "writeup": "2026/HB/TRY/Hardware/oops/oops.md (local casebook, workspace C:\\DATA\\CTF)",
+          "extracted_from": "read and confirmed: magic-constant input-gated hardware backdoor in a VHDL-emulated TPM-style crypto-processor, exposed as a TCP REPL at 154.57.164.74:38409; submitting the 16-bit magic input 0xFFE9 (1111111111101001) makes the service print the flag HTB{4_7yp1c41_53cu23_TPM_ch1p}; verified live twice"
+        }
+      ],
+      "references": [],
+      "positives": [
+        "the secret is an exact-match comparison against a magic constant hidden in embedded logic (VHDL), reachable only through the device's I/O protocol",
+        "a black-box sweep of the full input space is feasible when the gate is a single n-bit constant (2^16 inputs, ~0.15 s each, parallelizable across connections)",
+        "the live service behaves as a REPL: one persistent connection accepts many probe inputs, enabling both enumeration and verification in one session"
+      ],
+      "negatives": [
+        "a flag stored in readable firmware/EEPROM and dumped over UART/JTAG — no input-gated backdoor comparison is exercised",
+        "a USB HID capture (EVID-class of HWR-001) — no embedded logic gate involved"
+      ],
+      "boundaries": [
+        "partial fit vs the catalog description: the interface is a network service fronting an emulated chip, not a physical UART/JTAG/SPI dump; the embedded logic is VHDL source/emulation rather than a firmware binary",
+        "distinct from CTFTTE-REV-005 (constraint-gated flag check): the gate is a single magic constant, not a multi-constraint system needing SMT/symbolic solving"
+      ],
+      "abstraction": "technique",
+      "synonyms": [
+        "hardware backdoor magic constant",
+        "VHDL backdoor trigger",
+        "input-gated silicon backdoor"
+      ],
+      "external_mappings": [
+        {
+          "framework": "ATTACK",
+          "id": "T1601.001",
+          "confidence": "low",
+          "justification": "Modify System Process: Binary Padding is the closest ATT&CK echo for hidden implant logic; ATT&CK has no entry for magic-constant hardware backdoors."
+        }
+      ],
+      "curator": "local (oops casebook)",
+      "reviewed_on": "2026-10-21",
+      "status": "curated"
     }
   ]
 }
