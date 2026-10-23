@@ -26,6 +26,9 @@ Access logs of the discovery sweep document how the hidden surface was found.
 - feroxbuster
 - gobuster
 - browser devtools
+- [dirb](../tools/CTFTTOU-312.md)
+- [DirBuster](../tools/CTFTTOU-313.md)
+- [wfuzz](../tools/CTFTTOU-314.md)
 
 ## References
 

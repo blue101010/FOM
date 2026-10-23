@@ -32,6 +32,12 @@ the paths it reveals, and the configuration change that removes public access.
 | --- | --- | --- |
 | T1083 | File and Directory Discovery | Deployment-metadata disclosure echoes file/directory discovery. |
 
+## Tools
+
+- [dirb](../tools/CTFTTOU-312.md)
+- [Nikto](../tools/CTFTTOU-315.md)
+- [wget](../tools/CTFTTOU-318.md)
+
 ## References
 
 - <https://owasp.org/www-project-web-security-testing-guide/>

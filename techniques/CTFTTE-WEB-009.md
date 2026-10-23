@@ -23,6 +23,10 @@ application. The secret is represented only as a redacted challenge artifact.
 | --- | --- | --- |
 | T1552 | Unsecured Credentials | Configuration secret exposure echoes unsecured credentials. |
 
+## Tools
+
+- [Nikto](../tools/CTFTTOU-315.md)
+
 ## References
 
 - <https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html>

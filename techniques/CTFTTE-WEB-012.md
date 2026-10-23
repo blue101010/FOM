@@ -20,6 +20,7 @@ The flag is delivered to an admin/bot that visits attacker-controlled content; X
 
 - Burp Suite
 - browser devtools
+- [XSStrike](../tools/CTFTTOU-317.md)
 
 ## References
 

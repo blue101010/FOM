@@ -25,6 +25,7 @@ Public source maps are a build-pipeline hardening finding: they disclose develop
 - curl
 - browser devtools
 - webcrack
+- [wget](../tools/CTFTTOU-318.md)
 
 ## References
 

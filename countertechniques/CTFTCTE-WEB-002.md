@@ -24,6 +24,7 @@ Sequential access to non-owned IDs in logs is the signature of IDOR abuse.
 
 - Burp Suite
 - python requests
+- [wfuzz](../tools/CTFTTOU-314.md)
 
 ## References
 

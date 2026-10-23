@@ -25,6 +25,7 @@ Traversal attempts appear as ../ patterns in access logs.
 - Burp Suite
 - curl
 - ffuf
+- [wfuzz](../tools/CTFTTOU-314.md)
 
 ## References
 

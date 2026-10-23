@@ -24,6 +24,7 @@ XSS artifacts live in page source, logs and browser history; CSP reports corrobo
 
 - Burp Suite
 - browser devtools
+- [XSStrike](../tools/CTFTTOU-317.md)
 
 ## References
 

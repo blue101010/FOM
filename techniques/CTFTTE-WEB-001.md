@@ -22,6 +22,9 @@ The flag route is unlinked, hinted in comments, robots.txt, JS bundles or backup
 - feroxbuster
 - gobuster
 - browser devtools
+- [dirb](../tools/CTFTTOU-312.md)
+- [DirBuster](../tools/CTFTTOU-313.md)
+- [wfuzz](../tools/CTFTTOU-314.md)
 
 ## References
 

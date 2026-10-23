@@ -21,6 +21,7 @@ Source maps are deliberately public and confirm thematic sections — terminal s
 - curl
 - browser devtools
 - webcrack
+- [wget](../tools/CTFTTOU-318.md)
 
 ## References
 

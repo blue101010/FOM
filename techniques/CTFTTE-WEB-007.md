@@ -24,6 +24,12 @@ inventory instead of treating every listed path as accessible.
 | --- | --- | --- |
 | T1083 | File and Directory Discovery | Deployment-metadata disclosure echoes file/directory discovery. |
 
+## Tools
+
+- [dirb](../tools/CTFTTOU-312.md)
+- [Nikto](../tools/CTFTTOU-315.md)
+- [wget](../tools/CTFTTOU-318.md)
+
 ## References
 
 - <https://owasp.org/www-project-web-security-testing-guide/>

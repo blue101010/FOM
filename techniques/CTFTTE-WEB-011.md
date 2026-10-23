@@ -21,6 +21,7 @@ Path filters block traversal; the flag file is reachable only through filter qui
 - Burp Suite
 - curl
 - ffuf
+- [wfuzz](../tools/CTFTTOU-314.md)
 
 ## References
 

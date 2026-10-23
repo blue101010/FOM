@@ -18,8 +18,14 @@ Location is inferable only from landmarks, signage, vegetation, sun/shadow in an
 
 ## Tools
 
-- mapping imagery
-- sun-position calculators
+- [ExifTool](../tools/CTFTTOU-006.md)
+- [Google Earth Pro](../tools/CTFTTOU-319.md)
+- [SunCalc](../tools/CTFTTOU-320.md)
+- [Shadowmap](../tools/CTFTTOU-321.md)
+- [Yandex Images](../tools/CTFTTOU-322.md)
+- [Wikimapia](../tools/CTFTTOU-323.md)
+- [OpenStreetMap](../tools/CTFTTOU-324.md)
+- [Overpass Turbo](../tools/CTFTTOU-325.md)
 
 ## References
 

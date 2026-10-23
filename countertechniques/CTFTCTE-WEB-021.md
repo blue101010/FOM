@@ -24,6 +24,7 @@ Process-tree and command-line telemetry expose child-shell spawns and argument s
 
 - manual probing
 - process-spawn logging
+- [commix](../tools/CTFTTOU-316.md)
 
 ## References
 

@@ -21,6 +21,7 @@ The flag app is served only under a specific Host header or virtual host.
 - ffuf
 - gobuster
 - Burp Intruder
+- [wfuzz](../tools/CTFTTOU-314.md)
 
 ## References
 

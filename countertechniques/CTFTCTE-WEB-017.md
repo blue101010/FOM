@@ -25,6 +25,7 @@ Vhost discovery correlates TLS SNI and Host headers in proxy logs.
 - ffuf
 - gobuster
 - Burp Intruder
+- [wfuzz](../tools/CTFTTOU-314.md)
 
 ## References
 

@@ -20,6 +20,7 @@ The flag belongs to another object/user reachable by guessing an ID the UI never
 
 - Burp Suite
 - python requests
+- [wfuzz](../tools/CTFTTOU-314.md)
 
 ## References
 

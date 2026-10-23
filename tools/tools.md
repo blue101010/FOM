@@ -9,7 +9,7 @@ Reference tools used across CTFT techniques and counter-techniques.
 | [CTFTTOU-003](CTFTTOU-003.md) | UPX Fixer | <https://github.com/akamai/akamai-security-research/tree/main/UPX> | CTFTTE-REV-002, CTFTCTE-FOR-015, CTFTCTE-REV-002 |
 | [CTFTTOU-004](CTFTTOU-004.md) | ZXingReader | <https://github.com/zxing/zxing> | CTFTCTE-FOR-011, CTFTCTE-FOR-012 |
 | [CTFTTOU-005](CTFTTOU-005.md) | NTFS metadata analyzers | <https://www.sleuthkit.org/> | CTFTTE-FOR-003, CTFTTE-FOR-018, CTFTTE-FOR-022, CTFTCTE-FOR-003, CTFTCTE-FOR-018, CTFTCTE-FOR-022 |
-| [CTFTTOU-006](CTFTTOU-006.md) | ExifTool | <https://exiftool.org/> | CTFTTE-OSI-001, CTFTTE-STE-004, CTFTTE-STE-009, CTFTCTE-OSI-001, CTFTCTE-STE-004, CTFTCTE-STE-007, CTFTCTE-STE-009 |
+| [CTFTTOU-006](CTFTTOU-006.md) | ExifTool | <https://exiftool.org/> | CTFTTE-OSI-001, CTFTTE-OSI-004, CTFTTE-STE-004, CTFTTE-STE-009, CTFTCTE-OSI-001, CTFTCTE-OSI-004, CTFTCTE-STE-004, CTFTCTE-STE-007, CTFTCTE-STE-009 |
 | [CTFTTOU-007](CTFTTOU-007.md) | webcrack | <https://github.com/j4k0xb/webcrack> | CTFTCTE-WEB-019, CTFTCTE-WEB-022 |
 | [CTFTTOU-008](CTFTTOU-008.md) | Playwright | <https://playwright.dev/> | CTFTCTE-WEB-018, CTFTCTE-GAM-007, CTFTCTE-WEB-020, CTFTTE-AIM-002, CTFTCTE-AIM-002 |
 | [CTFTTOU-009](CTFTTOU-009.md) | ripgrep-all (rga) | <https://github.com/phiresky/ripgrep-all> | CTFTCTE-WEB-019 |
@@ -105,3 +105,17 @@ Reference tools used across CTFT techniques and counter-techniques.
 | [CTFTTOU-309](CTFTTOU-309.md) | KiCad GerbView | <https://www.kicad.org/> | CTFTTE-HWR-003, CTFTCTE-HWR-003 |
 | [CTFTTOU-310](CTFTTOU-310.md) | gerber-layer-inspect.py | [scripts/gerber-layer-inspect.py](scripts/gerber-layer-inspect.py) | CTFTTE-HWR-003, CTFTCTE-HWR-003 |
 | [CTFTTOU-311](CTFTTOU-311.md) | gerber-matplotlib-plot.py | [scripts/gerber-matplotlib-plot.py](scripts/gerber-matplotlib-plot.py) | CTFTTE-HWR-003, CTFTCTE-HWR-003 |
+| [CTFTTOU-312](CTFTTOU-312.md) | dirb | <https://dirb.sourceforge.net/> | CTFTCTE-WEB-001, CTFTCTE-WEB-007, CTFTTE-WEB-001, CTFTTE-WEB-007 |
+| [CTFTTOU-313](CTFTTOU-313.md) | DirBuster | <https://sourceforge.net/projects/dirbuster/> | CTFTCTE-WEB-001, CTFTTE-WEB-001 |
+| [CTFTTOU-314](CTFTTOU-314.md) | wfuzz | <https://github.com/xmendez/wfuzz> | CTFTCTE-WEB-001, CTFTCTE-WEB-002, CTFTCTE-WEB-011, CTFTCTE-WEB-017, CTFTTE-WEB-001, CTFTTE-WEB-002, CTFTTE-WEB-011, CTFTTE-WEB-017 |
+| [CTFTTOU-315](CTFTTOU-315.md) | Nikto | <https://github.com/sullo/nikto> | CTFTCTE-WEB-007, CTFTCTE-WEB-009, CTFTTE-WEB-007, CTFTTE-WEB-009 |
+| [CTFTTOU-316](CTFTTOU-316.md) | commix | <https://github.com/commixproject/commix> | CTFTCTE-WEB-021, CTFTTE-WEB-021 |
+| [CTFTTOU-317](CTFTTOU-317.md) | XSStrike | <https://github.com/s0md3v/XSStrike> | CTFTCTE-WEB-012, CTFTTE-WEB-012 |
+| [CTFTTOU-318](CTFTTOU-318.md) | wget | <https://www.gnu.org/software/wget/> | CTFTCTE-WEB-007, CTFTCTE-WEB-022, CTFTTE-WEB-007, CTFTTE-WEB-022 |
+| [CTFTTOU-319](CTFTTOU-319.md) | Google Earth Pro | <https://www.google.com/earth/about/versions/> | CTFTCTE-OSI-004, CTFTTE-OSI-004 |
+| [CTFTTOU-320](CTFTTOU-320.md) | SunCalc | <https://www.suncalc.org/> | CTFTCTE-OSI-004, CTFTTE-OSI-004 |
+| [CTFTTOU-321](CTFTTOU-321.md) | Shadowmap | <https://shadowmap.org/> | CTFTCTE-OSI-004, CTFTTE-OSI-004 |
+| [CTFTTOU-322](CTFTTOU-322.md) | Yandex Images | <https://yandex.com/images/> | CTFTCTE-OSI-004, CTFTTE-OSI-004 |
+| [CTFTTOU-323](CTFTTOU-323.md) | Wikimapia | <https://wikimapia.org/> | CTFTCTE-OSI-004, CTFTTE-OSI-004 |
+| [CTFTTOU-324](CTFTTOU-324.md) | OpenStreetMap | <https://www.openstreetmap.org/> | CTFTCTE-OSI-004, CTFTTE-OSI-004 |
+| [CTFTTOU-325](CTFTTOU-325.md) | Overpass Turbo | <https://overpass-turbo.eu/> | CTFTCTE-OSI-004, CTFTTE-OSI-004 |

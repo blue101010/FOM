@@ -20,6 +20,7 @@ A utility program (login prompt, ping wrapper, report generator) concatenates us
 
 - manual probing (apostrophe, separators, no-op command)
 - sqlmap only after a reproducible manual signal
+- [commix](../tools/CTFTTOU-316.md)
 
 ## References
 
