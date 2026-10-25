@@ -4,8 +4,8 @@ Every **Design / Hide Technique** (`CTFTTE-<CAT>-NNN`) and the
 **Resolution-Technique** (`CTFTCTE-<CAT>-NNN`) that recovers it, grouped by domain.
 IDs pair one-to-one: `CTFTTE-FOR-004` is always answered by `CTFTCTE-FOR-004`.
 
-> Generated from the files in `techniques/` and `countertechniques/` — corpus fingerprint `20b455a6728b804e`
-> by `v3/render_taxonomy_docs.py`. **206 complete pairs** across **20 active domains**. Do not hand-edit: rename the entry, then re-render.
+> Generated from the files in `techniques/` and `countertechniques/` — corpus fingerprint `4e379b8b8dfc9d2d`
+> by `v3/render_taxonomy_docs.py`. **209 complete pairs** across **20 active domains**. Do not hand-edit: rename the entry, then re-render.
 
 ---
 
@@ -26,7 +26,7 @@ Order follows the challenge-category picker.
 | 9 | [`BLK`](#ctft-ta-blk) | Blockchain | Blockchain | 5 |
 | 10 | [`AIM`](#ctft-ta-aim) | AI/ML | AI / ML | 7 |
 | 11 | [`ICS`](#ctft-ta-ics) | ICS/SCADA | ICS / SCADA | 9 |
-| 12 | [`MOB`](#ctft-ta-mob) | Mobile | Mobile | 5 |
+| 12 | [`MOB`](#ctft-ta-mob) | Mobile | Mobile | 8 |
 | 13 | [`JAL`](#ctft-ta-jal) | Jail escape | Jail / Sandbox Escape | 6 |
 | 14 | [`GAM`](#ctft-ta-gam) | Game/Proto | Game / Protocol Automation (GamePwn) | 8 |
 | 15 | [`COD`](#ctft-ta-cod) | Coding | Coding / Programming Puzzle | 7 |
@@ -35,7 +35,7 @@ Order follows the challenge-category picker.
 | 18 | [`HWR`](#ctft-ta-hwr) | Hardware | Hardware | 3 |
 | 19 | [`IOT`](#ctft-ta-iot) | IoT / Embedded | IoT / Embedded | 6 |
 | 20 | [`SDR`](#ctft-ta-sdr) | SDR / RF | Software-Defined Radio | 1 |
-| | | | **Total** | **206** |
+| | | | **Total** | **209** |
 
 **Retired — do not use.** `MSC` (Misc) was a catch-all whose entries all
 duplicated a precise domain; file those challenges under `JAL`, `COD`, `GAM`
@@ -275,7 +275,7 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 
 ## <a id="ctft-ta-mob"></a>`CTFT-TA-MOB` — Mobile
 
-> [domain page](tactics/CTFT-TA-MOB.md) · 5 pairs · HTB: Mobile
+> [domain page](tactics/CTFT-TA-MOB.md) · 8 pairs · HTB: Mobile
 
 | # | Technique ID | Hide / Design name | Resolution-technique ID | Recovery action |
 | --- | --- | --- | --- | --- |
@@ -284,6 +284,9 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 | 3 | [CTFTTE-MOB-003](techniques/CTFTTE-MOB-003.md) | Certificate pinning as capture barrier | [CTFTCTE-MOB-003](countertechniques/CTFTCTE-MOB-003.md) | Bypass pinning to observe traffic |
 | 4 | [CTFTTE-MOB-004](techniques/CTFTTE-MOB-004.md) | DEX obfuscation | [CTFTCTE-MOB-004](countertechniques/CTFTCTE-MOB-004.md) | Deobfuscate renamed/obfuscated bytecode |
 | 5 | [CTFTTE-MOB-005](techniques/CTFTTE-MOB-005.md) | Runtime/device-conditioned flag | [CTFTCTE-MOB-005](countertechniques/CTFTCTE-MOB-005.md) | Hook the app to satisfy runtime checks |
+| 6 | [CTFTTE-MOB-006](techniques/CTFTTE-MOB-006.md) | Native code anti-hooking | [CTFTCTE-MOB-006](countertechniques/CTFTCTE-MOB-006.md) | Bypass anti-hooking with Frida |
+| 7 | [CTFTTE-MOB-007](techniques/CTFTTE-MOB-007.md) | Memory-only encryption keys | [CTFTCTE-MOB-007](countertechniques/CTFTCTE-MOB-007.md) | Dump memory with Frida to extract keys |
+| 8 | [CTFTTE-MOB-008](techniques/CTFTTE-MOB-008.md) | Frida detection | [CTFTCTE-MOB-008](countertechniques/CTFTCTE-MOB-008.md) | Use anti-anti-Frida techniques |
 
 
 ## <a id="ctft-ta-jal"></a>`CTFT-TA-JAL` — Jail / Sandbox Escape

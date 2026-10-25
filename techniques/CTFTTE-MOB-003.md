@@ -20,7 +20,8 @@ TLS pinning prevents intercepting the request/response that carries the flag.
 
 - Frida
 - objection
-- mitmproxy/Burp
+- [mitmproxy](../tools/CTFTTOU-083.md)
+- [Burp Suite](../tools/CTFTTOU-077.md)
 
 ## References
 

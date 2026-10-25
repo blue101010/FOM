@@ -76,6 +76,12 @@ Reference tools used across CTFT techniques and counter-techniques.
 | [CTFTTOU-073](CTFTTOU-073.md) | ghidra | <https://ghidra-sre.org/> | CTFTTE-GAM-004, CTFTCTE-GAM-004, CTFTTE-HWR-002, CTFTCTE-HWR-002, CTFTTE-PWN-009, CTFTCTE-PWN-009, CTFTTE-PWN-010, CTFTCTE-PWN-010, CTFTTE-REV-001, CTFTCTE-REV-001, CTFTTE-REV-008, CTFTCTE-REV-008, CTFTTE-REV-009, CTFTCTE-REV-009, CTFTTE-REV-010, CTFTCTE-REV-010 |
 | [CTFTTOU-074](CTFTTOU-074.md) | python tarfile | <https://docs.python.org/3/library/tarfile.html> | CTFTTE-PWN-010, CTFTCTE-PWN-010 |
 | [CTFTTOU-076](CTFTTOU-076.md) | inotify-tools | <https://github.com/inotify-tools/inotify-tools> | CTFTTE-FOR-030, CTFTCTE-FOR-030 |
+| [CTFTTOU-077](CTFTTOU-077.md) | Burp Suite | <https://portswigger.net/burp> | CTFTCTE-MOB-003, CTFTTE-MOB-003 |
+| [CTFTTOU-083](CTFTTOU-083.md) | mitmproxy | <https://mitmproxy.org/> | CTFTCTE-MOB-003, CTFTTE-MOB-003 |
+| [CTFTTOU-169](CTFTTOU-169.md) | Frida | <https://frida.re/> | CTFTCTE-MOB-003, CTFTCTE-MOB-005, CTFTCTE-REV-001, CTFTTE-MOB-003, CTFTTE-MOB-005, CTFTTE-REV-001 |
+| [CTFTTOU-170](CTFTTOU-170.md) | objection | <https://github.com/sensepost/objection> | CTFTCTE-MOB-003, CTFTCTE-MOB-005, CTFTTE-MOB-003, CTFTTE-MOB-005 |
+| [CTFTTOU-171](CTFTTOU-171.md) | apktool | <https://github.com/iBotPeaches/Apktool> | CTFTCTE-MOB-001, CTFTCTE-MOB-004, CTFTTE-MOB-001, CTFTTE-MOB-004 |
+| [CTFTTOU-172](CTFTTOU-172.md) | jadx | <https://github.com/skylot/jadx> | CTFTCTE-MOB-001, CTFTCTE-MOB-002, CTFTCTE-MOB-004, CTFTTE-MOB-001, CTFTTE-MOB-002, CTFTTE-MOB-004 |
 | [CTFTTOU-271](CTFTTOU-271.md) | graphql-schema-dump.py | [scripts/graphql-schema-dump.py](scripts/graphql-schema-dump.py) | CTFTTE-WEB-023, CTFTCTE-WEB-023 |
 | [CTFTTOU-272](CTFTTOU-272.md) | inql | <https://github.com/doyensec/inql> | CTFTTE-WEB-023, CTFTCTE-WEB-023 |
 | [CTFTTOU-276](CTFTTOU-276.md) | mosquitto clients | <https://mosquitto.org/> | CTFTTE-IOT-003, CTFTCTE-IOT-003 || [CTFTTOU-277](CTFTTOU-277.md) | ubertooth / killerbee | <https://github.com/greatscottgadgets/ubertooth> | CTFTTE-IOT-005, CTFTCTE-IOT-005 |
@@ -119,3 +125,7 @@ Reference tools used across CTFT techniques and counter-techniques.
 | [CTFTTOU-323](CTFTTOU-323.md) | Wikimapia | <https://wikimapia.org/> | CTFTCTE-OSI-004, CTFTTE-OSI-004 |
 | [CTFTTOU-324](CTFTTOU-324.md) | OpenStreetMap | <https://www.openstreetmap.org/> | CTFTCTE-OSI-004, CTFTTE-OSI-004 |
 | [CTFTTOU-325](CTFTTOU-325.md) | Overpass Turbo | <https://overpass-turbo.eu/> | CTFTCTE-OSI-004, CTFTTE-OSI-004 |
+| [CTFTTOU-326](CTFTTOU-326.md) | x64dbg | <https://x64dbg.com/> | CTFTCTE-REV-001 |
+| [CTFTTOU-327](CTFTTOU-327.md) | frida-gadget | <https://frida.re/docs/gadget/> | CTFTCTE-MOB-008 |
+| [CTFTTOU-328](CTFTTOU-328.md) | frida-gum | <https://frida.re/docs/gum/> | CTFTCTE-MOB-006, CTFTCTE-MOB-008 |
+| [CTFTTOU-329](CTFTTOU-329.md) | adb | <https://developer.android.com/studio/command-line/adb> | CTFTCTE-MOB-001, CTFTCTE-MOB-002, CTFTCTE-MOB-003, CTFTCTE-MOB-004, CTFTCTE-MOB-005, CTFTCTE-MOB-006, CTFTCTE-MOB-007, CTFTCTE-MOB-008 |

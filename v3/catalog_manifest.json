@@ -1,10 +1,10 @@
 {
   "model": "CTFT",
   "schema_version": "3.0",
-  "generated_at": "2026-10-23T03:02:30+00:00",
+  "generated_at": "2026-10-25T02:50:55+00:00",
   "source": {
     "correlation_sha256": "b1ce824a729451d04332418719ce7a9435a651e60107d0ce8f911424112d48ea",
-    "legacy_index_sha256": "6b06acf339d91498761eec524d5e85930e43f2390d547595cd74c1bdefdad5de"
+    "legacy_index_sha256": "968d7f910a4bfd481cfafd8eae04e85895a08299fa221a6a6416779297291ae9"
   },
   "taxonomy": {
     "tactics": [

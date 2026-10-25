@@ -2,7 +2,7 @@
   "model": "CTFT",
   "schema_version": "3.0",
   "collection": "evidence",
-  "generated_at": "2026-10-12T15:53:23+00:00",
+  "generated_at": "2026-10-25T02:51:00+00:00",
   "note": "Seeded from links already present in the corpus, then overridden by v3/evidence.curated.json where a curator read the write-up. No entry is attested until positives, negatives and boundaries are written by hand.",
   "counts": {
     "curated": 5,
@@ -581,6 +581,87 @@
       "status": "curated"
     },
     {
+      "id": "EVID-HWR-003",
+      "schema_version": "3.0",
+      "technique": "CTFTTE-HWR-003",
+      "challenges": [
+        {
+          "ctf": "HTB CTF Try Out (replay of HTB Cyber Apocalypse 2023: The Cursed Mission)",
+          "challenge": "Critical Flight (Hardware)",
+          "year": 2026,
+          "writeup": "2026/HB/TRY/Critical_Flight/critical_flight.md (local casebook, workspace C:\\DATA\\CTF)",
+          "extracted_from": "read and confirmed: KiCad 6.0.9 Gerber package of a sabotaged HadesMicro flight controller; extra copper text strokes on B_Cu (vertical, 0.25 mm, reads HTB{533_7h3_1nn32_w02k1n95 at 270 deg unmirrored) and on inner layer In1_Cu (horizontal, 0.20 mm, reads _0f_313c720n1c5#$@}); flag submitted and accepted. Reproduced 2026-10-22 with FOM tools/scripts/gerber-layer-inspect.py (hunt: exactly 2 clusters, 0 false positives; diff vs upstream pms67/HadesFCS: only these 2 additions)"
+        }
+      ],
+      "references": [
+        "https://ctfbase.com/writeup/20260128_htb_critical_flight",
+        "https://cristi075.github.io/posts/htb-cyber-apocalypse-2023-critical-flight/",
+        "https://github.com/pms67/HadesFCS",
+        "https://tracespace.io/view/"
+      ],
+      "positives": [
+        "the payload is geometry (stroked copper text) inside Gerber fabrication files and exists only once coordinates are plotted; strings/grep on the plain-text files reveal nothing",
+        "the hiding place is a layer invisible on the finished board (inner copper In1_Cu) or one the composite render does not isolate, so a per-layer view is mandatory",
+        "the payload strokes form connected components touching no pad, via or pour, which makes them separable from real traces without any reference design",
+        "the challenge story names a modified open-source design, so the upstream Gerbers serve as a diff baseline"
+      ],
+      "negatives": [
+        "a flag in firmware/EEPROM dumped over UART/JTAG/SPI from a physical or emulated device (CTFTTE-HWR-002): the evidence is executable content, not plotted geometry",
+        "a flag in the board's silkscreen/fab text that is plainly visible in a composite render: no layer-level concealment",
+        "a schematic/netlist puzzle where the secret is a logic function of the circuit rather than drawn geometry"
+      ],
+      "boundaries": [
+        "single event so far (one challenge, replayed): not yet attested, which needs >= 2 independent events",
+        "split payloads across layers need ordering by flag delimiters; one fragment alone can look complete",
+        "cross-version diffs are noisy (KiCad 5 strokes zone fills, KiCad 6 emits G36 regions): only large ADDED clusters are signal"
+      ],
+      "abstraction": "technique",
+      "synonyms": [
+        "hidden text in PCB inner layer",
+        "Gerber steganography",
+        "copper-layer flag",
+        "sabotaged PCB production files"
+      ],
+      "external_mappings": [
+        {
+          "framework": "ATTACK",
+          "id": "T1195.003",
+          "confidence": "medium",
+          "justification": "Compromise Hardware Supply Chain covers tampering with hardware before delivery; CTFT adds the per-layer plotting and reference-diff recovery ATT&CK omits."
+        }
+      ],
+      "curator": "local (critical_flight casebook)",
+      "reviewed_on": "2026-10-22",
+      "status": "curated"
+    },
+    {
+      "id": "EVID-PWN-001",
+      "schema_version": "3.0",
+      "technique": "CTFTTE-PWN-001",
+      "challenges": [
+        {
+          "ctf": "HTB Cyber Santa 2021",
+          "challenge": "Pwn :: Mr. Snowy",
+          "year": 2021,
+          "writeup": "https://github.com/jselliott/HTBCyberSanta2021/blob/main/pwn/mr_snowy/README.md",
+          "extracted_from": "read and confirmed: Ghidra shows unreferenced deactivate_camera() printing flag.txt (win function), investigate() reads 0x108 bytes into a 64-byte stack buffer, No PIE/No canary; payload redirects the saved return address to 0x401165. Reproduced locally with GhidraMCP decompilation on 2026-10-15 (fhp)."
+        }
+      ],
+      "references": [
+        "https://github.com/bethington/ghidra-mcp"
+      ],
+      "positives": [
+        "a flag-printing function exists in the binary but has zero callers (confirmed via cross-references), so reaching it requires control-flow hijack",
+        "an unchecked read (264 bytes) into a small stack buffer with No PIE and No canary makes the saved return address directly overwritable",
+        "the whole exploit is one payload: fill buffer, saved rbp, then the fixed win-function address (no leak, no ROP)"
+      ],
+      "negatives": [
+        "ROP chains or ret2libc when the win function is missing - that is CTFTTE-PWN-004 territory",
+        "stack canary/PIE present - that is CTFTTE-PWN-006 (leak first)",
+        "format-string-driven leaks or writes - that is CTFTTE-PWN-002"
+      ]
+    },
+    {
       "id": "EVID-STE-006",
       "schema_version": "3.0",
       "technique": "CTFTTE-STE-006",
@@ -639,150 +720,6 @@
       "curator": null,
       "reviewed_on": null,
       "status": "seeded"
-    },
-    {
-      "id": "EVID-ICS-003",
-      "schema_version": "3.0",
-      "technique": "CTFTTE-ICS-003",
-      "challenges": [
-        {
-          "ctf": "HB CTF Try Out",
-          "challenge": "Shush Protocol - 900 (ICS)",
-          "year": 2026,
-          "writeup": "2026/HB/TRY/slush_protocol/slush.md (local casebook, workspace C:\\DATA\\CTF)",
-          "extracted_from": "read and confirmed: flag is the cleartext length-prefixed password the HMI (192.168.178.105) submits to the PLC (192.168.178.23:502) over a vendor diagnostic layer tunneled in Modbus/TCP function code 102 (0x66), sub-function 0x0010, recovered from traffic.pcapng frame 35 with tshark"
-        }
-      ],
-      "references": [],
-      "positives": [
-        "the secret rides a vendor/custom function code over a standard industrial port, so a function-code census isolates the minority traffic pattern",
-        "the custom layer keeps Modbus/TCP MBAP framing plus a 16-bit sub-function code and a length-prefixed ASCII payload, recoverable with tshark field extraction and a one-line decode",
-        "handshake semantics (heartbeat 0x0047, username query 0x0012, password submit 0x0010, post-auth heartbeat 0xe047) are all visible in one capture"
-      ],
-      "negatives": [
-        "a flag readable in a standard Modbus register read (FC 3) — that is CTFTTE-ICS-001 register concealment, no custom function code is exercised",
-        "a dissected standard protocol (S7comm, DNP3, BACnet) where the challenge is field knowledge, not reverse-engineering a proprietary extension"
-      ],
-      "boundaries": [
-        "distinct from CTFTTE-ICS-001 (Modbus holding-register concealment): the carrier is a custom function code and sub-function framing, not register data",
-        "distinct from CTFTTE-NET-007 (packet-capture forensics maze): the capture is small and single-purpose; the craft is protocol dissection, not maze navigation"
-      ],
-      "abstraction": "technique",
-      "synonyms": [
-        "vendor function code tunneling",
-        "Modbus custom diagnostic protocol",
-        "custom protocol over port 502"
-      ],
-      "external_mappings": [
-        {
-          "framework": "ATTACK",
-          "id": "T0842",
-          "confidence": "high",
-          "justification": "Network Sniffing (ICS ATT&CK) is the capture side; CTFT adds the custom function-code dissection craft ATT&CK omits."
-        }
-      ],
-      "curator": "local (slush_protocol casebook)",
-      "reviewed_on": "2026-10-21",
-      "status": "curated"
-    },
-    {
-      "id": "EVID-HWR-002",
-      "schema_version": "3.0",
-      "technique": "CTFTTE-HWR-002",
-      "challenges": [
-        {
-          "ctf": "HB CTF Try Out",
-          "challenge": "It's Oops PM (Hardware)",
-          "year": 2026,
-          "writeup": "2026/HB/TRY/Hardware/oops/oops.md (local casebook, workspace C:\\DATA\\CTF)",
-          "extracted_from": "read and confirmed: magic-constant input-gated hardware backdoor in a VHDL-emulated TPM-style crypto-processor, exposed as a TCP REPL at 154.57.164.74:38409; submitting the 16-bit magic input 0xFFE9 (1111111111101001) makes the service print the flag HTB{4_7yp1c41_53cu23_TPM_ch1p}; verified live twice"
-        }
-      ],
-      "references": [],
-      "positives": [
-        "the secret is an exact-match comparison against a magic constant hidden in embedded logic (VHDL), reachable only through the device's I/O protocol",
-        "a black-box sweep of the full input space is feasible when the gate is a single n-bit constant (2^16 inputs, ~0.15 s each, parallelizable across connections)",
-        "the live service behaves as a REPL: one persistent connection accepts many probe inputs, enabling both enumeration and verification in one session"
-      ],
-      "negatives": [
-        "a flag stored in readable firmware/EEPROM and dumped over UART/JTAG — no input-gated backdoor comparison is exercised",
-        "a USB HID capture (EVID-class of HWR-001) — no embedded logic gate involved"
-      ],
-      "boundaries": [
-        "partial fit vs the catalog description: the interface is a network service fronting an emulated chip, not a physical UART/JTAG/SPI dump; the embedded logic is VHDL source/emulation rather than a firmware binary",
-        "distinct from CTFTTE-REV-005 (constraint-gated flag check): the gate is a single magic constant, not a multi-constraint system needing SMT/symbolic solving"
-      ],
-      "abstraction": "technique",
-      "synonyms": [
-        "hardware backdoor magic constant",
-        "VHDL backdoor trigger",
-        "input-gated silicon backdoor"
-      ],
-      "external_mappings": [
-        {
-          "framework": "ATTACK",
-          "id": "T1601.001",
-          "confidence": "low",
-          "justification": "Modify System Process: Binary Padding is the closest ATT&CK echo for hidden implant logic; ATT&CK has no entry for magic-constant hardware backdoors."
-        }
-      ],
-      "curator": "local (oops casebook)",
-      "reviewed_on": "2026-10-21",
-      "status": "curated"
-    },
-    {
-      "id": "EVID-HWR-003",
-      "schema_version": "3.0",
-      "technique": "CTFTTE-HWR-003",
-      "challenges": [
-        {
-          "ctf": "HTB CTF Try Out (replay of HTB Cyber Apocalypse 2023: The Cursed Mission)",
-          "challenge": "Critical Flight (Hardware)",
-          "year": 2026,
-          "writeup": "2026/HB/TRY/Critical_Flight/critical_flight.md (local casebook, workspace C:\\DATA\\CTF)",
-          "extracted_from": "read and confirmed: KiCad 6.0.9 Gerber package of a sabotaged HadesMicro flight controller; extra copper text strokes on B_Cu (vertical, 0.25 mm, reads HTB{533_7h3_1nn32_w02k1n95 at 270 deg unmirrored) and on inner layer In1_Cu (horizontal, 0.20 mm, reads _0f_313c720n1c5#$@}); flag submitted and accepted. Reproduced 2026-10-22 with FOM tools/scripts/gerber-layer-inspect.py (hunt: exactly 2 clusters, 0 false positives; diff vs upstream pms67/HadesFCS: only these 2 additions)"
-        }
-      ],
-      "references": [
-        "https://ctfbase.com/writeup/20260128_htb_critical_flight",
-        "https://cristi075.github.io/posts/htb-cyber-apocalypse-2023-critical-flight/",
-        "https://github.com/pms67/HadesFCS",
-        "https://tracespace.io/view/"
-      ],
-      "positives": [
-        "the payload is geometry (stroked copper text) inside Gerber fabrication files and exists only once coordinates are plotted; strings/grep on the plain-text files reveal nothing",
-        "the hiding place is a layer invisible on the finished board (inner copper In1_Cu) or one the composite render does not isolate, so a per-layer view is mandatory",
-        "the payload strokes form connected components touching no pad, via or pour, which makes them separable from real traces without any reference design",
-        "the challenge story names a modified open-source design, so the upstream Gerbers serve as a diff baseline"
-      ],
-      "negatives": [
-        "a flag in firmware/EEPROM dumped over UART/JTAG/SPI from a physical or emulated device (CTFTTE-HWR-002): the evidence is executable content, not plotted geometry",
-        "a flag in the board's silkscreen/fab text that is plainly visible in a composite render: no layer-level concealment",
-        "a schematic/netlist puzzle where the secret is a logic function of the circuit rather than drawn geometry"
-      ],
-      "boundaries": [
-        "single event so far (one challenge, replayed): not yet attested, which needs >= 2 independent events",
-        "split payloads across layers need ordering by flag delimiters; one fragment alone can look complete",
-        "cross-version diffs are noisy (KiCad 5 strokes zone fills, KiCad 6 emits G36 regions): only large ADDED clusters are signal"
-      ],
-      "abstraction": "technique",
-      "synonyms": [
-        "hidden text in PCB inner layer",
-        "Gerber steganography",
-        "copper-layer flag",
-        "sabotaged PCB production files"
-      ],
-      "external_mappings": [
-        {
-          "framework": "ATTACK",
-          "id": "T1195.003",
-          "confidence": "medium",
-          "justification": "Compromise Hardware Supply Chain covers tampering with hardware before delivery; CTFT adds the per-layer plotting and reference-diff recovery ATT&CK omits."
-        }
-      ],
-      "curator": "local (critical_flight casebook)",
-      "reviewed_on": "2026-10-22",
-      "status": "curated"
     }
   ]
 }

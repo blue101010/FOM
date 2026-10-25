@@ -2,7 +2,7 @@
 
 > **Domain ID:** `CTFT-TA-MOB`  
 > **HTB mapping:** HTB: Mobile  
-> **Techniques:** 5
+> **Techniques:** 8
 
 ## Description
 
@@ -31,6 +31,9 @@ per entry**, never the definition of an entry.
 | [CTFTTE-MOB-003](../techniques/CTFTTE-MOB-003.md) | Certificate pinning as capture barrier | [CTFTCTE-MOB-003](../countertechniques/CTFTCTE-MOB-003.md) | Bypass pinning to observe traffic | T1557 |
 | [CTFTTE-MOB-004](../techniques/CTFTTE-MOB-004.md) | DEX obfuscation | [CTFTCTE-MOB-004](../countertechniques/CTFTCTE-MOB-004.md) | Deobfuscate renamed/obfuscated bytecode | T1406 |
 | [CTFTTE-MOB-005](../techniques/CTFTTE-MOB-005.md) | Runtime/device-conditioned flag | [CTFTCTE-MOB-005](../countertechniques/CTFTCTE-MOB-005.md) | Hook the app to satisfy runtime checks | T1497 |
+| [CTFTTE-MOB-006](../techniques/CTFTTE-MOB-006.md) | Native code anti-hooking | [CTFTCTE-MOB-006](../countertechniques/CTFTCTE-MOB-006.md) | Bypass anti-hooking with Frida | T1406 |
+| [CTFTTE-MOB-007](../techniques/CTFTTE-MOB-007.md) | Memory-only encryption keys | [CTFTCTE-MOB-007](../countertechniques/CTFTCTE-MOB-007.md) | Dump memory with Frida to extract keys | T1552 |
+| [CTFTTE-MOB-008](../techniques/CTFTTE-MOB-008.md) | Frida detection | [CTFTCTE-MOB-008](../countertechniques/CTFTCTE-MOB-008.md) | Use anti-anti-Frida techniques | T1622 |
 
 ---
 *See [CORRELATION.md](../CORRELATION.md) for the full cross-reference matrix.*

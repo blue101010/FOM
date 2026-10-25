@@ -24,7 +24,8 @@ Instrumentation logs show where validation was disabled to enable capture.
 
 - Frida
 - objection
-- mitmproxy/Burp
+- [mitmproxy](../tools/CTFTTOU-083.md)
+- [Burp Suite](../tools/CTFTTOU-077.md)
 
 ## References
 

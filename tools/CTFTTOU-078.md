@@ -20,11 +20,11 @@ CTFTCTE-FPN-001, CTFTCTE-WEB-001, CTFTTE-FPN-001, CTFTTE-WEB-001
 Editable reference list — one entry per line.
 
 <!-- CRUD — to maintain this list:
-  Create : copy the template line below and fill label + URL (+ optional note).
+  Create : add a new bullet line with a label and its URL.
   Read   : the list below.
   Update : edit an existing line in place.
   Delete : remove the line.
-  Template: - [Label](URL) — one-line note
+  Line format: - Label — URL — one-line note
 -->
 
 - [THM Interceptor — f4ls3p0sm00d writeup](https://f4ls3p0sm00d.github.io/posts/thm-interceptor/)
