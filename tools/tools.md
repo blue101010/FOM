@@ -18,6 +18,8 @@ Reference tools used across CTFT techniques and counter-techniques.
 | [CTFTTOU-012](CTFTTOU-012.md) | Katana | <https://github.com/projectdiscovery/katana> | CTFTCTE-WEB-001, CTFTCTE-GAM-007 |
 | [CTFTTOU-013](CTFTTOU-013.md) | ffuf | <https://github.com/ffuf/ffuf> | CTFTCTE-WEB-001, CTFTCTE-WEB-017, CTFTCTE-WEB-020 |
 | [CTFTTOU-014](CTFTTOU-014.md) | sqlmap | <https://sqlmap.org/> | CTFTTE-WEB-004, CTFTCTE-WEB-004, CTFTCTE-WEB-021 |
+| [CTFTTOU-078](CTFTTOU-078.md) | feroxbuster | <https://github.com/epi052/feroxbuster> | CTFTCTE-FPN-001, CTFTCTE-WEB-001, CTFTTE-FPN-001, CTFTTE-WEB-001 |
+| [CTFTTOU-079](CTFTTOU-079.md) | gobuster | <https://github.com/OJ/gobuster> | CTFTCTE-WEB-001, CTFTCTE-WEB-017, CTFTTE-WEB-001, CTFTTE-WEB-017 |
 | [CTFTTOU-015](CTFTTOU-015.md) | hashcat | <https://hashcat.net/hashcat/> | CTFTCTE-CRY-012, CTFTTE-WEB-003 |
 | [CTFTTOU-016](CTFTTOU-016.md) | netexec | <https://github.com/Pennyw0rth/NetExec> | CTFTTE-FPN-015, CTFTCTE-FPN-015, CTFTTE-FPN-018, CTFTCTE-FPN-018, CTFTTE-FPN-019, CTFTCTE-FPN-019 |
 | [CTFTTOU-018](CTFTTOU-018.md) | pywhisker | <https://github.com/ShutdownRepo/pywhisker> | CTFTTE-FPN-011, CTFTCTE-FPN-011 |
@@ -129,3 +131,7 @@ Reference tools used across CTFT techniques and counter-techniques.
 | [CTFTTOU-327](CTFTTOU-327.md) | frida-gadget | <https://frida.re/docs/gadget/> | CTFTCTE-MOB-008 |
 | [CTFTTOU-328](CTFTTOU-328.md) | frida-gum | <https://frida.re/docs/gum/> | CTFTCTE-MOB-006, CTFTCTE-MOB-008 |
 | [CTFTTOU-329](CTFTTOU-329.md) | adb | <https://developer.android.com/studio/command-line/adb> | CTFTCTE-MOB-001, CTFTCTE-MOB-002, CTFTCTE-MOB-003, CTFTCTE-MOB-004, CTFTCTE-MOB-005, CTFTCTE-MOB-006, CTFTCTE-MOB-007, CTFTCTE-MOB-008 |
+| [CTFTTOU-330](CTFTTOU-330.md) | NetExec | <https://github.com/Pennyw0rth/NetExec> | CTFTTE-FPN-001, CTFTTE-FPN-002, CTFTTE-FPN-006, CTFTTE-FPN-009, CTFTTE-FPN-010, CTFTTE-FPN-011, CTFTTE-FPN-012, CTFTTE-FPN-013, CTFTTE-FPN-014, CTFTTE-FPN-015, CTFTTE-FPN-016, CTFTTE-FPN-017, CTFTTE-FPN-018, CTFTTE-FPN-019, CTFTTE-FPN-020 |
+| [CTFTTOU-331](CTFTTOU-331.md) | Arjun | <https://github.com/s0md3v/Arjun> | CTFTCTE-WEB-001, CTFTCTE-WEB-017, CTFTCTE-WEB-020, CTFTTE-WEB-001, CTFTTE-WEB-017, CTFTTE-WEB-020 |
+| [CTFTTOU-332](CTFTTOU-332.md) | Kiterunner | <https://github.com/assetnote/kiterunner> | CTFTCTE-WEB-001, CTFTCTE-WEB-017, CTFTCTE-WEB-020, CTFTTE-WEB-001, CTFTTE-WEB-017, CTFTTE-WEB-020 |
+| [CTFTTOU-333](CTFTTOU-333.md) | WhatWeb | <https://github.com/urbanadventurer/WhatWeb> | CTFTCTE-WEB-001, CTFTCTE-WEB-007, CTFTCTE-WEB-009, CTFTTE-WEB-007, CTFTTE-WEB-009 |
