@@ -2,7 +2,7 @@
   "model": "CTFT",
   "schema_version": "3.0",
   "collection": "evidence",
-  "generated_at": "2026-10-26T01:47:13+00:00",
+  "generated_at": "2026-10-26T02:15:28+00:00",
   "note": "Seeded from links already present in the corpus, then overridden by v3/evidence.curated.json where a curator read the write-up. No entry is attested until positives, negatives and boundaries are written by hand.",
   "counts": {
     "curated": 6,

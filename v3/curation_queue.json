@@ -2,7 +2,7 @@
   "model": "CTFT",
   "schema_version": "3.0",
   "collection": "curation_queue",
-  "generated_at": "2026-10-26T01:44:47+00:00",
+  "generated_at": "2026-10-26T02:15:28+00:00",
   "source_sha256": "388fb18046e3c12dc70bd5cca00495177336d0346b1add5c029368e471971e34",
   "pending_count": 206,
   "by_tactic": {
@@ -1259,7 +1259,7 @@
         "pair_id": "CTFTPAIR-SDR-002",
         "counter_technique": "CTFTCTE-SDR-002",
         "missing": [
-          "evidence_record"
+          "second_independent_challenge"
         ]
       },
       {

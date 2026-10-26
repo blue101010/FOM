@@ -512,7 +512,7 @@ def link_problems() -> list[str]:
     problems: list[str] = []
     pages = [ROOT / "README.md", ROOT / "SCHEMA_V3.md", ROOT / "CORRELATION.md",
              ROOT / "TODO.md"]
-    for directory in ("techniques", "countertechniques", "tactics", "tools", "to_categorize"):
+    for directory in ("techniques", "countertechniques", "tactics", "tools", "skills", "to_categorize"):
         base = ROOT / directory
         if base.exists():
             pages += sorted(base.rglob("*.md"))

@@ -1,10 +1,10 @@
 {
   "model": "CTFT",
   "schema_version": "3.0",
-  "generated_at": "2026-10-26T01:44:46+00:00",
+  "generated_at": "2026-10-26T02:15:26+00:00",
   "source": {
     "correlation_sha256": "388fb18046e3c12dc70bd5cca00495177336d0346b1add5c029368e471971e34",
-    "legacy_index_sha256": "fc7319e94cf95a7d929ba45e061fedd1f537171f5af3ec0dfd23f9fc46b07f60"
+    "legacy_index_sha256": "ce4ad87f3831b5c7a27b5f2b5a08205b41462dc3ac020ca6bb99d1e8587d194c"
   },
   "taxonomy": {
     "tactics": [
@@ -75,10 +75,10 @@
       "placeholder_free": 1
     },
     "stix_object_types": {
-      "attack-pattern": 206,
-      "course-of-action": 206,
+      "attack-pattern": 213,
+      "course-of-action": 213,
       "identity": 1,
-      "relationship": 206,
+      "relationship": 213,
       "x-ctft-tactic": 20
     },
     "placeholder_entries": [
