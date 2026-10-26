@@ -246,6 +246,60 @@
       "curator": "local (critical_flight casebook)",
       "reviewed_on": "2026-10-22",
       "status": "curated"
+    },
+    {
+      "id": "EVID-SDR-002",
+      "schema_version": "3.0",
+      "technique": "CTFTTE-SDR-002",
+      "challenges": [
+        {
+          "ctf": "Hack The Box (Hardware challenge)",
+          "challenge": "RFlag (Hardware, Easy, author 7Rocky)",
+          "year": 2022,
+          "writeup": ".agents/ctf/ctf-sdr/HTB_RF/RFflag.pdf (official write-up by lordrukie, 2022-09-30; local casebook HTB_challenge_RFlag.md, workspace C:\\DATA\\CTF)",
+          "extracted_from": "read and confirmed: official write-up loads signal.cf32 (raw IQ, no stated sample rate or centre) in inspectrum, thresholds the amplitude plot into ASK/OOK symbols, recognises Manchester (no run longer than two symbols), keeps every other bit and converts to hex/ASCII after a preamble and sync word; the PDF opens with the flag HTB{RF_H4ck1n6_1s_c00l!!!}. Reproduced 2026-10-25 with .agents/ctf/ctf-sdr/scripts/ook_decode.py (auto carrier -226.1 kHz, 521 symbols, Manchester phase 0 G.E. Thomas, 32-bit 0xAA preamble, flag recovered) and HTB_RF/solve_rflag.py; the 439 us symbol unit holds only under the assumed 2.048 MS/s"
+        }
+      ],
+      "references": [
+        "https://github.com/miek/inspectrum",
+        "https://github.com/merbanan/rtl_433/blob/master/docs/ANALYZE.md",
+        "https://en.wikipedia.org/wiki/Manchester_code"
+      ],
+      "positives": [
+        "a single narrow carrier keyed fully on and off (amplitude only), story about a remote, key fob or garage door",
+        "inside the burst no run exceeds two symbol units, the Manchester signature; decoding keeps one symbol per pair",
+        "decoded stream starts with a 1010... preamble (0xAA bytes) and a fixed sync word before the flag bytes"
+      ],
+      "negatives": [
+        "FSK/PSK/QAM where the modulation itself must be recovered (CTFTTE-SDR-001)",
+        "a standard protocol with its own decoder and checksum such as POCSAG, AX.25 or ADS-B (CTFTTE-SDR-004)",
+        "an IoT stack where pairing keys or a Zigbee/BLE layer are the barrier (CTFTTE-IOT-005)",
+        "tones or spectrogram art already in an audio file (CTFTTE-STE-003 / CTFTTE-STE-010)"
+      ],
+      "boundaries": [
+        "single event so far: not attested, which needs >= 2 independent events",
+        "absolute timings depend on the assumed sample rate; the symbol/bit decode is rate-independent",
+        "the capture is a saturated 8-bit recording converted to cf32 (256 levels, about 41 % of I/Q values on the -1.0 / +0.992 rails); saturation does not hurt OOK decoding but breaks amplitude-based analyses",
+        "Manchester convention and pair phase are ambiguous: all four combinations must be tried and scored"
+      ],
+      "abstraction": "technique",
+      "synonyms": [
+        "garage door remote signal",
+        "OOK Manchester decoding",
+        "ASK key fob capture",
+        "433 MHz remote flag"
+      ],
+      "external_mappings": [
+        {
+          "framework": "ATTACK",
+          "id": "T1132",
+          "confidence": "low",
+          "justification": "Data Encoding covers reversible encodings of transmitted data; CTFT adds the RF physical layer (envelope slicing, symbol clock recovery) ATT&CK omits."
+        }
+      ],
+      "curator": "local (HTB_RF casebook)",
+      "reviewed_on": "2026-10-25",
+      "status": "pending"
     }
   ],
   "rejected": [

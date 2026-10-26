@@ -2,10 +2,10 @@
   "model": "CTFT",
   "schema_version": "3.0",
   "collection": "relations",
-  "generated_at": "2026-10-25T02:50:55+00:00",
+  "generated_at": "2026-10-26T01:44:46+00:00",
   "note": "Generated. Derived `solves` edges come from the markdown pairing; edit v3/relations.curated.json for anything else.",
   "counts": {
-    "derived": 206,
+    "derived": 213,
     "curated": 4
   },
   "items": [
@@ -1198,6 +1198,33 @@
       "confidence": "high"
     },
     {
+      "id": "REL-SOLVES-MOB-006",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-MOB-006",
+      "target": "CTFTTE-MOB-006",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
+      "id": "REL-SOLVES-MOB-007",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-MOB-007",
+      "target": "CTFTTE-MOB-007",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
+      "id": "REL-SOLVES-MOB-008",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-MOB-008",
+      "target": "CTFTTE-MOB-008",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
       "id": "REL-SOLVES-NET-001",
       "schema_version": "3.0",
       "type": "solves",
@@ -1554,6 +1581,42 @@
       "type": "solves",
       "source": "CTFTCTE-SDR-001",
       "target": "CTFTTE-SDR-001",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
+      "id": "REL-SOLVES-SDR-002",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-SDR-002",
+      "target": "CTFTTE-SDR-002",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
+      "id": "REL-SOLVES-SDR-003",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-SDR-003",
+      "target": "CTFTTE-SDR-003",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
+      "id": "REL-SOLVES-SDR-004",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-SDR-004",
+      "target": "CTFTTE-SDR-004",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
+      "id": "REL-SOLVES-SDR-005",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-SDR-005",
+      "target": "CTFTTE-SDR-005",
       "origin": "derived",
       "confidence": "high"
     },

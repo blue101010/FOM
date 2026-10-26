@@ -2,9 +2,9 @@
   "model": "CTFT",
   "schema_version": "3.0",
   "collection": "curation_queue",
-  "generated_at": "2026-10-25T02:50:56+00:00",
-  "source_sha256": "b1ce824a729451d04332418719ce7a9435a651e60107d0ce8f911424112d48ea",
-  "pending_count": 199,
+  "generated_at": "2026-10-26T01:44:47+00:00",
+  "source_sha256": "388fb18046e3c12dc70bd5cca00495177336d0346b1add5c029368e471971e34",
+  "pending_count": 206,
   "by_tactic": {
     "CTFT-TA-AIM": [
       {
@@ -743,7 +743,7 @@
         "pair_id": "CTFTPAIR-HWR-002",
         "counter_technique": "CTFTCTE-HWR-002",
         "missing": [
-          "second_independent_challenge"
+          "evidence_record"
         ]
       },
       {
@@ -773,7 +773,7 @@
         "pair_id": "CTFTPAIR-ICS-003",
         "counter_technique": "CTFTCTE-ICS-003",
         "missing": [
-          "second_independent_challenge"
+          "evidence_record"
         ]
       },
       {
@@ -942,6 +942,27 @@
         "missing": [
           "evidence_record"
         ]
+      },
+      {
+        "pair_id": "CTFTPAIR-MOB-006",
+        "counter_technique": "CTFTCTE-MOB-006",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-MOB-007",
+        "counter_technique": "CTFTCTE-MOB-007",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-MOB-008",
+        "counter_technique": "CTFTCTE-MOB-008",
+        "missing": [
+          "evidence_record"
+        ]
       }
     ],
     "CTFT-TA-NET": [
@@ -1072,7 +1093,8 @@
         "pair_id": "CTFTPAIR-PWN-001",
         "counter_technique": "CTFTCTE-PWN-001",
         "missing": [
-          "evidence_record"
+          "second_independent_challenge",
+          "boundaries"
         ]
       },
       {
@@ -1229,6 +1251,34 @@
       {
         "pair_id": "CTFTPAIR-SDR-001",
         "counter_technique": "CTFTCTE-SDR-001",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-SDR-002",
+        "counter_technique": "CTFTCTE-SDR-002",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-SDR-003",
+        "counter_technique": "CTFTCTE-SDR-003",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-SDR-004",
+        "counter_technique": "CTFTCTE-SDR-004",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-SDR-005",
+        "counter_technique": "CTFTCTE-SDR-005",
         "missing": [
           "evidence_record"
         ]

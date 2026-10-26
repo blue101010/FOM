@@ -1,10 +1,10 @@
 {
   "model": "CTFT",
   "schema_version": "3.0",
-  "generated_at": "2026-10-25T02:50:55+00:00",
+  "generated_at": "2026-10-26T01:44:46+00:00",
   "source": {
-    "correlation_sha256": "b1ce824a729451d04332418719ce7a9435a651e60107d0ce8f911424112d48ea",
-    "legacy_index_sha256": "968d7f910a4bfd481cfafd8eae04e85895a08299fa221a6a6416779297291ae9"
+    "correlation_sha256": "388fb18046e3c12dc70bd5cca00495177336d0346b1add5c029368e471971e34",
+    "legacy_index_sha256": "fc7319e94cf95a7d929ba45e061fedd1f537171f5af3ec0dfd23f9fc46b07f60"
   },
   "taxonomy": {
     "tactics": [
@@ -30,9 +30,9 @@
       "WEB"
     ],
     "tactic_count": 20,
-    "technique_count": 206,
-    "counter_technique_count": 206,
-    "complete_pairs": 206,
+    "technique_count": 213,
+    "counter_technique_count": 213,
+    "complete_pairs": 213,
     "by_tactic": {
       "AIM": 7,
       "BLK": 5,
@@ -46,12 +46,12 @@
       "ICS": 9,
       "IOT": 6,
       "JAL": 6,
-      "MOB": 5,
+      "MOB": 8,
       "NET": 8,
       "OSI": 9,
       "PWN": 12,
       "REV": 10,
-      "SDR": 1,
+      "SDR": 5,
       "STE": 11,
       "WEB": 23
     }
@@ -65,7 +65,7 @@
     },
     "maturity": {
       "attested": 1,
-      "taxonomy_only": 198,
+      "taxonomy_only": 205,
       "typed": 7
     },
     "core": {
@@ -152,6 +152,9 @@
       "countertechniques/CTFTCTE-MOB-003.md",
       "countertechniques/CTFTCTE-MOB-004.md",
       "countertechniques/CTFTCTE-MOB-005.md",
+      "countertechniques/CTFTCTE-MOB-006.md",
+      "countertechniques/CTFTCTE-MOB-007.md",
+      "countertechniques/CTFTCTE-MOB-008.md",
       "countertechniques/CTFTCTE-NET-008.md",
       "countertechniques/CTFTCTE-OSI-001.md",
       "countertechniques/CTFTCTE-OSI-002.md",
@@ -289,6 +292,9 @@
       "techniques/CTFTTE-MOB-003.md",
       "techniques/CTFTTE-MOB-004.md",
       "techniques/CTFTTE-MOB-005.md",
+      "techniques/CTFTTE-MOB-006.md",
+      "techniques/CTFTTE-MOB-007.md",
+      "techniques/CTFTTE-MOB-008.md",
       "techniques/CTFTTE-NET-001.md",
       "techniques/CTFTTE-NET-002.md",
       "techniques/CTFTTE-NET-003.md",
@@ -323,7 +329,6 @@
       "techniques/CTFTTE-REV-007.md",
       "techniques/CTFTTE-REV-008.md",
       "techniques/CTFTTE-REV-009.md",
-      "techniques/CTFTTE-SDR-001.md",
       "techniques/CTFTTE-STE-001.md",
       "techniques/CTFTTE-STE-002.md",
       "techniques/CTFTTE-STE-003.md",
@@ -355,19 +360,22 @@
   "integrity": {
     "techniques_without_counter": [],
     "counters_without_technique": [],
-    "correlation_pair_count": 206,
+    "correlation_pair_count": 213,
     "correlation_pairs_missing_from_files": [],
     "correlation_pairs_not_identity": [],
     "pairs_missing_from_correlation": [],
     "legacy_index_tactics_missing_from_files": [],
     "tactics_missing_from_legacy_index": [],
-    "legacy_index_pair_count": 206,
+    "legacy_index_pair_count": 213,
     "legacy_index_pairs_missing_from_files": [],
     "relation_problems": [],
     "lint_problems": [],
     "readme_problems": [],
     "schema_problems": [],
     "wording_problems": [],
-    "link_problems": []
+    "link_problems": [
+      "tools/CTFTTOU-331.md: dead relative link '/mnt/c/DATA/CTF/ctf-skills-main/ctf-arjun/SKILL.md'",
+      "tools/CTFTTOU-331.md: dead relative link '/mnt/c/DATA/CTF/ctf-skills-main/ctf-web-enumeration/SKILL.md'"
+    ]
   }
 }

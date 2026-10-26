@@ -328,7 +328,7 @@
       "name": "Software-Defined Radio",
       "x_ctft_shortname": "sdr",
       "x_ctft_domain": "SDR",
-      "description": "Hiding data in RF captures and modulated signals, and recovering it through SDR demodulation and decoding. Split from HWR (Hardware), which keeps embedded-device and physical-interface concealment. (HTB: Hardware)",
+      "description": "Hiding data in RF captures and modulated signals, and recovering it through SDR demodulation and decoding. Split from HWR (Hardware), which keeps embedded-device and physical-interface concealment. The barrier can sit at any layer of the receive chain: - finding the signal in a live spectrum; - reading an unlabelled IQ file (format, sample rate, centre); - identifying the modulation; - slicing on-off-keyed symbols and undoing a line code (Manchester, PWM, PPM); - running a standard protocol decoder (pager, packet, ADS-B). IoT protocol stacks with pairing keys (Zigbee/BLE) stay in IOT; tones already in an audio file stay in STE. Recovery is receive-only. (HTB: Hardware)",
       "external_references": [
         {
           "source_name": "ctft",
@@ -9389,6 +9389,207 @@
     {
       "type": "attack-pattern",
       "spec_version": "2.1",
+      "id": "attack-pattern--b1f814eb-a689-5616-970d-9b924777a97a",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-MOB-006 - Native code anti-hooking",
+      "description": "Native library code contains the flag but implements anti-hooking checks that detect and evade dynamic instrumentation attempts.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "mob"
+        }
+      ],
+      "x_ctft_category": "MOB",
+      "x_ctft_domain": "MOB",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-MOB-006"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1406",
+          "description": "Obfuscated Files or Information (Mobile)"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--24c34369-28aa-5b03-b347-2527e20b0f00",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-MOB-006 - Bypass anti-hooking with Frida",
+      "description": "Use Frida to hook functions before anti-hooking checks trigger, or patch the checks in memory to allow instrumentation.",
+      "x_ctft_category": "MOB",
+      "x_ctft_domain": "MOB",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-MOB-006"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1406",
+          "description": "Obfuscated Files or Information (Mobile)"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--ffc8a534-c9eb-5f28-9424-2a19f8ffb9e4",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--24c34369-28aa-5b03-b347-2527e20b0f00",
+      "target_ref": "attack-pattern--b1f814eb-a689-5616-970d-9b924777a97a",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--53b0e3f2-17a0-514a-9c6c-cfd01ca85cb4",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-MOB-007 - Memory-only encryption keys",
+      "description": "Encryption keys are never stored on disk; they are generated or loaded at runtime and exist only in process memory, making them invisible to static analysis.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "mob"
+        }
+      ],
+      "x_ctft_category": "MOB",
+      "x_ctft_domain": "MOB",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-MOB-007"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1552",
+          "description": "Credentials in Files"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--7e8479da-5f57-5505-b286-f49462cf2f30",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-MOB-007 - Dump memory with Frida to extract keys",
+      "description": "Use Frida to hook memory allocation and cryptographic functions, dump the relevant memory regions, or trace key material as it flows through the application.",
+      "x_ctft_category": "MOB",
+      "x_ctft_domain": "MOB",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-MOB-007"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1552",
+          "description": "Credentials in Files"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--9bbb18c2-f1ec-5150-a946-bd893ca36d9c",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--7e8479da-5f57-5505-b286-f49462cf2f30",
+      "target_ref": "attack-pattern--53b0e3f2-17a0-514a-9c6c-cfd01ca85cb4",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--b09637fe-3911-51e0-9598-38254f46e912",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-MOB-008 - Frida detection",
+      "description": "The app implements Frida detection mechanisms (library checks, port scans, thread enumeration, etc.) and alters behavior or refuses to reveal the flag when Frida is detected.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "mob"
+        }
+      ],
+      "x_ctft_category": "MOB",
+      "x_ctft_domain": "MOB",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-MOB-008"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1622",
+          "description": "Debugger Evasion"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--ffbde9d8-ffda-5122-a6d2-feebd9fa1fde",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-MOB-008 - Use anti-anti-Frida techniques",
+      "description": "Use spawn-based injection, early injection before detection checks, or embed Frida gadget to evade detection. Modify detection logic at runtime with Frida itself.",
+      "x_ctft_category": "MOB",
+      "x_ctft_domain": "MOB",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-MOB-008"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1622",
+          "description": "Debugger Evasion"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--c9fc3fd4-ca2c-515c-834c-c8fc6f7c3d75",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--ffbde9d8-ffda-5122-a6d2-feebd9fa1fde",
+      "target_ref": "attack-pattern--b09637fe-3911-51e0-9598-38254f46e912",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
       "id": "attack-pattern--4f31e0b4-65cb-5a6b-86b8-0651c622add8",
       "created": "2026-06-10T18:01:52.000Z",
       "modified": "2026-06-10T18:01:52.000Z",
@@ -12007,7 +12208,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTTE-SDR-001 - RF/SDR signal embedding",
-      "description": "The flag is transmitted or stored as a modulated RF signal (AM/FM/FSK/PSK), an SDR IQ capture, or a hidden frequency in an audio/RF file; identifying the modulation is the first barrier.",
+      "description": "The flag is transmitted or stored as a modulated RF signal (AM/FM/FSK/PSK), an SDR IQ capture, or a hidden frequency in an audio/RF file; identifying the modulation is the first barrier. This is the umbrella entry. More specific shapes have their own pairs: - CTFTTE-SDR-002: a line-coded on-off-keyed remote; - CTFTTE-SDR-003: an unlabelled capture; - CTFTTE-SDR-004: a standard radio protocol; - CTFTTE-SDR-005: a transmitter hidden in a live spectrum.",
       "kill_chain_phases": [
         {
           "kill_chain_name": "ctft",
@@ -12064,6 +12265,284 @@
       "x_ctft_relation": "solves",
       "source_ref": "course-of-action--5a03fd48-d4bc-59aa-b3ce-00d9bd02fee2",
       "target_ref": "attack-pattern--82b13c22-f19c-5525-8528-dbeeeb823628",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--72649361-35de-51cb-9a5d-3391ad25deb0",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-SDR-002 - Line-coded on-off-keyed remote transmission",
+      "description": "The flag is the payload of a short on-off-keyed (OOK/ASK) burst such as a garage-door remote, key fob or 433/868 MHz sensor. The carrier is only switched on and off, so demodulated audio sounds like clicks and carries no readable content. The bits are line-coded, typically Manchester (each bit is a transition pair), PWM (short/long pulse) or PPM (short/long gap), and framed by a 1010… preamble and a sync word. That doubles the symbol count and hides the byte alignment. The capture usually arrives as raw IQ (.cf32, .cu8) with the carrier off-centre. Distinct from CTFTTE-IOT-005, where the subject is an IoT protocol stack and its pairing keys, and from CTFTTE-SDR-001, where the modulation itself (AM/FM/FSK/PSK/QAM) is the barrier.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "sdr"
+        }
+      ],
+      "x_ctft_category": "SDR",
+      "x_ctft_domain": "SDR",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-SDR-002"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1132",
+          "description": "Data Encoding"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1001.002",
+          "description": "Steganography"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--45955d38-bbf1-5798-b782-c988fa254889",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-SDR-002 - Slice the envelope into symbols and decode the line code",
+      "description": "1. Find the burst carrier in the spectrum. Mix it to 0 Hz and band-limit it to a few times its occupied width. 2. Take the amplitude envelope and threshold it midway between the noise level and the on level to get on/off runs. 3. Split transmissions on long gaps. Recover the symbol unit as the largest length that fits every run as an integer multiple. The symbol rate is 1/unit; the Manchester bit rate is half of that. 4. Choose the line code from the run widths: - only 1–2-unit runs → Manchester; try both pair phases and both conventions (10=1 G.E. Thomas, 01=1 IEEE 802.3); - two pulse widths with a constant period → PWM; - two gap widths → PPM. 5. Byte-align on the end of the 1010… preamble or on the sync word, convert to bytes and search for the flag format. 6. In inspectrum, the equivalent manual route is: cursors over the burst, an amplitude plot, a threshold plot, then extract the symbols and keep every other bit for Manchester. 7. rtl433 -A prints a pulse analysis and a flex decoder (-X) to replay the decode.",
+      "x_ctft_category": "SDR",
+      "x_ctft_domain": "SDR",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-SDR-002"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1132",
+          "description": "Data Encoding"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1001.002",
+          "description": "Steganography"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--0beec97e-bf4f-53bb-aa69-ea5fda8a20c9",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--45955d38-bbf1-5798-b782-c988fa254889",
+      "target_ref": "attack-pattern--72649361-35de-51cb-9a5d-3391ad25deb0",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--2254cdfc-bfef-50c6-bb94-02d4e8a86823",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-SDR-003 - Unlabelled IQ capture (format, sample rate and centre withheld)",
+      "description": "The recording is handed over as a bare sample file (.bin, .raw, .iq, .dat, or a .cf32 with no sidecar). Its sample format, sample rate and centre frequency are not stated, or the extension is misleading. Read with the wrong format, the file looks like noise. With the wrong sample rate, every timing (baud, pulse width, audio pitch) is off by the same factor. Without the centre frequency, the signal cannot be tied to a band or a protocol. The barrier comes before demodulation: the file has to be read correctly first.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "sdr"
+        }
+      ],
+      "x_ctft_category": "SDR",
+      "x_ctft_domain": "SDR",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-SDR-003"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--320beb2a-5005-5309-a3cd-98f9bfa935c8",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-SDR-003 - Fingerprint the IQ format and recover rate and centre",
+      "description": "1. Infer the sample format from the bytes: - size divisibility; - byte histogram (uint8 centred on 127.5 → cu8); - plausible float ranges (cf32); - for floats, the count of distinct values (≤ 256 → an 8-bit origin). 2. Load each candidate format in inspectrum or URH. The right one shows clean carriers and bursts; the wrong ones show noise or mirrored images. 3. Recover the sample rate from structure that has a known timing: a standard channel width, a protocol's fixed symbol rate, or round pulse widths. Common RTL-SDR rates are 1.024, 2.048 and 2.4 MS/s. 4. Take the centre frequency from the challenge story, the filename, or the band a recognised protocol must occupy. Record every assumption, because timings and absolute frequencies are only as good as the rate and centre chosen.",
+      "x_ctft_category": "SDR",
+      "x_ctft_domain": "SDR",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-SDR-003"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--a9568798-1b6e-5c7e-85a6-d24128b4796a",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--320beb2a-5005-5309-a3cd-98f9bfa935c8",
+      "target_ref": "attack-pattern--2254cdfc-bfef-50c6-bb94-02d4e8a86823",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--adf80052-0d44-564c-82e6-1de3350a9284",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-SDR-004 - Flag carried by a standard digital radio protocol",
+      "description": "The flag is sent in the fields of a documented over-the-air protocol: - a pager message (POCSAG/FLEX); - an AFSK1200 AX.25/APRS packet; - DTMF or Morse keyed on a carrier; - an ADS-B/Mode S frame (callsign, squawk); - an AIS message; - RDS radiotext on broadcast FM. The concealment is the stack. The signal must first be demodulated (usually NFM or WBFM, or 1090 MHz pulse position) and then parsed by a decoder for that protocol, whose checksum separates real frames from noise. Distinct from CTFTTE-STE-010, where the tones already sit in an audio file, and from CTFTTE-SDR-002, where the framing is custom.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "sdr"
+        }
+      ],
+      "x_ctft_category": "SDR",
+      "x_ctft_domain": "SDR",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-SDR-004"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1071",
+          "description": "Application Layer Protocol"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--fe857980-c804-5262-9754-d3de7885135e",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-SDR-004 - Demodulate and run the protocol's reference decoder",
+      "description": "1. Identify the protocol from the frequency and the sound or shape of the signal. 2. Demodulate to the decoder's expected input. Pager, APRS and DTMF need NFM audio at 22 050 Hz s16le, from rtlfm live or an offline IQ demodulator from a capture. ADS-B needs the 2 MS/s 1090 MHz magnitude stream. 3. Feed the matching decoder: multimon-ng -t raw -a POCSAG512 -a POCSAG1200 -a POCSAG2400 -a AFSK1200 -a DTMF, dump1090 or rtladsb. 4. Keep only frames whose checksum validates. Raw demodulator output includes noise frames. 5. Read the flag from the decoded fields (message text, callsign, comment).",
+      "x_ctft_category": "SDR",
+      "x_ctft_domain": "SDR",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-SDR-004"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1071",
+          "description": "Application Layer Protocol"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--8489b63a-d8da-51aa-8a48-ea01987f185b",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--fe857980-c804-5262-9754-d3de7885135e",
+      "target_ref": "attack-pattern--adf80052-0d44-564c-82e6-1de3350a9284",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--1ab73c89-3f8d-5f9c-b962-bd8ea758ddb1",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-SDR-005 - Flag transmitter hidden in a live spectrum",
+      "description": "In an on-site RF CTF (conference wireless villages, fox hunts), a low-power transmitter sends the flag on an unannounced frequency. It may transmit only intermittently, or hop between channels. It sits among legitimate signals (broadcast, Wi-Fi, pagers, ISM traffic), so the target is one carrier among hundreds. Its presence, not its encoding, is the first barrier. The payload is then usually one of the encodings of CTFTTE-SDR-001, -002 or -004.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "sdr"
+        }
+      ],
+      "x_ctft_category": "SDR",
+      "x_ctft_domain": "SDR",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-SDR-005"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1001",
+          "description": "Data Obfuscation"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--6dc7a434-9e33-5d01-8ea2-fb3172f1528a",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-SDR-005 - Baseline the band and diff live sweeps",
+      "description": "1. Record a baseline sweep away from the venue, or before the transmitters start (rtlpower -f 30M:1.7G:1M -i 5m -1 base.csv). 2. Record live sweeps on site with a shorter interval so intermittent carriers are caught (-P peak hold helps). 3. Diff live against baseline per bin and rank the bins that rose. A waterfall of repeated sweeps exposes duty-cycled or hopping transmitters. 4. rtlpower bins are coarse. Confirm each candidate with a narrow IQ capture at the exact frequency, then decode the payload with the matching SDR recovery (modulation, line code or standard protocol). 5. Move to localise the emitter when the challenge requires it (signal strength versus position).",
+      "x_ctft_category": "SDR",
+      "x_ctft_domain": "SDR",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-SDR-005"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1001",
+          "description": "Data Obfuscation"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--84df34f5-3ca7-572d-af8b-7084c97825bc",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--6dc7a434-9e33-5d01-8ea2-fb3172f1528a",
+      "target_ref": "attack-pattern--1ab73c89-3f8d-5f9c-b962-bd8ea758ddb1",
       "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     },
     {

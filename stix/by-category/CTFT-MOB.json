@@ -364,6 +364,207 @@
       "source_ref": "course-of-action--acfb5ce3-a235-561e-b9e8-33101cd02bce",
       "target_ref": "attack-pattern--a2b68da0-5241-5fa6-b766-86d89b5fe42b",
       "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--b1f814eb-a689-5616-970d-9b924777a97a",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-MOB-006 - Native code anti-hooking",
+      "description": "Native library code contains the flag but implements anti-hooking checks that detect and evade dynamic instrumentation attempts.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "mob"
+        }
+      ],
+      "x_ctft_category": "MOB",
+      "x_ctft_domain": "MOB",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-MOB-006"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1406",
+          "description": "Obfuscated Files or Information (Mobile)"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--24c34369-28aa-5b03-b347-2527e20b0f00",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-MOB-006 - Bypass anti-hooking with Frida",
+      "description": "Use Frida to hook functions before anti-hooking checks trigger, or patch the checks in memory to allow instrumentation.",
+      "x_ctft_category": "MOB",
+      "x_ctft_domain": "MOB",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-MOB-006"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1406",
+          "description": "Obfuscated Files or Information (Mobile)"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--ffc8a534-c9eb-5f28-9424-2a19f8ffb9e4",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--24c34369-28aa-5b03-b347-2527e20b0f00",
+      "target_ref": "attack-pattern--b1f814eb-a689-5616-970d-9b924777a97a",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--53b0e3f2-17a0-514a-9c6c-cfd01ca85cb4",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-MOB-007 - Memory-only encryption keys",
+      "description": "Encryption keys are never stored on disk; they are generated or loaded at runtime and exist only in process memory, making them invisible to static analysis.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "mob"
+        }
+      ],
+      "x_ctft_category": "MOB",
+      "x_ctft_domain": "MOB",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-MOB-007"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1552",
+          "description": "Credentials in Files"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--7e8479da-5f57-5505-b286-f49462cf2f30",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-MOB-007 - Dump memory with Frida to extract keys",
+      "description": "Use Frida to hook memory allocation and cryptographic functions, dump the relevant memory regions, or trace key material as it flows through the application.",
+      "x_ctft_category": "MOB",
+      "x_ctft_domain": "MOB",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-MOB-007"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1552",
+          "description": "Credentials in Files"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--9bbb18c2-f1ec-5150-a946-bd893ca36d9c",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--7e8479da-5f57-5505-b286-f49462cf2f30",
+      "target_ref": "attack-pattern--53b0e3f2-17a0-514a-9c6c-cfd01ca85cb4",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--b09637fe-3911-51e0-9598-38254f46e912",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-MOB-008 - Frida detection",
+      "description": "The app implements Frida detection mechanisms (library checks, port scans, thread enumeration, etc.) and alters behavior or refuses to reveal the flag when Frida is detected.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "mob"
+        }
+      ],
+      "x_ctft_category": "MOB",
+      "x_ctft_domain": "MOB",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-MOB-008"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1622",
+          "description": "Debugger Evasion"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--ffbde9d8-ffda-5122-a6d2-feebd9fa1fde",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-MOB-008 - Use anti-anti-Frida techniques",
+      "description": "Use spawn-based injection, early injection before detection checks, or embed Frida gadget to evade detection. Modify detection logic at runtime with Frida itself.",
+      "x_ctft_category": "MOB",
+      "x_ctft_domain": "MOB",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-MOB-008"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1622",
+          "description": "Debugger Evasion"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--c9fc3fd4-ca2c-515c-834c-c8fc6f7c3d75",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--ffbde9d8-ffda-5122-a6d2-feebd9fa1fde",
+      "target_ref": "attack-pattern--b09637fe-3911-51e0-9598-38254f46e912",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     }
   ]
 }

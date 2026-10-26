@@ -2,8 +2,8 @@
   "model": "CTFT",
   "schema_version": "3.0",
   "collection": "catalog",
-  "generated_at": "2026-10-25T02:50:56+00:00",
-  "source_sha256": "b1ce824a729451d04332418719ce7a9435a651e60107d0ce8f911424112d48ea",
+  "generated_at": "2026-10-26T01:44:47+00:00",
+  "source_sha256": "388fb18046e3c12dc70bd5cca00495177336d0346b1add5c029368e471971e34",
   "items": [
     {
       "id": "CTFTPAIR-AIM-001",
@@ -2335,7 +2335,7 @@
       },
       "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [
-        "second_independent_challenge"
+        "evidence_record"
       ]
     },
     {
@@ -2423,7 +2423,7 @@
       },
       "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [
-        "second_independent_challenge"
+        "evidence_record"
       ]
     },
     {
@@ -2933,6 +2933,72 @@
       ]
     },
     {
+      "id": "CTFTPAIR-MOB-006",
+      "schema_version": "3.0",
+      "domain": "MOB",
+      "tactic": "CTFT-TA-MOB",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-MOB-006",
+        "name": "Native code anti-hooking",
+        "path": "techniques/CTFTTE-MOB-006.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-MOB-006",
+        "name": "Bypass anti-hooking with Frida",
+        "path": "countertechniques/CTFTCTE-MOB-006.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-MOB-007",
+      "schema_version": "3.0",
+      "domain": "MOB",
+      "tactic": "CTFT-TA-MOB",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-MOB-007",
+        "name": "Memory-only encryption keys",
+        "path": "techniques/CTFTTE-MOB-007.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-MOB-007",
+        "name": "Dump memory with Frida to extract keys",
+        "path": "countertechniques/CTFTCTE-MOB-007.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-MOB-008",
+      "schema_version": "3.0",
+      "domain": "MOB",
+      "tactic": "CTFT-TA-MOB",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-MOB-008",
+        "name": "Frida detection",
+        "path": "techniques/CTFTTE-MOB-008.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-MOB-008",
+        "name": "Use anti-anti-Frida techniques",
+        "path": "countertechniques/CTFTCTE-MOB-008.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
       "id": "CTFTPAIR-NET-001",
       "schema_version": "3.0",
       "domain": "NET",
@@ -3325,7 +3391,8 @@
       },
       "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [
-        "evidence_record"
+        "second_independent_challenge",
+        "boundaries"
       ]
     },
     {
@@ -3805,6 +3872,94 @@
         "id": "CTFTCTE-SDR-001",
         "name": "Demodulate and decode RF captures",
         "path": "countertechniques/CTFTCTE-SDR-001.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-SDR-002",
+      "schema_version": "3.0",
+      "domain": "SDR",
+      "tactic": "CTFT-TA-SDR",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-SDR-002",
+        "name": "Line-coded on-off-keyed remote transmission",
+        "path": "techniques/CTFTTE-SDR-002.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-SDR-002",
+        "name": "Slice the envelope into symbols and decode the line code",
+        "path": "countertechniques/CTFTCTE-SDR-002.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-SDR-003",
+      "schema_version": "3.0",
+      "domain": "SDR",
+      "tactic": "CTFT-TA-SDR",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-SDR-003",
+        "name": "Unlabelled IQ capture (format, sample rate and centre withheld)",
+        "path": "techniques/CTFTTE-SDR-003.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-SDR-003",
+        "name": "Fingerprint the IQ format and recover rate and centre",
+        "path": "countertechniques/CTFTCTE-SDR-003.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-SDR-004",
+      "schema_version": "3.0",
+      "domain": "SDR",
+      "tactic": "CTFT-TA-SDR",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-SDR-004",
+        "name": "Flag carried by a standard digital radio protocol",
+        "path": "techniques/CTFTTE-SDR-004.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-SDR-004",
+        "name": "Demodulate and run the protocol's reference decoder",
+        "path": "countertechniques/CTFTCTE-SDR-004.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-SDR-005",
+      "schema_version": "3.0",
+      "domain": "SDR",
+      "tactic": "CTFT-TA-SDR",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-SDR-005",
+        "name": "Flag transmitter hidden in a live spectrum",
+        "path": "techniques/CTFTTE-SDR-005.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-SDR-005",
+        "name": "Baseline the band and diff live sweeps",
+        "path": "countertechniques/CTFTCTE-SDR-005.md",
         "role": "resolution"
       },
       "maturity": "taxonomy_only",

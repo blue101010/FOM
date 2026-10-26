@@ -22,11 +22,16 @@ RF captures are analyzed like any volatile signal artifact: center frequency, ba
 
 ## Tools
 
-- Gqrx
-- GNU Radio Companion
-- Universal Radio Hacker
-- inspectrum
-- multimon-ng
+- [Gqrx](../tools/CTFTTOU-234.md)
+- [GNU Radio Companion](../tools/CTFTTOU-233.md)
+- [Universal Radio Hacker](../tools/CTFTTOU-235.md)
+- [inspectrum](../tools/CTFTTOU-236.md)
+- [multimon-ng](../tools/CTFTTOU-237.md)
+- [SigDigger](../tools/CTFTTOU-338.md)
+- [iq_check.py](../../.agents/ctf/ctf-sdr/scripts/iq_check.py) ([CTFTTOU-341](../tools/CTFTTOU-341.md))
+- [iq_demod.py](../../.agents/ctf/ctf-sdr/scripts/iq_demod.py) ([CTFTTOU-343](../tools/CTFTTOU-343.md))
+- [rtl_sdr](../tools/CTFTTOU-347.md)
+- [rtl_fm](../tools/CTFTTOU-348.md)
 
 ## References
 

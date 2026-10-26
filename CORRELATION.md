@@ -4,8 +4,8 @@ Every **Design / Hide Technique** (`CTFTTE-<CAT>-NNN`) and the
 **Resolution-Technique** (`CTFTCTE-<CAT>-NNN`) that recovers it, grouped by domain.
 IDs pair one-to-one: `CTFTTE-FOR-004` is always answered by `CTFTCTE-FOR-004`.
 
-> Generated from the files in `techniques/` and `countertechniques/` — corpus fingerprint `4e379b8b8dfc9d2d`
-> by `v3/render_taxonomy_docs.py`. **209 complete pairs** across **20 active domains**. Do not hand-edit: rename the entry, then re-render.
+> Generated from the files in `techniques/` and `countertechniques/` — corpus fingerprint `96330d431aa676bc`
+> by `v3/render_taxonomy_docs.py`. **213 complete pairs** across **20 active domains**. Do not hand-edit: rename the entry, then re-render.
 
 ---
 
@@ -34,8 +34,8 @@ Order follows the challenge-category picker.
 | 17 | [`FPN`](#ctft-ta-fpn) | Full Pwn | Full Pwn / Multi-Stage | 20 |
 | 18 | [`HWR`](#ctft-ta-hwr) | Hardware | Hardware | 3 |
 | 19 | [`IOT`](#ctft-ta-iot) | IoT / Embedded | IoT / Embedded | 6 |
-| 20 | [`SDR`](#ctft-ta-sdr) | SDR / RF | Software-Defined Radio | 1 |
-| | | | **Total** | **209** |
+| 20 | [`SDR`](#ctft-ta-sdr) | SDR / RF | Software-Defined Radio | 5 |
+| | | | **Total** | **213** |
 
 **Retired — do not use.** `MSC` (Misc) was a catch-all whose entries all
 duplicated a precise domain; file those challenges under `JAL`, `COD`, `GAM`
@@ -405,11 +405,15 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 
 ## <a id="ctft-ta-sdr"></a>`CTFT-TA-SDR` — Software-Defined Radio
 
-> [domain page](tactics/CTFT-TA-SDR.md) · 1 pairs · HTB: Hardware
+> [domain page](tactics/CTFT-TA-SDR.md) · 5 pairs · HTB: Hardware
 
 | # | Technique ID | Hide / Design name | Resolution-technique ID | Recovery action |
 | --- | --- | --- | --- | --- |
 | 1 | [CTFTTE-SDR-001](techniques/CTFTTE-SDR-001.md) | RF/SDR signal embedding | [CTFTCTE-SDR-001](countertechniques/CTFTCTE-SDR-001.md) | Demodulate and decode RF captures |
+| 2 | [CTFTTE-SDR-002](techniques/CTFTTE-SDR-002.md) | Line-coded on-off-keyed remote transmission | [CTFTCTE-SDR-002](countertechniques/CTFTCTE-SDR-002.md) | Slice the envelope into symbols and decode the line code |
+| 3 | [CTFTTE-SDR-003](techniques/CTFTTE-SDR-003.md) | Unlabelled IQ capture (format, sample rate and centre withheld) | [CTFTCTE-SDR-003](countertechniques/CTFTCTE-SDR-003.md) | Fingerprint the IQ format and recover rate and centre |
+| 4 | [CTFTTE-SDR-004](techniques/CTFTTE-SDR-004.md) | Flag carried by a standard digital radio protocol | [CTFTCTE-SDR-004](countertechniques/CTFTCTE-SDR-004.md) | Demodulate and run the protocol's reference decoder |
+| 5 | [CTFTTE-SDR-005](techniques/CTFTTE-SDR-005.md) | Flag transmitter hidden in a live spectrum | [CTFTCTE-SDR-005](countertechniques/CTFTCTE-SDR-005.md) | Baseline the band and diff live sweeps |
 
 
 ---

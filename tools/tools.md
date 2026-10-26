@@ -84,6 +84,11 @@ Reference tools used across CTFT techniques and counter-techniques.
 | [CTFTTOU-170](CTFTTOU-170.md) | objection | <https://github.com/sensepost/objection> | CTFTCTE-MOB-003, CTFTCTE-MOB-005, CTFTTE-MOB-003, CTFTTE-MOB-005 |
 | [CTFTTOU-171](CTFTTOU-171.md) | apktool | <https://github.com/iBotPeaches/Apktool> | CTFTCTE-MOB-001, CTFTCTE-MOB-004, CTFTTE-MOB-001, CTFTTE-MOB-004 |
 | [CTFTTOU-172](CTFTTOU-172.md) | jadx | <https://github.com/skylot/jadx> | CTFTCTE-MOB-001, CTFTCTE-MOB-002, CTFTCTE-MOB-004, CTFTTE-MOB-001, CTFTTE-MOB-002, CTFTTE-MOB-004 |
+| [CTFTTOU-233](CTFTTOU-233.md) | GNU Radio Companion | <https://www.gnuradio.org/> | CTFTCTE-SDR-001, CTFTCTE-SDR-003, CTFTTE-SDR-001, CTFTTE-SDR-003 |
+| [CTFTTOU-234](CTFTTOU-234.md) | Gqrx | <https://gqrx.dk/> | CTFTCTE-SDR-001, CTFTCTE-SDR-005, CTFTTE-SDR-001, CTFTTE-SDR-005 |
+| [CTFTTOU-235](CTFTTOU-235.md) | Universal Radio Hacker | <https://github.com/jopohl/urh> | CTFTCTE-SDR-001, CTFTCTE-SDR-002, CTFTCTE-SDR-003, CTFTTE-SDR-001, CTFTTE-SDR-002, CTFTTE-SDR-003 |
+| [CTFTTOU-236](CTFTTOU-236.md) | inspectrum | <https://github.com/miek/inspectrum> | CTFTCTE-SDR-001, CTFTCTE-SDR-002, CTFTCTE-SDR-003, CTFTTE-SDR-001, CTFTTE-SDR-002, CTFTTE-SDR-003 |
+| [CTFTTOU-237](CTFTTOU-237.md) | multimon-ng | <https://github.com/EliasOenal/multimon-ng> | CTFTCTE-SDR-001, CTFTCTE-SDR-004, CTFTCTE-STE-010, CTFTTE-SDR-001, CTFTTE-SDR-004, CTFTTE-STE-010 |
 | [CTFTTOU-271](CTFTTOU-271.md) | graphql-schema-dump.py | [scripts/graphql-schema-dump.py](scripts/graphql-schema-dump.py) | CTFTTE-WEB-023, CTFTCTE-WEB-023 |
 | [CTFTTOU-272](CTFTTOU-272.md) | inql | <https://github.com/doyensec/inql> | CTFTTE-WEB-023, CTFTCTE-WEB-023 |
 | [CTFTTOU-276](CTFTTOU-276.md) | mosquitto clients | <https://mosquitto.org/> | CTFTTE-IOT-003, CTFTCTE-IOT-003 || [CTFTTOU-277](CTFTTOU-277.md) | ubertooth / killerbee | <https://github.com/greatscottgadgets/ubertooth> | CTFTTE-IOT-005, CTFTCTE-IOT-005 |
@@ -136,4 +141,22 @@ Reference tools used across CTFT techniques and counter-techniques.
 | [CTFTTOU-332](CTFTTOU-332.md) | Kiterunner | <https://github.com/assetnote/kiterunner> | CTFTCTE-WEB-001, CTFTCTE-WEB-017, CTFTCTE-WEB-020, CTFTTE-WEB-001, CTFTTE-WEB-017, CTFTTE-WEB-020 |
 | [CTFTTOU-333](CTFTTOU-333.md) | WhatWeb | <https://github.com/urbanadventurer/WhatWeb> | CTFTCTE-WEB-001, CTFTCTE-WEB-007, CTFTCTE-WEB-009, CTFTTE-WEB-007, CTFTTE-WEB-009 |
 | [CTFTTOU-334](CTFTTOU-334.md) | Rizin and Cutter | <https://rizin.re/>, <https://github.com/rizinorg/cutter> | CTFTTE-REV-001, CTFTCTE-REV-001, CTFTTE-REV-002, CTFTCTE-REV-002, CTFTTE-REV-003, CTFTCTE-REV-003, CTFTTE-REV-004, CTFTCTE-REV-004, CTFTTE-REV-005, CTFTCTE-REV-005, CTFTTE-REV-008, CTFTCTE-REV-008, CTFTTE-REV-009, CTFTCTE-REV-009, CTFTTE-REV-010, CTFTCTE-REV-010 |
+| [CTFTTOU-335](CTFTTOU-335.md) | rtl-sdr | <https://osmocom.org/projects/rtl-sdr/wiki/Rtl-sdr> | CTFTTE-SDR-001, CTFTCTE-SDR-001, CTFTTE-SDR-002, CTFTCTE-SDR-002, CTFTTE-SDR-003, CTFTCTE-SDR-003, CTFTTE-SDR-004, CTFTCTE-SDR-004, CTFTTE-SDR-005, CTFTCTE-SDR-005 |
+| [CTFTTOU-336](CTFTTOU-336.md) | rtl_433 | <https://github.com/merbanan/rtl_433> | CTFTTE-SDR-002, CTFTCTE-SDR-002 |
+| [CTFTTOU-337](CTFTTOU-337.md) | dump1090 | <https://github.com/antirez/dump1090> | CTFTTE-SDR-004, CTFTCTE-SDR-004 |
+| [CTFTTOU-338](CTFTTOU-338.md) | SigDigger | <https://github.com/BatchDrake/SigDigger> | CTFTTE-SDR-001, CTFTCTE-SDR-001, CTFTTE-SDR-005, CTFTCTE-SDR-005 |
+| [CTFTTOU-339](CTFTTOU-339.md) | kalibrate-rtl | <https://github.com/steve-m/kalibrate-rtl> | CTFTTE-SDR-003, CTFTCTE-SDR-003 |
+| [CTFTTOU-340](CTFTTOU-340.md) | ook_decode.py | [.agents/ctf/ctf-sdr/scripts/ook_decode.py](../../.agents/ctf/ctf-sdr/scripts/ook_decode.py) | CTFTTE-SDR-002, CTFTCTE-SDR-002 |
+| [CTFTTOU-341](CTFTTOU-341.md) | iq_check.py | [.agents/ctf/ctf-sdr/scripts/iq_check.py](../../.agents/ctf/ctf-sdr/scripts/iq_check.py) | CTFTTE-SDR-001, CTFTCTE-SDR-001, CTFTTE-SDR-002, CTFTCTE-SDR-002, CTFTTE-SDR-003, CTFTCTE-SDR-003 |
+| [CTFTTOU-342](CTFTTOU-342.md) | iq_segments.py | [.agents/ctf/ctf-sdr/scripts/iq_segments.py](../../.agents/ctf/ctf-sdr/scripts/iq_segments.py) | CTFTTE-SDR-002, CTFTCTE-SDR-002 |
+| [CTFTTOU-343](CTFTTOU-343.md) | iq_demod.py | [.agents/ctf/ctf-sdr/scripts/iq_demod.py](../../.agents/ctf/ctf-sdr/scripts/iq_demod.py) | CTFTTE-SDR-001, CTFTCTE-SDR-001, CTFTTE-SDR-004, CTFTCTE-SDR-004 |
+| [CTFTTOU-344](CTFTTOU-344.md) | power_peaks.py | [.agents/ctf/ctf-sdr/scripts/power_peaks.py](../../.agents/ctf/ctf-sdr/scripts/power_peaks.py) | CTFTTE-SDR-005, CTFTCTE-SDR-005 |
+| [CTFTTOU-345](CTFTTOU-345.md) | adsb_crc.py | <https://mode-s.org/decode/> | CTFTTE-SDR-004, CTFTCTE-SDR-004 |
+| [CTFTTOU-346](CTFTTOU-346.md) | rtl_test | [.agents/ctf/ctf-sdr/rtl-sdr-64bit-20261018/rtl_test.exe](../../.agents/ctf/ctf-sdr/rtl-sdr-64bit-20261018/rtl_test.exe) | CTFTTE-SDR-003, CTFTCTE-SDR-003 |
+| [CTFTTOU-347](CTFTTOU-347.md) | rtl_sdr | [.agents/ctf/ctf-sdr/rtl-sdr-64bit-20261018/rtl_sdr.exe](../../.agents/ctf/ctf-sdr/rtl-sdr-64bit-20261018/rtl_sdr.exe) | CTFTTE-SDR-001, CTFTCTE-SDR-001, CTFTTE-SDR-002, CTFTCTE-SDR-002, CTFTTE-SDR-005, CTFTCTE-SDR-005 |
+| [CTFTTOU-348](CTFTTOU-348.md) | rtl_fm | [.agents/ctf/ctf-sdr/rtl-sdr-64bit-20261018/rtl_fm.exe](../../.agents/ctf/ctf-sdr/rtl-sdr-64bit-20261018/rtl_fm.exe) | CTFTTE-SDR-001, CTFTCTE-SDR-001, CTFTTE-SDR-004, CTFTCTE-SDR-004 |
+| [CTFTTOU-349](CTFTTOU-349.md) | rtl_power | [.agents/ctf/ctf-sdr/rtl-sdr-64bit-20261018/rtl_power.exe](../../.agents/ctf/ctf-sdr/rtl-sdr-64bit-20261018/rtl_power.exe) | CTFTTE-SDR-005, CTFTCTE-SDR-005 |
+| [CTFTTOU-350](CTFTTOU-350.md) | rtl_tcp | [.agents/ctf/ctf-sdr/rtl-sdr-64bit-20261018/rtl_tcp.exe](../../.agents/ctf/ctf-sdr/rtl-sdr-64bit-20261018/rtl_tcp.exe) | CTFTTE-SDR-002, CTFTCTE-SDR-002, CTFTTE-SDR-004, CTFTCTE-SDR-004 |
+| [CTFTTOU-351](CTFTTOU-351.md) | rtl_eeprom | [.agents/ctf/ctf-sdr/rtl-sdr-64bit-20261018/rtl_eeprom.exe](../../.agents/ctf/ctf-sdr/rtl-sdr-64bit-20261018/rtl_eeprom.exe) | CTFTTE-SDR-003, CTFTCTE-SDR-003 |
+| [CTFTTOU-352](CTFTTOU-352.md) | rtl_adsb | [.agents/ctf/ctf-sdr/rtl-sdr-64bit-20261018/rtl_adsb.exe](../../.agents/ctf/ctf-sdr/rtl-sdr-64bit-20261018/rtl_adsb.exe) | CTFTTE-SDR-004, CTFTCTE-SDR-004 |
 | [CTFTTOU-400](CTFTTOU-400.md) | NoSQLMap (DEPRECATED) | <https://github.com/codingo/NoSQLMap> | CTFTTE-WEB-021, CTFTCTE-WEB-021 |

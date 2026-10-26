@@ -1,7 +1,7 @@
 {
   "model": "CTFT",
   "version": "1.2",
-  "generated": "2026-10-25T02:50:55+00:00",
+  "generated": "2026-10-26T01:44:46+00:00",
   "relates_to": [
     "MITRE ATT&CK",
     "CAPEC",
@@ -86,7 +86,7 @@
       "id": "CTFT-TA-MOB",
       "name": "Mobile",
       "path": "tactics/CTFT-TA-MOB.md",
-      "count": 5
+      "count": 8
     },
     {
       "id": "CTFT-TA-NET",
@@ -116,7 +116,7 @@
       "id": "CTFT-TA-SDR",
       "name": "Software-Defined Radio",
       "path": "tactics/CTFT-TA-SDR.md",
-      "count": 1
+      "count": 5
     },
     {
       "id": "CTFT-TA-STE",
@@ -131,7 +131,7 @@
       "count": 23
     }
   ],
-  "total_techniques": 206,
+  "total_techniques": 213,
   "techniques": [
     {
       "tactic": "CTFT-TA-AIM",
@@ -1982,6 +1982,48 @@
       }
     },
     {
+      "tactic": "CTFT-TA-MOB",
+      "category": "MOB",
+      "technique": {
+        "id": "CTFTTE-MOB-006",
+        "name": "Native code anti-hooking",
+        "path": "techniques/CTFTTE-MOB-006.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-MOB-006",
+        "name": "Bypass anti-hooking with Frida",
+        "path": "countertechniques/CTFTCTE-MOB-006.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-MOB",
+      "category": "MOB",
+      "technique": {
+        "id": "CTFTTE-MOB-007",
+        "name": "Memory-only encryption keys",
+        "path": "techniques/CTFTTE-MOB-007.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-MOB-007",
+        "name": "Dump memory with Frida to extract keys",
+        "path": "countertechniques/CTFTCTE-MOB-007.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-MOB",
+      "category": "MOB",
+      "technique": {
+        "id": "CTFTTE-MOB-008",
+        "name": "Frida detection",
+        "path": "techniques/CTFTTE-MOB-008.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-MOB-008",
+        "name": "Use anti-anti-Frida techniques",
+        "path": "countertechniques/CTFTCTE-MOB-008.md"
+      }
+    },
+    {
       "tactic": "CTFT-TA-NET",
       "category": "NET",
       "technique": {
@@ -2539,6 +2581,62 @@
         "id": "CTFTCTE-SDR-001",
         "name": "Demodulate and decode RF captures",
         "path": "countertechniques/CTFTCTE-SDR-001.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-SDR",
+      "category": "SDR",
+      "technique": {
+        "id": "CTFTTE-SDR-002",
+        "name": "Line-coded on-off-keyed remote transmission",
+        "path": "techniques/CTFTTE-SDR-002.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-SDR-002",
+        "name": "Slice the envelope into symbols and decode the line code",
+        "path": "countertechniques/CTFTCTE-SDR-002.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-SDR",
+      "category": "SDR",
+      "technique": {
+        "id": "CTFTTE-SDR-003",
+        "name": "Unlabelled IQ capture (format, sample rate and centre withheld)",
+        "path": "techniques/CTFTTE-SDR-003.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-SDR-003",
+        "name": "Fingerprint the IQ format and recover rate and centre",
+        "path": "countertechniques/CTFTCTE-SDR-003.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-SDR",
+      "category": "SDR",
+      "technique": {
+        "id": "CTFTTE-SDR-004",
+        "name": "Flag carried by a standard digital radio protocol",
+        "path": "techniques/CTFTTE-SDR-004.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-SDR-004",
+        "name": "Demodulate and run the protocol's reference decoder",
+        "path": "countertechniques/CTFTCTE-SDR-004.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-SDR",
+      "category": "SDR",
+      "technique": {
+        "id": "CTFTTE-SDR-005",
+        "name": "Flag transmitter hidden in a live spectrum",
+        "path": "techniques/CTFTTE-SDR-005.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-SDR-005",
+        "name": "Baseline the band and diff live sweeps",
+        "path": "countertechniques/CTFTCTE-SDR-005.md"
       }
     },
     {
@@ -3151,6 +3249,9 @@
     "CTFTTE-MOB-003": "CTFTCTE-MOB-003",
     "CTFTTE-MOB-004": "CTFTCTE-MOB-004",
     "CTFTTE-MOB-005": "CTFTCTE-MOB-005",
+    "CTFTTE-MOB-006": "CTFTCTE-MOB-006",
+    "CTFTTE-MOB-007": "CTFTCTE-MOB-007",
+    "CTFTTE-MOB-008": "CTFTCTE-MOB-008",
     "CTFTTE-NET-001": "CTFTCTE-NET-001",
     "CTFTTE-NET-002": "CTFTCTE-NET-002",
     "CTFTTE-NET-003": "CTFTCTE-NET-003",
@@ -3191,6 +3292,10 @@
     "CTFTTE-REV-009": "CTFTCTE-REV-009",
     "CTFTTE-REV-010": "CTFTCTE-REV-010",
     "CTFTTE-SDR-001": "CTFTCTE-SDR-001",
+    "CTFTTE-SDR-002": "CTFTCTE-SDR-002",
+    "CTFTTE-SDR-003": "CTFTCTE-SDR-003",
+    "CTFTTE-SDR-004": "CTFTCTE-SDR-004",
+    "CTFTTE-SDR-005": "CTFTCTE-SDR-005",
     "CTFTTE-STE-001": "CTFTCTE-STE-001",
     "CTFTTE-STE-002": "CTFTCTE-STE-002",
     "CTFTTE-STE-003": "CTFTCTE-STE-003",
@@ -4151,6 +4256,27 @@
       "tactic": "CTFT-TA-MOB",
       "path": "techniques/CTFTTE-MOB-005.md"
     },
+    "CTFTTE-MOB-006": {
+      "name": "Native code anti-hooking",
+      "counter_id": "CTFTCTE-MOB-006",
+      "counter_name": "Bypass anti-hooking with Frida",
+      "tactic": "CTFT-TA-MOB",
+      "path": "techniques/CTFTTE-MOB-006.md"
+    },
+    "CTFTTE-MOB-007": {
+      "name": "Memory-only encryption keys",
+      "counter_id": "CTFTCTE-MOB-007",
+      "counter_name": "Dump memory with Frida to extract keys",
+      "tactic": "CTFT-TA-MOB",
+      "path": "techniques/CTFTTE-MOB-007.md"
+    },
+    "CTFTTE-MOB-008": {
+      "name": "Frida detection",
+      "counter_id": "CTFTCTE-MOB-008",
+      "counter_name": "Use anti-anti-Frida techniques",
+      "tactic": "CTFT-TA-MOB",
+      "path": "techniques/CTFTTE-MOB-008.md"
+    },
     "CTFTTE-NET-001": {
       "name": "Port/service discovery maze",
       "counter_id": "CTFTCTE-NET-001",
@@ -4430,6 +4556,34 @@
       "counter_name": "Demodulate and decode RF captures",
       "tactic": "CTFT-TA-SDR",
       "path": "techniques/CTFTTE-SDR-001.md"
+    },
+    "CTFTTE-SDR-002": {
+      "name": "Line-coded on-off-keyed remote transmission",
+      "counter_id": "CTFTCTE-SDR-002",
+      "counter_name": "Slice the envelope into symbols and decode the line code",
+      "tactic": "CTFT-TA-SDR",
+      "path": "techniques/CTFTTE-SDR-002.md"
+    },
+    "CTFTTE-SDR-003": {
+      "name": "Unlabelled IQ capture (format, sample rate and centre withheld)",
+      "counter_id": "CTFTCTE-SDR-003",
+      "counter_name": "Fingerprint the IQ format and recover rate and centre",
+      "tactic": "CTFT-TA-SDR",
+      "path": "techniques/CTFTTE-SDR-003.md"
+    },
+    "CTFTTE-SDR-004": {
+      "name": "Flag carried by a standard digital radio protocol",
+      "counter_id": "CTFTCTE-SDR-004",
+      "counter_name": "Demodulate and run the protocol's reference decoder",
+      "tactic": "CTFT-TA-SDR",
+      "path": "techniques/CTFTTE-SDR-004.md"
+    },
+    "CTFTTE-SDR-005": {
+      "name": "Flag transmitter hidden in a live spectrum",
+      "counter_id": "CTFTCTE-SDR-005",
+      "counter_name": "Baseline the band and diff live sweeps",
+      "tactic": "CTFT-TA-SDR",
+      "path": "techniques/CTFTTE-SDR-005.md"
     },
     "CTFTTE-STE-001": {
       "name": "LSB image steganography",
@@ -5595,6 +5749,27 @@
       "tactic": "CTFT-TA-MOB",
       "path": "countertechniques/CTFTCTE-MOB-005.md"
     },
+    "CTFTCTE-MOB-006": {
+      "name": "Bypass anti-hooking with Frida",
+      "technique_id": "CTFTTE-MOB-006",
+      "technique_name": "Native code anti-hooking",
+      "tactic": "CTFT-TA-MOB",
+      "path": "countertechniques/CTFTCTE-MOB-006.md"
+    },
+    "CTFTCTE-MOB-007": {
+      "name": "Dump memory with Frida to extract keys",
+      "technique_id": "CTFTTE-MOB-007",
+      "technique_name": "Memory-only encryption keys",
+      "tactic": "CTFT-TA-MOB",
+      "path": "countertechniques/CTFTCTE-MOB-007.md"
+    },
+    "CTFTCTE-MOB-008": {
+      "name": "Use anti-anti-Frida techniques",
+      "technique_id": "CTFTTE-MOB-008",
+      "technique_name": "Frida detection",
+      "tactic": "CTFT-TA-MOB",
+      "path": "countertechniques/CTFTCTE-MOB-008.md"
+    },
     "CTFTCTE-NET-001": {
       "name": "Systematic port/service enumeration",
       "technique_id": "CTFTTE-NET-001",
@@ -5874,6 +6049,34 @@
       "technique_name": "RF/SDR signal embedding",
       "tactic": "CTFT-TA-SDR",
       "path": "countertechniques/CTFTCTE-SDR-001.md"
+    },
+    "CTFTCTE-SDR-002": {
+      "name": "Slice the envelope into symbols and decode the line code",
+      "technique_id": "CTFTTE-SDR-002",
+      "technique_name": "Line-coded on-off-keyed remote transmission",
+      "tactic": "CTFT-TA-SDR",
+      "path": "countertechniques/CTFTCTE-SDR-002.md"
+    },
+    "CTFTCTE-SDR-003": {
+      "name": "Fingerprint the IQ format and recover rate and centre",
+      "technique_id": "CTFTTE-SDR-003",
+      "technique_name": "Unlabelled IQ capture (format, sample rate and centre withheld)",
+      "tactic": "CTFT-TA-SDR",
+      "path": "countertechniques/CTFTCTE-SDR-003.md"
+    },
+    "CTFTCTE-SDR-004": {
+      "name": "Demodulate and run the protocol's reference decoder",
+      "technique_id": "CTFTTE-SDR-004",
+      "technique_name": "Flag carried by a standard digital radio protocol",
+      "tactic": "CTFT-TA-SDR",
+      "path": "countertechniques/CTFTCTE-SDR-004.md"
+    },
+    "CTFTCTE-SDR-005": {
+      "name": "Baseline the band and diff live sweeps",
+      "technique_id": "CTFTTE-SDR-005",
+      "technique_name": "Flag transmitter hidden in a live spectrum",
+      "tactic": "CTFT-TA-SDR",
+      "path": "countertechniques/CTFTCTE-SDR-005.md"
     },
     "CTFTCTE-STE-001": {
       "name": "Extract least-significant-bit payloads",
