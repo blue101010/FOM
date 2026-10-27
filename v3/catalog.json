@@ -2,8 +2,8 @@
   "model": "CTFT",
   "schema_version": "3.0",
   "collection": "catalog",
-  "generated_at": "2026-10-27T01:37:08+00:00",
-  "source_sha256": "ed4a818ec037240ac2c1c51072bb9293cb2eb21b76298dc72000a1a8e620a796",
+  "generated_at": "2026-10-27T02:14:51+00:00",
+  "source_sha256": "f6e1a8895aed5e0c705e460e008c13b2d4380c964332c128197baaf83c3790c0",
   "items": [
     {
       "id": "CTFTPAIR-AIM-001",
@@ -286,9 +286,11 @@
         "path": "countertechniques/CTFTCTE-CLD-001.md",
         "role": "resolution"
       },
-      "maturity": "taxonomy_only",
+      "maturity": "attested",
       "missing_for_typed_recommendation": [
-        "evidence_record"
+        "indicators",
+        "reviewed_tool_bindings",
+        "evaluation_case"
       ]
     },
     {
@@ -2705,6 +2707,28 @@
         "id": "CTFTCTE-IOT-006",
         "name": "Emulate the service and exploit the embedded binary",
         "path": "countertechniques/CTFTCTE-IOT-006.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-IOT-007",
+      "schema_version": "3.0",
+      "domain": "IOT",
+      "tactic": "CTFT-TA-IOT",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-IOT-007",
+        "name": "BLE GATT characteristic gating (pairing / passkey / MAC allow-list / password)",
+        "path": "techniques/CTFTTE-IOT-007.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-IOT-007",
+        "name": "Enumerate and drive BLE GATT as a client",
+        "path": "countertechniques/CTFTCTE-IOT-007.md",
         "role": "resolution"
       },
       "maturity": "taxonomy_only",

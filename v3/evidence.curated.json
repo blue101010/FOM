@@ -300,6 +300,71 @@
       "curator": "local (HTB_RF casebook)",
       "reviewed_on": "2026-10-25",
       "status": "pending"
+    },
+    {
+      "id": "EVID-CLD-001",
+      "schema_version": "3.0",
+      "technique": "CTFTTE-CLD-001",
+      "challenges": [
+        {
+          "ctf": "HTH CTF",
+          "challenge": "BucketList (Cloud, 100)",
+          "year": 2020,
+          "writeup": "https://blog.welcomethrill.house/2020/11/2020-hth-ctf-cloud-challenges.html",
+          "extracted_from": "read and confirmed: the hint names hth2020-private; `cloud_enum -k hth2020-private` reports OPEN S3 BUCKET, then `curl http://hth2020-private.s3.amazonaws.com/flag.txt` returns HTH{checkthisoffyourbucketlist}. The same post's OhSnap! step reads the bucket's `?versions` listing, revealing the key and timestamp of a deleted object"
+        },
+        {
+          "ctf": "flAWS.cloud",
+          "challenge": "Level 1",
+          "year": 2017,
+          "writeup": "https://github.com/mzet-/ctf-writeups/blob/master/flaws.cloud/flaws.cloud.md",
+          "extracted_from": "read and confirmed: bucket listing permission set to Everyone; `aws s3 ls s3://flaws.cloud/ --no-sign-request --region us-west-2` lists the objects, then `aws s3 cp s3://flaws.cloud/secret-dd02c7c.html --no-sign-request --region us-west-2` downloads the next-stage artefact. Level 2 (Any Authenticated AWS User) is the credential-gated exception, level 3 adds git-history analysis after an anonymous `s3 sync`"
+        }
+      ],
+      "references": [],
+      "positives": [
+        "the bucket serves a listing and object bodies to a caller with no credentials at all; the solve is a read, not an exploit",
+        "region discovery precedes any permission judgement: HEAD on the bucket exposes x-amz-bucket-region even behind a 403, and a 301 PermanentRedirect is a wrong-region answer rather than a denial",
+        "the artefact is fetched with a plain unauthenticated GET (`curl`) or `aws s3 cp --no-sign-request`; nothing is signed and no account exists",
+        "a denied listing does not close the challenge: the legacy `?versions` listing names deleted objects and a direct object GET still returns 200"
+      ],
+      "negatives": [
+        "an ACL scoped to Any Authenticated AWS User (flAWS level 2): an AWS account is required, so the exposure is credential-gated, not anonymous",
+        "a public EBS snapshot or an open Lambda/API Gateway stage that reveals the flag — no bucket read is involved (CTFTTE-CLD-004/006 territory)",
+        "a bucket read performed with keys recovered earlier in the challenge: the read is then a consequence of IAM access, which is CTFTTE-CLD-002",
+        "directory brute-forcing against an HTTP origin (CTFTTE-WEB-001) even when the hostname contains `s3`"
+      ],
+      "boundaries": [
+        "distinct from CTFTTE-CLD-002: there the bucket is read with valid credentials and the weakness is the permission set; here no credential exists",
+        "distinct from CTFTTE-CLD-003: an SSRF into IMDS retrieves credentials, not objects",
+        "flAWS level 3 is the bridge case — anonymous listing exposes a git repository whose history leaks keys; only the listing is CLD-001, the rest is CLD-002",
+        "GCS and Azure Blob reproduce the same pattern with a different response shape (EnumerationResults JSON/XML): same technique, different parser"
+      ],
+      "abstraction": "technique",
+      "synonyms": [
+        "public S3 bucket",
+        "world-readable bucket",
+        "anonymous bucket listing",
+        "bucket enumeration",
+        "open cloud storage"
+      ],
+      "external_mappings": [
+        {
+          "framework": "ATTACK",
+          "id": "T1530",
+          "confidence": "high",
+          "justification": "Data from Cloud Storage Object is the exact behaviour; CTFT adds the anonymous-enumeration craft (name permutations, region discovery, versions listing) that ATT&CK omits."
+        },
+        {
+          "framework": "ATTACK",
+          "id": "T1619",
+          "confidence": "medium",
+          "justification": "Cloud Storage Object Discovery describes the enumeration step that precedes the read."
+        }
+      ],
+      "curator": "local (workspace casebook)",
+      "reviewed_on": "2026-10-26",
+      "status": "attested"
     }
   ],
   "rejected": [

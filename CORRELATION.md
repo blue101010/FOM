@@ -4,8 +4,8 @@ Every **Design / Hide Technique** (`CTFTTE-<CAT>-NNN`) and the
 **Resolution-Technique** (`CTFTCTE-<CAT>-NNN`) that recovers it, grouped by domain.
 IDs pair one-to-one: `CTFTTE-FOR-004` is always answered by `CTFTCTE-FOR-004`.
 
-> Generated from the files in `techniques/` and `countertechniques/` — corpus fingerprint `f0e001a0cf847fc9`
-> by `v3/render_taxonomy_docs.py`. **215 complete pairs** across **20 active domains**. Do not hand-edit: rename the entry, then re-render.
+> Generated from the files in `techniques/` and `countertechniques/` — corpus fingerprint `54372764aca791c2`
+> by `v3/render_taxonomy_docs.py`. **216 complete pairs** across **20 active domains**. Do not hand-edit: rename the entry, then re-render.
 
 ---
 
@@ -33,9 +33,9 @@ Order follows the challenge-category picker.
 | 16 | [`NET`](#ctft-ta-net) | Network | Network | 9 |
 | 17 | [`FPN`](#ctft-ta-fpn) | Full Pwn | Full Pwn / Multi-Stage | 20 |
 | 18 | [`HWR`](#ctft-ta-hwr) | Hardware | Hardware | 3 |
-| 19 | [`IOT`](#ctft-ta-iot) | IoT / Embedded | IoT / Embedded | 6 |
+| 19 | [`IOT`](#ctft-ta-iot) | IoT / Embedded | IoT / Embedded | 7 |
 | 20 | [`SDR`](#ctft-ta-sdr) | SDR / RF | Software-Defined Radio | 5 |
-| | | | **Total** | **215** |
+| | | | **Total** | **216** |
 
 **Retired — do not use.** `MSC` (Misc) was a catch-all whose entries all
 duplicated a precise domain; file those challenges under `JAL`, `COD`, `GAM`
@@ -393,7 +393,7 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 
 ## <a id="ctft-ta-iot"></a>`CTFT-TA-IOT` — IoT / Embedded
 
-> [domain page](tactics/CTFT-TA-IOT.md) · 6 pairs · HTB: Misc (IoT)
+> [domain page](tactics/CTFT-TA-IOT.md) · 7 pairs · HTB: Misc (IoT)
 
 | # | Technique ID | Hide / Design name | Resolution-technique ID | Recovery action |
 | --- | --- | --- | --- | --- |
@@ -403,6 +403,7 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 | 4 | [CTFTTE-IOT-004](techniques/CTFTTE-IOT-004.md) | On-board serial console flag (UART/JTAG exposure) | [CTFTCTE-IOT-004](countertechniques/CTFTCTE-IOT-004.md) | Identify debug pads and read the serial console |
 | 5 | [CTFTTE-IOT-005](techniques/CTFTTE-IOT-005.md) | Short-range IoT radio concealment (Zigbee/BLE/sub-GHz) | [CTFTCTE-IOT-005](countertechniques/CTFTCTE-IOT-005.md) | Sniff and decode the device radio protocol |
 | 6 | [CTFTTE-IOT-006](techniques/CTFTTE-IOT-006.md) | Embedded-binary exploitation behind device emulation (MIPS/ARM) | [CTFTCTE-IOT-006](countertechniques/CTFTCTE-IOT-006.md) | Emulate the service and exploit the embedded binary |
+| 7 | [CTFTTE-IOT-007](techniques/CTFTTE-IOT-007.md) | BLE GATT characteristic gating (pairing / passkey / MAC allow-list / password) | [CTFTCTE-IOT-007](countertechniques/CTFTCTE-IOT-007.md) | Enumerate and drive BLE GATT as a client |
 
 
 ## <a id="ctft-ta-sdr"></a>`CTFT-TA-SDR` — Software-Defined Radio

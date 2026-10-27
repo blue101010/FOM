@@ -1,10 +1,10 @@
 {
   "model": "CTFT",
   "schema_version": "3.0",
-  "generated_at": "2026-10-27T01:36:34+00:00",
+  "generated_at": "2026-10-27T02:14:16+00:00",
   "source": {
-    "correlation_sha256": "ed4a818ec037240ac2c1c51072bb9293cb2eb21b76298dc72000a1a8e620a796",
-    "legacy_index_sha256": "5efd71d07cc706b162680a8d4c7495da53487469cc2bc1004ef5874597b6d819"
+    "correlation_sha256": "f6e1a8895aed5e0c705e460e008c13b2d4380c964332c128197baaf83c3790c0",
+    "legacy_index_sha256": "4dc72baac3ed5da4d8d3bb604d853c806cc4c657fbf6b7cee2ed15e16ac27712"
   },
   "taxonomy": {
     "tactics": [
@@ -30,9 +30,9 @@
       "WEB"
     ],
     "tactic_count": 20,
-    "technique_count": 215,
-    "counter_technique_count": 215,
-    "complete_pairs": 215,
+    "technique_count": 216,
+    "counter_technique_count": 216,
+    "complete_pairs": 216,
     "by_tactic": {
       "AIM": 7,
       "BLK": 5,
@@ -44,7 +44,7 @@
       "GAM": 8,
       "HWR": 3,
       "ICS": 9,
-      "IOT": 6,
+      "IOT": 7,
       "JAL": 6,
       "MOB": 8,
       "NET": 9,
@@ -64,21 +64,21 @@
       "tools": 9
     },
     "maturity": {
-      "attested": 1,
+      "attested": 2,
       "taxonomy_only": 207,
       "typed": 7
     },
     "core": {
       "size": 35,
-      "with_evidence_record": 2,
-      "with_two_independent_events": 2,
-      "placeholder_free": 1
+      "with_evidence_record": 3,
+      "with_two_independent_events": 3,
+      "placeholder_free": 2
     },
     "stix_object_types": {
-      "attack-pattern": 213,
-      "course-of-action": 213,
+      "attack-pattern": 215,
+      "course-of-action": 215,
       "identity": 1,
-      "relationship": 213,
+      "relationship": 215,
       "x-ctft-tactic": 20
     },
     "placeholder_entries": [
@@ -91,7 +91,6 @@
       "countertechniques/CTFTCTE-BLK-003.md",
       "countertechniques/CTFTCTE-BLK-004.md",
       "countertechniques/CTFTCTE-BLK-005.md",
-      "countertechniques/CTFTCTE-CLD-001.md",
       "countertechniques/CTFTCTE-CLD-002.md",
       "countertechniques/CTFTCTE-CLD-003.md",
       "countertechniques/CTFTCTE-CLD-004.md",
@@ -211,7 +210,6 @@
       "techniques/CTFTTE-BLK-003.md",
       "techniques/CTFTTE-BLK-004.md",
       "techniques/CTFTTE-BLK-005.md",
-      "techniques/CTFTTE-CLD-001.md",
       "techniques/CTFTTE-CLD-002.md",
       "techniques/CTFTTE-CLD-003.md",
       "techniques/CTFTTE-CLD-004.md",
@@ -279,7 +277,6 @@
       "techniques/CTFTTE-IOT-002.md",
       "techniques/CTFTTE-IOT-003.md",
       "techniques/CTFTTE-IOT-004.md",
-      "techniques/CTFTTE-IOT-005.md",
       "techniques/CTFTTE-IOT-006.md",
       "techniques/CTFTTE-JAL-001.md",
       "techniques/CTFTTE-JAL-002.md",
@@ -359,17 +356,23 @@
   "integrity": {
     "techniques_without_counter": [],
     "counters_without_technique": [],
-    "correlation_pair_count": 215,
+    "correlation_pair_count": 216,
     "correlation_pairs_missing_from_files": [],
     "correlation_pairs_not_identity": [],
     "pairs_missing_from_correlation": [],
     "legacy_index_tactics_missing_from_files": [],
     "tactics_missing_from_legacy_index": [],
-    "legacy_index_pair_count": 215,
+    "legacy_index_pair_count": 216,
     "legacy_index_pairs_missing_from_files": [],
     "relation_problems": [],
     "lint_problems": [],
-    "readme_problems": [],
+    "readme_problems": [
+      "README.md: IOT claims 6 pairs, corpus has 7",
+      "README.md: domain-table total says 215, corpus has 216",
+      "README.md: pair count in prose says 215, corpus has 216",
+      "README.md: maturity `taxonomy_only` says 206, computed 207",
+      "README.md: coverage debt says 269 of 430 entry files, corpus has 268 of 432"
+    ],
     "schema_problems": [],
     "wording_problems": [],
     "link_problems": []

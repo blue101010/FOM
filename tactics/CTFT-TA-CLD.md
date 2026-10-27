@@ -26,7 +26,7 @@ per entry**, never the definition of an entry.
 
 | Technique | Hide / Design name | Resolution-technique | Recovery action | ATT&CK |
 | --- | --- | --- | --- | --- |
-| [CTFTTE-CLD-001](../techniques/CTFTTE-CLD-001.md) | Misconfigured object-storage exposure | [CTFTCTE-CLD-001](../countertechniques/CTFTCTE-CLD-001.md) | Enumerate and list public buckets | T1530 |
+| [CTFTTE-CLD-001](../techniques/CTFTTE-CLD-001.md) | Misconfigured object-storage exposure | [CTFTCTE-CLD-001](../countertechniques/CTFTCTE-CLD-001.md) | Enumerate and list public buckets | T1530, T1619 |
 | [CTFTTE-CLD-002](../techniques/CTFTTE-CLD-002.md) | Over-permissive IAM role | [CTFTCTE-CLD-002](../countertechniques/CTFTCTE-CLD-002.md) | Enumerate and assume reachable roles | T1078.004 |
 | [CTFTTE-CLD-003](../techniques/CTFTTE-CLD-003.md) | Instance metadata service exposure | [CTFTCTE-CLD-003](../countertechniques/CTFTCTE-CLD-003.md) | Retrieve credentials via SSRF to IMDS | T1552.005 |
 | [CTFTTE-CLD-004](../techniques/CTFTTE-CLD-004.md) | Secrets in function config / layers | [CTFTCTE-CLD-004](../countertechniques/CTFTCTE-CLD-004.md) | Dump serverless configuration and layers | T1552 |

@@ -37,13 +37,12 @@ Validate with `pow(m, e, N) == c`, never with the flag format alone.
    unknown, and keep any root that divides `N`.
 5. `d = e⁻¹ mod φ`, decrypt, re-encrypt to confirm.
 
-Expected cost: milliseconds for branch A, under a second for branch B on replay instances.
-Measured by replaying the construction at 256 and 512 bits (`scripts/yklm_selftest.py`):
-convergents plus semiconvergents close **~92%** of instances directly (23/25 and 39/40 in the
-larger sweep). The residual failures are exactly the instances where `x > N^{1/4}/3`, i.e. where
-the theorem's own hypothesis fails — past that edge neither the fraction sweep nor the
-`p̃ + X` route is guaranteed, and the next move is a bivariate lattice on the relation itself.
-Do not read the fallback as dead code.
+Expected cost: milliseconds for branch A, under a second for branch B on replayed instances of this
+construction. The fraction sweep — convergents first, then their semiconvergents — closes roughly
+nine instances out of ten directly. The residual failures are exactly the instances where
+`x > N^{1/4}/3`, i.e. where the theorem's own hypothesis fails: past that edge neither the fraction
+sweep nor the `p̃ + X` route is guaranteed, and the next move is a bivariate lattice on the relation
+itself. Do not read the fallback as dead code.
 
 **What fails and must not be retried.** Wiener (`d` is full size), Boneh-Durfee (`d > N^{0.292}`),
 Fermat (primes are independent and balanced), Pollard `p−1`, and every automated sweep that only
@@ -75,4 +74,4 @@ plaintext-equivalent during incident scoping.
 
 - <https://iacr.org/archive/pkc2004/29470001/29470001.pdf> (Nitaj, PKC 2004 — Theorem 2, the bound that makes branch B work)
 - <https://link.springer.com/chapter/10.1007/3-540-45861-1_30> (YKLM scheme definition and its fault-attack rationale)
-- <https://hackmd.io/@msalaani/hackfest7-crypto> (Hackfest 7 Finals 2023 — branch A solve in four lines, branch B solve with the lattice fallback)
+- <https://hackmd.io/@msalaani/hackfest7-crypto>

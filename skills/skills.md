@@ -20,6 +20,7 @@ when a skill chip is clicked.
 | [CTFTSKL-005](CTFTSKL-005.md) | ctf-windows-artifact-timeline | Domain skill | [ctf-skills-main/ctf-windows-artifact-timeline/SKILL.md](../../ctf-skills-main/ctf-windows-artifact-timeline/SKILL.md) | FOR-026/028/029 |
 | [CTFTSKL-006](CTFTSKL-006.md) | ctf-cloud-kubernetes | Domain skill | [ctf-skills-main/ctf-cloud-kubernetes/SKILL.md](../../ctf-skills-main/ctf-cloud-kubernetes/SKILL.md) | CLD-002/003/005/006/008, FPN-004/005 |
 | [CTFTSKL-007](CTFTSKL-007.md) | ctf-crypto-bounded-exponent-relation | Fine-grained skill | [ctf-skills-main/ctf-crypto-bounded-exponent-relation/SKILL.md](../../ctf-skills-main/ctf-crypto-bounded-exponent-relation/SKILL.md) | CRY-015 |
+| [CTFTSKL-008](CTFTSKL-008.md) | ctf-cloud-public-bucket | Fine-grained skill | [ctf-skills-main/ctf-cloud-public-bucket/SKILL.md](../../ctf-skills-main/ctf-cloud-public-bucket/SKILL.md) | CLD-001 |
 
 Fiche format (parsed by `franckysolve/fom_nav.py`):
 

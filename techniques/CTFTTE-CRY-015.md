@@ -75,4 +75,4 @@ of `φ`, see `CTFTCTE-CRY-001`) plus a small `y` reopens this relation.
 - <https://iacr.org/archive/pkc2004/29470001/29470001.pdf> (Nitaj, *A Generalized Wiener Attack on RSA*, PKC 2004 — Theorem 2)
 - <https://link.springer.com/chapter/10.1007/3-540-45861-1_30> (Yen, Kim, Lim, Moon, *RSA Speedup With Chinese Remainder Theorem Immune Against Hardware Fault Cryptanalysis*, 2003)
 - <https://d-nb.info/972386416/34> (*New RSA Vulnerabilities Using Lattice Reduction Methods*)
-- <https://hackmd.io/@msalaani/hackfest7-crypto> (Hackfest 7 Finals 2023, "ALO" / "ALO REVENGE" — author write-up, 0 solves on the revenge variant)
+- <https://hackmd.io/@msalaani/hackfest7-crypto>

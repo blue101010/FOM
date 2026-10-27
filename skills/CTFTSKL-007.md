@@ -51,11 +51,10 @@ evidence:
 
 ## Notes
 
-Validated by `scripts/yklm_selftest.py` (stdlib only): relation 100% (15/15, 25/25, 10/10 at
-256/512 bits), branch A decrypt 100%, branch B direct ~92% with semiconvergents, residual cases
-beyond the `N^{1/4}/3` edge. Source event: Hackfest 7 Finals 2023 — "ALO" (branch A, 2 solves)
-and "ALO REVENGE" (branch B, 0 solves). One event, so `CTFTTE-CRY-015` stays `taxonomy_only`
-until a second independent event is curated.
+Validated by `scripts/yklm_selftest.py` (stdlib only): relation 100%, branch A decrypt 100%,
+branch B direct recovery in about nine cases out of ten with semiconvergents, residual cases beyond
+the `N^{1/4}/3` edge. Two independent events are needed before `attested`; the pair is still
+`taxonomy_only` and `v3/evidence.curated.json` holds the current candidate.
 
 ## Related Techniques
 

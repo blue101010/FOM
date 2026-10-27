@@ -79,8 +79,8 @@ Order and short labels follow the challenge-category picker.
 | 17 | [CTFT-TA-FPN](tactics/CTFT-TA-FPN.md) | Full Pwn | Full Pwn / Multi-Stage | HTB: Fullpwn | 20 |
 | 18 | [CTFT-TA-HWR](tactics/CTFT-TA-HWR.md) | Hardware | Hardware | HTB: Hardware | 3 |
 | 19 | [CTFT-TA-SDR](tactics/CTFT-TA-SDR.md) | SDR / RF | Software-Defined Radio | HTB: Hardware | 5 |
-| 20 | [CTFT-TA-IOT](tactics/CTFT-TA-IOT.md) | IoT / Embedded | Internet of Things | HTB: Misc (IoT) | 6 |
-| | | | **Total** | | **215** |
+| 20 | [CTFT-TA-IOT](tactics/CTFT-TA-IOT.md) | IoT / Embedded | Internet of Things | HTB: Misc (IoT) | 7 |
+| | | | **Total** | | **216** |
 
 **Retired:** `CTFT-TA-MSC` (Misc) is **removed**. It was a catch-all and every entry
 it held duplicated a precise tactic. Do not create `MSC` entries; file the challenge
@@ -158,7 +158,7 @@ produces no diff. Regenerate with `python v3/render_stix.py --write`.
 
 ## Catalogue integrity
 
-The corpus contains **215 complete technique/counter-technique pairs** across 20 domains.
+The corpus contains **216 complete technique/counter-technique pairs** across 20 domains.
 `CORRELATION.md`, `HIERARCHY.md` **and every tactic page** are generated, never hand-edited: the
 markdown entry files are the source of truth, so a renamed technique cannot drift from the matrix.
 After adding or renaming an entry:
@@ -174,6 +174,13 @@ if a retired tactic (`MSC`) reappears, so a new domain has to be declared delibe
 drifting in. Generated documents carry a **corpus fingerprint** instead of a timestamp, so
 `--check` detects real drift and an unchanged regeneration is a git no-op.
 
+**Entries stay technique-level.** A technique or counter-technique names a *class* of behaviour —
+what the author conceals, what the solver does about it — and must transfer to the next challenge
+that uses the same idea. Challenge names, event years, flag literals, bucket or host names, solved
+counts and step-by-step solver narratives belong in `v3/evidence.curated.json` (`challenges`,
+`extracted_from`) and in the entry's `References` link list, never in the body prose. A fiche that
+reads like a write-up is a curation bug: it documents one event instead of the technique.
+
 `--check` gates structural integrity (unpaired entries, matrix/index divergence), the relation
 graph, and a semantic lint (tool names or implementation details in technique titles, placeholder
 counter names, dangling evidence or core references).
@@ -186,10 +193,11 @@ disagree:
 | Maturity | Meaning | Count today |
 | --- | --- | --- |
 | `taxonomy_only` | identifiers and paired prose only | 207 |
-| `attested` | >= 2 independent CTF events + curated positives, negatives, boundaries | 1 |
+| `attested` | >= 2 independent CTF events + curated positives, negatives, boundaries | 2 |
 
-Two techniques were attested by reading the write-ups (`CRY-012`, `FOR-006`); both currently show
-as `typed` because that level outranks `attested`.
+Three techniques were attested by reading the write-ups (`CRY-012`, `FOR-006`, `CLD-001`); the
+first two currently show as `typed` because that level outranks `attested`, so `CLD-001` is the one
+pair reported as `attested` (HTH CTF 2020 "BucketList" + flAWS.cloud level 1).
 | `typed` | schema-valid typed objects, participates in retrieval | 7 |
 
 No maturity level authorizes automatic execution. A consumer may display a tool reference or a
@@ -197,10 +205,10 @@ human-readable step; execution belongs to a separately authorized laboratory run
 
 ### Known coverage debt
 
-- **Evidence is the bottleneck.** 271 of 430 entry files still carry the `Add challenge write-up
-  link` marker. Mining the local write-up base attested **2** core techniques (`CRY-012`,
-  `FOR-006`); the remaining 33 need sources that do not exist locally. `v3/evidence.curated.json`
-  records the rejected candidates and why, so they are not re-proposed.
+- **Evidence is the bottleneck.** 268 of 432 entry files still carry the `Add challenge write-up
+  link` marker. Mining the local write-up base attested **3** core techniques (`CRY-012`,
+  `FOR-006`, `CLD-001`); the remaining 32 need sources that do not exist locally.
+  `v3/evidence.curated.json` records the rejected candidates and why, so they are not re-proposed.
 - **`v3/holdout.json` is empty**, so `precision@k` is undefined. A case may only be added if its
   write-up was not used while curating the technique it targets - otherwise the metric measures
   memorisation.

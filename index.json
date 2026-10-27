@@ -1,7 +1,7 @@
 {
   "model": "CTFT",
   "version": "1.2",
-  "generated": "2026-10-27T01:36:55+00:00",
+  "generated": "2026-10-27T02:18:27+00:00",
   "relates_to": [
     "MITRE ATT&CK",
     "CAPEC",
@@ -74,7 +74,7 @@
       "id": "CTFT-TA-IOT",
       "name": "IoT / Embedded",
       "path": "tactics/CTFT-TA-IOT.md",
-      "count": 6
+      "count": 7
     },
     {
       "id": "CTFT-TA-JAL",
@@ -131,7 +131,7 @@
       "count": 23
     }
   ],
-  "total_techniques": 215,
+  "total_techniques": 216,
   "techniques": [
     {
       "tactic": "CTFT-TA-AIM",
@@ -1842,6 +1842,20 @@
       }
     },
     {
+      "tactic": "CTFT-TA-IOT",
+      "category": "IOT",
+      "technique": {
+        "id": "CTFTTE-IOT-007",
+        "name": "BLE GATT characteristic gating (pairing / passkey / MAC allow-list / password)",
+        "path": "techniques/CTFTTE-IOT-007.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-IOT-007",
+        "name": "Enumerate and drive BLE GATT as a client",
+        "path": "countertechniques/CTFTCTE-IOT-007.md"
+      }
+    },
+    {
       "tactic": "CTFT-TA-JAL",
       "category": "JAL",
       "technique": {
@@ -3267,6 +3281,7 @@
     "CTFTTE-IOT-004": "CTFTCTE-IOT-004",
     "CTFTTE-IOT-005": "CTFTCTE-IOT-005",
     "CTFTTE-IOT-006": "CTFTCTE-IOT-006",
+    "CTFTTE-IOT-007": "CTFTCTE-IOT-007",
     "CTFTTE-JAL-001": "CTFTCTE-JAL-001",
     "CTFTTE-JAL-002": "CTFTCTE-JAL-002",
     "CTFTTE-JAL-003": "CTFTCTE-JAL-003",
@@ -4215,6 +4230,13 @@
       "counter_name": "Emulate the service and exploit the embedded binary",
       "tactic": "CTFT-TA-IOT",
       "path": "techniques/CTFTTE-IOT-006.md"
+    },
+    "CTFTTE-IOT-007": {
+      "name": "BLE GATT characteristic gating (pairing / passkey / MAC allow-list / password)",
+      "counter_id": "CTFTCTE-IOT-007",
+      "counter_name": "Enumerate and drive BLE GATT as a client",
+      "tactic": "CTFT-TA-IOT",
+      "path": "techniques/CTFTTE-IOT-007.md"
     },
     "CTFTTE-JAL-001": {
       "name": "Python jail (pyjail) confinement",
@@ -5722,6 +5744,13 @@
       "technique_name": "Embedded-binary exploitation behind device emulation (MIPS/ARM)",
       "tactic": "CTFT-TA-IOT",
       "path": "countertechniques/CTFTCTE-IOT-006.md"
+    },
+    "CTFTCTE-IOT-007": {
+      "name": "Enumerate and drive BLE GATT as a client",
+      "technique_id": "CTFTTE-IOT-007",
+      "technique_name": "BLE GATT characteristic gating (pairing / passkey / MAC allow-list / password)",
+      "tactic": "CTFT-TA-IOT",
+      "path": "countertechniques/CTFTCTE-IOT-007.md"
     },
     "CTFTCTE-JAL-001": {
       "name": "Escape the Python sandbox",

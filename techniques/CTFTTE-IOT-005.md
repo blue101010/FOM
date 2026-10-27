@@ -25,8 +25,12 @@ protocol ecosystem and its device pairing.
 
 - [ubertooth / killerbee](../tools/CTFTTOU-277.md)
 - [bettercap](../tools/CTFTTOU-283.md)
+- [gatttool](../tools/CTFTTOU-416.md)
 
 ## References
 
 - <https://github.com/greatscottgadgets/ubertooth>
-- Add challenge write-up link
+- [bi0s — BLE CTF Infinity write-up](https://blog.bi0s.in/2026/08/25/Hardware/BLE_CTF_Infinity_Writeup_BIOS/)
+
+> For BLE **GATT client interaction** (read/write handles, pairing, MAC spoof, brute force) see the
+> dedicated pair [`CTFTTE-IOT-007`](CTFTTE-IOT-007.md) / [`CTFTCTE-IOT-007`](../countertechniques/CTFTCTE-IOT-007.md).
