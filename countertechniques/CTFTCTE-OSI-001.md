@@ -23,8 +23,8 @@ Aggregating metadata across artifacts reconstructs the subject's footprint.
 ## Tools
 
 - exiftool
-- reverse geocoding
-- maps
+- [Nominatim](../tools/CTFTTOU-418.md)
+- [Google Maps](../tools/CTFTTOU-419.md)
 
 ## References
 

@@ -18,10 +18,10 @@ The flag lives on infrastructure hidden among an ASN/IP range or a forgotten sub
 
 ## Tools
 
-- bbot
-- assetfinder
-- amass
-- dnsx
+- [bbot](../tools/CTFTTOU-093.md)
+- [assetfinder](../tools/CTFTTOU-089.md)
+- [amass](../tools/CTFTTOU-088.md)
+- [dnsx](../tools/CTFTTOU-092.md)
 
 ## References
 

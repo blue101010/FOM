@@ -30,7 +30,13 @@ resampling destroys module boundaries and makes later decoding impossible.
 
 ## Tools
 
-_Symbology-dependent — see the child counter-techniques._
+Broad-spectrum first pass, then delegate to the symbology-specific child counter-technique:
+
+- [ZXingReader](../tools/CTFTTOU-004.md) — multi-format 1D/2D (QR, Data Matrix, Aztec, PDF417, rMQR)
+- [zbar](../tools/CTFTTOU-423.md) — `zbarimg` / `pyzbar`, fast QR + 1D barcode decode
+- [OpenCV](../tools/CTFTTOU-424.md) — `cv2.QRCodeDetector`; also to preprocess (threshold/perspective) a damaged symbol
+- [libdmtx](../tools/CTFTTOU-425.md) — Data Matrix (`dmtxread`)
+- [jabcode decoder](../tools/CTFTTOU-260.md) — JAB colour codes
 
 ## References
 

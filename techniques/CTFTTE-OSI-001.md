@@ -19,8 +19,8 @@ Identifying data is scattered across file metadata and post artifacts rather tha
 ## Tools
 
 - exiftool
-- reverse geocoding
-- maps
+- [Nominatim](../tools/CTFTTOU-418.md)
+- [Google Maps](../tools/CTFTTOU-419.md)
 
 ## References
 

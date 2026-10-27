@@ -22,7 +22,7 @@ Dorking is documented OSINT methodology; queries are logged and reproducible.
 
 ## Tools
 
-- Google/Bing dorks
+- [Google Hacking Database (GHDB)](../tools/CTFTTOU-422.md)
 - googlesearch-python
 
 ## References

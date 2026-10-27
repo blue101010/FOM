@@ -18,7 +18,15 @@ Use special encoding system to hide data with visual, machine-readable form
 
 ## Tools
 
-_See references._
+- [ZXingReader](../tools/CTFTTOU-004.md) — multi-format 1D/2D (QR, Data Matrix, Aztec, PDF417, rMQR)
+- [zbar](../tools/CTFTTOU-423.md) — `zbarimg` / `pyzbar`, fast first-pass QR + 1D barcodes
+- [OpenCV](../tools/CTFTTOU-424.md) — scriptable QR/barcode detection, robust to rotation/noise; preprocessing
+- [libdmtx](../tools/CTFTTOU-425.md) — Data Matrix (`dmtxread`)
+- [QRazyBox](../tools/CTFTTOU-426.md) — recover a **damaged / cropped / masked** QR (grid editor, Reed-Solomon, format brute-force)
+- [jabcode decoder](../tools/CTFTTOU-260.md) — JAB colour codes (see `CTFTTE-FOR-027`)
+
+> Symbology-specific decoders live on the child techniques: QR [`CTFTTE-FOR-011`](CTFTTE-FOR-011.md),
+> rMQR [`CTFTTE-FOR-012`](CTFTTE-FOR-012.md), JAB [`CTFTTE-FOR-027`](CTFTTE-FOR-027.md).
 
 ## References
 
@@ -56,3 +64,4 @@ _See references._
 **Writeups**
 
 - (1) [QRRRRRRRR — NahamCon CTF](https://medium.com/@inferiorak/qrrrrrrrr-nahamcon-ctf-2024-writeup-by-inferiorak-063406df187e)
+- (2) Local write-up — QR/rMQR grid recovery (alignment-pattern maths, `galois.py`, `rmqrdecode*.py`, QRazyBox): `C:\DATA\GIT\writeups\2024\NAHAMCONF\qrrrrrr`

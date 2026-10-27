@@ -103,6 +103,7 @@ FOM/
   fom-migrate.py              migration utility
   v3/                         ACTIVE model layer - schemas, generators, typed objects
     render_taxonomy_docs.py   renders CORRELATION.md, HIERARCHY.md and the tactic pages
+    render_tool_index.py      renders tools/tools.md from the individual tool sheets
     catalog_audit.py          index, catalogue, relations, integrity + semantic lint
     render_stix.py            STIX 2.1 bundles from index.json
     build_evidence.py         seeds evidence.json from write-up links in the corpus
@@ -117,7 +118,7 @@ FOM/
     subtechniques.md          sub-technique index
   countertechniques/          counter-techniques (CTFTCTE-<CAT>-NNN.md)
   tools/                      tool reference sheets
-    tools.md                  tool index
+    tools.md                  tool index - GENERATED from the CTFTTOU sheets
     CTFTTOU-NNN.md            individual tool pages
   to_categorize/              staging area for uncategorized entries
   stix/
@@ -165,9 +166,14 @@ After adding or renaming an entry:
 
 ```bash
 python v3/render_taxonomy_docs.py --write
+python v3/render_tool_index.py --write
 python v3/catalog_audit.py --write --write-index --write-catalog --write-relations --check
 python v3/render_stix.py --write
 ```
+
+The tool index follows the same rule: `tools/tools.md` is a view of `tools/CTFTTOU-*.md`
+(id, name, first URL, and the entries that cite the tool), so a new or renamed tool sheet is
+indexed by `render_tool_index.py --check` failing, not by someone remembering to add a row.
 
 The renderer refuses to run if a tactic directory is missing from its `CANONICAL_ORDER` list, or
 if a retired tactic (`MSC`) reappears, so a new domain has to be declared deliberately rather than

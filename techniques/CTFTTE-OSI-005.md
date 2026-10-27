@@ -18,7 +18,7 @@ The flag/secret was committed to a public repo, paste, or document and later ass
 
 ## Tools
 
-- github search/dorking
+- [GitHub Code Search](../tools/CTFTTOU-421.md)
 - trufflehog
 - gitleaks
 

@@ -18,7 +18,7 @@ The flag content is indexed but only findable through precise search operators.
 
 ## Tools
 
-- Google/Bing dorks
+- [Google Hacking Database (GHDB)](../tools/CTFTTOU-422.md)
 - googlesearch-python
 
 ## References

@@ -22,7 +22,7 @@ Commit history and timestamps document when and where the secret was exposed.
 
 ## Tools
 
-- github search/dorking
+- [GitHub Code Search](../tools/CTFTTOU-421.md)
 - trufflehog
 - gitleaks
 

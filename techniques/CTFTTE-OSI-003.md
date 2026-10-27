@@ -19,7 +19,7 @@ The flag was present but removed/edited, expecting solvers not to check history.
 ## Tools
 
 - Wayback Machine
-- cache viewers
+- [archive.today](../tools/CTFTTOU-420.md)
 - waybackurls
 
 ## References

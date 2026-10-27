@@ -1,10 +1,10 @@
 {
   "model": "CTFT",
   "schema_version": "3.0",
-  "generated_at": "2026-10-27T02:37:05+00:00",
+  "generated_at": "2026-10-27T03:57:24+00:00",
   "source": {
     "correlation_sha256": "44a798ada732807cce0d4c6aba1a110de1fc1daa18ac2afbea76bb9cfc3509e2",
-    "legacy_index_sha256": "d8f4651f43c313730886fb45f2da3e62048689224417ae0a54bab7485344797a"
+    "legacy_index_sha256": "8903aabd93b8c5b006834806c9da72796465f5652191da03dce7550ebe03c75d"
   },
   "taxonomy": {
     "tactics": [
@@ -75,10 +75,10 @@
       "placeholder_free": 2
     },
     "stix_object_types": {
-      "attack-pattern": 215,
-      "course-of-action": 215,
+      "attack-pattern": 217,
+      "course-of-action": 217,
       "identity": 1,
-      "relationship": 215,
+      "relationship": 217,
       "x-ctft-tactic": 20
     },
     "placeholder_entries": [
@@ -366,12 +366,7 @@
     "legacy_index_pairs_missing_from_files": [],
     "relation_problems": [],
     "lint_problems": [],
-    "readme_problems": [
-      "README.md: domain-table total says 216, corpus has 217",
-      "README.md: pair count in prose says 216, corpus has 217",
-      "README.md: maturity `taxonomy_only` says 207, computed 208",
-      "README.md: coverage debt says 268 of 432 entry files, corpus has 268 of 434"
-    ],
+    "readme_problems": [],
     "schema_problems": [],
     "wording_problems": [],
     "link_problems": []

@@ -22,10 +22,10 @@ Infrastructure mapping is standard attribution work; asset inventories are rebui
 
 ## Tools
 
-- bbot
-- assetfinder
-- amass
-- dnsx
+- [bbot](../tools/CTFTTOU-093.md)
+- [assetfinder](../tools/CTFTTOU-089.md)
+- [amass](../tools/CTFTTOU-088.md)
+- [dnsx](../tools/CTFTTOU-092.md)
 
 ## References
 
