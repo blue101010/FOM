@@ -957,6 +957,73 @@
       "source_ref": "course-of-action--078976f9-9a16-54bf-be33-30dc63626d18",
       "target_ref": "attack-pattern--c22f8b49-7898-5bd0-acd3-456f2955c747",
       "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--3587c111-083f-5fff-b068-f23fe02ef7d8",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-CRY-015 - RSA exponent bound by a small linear relation",
+      "description": "Nothing looks weak: N = p·q is a healthy balanced semiprime, e is full-size, no prime, no bit of d and no helper value is leaked. What is small is not the private exponent but a linear relation the public exponent satisfies: $$e\\,x + y \\equiv 0 \\pmod{\\varphi(N)}, \\qquad x \\approx N^{1/4}, \\quad |y| \\approx N^{1/8}$$ Every textbook test fails. d is full size, so Wiener (d < N^{1/4}/3) and Boneh-Durfee (d < N^{0.292}) return nothing, Fermat/Pollard never apply, and RsaCtfTool reports \"no attack succeeded\" because none of its modules test a bounded (x, y) relation. The trap is that the weakness lives in the shape of the exponent pair, invisible to a scanner looking at d alone. The canonical generator is the Yen-Kim-Lim-Moon exponentiation scheme, published as a countermeasure to CRT fault attacks. With φ = φ(N) and a quarter-size bound B = 2^{nbits/4}: er, r ← [1, B] # two small secrets dr = er⁻¹ mod φ d = dr + r # full-size \"perturbed\" private exponent e = d⁻¹ mod φ # full-size public exponent d is dr plus a 256-bit noise, so it never enters a small-d window. Multiplying e·(dr + r) ≡ 1 by er collapses the construction into the relation above: $$e\\,\\underbrace{(1 + er r)}{x \\approx N^{1/4}} \\;\\underbrace{- er}{y \\approx N^{1/8}} \\equiv 0 \\pmod{\\varphi(N)}$$ Two publication variants: - Parameters published. er and r are printed next to N, e, c. The relation is then immediately evaluable: kφ(N) = e(1 + er·r) − er is a multiple of the totient, and d ≡ e⁻¹ (mod kφ(N)) decrypts — a multiple of φ is as good as φ itself. - Parameters withheld. Only N, e, c are given. The bounded relation is the sole residue of the construction, and it is exactly the input of the generalized Wiener attack (Nitaj, PKC 2004), whose Theorem 2 asks for x ≤ ⅓N^{1/4} and |y| ≤ ½cN^{−3/4}ex with c ≤ 1 — satisfied here because er, r = O(N^{1/8}). The same smell appears whenever an author \"adds noise\" to a modular inverse instead of drawing d fresh, or reuses one small multiplier across several keys: any leak of x (or of a multiple of φ, see CTFTCTE-CRY-001) plus a small y reopens this relation.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "cry"
+        }
+      ],
+      "x_ctft_category": "CRY",
+      "x_ctft_domain": "CRY",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-CRY-015"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1573",
+          "description": "Encrypted Channel"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--fd203b77-dc2a-56aa-9bed-0cfbbe6905ab",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-CRY-015 - Recover the factors from a bounded exponent relation",
+      "description": "Given N, e (and c), recover φ(N) — or the factors — from e·x + y ≡ 0 (mod φ) with small x, y. Two branches, cheapest first. Branch A — the small parameters are published (er, r given). Evaluate the relation directly; it is a multiple of the totient, and a multiple of φ is enough: kphi = e (1 + er r) - er # == k φ(N) d = inverse(e, kphi) # valid mod kφ, hence mod φ m = pow(c, d, N) Validate with pow(m, e, N) == c, never with the flag format alone. Branch B — only N, e, c are published (generalized Wiener). x sits at the edge of the convergent denominators of e/N, so continued fractions enumerate it: 1. Compute the convergents of e/N — and, when they do not close, their semiconvergents (h{i-1} + j·h{i-2}) / (k{i-1} + j·k{i-2}), because x sits between two convergents as soon as it nears the N^{1/4} edge of the window. 2. For each candidate k/x, s = N + 1 − ⌊e·x / k⌋ estimates p + q; t = s² − 4N estimates (p − q)². 3. If t is a perfect square (search a ±2 window around s to absorb the flooring error), then p = (s + t^{1/2})/2 and N mod p == 0 closes the branch. 4. Otherwise p̃ = (s + ⌊t^{1/2}⌋)/2 is within N^{1/4} of the true prime: Coppersmith f(X) = p̃ + X with X = N^{1/4}, plus the small shifts (2j+1)·N^{1/4} that recentre the unknown, and keep any root that divides N. 5. d = e⁻¹ mod φ, decrypt, re-encrypt to confirm. Expected cost: milliseconds for branch A, under a second for branch B on replay instances. Measured by replaying the construction at 256 and 512 bits (scripts/yklmselftest.py): convergents plus semiconvergents close ~92% of instances directly (23/25 and 39/40 in the larger sweep). The residual failures are exactly the instances where x > N^{1/4}/3, i.e. where the theorem's own hypothesis fails — past that edge neither the fraction sweep nor the p̃ + X route is guaranteed, and the next move is a bivariate lattice on the relation itself. Do not read the fallback as dead code. What fails and must not be retried. Wiener (d is full size), Boneh-Durfee (d > N^{0.292}), Fermat (primes are independent and balanced), Pollard p−1, and every automated sweep that only looks at d. Recognising that the weakness is in (x, y), not in d, is the whole solve.",
+      "x_ctft_category": "CRY",
+      "x_ctft_domain": "CRY",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-CRY-015"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1573",
+          "description": "Encrypted Channel"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--71df2d9c-47a5-5e94-a092-1b02888eeeef",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--fd203b77-dc2a-56aa-9bed-0cfbbe6905ab",
+      "target_ref": "attack-pattern--3587c111-083f-5fff-b068-f23fe02ef7d8",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     }
   ]
 }

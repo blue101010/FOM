@@ -1,10 +1,10 @@
 {
   "model": "CTFT",
   "schema_version": "3.0",
-  "generated_at": "2026-10-27T00:43:29+00:00",
+  "generated_at": "2026-10-27T01:36:34+00:00",
   "source": {
-    "correlation_sha256": "e1ee359cf880bef14f1c35b62321d51fcd8d019861f3c8fcef04c76ab3582618",
-    "legacy_index_sha256": "412a03e877aefd78c78f6a9b1da04d51c5fed3a39002c99c94bec01879ac27e6"
+    "correlation_sha256": "ed4a818ec037240ac2c1c51072bb9293cb2eb21b76298dc72000a1a8e620a796",
+    "legacy_index_sha256": "5efd71d07cc706b162680a8d4c7495da53487469cc2bc1004ef5874597b6d819"
   },
   "taxonomy": {
     "tactics": [
@@ -30,15 +30,15 @@
       "WEB"
     ],
     "tactic_count": 20,
-    "technique_count": 214,
-    "counter_technique_count": 214,
-    "complete_pairs": 214,
+    "technique_count": 215,
+    "counter_technique_count": 215,
+    "complete_pairs": 215,
     "by_tactic": {
       "AIM": 7,
       "BLK": 5,
       "CLD": 8,
       "COD": 7,
-      "CRY": 14,
+      "CRY": 15,
       "FOR": 34,
       "FPN": 20,
       "GAM": 8,
@@ -65,7 +65,7 @@
     },
     "maturity": {
       "attested": 1,
-      "taxonomy_only": 206,
+      "taxonomy_only": 207,
       "typed": 7
     },
     "core": {
@@ -359,23 +359,17 @@
   "integrity": {
     "techniques_without_counter": [],
     "counters_without_technique": [],
-    "correlation_pair_count": 214,
+    "correlation_pair_count": 215,
     "correlation_pairs_missing_from_files": [],
     "correlation_pairs_not_identity": [],
     "pairs_missing_from_correlation": [],
     "legacy_index_tactics_missing_from_files": [],
     "tactics_missing_from_legacy_index": [],
-    "legacy_index_pair_count": 214,
+    "legacy_index_pair_count": 215,
     "legacy_index_pairs_missing_from_files": [],
     "relation_problems": [],
     "lint_problems": [],
-    "readme_problems": [
-      "README.md: NET claims 8 pairs, corpus has 9",
-      "README.md: domain-table total says 213, corpus has 214",
-      "README.md: pair count in prose says 213, corpus has 214",
-      "README.md: maturity `taxonomy_only` says 205, computed 206",
-      "README.md: coverage debt says 272 of 426 entry files, corpus has 271 of 428"
-    ],
+    "readme_problems": [],
     "schema_problems": [],
     "wording_problems": [],
     "link_problems": []

@@ -2,8 +2,8 @@
   "model": "CTFT",
   "schema_version": "3.0",
   "collection": "catalog",
-  "generated_at": "2026-10-27T00:43:58+00:00",
-  "source_sha256": "e1ee359cf880bef14f1c35b62321d51fcd8d019861f3c8fcef04c76ab3582618",
+  "generated_at": "2026-10-27T01:37:08+00:00",
+  "source_sha256": "ed4a818ec037240ac2c1c51072bb9293cb2eb21b76298dc72000a1a8e620a796",
   "items": [
     {
       "id": "CTFTPAIR-AIM-001",
@@ -902,6 +902,28 @@
         "id": "CTFTCTE-CRY-014",
         "name": "Derive the XOR key from file mtime",
         "path": "countertechniques/CTFTCTE-CRY-014.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-CRY-015",
+      "schema_version": "3.0",
+      "domain": "CRY",
+      "tactic": "CTFT-TA-CRY",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-CRY-015",
+        "name": "RSA exponent bound by a small linear relation",
+        "path": "techniques/CTFTTE-CRY-015.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-CRY-015",
+        "name": "Recover the factors from a bounded exponent relation",
+        "path": "countertechniques/CTFTCTE-CRY-015.md",
         "role": "resolution"
       },
       "maturity": "taxonomy_only",

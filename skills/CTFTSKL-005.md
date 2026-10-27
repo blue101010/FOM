@@ -43,6 +43,7 @@ evidence:
 - [artifact_inventory.py](../tools/CTFTTOU-405.md)
 - [timeline_normalize.py](../tools/CTFTTOU-406.md)
 - [timeline_correlate.py](../tools/CTFTTOU-407.md)
+- [LogFileParser](../tools/CTFTTOU-413.md) — NTFS `$LogFile` journal parser (file-system operation recovery)
 - Hayabusa, Plaso/log2timeline, Regipy, dissect.target, Eric Zimmerman tools (third-party; see references/tool-matrix.md)
 
 ## Related skills

@@ -575,6 +575,93 @@
       "source_ref": "course-of-action--e7e1522b-f070-5f58-be4e-2b84be8b6b3d",
       "target_ref": "attack-pattern--d00d8363-a49a-55a1-a8de-6a402d7a0eee",
       "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--29f70fd0-b5c1-5bac-b3ec-ec56829b88aa",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-NET-009 - Credential-gated SMB share (hash / Kerberos)",
+      "description": "The flag lives in an SMB share that refuses anonymous access: listing and reading require valid credentials, a captured NTLM hash (pass-the-hash), or a Kerberos ticket. Unlike a plain enumeration barrier, the obstacle is authentication — the share, path, or file is only reachable once the solver proves an identity recovered earlier in the chain (dumped hash, reused password, forged/obtained ticket).",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "net"
+        }
+      ],
+      "x_ctft_category": "NET",
+      "x_ctft_domain": "NET",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-NET-009"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1021.002",
+          "description": "SMB/Windows Admin Shares"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1550.002",
+          "description": "Use Alternate Authentication Material: Pass the Hash"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1078",
+          "description": "Valid Accounts"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--4db832d5-3d21-5cf0-a3dd-f7d5a69e8d1a",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-NET-009 - Authenticate to SMB and enumerate with smbclient.py (Impacket)",
+      "description": "Use Impacket's smbclient.py to authenticate with the recovered material, then enumerate and pull the flag: bash # Password auth smbclient.py 'DOMAIN/user:Password123@10.10.10.10' # Pass-the-hash (NTLM) — no password needed smbclient.py -hashes :<NTLM> 'DOMAIN/user@10.10.10.10' # Kerberos ticket from the environment (KRB5CCNAME) smbclient.py -k -no-pass 'DOMAIN/user@host.domain.local' Inside the interactive prompt: shares (list shares), use <share>, ls, cd, get <file>. For a quick scripted sweep prefer netexec smb <host> -u user -H <hash> --shares or smbmap. Null/guest sessions (smbclient.py ''@host) are worth one baseline attempt before spending the recovered credential.",
+      "x_ctft_category": "NET",
+      "x_ctft_domain": "NET",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-NET-009"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1021.002",
+          "description": "SMB/Windows Admin Shares"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1550.002",
+          "description": "Use Alternate Authentication Material: Pass the Hash"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1078",
+          "description": "Valid Accounts"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--deaa886e-f2a8-5377-8f72-0a7b8d6242bd",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--4db832d5-3d21-5cf0-a3dd-f7d5a69e8d1a",
+      "target_ref": "attack-pattern--29f70fd0-b5c1-5bac-b3ec-ec56829b88aa",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     }
   ]
 }

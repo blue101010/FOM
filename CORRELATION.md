@@ -4,8 +4,8 @@ Every **Design / Hide Technique** (`CTFTTE-<CAT>-NNN`) and the
 **Resolution-Technique** (`CTFTCTE-<CAT>-NNN`) that recovers it, grouped by domain.
 IDs pair one-to-one: `CTFTTE-FOR-004` is always answered by `CTFTCTE-FOR-004`.
 
-> Generated from the files in `techniques/` and `countertechniques/` — corpus fingerprint `00dbdc8e90b2362c`
-> by `v3/render_taxonomy_docs.py`. **214 complete pairs** across **20 active domains**. Do not hand-edit: rename the entry, then re-render.
+> Generated from the files in `techniques/` and `countertechniques/` — corpus fingerprint `f0e001a0cf847fc9`
+> by `v3/render_taxonomy_docs.py`. **215 complete pairs** across **20 active domains**. Do not hand-edit: rename the entry, then re-render.
 
 ---
 
@@ -17,7 +17,7 @@ Order follows the challenge-category picker.
 | --- | --- | --- | --- | --- |
 | 1 | [`FOR`](#ctft-ta-for) | Forensics | Forensics | 34 |
 | 2 | [`WEB`](#ctft-ta-web) | Web | Web Exploitation | 23 |
-| 3 | [`CRY`](#ctft-ta-cry) | Crypto | Cryptography | 14 |
+| 3 | [`CRY`](#ctft-ta-cry) | Crypto | Cryptography | 15 |
 | 4 | [`PWN`](#ctft-ta-pwn) | Binary | Binary Exploitation | 12 |
 | 5 | [`REV`](#ctft-ta-rev) | Reverse | Reverse Engineering | 10 |
 | 6 | [`STE`](#ctft-ta-ste) | Stego | Steganography | 11 |
@@ -35,7 +35,7 @@ Order follows the challenge-category picker.
 | 18 | [`HWR`](#ctft-ta-hwr) | Hardware | Hardware | 3 |
 | 19 | [`IOT`](#ctft-ta-iot) | IoT / Embedded | IoT / Embedded | 6 |
 | 20 | [`SDR`](#ctft-ta-sdr) | SDR / RF | Software-Defined Radio | 5 |
-| | | | **Total** | **214** |
+| | | | **Total** | **215** |
 
 **Retired — do not use.** `MSC` (Misc) was a catch-all whose entries all
 duplicated a precise domain; file those challenges under `JAL`, `COD`, `GAM`
@@ -118,7 +118,7 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 
 ## <a id="ctft-ta-cry"></a>`CTFT-TA-CRY` — Cryptography
 
-> [domain page](tactics/CTFT-TA-CRY.md) · 14 pairs · HTB: Crypto
+> [domain page](tactics/CTFT-TA-CRY.md) · 15 pairs · HTB: Crypto
 
 | # | Technique ID | Hide / Design name | Resolution-technique ID | Recovery action |
 | --- | --- | --- | --- | --- |
@@ -136,6 +136,7 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 | 12 | [CTFTTE-CRY-012](techniques/CTFTTE-CRY-012.md) | Hash-cracking maze with constraints | [CTFTCTE-CRY-012](countertechniques/CTFTCTE-CRY-012.md) | Crack hashes under masks/rules |
 | 13 | [CTFTTE-CRY-013](techniques/CTFTTE-CRY-013.md) | Nonstandard-alphabet substitution (braille, cetacean) | [CTFTCTE-CRY-013](countertechniques/CTFTCTE-CRY-013.md) | Transcode nonstandard alphabets |
 | 14 | [CTFTTE-CRY-014](techniques/CTFTTE-CRY-014.md) | Timestamp-keyed XOR | [CTFTCTE-CRY-014](countertechniques/CTFTCTE-CRY-014.md) | Derive the XOR key from file mtime |
+| 15 | [CTFTTE-CRY-015](techniques/CTFTTE-CRY-015.md) | RSA exponent bound by a small linear relation | [CTFTCTE-CRY-015](countertechniques/CTFTCTE-CRY-015.md) | Recover the factors from a bounded exponent relation |
 
 
 ## <a id="ctft-ta-pwn"></a>`CTFT-TA-PWN` — Binary Exploitation

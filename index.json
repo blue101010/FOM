@@ -1,7 +1,7 @@
 {
   "model": "CTFT",
   "version": "1.2",
-  "generated": "2026-10-27T00:43:28+00:00",
+  "generated": "2026-10-27T01:36:55+00:00",
   "relates_to": [
     "MITRE ATT&CK",
     "CAPEC",
@@ -38,7 +38,7 @@
       "id": "CTFT-TA-CRY",
       "name": "Cryptography",
       "path": "tactics/CTFT-TA-CRY.md",
-      "count": 14
+      "count": 15
     },
     {
       "id": "CTFT-TA-FOR",
@@ -131,7 +131,7 @@
       "count": 23
     }
   ],
-  "total_techniques": 214,
+  "total_techniques": 215,
   "techniques": [
     {
       "tactic": "CTFT-TA-AIM",
@@ -705,6 +705,20 @@
         "id": "CTFTCTE-CRY-014",
         "name": "Derive the XOR key from file mtime",
         "path": "countertechniques/CTFTCTE-CRY-014.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-CRY",
+      "category": "CRY",
+      "technique": {
+        "id": "CTFTTE-CRY-015",
+        "name": "RSA exponent bound by a small linear relation",
+        "path": "techniques/CTFTTE-CRY-015.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-CRY-015",
+        "name": "Recover the factors from a bounded exponent relation",
+        "path": "countertechniques/CTFTCTE-CRY-015.md"
       }
     },
     {
@@ -3172,6 +3186,7 @@
     "CTFTTE-CRY-012": "CTFTCTE-CRY-012",
     "CTFTTE-CRY-013": "CTFTCTE-CRY-013",
     "CTFTTE-CRY-014": "CTFTCTE-CRY-014",
+    "CTFTTE-CRY-015": "CTFTCTE-CRY-015",
     "CTFTTE-FOR-001": "CTFTCTE-FOR-001",
     "CTFTTE-FOR-002": "CTFTCTE-FOR-002",
     "CTFTTE-FOR-003": "CTFTCTE-FOR-003",
@@ -3633,6 +3648,13 @@
       "counter_name": "Derive the XOR key from file mtime",
       "tactic": "CTFT-TA-CRY",
       "path": "techniques/CTFTTE-CRY-014.md"
+    },
+    "CTFTTE-CRY-015": {
+      "name": "RSA exponent bound by a small linear relation",
+      "counter_id": "CTFTCTE-CRY-015",
+      "counter_name": "Recover the factors from a bounded exponent relation",
+      "tactic": "CTFT-TA-CRY",
+      "path": "techniques/CTFTTE-CRY-015.md"
     },
     "CTFTTE-FOR-001": {
       "name": "Magic-byte / file-signature tampering",
@@ -5133,6 +5155,13 @@
       "technique_name": "Timestamp-keyed XOR",
       "tactic": "CTFT-TA-CRY",
       "path": "countertechniques/CTFTCTE-CRY-014.md"
+    },
+    "CTFTCTE-CRY-015": {
+      "name": "Recover the factors from a bounded exponent relation",
+      "technique_id": "CTFTTE-CRY-015",
+      "technique_name": "RSA exponent bound by a small linear relation",
+      "tactic": "CTFT-TA-CRY",
+      "path": "countertechniques/CTFTCTE-CRY-015.md"
     },
     "CTFTCTE-FOR-001": {
       "name": "Recover the legitimate file signature",
