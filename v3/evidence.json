@@ -2,10 +2,10 @@
   "model": "CTFT",
   "schema_version": "3.0",
   "collection": "evidence",
-  "generated_at": "2026-10-27T01:58:23+00:00",
+  "generated_at": "2026-10-27T02:36:54+00:00",
   "note": "Seeded from links already present in the corpus, then overridden by v3/evidence.curated.json where a curator read the write-up. No entry is attested until positives, negatives and boundaries are written by hand.",
   "counts": {
-    "curated": 7,
+    "curated": 8,
     "attested": 3
   },
   "items": [
@@ -698,6 +698,58 @@
       "curator": "local (critical_flight casebook)",
       "reviewed_on": "2026-10-22",
       "status": "curated"
+    },
+    {
+      "id": "EVID-MOB-009",
+      "schema_version": "3.0",
+      "technique": "CTFTTE-MOB-009",
+      "challenges": [
+        {
+          "ctf": "HFCTF",
+          "challenge": "All the things she sent - 01 Up and running",
+          "year": 2025,
+          "writeup": "2025/HF2025/All_the_things_she_sent/All_the_things_she_sent.md (local casebook, workspace C:\\DATA\\CTF)",
+          "extracted_from": "read and confirmed statically: APK and IPA both ship a Hermes bytecode bundle (version 96) behind a generated Expo shell, so platform decompilation shows no application logic; hermes-dec recovered the entry module and the two unsigned GET endpoints it builds from a constant base URL. FLAG NOT VALIDATED - the challenge infrastructure was decommissioned before the replay, so the requests were reconstructed and never sent"
+        }
+      ],
+      "references": [
+        "https://github.com/P1sec/hermes-dec"
+      ],
+      "positives": [
+        "the application logic is absent from the platform artifact: decompiling the package yields only the framework bootstrap, which is the signal rather than a dead end",
+        "the code ships as a separate compiled asset that starts with an engine bytecode magic and carries a version field",
+        "the bytecode version, not the app version, decides whether a decompiler produces code or plausible-looking nonsense",
+        "decompilation restores module boundaries and original function names, which is what makes the network surface readable"
+      ],
+      "negatives": [
+        "logic hidden in a native shared library, where the recovery is reversing the .so (CTFTTE-MOB-002)",
+        "renamed or obfuscated DEX bytecode, where the code is readable but mislabelled (CTFTTE-MOB-004)",
+        "a hardcoded secret sitting in resources or strings, with no logic to recover (CTFTTE-MOB-001)",
+        "a compiled artifact of the same language as its source, where one decompiler suffices and no container triage is needed (CTFTTE-REV-007)"
+      ],
+      "boundaries": [
+        "single event, and no flag validated: the requests were reconstructed from the bundle, never replayed - attested would need two independent events plus a confirmed solve",
+        "the class is stated per engine, not per framework: a different engine keeps the technique and changes the magic, the version table and the decompiler",
+        "once the logic is readable the endpoints it reveals belong to the network/web domains; this entry stops at recovering the behaviour"
+      ],
+      "abstraction": "technique",
+      "synonyms": [
+        "React Native bundle reversing",
+        "Hermes bytecode decompilation",
+        "logic hidden in an app bundle asset",
+        "Expo app static analysis"
+      ],
+      "external_mappings": [
+        {
+          "framework": "ATTACK",
+          "id": "T1027",
+          "confidence": "medium",
+          "justification": "Compiled-artifact delivery hides the logic from platform tooling; ATT&CK does not model the engine/version triage the recovery depends on."
+        }
+      ],
+      "curator": "local (workspace casebook)",
+      "reviewed_on": "2026-10-26",
+      "status": "pending"
     },
     {
       "id": "EVID-PWN-001",

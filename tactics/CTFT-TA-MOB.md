@@ -2,7 +2,7 @@
 
 > **Domain ID:** `CTFT-TA-MOB`  
 > **HTB mapping:** HTB: Mobile  
-> **Techniques:** 8
+> **Techniques:** 9
 
 ## Description
 
@@ -34,6 +34,7 @@ per entry**, never the definition of an entry.
 | [CTFTTE-MOB-006](../techniques/CTFTTE-MOB-006.md) | Native code anti-hooking | [CTFTCTE-MOB-006](../countertechniques/CTFTCTE-MOB-006.md) | Bypass anti-hooking with Frida | T1406 |
 | [CTFTTE-MOB-007](../techniques/CTFTTE-MOB-007.md) | Memory-only encryption keys | [CTFTCTE-MOB-007](../countertechniques/CTFTCTE-MOB-007.md) | Dump memory with Frida to extract keys | T1552 |
 | [CTFTTE-MOB-008](../techniques/CTFTTE-MOB-008.md) | Frida detection | [CTFTCTE-MOB-008](../countertechniques/CTFTCTE-MOB-008.md) | Use anti-anti-Frida techniques | T1622 |
+| [CTFTTE-MOB-009](../techniques/CTFTTE-MOB-009.md) | Engine bytecode packaged with a mobile application | [CTFTCTE-MOB-009](../countertechniques/CTFTCTE-MOB-009.md) | Recover application logic from engine bytecode | T1027 |
 
 ---
 *See [CORRELATION.md](../CORRELATION.md) for the full cross-reference matrix.*

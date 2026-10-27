@@ -43,6 +43,26 @@
       "origin": "curated",
       "confidence": "medium",
       "note": "Container escape appears as the whole challenge in JAL and as one link of the chain in FPN."
+    },
+    {
+      "id": "REL-RELATED-TO-MOB-009-MOB-002",
+      "schema_version": "3.0",
+      "type": "related-to",
+      "source": "CTFTTE-MOB-009",
+      "target": "CTFTTE-MOB-002",
+      "origin": "curated",
+      "confidence": "high",
+      "note": "Same concealment move - the logic is not in the DEX - with a different substrate: a native library in MOB-002, an engine bytecode asset in MOB-009. The recovery differs accordingly (reverse the .so vs decompile the bundle)."
+    },
+    {
+      "id": "REL-RELATED-TO-MOB-009-REV-007",
+      "schema_version": "3.0",
+      "type": "related-to",
+      "source": "CTFTTE-MOB-009",
+      "target": "CTFTTE-REV-007",
+      "origin": "curated",
+      "confidence": "high",
+      "note": "Both deliver a compiled artifact instead of source. REV-007 stays within one language (its own decompiler); MOB-009 adds the container question - where the bundle hides in the package - and an engine/version triage before any decompiler applies."
     }
   ]
 }

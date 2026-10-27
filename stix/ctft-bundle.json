@@ -1164,7 +1164,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTTE-CLD-001 - Misconfigured object-storage exposure",
-      "description": "The flag object sits in a world-readable or weakly-named bucket the author assumes is private. The flaw is the assumption, not any crypto: the bucket policy or ACL grants AllUsers read, the object is public while the bucket is not, or the name is guessable from a keyword the prompt supplies. Nothing in the traffic looks like an attack — a browser would fetch the flag just as well. Variants seen in practice: - World-listable bucket. s3:ListBucket on AllUsers: the listing returns the object names and the flag object downloads anonymously (HTH CTF 2020 \"BucketList\": curl http://hth2020-private.s3.amazonaws.com/flag.txt; flAWS level 1: aws s3 ls s3://flaws.cloud/ --no-sign-request). - Objects public, listing denied. ListBucket answers 403 while GetObject answers 200: the exposure is still complete, only the index is missing. - Weak bucket naming. The prompt leaks a keyword, not a name — -private, -backup, -dev, a CTF name or a year completes it (hth2020-private was literally the hint). - Versioning keeps the secret. A deleted object survives as a non-current version; the legacy ?versions listing names it and its VersionId (HTH \"OhSnap!\" recovered the key and timestamp of a deleted flag.txt this way). - Storage as a carrier. The exposed bucket contains a git repository; its history, not its working tree, holds the committed credentials (flAWS level 3) — an intermediate step toward CTFTTE-CLD-002. Boundary: an ACL scoped to Any Authenticated AWS User (flAWS level 2) is not this technique — it needs an AWS account, so the solve is credential-gated rather than anonymous.",
+      "description": "The flag object sits in a world-readable or weakly-named bucket the author assumes is private. The weakness is in the access policy, not in the data: an ACL or bucket policy grants read to a principal set that includes anonymous callers, or the object itself is public while the bucket is not. Nothing in the traffic resembles an attack — an unauthenticated request returns the flag. Design variants, in increasing subtlety: - Listable bucket. Anonymous callers may list the bucket, so object names are handed over and the flag object downloads directly. - Readable objects, denied listing. The list operation is refused while individual objects are served: the exposure is complete, only the index is missing. - Guessable name. The prompt or a leaked artefact supplies a keyword instead of a name, and the bucket name is that keyword plus a short, predictable qualifier. - Versioned storage. A deleted object survives as a non-current version that stays readable. - Storage as a carrier. The exposed objects hold a further artefact (source tree, repository, configuration) whose history or companion files contain credentials, so the bucket is the entry point to a second weakness rather than the flag itself. Boundary: when the grant is scoped to any authenticated principal of the provider, the exposure is credential-gated and no longer anonymous — that belongs to the over-permissive-access pairs.",
       "kill_chain_phases": [
         {
           "kill_chain_name": "ctft",
@@ -1199,7 +1199,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-CLD-001 - Enumerate and list public buckets",
-      "description": "Enumerate bucket names and list/download objects anonymously. 1. Normalise the identity. Bucket name alone, DNS name (bucket.s3.amazonaws.com), or the bucket inside a URL path — drop the scheme, the s3:// prefix and the region suffix. When only a keyword is given, expand it (-private, -public, -backup, -dev, the CTF name, the year) before reaching for a dictionary. 2. Pin the region first. HEAD https://<bucket>.s3.amazonaws.com/ returns x-amz-bucket-region even on a 403; a 301 PermanentRedirect is a wrong-region answer, not a denial, and retrying against <bucket>.s3.<region>.amazonaws.com is the most commonly wasted hour. 3. List anonymously. ListObjectsV2 (?list-type=2&max-keys=1000, follow ContinuationToken): aws s3 ls s3://<bucket>/ --no-sign-request --region <r>. 4. When the list is denied, change the endpoint, not the target. Try the legacy ?versions listing (it names deleted objects and their VersionId) and a direct GetObject on guessed keys — flag.txt, secret.html, .env — aws s3 cp s3://<bucket>/<key> . --no-sign-request. 5. Read the objects as artefacts. Grep for the flag format, then follow what the object is: a .git/ tree means git log / git stash / git checkout <old-commit> to recover committed credentials, which pivots to IAM enumeration (CTFTCTE-CLD-002) — only with authorization. Signatures to expect: 200 ListBucketResult (open), 403+200 (objects public, list denied), 301 (wrong region), 404 NoSuchBucket (wrong name), AllAccessDisabled (suspended bucket), 403 everywhere (private, or authenticated-only ACL — needs an account, out of scope).",
+      "description": "Enumerate bucket names and list/download objects anonymously. 1. Normalise the identity. Object-store name alone, DNS name, or the bucket segment inside a URL path — drop the scheme, the storage URI prefix and any region suffix. When only a keyword is given, expand it with the qualifiers authors actually use (visibility, environment, role, year) before reaching for a dictionary. 2. Resolve region and endpoint before judging permissions. An unsigned HEAD on the bucket root usually advertises the region in a response header even when the body is refused, and a redirect is a wrong-region answer rather than a denial. Retrying against the regional endpoint is the most commonly wasted hour in this technique. 3. List anonymously. Issue the list-objects call unsigned, with pagination, and no request signing of any kind. 4. When the listing is refused, change the endpoint, not the target. Two fallbacks carry most of the weight: the versioned listing (it also names deleted objects and their version identifiers) and a direct object read on guessed keys, since a read-only grant often coexists with a denied list. 5. Treat every object as an artefact. Download the set, match the expected answer format, then follow what each object is: an archive, a source tree or a repository can hold credentials in its history or companion files, which pivots the challenge to the over-permissive-access pair — only with explicit authorization. Signatures to expect: success on the listing; a refused listing with object bodies still served; a redirect that encodes a region mismatch; a provider error code for a missing bucket; a disabled or suspended storage account; a blanket refusal (private, or a grant scoped to authenticated callers).",
       "x_ctft_category": "CLD",
       "x_ctft_domain": "CLD",
       "x_ctft_role": "resolution",
@@ -3097,7 +3097,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-CRY-015 - Recover the factors from a bounded exponent relation",
-      "description": "Given N, e (and c), recover φ(N) — or the factors — from e·x + y ≡ 0 (mod φ) with small x, y. Two branches, cheapest first. Branch A — the small parameters are published (er, r given). Evaluate the relation directly; it is a multiple of the totient, and a multiple of φ is enough: kphi = e (1 + er r) - er # == k φ(N) d = inverse(e, kphi) # valid mod kφ, hence mod φ m = pow(c, d, N) Validate with pow(m, e, N) == c, never with the flag format alone. Branch B — only N, e, c are published (generalized Wiener). x sits at the edge of the convergent denominators of e/N, so continued fractions enumerate it: 1. Compute the convergents of e/N — and, when they do not close, their semiconvergents (h{i-1} + j·h{i-2}) / (k{i-1} + j·k{i-2}), because x sits between two convergents as soon as it nears the N^{1/4} edge of the window. 2. For each candidate k/x, s = N + 1 − ⌊e·x / k⌋ estimates p + q; t = s² − 4N estimates (p − q)². 3. If t is a perfect square (search a ±2 window around s to absorb the flooring error), then p = (s + t^{1/2})/2 and N mod p == 0 closes the branch. 4. Otherwise p̃ = (s + ⌊t^{1/2}⌋)/2 is within N^{1/4} of the true prime: Coppersmith f(X) = p̃ + X with X = N^{1/4}, plus the small shifts (2j+1)·N^{1/4} that recentre the unknown, and keep any root that divides N. 5. d = e⁻¹ mod φ, decrypt, re-encrypt to confirm. Expected cost: milliseconds for branch A, under a second for branch B on replay instances. Measured by replaying the construction at 256 and 512 bits (scripts/yklmselftest.py): convergents plus semiconvergents close ~92% of instances directly (23/25 and 39/40 in the larger sweep). The residual failures are exactly the instances where x > N^{1/4}/3, i.e. where the theorem's own hypothesis fails — past that edge neither the fraction sweep nor the p̃ + X route is guaranteed, and the next move is a bivariate lattice on the relation itself. Do not read the fallback as dead code. What fails and must not be retried. Wiener (d is full size), Boneh-Durfee (d > N^{0.292}), Fermat (primes are independent and balanced), Pollard p−1, and every automated sweep that only looks at d. Recognising that the weakness is in (x, y), not in d, is the whole solve.",
+      "description": "Given N, e (and c), recover φ(N) — or the factors — from e·x + y ≡ 0 (mod φ) with small x, y. Two branches, cheapest first. Branch A — the small parameters are published (er, r given). Evaluate the relation directly; it is a multiple of the totient, and a multiple of φ is enough: kphi = e (1 + er r) - er # == k φ(N) d = inverse(e, kphi) # valid mod kφ, hence mod φ m = pow(c, d, N) Validate with pow(m, e, N) == c, never with the flag format alone. Branch B — only N, e, c are published (generalized Wiener). x sits at the edge of the convergent denominators of e/N, so continued fractions enumerate it: 1. Compute the convergents of e/N — and, when they do not close, their semiconvergents (h{i-1} + j·h{i-2}) / (k{i-1} + j·k{i-2}), because x sits between two convergents as soon as it nears the N^{1/4} edge of the window. 2. For each candidate k/x, s = N + 1 − ⌊e·x / k⌋ estimates p + q; t = s² − 4N estimates (p − q)². 3. If t is a perfect square (search a ±2 window around s to absorb the flooring error), then p = (s + t^{1/2})/2 and N mod p == 0 closes the branch. 4. Otherwise p̃ = (s + ⌊t^{1/2}⌋)/2 is within N^{1/4} of the true prime: Coppersmith f(X) = p̃ + X with X = N^{1/4}, plus the small shifts (2j+1)·N^{1/4} that recentre the unknown, and keep any root that divides N. 5. d = e⁻¹ mod φ, decrypt, re-encrypt to confirm. Expected cost: milliseconds for branch A, under a second for branch B on replayed instances of this construction. The fraction sweep — convergents first, then their semiconvergents — closes roughly nine instances out of ten directly. The residual failures are exactly the instances where x > N^{1/4}/3, i.e. where the theorem's own hypothesis fails: past that edge neither the fraction sweep nor the p̃ + X route is guaranteed, and the next move is a bivariate lattice on the relation itself. Do not read the fallback as dead code. What fails and must not be retried. Wiener (d is full size), Boneh-Durfee (d > N^{0.292}), Fermat (primes are independent and balanced), Pollard p−1, and every automated sweep that only looks at d. Recognising that the weakness is in (x, y), not in d, is the whole solve.",
       "x_ctft_category": "CRY",
       "x_ctft_domain": "CRY",
       "x_ctft_role": "resolution",
@@ -8729,6 +8729,83 @@
     {
       "type": "attack-pattern",
       "spec_version": "2.1",
+      "id": "attack-pattern--5d3cddd2-6a58-5589-9109-87c76ceb4bea",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-IOT-007 - BLE GATT characteristic gating (pairing / passkey / MAC allow-list / password)",
+      "description": "The flag sits inside a BLE GATT characteristic reachable only after clearing a client-side gate, not by sniffing the air. Typical gates (as in BLE CTF Infinity): the flag handle is read only after writing a selector to another handle; the peripheral requires BLE pairing with a passkey; it bonds only to a specific BDADDR (MAC allow-list); or it releases the flag only after the correct password is written into a characteristic. The challenge is GATT interaction and its authentication, distinct from IOT-005 (sniffing/decoding the device radio) and from SDR RF puzzles.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "iot"
+        }
+      ],
+      "x_ctft_category": "IOT",
+      "x_ctft_domain": "IOT",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-IOT-007"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1071",
+          "description": "Application Layer Protocol"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1110.001",
+          "description": "Brute Force: Password Guessing"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--b4b90a1f-b846-5392-a8e6-528b72c32747",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-IOT-007 - Enumerate and drive BLE GATT as a client",
+      "description": "Act as a GATT client against the peripheral: bash # 1. Scan / connect and enumerate services, characteristics and handles bettercap -eval \"ble.recon on; ble.show\" # or: ble.enum <MAC> gatttool -b <MAC> --characteristics # list char handles + properties + UUIDs # 2. Read / write a characteristic by handle (values are hex) gatttool -b <MAC> --char-read -a 0x0016 | awk -F': ' '{print $2}' | xxd -r -p gatttool -b <MAC> --char-write-req -a 0x002e -n $(echo -n \"deadbeef\" | xxd -ps) # 3. Pair when the peripheral requires a passkey bluetoothctl # agent KeyboardOnly; default-agent; scan on; pair <MAC> # 4. Spoof the local BDADDR for a MAC allow-list gate sudo btmgmt power off; sudo btmgmt public-addr 11:22:33:44:55:66; sudo btmgmt power on # 5. Brute force a 6-digit passkey, or a characteristic password (wordlist, e.g. rockyou.txt) Inspect advertisements and notifications with nRF Connect; analyse a provided BLE PCAP in Wireshark (btatt/btgatt filters). The write-then-read handle pattern (write a selector/password, read the flag handle) is the core loop.",
+      "x_ctft_category": "IOT",
+      "x_ctft_domain": "IOT",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-IOT-007"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1071",
+          "description": "Application Layer Protocol"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1110.001",
+          "description": "Brute Force: Password Guessing"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--f6d9aa0c-96ee-5217-b62c-9e1aa44c4f2e",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--b4b90a1f-b846-5392-a8e6-528b72c32747",
+      "target_ref": "attack-pattern--5d3cddd2-6a58-5589-9109-87c76ceb4bea",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
       "id": "attack-pattern--d8d2a8a3-932d-5fb9-abca-f4c11b90915d",
       "created": "2026-06-10T18:01:52.000Z",
       "modified": "2026-06-10T18:01:52.000Z",
@@ -9662,6 +9739,73 @@
       "x_ctft_relation": "solves",
       "source_ref": "course-of-action--ffbde9d8-ffda-5122-a6d2-feebd9fa1fde",
       "target_ref": "attack-pattern--b09637fe-3911-51e0-9598-38254f46e912",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--5c3f6882-5b47-5f70-bf5b-aa47c2bb951c",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-MOB-009 - Engine bytecode packaged with a mobile application",
+      "description": "The target ships as a mobile application package in which no file holds the logic in the form the platform tooling reads. The decompiled Java/Kotlin layer is a generated shell, the native libraries are the framework's own runtimes, and the application code lives in an asset compiled for the embedded script engine. Nothing is obfuscated: the code is written in a language the platform decompiler does not target, inside a container that makes it look like ordinary mobile code. The concealment is a delivery decision, not a crypto or packing trick, so the failure mode is tooling-shaped: the standard decompiler opens the package, shows a few dozen generated classes, and concludes there is nothing to analyse. What turns it into a technique — and distinguishes it from the sibling bytecode pairs — is the triage the solver has to perform before any code is readable: 1. locate the asset by container convention (the packaged assets directory on Android, the application bundle inside the iOS payload), not by name guessing; 2. identify the engine and its bytecode version from the asset header, because engine decompilers are version-locked and a mismatched version silently produces garbage; 3. recover structure — the function graph and the source-position/name annotations the compiler retained — then read the observable behaviour out of it. The same shape reproduces with any engine a cross-platform framework embeds: only the magic, the version table and the decompiler change. That is why the class is stated in terms of the engine, not of one framework. Boundary: logic hidden in a native library is the same move with a different substrate and belongs to CTFTTE-MOB-002; an author-designed instruction set is CTFTTE-REV-004; an artifact compiled for the same language as the source is CTFTTE-REV-007; JVM artifacts are CTFTTE-REV-006. And once the logic is readable, the endpoints it reveals are ordinary network/web artefacts — the technique ends where that domain begins.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "mob"
+        }
+      ],
+      "x_ctft_category": "MOB",
+      "x_ctft_domain": "MOB",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-MOB-009"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--f7eb6397-1f11-5650-b2ca-b44c44fa001c",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-MOB-009 - Recover application logic from engine bytecode",
+      "description": "Recover the application's observable behaviour from the engine bytecode the package ships. 1. Confirm the container. List the package. A generated platform shell plus a large asset plus an engine runtime library, and nothing of substance in the platform decompilation, is the signature — stop reading the shell. 2. Locate the asset by convention. Packaged assets directory on Android, application bundle on iOS. Framework naming conventions narrow it to one or two files; brute-forcing names is wasted effort. 3. Identify engine and bytecode version from the header. The version pins the decompiler: a decompiler built for another version emits plausible-looking nonsense, which is worse than an error, so check the version against the tool's supported range first. 4. Decompile, then read the restored module graph. Prefer the artifacts the compiler retained — module boundaries and original function names — over raw disassembly; they turn a flat listing into a call graph. 5. Rebuild the behaviour, not just the strings. Base URL(s), endpoint paths, HTTP verbs, headers, serialized payload shapes, and any value the app persists locally. Then decide what the challenge actually asks for: a value stored by the app is not automatically the answer, and a second endpoint often belongs to the next part of a multi-part challenge. 6. Confirm each hypothesis with a single request. The bundle tells you which calls exist; it rarely tells you what the server returns.",
+      "x_ctft_category": "MOB",
+      "x_ctft_domain": "MOB",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-MOB-009"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--9f801f06-3f7c-5c86-9d98-e414eaf86a71",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--f7eb6397-1f11-5650-b2ca-b44c44fa001c",
+      "target_ref": "attack-pattern--5c3f6882-5b47-5f70-bf5b-aa47c2bb951c",
       "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     },
     {

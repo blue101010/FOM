@@ -431,6 +431,83 @@
       "source_ref": "course-of-action--9ac26324-1a86-532a-a562-a104c0b8bbcd",
       "target_ref": "attack-pattern--1a17280a-5737-59e6-9728-be14c4a8fe21",
       "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--5d3cddd2-6a58-5589-9109-87c76ceb4bea",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-IOT-007 - BLE GATT characteristic gating (pairing / passkey / MAC allow-list / password)",
+      "description": "The flag sits inside a BLE GATT characteristic reachable only after clearing a client-side gate, not by sniffing the air. Typical gates (as in BLE CTF Infinity): the flag handle is read only after writing a selector to another handle; the peripheral requires BLE pairing with a passkey; it bonds only to a specific BDADDR (MAC allow-list); or it releases the flag only after the correct password is written into a characteristic. The challenge is GATT interaction and its authentication, distinct from IOT-005 (sniffing/decoding the device radio) and from SDR RF puzzles.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "iot"
+        }
+      ],
+      "x_ctft_category": "IOT",
+      "x_ctft_domain": "IOT",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-IOT-007"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1071",
+          "description": "Application Layer Protocol"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1110.001",
+          "description": "Brute Force: Password Guessing"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--b4b90a1f-b846-5392-a8e6-528b72c32747",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-IOT-007 - Enumerate and drive BLE GATT as a client",
+      "description": "Act as a GATT client against the peripheral: bash # 1. Scan / connect and enumerate services, characteristics and handles bettercap -eval \"ble.recon on; ble.show\" # or: ble.enum <MAC> gatttool -b <MAC> --characteristics # list char handles + properties + UUIDs # 2. Read / write a characteristic by handle (values are hex) gatttool -b <MAC> --char-read -a 0x0016 | awk -F': ' '{print $2}' | xxd -r -p gatttool -b <MAC> --char-write-req -a 0x002e -n $(echo -n \"deadbeef\" | xxd -ps) # 3. Pair when the peripheral requires a passkey bluetoothctl # agent KeyboardOnly; default-agent; scan on; pair <MAC> # 4. Spoof the local BDADDR for a MAC allow-list gate sudo btmgmt power off; sudo btmgmt public-addr 11:22:33:44:55:66; sudo btmgmt power on # 5. Brute force a 6-digit passkey, or a characteristic password (wordlist, e.g. rockyou.txt) Inspect advertisements and notifications with nRF Connect; analyse a provided BLE PCAP in Wireshark (btatt/btgatt filters). The write-then-read handle pattern (write a selector/password, read the flag handle) is the core loop.",
+      "x_ctft_category": "IOT",
+      "x_ctft_domain": "IOT",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-IOT-007"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1071",
+          "description": "Application Layer Protocol"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1110.001",
+          "description": "Brute Force: Password Guessing"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--f6d9aa0c-96ee-5217-b62c-9e1aa44c4f2e",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--b4b90a1f-b846-5392-a8e6-528b72c32747",
+      "target_ref": "attack-pattern--5d3cddd2-6a58-5589-9109-87c76ceb4bea",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     }
   ]
 }

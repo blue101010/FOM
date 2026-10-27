@@ -1,7 +1,7 @@
 {
   "model": "CTFT",
   "version": "1.2",
-  "generated": "2026-10-27T02:18:27+00:00",
+  "generated": "2026-10-27T02:37:04+00:00",
   "relates_to": [
     "MITRE ATT&CK",
     "CAPEC",
@@ -86,7 +86,7 @@
       "id": "CTFT-TA-MOB",
       "name": "Mobile",
       "path": "tactics/CTFT-TA-MOB.md",
-      "count": 8
+      "count": 9
     },
     {
       "id": "CTFT-TA-NET",
@@ -131,7 +131,7 @@
       "count": 23
     }
   ],
-  "total_techniques": 216,
+  "total_techniques": 217,
   "techniques": [
     {
       "tactic": "CTFT-TA-AIM",
@@ -2052,6 +2052,20 @@
       }
     },
     {
+      "tactic": "CTFT-TA-MOB",
+      "category": "MOB",
+      "technique": {
+        "id": "CTFTTE-MOB-009",
+        "name": "Engine bytecode packaged with a mobile application",
+        "path": "techniques/CTFTTE-MOB-009.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-MOB-009",
+        "name": "Recover application logic from engine bytecode",
+        "path": "countertechniques/CTFTCTE-MOB-009.md"
+      }
+    },
+    {
       "tactic": "CTFT-TA-NET",
       "category": "NET",
       "technique": {
@@ -3296,6 +3310,7 @@
     "CTFTTE-MOB-006": "CTFTCTE-MOB-006",
     "CTFTTE-MOB-007": "CTFTCTE-MOB-007",
     "CTFTTE-MOB-008": "CTFTCTE-MOB-008",
+    "CTFTTE-MOB-009": "CTFTCTE-MOB-009",
     "CTFTTE-NET-001": "CTFTCTE-NET-001",
     "CTFTTE-NET-002": "CTFTCTE-NET-002",
     "CTFTTE-NET-003": "CTFTCTE-NET-003",
@@ -4335,6 +4350,13 @@
       "counter_name": "Use anti-anti-Frida techniques",
       "tactic": "CTFT-TA-MOB",
       "path": "techniques/CTFTTE-MOB-008.md"
+    },
+    "CTFTTE-MOB-009": {
+      "name": "Engine bytecode packaged with a mobile application",
+      "counter_id": "CTFTCTE-MOB-009",
+      "counter_name": "Recover application logic from engine bytecode",
+      "tactic": "CTFT-TA-MOB",
+      "path": "techniques/CTFTTE-MOB-009.md"
     },
     "CTFTTE-NET-001": {
       "name": "Port/service discovery maze",
@@ -5849,6 +5871,13 @@
       "technique_name": "Frida detection",
       "tactic": "CTFT-TA-MOB",
       "path": "countertechniques/CTFTCTE-MOB-008.md"
+    },
+    "CTFTCTE-MOB-009": {
+      "name": "Recover application logic from engine bytecode",
+      "technique_id": "CTFTTE-MOB-009",
+      "technique_name": "Engine bytecode packaged with a mobile application",
+      "tactic": "CTFT-TA-MOB",
+      "path": "countertechniques/CTFTCTE-MOB-009.md"
     },
     "CTFTCTE-NET-001": {
       "name": "Systematic port/service enumeration",

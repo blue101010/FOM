@@ -565,6 +565,73 @@
       "source_ref": "course-of-action--ffbde9d8-ffda-5122-a6d2-feebd9fa1fde",
       "target_ref": "attack-pattern--b09637fe-3911-51e0-9598-38254f46e912",
       "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--5c3f6882-5b47-5f70-bf5b-aa47c2bb951c",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-MOB-009 - Engine bytecode packaged with a mobile application",
+      "description": "The target ships as a mobile application package in which no file holds the logic in the form the platform tooling reads. The decompiled Java/Kotlin layer is a generated shell, the native libraries are the framework's own runtimes, and the application code lives in an asset compiled for the embedded script engine. Nothing is obfuscated: the code is written in a language the platform decompiler does not target, inside a container that makes it look like ordinary mobile code. The concealment is a delivery decision, not a crypto or packing trick, so the failure mode is tooling-shaped: the standard decompiler opens the package, shows a few dozen generated classes, and concludes there is nothing to analyse. What turns it into a technique — and distinguishes it from the sibling bytecode pairs — is the triage the solver has to perform before any code is readable: 1. locate the asset by container convention (the packaged assets directory on Android, the application bundle inside the iOS payload), not by name guessing; 2. identify the engine and its bytecode version from the asset header, because engine decompilers are version-locked and a mismatched version silently produces garbage; 3. recover structure — the function graph and the source-position/name annotations the compiler retained — then read the observable behaviour out of it. The same shape reproduces with any engine a cross-platform framework embeds: only the magic, the version table and the decompiler change. That is why the class is stated in terms of the engine, not of one framework. Boundary: logic hidden in a native library is the same move with a different substrate and belongs to CTFTTE-MOB-002; an author-designed instruction set is CTFTTE-REV-004; an artifact compiled for the same language as the source is CTFTTE-REV-007; JVM artifacts are CTFTTE-REV-006. And once the logic is readable, the endpoints it reveals are ordinary network/web artefacts — the technique ends where that domain begins.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "mob"
+        }
+      ],
+      "x_ctft_category": "MOB",
+      "x_ctft_domain": "MOB",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-MOB-009"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--f7eb6397-1f11-5650-b2ca-b44c44fa001c",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-MOB-009 - Recover application logic from engine bytecode",
+      "description": "Recover the application's observable behaviour from the engine bytecode the package ships. 1. Confirm the container. List the package. A generated platform shell plus a large asset plus an engine runtime library, and nothing of substance in the platform decompilation, is the signature — stop reading the shell. 2. Locate the asset by convention. Packaged assets directory on Android, application bundle on iOS. Framework naming conventions narrow it to one or two files; brute-forcing names is wasted effort. 3. Identify engine and bytecode version from the header. The version pins the decompiler: a decompiler built for another version emits plausible-looking nonsense, which is worse than an error, so check the version against the tool's supported range first. 4. Decompile, then read the restored module graph. Prefer the artifacts the compiler retained — module boundaries and original function names — over raw disassembly; they turn a flat listing into a call graph. 5. Rebuild the behaviour, not just the strings. Base URL(s), endpoint paths, HTTP verbs, headers, serialized payload shapes, and any value the app persists locally. Then decide what the challenge actually asks for: a value stored by the app is not automatically the answer, and a second endpoint often belongs to the next part of a multi-part challenge. 6. Confirm each hypothesis with a single request. The bundle tells you which calls exist; it rarely tells you what the server returns.",
+      "x_ctft_category": "MOB",
+      "x_ctft_domain": "MOB",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-MOB-009"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--9f801f06-3f7c-5c86-9d98-e414eaf86a71",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--f7eb6397-1f11-5650-b2ca-b44c44fa001c",
+      "target_ref": "attack-pattern--5c3f6882-5b47-5f70-bf5b-aa47c2bb951c",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     }
   ]
 }
