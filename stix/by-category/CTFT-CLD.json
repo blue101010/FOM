@@ -450,7 +450,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTTE-CLD-007 - Cloud NoSQL-store misconfiguration",
-      "description": "A cloud NoSQL store (DynamoDB or similar) is exposed or over-permissioned and holds the flag.",
+      "description": "A document or key-value store holds the flag and the misconfiguration is in the data plane, not in an object bucket: an endpoint that answers without authentication, a key that acts as the store's administrative principal, or a grant broad enough that enumerating databases and collections is itself the solve. Nothing resembles an injection — the store simply answers a request it should have refused. Design variants, in increasing subtlety: - Open endpoint. The data-plane endpoint accepts unauthenticated reads — sometimes only for metadata (database and collection names) and not for the documents themselves. - Administrative key in an artefact. A connection string or account key in a configuration, a bundle or a log grants the store's primary principal; the request must then be signed with that key rather than sent as a bearer token, and the signature recipe is the whole obstacle. - Narrow but sufficient grant. The identity may read one container only, so listing fails while a guessed document identifier succeeds. - Query surface over a plain read. The store's query language is reachable through a portal or a proxy, so the answer requires building the right query instead of reading a known identifier. - Compatibility layer. The store is reachable through a protocol emulation (a document API, a Mongo-compatible endpoint), and the flag is found with a client for that protocol rather than the provider's own. - Snapshot or change feed. An export, backup or change feed in a second service retains records the live store has already purged. Boundary: object storage rather than a database API belongs to the object-storage pair; a store reached with a leaked session token rather than a store credential belongs to the session-material pair.",
       "kill_chain_phases": [
         {
           "kill_chain_name": "ctft",
@@ -469,6 +469,11 @@
           "source_name": "mitre-attack",
           "external_id": "T1213",
           "description": "Data from Information Repositories"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1552.001",
+          "description": "Unsecured Credentials: Credentials In Files"
         }
       ]
     },
@@ -480,7 +485,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-CLD-007 - Enumerate and query exposed cloud databases",
-      "description": "Enumerate the table/index, query it with the available permissions, and read the flag.",
+      "description": "Separate the two questions the store answers differently — what exists and what may I read — then build the request the store actually accepts. 1. Identify the API surface. A document API, a key-value API and a Mongo-compatible endpoint answer different paths with different authentication. Read the endpoint's error body before trying payloads: a version or api-version complaint names the protocol you must speak. 2. Establish the authentication model. Either the request carries a bearer token for the store's own audience, or it is signed with the account key (a date, a version, a resource and a signature over a canonical string). The signed form fails with a signature error rather than an authorisation error — that difference tells you which model is in play. 3. Enumerate metadata first. Listing databases and collections is a separate permission from reading documents; a successful metadata listing maps the space even when document reads are refused. 4. Read by identifier when listing is refused. Use the identifiers the narrative supplies and the conventions a store's own tooling would produce (partition keys, container names, well-known record identifiers) instead of blind brute force. 5. Query when the surface is a query language. A portal or proxy that exposes queries wants a query, not a path: learn the shape from one benign response, then constrain the next request. 6. Follow the data out of the store. A snapshot, export or change feed in a second service may retain records the live store has purged — check the artefact trail before concluding the store is decoy. Signatures to expect: metadata success with document reads refused; a signature-mismatch error naming the canonical pieces the service expects; a document read succeeding on a guessed identifier; a partition key error that reveals the schema; a version header echoed back with the accepted value.",
       "x_ctft_category": "CLD",
       "x_ctft_domain": "CLD",
       "x_ctft_role": "resolution",
@@ -493,6 +498,11 @@
           "source_name": "mitre-attack",
           "external_id": "T1213",
           "description": "Data from Information Repositories"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1078.004",
+          "description": "Valid Accounts: Cloud Accounts"
         }
       ]
     },
@@ -517,7 +527,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTTE-CLD-008 - Azure management-plane misconfiguration",
-      "description": "Leaked Azure credentials unlock management-plane access where the flag sits (AD users, VMs, storage).",
+      "description": "The flag sits behind the management plane — the subscription's control API, the tenant directory, or a resource whose data plane is only reachable after a control-plane action. The challenge hands over something that authenticates (a service-principal secret, a user account, a certificate, an instance metadata endpoint, a cached session) and the configuration intends that principal to be narrower than it is: an over-broad role assignment, a directory role granted to a guest, a delegation that reaches another subscription, or a control-plane action that executes code on a resource. Design variants, in increasing subtlety: - Credential in an artefact. Client identifier plus secret or certificate in a configuration, a pipeline variable, a bundle or a log; resolving the tenant and subscription identifiers is the first move, not the last. - Instance metadata reachable. From a workload, or through a server-side request forgery, the metadata service mints a token for whatever resource the caller names — so the plane reached is chosen by the solver, not by the application. - Broad directory role. The principal reads or modifies directory objects, which exposes further credentials, applications, service principals and group memberships. - Control plane as execution. An action that runs a command or a script on a resource turns a read-looking grant into code execution on a host, with the output returned by the same API. - Cross-subscription reach. A grant at a management-group or root scope, or a guest principal with directory-wide read, exposes subscriptions the narrative never mentions. - Plane as a doorway. The credential is valid for the control plane, and the flag is in a resource's data plane (storage, vault, database, container registry) reached only after discovery, chaining into those pairs. Boundary: with no credential at all the challenge is anonymous exposure; with a store-scoped key it is the storage pair; with token material that must be re-audienced it is the session-material pair. Here the material authenticates to a control API.",
       "kill_chain_phases": [
         {
           "kill_chain_name": "ctft",
@@ -535,7 +545,22 @@
         {
           "source_name": "mitre-attack",
           "external_id": "T1078.004",
-          "description": "Cloud Accounts"
+          "description": "Valid Accounts: Cloud Accounts"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1098.003",
+          "description": "Account Manipulation: Additional Cloud Roles"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1552.001",
+          "description": "Unsecured Credentials: Credentials In Files"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1651",
+          "description": "Cloud Administration Command"
         }
       ]
     },
@@ -547,7 +572,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-CLD-008 - Enumerate Azure AD/VM/storage from credentials",
-      "description": "Use the credentials against the management plane: enumerate AD, VMs and storage accounts, and extract the flag.",
+      "description": "Ask the plane what the identity can do before asking it for anything, and descend one scope at a time: tenant → subscription → resource group → resource → data plane. 1. Normalise the credential. Separate what is present — client identifier with secret or certificate, user account, cached session file, metadata endpoint, raw token. Resolve the tenant (a domain name in the prompt is not a tenant identifier) and note the client identifier, because it decides which flows the endpoint accepts. 2. Establish the identity from the plane itself. One read of the signed-in principal, the token's own claims, or the caller-identity API answers who is acting. Do this before enumerating, so every later result is attributable. 3. Enumerate the reachable scopes, not just the current one. List every subscription and tenant the identity can see, then resource groups and resources within them. Delegation and management-group grants surface here and nowhere else. 4. Read the authorisation layer, not only the inventory. Role assignments and directory roles explain why a resource is reachable and point at the next hop: a principal with a role on another scope, an application holding a secret, a group whose membership can be read. 5. Prefer the read that proves the claim. Where the story says a resource is reachable, the evidence is the read that only an authorised principal can perform — not a dump of everything visible. 6. Use control-plane execution only when the objective demands it, and gate it. Actions that run a command on a resource change state; state the exact action and expected output before running it, and prefer a read-only alternative when the flag is data. 7. Follow the plane into the data plane. A resource's own API (storage, vault, database, registry, cluster) is a second authorisation check; the control-plane grant does not guarantee it. Signatures to expect: a token whose audience names the plane you need; a subscription list longer than the story implies; a role assignment at a parent scope explaining an otherwise surprising read; a resource that answers on the control plane but refuses its data plane (a second grant is missing); an execution action returning output instead of a status.",
       "x_ctft_category": "CLD",
       "x_ctft_domain": "CLD",
       "x_ctft_role": "resolution",
@@ -559,7 +584,17 @@
         {
           "source_name": "mitre-attack",
           "external_id": "T1078.004",
-          "description": "Cloud Accounts"
+          "description": "Valid Accounts: Cloud Accounts"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1098.003",
+          "description": "Account Manipulation: Additional Cloud Roles"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1651",
+          "description": "Cloud Administration Command"
         }
       ]
     },
@@ -574,6 +609,252 @@
       "x_ctft_relation": "solves",
       "source_ref": "course-of-action--2501a9e4-e212-511c-8c5f-dddc5e1678c1",
       "target_ref": "attack-pattern--fec78781-dd3d-5705-9090-f336247a3cf6",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--5f0078c8-b66e-5223-9304-3cc558de51dc",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-CLD-009 - Delegated sign-in session material exposed",
+      "description": "What the challenge hands over is not a password but session material: a refresh token, a device-code grant, a primary refresh token, a cached token file, a client secret, or an external assertion. The article the player holds is opaque, often expired, and its audience — not the login — decides which plane it opens. The author counts on the player either refusing to look inside the artefact or treating \"the token has expired\" as the end of the path. Design variants, in increasing subtlety: - Cached token store. A profile directory, an SDK cache or a CI secret holds an access token whose audience names a management plane the narrative never mentions. - Renewal credential only. Just the refresh token is supplied; one token request mints an access token for a resource of the solver's choosing, so the apparent absence of a usable token is the trick. - Device-code grant. The prompt supplies a code to redeem, or a retrieval endpoint is reachable; completing the flow yields a delegated identity whose scopes exceed the story. - Client family crossing audiences. The same refresh token reaches several first-party resources because the requesting client belongs to a family allowed to do so — the scope string, not the user, is the lever. - Session material needing import. Cookie or primary-refresh-token material must be placed in a client's expected form before the token endpoint accepts it. - Federated assertion. An external OIDC token is trusted by a workload identity federation object; only the exchange step separates the player from a cloud token. Boundary: a user password belongs to the credential-access pairs; a correctly scoped token that merely needs replaying against one API is an authentication challenge. The distinguishing feature here is that the material must be transformed — renewed, re-audienced, imported or exchanged — before it opens the target.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "cld"
+        }
+      ],
+      "x_ctft_category": "CLD",
+      "x_ctft_domain": "CLD",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-CLD-009"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1528",
+          "description": "Steal Application Access Token"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1550.001",
+          "description": "Use Alternate Authentication Material: Application Access Token"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1539",
+          "description": "Steal Web Session Cookie"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--b0dedbbb-8284-565d-b515-77a2a1b7c4b7",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-CLD-009 - Redeem and replay delegated cloud tokens",
+      "description": "The artefact must be transformed before it opens anything. Read it, renew it, re-audience it, then prove access with the least-privileged read that still demonstrates the claim. 1. Decode before trusting. Split the material: a three-part base64url blob is a token (read the algorithm, key identifier, then the claims); a JSON document is a cache or a credential file; a bare opaque string is a renewal credential. Record tenant, client, object, user and audience — the audience is the whole puzzle. 2. Fix the tenant and the client. Both appear in the claims; a tenant identifier in the prompt may be a domain rather than a GUID, so resolve it through the identity provider's metadata document before any request. 3. Renew. Exchange a refresh token at the token endpoint for the resource you actually need, asking for the resource's default scope. An expired access token is not a dead credential when a renewal credential accompanies it. 4. Re-audience. One session can usually mint tokens for several first-party resources. Walk the candidate resources from the story (management plane, graph directory, storage data plane, vault data plane, the challenge's own service) rather than guessing scopes blindly. 5. Complete the flow when a code is supplied. Redeem the code exactly as delivered — the code is single-use and short-lived, so capture the response verbatim, including the renewal credential. 6. Import session material when that is the form given. Cookie or primary-refresh-token material has to be placed where a client expects it before the endpoint accepts it; do the import in a throwaway profile and keep the artefact untouched. 7. Prove the claim narrowly. One read that only the target identity can perform — the directory object of the signed-in principal, the subscription list, the object named in the story — is evidence; a full dump is not. Signatures to expect: a token response with a renewal credential despite no password; a claim set whose audience names the plane the story implied; a refusal that changes with the audience rather than with the identity; a code redemption that reports the grant type the client is allowed; an assertion exchange that fails only because the federation subject does not match.",
+      "x_ctft_category": "CLD",
+      "x_ctft_domain": "CLD",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-CLD-009"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1528",
+          "description": "Steal Application Access Token"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1550.001",
+          "description": "Use Alternate Authentication Material: Application Access Token"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1539",
+          "description": "Steal Web Session Cookie"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--a37e2e63-f08b-5a1f-8c2b-4b463d4f6dab",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--b0dedbbb-8284-565d-b515-77a2a1b7c4b7",
+      "target_ref": "attack-pattern--5f0078c8-b66e-5223-9304-3cc558de51dc",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--60356bc5-38c1-53d0-bb52-79912ac18872",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-CLD-010 - Secret store reachable by a workload identity",
+      "description": "The objective is a value inside a managed secret store — a vault secret, a certificate, a key, a parameter — and the identity the player already holds carries a data-plane grant to it. Nothing has to be broken: the flag is behind a read that the configuration intends to be routine, and the work is to find which store, which object and which version the identity actually reaches. Design variants, in increasing subtlety: - Grant without discovery. The identity can read the store but holds no listing permission, so object names must be guessed from the narrative, from a leaked template, or from conventional names. - Dual authorisation models. The store accepts both a role-assignment model and a legacy per-object access-policy model; the identity is granted through the one the player does not think to check, so an empty role assignment list is not evidence of denial. - Version history. The current value is a decoy or blank while a previous version still holds the answer; only reading the version list exposes it. - Soft-deleted object. The object was deleted and remains recoverable while purge protection keeps it restorable — the store answers \"gone\" to a naive read and \"still here\" to a recovery-aware one. - Object kind mismatch. The answer sits in a certificate or a key, while the player searches secrets only. - Store reached from a workload. The grant belongs to the workload's identity, not the human one, so the token must first come from the instance metadata or the workload's own credential chain. Boundary: when the identity reaches the store through an over-broad administrative role over the whole subscription, the pair is the over-permissive-role one; when the material is a bearer credential embedded in a URL, it belongs to the signed-URL pair. Here the grant is narrow, deliberate and data-plane.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "cld"
+        }
+      ],
+      "x_ctft_category": "CLD",
+      "x_ctft_domain": "CLD",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-CLD-010"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1555",
+          "description": "Credentials from Password Stores"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1552.001",
+          "description": "Unsecured Credentials: Credentials In Files"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1078.004",
+          "description": "Valid Accounts: Cloud Accounts"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--83000468-3d2c-5484-b281-7e25d8662051",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-CLD-010 - Enumerate secret stores the held identity can read",
+      "description": "Treat the identity as the discovery tool: ask the control plane which stores exist, ask the store's own data plane which objects the identity may read, and reconcile the two answers — they are granted through different models and disagree often. 1. Establish which identity you are, from which plane. A human session, a workload identity and an instance-metadata credential reach different stores; resolve the object identifier and the token audience before enumerating. 2. List stores at the control plane. Enumerate the scope you can see for store resources and their recovery settings; note the ones whose name matches the narrative even if the grant looks absent. 3. Check both authorisation models. A data-plane grant may come from a role assignment or from a legacy per-object policy. An empty role-assignment list is not a denial — look for the policy form, and look for grants inherited through a group or a parent scope. 4. Walk object kinds, not just one. Ask for secrets, then keys, then certificates; an empty answer in one kind is routinely filled by another. 5. Read versions and recovery state. Request the object, then its version list; if it reports deleted, request the recoverable form. A decoy current value with a live earlier version is a common design. 6. Fall back to the conventional names. When listing is denied, request the names a story would use (flag-like, environment-scoped, purpose-scoped) instead of brute-forcing a dictionary. 7. Record the grant, not just the value. The evidence is the store, the object, the version and the authorisation path that allowed the read. Signatures to expect: a store that exists but refuses listing while answering a direct read; a role assignment visible only at a parent scope; a version list with more entries than the current value implies; a recovery endpoint that succeeds where the plain read failed; a per-object policy that grants exactly the read the story needs.",
+      "x_ctft_category": "CLD",
+      "x_ctft_domain": "CLD",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-CLD-010"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1555",
+          "description": "Credentials from Password Stores"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1078.004",
+          "description": "Valid Accounts: Cloud Accounts"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--2e725a93-746c-5629-b908-ca6afe287fbb",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--83000468-3d2c-5484-b281-7e25d8662051",
+      "target_ref": "attack-pattern--60356bc5-38c1-53d0-bb52-79912ac18872",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--53f34767-9847-5d29-acc9-edcb0be95779",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-CLD-011 - Bearer credential embedded in a storage URL",
+      "description": "The store itself is private, so the anonymous-exposure pair does not apply. Instead the grant travels inside a URL or an artefact as a bearer credential — a signed query string, an account key in a connection string, a delegation key. Whoever holds the string is the principal; no account, no login and no policy edit is required. The author counts on the player discarding the credential as \"just a link\" or assuming an expired signature means a dead end. Design variants, in increasing subtlety: - Single-object signature. The signature is scoped to one object and no container listing, so the object name has to come from the narrative rather than from enumeration. - Over-broad scope. The signature covers container or account level and several operations, including write or delete, so the exposure exceeds what the story implies. - Expired signature with a live key. The query string is stale, but the account key that produced it is also present in the artefact, and a fresh signature can be computed locally. - Delegation signature. The signature was minted from an identity rather than a key, so re-signing requires a token for that identity — a chain into the session-material pair. - Connection string. The key arrives as a configuration value with a service endpoint, so the player must recognise the format and pick the right client. - Signature in a carrier artefact. The link sits in served HTML, a comment, a mobile bundle or a log line, and only source review surfaces it. Boundary: when the request needs no credential at all the pair is anonymous object-storage exposure; when the artefact is a full account identity with broader administrative reach, the pair is the over-permissive-access one. Here the credential is narrow in reach but bearer in nature.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "cld"
+        }
+      ],
+      "x_ctft_category": "CLD",
+      "x_ctft_domain": "CLD",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-CLD-011"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1552.001",
+          "description": "Unsecured Credentials: Credentials In Files"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1530",
+          "description": "Data from Cloud Storage Object"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--48fa18fd-757b-552a-8ff2-40b1c19a87b1",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-CLD-011 - Validate and reuse the signed storage grant",
+      "description": "The credential is in the string. Parse what it authorises before issuing any request, then issue the narrowest request that proves it. 1. Separate the artefact from the credential. Normalise the URL: the scheme, the host and the resource path identify the account, the service and the object; everything in the query string is the credential, and it is as sensitive as a password. 2. Read the grant before using it. Decode the signature's parameters: which service and resource type it covers, which operations it permits, its validity window, and whether it was minted from a key or from a delegated identity. The permitted operations decide the plan — a read-only signature that allows listing is a different challenge from a single-object read. 3. Compare against an unsigned request. Fetch the object without the query string. If it also succeeds, the pair is anonymous exposure, not this one; if it fails, the signature is doing the work and the two responses are your evidence. 4. When the signature is expired, look for the key. A connection string or a key field in the same artefact lets you compute a new signature locally; a delegated signature instead needs a token for the identity that minted it, which chains into the session-material pair. 5. Reach upward only as far as the grant allows. Signature scope — object, container, account — bounds enumeration. Do not assume container listing exists because the object read works. 6. Capture the response headers as evidence. The service's API version, request identifier and signature-scope echo are what prove which credential was used. Signatures to expect: success with the query string and refusal without it; a refusal naming the operation the signature omits; an expiry error alongside a still-valid key in the artefact; a permission error that changes when the scope in the URL is widened rather than when the identity changes.",
+      "x_ctft_category": "CLD",
+      "x_ctft_domain": "CLD",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-CLD-011"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1552.001",
+          "description": "Unsecured Credentials: Credentials In Files"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1530",
+          "description": "Data from Cloud Storage Object"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--bcde079f-0f3b-5f80-a95a-1edd7242f79f",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--48fa18fd-757b-552a-8ff2-40b1c19a87b1",
+      "target_ref": "attack-pattern--53f34767-9847-5d29-acc9-edcb0be95779",
       "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     }
   ]

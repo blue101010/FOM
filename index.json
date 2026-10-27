@@ -1,7 +1,7 @@
 {
   "model": "CTFT",
   "version": "1.2",
-  "generated": "2026-10-27T03:57:21+00:00",
+  "generated": "2026-10-27T18:59:56+00:00",
   "relates_to": [
     "MITRE ATT&CK",
     "CAPEC",
@@ -26,7 +26,7 @@
       "id": "CTFT-TA-CLD",
       "name": "Cloud",
       "path": "tactics/CTFT-TA-CLD.md",
-      "count": 8
+      "count": 11
     },
     {
       "id": "CTFT-TA-COD",
@@ -131,7 +131,7 @@
       "count": 23
     }
   ],
-  "total_techniques": 217,
+  "total_techniques": 220,
   "techniques": [
     {
       "tactic": "CTFT-TA-AIM",
@@ -411,6 +411,48 @@
         "id": "CTFTCTE-CLD-008",
         "name": "Enumerate Azure AD/VM/storage from credentials",
         "path": "countertechniques/CTFTCTE-CLD-008.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-CLD",
+      "category": "CLD",
+      "technique": {
+        "id": "CTFTTE-CLD-009",
+        "name": "Delegated sign-in session material exposed",
+        "path": "techniques/CTFTTE-CLD-009.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-CLD-009",
+        "name": "Redeem and replay delegated cloud tokens",
+        "path": "countertechniques/CTFTCTE-CLD-009.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-CLD",
+      "category": "CLD",
+      "technique": {
+        "id": "CTFTTE-CLD-010",
+        "name": "Secret store reachable by a workload identity",
+        "path": "techniques/CTFTTE-CLD-010.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-CLD-010",
+        "name": "Enumerate secret stores the held identity can read",
+        "path": "countertechniques/CTFTCTE-CLD-010.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-CLD",
+      "category": "CLD",
+      "technique": {
+        "id": "CTFTTE-CLD-011",
+        "name": "Bearer credential embedded in a storage URL",
+        "path": "techniques/CTFTTE-CLD-011.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-CLD-011",
+        "name": "Validate and reuse the signed storage grant",
+        "path": "countertechniques/CTFTCTE-CLD-011.md"
       }
     },
     {
@@ -3193,6 +3235,9 @@
     "CTFTTE-CLD-006": "CTFTCTE-CLD-006",
     "CTFTTE-CLD-007": "CTFTCTE-CLD-007",
     "CTFTTE-CLD-008": "CTFTCTE-CLD-008",
+    "CTFTTE-CLD-009": "CTFTCTE-CLD-009",
+    "CTFTTE-CLD-010": "CTFTCTE-CLD-010",
+    "CTFTTE-CLD-011": "CTFTCTE-CLD-011",
     "CTFTTE-COD-001": "CTFTCTE-COD-001",
     "CTFTTE-COD-002": "CTFTCTE-COD-002",
     "CTFTTE-COD-003": "CTFTCTE-COD-003",
@@ -3531,6 +3576,27 @@
       "counter_name": "Enumerate Azure AD/VM/storage from credentials",
       "tactic": "CTFT-TA-CLD",
       "path": "techniques/CTFTTE-CLD-008.md"
+    },
+    "CTFTTE-CLD-009": {
+      "name": "Delegated sign-in session material exposed",
+      "counter_id": "CTFTCTE-CLD-009",
+      "counter_name": "Redeem and replay delegated cloud tokens",
+      "tactic": "CTFT-TA-CLD",
+      "path": "techniques/CTFTTE-CLD-009.md"
+    },
+    "CTFTTE-CLD-010": {
+      "name": "Secret store reachable by a workload identity",
+      "counter_id": "CTFTCTE-CLD-010",
+      "counter_name": "Enumerate secret stores the held identity can read",
+      "tactic": "CTFT-TA-CLD",
+      "path": "techniques/CTFTTE-CLD-010.md"
+    },
+    "CTFTTE-CLD-011": {
+      "name": "Bearer credential embedded in a storage URL",
+      "counter_id": "CTFTCTE-CLD-011",
+      "counter_name": "Validate and reuse the signed storage grant",
+      "tactic": "CTFT-TA-CLD",
+      "path": "techniques/CTFTTE-CLD-011.md"
     },
     "CTFTTE-COD-001": {
       "name": "Esolang / unusual-encoding puzzle",
@@ -5052,6 +5118,27 @@
       "technique_name": "Azure management-plane misconfiguration",
       "tactic": "CTFT-TA-CLD",
       "path": "countertechniques/CTFTCTE-CLD-008.md"
+    },
+    "CTFTCTE-CLD-009": {
+      "name": "Redeem and replay delegated cloud tokens",
+      "technique_id": "CTFTTE-CLD-009",
+      "technique_name": "Delegated sign-in session material exposed",
+      "tactic": "CTFT-TA-CLD",
+      "path": "countertechniques/CTFTCTE-CLD-009.md"
+    },
+    "CTFTCTE-CLD-010": {
+      "name": "Enumerate secret stores the held identity can read",
+      "technique_id": "CTFTTE-CLD-010",
+      "technique_name": "Secret store reachable by a workload identity",
+      "tactic": "CTFT-TA-CLD",
+      "path": "countertechniques/CTFTCTE-CLD-010.md"
+    },
+    "CTFTCTE-CLD-011": {
+      "name": "Validate and reuse the signed storage grant",
+      "technique_id": "CTFTTE-CLD-011",
+      "technique_name": "Bearer credential embedded in a storage URL",
+      "tactic": "CTFT-TA-CLD",
+      "path": "countertechniques/CTFTCTE-CLD-011.md"
     },
     "CTFTCTE-COD-001": {
       "name": "Interpret or transpile the encoding",

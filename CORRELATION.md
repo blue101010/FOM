@@ -4,8 +4,8 @@ Every **Design / Hide Technique** (`CTFTTE-<CAT>-NNN`) and the
 **Resolution-Technique** (`CTFTCTE-<CAT>-NNN`) that recovers it, grouped by domain.
 IDs pair one-to-one: `CTFTTE-FOR-004` is always answered by `CTFTCTE-FOR-004`.
 
-> Generated from the files in `techniques/` and `countertechniques/` — corpus fingerprint `c88205ca50d83c95`
-> by `v3/render_taxonomy_docs.py`. **217 complete pairs** across **20 active domains**. Do not hand-edit: rename the entry, then re-render.
+> Generated from the files in `techniques/` and `countertechniques/` — corpus fingerprint `cf40c47f9160e0fc`
+> by `v3/render_taxonomy_docs.py`. **220 complete pairs** across **20 active domains**. Do not hand-edit: rename the entry, then re-render.
 
 ---
 
@@ -22,7 +22,7 @@ Order follows the challenge-category picker.
 | 5 | [`REV`](#ctft-ta-rev) | Reverse | Reverse Engineering | 10 |
 | 6 | [`STE`](#ctft-ta-ste) | Stego | Steganography | 11 |
 | 7 | [`OSI`](#ctft-ta-osi) | OSINT | OSINT | 9 |
-| 8 | [`CLD`](#ctft-ta-cld) | Cloud | Cloud | 8 |
+| 8 | [`CLD`](#ctft-ta-cld) | Cloud | Cloud | 11 |
 | 9 | [`BLK`](#ctft-ta-blk) | Blockchain | Blockchain | 5 |
 | 10 | [`AIM`](#ctft-ta-aim) | AI/ML | AI / ML | 7 |
 | 11 | [`ICS`](#ctft-ta-ics) | ICS/SCADA | ICS / SCADA | 9 |
@@ -35,7 +35,7 @@ Order follows the challenge-category picker.
 | 18 | [`HWR`](#ctft-ta-hwr) | Hardware | Hardware | 3 |
 | 19 | [`IOT`](#ctft-ta-iot) | IoT / Embedded | IoT / Embedded | 7 |
 | 20 | [`SDR`](#ctft-ta-sdr) | SDR / RF | Software-Defined Radio | 5 |
-| | | | **Total** | **217** |
+| | | | **Total** | **220** |
 
 **Retired — do not use.** `MSC` (Misc) was a catch-all whose entries all
 duplicated a precise domain; file those challenges under `JAL`, `COD`, `GAM`
@@ -215,7 +215,7 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 
 ## <a id="ctft-ta-cld"></a>`CTFT-TA-CLD` — Cloud
 
-> [domain page](tactics/CTFT-TA-CLD.md) · 8 pairs · HTB: Cloud
+> [domain page](tactics/CTFT-TA-CLD.md) · 11 pairs · HTB: Cloud
 
 | # | Technique ID | Hide / Design name | Resolution-technique ID | Recovery action |
 | --- | --- | --- | --- | --- |
@@ -227,6 +227,9 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 | 6 | [CTFTTE-CLD-006](techniques/CTFTTE-CLD-006.md) | Cross-account role chaining / trust abuse | [CTFTCTE-CLD-006](countertechniques/CTFTCTE-CLD-006.md) | Chain sts:AssumeRole across accounts |
 | 7 | [CTFTTE-CLD-007](techniques/CTFTTE-CLD-007.md) | Cloud NoSQL-store misconfiguration | [CTFTCTE-CLD-007](countertechniques/CTFTCTE-CLD-007.md) | Enumerate and query exposed cloud databases |
 | 8 | [CTFTTE-CLD-008](techniques/CTFTTE-CLD-008.md) | Azure management-plane misconfiguration | [CTFTCTE-CLD-008](countertechniques/CTFTCTE-CLD-008.md) | Enumerate Azure AD/VM/storage from credentials |
+| 9 | [CTFTTE-CLD-009](techniques/CTFTTE-CLD-009.md) | Delegated sign-in session material exposed | [CTFTCTE-CLD-009](countertechniques/CTFTCTE-CLD-009.md) | Redeem and replay delegated cloud tokens |
+| 10 | [CTFTTE-CLD-010](techniques/CTFTTE-CLD-010.md) | Secret store reachable by a workload identity | [CTFTCTE-CLD-010](countertechniques/CTFTCTE-CLD-010.md) | Enumerate secret stores the held identity can read |
+| 11 | [CTFTTE-CLD-011](techniques/CTFTTE-CLD-011.md) | Bearer credential embedded in a storage URL | [CTFTCTE-CLD-011](countertechniques/CTFTCTE-CLD-011.md) | Validate and reuse the signed storage grant |
 
 
 ## <a id="ctft-ta-blk"></a>`CTFT-TA-BLK` — Blockchain

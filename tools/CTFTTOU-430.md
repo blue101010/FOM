@@ -48,6 +48,13 @@ Cmdlet names are stable but their `-Verbose` output is the fastest way to see th
 useful when the challenge's tenant behaves differently from the public cloud. The module caches tokens in
 the current user profile; use a throwaway profile per challenge.
 
+Pitfalls: on Linux/macOS PowerShell the module loads but prints
+`Add-Type: Cannot find path '…/System.Web.Extensions.dll'` — that assembly is Windows-only, so the cmdlets
+that depend on it fail there. Run those from Windows PowerShell instead
+(`powershell.exe -NoProfile -Command "Import-Module AADInternals; …"`), and keep `pwsh` on Linux for the
+token/tenant cmdlets that do work. A redacted tenant is not a broken module: check the error class before
+abandoning a cmdlet.
+
 ## Related Techniques
 
 CTFTTE-CLD-002, CTFTCTE-CLD-002, CTFTTE-CLD-008, CTFTCTE-CLD-008, CTFTTE-CLD-009, CTFTCTE-CLD-009

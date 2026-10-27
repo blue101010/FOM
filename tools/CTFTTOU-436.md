@@ -26,8 +26,9 @@ only as read-only as their check set: confirm the rule you are about to run does
 ## Installation
 
 ```bash
-pipx install scoutsuite        # PEP 668-safe on Kali
-pipx install prowler
+pipx install scoutsuite                    # PEP 668-safe on Kali
+uv tool install prowler --python 3.12      # prowler pins numpy 2.2.x, which ships no cp314 wheel:
+                                           # pipx/uv on Kali's Python 3.14 attempt a C++ build and fail
 scout --help && prowler --version
 ```
 

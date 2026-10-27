@@ -2,8 +2,8 @@
   "model": "CTFT",
   "schema_version": "3.0",
   "collection": "catalog",
-  "generated_at": "2026-10-27T03:58:40+00:00",
-  "source_sha256": "44a798ada732807cce0d4c6aba1a110de1fc1daa18ac2afbea76bb9cfc3509e2",
+  "generated_at": "2026-10-27T18:59:57+00:00",
+  "source_sha256": "73accfbaa9923ea8f9ecac59edf7626a4557685c1d0b196ce66dc718e43c7796",
   "items": [
     {
       "id": "CTFTPAIR-AIM-001",
@@ -440,6 +440,72 @@
         "id": "CTFTCTE-CLD-008",
         "name": "Enumerate Azure AD/VM/storage from credentials",
         "path": "countertechniques/CTFTCTE-CLD-008.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-CLD-009",
+      "schema_version": "3.0",
+      "domain": "CLD",
+      "tactic": "CTFT-TA-CLD",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-CLD-009",
+        "name": "Delegated sign-in session material exposed",
+        "path": "techniques/CTFTTE-CLD-009.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-CLD-009",
+        "name": "Redeem and replay delegated cloud tokens",
+        "path": "countertechniques/CTFTCTE-CLD-009.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-CLD-010",
+      "schema_version": "3.0",
+      "domain": "CLD",
+      "tactic": "CTFT-TA-CLD",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-CLD-010",
+        "name": "Secret store reachable by a workload identity",
+        "path": "techniques/CTFTTE-CLD-010.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-CLD-010",
+        "name": "Enumerate secret stores the held identity can read",
+        "path": "countertechniques/CTFTCTE-CLD-010.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-CLD-011",
+      "schema_version": "3.0",
+      "domain": "CLD",
+      "tactic": "CTFT-TA-CLD",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-CLD-011",
+        "name": "Bearer credential embedded in a storage URL",
+        "path": "techniques/CTFTTE-CLD-011.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-CLD-011",
+        "name": "Validate and reuse the signed storage grant",
+        "path": "countertechniques/CTFTCTE-CLD-011.md",
         "role": "resolution"
       },
       "maturity": "taxonomy_only",

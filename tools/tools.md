@@ -379,3 +379,17 @@ Reference tools used across CTFT techniques and counter-techniques.
 | [CTFTTOU-423](CTFTTOU-423.md) | zbar (zbarimg / pyzbar) | <https://github.com/mchehab/zbar> | CTFTTE-FOR-010, CTFTCTE-FOR-010, CTFTTE-FOR-011, CTFTCTE-FOR-011 |
 | [CTFTTOU-424](CTFTTOU-424.md) | OpenCV (QR / barcode detection) | <https://opencv.org/> | CTFTTE-FOR-010, CTFTCTE-FOR-010, CTFTTE-FOR-011, CTFTCTE-FOR-011 |
 | [CTFTTOU-425](CTFTTOU-425.md) | libdmtx (dmtxread / pylibdmtx) | <https://github.com/dmtx/libdmtx> | CTFTTE-FOR-010, CTFTCTE-FOR-010 |
+| [CTFTTOU-426](CTFTTOU-426.md) | QRazyBox | <https://merricx.github.io/qrazybox/> | CTFTTE-FOR-010, CTFTCTE-FOR-010, CTFTTE-FOR-011, CTFTCTE-FOR-011, CTFTTE-FOR-012, CTFTCTE-FOR-012 |
+| [CTFTTOU-427](CTFTTOU-427.md) | Azure CLI | <https://learn.microsoft.com/en-us/cli/azure/> | CTFTTE-CLD-007, CTFTCTE-CLD-007, CTFTTE-CLD-008, CTFTCTE-CLD-008, CTFTTE-CLD-010, CTFTCTE-CLD-010, CTFTTE-CLD-011, CTFTCTE-CLD-011 |
+| [CTFTTOU-428](CTFTTOU-428.md) | AzureHound | <https://github.com/SpecterOps/AzureHound> | CTFTTE-CLD-002, CTFTCTE-CLD-002, CTFTTE-CLD-008, CTFTCTE-CLD-008 |
+| [CTFTTOU-429](CTFTTOU-429.md) | ROADtools | <https://github.com/dirkjanm/ROADtools> | CTFTTE-CLD-008, CTFTCTE-CLD-008, CTFTTE-CLD-009, CTFTCTE-CLD-009 |
+| [CTFTTOU-430](CTFTTOU-430.md) | AADInternals | <https://github.com/Gerenios/AADInternals> | CTFTTE-CLD-002, CTFTCTE-CLD-002, CTFTTE-CLD-008, CTFTCTE-CLD-008, CTFTTE-CLD-009, CTFTCTE-CLD-009 |
+| [CTFTTOU-431](CTFTTOU-431.md) | Microsoft Graph API and Graph CLI | <https://learn.microsoft.com/en-us/graph/api/overview> | CTFTTE-CLD-008, CTFTCTE-CLD-008, CTFTTE-CLD-009, CTFTCTE-CLD-009, CTFTTE-CLD-010, CTFTCTE-CLD-010 |
+| [CTFTTOU-432](CTFTTOU-432.md) | AzCopy and az storage (data plane) | <https://github.com/Azure/azure-storage-azcopy> | CTFTTE-CLD-001, CTFTCTE-CLD-001, CTFTTE-CLD-011, CTFTCTE-CLD-011 |
+| [CTFTTOU-433](CTFTTOU-433.md) | MicroBurst | <https://github.com/NetSPI/MicroBurst> | CTFTTE-CLD-001, CTFTCTE-CLD-001, CTFTTE-CLD-008, CTFTCTE-CLD-008, CTFTTE-CLD-010, CTFTCTE-CLD-010 |
+| [CTFTTOU-434](CTFTTOU-434.md) | GraphRunner | <https://github.com/dafthack/GraphRunner> | CTFTTE-CLD-008, CTFTCTE-CLD-008, CTFTTE-CLD-009, CTFTCTE-CLD-009 |
+| [CTFTTOU-435](CTFTTOU-435.md) | Monkey365 | <https://github.com/silverhack/monkey365> | CTFTTE-CLD-002, CTFTCTE-CLD-002, CTFTTE-CLD-008, CTFTCTE-CLD-008 |
+| [CTFTTOU-436](CTFTTOU-436.md) | ScoutSuite and Prowler | <https://github.com/nccgroup/ScoutSuite> | CTFTTE-CLD-001, CTFTCTE-CLD-001, CTFTTE-CLD-002, CTFTCTE-CLD-002, CTFTTE-CLD-008, CTFTCTE-CLD-008 |
+| [CTFTTOU-437](CTFTTOU-437.md) | o365spray and MSOLSpray | <https://github.com/0xZDH/o365spray> | CTFTTE-CLD-008, CTFTCTE-CLD-008, CTFTTE-CLD-009, CTFTCTE-CLD-009 |
+| [CTFTTOU-438](CTFTTOU-438.md) | TokenTacticsV2 | <https://github.com/f-bader/TokenTacticsV2> | CTFTTE-CLD-009, CTFTCTE-CLD-009 |
+| [CTFTTOU-439](CTFTTOU-439.md) | azure_ctf_inventory.py | <https://learn.microsoft.com/en-us/entra/identity-platform/access-tokens> | CTFTTE-CLD-007, CTFTCTE-CLD-007, CTFTTE-CLD-008, CTFTCTE-CLD-008, CTFTTE-CLD-009, CTFTCTE-CLD-009, CTFTTE-CLD-010, CTFTCTE-CLD-010, CTFTTE-CLD-011, CTFTCTE-CLD-011 |

@@ -1,10 +1,10 @@
 {
   "model": "CTFT",
   "schema_version": "3.0",
-  "generated_at": "2026-10-27T03:57:24+00:00",
+  "generated_at": "2026-10-27T18:59:56+00:00",
   "source": {
-    "correlation_sha256": "44a798ada732807cce0d4c6aba1a110de1fc1daa18ac2afbea76bb9cfc3509e2",
-    "legacy_index_sha256": "8903aabd93b8c5b006834806c9da72796465f5652191da03dce7550ebe03c75d"
+    "correlation_sha256": "73accfbaa9923ea8f9ecac59edf7626a4557685c1d0b196ce66dc718e43c7796",
+    "legacy_index_sha256": "9da6c6c1f221e26d064b4753de26a2ef79687fee86105fceb7c400a788c14baa"
   },
   "taxonomy": {
     "tactics": [
@@ -30,13 +30,13 @@
       "WEB"
     ],
     "tactic_count": 20,
-    "technique_count": 217,
-    "counter_technique_count": 217,
-    "complete_pairs": 217,
+    "technique_count": 220,
+    "counter_technique_count": 220,
+    "complete_pairs": 220,
     "by_tactic": {
       "AIM": 7,
       "BLK": 5,
-      "CLD": 8,
+      "CLD": 11,
       "COD": 7,
       "CRY": 15,
       "FOR": 34,
@@ -65,7 +65,7 @@
     },
     "maturity": {
       "attested": 2,
-      "taxonomy_only": 208,
+      "taxonomy_only": 211,
       "typed": 7
     },
     "core": {
@@ -215,8 +215,6 @@
       "techniques/CTFTTE-CLD-004.md",
       "techniques/CTFTTE-CLD-005.md",
       "techniques/CTFTTE-CLD-006.md",
-      "techniques/CTFTTE-CLD-007.md",
-      "techniques/CTFTTE-CLD-008.md",
       "techniques/CTFTTE-COD-001.md",
       "techniques/CTFTTE-COD-002.md",
       "techniques/CTFTTE-COD-003.md",
@@ -356,19 +354,28 @@
   "integrity": {
     "techniques_without_counter": [],
     "counters_without_technique": [],
-    "correlation_pair_count": 217,
+    "correlation_pair_count": 220,
     "correlation_pairs_missing_from_files": [],
     "correlation_pairs_not_identity": [],
     "pairs_missing_from_correlation": [],
     "legacy_index_tactics_missing_from_files": [],
     "tactics_missing_from_legacy_index": [],
-    "legacy_index_pair_count": 217,
+    "legacy_index_pair_count": 220,
     "legacy_index_pairs_missing_from_files": [],
     "relation_problems": [],
     "lint_problems": [],
-    "readme_problems": [],
+    "readme_problems": [
+      "README.md: CLD claims 8 pairs, corpus has 11",
+      "README.md: domain-table total says 217, corpus has 220",
+      "README.md: pair count in prose says 217, corpus has 220",
+      "README.md: maturity `taxonomy_only` says 208, computed 211",
+      "README.md: coverage debt says 268 of 434 entry files, corpus has 266 of 440"
+    ],
     "schema_problems": [],
     "wording_problems": [],
-    "link_problems": []
+    "link_problems": [
+      "tools/CTFTTOU-331.md: dead relative link '/mnt/c/DATA/CTF/ctf-skills-main/ctf-arjun/SKILL.md'",
+      "tools/CTFTTOU-331.md: dead relative link '/mnt/c/DATA/CTF/ctf-skills-main/ctf-web-enumeration/SKILL.md'"
+    ]
   }
 }
