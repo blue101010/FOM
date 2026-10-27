@@ -4,8 +4,8 @@ Every **Design / Hide Technique** (`CTFTTE-<CAT>-NNN`) and the
 **Resolution-Technique** (`CTFTCTE-<CAT>-NNN`) that recovers it, grouped by domain.
 IDs pair one-to-one: `CTFTTE-FOR-004` is always answered by `CTFTCTE-FOR-004`.
 
-> Generated from the files in `techniques/` and `countertechniques/` — corpus fingerprint `96330d431aa676bc`
-> by `v3/render_taxonomy_docs.py`. **213 complete pairs** across **20 active domains**. Do not hand-edit: rename the entry, then re-render.
+> Generated from the files in `techniques/` and `countertechniques/` — corpus fingerprint `00dbdc8e90b2362c`
+> by `v3/render_taxonomy_docs.py`. **214 complete pairs** across **20 active domains**. Do not hand-edit: rename the entry, then re-render.
 
 ---
 
@@ -30,12 +30,12 @@ Order follows the challenge-category picker.
 | 13 | [`JAL`](#ctft-ta-jal) | Jail escape | Jail / Sandbox Escape | 6 |
 | 14 | [`GAM`](#ctft-ta-gam) | Game/Proto | Game / Protocol Automation (GamePwn) | 8 |
 | 15 | [`COD`](#ctft-ta-cod) | Coding | Coding / Programming Puzzle | 7 |
-| 16 | [`NET`](#ctft-ta-net) | Network | Network | 8 |
+| 16 | [`NET`](#ctft-ta-net) | Network | Network | 9 |
 | 17 | [`FPN`](#ctft-ta-fpn) | Full Pwn | Full Pwn / Multi-Stage | 20 |
 | 18 | [`HWR`](#ctft-ta-hwr) | Hardware | Hardware | 3 |
 | 19 | [`IOT`](#ctft-ta-iot) | IoT / Embedded | IoT / Embedded | 6 |
 | 20 | [`SDR`](#ctft-ta-sdr) | SDR / RF | Software-Defined Radio | 5 |
-| | | | **Total** | **213** |
+| | | | **Total** | **214** |
 
 **Retired — do not use.** `MSC` (Misc) was a catch-all whose entries all
 duplicated a precise domain; file those challenges under `JAL`, `COD`, `GAM`
@@ -336,7 +336,7 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 
 ## <a id="ctft-ta-net"></a>`CTFT-TA-NET` — Network
 
-> [domain page](tactics/CTFT-TA-NET.md) · 8 pairs · HTB: Misc (Network)
+> [domain page](tactics/CTFT-TA-NET.md) · 9 pairs · HTB: Misc (Network)
 
 | # | Technique ID | Hide / Design name | Resolution-technique ID | Recovery action |
 | --- | --- | --- | --- | --- |
@@ -348,6 +348,7 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 | 6 | [CTFTTE-NET-006](techniques/CTFTTE-NET-006.md) | TTL / protocol-field covert channel | [CTFTCTE-NET-006](countertechniques/CTFTCTE-NET-006.md) | Decode TTL/ICMP/padding channels |
 | 7 | [CTFTTE-NET-007](techniques/CTFTTE-NET-007.md) | Packet-capture forensics maze | [CTFTCTE-NET-007](countertechniques/CTFTCTE-NET-007.md) | Run beaconing/exfil/credential detectors over PCAPs |
 | 8 | [CTFTTE-NET-008](techniques/CTFTTE-NET-008.md) | Anonymous FTP without chroot | [CTFTCTE-NET-008](countertechniques/CTFTCTE-NET-008.md) | Walk the FTP tree and read outside the root |
+| 9 | [CTFTTE-NET-009](techniques/CTFTTE-NET-009.md) | Credential-gated SMB share (hash / Kerberos) | [CTFTCTE-NET-009](countertechniques/CTFTCTE-NET-009.md) | Authenticate to SMB and enumerate with smbclient.py (Impacket) |
 
 
 ## <a id="ctft-ta-fpn"></a>`CTFT-TA-FPN` — Full Pwn / Multi-Stage

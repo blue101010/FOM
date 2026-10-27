@@ -1,7 +1,7 @@
 {
   "model": "CTFT",
   "version": "1.2",
-  "generated": "2026-10-26T02:15:26+00:00",
+  "generated": "2026-10-27T00:43:28+00:00",
   "relates_to": [
     "MITRE ATT&CK",
     "CAPEC",
@@ -92,7 +92,7 @@
       "id": "CTFT-TA-NET",
       "name": "Network",
       "path": "tactics/CTFT-TA-NET.md",
-      "count": 8
+      "count": 9
     },
     {
       "id": "CTFT-TA-OSI",
@@ -131,7 +131,7 @@
       "count": 23
     }
   ],
-  "total_techniques": 213,
+  "total_techniques": 214,
   "techniques": [
     {
       "tactic": "CTFT-TA-AIM",
@@ -2136,6 +2136,20 @@
       }
     },
     {
+      "tactic": "CTFT-TA-NET",
+      "category": "NET",
+      "technique": {
+        "id": "CTFTTE-NET-009",
+        "name": "Credential-gated SMB share (hash / Kerberos)",
+        "path": "techniques/CTFTTE-NET-009.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-NET-009",
+        "name": "Authenticate to SMB and enumerate with smbclient.py (Impacket)",
+        "path": "countertechniques/CTFTCTE-NET-009.md"
+      }
+    },
+    {
       "tactic": "CTFT-TA-OSI",
       "category": "OSI",
       "technique": {
@@ -3260,6 +3274,7 @@
     "CTFTTE-NET-006": "CTFTCTE-NET-006",
     "CTFTTE-NET-007": "CTFTCTE-NET-007",
     "CTFTTE-NET-008": "CTFTCTE-NET-008",
+    "CTFTTE-NET-009": "CTFTCTE-NET-009",
     "CTFTTE-OSI-001": "CTFTCTE-OSI-001",
     "CTFTTE-OSI-002": "CTFTCTE-OSI-002",
     "CTFTTE-OSI-003": "CTFTCTE-OSI-003",
@@ -4332,6 +4347,13 @@
       "counter_name": "Walk the FTP tree and read outside the root",
       "tactic": "CTFT-TA-NET",
       "path": "techniques/CTFTTE-NET-008.md"
+    },
+    "CTFTTE-NET-009": {
+      "name": "Credential-gated SMB share (hash / Kerberos)",
+      "counter_id": "CTFTCTE-NET-009",
+      "counter_name": "Authenticate to SMB and enumerate with smbclient.py (Impacket)",
+      "tactic": "CTFT-TA-NET",
+      "path": "techniques/CTFTTE-NET-009.md"
     },
     "CTFTTE-OSI-001": {
       "name": "Metadata-dispersed identity/location",
@@ -5825,6 +5847,13 @@
       "technique_name": "Anonymous FTP without chroot",
       "tactic": "CTFT-TA-NET",
       "path": "countertechniques/CTFTCTE-NET-008.md"
+    },
+    "CTFTCTE-NET-009": {
+      "name": "Authenticate to SMB and enumerate with smbclient.py (Impacket)",
+      "technique_id": "CTFTTE-NET-009",
+      "technique_name": "Credential-gated SMB share (hash / Kerberos)",
+      "tactic": "CTFT-TA-NET",
+      "path": "countertechniques/CTFTCTE-NET-009.md"
     },
     "CTFTCTE-OSI-001": {
       "name": "Correlate leaked metadata",

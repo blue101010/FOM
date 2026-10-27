@@ -1,10 +1,10 @@
 {
   "model": "CTFT",
   "schema_version": "3.0",
-  "generated_at": "2026-10-26T02:15:26+00:00",
+  "generated_at": "2026-10-27T00:43:29+00:00",
   "source": {
-    "correlation_sha256": "388fb18046e3c12dc70bd5cca00495177336d0346b1add5c029368e471971e34",
-    "legacy_index_sha256": "ce4ad87f3831b5c7a27b5f2b5a08205b41462dc3ac020ca6bb99d1e8587d194c"
+    "correlation_sha256": "e1ee359cf880bef14f1c35b62321d51fcd8d019861f3c8fcef04c76ab3582618",
+    "legacy_index_sha256": "412a03e877aefd78c78f6a9b1da04d51c5fed3a39002c99c94bec01879ac27e6"
   },
   "taxonomy": {
     "tactics": [
@@ -30,9 +30,9 @@
       "WEB"
     ],
     "tactic_count": 20,
-    "technique_count": 213,
-    "counter_technique_count": 213,
-    "complete_pairs": 213,
+    "technique_count": 214,
+    "counter_technique_count": 214,
+    "complete_pairs": 214,
     "by_tactic": {
       "AIM": 7,
       "BLK": 5,
@@ -47,7 +47,7 @@
       "IOT": 6,
       "JAL": 6,
       "MOB": 8,
-      "NET": 8,
+      "NET": 9,
       "OSI": 9,
       "PWN": 12,
       "REV": 10,
@@ -65,7 +65,7 @@
     },
     "maturity": {
       "attested": 1,
-      "taxonomy_only": 205,
+      "taxonomy_only": 206,
       "typed": 7
     },
     "core": {
@@ -299,7 +299,6 @@
       "techniques/CTFTTE-NET-002.md",
       "techniques/CTFTTE-NET-003.md",
       "techniques/CTFTTE-NET-004.md",
-      "techniques/CTFTTE-NET-005.md",
       "techniques/CTFTTE-NET-006.md",
       "techniques/CTFTTE-NET-007.md",
       "techniques/CTFTTE-NET-008.md",
@@ -360,22 +359,25 @@
   "integrity": {
     "techniques_without_counter": [],
     "counters_without_technique": [],
-    "correlation_pair_count": 213,
+    "correlation_pair_count": 214,
     "correlation_pairs_missing_from_files": [],
     "correlation_pairs_not_identity": [],
     "pairs_missing_from_correlation": [],
     "legacy_index_tactics_missing_from_files": [],
     "tactics_missing_from_legacy_index": [],
-    "legacy_index_pair_count": 213,
+    "legacy_index_pair_count": 214,
     "legacy_index_pairs_missing_from_files": [],
     "relation_problems": [],
     "lint_problems": [],
-    "readme_problems": [],
+    "readme_problems": [
+      "README.md: NET claims 8 pairs, corpus has 9",
+      "README.md: domain-table total says 213, corpus has 214",
+      "README.md: pair count in prose says 213, corpus has 214",
+      "README.md: maturity `taxonomy_only` says 205, computed 206",
+      "README.md: coverage debt says 272 of 426 entry files, corpus has 271 of 428"
+    ],
     "schema_problems": [],
     "wording_problems": [],
-    "link_problems": [
-      "tools/CTFTTOU-331.md: dead relative link '/mnt/c/DATA/CTF/ctf-skills-main/ctf-arjun/SKILL.md'",
-      "tools/CTFTTOU-331.md: dead relative link '/mnt/c/DATA/CTF/ctf-skills-main/ctf-web-enumeration/SKILL.md'"
-    ]
+    "link_problems": []
   }
 }

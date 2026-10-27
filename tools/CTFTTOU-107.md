@@ -14,3 +14,8 @@ TCP/UDP tunnel over HTTP for pivoting and port forwarding.
 ## Related Techniques
 
 CTFTCTE-FPN-003, CTFTCTE-NET-005, CTFTTE-FPN-003, CTFTTE-NET-005
+
+## References
+
+- <https://github.com/jpillora/chisel>
+- [0xdf — chisel cheatsheet](https://0xdf.gitlab.io/cheatsheets/chisel)

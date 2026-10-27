@@ -2,8 +2,8 @@
   "model": "CTFT",
   "schema_version": "3.0",
   "collection": "catalog",
-  "generated_at": "2026-10-26T02:15:28+00:00",
-  "source_sha256": "388fb18046e3c12dc70bd5cca00495177336d0346b1add5c029368e471971e34",
+  "generated_at": "2026-10-27T00:43:58+00:00",
+  "source_sha256": "e1ee359cf880bef14f1c35b62321d51fcd8d019861f3c8fcef04c76ab3582618",
   "items": [
     {
       "id": "CTFTPAIR-AIM-001",
@@ -3167,6 +3167,28 @@
         "id": "CTFTCTE-NET-008",
         "name": "Walk the FTP tree and read outside the root",
         "path": "countertechniques/CTFTCTE-NET-008.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-NET-009",
+      "schema_version": "3.0",
+      "domain": "NET",
+      "tactic": "CTFT-TA-NET",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-NET-009",
+        "name": "Credential-gated SMB share (hash / Kerberos)",
+        "path": "techniques/CTFTTE-NET-009.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-NET-009",
+        "name": "Authenticate to SMB and enumerate with smbclient.py (Impacket)",
+        "path": "countertechniques/CTFTCTE-NET-009.md",
         "role": "resolution"
       },
       "maturity": "taxonomy_only",
