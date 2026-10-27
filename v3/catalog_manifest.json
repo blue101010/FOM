@@ -1,10 +1,10 @@
 {
   "model": "CTFT",
   "schema_version": "3.0",
-  "generated_at": "2026-10-27T02:14:16+00:00",
+  "generated_at": "2026-10-27T02:18:28+00:00",
   "source": {
     "correlation_sha256": "f6e1a8895aed5e0c705e460e008c13b2d4380c964332c128197baaf83c3790c0",
-    "legacy_index_sha256": "4dc72baac3ed5da4d8d3bb604d853c806cc4c657fbf6b7cee2ed15e16ac27712"
+    "legacy_index_sha256": "a3c123fac436a752701f6a1d8615b9e4f60ca51f87a371ab57fb3ad15fdc4bda"
   },
   "taxonomy": {
     "tactics": [
@@ -366,13 +366,7 @@
     "legacy_index_pairs_missing_from_files": [],
     "relation_problems": [],
     "lint_problems": [],
-    "readme_problems": [
-      "README.md: IOT claims 6 pairs, corpus has 7",
-      "README.md: domain-table total says 215, corpus has 216",
-      "README.md: pair count in prose says 215, corpus has 216",
-      "README.md: maturity `taxonomy_only` says 206, computed 207",
-      "README.md: coverage debt says 269 of 430 entry files, corpus has 268 of 432"
-    ],
+    "readme_problems": [],
     "schema_problems": [],
     "wording_problems": [],
     "link_problems": []
