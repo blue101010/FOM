@@ -65,7 +65,12 @@ MCP registration (stdio):
 Pitfalls: `caido URL required` means `CAIDO_URL` is unset **in that shell**; `Instance: FAIL` while
 `Auth: OK` means the app is running but its instance is stopped; a `caido_…` Cloud PAT will never
 authenticate against the local instance; a paused intercept makes the browser look broken; batches cap
-at 50 requests and history listings at 100 per page.
+at 50 requests and history listings at 100 per page. A body cut by `bodyLimit` is reported as
+`truncated: true` (read that flag, not only `bodySize`), and a `-` status row in `caido-cli history` is
+an entry with no response attached. An MCP tool answering `disabled by the user` is present in the
+session but not approved in the client's tool picker — fall back to the CLI for that call rather than
+retrying, and note the parameter names are not shared (`is_in_scope` takes `target`; `list_requests`
+rejects `filter`/`limit`).
 
 ## Related Techniques
 
