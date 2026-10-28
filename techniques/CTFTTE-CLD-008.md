@@ -64,6 +64,7 @@ material authenticates to a control API.
 - [AADInternals](../tools/CTFTTOU-430.md) ([CTFTTOU-430](../tools/CTFTTOU-430.md)) — directory objects, tenant information and token inspection
 - [Microsoft Graph API / Graph CLI](../tools/CTFTTOU-431.md) ([CTFTTOU-431](../tools/CTFTTOU-431.md)) — directory reads the resource-manager API does not expose
 - [azure_ctf_inventory.py](../tools/CTFTTOU-439.md) ([CTFTTOU-439](../tools/CTFTTOU-439.md)) — offline artefact sweep before any authenticated request
+- [azure_entra_search.py](../tools/CTFTTOU-440.md) ([CTFTTOU-440](../tools/CTFTTOU-440.md)) — read-only directory sweep for a value or a property name, with page traversal and field-path attribution
 - Az PowerShell modules, when the environment is Windows-shaped or a module-only cmdlet is needed
 
 ## References

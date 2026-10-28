@@ -393,3 +393,5 @@ Reference tools used across CTFT techniques and counter-techniques.
 | [CTFTTOU-437](CTFTTOU-437.md) | o365spray and MSOLSpray | <https://github.com/0xZDH/o365spray> | CTFTTE-CLD-008, CTFTCTE-CLD-008, CTFTTE-CLD-009, CTFTCTE-CLD-009 |
 | [CTFTTOU-438](CTFTTOU-438.md) | TokenTacticsV2 | <https://github.com/f-bader/TokenTacticsV2> | CTFTTE-CLD-009, CTFTCTE-CLD-009 |
 | [CTFTTOU-439](CTFTTOU-439.md) | azure_ctf_inventory.py | <https://learn.microsoft.com/en-us/entra/identity-platform/access-tokens> | CTFTTE-CLD-007, CTFTCTE-CLD-007, CTFTTE-CLD-008, CTFTCTE-CLD-008, CTFTTE-CLD-009, CTFTCTE-CLD-009, CTFTTE-CLD-010, CTFTCTE-CLD-010, CTFTTE-CLD-011, CTFTCTE-CLD-011 |
+| [CTFTTOU-440](CTFTTOU-440.md) | azure_entra_search.py | <https://learn.microsoft.com/en-us/graph/api/overview> | CTFTTE-CLD-008, CTFTCTE-CLD-008 |
+| [CTFTTOU-441](CTFTTOU-441.md) | Caido (caido-cli and caido-mcp-server) | <https://caido.io/> | CTFTTE-WEB-001, CTFTCTE-WEB-001, CTFTTE-WEB-002, CTFTCTE-WEB-002, CTFTTE-WEB-003, CTFTCTE-WEB-003, CTFTTE-WEB-009, CTFTCTE-WEB-009 |

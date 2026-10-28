@@ -27,6 +27,9 @@ authorisation models, the control-plane-versus-data-plane split, and the platfor
   [app-service-and-functions.md](../../ctf-skills-main/ctf-cloud-azure/references/app-service-and-functions.md)
 - Script: [azure_ctf_inventory.py](../../ctf-skills-main/ctf-cloud-azure/scripts/azure_ctf_inventory.py)
   (`selftest` = 32 offline checks, no network)
+- Script: [azure_entra_search.py](../../ctf-skills-main/ctf-cloud-azure/scripts/azure_entra_search.py)
+  (directory-wide value/property-name search, paging, `--offline` replay, `--sqlite` dump search,
+  `selftest` = 26 offline checks)
 
 ## When to load
 
@@ -70,6 +73,7 @@ evidence:
 - [CTFTTOU-437](../tools/CTFTTOU-437.md) — o365spray / MSOLSpray
 - [CTFTTOU-438](../tools/CTFTTOU-438.md) — TokenTacticsV2
 - [CTFTTOU-439](../tools/CTFTTOU-439.md) — azure_ctf_inventory.py (bundled, offline)
+- [CTFTTOU-440](../tools/CTFTTOU-440.md) — azure_entra_search.py (bundled, read-only directory sweep)
 
 ## Related skills
 

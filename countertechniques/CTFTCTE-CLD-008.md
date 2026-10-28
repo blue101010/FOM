@@ -65,6 +65,7 @@ management-group level.
 - [AADInternals](../tools/CTFTTOU-430.md) ([CTFTTOU-430](../tools/CTFTTOU-430.md)) — tenant, user-object and token queries
 - [Microsoft Graph API / Graph CLI](../tools/CTFTTOU-431.md) ([CTFTTOU-431](../tools/CTFTTOU-431.md)) — directory reads beyond the resource-manager API
 - [azure_ctf_inventory.py](../tools/CTFTTOU-439.md) ([CTFTTOU-439](../tools/CTFTTOU-439.md)) — offline artefact sweep and token decoding
+- [azure_entra_search.py](../tools/CTFTTOU-440.md) ([CTFTTOU-440](../tools/CTFTTOU-440.md)) — directory-wide value search with pagination, property-name mode and `--json-out` evidence
 - Az PowerShell modules, for Windows-shaped environments and module-only cmdlets
 
 ## References
