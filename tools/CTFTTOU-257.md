@@ -11,6 +11,10 @@ John the Ripper password hash cracker.
 
 <https://www.openwall.com/john/>
 
+## Skills
+
+- [CTFTSKL-012 ctf-wordlists](../skills/CTFTSKL-012.md) — inventory + hashcat/john mechanics
+
 ## Related Techniques
 
 CTFTCTE-CRY-012, CTFTTE-CRY-012

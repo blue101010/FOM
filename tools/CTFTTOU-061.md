@@ -11,6 +11,10 @@ The ubiquitous public password wordlist (14M+ entries). The first candidate set 
 
 <https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt>
 
+## Skills
+
+- [CTFTSKL-012 ctf-wordlists](../skills/CTFTSKL-012.md) — inventory + hashcat/john mechanics
+
 ## Related Techniques
 
 CTFTTE-ICS-008, CTFTCTE-ICS-008

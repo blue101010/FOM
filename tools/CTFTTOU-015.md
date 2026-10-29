@@ -11,6 +11,10 @@ GPU-accelerated password recovery across hundreds of hash modes. Mode selection 
 
 <https://hashcat.net/hashcat/>
 
+## Skills
+
+- [CTFTSKL-012 ctf-wordlists](../skills/CTFTSKL-012.md) — inventory + hashcat/john mechanics
+
 ## Related Techniques
 
 CTFTCTE-CRY-012, CTFTTE-WEB-003

@@ -11,6 +11,10 @@ Identifies the hash format from a given string, returning the matching mode name
 
 <https://github.com/HashPals/Name-That-Hash>
 
+## Skills
+
+- [CTFTSKL-012 ctf-wordlists](../skills/CTFTSKL-012.md) — inventory + hashcat/john mechanics
+
 ## Related Techniques
 
 CTFTCTE-CRY-012
