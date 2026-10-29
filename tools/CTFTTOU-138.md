@@ -11,6 +11,10 @@ Stego helper that views bit planes, channels and image transforms.
 
 <http://www.caesum.com/handbook/stego.htm>
 
+## Skills
+
+- [CTFTSKL-011 ctf-stego-lsb](../skills/CTFTSKL-011.md) — visual bit-plane inspection step
+
 ## Related Techniques
 
 CTFTCTE-STE-001, CTFTCTE-STE-011, CTFTTE-STE-001, CTFTTE-STE-011

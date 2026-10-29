@@ -23,6 +23,7 @@ when a skill chip is clicked.
 | [CTFTSKL-008](CTFTSKL-008.md) | ctf-cloud-public-bucket | Fine-grained skill | [ctf-skills-main/ctf-cloud-public-bucket/SKILL.md](../../ctf-skills-main/ctf-cloud-public-bucket/SKILL.md) | CLD-001 |
 | [CTFTSKL-009](CTFTSKL-009.md) | ctf-cloud-azure | Domain skill | [ctf-skills-main/ctf-cloud-azure/SKILL.md](../../ctf-skills-main/ctf-cloud-azure/SKILL.md) | CLD-001/002/003/005/007/008/009/010/011 |
 | [CTFTSKL-010](CTFTSKL-010.md) | ctf-web-caido | Tool manual | [.github/skills/ctf-web-caido/SKILL.md](../../.github/skills/ctf-web-caido/SKILL.md) | WEB-001/002/003/004/007/009/012/014/018/020/022/024..029 |
+| [CTFTSKL-011](CTFTSKL-011.md) | ctf-stego-lsb | Fine-grained skill | [ctf-skills-main/ctf-stego-lsb/SKILL.md](../../ctf-skills-main/ctf-stego-lsb/SKILL.md) | STE-001 |
 
 Fiche format (parsed by `franckysolve/fom_nav.py`):
 
