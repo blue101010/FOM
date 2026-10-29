@@ -4,8 +4,8 @@ Every **Design / Hide Technique** (`CTFTTE-<CAT>-NNN`) and the
 **Resolution-Technique** (`CTFTCTE-<CAT>-NNN`) that recovers it, grouped by domain.
 IDs pair one-to-one: `CTFTTE-FOR-004` is always answered by `CTFTCTE-FOR-004`.
 
-> Generated from the files in `techniques/` and `countertechniques/` — corpus fingerprint `cf40c47f9160e0fc`
-> by `v3/render_taxonomy_docs.py`. **220 complete pairs** across **20 active domains**. Do not hand-edit: rename the entry, then re-render.
+> Generated from the files in `techniques/` and `countertechniques/` — corpus fingerprint `22f96ffdae9f520a`
+> by `v3/render_taxonomy_docs.py`. **226 complete pairs** across **20 active domains**. Do not hand-edit: rename the entry, then re-render.
 
 ---
 
@@ -16,7 +16,7 @@ Order follows the challenge-category picker.
 | # | Code | Picker label | Domain | Pairs |
 | --- | --- | --- | --- | --- |
 | 1 | [`FOR`](#ctft-ta-for) | Forensics | Forensics | 34 |
-| 2 | [`WEB`](#ctft-ta-web) | Web | Web Exploitation | 23 |
+| 2 | [`WEB`](#ctft-ta-web) | Web | Web Exploitation | 29 |
 | 3 | [`CRY`](#ctft-ta-cry) | Crypto | Cryptography | 15 |
 | 4 | [`PWN`](#ctft-ta-pwn) | Binary | Binary Exploitation | 12 |
 | 5 | [`REV`](#ctft-ta-rev) | Reverse | Reverse Engineering | 10 |
@@ -35,7 +35,7 @@ Order follows the challenge-category picker.
 | 18 | [`HWR`](#ctft-ta-hwr) | Hardware | Hardware | 3 |
 | 19 | [`IOT`](#ctft-ta-iot) | IoT / Embedded | IoT / Embedded | 7 |
 | 20 | [`SDR`](#ctft-ta-sdr) | SDR / RF | Software-Defined Radio | 5 |
-| | | | **Total** | **220** |
+| | | | **Total** | **226** |
 
 **Retired — do not use.** `MSC` (Misc) was a catch-all whose entries all
 duplicated a precise domain; file those challenges under `JAL`, `COD`, `GAM`
@@ -87,7 +87,7 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 
 ## <a id="ctft-ta-web"></a>`CTFT-TA-WEB` — Web Exploitation
 
-> [domain page](tactics/CTFT-TA-WEB.md) · 23 pairs · HTB: Web
+> [domain page](tactics/CTFT-TA-WEB.md) · 29 pairs · HTB: Web
 
 | # | Technique ID | Hide / Design name | Resolution-technique ID | Recovery action |
 | --- | --- | --- | --- | --- |
@@ -114,6 +114,12 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 | 21 | [CTFTTE-WEB-021](techniques/CTFTTE-WEB-021.md) | OS command injection in a wrapped utility | [CTFTCTE-WEB-021](countertechniques/CTFTCTE-WEB-021.md) | Run the command-injection micro-runbook |
 | 22 | [CTFTTE-WEB-022](techniques/CTFTTE-WEB-022.md) | Public source-map bait | [CTFTCTE-WEB-022](countertechniques/CTFTCTE-WEB-022.md) | Enumerate and triage source maps |
 | 23 | [CTFTTE-WEB-023](techniques/CTFTTE-WEB-023.md) | GraphQL introspection disclosure / field-level authorization gap | [CTFTCTE-WEB-023](countertechniques/CTFTCTE-WEB-023.md) | Introspect the schema and over-fetch hidden fields |
+| 24 | [CTFTTE-WEB-024](techniques/CTFTTE-WEB-024.md) | Race window in a state-changing flow | [CTFTCTE-WEB-024](countertechniques/CTFTCTE-WEB-024.md) | Fire a synchronized request burst at the state change |
+| 25 | [CTFTTE-WEB-025](techniques/CTFTTE-WEB-025.md) | Server-trusted client-computed state | [CTFTCTE-WEB-025](countertechniques/CTFTCTE-WEB-025.md) | Rewrite or extend the trust-bearing client fields |
+| 26 | [CTFTTE-WEB-026](techniques/CTFTTE-WEB-026.md) | Signal buried in a high-volume response corpus | [CTFTCTE-WEB-026](countertechniques/CTFTCTE-WEB-026.md) | Sweep every captured response with passive detection rules and triage the findings |
+| 27 | [CTFTTE-WEB-027](techniques/CTFTTE-WEB-027.md) | Representation differential across body formats | [CTFTCTE-WEB-027](countertechniques/CTFTCTE-WEB-027.md) | Re-encode the request body across representations and replay |
+| 28 | [CTFTTE-WEB-028](techniques/CTFTTE-WEB-028.md) | Function-level authorization gap on a privileged endpoint | [CTFTCTE-WEB-028](countertechniques/CTFTCTE-WEB-028.md) | Sweep privileged endpoints across session tokens |
+| 29 | [CTFTTE-WEB-029](techniques/CTFTTE-WEB-029.md) | Desynchronized request framing between edge and origin | [CTFTCTE-WEB-029](countertechniques/CTFTCTE-WEB-029.md) | Craft unnormalized raw request pairs and read the desync |
 
 
 ## <a id="ctft-ta-cry"></a>`CTFT-TA-CRY` — Cryptography

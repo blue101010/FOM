@@ -91,7 +91,7 @@ Load skill: /ctf-arjun
 
 ## References
 
-- [ctf-arjun/SKILL.md](/mnt/c/DATA/CTF/ctf-skills-main/ctf-arjun/SKILL.md) - Dedicated Arjun skill
-- [ctf-web-enumeration/SKILL.md](/mnt/c/DATA/CTF/ctf-skills-main/ctf-web-enumeration/SKILL.md) - Web enumeration skill (includes Arjun reference card)
+- `ctf-arjun/SKILL.md` — dedicated Arjun skill (workspace skill tree, outside this repository)
+- `ctf-web-enumeration/SKILL.md` — web enumeration skill including an Arjun reference card (not present in this workspace)
 - [GitHub Repository](https://github.com/s0md3v/Arjun) - Official repository
 - [PyPI Package](https://pypi.org/project/arjun/) - Python package

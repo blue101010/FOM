@@ -2,9 +2,9 @@
   "model": "CTFT",
   "schema_version": "3.0",
   "collection": "curation_queue",
-  "generated_at": "2026-10-27T18:59:57+00:00",
-  "source_sha256": "73accfbaa9923ea8f9ecac59edf7626a4557685c1d0b196ce66dc718e43c7796",
-  "pending_count": 213,
+  "generated_at": "2026-10-29T14:39:08+00:00",
+  "source_sha256": "ce222eb134ed6ea1dd5628b0fce4dbd3635be588cf3ffdd253b0d1a6c220c986",
+  "pending_count": 219,
   "by_tactic": {
     "CTFT-TA-AIM": [
       {
@@ -1581,6 +1581,48 @@
       {
         "pair_id": "CTFTPAIR-WEB-023",
         "counter_technique": "CTFTCTE-WEB-023",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-WEB-024",
+        "counter_technique": "CTFTCTE-WEB-024",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-WEB-025",
+        "counter_technique": "CTFTCTE-WEB-025",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-WEB-026",
+        "counter_technique": "CTFTCTE-WEB-026",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-WEB-027",
+        "counter_technique": "CTFTCTE-WEB-027",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-WEB-028",
+        "counter_technique": "CTFTCTE-WEB-028",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-WEB-029",
+        "counter_technique": "CTFTCTE-WEB-029",
         "missing": [
           "evidence_record"
         ]

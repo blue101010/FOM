@@ -2,7 +2,7 @@
 
 > **Domain ID:** `CTFT-TA-WEB`  
 > **HTB mapping:** HTB: Web  
-> **Techniques:** 23
+> **Techniques:** 29
 
 ## Description
 
@@ -49,6 +49,12 @@ per entry**, never the definition of an entry.
 | [CTFTTE-WEB-021](../techniques/CTFTTE-WEB-021.md) | OS command injection in a wrapped utility | [CTFTCTE-WEB-021](../countertechniques/CTFTCTE-WEB-021.md) | Run the command-injection micro-runbook | T1059 |
 | [CTFTTE-WEB-022](../techniques/CTFTTE-WEB-022.md) | Public source-map bait | [CTFTCTE-WEB-022](../countertechniques/CTFTCTE-WEB-022.md) | Enumerate and triage source maps | T1213 |
 | [CTFTTE-WEB-023](../techniques/CTFTTE-WEB-023.md) | GraphQL introspection disclosure / field-level authorization gap | [CTFTCTE-WEB-023](../countertechniques/CTFTCTE-WEB-023.md) | Introspect the schema and over-fetch hidden fields | T1190 |
+| [CTFTTE-WEB-024](../techniques/CTFTTE-WEB-024.md) | Race window in a state-changing flow | [CTFTCTE-WEB-024](../countertechniques/CTFTCTE-WEB-024.md) | Fire a synchronized request burst at the state change | T1190, T1565.001 |
+| [CTFTTE-WEB-025](../techniques/CTFTTE-WEB-025.md) | Server-trusted client-computed state | [CTFTCTE-WEB-025](../countertechniques/CTFTCTE-WEB-025.md) | Rewrite or extend the trust-bearing client fields | T1565.001, T1190 |
+| [CTFTTE-WEB-026](../techniques/CTFTTE-WEB-026.md) | Signal buried in a high-volume response corpus | [CTFTCTE-WEB-026](../countertechniques/CTFTCTE-WEB-026.md) | Sweep every captured response with passive detection rules and triage the findings | T1027, T1213 |
+| [CTFTTE-WEB-027](../techniques/CTFTTE-WEB-027.md) | Representation differential across body formats | [CTFTCTE-WEB-027](../countertechniques/CTFTCTE-WEB-027.md) | Re-encode the request body across representations and replay | T1027, T1190 |
+| [CTFTTE-WEB-028](../techniques/CTFTTE-WEB-028.md) | Function-level authorization gap on a privileged endpoint | [CTFTCTE-WEB-028](../countertechniques/CTFTCTE-WEB-028.md) | Sweep privileged endpoints across session tokens | T1078, T1190 |
+| [CTFTTE-WEB-029](../techniques/CTFTTE-WEB-029.md) | Desynchronized request framing between edge and origin | [CTFTCTE-WEB-029](../countertechniques/CTFTCTE-WEB-029.md) | Craft unnormalized raw request pairs and read the desync | T1190 |
 
 ---
 *See [CORRELATION.md](../CORRELATION.md) for the full cross-reference matrix.*

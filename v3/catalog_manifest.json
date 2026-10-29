@@ -1,10 +1,10 @@
 {
   "model": "CTFT",
   "schema_version": "3.0",
-  "generated_at": "2026-10-27T18:59:56+00:00",
+  "generated_at": "2026-10-29T14:39:07+00:00",
   "source": {
-    "correlation_sha256": "73accfbaa9923ea8f9ecac59edf7626a4557685c1d0b196ce66dc718e43c7796",
-    "legacy_index_sha256": "9da6c6c1f221e26d064b4753de26a2ef79687fee86105fceb7c400a788c14baa"
+    "correlation_sha256": "ce222eb134ed6ea1dd5628b0fce4dbd3635be588cf3ffdd253b0d1a6c220c986",
+    "legacy_index_sha256": "ad40cce24c7cacb70c3861e653320ff9ff5f92d9404cc5a8275f3163b8f9ac28"
   },
   "taxonomy": {
     "tactics": [
@@ -30,9 +30,9 @@
       "WEB"
     ],
     "tactic_count": 20,
-    "technique_count": 220,
-    "counter_technique_count": 220,
-    "complete_pairs": 220,
+    "technique_count": 226,
+    "counter_technique_count": 226,
+    "complete_pairs": 226,
     "by_tactic": {
       "AIM": 7,
       "BLK": 5,
@@ -53,7 +53,7 @@
       "REV": 10,
       "SDR": 5,
       "STE": 11,
-      "WEB": 23
+      "WEB": 29
     }
   },
   "coverage": {
@@ -65,7 +65,7 @@
     },
     "maturity": {
       "attested": 2,
-      "taxonomy_only": 211,
+      "taxonomy_only": 217,
       "typed": 7
     },
     "core": {
@@ -75,10 +75,10 @@
       "placeholder_free": 2
     },
     "stix_object_types": {
-      "attack-pattern": 217,
-      "course-of-action": 217,
+      "attack-pattern": 220,
+      "course-of-action": 220,
       "identity": 1,
-      "relationship": 217,
+      "relationship": 220,
       "x-ctft-tactic": 20
     },
     "placeholder_entries": [
@@ -354,22 +354,23 @@
   "integrity": {
     "techniques_without_counter": [],
     "counters_without_technique": [],
-    "correlation_pair_count": 220,
+    "correlation_pair_count": 226,
     "correlation_pairs_missing_from_files": [],
     "correlation_pairs_not_identity": [],
     "pairs_missing_from_correlation": [],
     "legacy_index_tactics_missing_from_files": [],
     "tactics_missing_from_legacy_index": [],
-    "legacy_index_pair_count": 220,
+    "legacy_index_pair_count": 226,
     "legacy_index_pairs_missing_from_files": [],
     "relation_problems": [],
     "lint_problems": [],
     "readme_problems": [
       "README.md: CLD claims 8 pairs, corpus has 11",
-      "README.md: domain-table total says 217, corpus has 220",
-      "README.md: pair count in prose says 217, corpus has 220",
-      "README.md: maturity `taxonomy_only` says 208, computed 211",
-      "README.md: coverage debt says 268 of 434 entry files, corpus has 266 of 440"
+      "README.md: WEB claims 23 pairs, corpus has 29",
+      "README.md: domain-table total says 217, corpus has 226",
+      "README.md: pair count in prose says 217, corpus has 226",
+      "README.md: maturity `taxonomy_only` says 208, computed 217",
+      "README.md: coverage debt says 268 of 434 entry files, corpus has 266 of 452"
     ],
     "schema_problems": [],
     "wording_problems": [],

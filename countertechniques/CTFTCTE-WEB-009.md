@@ -12,6 +12,13 @@ Classify the exposure from the supplied redacted artifact, link it to the
 declared service boundary, and report it as a candidate path condition rather
 than using or reproducing the secret.
 
+Do not review markup by hand when the corpus is larger than one page. Sweep every
+captured response with a passive rule set whose rules carry stable names —
+credential shapes, token shapes, key prefixes, configuration keys inside a
+rendered document — and read the result as a ranked list of findings, each tied
+to the request it came from. The class of the secret then decides the next step:
+a configuration key is a boundary statement, a live token is a path condition.
+
 ## Forensic / Blue-Team Perspective (DFIR analyst)
 
 Record the configuration source, affected service, secret class and rotation
@@ -36,6 +43,8 @@ rotation through the approved secret store.
 
 ## Tools
 
+- [Caido (caido-cli and caido-mcp-server)](../tools/CTFTTOU-441.md) ([CTFTTOU-441](../tools/CTFTTOU-441.md)) — passive secret-shape rules over every proxied response, findings tied to a request id
+- [Caido workflow catalogue](../tools/CTFTTOU-442.md) ([CTFTTOU-442](../tools/CTFTTOU-442.md)) — the rule set that supplies the secret and token detectors
 - [Nikto](../tools/CTFTTOU-315.md)
 
 ## References

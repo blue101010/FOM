@@ -2,10 +2,10 @@
   "model": "CTFT",
   "schema_version": "3.0",
   "collection": "relations",
-  "generated_at": "2026-10-27T18:59:56+00:00",
+  "generated_at": "2026-10-29T14:39:07+00:00",
   "note": "Generated. Derived `solves` edges come from the markdown pairing; edit v3/relations.curated.json for anything else.",
   "counts": {
-    "derived": 220,
+    "derived": 226,
     "curated": 6
   },
   "items": [
@@ -1986,6 +1986,60 @@
       "type": "solves",
       "source": "CTFTCTE-WEB-023",
       "target": "CTFTTE-WEB-023",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
+      "id": "REL-SOLVES-WEB-024",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-WEB-024",
+      "target": "CTFTTE-WEB-024",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
+      "id": "REL-SOLVES-WEB-025",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-WEB-025",
+      "target": "CTFTTE-WEB-025",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
+      "id": "REL-SOLVES-WEB-026",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-WEB-026",
+      "target": "CTFTTE-WEB-026",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
+      "id": "REL-SOLVES-WEB-027",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-WEB-027",
+      "target": "CTFTTE-WEB-027",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
+      "id": "REL-SOLVES-WEB-028",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-WEB-028",
+      "target": "CTFTTE-WEB-028",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
+      "id": "REL-SOLVES-WEB-029",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-WEB-029",
+      "target": "CTFTTE-WEB-029",
       "origin": "derived",
       "confidence": "high"
     },

@@ -11,6 +11,13 @@
 Parse a supplied metadata artifact, normalize its resource names, and retain
 only candidates that match the declared challenge scope.
 
+When the artifact is not supplied, treat the recorded sitemap as the same
+inventory from the other direction: it lists what the application actually routed
+during the walk, and the delta against the metadata is where the unreferenced
+resources hide. A passive rule that reports metadata-shaped paths (deployment
+manifests, build descriptors, index files) converts that delta into a list of
+candidates to confirm one by one.
+
 ## Forensic / Blue-Team Perspective (DFIR analyst)
 
 Treat a deployment metadata file as an exposure finding: record its origin,
@@ -34,6 +41,7 @@ the paths it reveals, and the configuration change that removes public access.
 
 ## Tools
 
+- [Caido (caido-cli and caido-mcp-server)](../tools/CTFTTOU-441.md) ([CTFTTOU-441](../tools/CTFTTOU-441.md)) — sitemap as the routed-resource inventory, with metadata paths reported as passive-rule findings
 - [dirb](../tools/CTFTTOU-312.md)
 - [Nikto](../tools/CTFTTOU-315.md)
 - [wget](../tools/CTFTTOU-318.md)

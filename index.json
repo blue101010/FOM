@@ -1,7 +1,7 @@
 {
   "model": "CTFT",
   "version": "1.2",
-  "generated": "2026-10-27T18:59:56+00:00",
+  "generated": "2026-10-29T14:39:07+00:00",
   "relates_to": [
     "MITRE ATT&CK",
     "CAPEC",
@@ -128,10 +128,10 @@
       "id": "CTFT-TA-WEB",
       "name": "Web Exploitation",
       "path": "tactics/CTFT-TA-WEB.md",
-      "count": 23
+      "count": 29
     }
   ],
-  "total_techniques": 220,
+  "total_techniques": 226,
   "techniques": [
     {
       "tactic": "CTFT-TA-AIM",
@@ -3212,6 +3212,90 @@
         "name": "Introspect the schema and over-fetch hidden fields",
         "path": "countertechniques/CTFTCTE-WEB-023.md"
       }
+    },
+    {
+      "tactic": "CTFT-TA-WEB",
+      "category": "WEB",
+      "technique": {
+        "id": "CTFTTE-WEB-024",
+        "name": "Race window in a state-changing flow",
+        "path": "techniques/CTFTTE-WEB-024.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-WEB-024",
+        "name": "Fire a synchronized request burst at the state change",
+        "path": "countertechniques/CTFTCTE-WEB-024.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-WEB",
+      "category": "WEB",
+      "technique": {
+        "id": "CTFTTE-WEB-025",
+        "name": "Server-trusted client-computed state",
+        "path": "techniques/CTFTTE-WEB-025.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-WEB-025",
+        "name": "Rewrite or extend the trust-bearing client fields",
+        "path": "countertechniques/CTFTCTE-WEB-025.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-WEB",
+      "category": "WEB",
+      "technique": {
+        "id": "CTFTTE-WEB-026",
+        "name": "Signal buried in a high-volume response corpus",
+        "path": "techniques/CTFTTE-WEB-026.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-WEB-026",
+        "name": "Sweep every captured response with passive detection rules and triage the findings",
+        "path": "countertechniques/CTFTCTE-WEB-026.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-WEB",
+      "category": "WEB",
+      "technique": {
+        "id": "CTFTTE-WEB-027",
+        "name": "Representation differential across body formats",
+        "path": "techniques/CTFTTE-WEB-027.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-WEB-027",
+        "name": "Re-encode the request body across representations and replay",
+        "path": "countertechniques/CTFTCTE-WEB-027.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-WEB",
+      "category": "WEB",
+      "technique": {
+        "id": "CTFTTE-WEB-028",
+        "name": "Function-level authorization gap on a privileged endpoint",
+        "path": "techniques/CTFTTE-WEB-028.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-WEB-028",
+        "name": "Sweep privileged endpoints across session tokens",
+        "path": "countertechniques/CTFTCTE-WEB-028.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-WEB",
+      "category": "WEB",
+      "technique": {
+        "id": "CTFTTE-WEB-029",
+        "name": "Desynchronized request framing between edge and origin",
+        "path": "techniques/CTFTTE-WEB-029.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-WEB-029",
+        "name": "Craft unnormalized raw request pairs and read the desync",
+        "path": "countertechniques/CTFTCTE-WEB-029.md"
+      }
     }
   ],
   "pairs": {
@@ -3434,7 +3518,13 @@
     "CTFTTE-WEB-020": "CTFTCTE-WEB-020",
     "CTFTTE-WEB-021": "CTFTCTE-WEB-021",
     "CTFTTE-WEB-022": "CTFTCTE-WEB-022",
-    "CTFTTE-WEB-023": "CTFTCTE-WEB-023"
+    "CTFTTE-WEB-023": "CTFTCTE-WEB-023",
+    "CTFTTE-WEB-024": "CTFTCTE-WEB-024",
+    "CTFTTE-WEB-025": "CTFTCTE-WEB-025",
+    "CTFTTE-WEB-026": "CTFTCTE-WEB-026",
+    "CTFTTE-WEB-027": "CTFTCTE-WEB-027",
+    "CTFTTE-WEB-028": "CTFTCTE-WEB-028",
+    "CTFTTE-WEB-029": "CTFTCTE-WEB-029"
   },
   "by_technique_id": {
     "CTFTTE-AIM-001": {
@@ -4976,6 +5066,48 @@
       "counter_name": "Introspect the schema and over-fetch hidden fields",
       "tactic": "CTFT-TA-WEB",
       "path": "techniques/CTFTTE-WEB-023.md"
+    },
+    "CTFTTE-WEB-024": {
+      "name": "Race window in a state-changing flow",
+      "counter_id": "CTFTCTE-WEB-024",
+      "counter_name": "Fire a synchronized request burst at the state change",
+      "tactic": "CTFT-TA-WEB",
+      "path": "techniques/CTFTTE-WEB-024.md"
+    },
+    "CTFTTE-WEB-025": {
+      "name": "Server-trusted client-computed state",
+      "counter_id": "CTFTCTE-WEB-025",
+      "counter_name": "Rewrite or extend the trust-bearing client fields",
+      "tactic": "CTFT-TA-WEB",
+      "path": "techniques/CTFTTE-WEB-025.md"
+    },
+    "CTFTTE-WEB-026": {
+      "name": "Signal buried in a high-volume response corpus",
+      "counter_id": "CTFTCTE-WEB-026",
+      "counter_name": "Sweep every captured response with passive detection rules and triage the findings",
+      "tactic": "CTFT-TA-WEB",
+      "path": "techniques/CTFTTE-WEB-026.md"
+    },
+    "CTFTTE-WEB-027": {
+      "name": "Representation differential across body formats",
+      "counter_id": "CTFTCTE-WEB-027",
+      "counter_name": "Re-encode the request body across representations and replay",
+      "tactic": "CTFT-TA-WEB",
+      "path": "techniques/CTFTTE-WEB-027.md"
+    },
+    "CTFTTE-WEB-028": {
+      "name": "Function-level authorization gap on a privileged endpoint",
+      "counter_id": "CTFTCTE-WEB-028",
+      "counter_name": "Sweep privileged endpoints across session tokens",
+      "tactic": "CTFT-TA-WEB",
+      "path": "techniques/CTFTTE-WEB-028.md"
+    },
+    "CTFTTE-WEB-029": {
+      "name": "Desynchronized request framing between edge and origin",
+      "counter_id": "CTFTCTE-WEB-029",
+      "counter_name": "Craft unnormalized raw request pairs and read the desync",
+      "tactic": "CTFT-TA-WEB",
+      "path": "techniques/CTFTTE-WEB-029.md"
     }
   },
   "by_counter_id": {
@@ -6518,6 +6650,48 @@
       "technique_name": "GraphQL introspection disclosure / field-level authorization gap",
       "tactic": "CTFT-TA-WEB",
       "path": "countertechniques/CTFTCTE-WEB-023.md"
+    },
+    "CTFTCTE-WEB-024": {
+      "name": "Fire a synchronized request burst at the state change",
+      "technique_id": "CTFTTE-WEB-024",
+      "technique_name": "Race window in a state-changing flow",
+      "tactic": "CTFT-TA-WEB",
+      "path": "countertechniques/CTFTCTE-WEB-024.md"
+    },
+    "CTFTCTE-WEB-025": {
+      "name": "Rewrite or extend the trust-bearing client fields",
+      "technique_id": "CTFTTE-WEB-025",
+      "technique_name": "Server-trusted client-computed state",
+      "tactic": "CTFT-TA-WEB",
+      "path": "countertechniques/CTFTCTE-WEB-025.md"
+    },
+    "CTFTCTE-WEB-026": {
+      "name": "Sweep every captured response with passive detection rules and triage the findings",
+      "technique_id": "CTFTTE-WEB-026",
+      "technique_name": "Signal buried in a high-volume response corpus",
+      "tactic": "CTFT-TA-WEB",
+      "path": "countertechniques/CTFTCTE-WEB-026.md"
+    },
+    "CTFTCTE-WEB-027": {
+      "name": "Re-encode the request body across representations and replay",
+      "technique_id": "CTFTTE-WEB-027",
+      "technique_name": "Representation differential across body formats",
+      "tactic": "CTFT-TA-WEB",
+      "path": "countertechniques/CTFTCTE-WEB-027.md"
+    },
+    "CTFTCTE-WEB-028": {
+      "name": "Sweep privileged endpoints across session tokens",
+      "technique_id": "CTFTTE-WEB-028",
+      "technique_name": "Function-level authorization gap on a privileged endpoint",
+      "tactic": "CTFT-TA-WEB",
+      "path": "countertechniques/CTFTCTE-WEB-028.md"
+    },
+    "CTFTCTE-WEB-029": {
+      "name": "Craft unnormalized raw request pairs and read the desync",
+      "technique_id": "CTFTTE-WEB-029",
+      "technique_name": "Desynchronized request framing between edge and origin",
+      "tactic": "CTFT-TA-WEB",
+      "path": "countertechniques/CTFTCTE-WEB-029.md"
     }
   }
 }

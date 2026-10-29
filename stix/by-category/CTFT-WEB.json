@@ -135,7 +135,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-WEB-002 - Enumerate insecure direct object references",
-      "description": "Iterate identifiers/parameters to access objects outside the intended scope.",
+      "description": "Iterate identifiers/parameters to access objects outside the intended scope. Then widen the same instrument to identities: hold method, path and body fixed and replay one request definition across every session you hold, plus the anonymous case. Record status, length and a normalized body hash per variant. The object axis finds another subject's data; the identity axis finds the same function still served to a lesser role (the boundary with the function-level authorization pair is that here the function itself was always legitimate).",
       "x_ctft_category": "WEB",
       "x_ctft_domain": "WEB",
       "x_ctft_role": "resolution",
@@ -202,7 +202,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-WEB-003 - Forge or downgrade a JSON Web Token",
-      "description": "Strip/replace the algorithm, crack the secret, or perform RS256->HS256 confusion to forge a token.",
+      "description": "Strip/replace the algorithm, crack the secret, or perform RS256->HS256 confusion to forge a token. Treat the forged token as a canary, not as a one-off: mint one token per hypothesis (unverified algorithm, empty signature, substituted key, expired claim) and replay it against every endpoint that reads the token, not only the one that issued it. A verification path and an unverified path frequently coexist in one application, and the second is found by replaying the same canary across the recorded surface. Keep the cookie jar of each attempt separate, otherwise a refreshed legitimate session masks the forged one.",
       "x_ctft_category": "WEB",
       "x_ctft_domain": "WEB",
       "x_ctft_role": "resolution",
@@ -269,7 +269,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-WEB-004 - Extract data via blind injection",
-      "description": "Use boolean/time-based inference with WAF-evasion encodings to extract the value.",
+      "description": "Use boolean/time-based inference with WAF-evasion encodings to extract the value. Automate against the oracle, not against the payload vocabulary: define the signal that distinguishes true from false (status, body length, normalized body hash, response time) and let each request answer a single bit. A WAF-evaded payload that leaves the oracle unchanged is indistinguishable from a blocked one, so record the delta of every attempt and discard the variants that produced none — otherwise the search space grows while the information rate stays at zero.",
       "x_ctft_category": "WEB",
       "x_ctft_domain": "WEB",
       "x_ctft_role": "resolution",
@@ -470,7 +470,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-WEB-007 - Analyze a disclosed deployment metadata index",
-      "description": "Parse a supplied metadata artifact, normalize its resource names, and retain only candidates that match the declared challenge scope.",
+      "description": "Parse a supplied metadata artifact, normalize its resource names, and retain only candidates that match the declared challenge scope. When the artifact is not supplied, treat the recorded sitemap as the same inventory from the other direction: it lists what the application actually routed during the walk, and the delta against the metadata is where the unreferenced resources hide. A passive rule that reports metadata-shaped paths (deployment manifests, build descriptors, index files) converts that delta into a list of candidates to confirm one by one.",
       "x_ctft_category": "WEB",
       "x_ctft_domain": "WEB",
       "x_ctft_role": "resolution",
@@ -604,7 +604,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-WEB-009 - Classify a configuration secret exposure",
-      "description": "Classify the exposure from the supplied redacted artifact, link it to the declared service boundary, and report it as a candidate path condition rather than using or reproducing the secret.",
+      "description": "Classify the exposure from the supplied redacted artifact, link it to the declared service boundary, and report it as a candidate path condition rather than using or reproducing the secret. Do not review markup by hand when the corpus is larger than one page. Sweep every captured response with a passive rule set whose rules carry stable names — credential shapes, token shapes, key prefixes, configuration keys inside a rendered document — and read the result as a ranked list of findings, each tied to the request it came from. The class of the secret then decides the next step: a configuration key is a boundary statement, a live token is a path condition.",
       "x_ctft_category": "WEB",
       "x_ctft_domain": "WEB",
       "x_ctft_role": "resolution",
@@ -805,7 +805,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-WEB-012 - Craft XSS payloads (stored/reflected/DOM)",
-      "description": "Craft stored/reflected/DOM payloads that read the flag and exfiltrate it.",
+      "description": "Craft stored/reflected/DOM payloads that read the flag and exfiltrate it. Two instrument-side habits shorten this materially. First, find the sink before writing the payload: a passive rule that reports any query value echoed verbatim into the response turns sink discovery into a ranked list, and a reflection is the cheapest evidence that a context is injectable. Second, host the payload from the instrument: when the exfiltration has to reach a page you control, serve it from the recording proxy's own file host so the callback lands in the same history as the request that triggered it, instead of in an origin you cannot read afterwards.",
       "x_ctft_category": "WEB",
       "x_ctft_domain": "WEB",
       "x_ctft_role": "resolution",
@@ -939,7 +939,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-WEB-014 - Intercept and decode WebSocket traffic",
-      "description": "Intercept the WS upgrade and frames (Burp/Chrome), replay and decode the messages.",
+      "description": "Intercept the WS upgrade and frames (Burp/Chrome), replay and decode the messages. Work at two levels, because they fail differently. At the stream level the question is which upgrade produced the channel: a WebSocket only exists in the recorded history if the upgrade itself was proxied, so an endpoint that appears to do nothing in HTTP may still own the channel that matters. At the frame level the question is which message carried the payload: list the frames per stream in order, decode each independently, and treat a frame that differs from its neighbours as the candidate. Replay by mutating one frame on an established socket rather than replaying the handshake — the session state the server built during the upgrade is not reproducible from the first frame alone.",
       "x_ctft_category": "WEB",
       "x_ctft_domain": "WEB",
       "x_ctft_role": "resolution",
@@ -1207,7 +1207,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-WEB-018 - Capture pre-load browser traffic and correlate interactions",
-      "description": "Instrument the browser before page.goto(): subscribe to requests, responses, failures, WebSockets, console errors, DOM mutations and storage writes; drive the page by clicking, pressing keys and moving into scenes; correlate every interaction with the assets it triggers.",
+      "description": "Instrument the browser before page.goto(): subscribe to requests, responses, failures, WebSockets, console errors, DOM mutations and storage writes; drive the page by clicking, pressing keys and moving into scenes; correlate every interaction with the assets it triggers. Keep a second, independent record at the proxy. In-process instrumentation dies with the script, whereas proxied traffic stays addressable by request id after the session ends — which is what makes the correlation re-readable, and what lets a passive rule set run over the gated burst later. When an exchange must be examined mid-flight, hold the queue rather than re-running the scenario: a paused intercept is reversible, a lost click sequence is not.",
       "x_ctft_category": "WEB",
       "x_ctft_domain": "WEB",
       "x_ctft_role": "resolution",
@@ -1341,7 +1341,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-WEB-020 - Fingerprint HTTP responses against a baseline",
-      "description": "Record per URL: initial and final URL, redirect chain, status, content-type, size, normalized body hash, title, server, timings, and the test origin (browser vs CLI client). Compare against a random route and a random hostname; classify as unique content, redirect, soft 404, uniform refusal, standard edge response, CORS-only false negative, or timeout.",
+      "description": "Record per URL: initial and final URL, redirect chain, status, content-type, size, normalized body hash, title, server, timings, and the test origin (browser vs CLI client). Compare against a random route and a random hostname; classify as unique content, redirect, soft 404, uniform refusal, standard edge response, CORS-only false negative, or timeout. Take the baseline from the same client that produced the finding: a body that looks unique through the browser is often a uniform interception page through a replay client, and the reverse. Then let the instrument do the comparison — two recorded responses diffed on status, length and normalized hash settle the classification faster than reading both bodies, and the diff stays attached to the request ids that produced it.",
       "x_ctft_category": "WEB",
       "x_ctft_domain": "WEB",
       "x_ctft_role": "resolution",
@@ -1475,7 +1475,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-WEB-022 - Enumerate and triage source maps",
-      "description": "Request the referenced .map for every asset; recover the original sources; classify each as structural (styles, section names) or functional (logic, endpoints, data). Treat section vocabulary as hint material for the next inventory, never as proof of the payload.",
+      "description": "Request the referenced .map for every asset; recover the original sources; classify each as structural (styles, section names) or functional (logic, endpoints, data). Treat section vocabulary as hint material for the next inventory, never as proof of the payload. Do not walk the asset list by hand: derive it from the recorded sitemap, then run a passive rule that reports source-map references and map-shaped paths, so the mapping between assets and their maps is a table rather than a search. A map that is referenced but returns a uniform refusal is the soft-404 case, not a missing asset — classify it that way before spending time on it.",
       "x_ctft_category": "WEB",
       "x_ctft_domain": "WEB",
       "x_ctft_role": "resolution",
@@ -1569,6 +1569,463 @@
       "x_ctft_relation": "solves",
       "source_ref": "course-of-action--6867df6e-efa4-5cd9-93be-1ecd585d77a1",
       "target_ref": "attack-pattern--a6477f97-b3fe-51b6-9063-e9ff70a61443",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--870ecf82-b70f-55f7-8980-c65afd62abcf",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-WEB-024 - Race window in a state-changing flow",
+      "description": "The business rule is enforced across two distinct steps — the check (balance, stock, coupon unused, name unique, vote not cast) and the commit — with no lock bridging them. Every request inspected on its own is correct, so ordinary play always satisfies the rule: the state is read, the decision is taken, then the new state is written. The invariant only breaks when two requests both observe the pre-state and both commit, so a player who works sequentially never sees the flaw, and a player who works quickly still does not see it unless the requests actually overlap. The concealment is temporal, not structural: nothing is missing, nothing is misnamed, and no authorization check is absent. The intended read is \"this is a normal shop/vote/registration endpoint\". Design variants, in increasing subtlety: - Single-use artefact. A coupon, invitation or one-time token is meant to be consumed once; concurrent redemptions all pass the \"still valid\" check. - Bounded balance. A transfer or withdrawal debits a balance that is validated, not reserved, so N concurrent debits each pass on the full amount. - Counting limit. A quota (\"one vote\", \"three attempts\", \"one entry per user\") is compared before insertion, so the counter overshoots under overlap. - Uniqueness constraint. A \"unique\" resource is checked in application code rather than by the store, so duplicates are created in the same window. - Multi-step workflow. Only the last step is guarded; submitting the final step concurrently with the first skips an approval the story promises. - Read-modify-write on a shared field. Two independent updates each preserve the documented invariant, but their combination does not. Boundary: when a single request is simply missing an authorization check, the pair is the function-level authorization one; when the payload differs but the number of concurrent requests is irrelevant, the pair is the one about state the server trusts from the client. Here the request is legitimate and correct and only its simultaneity is illegitimate.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "web"
+        }
+      ],
+      "x_ctft_category": "WEB",
+      "x_ctft_domain": "WEB",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-WEB-024"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1190",
+          "description": "Exploit Public-Facing Application"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1565.001",
+          "description": "Data Manipulation: Stored Data Manipulation"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--93a70812-abdb-569e-8877-308d2a95e0a7",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-WEB-024 - Fire a synchronized request burst at the state change",
+      "description": "The flaw is temporal, so the procedure is about getting the requests to overlap on the server, not about crafting a better payload. Capture a request that is known to succeed, then vary only its concurrency. 1. Locate the check and the commit. Replay the request once and read the response: if it returns the new balance, counter or total, the same endpoint both validates and mutates, and that is the target. Write down the pre-state. 2. Prove the invariant sequentially. Fire the same request twice, one after the other. The second must be refused. If it is accepted, this is not a race — it is a plain logic or authorization gap, and the pair is a different one. 3. Choose the synchronization. Prefer the mode that removes network jitter from the equation: a single connection carrying the requests back-to-back with the final byte of each released together. Fall back to N connections released at a shared instant, then to plain parallel delivery. Escalate only when the previous mode produced no divergence. 4. Raise N. Start at the smallest burst that could break the invariant (2 for a single-use artefact, the balance divisor for a bounded amount, one more than the quota for a counting limit). Double until the responses diverge or the server starts refusing on unrelated grounds — which is a different failure and must be told apart from success. 5. Read the outcome, not the status code. The interesting evidence is the set of final states: a second acceptance, a total that exceeds the bound, two resources where one was promised, a balance below zero. Capture the whole response set, not the last one. 6. Confirm it is reproducible. Repeat the exact burst; a one-off success is noise. Record the burst size, the synchronization mode and the request ids, so the finding is reproducible by someone else. 7. Stabilize the window if it is narrow. When the window is shorter than the payload, lengthen the server's own work rather than the client's timing: a larger body, an expensive sort or filter, a slow downstream call. Signatures to expect: every request in the burst returning success; the downstream state showing more consumption than the number of distinct requests justifies; a refusal that switches from \"already used\" to a validation error once one of the requests wins; balanced results when the burst is small and overshoot once it is not.",
+      "x_ctft_category": "WEB",
+      "x_ctft_domain": "WEB",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-WEB-024"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1190",
+          "description": "Exploit Public-Facing Application"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1565.001",
+          "description": "Data Manipulation: Stored Data Manipulation"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--d7a06207-463d-5396-9ed3-c3cb02b7d40d",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--93a70812-abdb-569e-8877-308d2a95e0a7",
+      "target_ref": "attack-pattern--870ecf82-b70f-55f7-8980-c65afd62abcf",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--91ae04ef-ac3e-5c22-a26b-552f17a39e7d",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-WEB-025 - Server-trusted client-computed state",
+      "description": "A value that decides privilege, price or eligibility is computed in the browser and then persisted from the request verbatim. The server validates shape, format and sometimes range, but never recomputes the value or re-derives it from the session, so the effective identity, price or status of a request is whatever the client asserts. The concealment is that the field is invisible rather than absent: the rendered form shows a label, a disabled or hidden input, or nothing at all, while the model behind it happily binds any property the request carries — including ones the interface never sends. Design variants, in increasing subtlety: - Hidden or disabled field. Price, owner, role, quantity or discount travels as a hidden input or a read-only value the browser paints. - Over-posting. The UI sends three properties; the object binds all of them, so adding a fourth (an administrative flag, a related object, a status) is accepted. - Type and structure reshaping. The same field is sent as an array, a nested object or a second value, and the framework's coercion decides the outcome — a scalar comparison against a list, a last-value-wins duplicate, a [] suffix that reaches the model unchanged. - Client-computed aggregate. A total, hash, checksum or eligibility flag is calculated in JavaScript and trusted, so recomputing it correctly for a different intent defeats the rule. - Status flag written directly. paid, verified, approved, unlocked is a writable property rather than a consequence of an action. - Trusted routing header. The origin honours a header that names the internal route or scheme, letting a request addressed at one function reach another (the boundary with host-header discovery is that no hidden vhost is involved here — the route is known and the claim is elevated). Boundary: when the role value is genuine and only the endpoint fails to check it, the pair is the function-level authorization one; when the object is another user's but the field carries no privilege claim, the pair is the IDOR one. Here the client asserts a state the server should own.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "web"
+        }
+      ],
+      "x_ctft_category": "WEB",
+      "x_ctft_domain": "WEB",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-WEB-025"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1565.001",
+          "description": "Data Manipulation: Stored Data Manipulation"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1190",
+          "description": "Exploit Public-Facing Application"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--9f6e39af-4bfd-598b-a519-d4eccd1a8c4c",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-WEB-025 - Rewrite or extend the trust-bearing client fields",
+      "description": "The question is never \"can I change this value\" but \"which value does the server derive and which does it accept\". Enumerate the accepted surface before editing anything. 1. Inventory the trust-bearing fields. Read the rendered form, the inline script and one response object, and list every value that decides privilege, price, ownership, quantity or status. Mark each as derived server-side, echoed back, or unknown. 2. Send the baseline unchanged. Keep the exact request, so that every later variant differs by one field and the diff is attributable. 3. Test the invisible ones first. Disabled, readonly and hidden inputs are the cheapest edit: the field name is already correct and the only question is whether the server re-reads it. 4. Test the unlisted ones next. Add properties the interface never sends — the flag, the related object, the status, the tenant. A property that appears in a response object but not in the request is a candidate the binder already knows. 5. Reshape what is rejected. If a value is refused, resend it as a structure (array, nested object, duplicate parameter) or in another representation; coercion frequently decides where validation did not. 6. Recompute what is checked. When a total, hash or signature guards the edit, calculate the correct value for the new intent instead of removing the check — the check then validates your forgery. 7. Judge by effect, not by status. Evidence is a changed price on the invoice, a badge granted, a redirect into the privileged area, or a resource owned by another identity. Diff the two responses to confirm the field, not the status code, did the work. 8. Escalate only if it is the same mechanic. If the field carries no privilege and the function itself is above your role, switch to the function-level authorization pair. Signatures to expect: the same status with a different body; a validated field whose validation error disappears when the encoding changes; a response echoing your injected property back; a redirect that lands somewhere the interface never offers.",
+      "x_ctft_category": "WEB",
+      "x_ctft_domain": "WEB",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-WEB-025"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1565.001",
+          "description": "Data Manipulation: Stored Data Manipulation"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1190",
+          "description": "Exploit Public-Facing Application"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--ac770748-072c-52bf-b877-3fde91851c9e",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--9f6e39af-4bfd-598b-a519-d4eccd1a8c4c",
+      "target_ref": "attack-pattern--91ae04ef-ac3e-5c22-a26b-552f17a39e7d",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--6054f23b-f3d4-5531-a22c-a993a9deb271",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-WEB-026 - Signal buried in a high-volume response corpus",
+      "description": "Nothing is protected and nothing is misrouted: every exchange the player can capture is a legitimate response to a legitimate request. The concealment is volume and monotony — the answer sits where human review cannot reach at review speed, and the interface is designed so that nobody scrolls there. The player is expected to map \"interesting\" traffic (the login, the API, the admin panel) and to ignore the long tail: the assets, the repeated list pages, the headers, the fields rendered nowhere. The target signal is in that tail. Design variants, in increasing subtlety: - Position past the truncation point. The value lives deep inside a large body, after the byte count any comfortable reader cuts at. - Header-only carriage. The signal travels in a custom header, in ETag, a timing header, a cookie comment, a 103 early hint, or a trailer chunk that no browser tab ever shows. - Statistical needle. Hundreds of near-identical responses, one of which differs by a token, a length or a single character — invisible by inspection, obvious by comparison. - Fragment per response. One piece per exchange; the artefact is the ordered concatenation, not any single page. - Encoded value inside a rendered field. A base64, hex, escaped or JWT-shaped string inside a JSON property the page never draws. - Comment or asset payload. The value is inside a static asset, a source comment, an inline script or a data: blob loaded by an otherwise ordinary page. Boundary: choosing which path to ask for is the obscured-endpoint pair; judging whether another user's object is reachable is the IDOR pair; deciding whether a hidden object exists behind a filtered list is the introspection pair. Here the access is already granted and the only obstacle is where to look.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "web"
+        }
+      ],
+      "x_ctft_category": "WEB",
+      "x_ctft_domain": "WEB",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-WEB-026"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1213",
+          "description": "Data from Information Repositories"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--a679e465-6d40-5285-a62f-cffbc6a271ed",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-WEB-026 - Sweep every captured response with passive detection rules and triage the findings",
+      "description": "The answer is in the tail of the traffic, so the recovery is coverage, then triage — one rule per signal class applied to every exchange, and a report you can rank instead of a scroll you have to survive. 1. Scope the target host first. Rules that run on every response are only useful if the corpus is the challenge. An unscoped rule set spends its attention on fonts, analytics and CDN noise, and the real hit is one among hundreds. 2. Generate the corpus deliberately. Walk the whole surface through the recording instrument — every link, every list page, every asset the pages reference, the endpoints the bundle calls, the sitemap. Rules observe what was captured; a path never requested has nothing to scan. Prefer a browser walk over a hand-built request list, because the browser requests what the interface actually loads. 3. Run the passive tier, not one clever rule. Instantiate a set of small checks, each answering one question: does a flag-shaped token appear anywhere, does a credential shape appear, is an unusual header present, is a value reflected verbatim, is a hostname echoed, does the body differ from its siblings. Many cheap rules beat one expensive hypothesis, and each rule reports under its own name, which is what makes step 4 possible. 4. Triage by reporter, then by count. A reporter with exactly one hit among hundreds of exchanges is the interesting row; a reporter with a thousand hits is a badly scoped rule. Sort by reporter so that a single-rule result is never averaged away by a noisy one, and treat the dedupe key as the identity of a signal: duplicates mean re-observation, not new evidence. 5. Follow the hit to the full exchange. Each finding names the request it came from. Read that request and the entire response — past the byte count any comfortable listing shows — then decode the value in place: base64, hex, escaped JSON, a token's claim section. 6. Handle the statistical variant by comparison. When no rule fires, take one response from a look-alike family and diff it against its siblings; the needle is a length, a character or a token that only one member carries. 7. Handle the fragment variant by ordering. Several weak hits with the same reporter, scattered across the corpus, are usually one artefact in pieces: order them by time and concatenate before concluding anything. 8. Record once, with the request embedded. Export the finding set; the export carries the raw request, so the evidence is reproducible without re-deriving it, and the reporter name keeps your finding separable from rule-generated ones. Signatures to expect: a single hit under a reporter that fired nowhere else; a hit whose title names a header rather than a body; the same value resurfacing under different encodings; a rule that fires hundreds of times and is therefore noise; a hit that vanishes when the scope is widened, which means it belonged to telemetry rather than to the challenge.",
+      "x_ctft_category": "WEB",
+      "x_ctft_domain": "WEB",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-WEB-026"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1213",
+          "description": "Data from Information Repositories"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--6b830ee3-b664-516f-999a-01ab67657161",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--a679e465-6d40-5285-a62f-cffbc6a271ed",
+      "target_ref": "attack-pattern--6054f23b-f3d4-5531-a22c-a993a9deb271",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--48ef7d8b-554f-544e-8b84-d10200da4472",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-WEB-027 - Representation differential across body formats",
+      "description": "The layer that validates and the layer that binds read the same request differently. A filter inspects one representation — the JSON document, the declared content type, the first occurrence of a parameter — while the application resolves the value from another: the form encoding, the second occurrence, the nested structure, the alternative parser selected by Content-Type. So one logical payload has two encodings, and only one of them is inspected. The request looks refused in the shape a player naturally tries and succeeds in a shape the interface never produces, which is why brute-forcing payload vocabulary finds nothing. Design variants, in increasing subtlety: - Content-type switch. The same bytes are re-labelled (application/json → application/x-www-form-urlencoded → multipart/form-data → text/xml) and the framework instantiates a different binder than the one the filter guards. - Dual representation. A JSON body travels next to query parameters or a second body; parser precedence, not the filter, decides which value wins. - Scalar-versus-structure. The same field is sent as a scalar and as an array or nested object; coercion turns a rejected value into an accepted one. - Repeated parameter. Duplicate occurrences resolve last-wins or first-wins, so a validated first value and a used second value coexist. - Value encoding. Percent, double-percent, overlong or otherwise non-canonical encoding of the same character reaches the sink in a form the filter did not normalise. - Container smuggling. Multipart boundary games, a filename in Content-Disposition, duplicate Content-Type headers. - Stored-then-reserved type. A value stored through one representation is later served under another (JSON text rendered as HTML), so validation happened on a shape that no longer describes the output. Boundary: when a single representation is merely obfuscated, the pair is the WAF-evaded injection one; when the disagreement is about where the request ends on the wire, the pair is the desync one. Here both parsers agree on the boundary and disagree on the content.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "web"
+        }
+      ],
+      "x_ctft_category": "WEB",
+      "x_ctft_domain": "WEB",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-WEB-027"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1190",
+          "description": "Exploit Public-Facing Application"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--664875d4-438f-551e-bef8-69ec13976721",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-WEB-027 - Re-encode the request body across representations and replay",
+      "description": "If validation and binding read the request differently, the recovery is a matrix: one payload, every representation, and a comparison of what each one produced. Do not hunt for a better payload until the matrix is exhausted. 1. Keep the successful baseline. The captured request that the application accepts is the control; every variant must be judged against it and against the refusal the filter produced. 2. Convert before you invent. Rewrite the same logical body into the sibling representations the framework accepts — form-encoded, multipart, XML, and the JSON document — and let each carry the same value. The content type must travel with the body, since it is the switch that selects the parser. 3. Vary the container, not only the value. A field accepted as a string may be refused as an array and vice versa; a nested object may reach a property the flat form did not. 4. Duplicate deliberately. Send the value twice — in two body formats, in body and query, or as two occurrences of the parameter — and use the resulting behaviour to learn which parser wins. Parser precedence is the vulnerability, so measuring it is the exploit. 5. Test the value encoding separately. Once the container is settled, normalise and denormalise the characters: percent, double-percent, overlong, escaped. A sink that decodes twice is reachable only from this axis. 6. Send malformed framing on purpose. A boundary that ends early, a filename in a disposition header, a duplicate content type — these decide which part of the body the binder even looks at. 7. Confirm which layer answered. A refusal naming one syntax, a debug header or an error page identifies the parser that read the request; that name is the evidence that two layers exist. 8. Re-check the output representation. When the value is stored and served later, replay the read path too: validation on the input shape says nothing about the shape the output is rendered in. Signatures to expect: identical bytes refused under one content type and accepted under another; a validation error that mentions a syntax the request did not use; the last duplicate winning when the first was the one validated; success only when the value is encoded twice.",
+      "x_ctft_category": "WEB",
+      "x_ctft_domain": "WEB",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-WEB-027"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "description": "Obfuscated Files or Information"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1190",
+          "description": "Exploit Public-Facing Application"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--222e8c6e-65b6-5b2c-8e84-c956564a4778",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--664875d4-438f-551e-bef8-69ec13976721",
+      "target_ref": "attack-pattern--48ef7d8b-554f-544e-8b84-d10200da4472",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--2607d246-eeb2-543c-bdf0-2899d809c74d",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-WEB-028 - Function-level authorization gap on a privileged endpoint",
+      "description": "The privileged function exists, works, and is not gated for the identity the player holds. What is gated is its discovery: the privileged screen is withheld from the interface, so the player sees a reduced application and concludes the function is unavailable, while the route behind it answers anyone who asks. Authorization is enforced per object (that is the IDOR pair) but not per function: the endpoint never compares the caller's role with the operation's requirement, and often the only difference between the permitted and the forbidden path is which HTML page links to it. Design variants, in increasing subtlety: - Unlinked route. /admin, /internal, an operations console or a debug menu answers a low-privilege session; only the navigation link is missing. - Verb equivalence. The guarded verb is checked and a sibling is not — POST refused, PUT/PATCH/DELETE accepted. - Path-shape equivalence. A canonical path is guarded and an equivalent one is not: trailing slash, case, encoded segment, path-parameter suffix, or an older API prefix that still routes. - Namespace sibling. The desktop API is guarded and the mobile or partner namespace, or a parallel query on the same GraphQL endpoint, is not. - Anonymous path. The reduced interface invites re-login, but the action also succeeds with the session removed — the server treats the request as authenticated by construction. - UI-only role. The interface hides controls above the caller's role, and the corresponding calls are the only place the role would have been checked. Boundary: when the caller asserts the role or the flag itself, the pair is the server-trusts-client-state one; when the function is legitimately available and the object is another subject's, the pair is the IDOR one; when the route is merely unknown and the response is uniform, the pair is the obscured-endpoint or soft-404 one. Here the function is above the caller's privilege and nothing but the interface noticed.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "web"
+        }
+      ],
+      "x_ctft_category": "WEB",
+      "x_ctft_domain": "WEB",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-WEB-028"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1078",
+          "description": "Valid Accounts"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1190",
+          "description": "Exploit Public-Facing Application"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--6c8ab6fd-d39e-5f27-9dfd-e68603bc2ed3",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-WEB-028 - Sweep privileged endpoints across session tokens",
+      "description": "The interface is the wrong evidence: it shows what should be reachable, not what is. Turn every candidate route into one request definition and sweep it across identity contexts. 1. Build the route inventory from artefacts, not from the menu. Take the sitemap of the recorded traffic, the routes in the JavaScript bundle, source maps, an OpenAPI or GraphQL document, robots.txt, well-known paths and error pages. Privileged function is usually named there and unlinked in the UI. 2. Fix one request per function. Same method, path, headers and body for every identity; the only variable is the credential. A sweep with two variables at once produces a result nobody can attribute. 3. Define the identity set. At minimum: the lowest privilege session you hold, the highest you hold, and no session at all. The anonymous row is not a formality — the UI's \"please log in\" prompt is exactly the message the server may not enforce. 4. Sweep and classify by response shape. Record status, length, content type and a normalized body hash per variant. Three outcomes matter: equal to the privileged identity (full gap), different from both (partial gap: a redacted but populated response), or uniformly refused (the function is actually gated). 5. Vary the route shape before concluding a function is gated. Verb siblings (POST guarded, PUT/PATCH/DELETE not), path aliases (trailing slash, case, encoded segment, version prefix), and namespace siblings (mobile or partner prefix, a parallel query) frequently route to the same handler. 6. Widen one axis at a time. When the response differs by length rather than status, decode both bodies and compare field by field: a field that appears only for the privileged identity is the gap. 7. Record per function. One finding per (function, identity) pair, with the request embedded, so the report shows the matrix and not a single lucky hit. 8. Hand off when the mechanic changes. If the escalation comes from a value you wrote, it is the client-state pair; if the same function is legitimately available and the object belongs to another subject, it is the IDOR pair. Signatures to expect: 200 with a full body for the lesser identity; 403 on the HTML path beside 200 on the JSON path; identical bodies for the privileged and anonymous rows; a route that exists in the manifest and answers 401 on one verb only.",
+      "x_ctft_category": "WEB",
+      "x_ctft_domain": "WEB",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-WEB-028"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1078",
+          "description": "Valid Accounts"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1190",
+          "description": "Exploit Public-Facing Application"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--402d90ea-31ea-548f-b630-f2e3feb0cc9b",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--6c8ab6fd-d39e-5f27-9dfd-e68603bc2ed3",
+      "target_ref": "attack-pattern--2607d246-eeb2-543c-bdf0-2899d809c74d",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--cad072f9-d82d-529f-83a4-44ab783e8c43",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-WEB-029 - Desynchronized request framing between edge and origin",
+      "description": "Two HTTP implementations sit in the path — a front end that decides what to inspect or route, and an origin that decides what to execute — and they disagree about where a request ends. The edge reads a Content-Length, the origin prefers a Transfer-Encoding, or both accept a chunked framing they parse differently. The bytes at the end of one request are therefore read as the beginning of the next, and the smuggled prefix is the player's request. The hiding is in the plumbing, not the application: every request the player sends through a normalising client is well-formed and inspected, the application behaves as documented, and the flaw only appears when framing is left exactly as crafted. The challenge presents an ordinary app and expects the player to notice that a reverse proxy exists at all. Design variants, in increasing subtlety: - Length versus chunked. One side honours Content-Length, the other Transfer-Encoding: chunked. - Chunked versus chunked. Both honour the header but parse chunk extensions, a leading zero in the size, or a trailer differently. - Duplicate length. Two Content-Length values, or differing whitespace around the colon, resolved inconsistently. - Obs-fold and line termination. A header continuation line, a bare LF, or a space before the colon that one parser normalises and the other rejects late. - Prefix injection through a value. CRLF reached through a header or a parameter, so the \"smuggled\" request is the tail of a legitimate one. - Protocol downgrade. An HTTP/2 edge that reassembles downgraded HTTP/1.1 requests, where the framing the client sent no longer describes the bytes the origin parses. Boundary: when two parsers disagree about the content of one request, the pair is the representation-differential one; when a single request is misrouted because its Host names another site, the pair is the host-header one. Here the disagreement is about the boundary between requests, and one request produces two.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "web"
+        }
+      ],
+      "x_ctft_category": "WEB",
+      "x_ctft_domain": "WEB",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-WEB-029"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1190",
+          "description": "Exploit Public-Facing Application"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--00af38c0-cf1b-5cd8-95a8-d0a67b4a858a",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-WEB-029 - Craft unnormalized raw request pairs and read the desync",
+      "description": "Two implementations, one wire. The procedure is a differential test: send deliberately ambiguous framing and read whether the second response belongs to the request you sent or to one you did not. 1. Confirm two hops exist. Read the banners, error pages, Via, Server and timing behaviour; a direct origin and a proxied origin rarely answer identically. Keep a path straight to the origin if the challenge exposes one — it is the reference the desync is measured against. 2. Establish the connection baseline. One request, twice, on a reused connection. If the second response is not the expected one, framing is already ambiguous and the rest of the matrix narrows. 3. Send bytes verbatim. Use a client that does not normalise: no header reordering, no recomputed length, no merged duplicates. A convenience client rewrites exactly the field under test. 4. Walk the framing matrix, one variable at a time. Content-Length versus Transfer-Encoding: chunked, then chunked versus chunked with an odd chunk extension or a leading zero, then duplicate Content-Length, then an obs-folded header, then a bare line termination. 5. Read the timing, not only the body. A desync often shows first as a timeout on one variant and an immediate answer on another: the front end is waiting for bytes the origin has already consumed, or the reverse. 6. Inject only a harmless prefix first. Prove the smuggled request executes with a request that reveals itself — a route returning a distinguishable body — before attempting an action. Attribution before exploitation. 7. Reuse the poisoned slot. The smuggled prefix sits in front of the next request on that connection, which may be someone else's; on a shared challenge instance that also means the answer may arrive on a connection you did not open. Look for it. 8. Stop at the first confirmed variant. The failure mode of this technique is queue poisoning that breaks the instance for everyone, including your own later attempts; record the working variant and the reasoning, then leave the connection closed. Signatures to expect: a 400 followed by a valid response on the same connection; your second request answered by the response to the first; a timeout on exactly one framing variant; a body containing a header line you never sent; success against an internal route that no external path reaches.",
+      "x_ctft_category": "WEB",
+      "x_ctft_domain": "WEB",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-WEB-029"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1190",
+          "description": "Exploit Public-Facing Application"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1557",
+          "description": "Adversary-in-the-Middle"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--0fc03841-3133-59d7-a80e-10174fc50478",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--00af38c0-cf1b-5cd8-95a8-d0a67b4a858a",
+      "target_ref": "attack-pattern--cad072f9-d82d-529f-83a4-44ab783e8c43",
       "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     }
   ]

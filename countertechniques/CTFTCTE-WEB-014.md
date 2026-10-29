@@ -10,9 +10,22 @@
 
 Intercept the WS upgrade and frames (Burp/Chrome), replay and decode the messages.
 
+Work at two levels, because they fail differently. At the **stream** level the
+question is which upgrade produced the channel: a WebSocket only exists in the
+recorded history if the upgrade itself was proxied, so an endpoint that appears
+to do nothing in HTTP may still own the channel that matters. At the **frame**
+level the question is which message carried the payload: list the frames per
+stream in order, decode each independently, and treat a frame that differs from
+its neighbours as the candidate. Replay by mutating one frame on an established
+socket rather than replaying the handshake — the session state the server built
+during the upgrade is not reproducible from the first frame alone.
+
 ## Forensic / Blue-Team Perspective (DFIR analyst)
 
 WebSocket sessions are full-duplex artifacts; frame capture requires the upgrade context.
+Proxies that record only HTTP exchanges lose the frames, so an investigation that
+sees the upgrade but no messages should treat the gap as a collection defect, not
+as an absence of activity.
 
 ## Related MITRE ATT&CK
 
@@ -22,6 +35,7 @@ WebSocket sessions are full-duplex artifacts; frame capture requires the upgrade
 
 ## Tools
 
+- [Caido (caido-cli and caido-mcp-server)](../tools/CTFTTOU-441.md) ([CTFTTOU-441](../tools/CTFTTOU-441.md)) — stream and frame listing from recorded traffic, frames addressable individually
 - Burp Suite
 - Chrome devtools
 - websocat

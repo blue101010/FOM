@@ -10,6 +10,13 @@
 
 Record per URL: initial and final URL, redirect chain, status, content-type, size, normalized body hash, title, server, timings, and the test origin (browser vs CLI client). Compare against a random route and a random hostname; classify as unique content, redirect, soft 404, uniform refusal, standard edge response, CORS-only false negative, or timeout.
 
+Take the baseline from the **same client** that produced the finding: a body that
+looks unique through the browser is often a uniform interception page through a
+replay client, and the reverse. Then let the instrument do the comparison — two
+recorded responses diffed on status, length and normalized hash settle the
+classification faster than reading both bodies, and the diff stays attached to
+the request ids that produced it.
+
 ## Forensic / Blue-Team Perspective (DFIR analyst)
 
 Edge and origin logs distinguish real 404s from soft 404s; uniform error pages are a hardening finding for WAF misconfiguration.
@@ -22,6 +29,7 @@ Edge and origin logs distinguish real 404s from soft 404s; uniform error pages a
 
 ## Tools
 
+- [Caido (caido-cli and caido-mcp-server)](../tools/CTFTTOU-441.md) ([CTFTTOU-441](../tools/CTFTTOU-441.md)) — two recorded responses diffed on status, length and normalized hash, with the classification kept beside the request ids
 - curl
 - httpx
 - ffuf (auto-calibration baseline)

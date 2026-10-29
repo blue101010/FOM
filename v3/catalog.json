@@ -2,8 +2,8 @@
   "model": "CTFT",
   "schema_version": "3.0",
   "collection": "catalog",
-  "generated_at": "2026-10-27T18:59:57+00:00",
-  "source_sha256": "73accfbaa9923ea8f9ecac59edf7626a4557685c1d0b196ce66dc718e43c7796",
+  "generated_at": "2026-10-29T14:39:08+00:00",
+  "source_sha256": "ce222eb134ed6ea1dd5628b0fce4dbd3635be588cf3ffdd253b0d1a6c220c986",
   "items": [
     {
       "id": "CTFTPAIR-AIM-001",
@@ -4873,6 +4873,138 @@
         "id": "CTFTCTE-WEB-023",
         "name": "Introspect the schema and over-fetch hidden fields",
         "path": "countertechniques/CTFTCTE-WEB-023.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-WEB-024",
+      "schema_version": "3.0",
+      "domain": "WEB",
+      "tactic": "CTFT-TA-WEB",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-WEB-024",
+        "name": "Race window in a state-changing flow",
+        "path": "techniques/CTFTTE-WEB-024.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-WEB-024",
+        "name": "Fire a synchronized request burst at the state change",
+        "path": "countertechniques/CTFTCTE-WEB-024.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-WEB-025",
+      "schema_version": "3.0",
+      "domain": "WEB",
+      "tactic": "CTFT-TA-WEB",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-WEB-025",
+        "name": "Server-trusted client-computed state",
+        "path": "techniques/CTFTTE-WEB-025.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-WEB-025",
+        "name": "Rewrite or extend the trust-bearing client fields",
+        "path": "countertechniques/CTFTCTE-WEB-025.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-WEB-026",
+      "schema_version": "3.0",
+      "domain": "WEB",
+      "tactic": "CTFT-TA-WEB",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-WEB-026",
+        "name": "Signal buried in a high-volume response corpus",
+        "path": "techniques/CTFTTE-WEB-026.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-WEB-026",
+        "name": "Sweep every captured response with passive detection rules and triage the findings",
+        "path": "countertechniques/CTFTCTE-WEB-026.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-WEB-027",
+      "schema_version": "3.0",
+      "domain": "WEB",
+      "tactic": "CTFT-TA-WEB",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-WEB-027",
+        "name": "Representation differential across body formats",
+        "path": "techniques/CTFTTE-WEB-027.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-WEB-027",
+        "name": "Re-encode the request body across representations and replay",
+        "path": "countertechniques/CTFTCTE-WEB-027.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-WEB-028",
+      "schema_version": "3.0",
+      "domain": "WEB",
+      "tactic": "CTFT-TA-WEB",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-WEB-028",
+        "name": "Function-level authorization gap on a privileged endpoint",
+        "path": "techniques/CTFTTE-WEB-028.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-WEB-028",
+        "name": "Sweep privileged endpoints across session tokens",
+        "path": "countertechniques/CTFTCTE-WEB-028.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-WEB-029",
+      "schema_version": "3.0",
+      "domain": "WEB",
+      "tactic": "CTFT-TA-WEB",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-WEB-029",
+        "name": "Desynchronized request framing between edge and origin",
+        "path": "techniques/CTFTTE-WEB-029.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-WEB-029",
+        "name": "Craft unnormalized raw request pairs and read the desync",
+        "path": "countertechniques/CTFTCTE-WEB-029.md",
         "role": "resolution"
       },
       "maturity": "taxonomy_only",
