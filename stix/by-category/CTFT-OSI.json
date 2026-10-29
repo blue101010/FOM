@@ -622,6 +622,83 @@
       "source_ref": "course-of-action--22efc981-5cf8-5ee6-b805-de96afee9737",
       "target_ref": "attack-pattern--34632d4f-c94d-5990-89b2-40c49e00baee",
       "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--65020433-7bf1-5d68-a3af-6248b17ab621",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-OSI-010 - Word-address geocoding pivot",
+      "description": "The location is encoded as a word address: three dictionary words drawn from a fixed, versioned wordlist that resolve through a public geocoding service to a square of a few metres. The words arrive as a cracked secret, a transmitted string or a challenge phrase, and they look like a passphrase or a red herring — nothing in the string itself suggests coordinates. Only resolving the words through the service reveals a physical location, and the location is rarely the answer: it is the pivot into public records (a street address, a facility, an organization) that holds the flag. Distinct from CTFTTE-OSI-004, where the location must be deduced from imagery by visual reasoning, and from CTFTTE-OSI-001, where it leaks through metadata fields.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "osi"
+        }
+      ],
+      "x_ctft_category": "OSI",
+      "x_ctft_domain": "OSI",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-OSI-010"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1132",
+          "description": "Data Encoding"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1589",
+          "description": "Gather Victim Identity Info"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--f3d40864-2a66-5b01-8e8c-a3638286874a",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-OSI-010 - Resolve word addresses to locations and attribution",
+      "description": "1. Recognize the shape: three lowercase dictionary words, dot-separated, surfacing as a cracked secret, a transmitted string or a phrase in the challenge text. 2. Resolve the words through the word-address geocoding service (web UI or API) to coordinates and a country. If the service rejects the words, try the other supported languages — the wordlists differ per language. 3. Reverse-geocode the coordinates to a street address with Nominatim/OpenStreetMap. 4. Pivot the address into public records and reporting: facility, organization, unit or entity associated with that location. The answer is usually the attribution, not the coordinates. 5. Verify the attribution with at least two independent sources before submitting.",
+      "x_ctft_category": "OSI",
+      "x_ctft_domain": "OSI",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-OSI-010"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1132",
+          "description": "Data Encoding"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1589",
+          "description": "Gather Victim Identity Info"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--6291555a-89c3-55ff-9575-b3958f8df6a0",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--f3d40864-2a66-5b01-8e8c-a3638286874a",
+      "target_ref": "attack-pattern--65020433-7bf1-5d68-a3af-6248b17ab621",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     }
   ]
 }

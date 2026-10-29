@@ -2,9 +2,9 @@
   "model": "CTFT",
   "schema_version": "3.0",
   "collection": "curation_queue",
-  "generated_at": "2026-10-29T14:39:08+00:00",
-  "source_sha256": "ce222eb134ed6ea1dd5628b0fce4dbd3635be588cf3ffdd253b0d1a6c220c986",
-  "pending_count": 219,
+  "generated_at": "2026-10-29T15:52:40+00:00",
+  "source_sha256": "876b4b2176f7f72b136f4fa87eedc33a02095df96d03134fa2c9c9f0cf94e702",
+  "pending_count": 223,
   "by_tactic": {
     "CTFT-TA-AIM": [
       {
@@ -559,6 +559,13 @@
         "missing": [
           "evidence_record"
         ]
+      },
+      {
+        "pair_id": "CTFTPAIR-FOR-035",
+        "counter_technique": "CTFTCTE-FOR-035",
+        "missing": [
+          "second_independent_challenge"
+        ]
       }
     ],
     "CTFT-TA-FPN": [
@@ -898,6 +905,20 @@
         "missing": [
           "evidence_record"
         ]
+      },
+      {
+        "pair_id": "CTFTPAIR-IOT-008",
+        "counter_technique": "CTFTCTE-IOT-008",
+        "missing": [
+          "second_independent_challenge"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-IOT-009",
+        "counter_technique": "CTFTCTE-IOT-009",
+        "missing": [
+          "second_independent_challenge"
+        ]
       }
     ],
     "CTFT-TA-JAL": [
@@ -1136,6 +1157,13 @@
         "counter_technique": "CTFTCTE-OSI-009",
         "missing": [
           "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-OSI-010",
+        "counter_technique": "CTFTCTE-OSI-010",
+        "missing": [
+          "second_independent_challenge"
         ]
       }
     ],

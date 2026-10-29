@@ -2,8 +2,8 @@
   "model": "CTFT",
   "schema_version": "3.0",
   "collection": "catalog",
-  "generated_at": "2026-10-29T14:39:08+00:00",
-  "source_sha256": "ce222eb134ed6ea1dd5628b0fce4dbd3635be588cf3ffdd253b0d1a6c220c986",
+  "generated_at": "2026-10-29T15:52:40+00:00",
+  "source_sha256": "876b4b2176f7f72b136f4fa87eedc33a02095df96d03134fa2c9c9f0cf94e702",
   "items": [
     {
       "id": "CTFTPAIR-AIM-001",
@@ -1769,6 +1769,28 @@
       ]
     },
     {
+      "id": "CTFTPAIR-FOR-035",
+      "schema_version": "3.0",
+      "domain": "FOR",
+      "tactic": "CTFT-TA-FOR",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-FOR-035",
+        "name": "Virtual-disk container labyrinth",
+        "path": "techniques/CTFTTE-FOR-035.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-FOR-035",
+        "name": "Convert, decrypt and map virtual-disk containers",
+        "path": "countertechniques/CTFTCTE-FOR-035.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "second_independent_challenge"
+      ]
+    },
+    {
       "id": "CTFTPAIR-FPN-001",
       "schema_version": "3.0",
       "domain": "FPN",
@@ -2803,6 +2825,50 @@
       ]
     },
     {
+      "id": "CTFTPAIR-IOT-008",
+      "schema_version": "3.0",
+      "domain": "IOT",
+      "tactic": "CTFT-TA-IOT",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-IOT-008",
+        "name": "Full-board boot gate (kernel + device tree + disk image)",
+        "path": "techniques/CTFTTE-IOT-008.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-IOT-008",
+        "name": "Assemble the emulated board boot",
+        "path": "countertechniques/CTFTCTE-IOT-008.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "second_independent_challenge"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-IOT-009",
+      "schema_version": "3.0",
+      "domain": "IOT",
+      "tactic": "CTFT-TA-IOT",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-IOT-009",
+        "name": "Offline credential reset on a mounted rootfs",
+        "path": "techniques/CTFTTE-IOT-009.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-IOT-009",
+        "name": "Mount the rootfs offline and reset or crack the credential",
+        "path": "countertechniques/CTFTCTE-IOT-009.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "second_independent_challenge"
+      ]
+    },
+    {
       "id": "CTFTPAIR-JAL-001",
       "schema_version": "3.0",
       "domain": "JAL",
@@ -3526,6 +3592,28 @@
       "maturity": "taxonomy_only",
       "missing_for_typed_recommendation": [
         "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-OSI-010",
+      "schema_version": "3.0",
+      "domain": "OSI",
+      "tactic": "CTFT-TA-OSI",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-OSI-010",
+        "name": "Word-address geocoding pivot",
+        "path": "techniques/CTFTTE-OSI-010.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-OSI-010",
+        "name": "Resolve word addresses to locations and attribution",
+        "path": "countertechniques/CTFTCTE-OSI-010.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "second_independent_challenge"
       ]
     },
     {

@@ -4,8 +4,8 @@ Every **Design / Hide Technique** (`CTFTTE-<CAT>-NNN`) and the
 **Resolution-Technique** (`CTFTCTE-<CAT>-NNN`) that recovers it, grouped by domain.
 IDs pair one-to-one: `CTFTTE-FOR-004` is always answered by `CTFTCTE-FOR-004`.
 
-> Generated from the files in `techniques/` and `countertechniques/` — corpus fingerprint `22f96ffdae9f520a`
-> by `v3/render_taxonomy_docs.py`. **226 complete pairs** across **20 active domains**. Do not hand-edit: rename the entry, then re-render.
+> Generated from the files in `techniques/` and `countertechniques/` — corpus fingerprint `7ab07605630c65e0`
+> by `v3/render_taxonomy_docs.py`. **230 complete pairs** across **20 active domains**. Do not hand-edit: rename the entry, then re-render.
 
 ---
 
@@ -15,13 +15,13 @@ Order follows the challenge-category picker.
 
 | # | Code | Picker label | Domain | Pairs |
 | --- | --- | --- | --- | --- |
-| 1 | [`FOR`](#ctft-ta-for) | Forensics | Forensics | 34 |
+| 1 | [`FOR`](#ctft-ta-for) | Forensics | Forensics | 35 |
 | 2 | [`WEB`](#ctft-ta-web) | Web | Web Exploitation | 29 |
 | 3 | [`CRY`](#ctft-ta-cry) | Crypto | Cryptography | 15 |
 | 4 | [`PWN`](#ctft-ta-pwn) | Binary | Binary Exploitation | 12 |
 | 5 | [`REV`](#ctft-ta-rev) | Reverse | Reverse Engineering | 10 |
 | 6 | [`STE`](#ctft-ta-ste) | Stego | Steganography | 11 |
-| 7 | [`OSI`](#ctft-ta-osi) | OSINT | OSINT | 9 |
+| 7 | [`OSI`](#ctft-ta-osi) | OSINT | OSINT | 10 |
 | 8 | [`CLD`](#ctft-ta-cld) | Cloud | Cloud | 11 |
 | 9 | [`BLK`](#ctft-ta-blk) | Blockchain | Blockchain | 5 |
 | 10 | [`AIM`](#ctft-ta-aim) | AI/ML | AI / ML | 7 |
@@ -33,9 +33,9 @@ Order follows the challenge-category picker.
 | 16 | [`NET`](#ctft-ta-net) | Network | Network | 9 |
 | 17 | [`FPN`](#ctft-ta-fpn) | Full Pwn | Full Pwn / Multi-Stage | 20 |
 | 18 | [`HWR`](#ctft-ta-hwr) | Hardware | Hardware | 3 |
-| 19 | [`IOT`](#ctft-ta-iot) | IoT / Embedded | IoT / Embedded | 7 |
+| 19 | [`IOT`](#ctft-ta-iot) | IoT / Embedded | IoT / Embedded | 9 |
 | 20 | [`SDR`](#ctft-ta-sdr) | SDR / RF | Software-Defined Radio | 5 |
-| | | | **Total** | **226** |
+| | | | **Total** | **230** |
 
 **Retired — do not use.** `MSC` (Misc) was a catch-all whose entries all
 duplicated a precise domain; file those challenges under `JAL`, `COD`, `GAM`
@@ -45,7 +45,7 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 
 ## <a id="ctft-ta-for"></a>`CTFT-TA-FOR` — Forensics
 
-> [domain page](tactics/CTFT-TA-FOR.md) · 34 pairs · HTB: Forensics
+> [domain page](tactics/CTFT-TA-FOR.md) · 35 pairs · HTB: Forensics
 
 | # | Technique ID | Hide / Design name | Resolution-technique ID | Recovery action |
 | --- | --- | --- | --- | --- |
@@ -83,6 +83,7 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 | 32 | [CTFTTE-FOR-032](techniques/CTFTTE-FOR-032.md) | Flag concealed in a haystack of near-identical files | [CTFTCTE-FOR-032](countertechniques/CTFTCTE-FOR-032.md) | Isolate the outlier file by scalable comparison |
 | 33 | [CTFTTE-FOR-033](techniques/CTFTTE-FOR-033.md) | Flag fragments disseminated across filesystem artifacts | [CTFTCTE-FOR-033](countertechniques/CTFTCTE-FOR-033.md) | Aggregate disseminated flag fragments across files |
 | 34 | [CTFTTE-FOR-034](techniques/CTFTTE-FOR-034.md) | Obfuscated client-side script in a web artifact | [CTFTCTE-FOR-034](countertechniques/CTFTCTE-FOR-034.md) | Deobfuscate and trace client-side script to the payload |
+| 35 | [CTFTTE-FOR-035](techniques/CTFTTE-FOR-035.md) | Virtual-disk container labyrinth | [CTFTCTE-FOR-035](countertechniques/CTFTCTE-FOR-035.md) | Convert, decrypt and map virtual-disk containers |
 
 
 ## <a id="ctft-ta-web"></a>`CTFT-TA-WEB` — Web Exploitation
@@ -204,7 +205,7 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 
 ## <a id="ctft-ta-osi"></a>`CTFT-TA-OSI` — OSINT
 
-> [domain page](tactics/CTFT-TA-OSI.md) · 9 pairs · HTB: OSINT
+> [domain page](tactics/CTFT-TA-OSI.md) · 10 pairs · HTB: OSINT
 
 | # | Technique ID | Hide / Design name | Resolution-technique ID | Recovery action |
 | --- | --- | --- | --- | --- |
@@ -217,6 +218,7 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 | 7 | [CTFTTE-OSI-007](techniques/CTFTTE-OSI-007.md) | Search-engine mining (dorking) | [CTFTCTE-OSI-007](countertechniques/CTFTCTE-OSI-007.md) | Run advanced dorks and search operators |
 | 8 | [CTFTTE-OSI-008](techniques/CTFTTE-OSI-008.md) | ASN / IP-range / subdomain recon | [CTFTCTE-OSI-008](countertechniques/CTFTCTE-OSI-008.md) | Map ASN, ranges, subdomains (bbot, assetfinder) |
 | 9 | [CTFTTE-OSI-009](techniques/CTFTTE-OSI-009.md) | Historical-infrastructure lure | [CTFTCTE-OSI-009](countertechniques/CTFTCTE-OSI-009.md) | Gate historical OSINT behind current-surface checks |
+| 10 | [CTFTTE-OSI-010](techniques/CTFTTE-OSI-010.md) | Word-address geocoding pivot | [CTFTCTE-OSI-010](countertechniques/CTFTCTE-OSI-010.md) | Resolve word addresses to locations and attribution |
 
 
 ## <a id="ctft-ta-cld"></a>`CTFT-TA-CLD` — Cloud
@@ -403,7 +405,7 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 
 ## <a id="ctft-ta-iot"></a>`CTFT-TA-IOT` — IoT / Embedded
 
-> [domain page](tactics/CTFT-TA-IOT.md) · 7 pairs · HTB: Misc (IoT)
+> [domain page](tactics/CTFT-TA-IOT.md) · 9 pairs · HTB: Misc (IoT)
 
 | # | Technique ID | Hide / Design name | Resolution-technique ID | Recovery action |
 | --- | --- | --- | --- | --- |
@@ -414,6 +416,8 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 | 5 | [CTFTTE-IOT-005](techniques/CTFTTE-IOT-005.md) | Short-range IoT radio concealment (Zigbee/BLE/sub-GHz) | [CTFTCTE-IOT-005](countertechniques/CTFTCTE-IOT-005.md) | Sniff and decode the device radio protocol |
 | 6 | [CTFTTE-IOT-006](techniques/CTFTTE-IOT-006.md) | Embedded-binary exploitation behind device emulation (MIPS/ARM) | [CTFTCTE-IOT-006](countertechniques/CTFTCTE-IOT-006.md) | Emulate the service and exploit the embedded binary |
 | 7 | [CTFTTE-IOT-007](techniques/CTFTTE-IOT-007.md) | BLE GATT characteristic gating (pairing / passkey / MAC allow-list / password) | [CTFTCTE-IOT-007](countertechniques/CTFTCTE-IOT-007.md) | Enumerate and drive BLE GATT as a client |
+| 8 | [CTFTTE-IOT-008](techniques/CTFTTE-IOT-008.md) | Full-board boot gate (kernel + device tree + disk image) | [CTFTCTE-IOT-008](countertechniques/CTFTCTE-IOT-008.md) | Assemble the emulated board boot |
+| 9 | [CTFTTE-IOT-009](techniques/CTFTTE-IOT-009.md) | Offline credential reset on a mounted rootfs | [CTFTCTE-IOT-009](countertechniques/CTFTCTE-IOT-009.md) | Mount the rootfs offline and reset or crack the credential |
 
 
 ## <a id="ctft-ta-sdr"></a>`CTFT-TA-SDR` — Software-Defined Radio

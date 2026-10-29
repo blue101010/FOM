@@ -1,7 +1,7 @@
 {
   "model": "CTFT",
   "version": "1.2",
-  "generated": "2026-10-29T14:39:07+00:00",
+  "generated": "2026-10-29T15:51:59+00:00",
   "relates_to": [
     "MITRE ATT&CK",
     "CAPEC",
@@ -44,7 +44,7 @@
       "id": "CTFT-TA-FOR",
       "name": "Forensics",
       "path": "tactics/CTFT-TA-FOR.md",
-      "count": 34
+      "count": 35
     },
     {
       "id": "CTFT-TA-FPN",
@@ -74,7 +74,7 @@
       "id": "CTFT-TA-IOT",
       "name": "IoT / Embedded",
       "path": "tactics/CTFT-TA-IOT.md",
-      "count": 7
+      "count": 9
     },
     {
       "id": "CTFT-TA-JAL",
@@ -98,7 +98,7 @@
       "id": "CTFT-TA-OSI",
       "name": "OSINT",
       "path": "tactics/CTFT-TA-OSI.md",
-      "count": 9
+      "count": 10
     },
     {
       "id": "CTFT-TA-PWN",
@@ -131,7 +131,7 @@
       "count": 29
     }
   ],
-  "total_techniques": 226,
+  "total_techniques": 230,
   "techniques": [
     {
       "tactic": "CTFT-TA-AIM",
@@ -1240,6 +1240,20 @@
       }
     },
     {
+      "tactic": "CTFT-TA-FOR",
+      "category": "FOR",
+      "technique": {
+        "id": "CTFTTE-FOR-035",
+        "name": "Virtual-disk container labyrinth",
+        "path": "techniques/CTFTTE-FOR-035.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-FOR-035",
+        "name": "Convert, decrypt and map virtual-disk containers",
+        "path": "countertechniques/CTFTCTE-FOR-035.md"
+      }
+    },
+    {
       "tactic": "CTFT-TA-FPN",
       "category": "FPN",
       "technique": {
@@ -1898,6 +1912,34 @@
       }
     },
     {
+      "tactic": "CTFT-TA-IOT",
+      "category": "IOT",
+      "technique": {
+        "id": "CTFTTE-IOT-008",
+        "name": "Full-board boot gate (kernel + device tree + disk image)",
+        "path": "techniques/CTFTTE-IOT-008.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-IOT-008",
+        "name": "Assemble the emulated board boot",
+        "path": "countertechniques/CTFTCTE-IOT-008.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-IOT",
+      "category": "IOT",
+      "technique": {
+        "id": "CTFTTE-IOT-009",
+        "name": "Offline credential reset on a mounted rootfs",
+        "path": "techniques/CTFTTE-IOT-009.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-IOT-009",
+        "name": "Mount the rootfs offline and reset or crack the credential",
+        "path": "countertechniques/CTFTCTE-IOT-009.md"
+      }
+    },
+    {
       "tactic": "CTFT-TA-JAL",
       "category": "JAL",
       "technique": {
@@ -2357,6 +2399,20 @@
         "id": "CTFTCTE-OSI-009",
         "name": "Gate historical OSINT behind current-surface checks",
         "path": "countertechniques/CTFTCTE-OSI-009.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-OSI",
+      "category": "OSI",
+      "technique": {
+        "id": "CTFTTE-OSI-010",
+        "name": "Word-address geocoding pivot",
+        "path": "techniques/CTFTTE-OSI-010.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-OSI-010",
+        "name": "Resolve word addresses to locations and attribution",
+        "path": "countertechniques/CTFTCTE-OSI-010.md"
       }
     },
     {
@@ -3378,6 +3434,7 @@
     "CTFTTE-FOR-032": "CTFTCTE-FOR-032",
     "CTFTTE-FOR-033": "CTFTCTE-FOR-033",
     "CTFTTE-FOR-034": "CTFTCTE-FOR-034",
+    "CTFTTE-FOR-035": "CTFTCTE-FOR-035",
     "CTFTTE-FPN-001": "CTFTCTE-FPN-001",
     "CTFTTE-FPN-002": "CTFTCTE-FPN-002",
     "CTFTTE-FPN-003": "CTFTCTE-FPN-003",
@@ -3425,6 +3482,8 @@
     "CTFTTE-IOT-005": "CTFTCTE-IOT-005",
     "CTFTTE-IOT-006": "CTFTCTE-IOT-006",
     "CTFTTE-IOT-007": "CTFTCTE-IOT-007",
+    "CTFTTE-IOT-008": "CTFTCTE-IOT-008",
+    "CTFTTE-IOT-009": "CTFTCTE-IOT-009",
     "CTFTTE-JAL-001": "CTFTCTE-JAL-001",
     "CTFTTE-JAL-002": "CTFTCTE-JAL-002",
     "CTFTTE-JAL-003": "CTFTCTE-JAL-003",
@@ -3458,6 +3517,7 @@
     "CTFTTE-OSI-007": "CTFTCTE-OSI-007",
     "CTFTTE-OSI-008": "CTFTCTE-OSI-008",
     "CTFTTE-OSI-009": "CTFTCTE-OSI-009",
+    "CTFTTE-OSI-010": "CTFTCTE-OSI-010",
     "CTFTTE-PWN-001": "CTFTCTE-PWN-001",
     "CTFTTE-PWN-002": "CTFTCTE-PWN-002",
     "CTFTTE-PWN-003": "CTFTCTE-PWN-003",
@@ -4080,6 +4140,13 @@
       "tactic": "CTFT-TA-FOR",
       "path": "techniques/CTFTTE-FOR-034.md"
     },
+    "CTFTTE-FOR-035": {
+      "name": "Virtual-disk container labyrinth",
+      "counter_id": "CTFTCTE-FOR-035",
+      "counter_name": "Convert, decrypt and map virtual-disk containers",
+      "tactic": "CTFT-TA-FOR",
+      "path": "techniques/CTFTTE-FOR-035.md"
+    },
     "CTFTTE-FPN-001": {
       "name": "Multi-stage chained challenge",
       "counter_id": "CTFTCTE-FPN-001",
@@ -4409,6 +4476,20 @@
       "tactic": "CTFT-TA-IOT",
       "path": "techniques/CTFTTE-IOT-007.md"
     },
+    "CTFTTE-IOT-008": {
+      "name": "Full-board boot gate (kernel + device tree + disk image)",
+      "counter_id": "CTFTCTE-IOT-008",
+      "counter_name": "Assemble the emulated board boot",
+      "tactic": "CTFT-TA-IOT",
+      "path": "techniques/CTFTTE-IOT-008.md"
+    },
+    "CTFTTE-IOT-009": {
+      "name": "Offline credential reset on a mounted rootfs",
+      "counter_id": "CTFTCTE-IOT-009",
+      "counter_name": "Mount the rootfs offline and reset or crack the credential",
+      "tactic": "CTFT-TA-IOT",
+      "path": "techniques/CTFTTE-IOT-009.md"
+    },
     "CTFTTE-JAL-001": {
       "name": "Python jail (pyjail) confinement",
       "counter_id": "CTFTCTE-JAL-001",
@@ -4639,6 +4720,13 @@
       "counter_name": "Gate historical OSINT behind current-surface checks",
       "tactic": "CTFT-TA-OSI",
       "path": "techniques/CTFTTE-OSI-009.md"
+    },
+    "CTFTTE-OSI-010": {
+      "name": "Word-address geocoding pivot",
+      "counter_id": "CTFTCTE-OSI-010",
+      "counter_name": "Resolve word addresses to locations and attribution",
+      "tactic": "CTFT-TA-OSI",
+      "path": "techniques/CTFTTE-OSI-010.md"
     },
     "CTFTTE-PWN-001": {
       "name": "Hidden win-function backdoor",
@@ -5664,6 +5752,13 @@
       "tactic": "CTFT-TA-FOR",
       "path": "countertechniques/CTFTCTE-FOR-034.md"
     },
+    "CTFTCTE-FOR-035": {
+      "name": "Convert, decrypt and map virtual-disk containers",
+      "technique_id": "CTFTTE-FOR-035",
+      "technique_name": "Virtual-disk container labyrinth",
+      "tactic": "CTFT-TA-FOR",
+      "path": "countertechniques/CTFTCTE-FOR-035.md"
+    },
     "CTFTCTE-FPN-001": {
       "name": "Chain enumeration, foothold and privilege escalation",
       "technique_id": "CTFTTE-FPN-001",
@@ -5993,6 +6088,20 @@
       "tactic": "CTFT-TA-IOT",
       "path": "countertechniques/CTFTCTE-IOT-007.md"
     },
+    "CTFTCTE-IOT-008": {
+      "name": "Assemble the emulated board boot",
+      "technique_id": "CTFTTE-IOT-008",
+      "technique_name": "Full-board boot gate (kernel + device tree + disk image)",
+      "tactic": "CTFT-TA-IOT",
+      "path": "countertechniques/CTFTCTE-IOT-008.md"
+    },
+    "CTFTCTE-IOT-009": {
+      "name": "Mount the rootfs offline and reset or crack the credential",
+      "technique_id": "CTFTTE-IOT-009",
+      "technique_name": "Offline credential reset on a mounted rootfs",
+      "tactic": "CTFT-TA-IOT",
+      "path": "countertechniques/CTFTCTE-IOT-009.md"
+    },
     "CTFTCTE-JAL-001": {
       "name": "Escape the Python sandbox",
       "technique_id": "CTFTTE-JAL-001",
@@ -6223,6 +6332,13 @@
       "technique_name": "Historical-infrastructure lure",
       "tactic": "CTFT-TA-OSI",
       "path": "countertechniques/CTFTCTE-OSI-009.md"
+    },
+    "CTFTCTE-OSI-010": {
+      "name": "Resolve word addresses to locations and attribution",
+      "technique_id": "CTFTTE-OSI-010",
+      "technique_name": "Word-address geocoding pivot",
+      "tactic": "CTFT-TA-OSI",
+      "path": "countertechniques/CTFTCTE-OSI-010.md"
     },
     "CTFTCTE-PWN-001": {
       "name": "Redirect execution to the win function",

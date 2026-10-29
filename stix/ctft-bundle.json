@@ -3147,7 +3147,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTTE-CRY-012 - Hash-cracking maze with constraints",
-      "description": "The flag is a hash whose preimage satisfies extra constraints (mask, salt, charset).",
+      "description": "The flag is a hash whose preimage satisfies extra constraints (mask, salt, charset). The hash itself is strong (sha256crypt and peers), so raw brute force is hopeless; the intended path is that the shape of the plaintext is leaked by the challenge story and the solver must turn that shape into a mask or rule set. A second, harder variant gives a plaintext that follows an external fixed format — a word address, a date, a serial number — where each position's character class is known, collapsing the keyspace by orders of magnitude. The concealment is the missing constraint statement: the solver must notice that the format is knowable before any attack can succeed.",
       "kill_chain_phases": [
         {
           "kill_chain_name": "ctft",
@@ -3177,7 +3177,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-CRY-012 - Crack hashes under masks/rules",
-      "description": "Identify the hash type, build masks/rules, crack with hashcat/john, and verify.",
+      "description": "Identify the hash type, build masks/rules, crack with hashcat/john, and verify. When the plaintext follows a known external format (word address, date, serial), derive the mask position-by-position from that format — custom charsets per position — before spending GPU time; a format-constrained mask collapses the keyspace far below any wordlist.",
       "x_ctft_category": "CRY",
       "x_ctft_domain": "CRY",
       "x_ctft_role": "resolution",
@@ -5743,6 +5743,73 @@
       "x_ctft_relation": "solves",
       "source_ref": "course-of-action--2618d469-4767-50f4-b211-a91f58c773ed",
       "target_ref": "attack-pattern--f9823966-c46c-5541-85f3-e93a5344b011",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--6ded5590-36d1-53df-832c-de3d5d601698",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FOR-035 - Virtual-disk container labyrinth",
+      "description": "The evidence is a full-disk image wrapped in one or more virtualization containers: an appliance archive (a tar holding a .ovf descriptor, .mf manifest and .vmdk member), a qcow2 image encrypted with the legacy qcow2 AES format, a raw dump whose partition table carries garbage or misleading entries, or the same disk shipped in several formats where only one is current. The concealment is format friction: each layer needs a different converter, the encrypted qcow2 refuses every filesystem tool until it is decrypted with its password, and partition offsets must be mapped before any carving or mounting applies. Distinct from CTFTTE-FOR-020 (a LUKS volume inside a filesystem) and CTFTTE-FOR-021 (LVM fragment reassembly): here the outermost obstacle is the virtualization container itself, not a volume manager or an encrypted filesystem.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "for"
+        }
+      ],
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FOR-035"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1006",
+          "description": "Direct Volume Access"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--e6db9438-69da-5baa-86af-c6722258d4ea",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FOR-035 - Convert, decrypt and map virtual-disk containers",
+      "description": "1. Identify every layer with file before choosing a tool: an appliance archive is a POSIX tar (tar -xvf yields the .ovf descriptor, .mf manifest and .vmdk member); a qcow2 reports its version and encryption; a raw dump reports its partition table. 2. Convert members to one working format with qemu-img convert (-f vmdk -O qcow2, or -O raw when the next tool wants raw). Converting copies the image, which also protects the original. 3. Detect legacy qcow2 AES encryption via qemu-img info / file (\"AES-encrypted\"). Decrypt by converting to another format — the converter prompts for the image password and no separate key file exists for that format; the password is the only secret. 4. Inspect the partition table (fdisk -l, sfdisk -d) and trust the start-sector offsets over CHS values: garbage CHS entries with sane offsets mean the table was scrambled, not the filesystems. 5. Map the partitions (losetup -fP, kpartx -av) and mount each one; when several images of the same disk exist, compare content hashes to find the authoritative copy.",
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FOR-035"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1006",
+          "description": "Direct Volume Access"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--bed2015f-59d7-5792-a45f-cd13d63aa286",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--e6db9438-69da-5baa-86af-c6722258d4ea",
+      "target_ref": "attack-pattern--6ded5590-36d1-53df-832c-de3d5d601698",
       "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     },
     {
@@ -9087,6 +9154,150 @@
     {
       "type": "attack-pattern",
       "spec_version": "2.1",
+      "id": "attack-pattern--ca642a9f-848c-5abf-b485-73c4c99547f3",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-IOT-008 - Full-board boot gate (kernel + device tree + disk image)",
+      "description": "The flag or the next stage exists only at runtime: it is printed by a boot script, a login banner or a service that starts when the device's whole operating system boots. The artifact is therefore a complete disk image (raw, qcow2, an SD-card dump) rather than a loose binary, and for ARM boards the player also needs a kernel image and a flattened device tree blob (.dtb) that the emulator can consume. The concealment is the assembly work, not a bug: the machine type, CPU, kernel, DTB and root= boot argument must all match, and the emulator adds its own friction — image sizes that must be a power of two, kernels that must be built for the emulator's board rather than the real device, root devices that change name between real hardware (mmcblk0p2) and the emulated bus (sda2). Distinct from CTFTTE-IOT-006, where only a single service binary has to run under user-mode emulation, and from CTFTTE-IOT-001, where the image is unpacked offline and never booted.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "iot"
+        }
+      ],
+      "x_ctft_category": "IOT",
+      "x_ctft_domain": "IOT",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-IOT-008"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1200",
+          "description": "Hardware Additions"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--937f0fcd-1b36-5424-8afe-3bdc81a156f1",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-IOT-008 - Assemble the emulated board boot",
+      "description": "1. Inventory the artifacts before booting anything: image format (qemu-img info), any kernel image, any .dtb file, and the boot partition contents (boot config, command line, dtb names) which identify the board family. 2. Pick the machine type to match the board the image was built for, and the CPU the kernel supports. For ARM evaluation boards, a kernel built for the emulator's machine is usually required — the device's own kernel often lacks the emulator's peripherals. 3. Clear the container friction first: convert to the format the emulator wants and resize to a power-of-two size when it refuses the image. 4. Boot with kernel, DTB and a root= pointing at the emulated disk device name — the device name changes with the bus (/dev/sda2 for a disk on an emulated SCSI/SD controller, /dev/mmcblk0p2 on real hardware). Watch the serial console. 5. When the kernel panics on root mount, read the partition list it prints and correct root=; the panic output is the diagnosis. 6. When no kernel is supplied, extract one from the image's boot partition or use a community kernel built for the emulator machine. 7. When the boot hangs silently, decompile the DTB with dtc and check the console/UART and disk nodes against the machine type.",
+      "x_ctft_category": "IOT",
+      "x_ctft_domain": "IOT",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-IOT-008"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1200",
+          "description": "Hardware Additions"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--a274a691-bb81-5a3c-92e9-283a256f7492",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--937f0fcd-1b36-5424-8afe-3bdc81a156f1",
+      "target_ref": "attack-pattern--ca642a9f-848c-5abf-b485-73c4c99547f3",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--66586034-1147-512a-8f5d-025db86825b4",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-IOT-009 - Offline credential reset on a mounted rootfs",
+      "description": "The device's only interactive surface is a login prompt, and the objective sits behind it: a boot banner, a login-time script, or a shell session the player must reach. No credentials are given. The image itself is handed over unencrypted, so the rootfs can be mounted offline — the concealment is the assumption that the player will treat the login as a wall to crack rather than a file to edit. The author often raises the stakes by pairing the account with a strong password hash that resists wordlist and rule attacks (see CTFTTE-CRY-012), pushing the solver toward offline cracking while the mount-and-edit path stays open. Distinct from CTFTTE-IOT-002, where the credential gate is a device web application with a backdoor, and from CTFTTE-FOR-020, where the volume itself is encrypted.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "iot"
+        }
+      ],
+      "x_ctft_category": "IOT",
+      "x_ctft_domain": "IOT",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-IOT-009"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1003",
+          "description": "OS Credential Dumping"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1078",
+          "description": "Valid Accounts"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--c91f0269-1ee6-50a3-a034-2664294ede34",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-IOT-009 - Mount the rootfs offline and reset or crack the credential",
+      "description": "1. Map the image's partitions without booting it: losetup -fP on a raw image, or kpartx -av on a device-mapper node, then identify each partition with file -s. 2. Mount the rootfs partition read-write on a copy of the image and locate the credential store (/etc/shadow for Linux). Keep a backup of the file before touching it. 3. Choose the path the objective wants: - the objective is access — blank the hash field (everything between the first and second colon) for the target account, or replace it with a hash of a known password; - the objective is the plaintext itself — copy the hash out and crack it offline (CTFTCTE-CRY-012); a known external format of the plaintext collapses the mask. 4. Unmount cleanly, boot the image, and log in with the reset or cracked credential. 5. If the objective is a runtime artifact (banner, login script), capture it from the booted session rather than hunting for it in the files.",
+      "x_ctft_category": "IOT",
+      "x_ctft_domain": "IOT",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-IOT-009"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1003",
+          "description": "OS Credential Dumping"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1078",
+          "description": "Valid Accounts"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--d8c52443-d46a-5b73-880a-4210d49c64a4",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--c91f0269-1ee6-50a3-a034-2664294ede34",
+      "target_ref": "attack-pattern--66586034-1147-512a-8f5d-025db86825b4",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
       "id": "attack-pattern--d8d2a8a3-932d-5fb9-abca-f4c11b90915d",
       "created": "2026-06-10T18:01:52.000Z",
       "modified": "2026-06-10T18:01:52.000Z",
@@ -11313,6 +11524,83 @@
       "x_ctft_relation": "solves",
       "source_ref": "course-of-action--22efc981-5cf8-5ee6-b805-de96afee9737",
       "target_ref": "attack-pattern--34632d4f-c94d-5990-89b2-40c49e00baee",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--65020433-7bf1-5d68-a3af-6248b17ab621",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-OSI-010 - Word-address geocoding pivot",
+      "description": "The location is encoded as a word address: three dictionary words drawn from a fixed, versioned wordlist that resolve through a public geocoding service to a square of a few metres. The words arrive as a cracked secret, a transmitted string or a challenge phrase, and they look like a passphrase or a red herring — nothing in the string itself suggests coordinates. Only resolving the words through the service reveals a physical location, and the location is rarely the answer: it is the pivot into public records (a street address, a facility, an organization) that holds the flag. Distinct from CTFTTE-OSI-004, where the location must be deduced from imagery by visual reasoning, and from CTFTTE-OSI-001, where it leaks through metadata fields.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "osi"
+        }
+      ],
+      "x_ctft_category": "OSI",
+      "x_ctft_domain": "OSI",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-OSI-010"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1132",
+          "description": "Data Encoding"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1589",
+          "description": "Gather Victim Identity Info"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--f3d40864-2a66-5b01-8e8c-a3638286874a",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-OSI-010 - Resolve word addresses to locations and attribution",
+      "description": "1. Recognize the shape: three lowercase dictionary words, dot-separated, surfacing as a cracked secret, a transmitted string or a phrase in the challenge text. 2. Resolve the words through the word-address geocoding service (web UI or API) to coordinates and a country. If the service rejects the words, try the other supported languages — the wordlists differ per language. 3. Reverse-geocode the coordinates to a street address with Nominatim/OpenStreetMap. 4. Pivot the address into public records and reporting: facility, organization, unit or entity associated with that location. The answer is usually the attribution, not the coordinates. 5. Verify the attribution with at least two independent sources before submitting.",
+      "x_ctft_category": "OSI",
+      "x_ctft_domain": "OSI",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-OSI-010"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1132",
+          "description": "Data Encoding"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1589",
+          "description": "Gather Victim Identity Info"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--6291555a-89c3-55ff-9575-b3958f8df6a0",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--f3d40864-2a66-5b01-8e8c-a3638286874a",
+      "target_ref": "attack-pattern--65020433-7bf1-5d68-a3af-6248b17ab621",
       "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     },
     {

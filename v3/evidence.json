@@ -2,10 +2,10 @@
   "model": "CTFT",
   "schema_version": "3.0",
   "collection": "evidence",
-  "generated_at": "2026-10-29T14:39:55+00:00",
+  "generated_at": "2026-10-29T15:51:48+00:00",
   "note": "Seeded from links already present in the corpus, then overridden by v3/evidence.curated.json where a curator read the write-up. No entry is attested until positives, negatives and boundaries are written by hand.",
   "counts": {
-    "curated": 8,
+    "curated": 12,
     "attested": 3
   },
   "items": [
@@ -84,7 +84,7 @@
           "challenge": "BAD What Three Words - 600",
           "year": 2024,
           "writeup": "https://github.com/blue101010/ctf/blob/main/2024/DRAGOS/EmbeddedDevices/BAD_three_words/bad3.md",
-          "extracted_from": "read and confirmed: sha256crypt hash extracted from an embedded device, hashcat -m 7400 against rockyou, then a rule-based pass"
+          "extracted_from": "read and confirmed: sha256crypt hash extracted from an embedded device, hashcat -m 7400 against rockyou, then a rule-based pass; the successful pass was a format-constrained mask (custom charset per position) built from the known word-address shape of the plaintext"
         },
         {
           "ctf": "HTB Pro Labs",
@@ -98,7 +98,8 @@
       "positives": [
         "the challenge yields a hash in a documented format and the flag is the plaintext behind it (sha256crypt $5$, Kerberos 5 TGS-REP etype 23)",
         "the constraint is the candidate space, not the algorithm: mode selection plus the right wordlist or rule set is the whole solve",
-        "a rule pass (best64) or a themed wordlist succeeds where a plain wordlist exhausts"
+        "a rule pass (best64) or a themed wordlist succeeds where a plain wordlist exhausts",
+        "when the plaintext follows a known external format (a word address, a date, a serial), a position-wise custom-charset mask succeeds where wordlist and rule passes exhaust"
       ],
       "negatives": [
         "online credential brute-force against a login form (hydra against http-post-form) — no hash is ever recovered, the oracle is the application",
@@ -599,6 +600,51 @@
       "status": "seeded"
     },
     {
+      "id": "EVID-FOR-035",
+      "schema_version": "3.0",
+      "technique": "CTFTTE-FOR-035",
+      "challenges": [
+        {
+          "ctf": "DRAGOS",
+          "challenge": "BAD login - 600",
+          "year": 2024,
+          "writeup": "https://github.com/blue101010/ctf/blob/main/2024/DRAGOS/EmbeddedDevices/BAD_login_600/bad600.md",
+          "extracted_from": "read and confirmed: OVA tar extracted to a vmdk member and converted with qemu-img; qcow2 images reported AES-encrypted (v3) by file and decrypted by qemu-img convert with the image password; a raw image's partition table parsed to absurd sizes while the filesystems were intact at their start-sector offsets"
+        }
+      ],
+      "references": [],
+      "positives": [
+        "the outermost obstacle is the virtualization container: appliance-archive members, format conversion, legacy qcow2 AES",
+        "the encrypted qcow2 needs no separate key file — the image password supplied to the converter is the whole secret",
+        "partition-table geometry is garbage while start-sector offsets remain valid"
+      ],
+      "negatives": [
+        "a LUKS volume inside a filesystem — that is CTFTTE-FOR-020",
+        "LVM fragment reassembly — that is CTFTTE-FOR-021"
+      ],
+      "boundaries": [
+        "distinct from CTFTTE-FOR-020/FOR-021: the obstacle is the container format, not a volume manager or an encrypted filesystem"
+      ],
+      "abstraction": "technique",
+      "synonyms": [
+        "OVA extraction",
+        "vmdk conversion",
+        "qcow2 AES decryption",
+        "disk image conversion"
+      ],
+      "external_mappings": [
+        {
+          "framework": "ATTACK",
+          "id": "T1006",
+          "confidence": "medium",
+          "justification": "Recovery reads the disk through its container, below the operating system that owns it."
+        }
+      ],
+      "curator": "local (workspace casebook)",
+      "reviewed_on": "2026-10-29",
+      "status": "curated"
+    },
+    {
       "id": "EVID-GAM-007",
       "schema_version": "3.0",
       "technique": "CTFTTE-GAM-007",
@@ -700,6 +746,110 @@
       "status": "curated"
     },
     {
+      "id": "EVID-IOT-008",
+      "schema_version": "3.0",
+      "technique": "CTFTTE-IOT-008",
+      "challenges": [
+        {
+          "ctf": "DRAGOS",
+          "challenge": "BAD onBoard Access Device Embedded - 200",
+          "year": 2024,
+          "writeup": "https://github.com/blue101010/ctf/blob/main/2024/DRAGOS/EmbeddedDevices/embeded.md",
+          "extracted_from": "read and confirmed: FAT16 whole-disk image booted in qemu-system-x86_64, flag shown on the boot/login console"
+        },
+        {
+          "ctf": "DRAGOS",
+          "challenge": "BAD login - 600",
+          "year": 2024,
+          "writeup": "https://github.com/blue101010/ctf/blob/main/2024/DRAGOS/EmbeddedDevices/BAD_login_600/bad600.md",
+          "extracted_from": "read and confirmed: rpi0 SD image converted to qcow2, resized to a power of two, booted with qemu-system-arm -M versatilepb plus a downloaded kernel and versatile-pb.dtb; root= corrected from the partition list the panic printed"
+        }
+      ],
+      "references": [],
+      "positives": [
+        "the artifact is a whole-disk image with a boot partition and rootfs, not a loose binary",
+        "the emulator refuses the image until format, size and boot arguments match (machine type, kernel, dtb, root=)",
+        "the objective is a runtime console artifact, unreachable by offline inspection of the image"
+      ],
+      "negatives": [
+        "a single service binary emulated with qemu-user — that is CTFTTE-IOT-006",
+        "an image that is only unpacked offline and never booted — that is CTFTTE-IOT-001"
+      ],
+      "boundaries": [
+        "distinct from CTFTTE-IOT-006 (single-binary user-mode emulation): here the whole OS must boot",
+        "distinct from CTFTTE-IOT-001 (offline unpack): the image must run, not be carved"
+      ],
+      "abstraction": "technique",
+      "synonyms": [
+        "full-system emulation",
+        "board emulation boot",
+        "qemu boot gate"
+      ],
+      "external_mappings": [
+        {
+          "framework": "ATTACK",
+          "id": "T1200",
+          "confidence": "low",
+          "justification": "The emulator stands in for the physical device; ATT&CK has no defensive-sandbox technique, so the anchor is the closest hardware technique."
+        }
+      ],
+      "curator": "local (workspace casebook)",
+      "reviewed_on": "2026-10-29",
+      "status": "curated"
+    },
+    {
+      "id": "EVID-IOT-009",
+      "schema_version": "3.0",
+      "technique": "CTFTTE-IOT-009",
+      "challenges": [
+        {
+          "ctf": "DRAGOS",
+          "challenge": "BAD login - 600",
+          "year": 2024,
+          "writeup": "https://github.com/blue101010/ctf/blob/main/2024/DRAGOS/EmbeddedDevices/BAD_login_600/bad600.md",
+          "extracted_from": "read and confirmed: ext4 rootfs partition mapped with losetup/kpartx, root's sha256crypt hash in /etc/shadow blanked between the first two colons, image rebooted and the flag read at the login the reset opened"
+        }
+      ],
+      "references": [],
+      "positives": [
+        "a login prompt is the only gate and no credentials are provided",
+        "the rootfs mounts read-write offline, so the credential store is an editable file",
+        "the stored hash resists wordlist and rule attacks, while the mount-and-edit path stays open"
+      ],
+      "negatives": [
+        "a device web application with a backdoor credential gate — that is CTFTTE-IOT-002",
+        "an encrypted volume that must be unlocked before anything mounts — that is CTFTTE-FOR-020"
+      ],
+      "boundaries": [
+        "distinct from CTFTTE-IOT-002: the gate is the OS login, not a web stack",
+        "distinct from CTFTTE-FOR-020: the image is unencrypted; the obstacle is the credential, not the volume",
+        "when the objective is the plaintext itself the pair hands over to CTFTTE-CRY-012"
+      ],
+      "abstraction": "technique",
+      "synonyms": [
+        "shadow edit",
+        "credential reset",
+        "offline password reset"
+      ],
+      "external_mappings": [
+        {
+          "framework": "ATTACK",
+          "id": "T1078",
+          "confidence": "medium",
+          "justification": "Resetting the stored credential prepares valid-account use; the login is the use."
+        },
+        {
+          "framework": "ATTACK",
+          "id": "T1003",
+          "confidence": "medium",
+          "justification": "Reading the offline credential store of a mounted image is credential dumping without device execution."
+        }
+      ],
+      "curator": "local (workspace casebook)",
+      "reviewed_on": "2026-10-29",
+      "status": "curated"
+    },
+    {
       "id": "EVID-MOB-009",
       "schema_version": "3.0",
       "technique": "CTFTTE-MOB-009",
@@ -750,6 +900,64 @@
       "curator": "local (workspace casebook)",
       "reviewed_on": "2026-10-26",
       "status": "pending"
+    },
+    {
+      "id": "EVID-OSI-010",
+      "schema_version": "3.0",
+      "technique": "CTFTTE-OSI-010",
+      "challenges": [
+        {
+          "ctf": "DRAGOS",
+          "challenge": "BAD What Three Words - 600",
+          "year": 2024,
+          "writeup": "https://github.com/blue101010/ctf/blob/main/2024/DRAGOS/EmbeddedDevices/BAD_three_words/bad3.md",
+          "extracted_from": "read and confirmed: the cracked sha256crypt plaintext was a three-word string resolved through the word-address service to a location"
+        },
+        {
+          "ctf": "DRAGOS",
+          "challenge": "BAD unit test",
+          "year": 2024,
+          "writeup": "https://github.com/blue101010/ctf/blob/main/2024/DRAGOS/EmbeddedDevices/BAD_unit_test/badunittest.md",
+          "extracted_from": "read and confirmed: the three-word address resolved to a street address, and the public-records pivot on that address is the answer"
+        }
+      ],
+      "references": [],
+      "positives": [
+        "a recovered string of three lowercase dictionary words, dot-separated, that looks like a passphrase",
+        "the words resolve through a public word-address service to a square of a few metres",
+        "the resolved address is the pivot into public records, and the attribution is the answer"
+      ],
+      "negatives": [
+        "deducing a location from imagery by visual reasoning — that is CTFTTE-OSI-004",
+        "a location leaking through metadata fields — that is CTFTTE-OSI-001"
+      ],
+      "boundaries": [
+        "distinct from CTFTTE-OSI-004: no image is analysed; the encoding resolves exactly",
+        "the wordlist is versioned and language-specific, so a resolution records its date and language"
+      ],
+      "abstraction": "technique",
+      "synonyms": [
+        "what3words pivot",
+        "word address geocoding",
+        "three-word address"
+      ],
+      "external_mappings": [
+        {
+          "framework": "ATTACK",
+          "id": "T1132",
+          "confidence": "medium",
+          "justification": "A word address is a reversible encoding of coordinates; ATT&CK has no geolocation technique."
+        },
+        {
+          "framework": "ATTACK",
+          "id": "T1589",
+          "confidence": "low",
+          "justification": "The resolved location feeds the public-records identity pivot."
+        }
+      ],
+      "curator": "local (workspace casebook)",
+      "reviewed_on": "2026-10-29",
+      "status": "curated"
     },
     {
       "id": "EVID-PWN-001",

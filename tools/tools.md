@@ -14,7 +14,7 @@ Reference tools used across CTFT techniques and counter-techniques.
 | [CTFTTOU-008](CTFTTOU-008.md) | Playwright | <https://playwright.dev/> | CTFTCTE-WEB-018, CTFTCTE-GAM-007, CTFTCTE-WEB-020, CTFTTE-AIM-002, CTFTCTE-AIM-002 |
 | [CTFTTOU-009](CTFTTOU-009.md) | ripgrep-all (rga) | <https://github.com/phiresky/ripgrep-all> | CTFTCTE-WEB-019 |
 | [CTFTTOU-010](CTFTTOU-010.md) | jwt_tool | <https://github.com/ticarpi/jwt_tool> | CTFTTE-WEB-003, CTFTCTE-WEB-003 |
-| [CTFTTOU-011](CTFTTOU-011.md) | name-that-hash | <https://github.com/HashPals/Name-That-Hash> | CTFTCTE-CRY-012 |
+| [CTFTTOU-011](CTFTTOU-011.md) | name-that-hash | <https://github.com/HashPals/Name-That-Hash> | CTFTCTE-CRY-012, CTFTTE-CRY-012, CTFTTE-IOT-009, CTFTCTE-IOT-009 |
 | [CTFTTOU-012](CTFTTOU-012.md) | Katana | <https://github.com/projectdiscovery/katana> | CTFTCTE-WEB-001, CTFTCTE-GAM-007 |
 | [CTFTTOU-013](CTFTTOU-013.md) | ffuf | <https://github.com/ffuf/ffuf> | CTFTCTE-WEB-001, CTFTCTE-WEB-017, CTFTCTE-WEB-020, CTFTTE-IOT-002, CTFTCTE-IOT-002 |
 | [CTFTTOU-014](CTFTTOU-014.md) | sqlmap | <https://sqlmap.org/> | CTFTTE-WEB-004, CTFTCTE-WEB-004, CTFTCTE-WEB-021 |
@@ -128,7 +128,7 @@ Reference tools used across CTFT techniques and counter-techniques.
 | [CTFTTOU-123](CTFTTOU-123.md) | tshark | <https://www.wireshark.org/docs/man-pages/tshark.html> | CTFTCTE-FOR-006, CTFTCTE-HWR-001, CTFTCTE-ICS-003, CTFTCTE-NET-002, CTFTCTE-NET-006, CTFTCTE-NET-007, CTFTTE-FOR-006, CTFTTE-HWR-001, CTFTTE-ICS-003, CTFTTE-NET-002, CTFTTE-NET-006, CTFTTE-NET-007 |
 | [CTFTTOU-124](CTFTTOU-124.md) | zeek | <https://zeek.org/> | CTFTCTE-NET-002, CTFTCTE-NET-007, CTFTTE-NET-002, CTFTTE-NET-007 |
 | [CTFTTOU-125](CTFTTOU-125.md) | scapy | <https://scapy.net/> | CTFTCTE-FOR-006, CTFTCTE-ICS-005, CTFTCTE-NET-006, CTFTTE-FOR-006, CTFTTE-ICS-005, CTFTTE-NET-006 |
-| [CTFTTOU-126](CTFTTOU-126.md) | binwalk | <https://github.com/ReFirmLabs/binwalk> | CTFTCTE-FOR-001, CTFTCTE-FOR-002, CTFTCTE-FOR-009, CTFTCTE-FOR-019, CTFTCTE-HWR-002, CTFTCTE-STE-002, CTFTCTE-STE-007, CTFTTE-FOR-001, CTFTTE-FOR-002, CTFTTE-FOR-019, CTFTTE-HWR-002, CTFTTE-STE-002, CTFTTE-IOT-001, CTFTCTE-IOT-001 |
+| [CTFTTOU-126](CTFTTOU-126.md) | binwalk | <https://github.com/ReFirmLabs/binwalk> | CTFTCTE-FOR-001, CTFTCTE-FOR-002, CTFTCTE-FOR-009, CTFTCTE-FOR-019, CTFTCTE-HWR-002, CTFTCTE-STE-002, CTFTCTE-STE-007, CTFTTE-FOR-001, CTFTTE-FOR-002, CTFTTE-FOR-019, CTFTTE-HWR-002, CTFTTE-STE-002, CTFTTE-FOR-035, CTFTTE-IOT-001, CTFTCTE-FOR-035, CTFTCTE-IOT-001 |
 | [CTFTTOU-127](CTFTTOU-127.md) | foremost | <https://github.com/korczis/foremost> | CTFTCTE-FOR-002, CTFTCTE-FOR-022, CTFTCTE-STE-002, CTFTTE-FOR-002, CTFTTE-FOR-022, CTFTTE-STE-002 |
 | [CTFTTOU-128](CTFTTOU-128.md) | scalpel | <https://github.com/sleuthkit/scalpel> | CTFTCTE-FOR-002, CTFTTE-FOR-002 |
 | [CTFTTOU-129](CTFTTOU-129.md) | photorec | <https://www.cgsecurity.org/wiki/PhotoRec> | CTFTCTE-FOR-002, CTFTTE-FOR-002 |
@@ -262,7 +262,7 @@ Reference tools used across CTFT techniques and counter-techniques.
 | [CTFTTOU-259](CTFTTOU-259.md) | firefox_decrypt | <https://github.com/unode/firefox_decrypt> | CTFTCTE-FOR-024, CTFTTE-FOR-024 |
 | [CTFTTOU-260](CTFTTOU-260.md) | jabcode reference decoder | <https://github.com/jabcode/jabcode> | CTFTCTE-FOR-027, CTFTTE-FOR-010, CTFTCTE-FOR-010 |
 | [CTFTTOU-261](CTFTTOU-261.md) | jabcode reference encoder | <https://github.com/jabcode/jabcode> | CTFTTE-FOR-027 |
-| [CTFTTOU-262](CTFTTOU-262.md) | qemu | <https://www.qemu.org/> | CTFTCTE-PWN-007, CTFTTE-PWN-007, CTFTTE-IOT-006, CTFTCTE-IOT-006 |
+| [CTFTTOU-262](CTFTTOU-262.md) | qemu | <https://www.qemu.org/> | CTFTCTE-PWN-007, CTFTTE-PWN-007, CTFTTE-IOT-008, CTFTCTE-IOT-008, CTFTTE-IOT-009, CTFTCTE-IOT-009, CTFTTE-IOT-006, CTFTCTE-IOT-006 |
 | [CTFTTOU-263](CTFTTOU-263.md) | de4js | <https://lelinhtinh.github.io/de4js/> | CTFTCTE-WEB-006, CTFTTE-WEB-006, CTFTTE-FOR-034, CTFTCTE-FOR-034 |
 | [CTFTTOU-264](CTFTTOU-264.md) | 010 Editor | <https://www.sweetscape.com/010editor/> | CTFTCTE-GAM-002, CTFTTE-GAM-002 |
 | [CTFTTOU-265](CTFTTOU-265.md) | HxD | <https://mh-nexus.de/en/hxd/> | — |
@@ -324,7 +324,7 @@ Reference tools used across CTFT techniques and counter-techniques.
 | [CTFTTOU-321](CTFTTOU-321.md) | Shadowmap | <https://shadowmap.org/> | CTFTCTE-OSI-004, CTFTTE-OSI-004 |
 | [CTFTTOU-322](CTFTTOU-322.md) | Yandex Images | <https://yandex.com/images/> | CTFTCTE-OSI-004, CTFTTE-OSI-004 |
 | [CTFTTOU-323](CTFTTOU-323.md) | Wikimapia | <https://wikimapia.org/> | CTFTCTE-OSI-004, CTFTTE-OSI-004 |
-| [CTFTTOU-324](CTFTTOU-324.md) | OpenStreetMap | <https://www.openstreetmap.org/> | CTFTCTE-OSI-004, CTFTTE-OSI-004 |
+| [CTFTTOU-324](CTFTTOU-324.md) | OpenStreetMap | <https://www.openstreetmap.org/> | CTFTCTE-OSI-004, CTFTTE-OSI-004, CTFTTE-OSI-010, CTFTCTE-OSI-010 |
 | [CTFTTOU-325](CTFTTOU-325.md) | Overpass Turbo | <https://overpass-turbo.eu/> | CTFTCTE-OSI-004, CTFTTE-OSI-004 |
 | [CTFTTOU-326](CTFTTOU-326.md) | x64dbg | <https://x64dbg.com/> | CTFTCTE-REV-001 |
 | [CTFTTOU-327](CTFTTOU-327.md) | frida-gadget | <https://frida.re/docs/gadget/> | CTFTCTE-MOB-008 |
@@ -371,7 +371,7 @@ Reference tools used across CTFT techniques and counter-techniques.
 | [CTFTTOU-415](CTFTTOU-415.md) | s3_public_probe.py | — | CTFTTE-CLD-001, CTFTCTE-CLD-001 |
 | [CTFTTOU-416](CTFTTOU-416.md) | gatttool | <https://github.com/bluez/bluez> | CTFTTE-IOT-005, CTFTCTE-IOT-005, CTFTTE-IOT-007, CTFTCTE-IOT-007 |
 | [CTFTTOU-417](CTFTTOU-417.md) | hermes-dec | <https://github.com/P1sec/hermes-dec> | CTFTTE-MOB-009, CTFTCTE-MOB-009 |
-| [CTFTTOU-418](CTFTTOU-418.md) | Nominatim | <https://nominatim.org/> | CTFTTE-OSI-001, CTFTCTE-OSI-001 |
+| [CTFTTOU-418](CTFTTOU-418.md) | Nominatim | <https://nominatim.org/> | CTFTTE-OSI-001, CTFTCTE-OSI-001, CTFTTE-OSI-010, CTFTCTE-OSI-010 |
 | [CTFTTOU-419](CTFTTOU-419.md) | Google Maps | <https://www.google.com/maps> | CTFTTE-OSI-001, CTFTCTE-OSI-001 |
 | [CTFTTOU-420](CTFTTOU-420.md) | archive.today | <https://archive.ph/> | CTFTTE-OSI-003, CTFTCTE-OSI-003 |
 | [CTFTTOU-421](CTFTTOU-421.md) | GitHub Code Search | <https://github.com/search?type=code> | CTFTTE-OSI-005, CTFTCTE-OSI-005 |
@@ -396,3 +396,7 @@ Reference tools used across CTFT techniques and counter-techniques.
 | [CTFTTOU-440](CTFTTOU-440.md) | azure_entra_search.py | <https://learn.microsoft.com/en-us/graph/api/overview> | CTFTTE-CLD-008, CTFTCTE-CLD-008 |
 | [CTFTTOU-441](CTFTTOU-441.md) | Caido (caido-cli and caido-mcp-server) | <https://caido.io/> | CTFTTE-WEB-001, CTFTCTE-WEB-001, CTFTTE-WEB-002, CTFTCTE-WEB-002, CTFTTE-WEB-003, CTFTCTE-WEB-003, CTFTTE-WEB-004, CTFTCTE-WEB-004, CTFTTE-WEB-007, CTFTCTE-WEB-007, CTFTTE-WEB-009, CTFTCTE-WEB-009, CTFTTE-WEB-012, CTFTCTE-WEB-012, CTFTTE-WEB-014, CTFTCTE-WEB-014, CTFTTE-WEB-018, CTFTCTE-WEB-018, CTFTTE-WEB-020, CTFTCTE-WEB-020, CTFTTE-WEB-022, CTFTCTE-WEB-022, CTFTTE-WEB-024, CTFTCTE-WEB-024, CTFTTE-WEB-025, CTFTCTE-WEB-025, CTFTTE-WEB-026, CTFTCTE-WEB-026, CTFTTE-WEB-027, CTFTCTE-WEB-027, CTFTTE-WEB-028, CTFTCTE-WEB-028, CTFTTE-WEB-029, CTFTCTE-WEB-029 |
 | [CTFTTOU-442](CTFTTOU-442.md) | Caido workflow catalogue (caido-community/workflows) | <https://github.com/caido-community/workflows> | CTFTTE-WEB-007, CTFTCTE-WEB-007, CTFTTE-WEB-009, CTFTCTE-WEB-009, CTFTTE-WEB-012, CTFTCTE-WEB-012, CTFTTE-WEB-023, CTFTCTE-WEB-023, CTFTTE-WEB-026, CTFTCTE-WEB-026 |
+| [CTFTTOU-443](CTFTTOU-443.md) | dtc | <https://git.kernel.org/pub/scm/utils/dtc/dtc.git> | CTFTTE-IOT-008, CTFTCTE-IOT-008 |
+| [CTFTTOU-444](CTFTTOU-444.md) | qemu-img | <https://www.qemu.org/docs/master/interop/qemu-img.html> | CTFTTE-FOR-035, CTFTCTE-FOR-035, CTFTTE-IOT-008, CTFTCTE-IOT-008, CTFTTE-IOT-009, CTFTCTE-IOT-009 |
+| [CTFTTOU-445](CTFTTOU-445.md) | losetup / kpartx | <https://man7.org/linux/man-pages/man8/losetup.8.html> | CTFTTE-IOT-009, CTFTCTE-IOT-009, CTFTTE-FOR-035, CTFTCTE-FOR-035, CTFTTE-IOT-001, CTFTCTE-IOT-001 |
+| [CTFTTOU-446](CTFTTOU-446.md) | what3words | <https://what3words.com/> | CTFTTE-OSI-010, CTFTCTE-OSI-010 |

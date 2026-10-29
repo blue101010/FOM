@@ -2,7 +2,7 @@
 
 > **Domain ID:** `CTFT-TA-FOR`  
 > **HTB mapping:** HTB: Forensics  
-> **Techniques:** 34
+> **Techniques:** 35
 
 ## Description
 
@@ -60,6 +60,7 @@ per entry**, never the definition of an entry.
 | [CTFTTE-FOR-032](../techniques/CTFTTE-FOR-032.md) | Flag concealed in a haystack of near-identical files | [CTFTCTE-FOR-032](../countertechniques/CTFTCTE-FOR-032.md) | Isolate the outlier file by scalable comparison | T1027 |
 | [CTFTTE-FOR-033](../techniques/CTFTTE-FOR-033.md) | Flag fragments disseminated across filesystem artifacts | [CTFTCTE-FOR-033](../countertechniques/CTFTCTE-FOR-033.md) | Aggregate disseminated flag fragments across files | T1027, T1547.001 |
 | [CTFTTE-FOR-034](../techniques/CTFTTE-FOR-034.md) | Obfuscated client-side script in a web artifact | [CTFTCTE-FOR-034](../countertechniques/CTFTCTE-FOR-034.md) | Deobfuscate and trace client-side script to the payload | T1027, T1059.007 |
+| [CTFTTE-FOR-035](../techniques/CTFTTE-FOR-035.md) | Virtual-disk container labyrinth | [CTFTCTE-FOR-035](../countertechniques/CTFTCTE-FOR-035.md) | Convert, decrypt and map virtual-disk containers | T1006 |
 
 ---
 *See [CORRELATION.md](../CORRELATION.md) for the full cross-reference matrix.*

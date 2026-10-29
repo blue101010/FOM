@@ -8,7 +8,10 @@
 
 ## Offensive Recovery (CTF practitioner / solver)
 
-Identify the hash type, build masks/rules, crack with hashcat/john, and verify.
+Identify the hash type, build masks/rules, crack with hashcat/john, and verify. When the
+plaintext follows a known external format (word address, date, serial), derive the mask
+position-by-position from that format — custom charsets per position — before spending
+GPU time; a format-constrained mask collapses the keyspace far below any wordlist.
 
 ## Forensic / Blue-Team Perspective (DFIR analyst)
 

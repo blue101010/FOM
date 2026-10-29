@@ -2,7 +2,7 @@
 
 > **Domain ID:** `CTFT-TA-OSI`  
 > **HTB mapping:** HTB: OSINT  
-> **Techniques:** 9
+> **Techniques:** 10
 
 ## Description
 
@@ -35,6 +35,7 @@ per entry**, never the definition of an entry.
 | [CTFTTE-OSI-007](../techniques/CTFTTE-OSI-007.md) | Search-engine mining (dorking) | [CTFTCTE-OSI-007](../countertechniques/CTFTCTE-OSI-007.md) | Run advanced dorks and search operators | T1593.002 |
 | [CTFTTE-OSI-008](../techniques/CTFTTE-OSI-008.md) | ASN / IP-range / subdomain recon | [CTFTCTE-OSI-008](../countertechniques/CTFTCTE-OSI-008.md) | Map ASN, ranges, subdomains (bbot, assetfinder) | T1596.001 |
 | [CTFTTE-OSI-009](../techniques/CTFTTE-OSI-009.md) | Historical-infrastructure lure | [CTFTCTE-OSI-009](../countertechniques/CTFTCTE-OSI-009.md) | Gate historical OSINT behind current-surface checks | — |
+| [CTFTTE-OSI-010](../techniques/CTFTTE-OSI-010.md) | Word-address geocoding pivot | [CTFTCTE-OSI-010](../countertechniques/CTFTCTE-OSI-010.md) | Resolve word addresses to locations and attribution | T1132, T1589 |
 
 ---
 *See [CORRELATION.md](../CORRELATION.md) for the full cross-reference matrix.*

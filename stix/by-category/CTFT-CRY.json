@@ -765,7 +765,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTTE-CRY-012 - Hash-cracking maze with constraints",
-      "description": "The flag is a hash whose preimage satisfies extra constraints (mask, salt, charset).",
+      "description": "The flag is a hash whose preimage satisfies extra constraints (mask, salt, charset). The hash itself is strong (sha256crypt and peers), so raw brute force is hopeless; the intended path is that the shape of the plaintext is leaked by the challenge story and the solver must turn that shape into a mask or rule set. A second, harder variant gives a plaintext that follows an external fixed format — a word address, a date, a serial number — where each position's character class is known, collapsing the keyspace by orders of magnitude. The concealment is the missing constraint statement: the solver must notice that the format is knowable before any attack can succeed.",
       "kill_chain_phases": [
         {
           "kill_chain_name": "ctft",
@@ -795,7 +795,7 @@
       "modified": "2026-06-10T18:01:52.000Z",
       "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
       "name": "CTFTCTE-CRY-012 - Crack hashes under masks/rules",
-      "description": "Identify the hash type, build masks/rules, crack with hashcat/john, and verify.",
+      "description": "Identify the hash type, build masks/rules, crack with hashcat/john, and verify. When the plaintext follows a known external format (word address, date, serial), derive the mask position-by-position from that format — custom charsets per position — before spending GPU time; a format-constrained mask collapses the keyspace far below any wordlist.",
       "x_ctft_category": "CRY",
       "x_ctft_domain": "CRY",
       "x_ctft_role": "resolution",

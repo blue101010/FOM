@@ -60,13 +60,13 @@ Order and short labels follow the challenge-category picker.
 
 | # | Domain | Label | Name | HTB | Pairs |
 | --- | --- | --- | --- | --- | --- |
-| 1 | [CTFT-TA-FOR](tactics/CTFT-TA-FOR.md) | Forensics | Forensics | HTB: Forensics | 34 |
+| 1 | [CTFT-TA-FOR](tactics/CTFT-TA-FOR.md) | Forensics | Forensics | HTB: Forensics | 35 |
 | 2 | [CTFT-TA-WEB](tactics/CTFT-TA-WEB.md) | Web | Web Exploitation | HTB: Web | 29 |
 | 3 | [CTFT-TA-CRY](tactics/CTFT-TA-CRY.md) | Crypto | Cryptography | HTB: Crypto | 15 |
 | 4 | [CTFT-TA-PWN](tactics/CTFT-TA-PWN.md) | Binary | Binary Exploitation | HTB: Pwn | 12 |
 | 5 | [CTFT-TA-REV](tactics/CTFT-TA-REV.md) | Reverse | Reverse Engineering | HTB: Reversing | 10 |
 | 6 | [CTFT-TA-STE](tactics/CTFT-TA-STE.md) | Stego | Steganography | HTB: Forensics/Misc (Stego) | 11 |
-| 7 | [CTFT-TA-OSI](tactics/CTFT-TA-OSI.md) | OSINT | OSINT | HTB: OSINT | 9 |
+| 7 | [CTFT-TA-OSI](tactics/CTFT-TA-OSI.md) | OSINT | OSINT | HTB: OSINT | 10 |
 | 8 | [CTFT-TA-CLD](tactics/CTFT-TA-CLD.md) | Cloud | Cloud | HTB: Cloud | 11 |
 | 9 | [CTFT-TA-BLK](tactics/CTFT-TA-BLK.md) | Blockchain | Blockchain | HTB: Blockchain | 5 |
 | 10 | [CTFT-TA-AIM](tactics/CTFT-TA-AIM.md) | AI/ML | AI / ML | HTB: AI-ML | 7 |
@@ -79,8 +79,8 @@ Order and short labels follow the challenge-category picker.
 | 17 | [CTFT-TA-FPN](tactics/CTFT-TA-FPN.md) | Full Pwn | Full Pwn / Multi-Stage | HTB: Fullpwn | 20 |
 | 18 | [CTFT-TA-HWR](tactics/CTFT-TA-HWR.md) | Hardware | Hardware | HTB: Hardware | 3 |
 | 19 | [CTFT-TA-SDR](tactics/CTFT-TA-SDR.md) | SDR / RF | Software-Defined Radio | HTB: Hardware | 5 |
-| 20 | [CTFT-TA-IOT](tactics/CTFT-TA-IOT.md) | IoT / Embedded | Internet of Things | HTB: Misc (IoT) | 7 |
-| | | | **Total** | | **226** |
+| 20 | [CTFT-TA-IOT](tactics/CTFT-TA-IOT.md) | IoT / Embedded | Internet of Things | HTB: Misc (IoT) | 9 |
+| | | | **Total** | | **230** |
 
 **Retired:** `CTFT-TA-MSC` (Misc) is **removed**. It was a catch-all and every entry
 it held duplicated a precise tactic. Do not create `MSC` entries; file the challenge
@@ -159,7 +159,7 @@ produces no diff. Regenerate with `python v3/render_stix.py --write`.
 
 ## Catalogue integrity
 
-The corpus contains **226 complete technique/counter-technique pairs** across 20 domains.
+The corpus contains **230 complete technique/counter-technique pairs** across 20 domains.
 `CORRELATION.md`, `HIERARCHY.md` **and every tactic page** are generated, never hand-edited: the
 markdown entry files are the source of truth, so a renamed technique cannot drift from the matrix.
 After adding or renaming an entry:
@@ -198,7 +198,7 @@ disagree:
 
 | Maturity | Meaning | Count today |
 | --- | --- | --- |
-| `taxonomy_only` | identifiers and paired prose only | 217 |
+| `taxonomy_only` | identifiers and paired prose only | 221 |
 | `attested` | >= 2 independent CTF events + curated positives, negatives, boundaries | 2 |
 
 Three techniques were attested by reading the write-ups (`CRY-012`, `FOR-006`, `CLD-001`); the
@@ -211,7 +211,7 @@ human-readable step; execution belongs to a separately authorized laboratory run
 
 ### Known coverage debt
 
-- **Evidence is the bottleneck.** 266 of 452 entry files still carry the `Add challenge write-up
+- **Evidence is the bottleneck.** 265 of 460 entry files still carry the `Add challenge write-up
   link` marker. Mining the local write-up base attested **3** core techniques (`CRY-012`,
   `FOR-006`, `CLD-001`); the remaining 32 need sources that do not exist locally.
   `v3/evidence.curated.json` records the rejected candidates and why, so they are not re-proposed.

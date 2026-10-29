@@ -2367,6 +2367,73 @@
       "source_ref": "course-of-action--2618d469-4767-50f4-b211-a91f58c773ed",
       "target_ref": "attack-pattern--f9823966-c46c-5541-85f3-e93a5344b011",
       "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--6ded5590-36d1-53df-832c-de3d5d601698",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FOR-035 - Virtual-disk container labyrinth",
+      "description": "The evidence is a full-disk image wrapped in one or more virtualization containers: an appliance archive (a tar holding a .ovf descriptor, .mf manifest and .vmdk member), a qcow2 image encrypted with the legacy qcow2 AES format, a raw dump whose partition table carries garbage or misleading entries, or the same disk shipped in several formats where only one is current. The concealment is format friction: each layer needs a different converter, the encrypted qcow2 refuses every filesystem tool until it is decrypted with its password, and partition offsets must be mapped before any carving or mounting applies. Distinct from CTFTTE-FOR-020 (a LUKS volume inside a filesystem) and CTFTTE-FOR-021 (LVM fragment reassembly): here the outermost obstacle is the virtualization container itself, not a volume manager or an encrypted filesystem.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "for"
+        }
+      ],
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FOR-035"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1006",
+          "description": "Direct Volume Access"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--e6db9438-69da-5baa-86af-c6722258d4ea",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FOR-035 - Convert, decrypt and map virtual-disk containers",
+      "description": "1. Identify every layer with file before choosing a tool: an appliance archive is a POSIX tar (tar -xvf yields the .ovf descriptor, .mf manifest and .vmdk member); a qcow2 reports its version and encryption; a raw dump reports its partition table. 2. Convert members to one working format with qemu-img convert (-f vmdk -O qcow2, or -O raw when the next tool wants raw). Converting copies the image, which also protects the original. 3. Detect legacy qcow2 AES encryption via qemu-img info / file (\"AES-encrypted\"). Decrypt by converting to another format — the converter prompts for the image password and no separate key file exists for that format; the password is the only secret. 4. Inspect the partition table (fdisk -l, sfdisk -d) and trust the start-sector offsets over CHS values: garbage CHS entries with sane offsets mean the table was scrambled, not the filesystems. 5. Map the partitions (losetup -fP, kpartx -av) and mount each one; when several images of the same disk exist, compare content hashes to find the authoritative copy.",
+      "x_ctft_category": "FOR",
+      "x_ctft_domain": "FOR",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FOR-035"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1006",
+          "description": "Direct Volume Access"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--bed2015f-59d7-5792-a45f-cd13d63aa286",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--e6db9438-69da-5baa-86af-c6722258d4ea",
+      "target_ref": "attack-pattern--6ded5590-36d1-53df-832c-de3d5d601698",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     }
   ]
 }

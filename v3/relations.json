@@ -2,10 +2,10 @@
   "model": "CTFT",
   "schema_version": "3.0",
   "collection": "relations",
-  "generated_at": "2026-10-29T14:39:07+00:00",
+  "generated_at": "2026-10-29T15:51:59+00:00",
   "note": "Generated. Derived `solves` edges come from the markdown pairing; edit v3/relations.curated.json for anything else.",
   "counts": {
-    "derived": 226,
+    "derived": 230,
     "curated": 6
   },
   "items": [
@@ -721,6 +721,15 @@
       "confidence": "high"
     },
     {
+      "id": "REL-SOLVES-FOR-035",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-FOR-035",
+      "target": "CTFTTE-FOR-035",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
       "id": "REL-SOLVES-FPN-001",
       "schema_version": "3.0",
       "type": "solves",
@@ -1144,6 +1153,24 @@
       "confidence": "high"
     },
     {
+      "id": "REL-SOLVES-IOT-008",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-IOT-008",
+      "target": "CTFTTE-IOT-008",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
+      "id": "REL-SOLVES-IOT-009",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-IOT-009",
+      "target": "CTFTTE-IOT-009",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
       "id": "REL-SOLVES-JAL-001",
       "schema_version": "3.0",
       "type": "solves",
@@ -1437,6 +1464,15 @@
       "type": "solves",
       "source": "CTFTCTE-OSI-009",
       "target": "CTFTTE-OSI-009",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
+      "id": "REL-SOLVES-OSI-010",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-OSI-010",
+      "target": "CTFTTE-OSI-010",
       "origin": "derived",
       "confidence": "high"
     },
