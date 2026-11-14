@@ -14,3 +14,7 @@ DNS lookup utility from BIND for querying records.
 ## Related Techniques
 
 CTFTCTE-OSI-009, CTFTTE-OSI-009
+
+## Skills
+
+- [CTFTSKL-015 — ctf-infrastructure-history-correlation](../skills/CTFTSKL-015.md)

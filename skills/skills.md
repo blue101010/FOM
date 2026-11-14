@@ -25,6 +25,10 @@ when a skill chip is clicked.
 | [CTFTSKL-010](CTFTSKL-010.md) | ctf-web-caido | Tool manual | [.github/skills/ctf-web-caido/SKILL.md](../../.github/skills/ctf-web-caido/SKILL.md) | WEB-001/002/003/004/007/009/012/014/018/020/022/024..029 |
 | [CTFTSKL-011](CTFTSKL-011.md) | ctf-stego-lsb | Fine-grained skill | [ctf-skills-main/ctf-stego-lsb/SKILL.md](../../ctf-skills-main/ctf-stego-lsb/SKILL.md) | STE-001 |
 | [CTFTSKL-012](CTFTSKL-012.md) | ctf-wordlists | Tool manual | [ctf-skills-main/ctf-wordlists/SKILL.md](../../ctf-skills-main/ctf-wordlists/SKILL.md) | CRY-012 |
+| [CTFTSKL-013](CTFTSKL-013.md) | ctf-urlscan-rulecraft | Tool manual | [ctf-skills-main/ctf-urlscan-rulecraft/SKILL.md](../../ctf-skills-main/ctf-urlscan-rulecraft/SKILL.md) | OSI-003 |
+| [CTFTSKL-014](CTFTSKL-014.md) | ctf-social-thread-recovery | Tool manual | [ctf-skills-main/ctf-social-thread-recovery/SKILL.md](../../ctf-skills-main/ctf-social-thread-recovery/SKILL.md) | OSI-003/005 |
+| [CTFTSKL-015](CTFTSKL-015.md) | ctf-infrastructure-history-correlation | Domain skill | [ctf-skills-main/ctf-infrastructure-history-correlation/SKILL.md](../../ctf-skills-main/ctf-infrastructure-history-correlation/SKILL.md) | OSI-003/008/009 |
+| [CTFTSKL-016](CTFTSKL-016.md) | ctf-threat-report-ioc-pivot | Tool manual | [ctf-skills-main/ctf-threat-report-ioc-pivot/SKILL.md](../../ctf-skills-main/ctf-threat-report-ioc-pivot/SKILL.md) | OSI-005/008 |
 
 Fiche format (parsed by `franckysolve/fom_nav.py`):
 

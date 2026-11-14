@@ -43,3 +43,7 @@ https://archive.ph/newest/https://target.example/page
 ## Related Techniques
 
 CTFTTE-OSI-003, CTFTCTE-OSI-003
+
+## Skills
+
+- [CTFTSKL-014 — ctf-social-thread-recovery](../skills/CTFTSKL-014.md)

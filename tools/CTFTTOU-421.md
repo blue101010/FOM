@@ -47,3 +47,8 @@ git clone --mirror https://github.com/owner/name.git && git -C name.git log -S '
 ## Related Techniques
 
 CTFTTE-OSI-005, CTFTCTE-OSI-005
+
+## Skills
+
+- [CTFTSKL-014 — ctf-social-thread-recovery](../skills/CTFTSKL-014.md)
+- [CTFTSKL-016 — ctf-threat-report-ioc-pivot](../skills/CTFTSKL-016.md)

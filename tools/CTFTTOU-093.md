@@ -77,3 +77,7 @@ bbot -t target.com -f web --dry-run
 ## Related Techniques
 
 CTFTCTE-OSI-008, CTFTTE-OSI-008
+
+## Skills
+
+- [CTFTSKL-016 — ctf-threat-report-ioc-pivot](../skills/CTFTSKL-016.md)

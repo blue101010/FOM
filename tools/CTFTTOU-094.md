@@ -59,3 +59,7 @@ awk -F'?' 'NF>1 {print $2}' urls.txt | tr '&' '\n' | cut -d= -f1 | sort -u
 ## Related Techniques
 
 CTFTCTE-OSI-003, CTFTTE-OSI-003
+
+## Skills
+
+- [CTFTSKL-014 — ctf-social-thread-recovery](../skills/CTFTSKL-014.md)
