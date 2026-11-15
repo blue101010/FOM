@@ -6,10 +6,11 @@
 
 ## Description
 
-Derives exact urlscan.io search rules from stored scan metadata, DOM text, resources and response
-hashes. It distinguishes primary-page fields from all-request fields, models indexed text and its
-prefix cutoff, records plan-gated validation honestly, and prevents punctuation variants from
-replacing evidence.
+Derives exact urlscan.io search rules from stored scan metadata, DOM text, open-directory listings,
+resources and response hashes. It distinguishes unquoted URL wildcards from exact title phrases,
+counts files separately from subdirectories/navigation links, models indexed text and its prefix
+cutoff, records plan-gated validation honestly, and prevents punctuation variants from replacing
+evidence.
 
 ## Skill file
 
@@ -34,6 +35,7 @@ evidence:
 
 - urlscan.io search, result, DOM and Content views (no FOM tool sheet yet)
 - bundled `ctf-skills-main/ctf-urlscan-rulecraft/scripts/urlscan_text.py`
+- bundled `ctf-skills-main/ctf-urlscan-rulecraft/scripts/urlscan_autoindex.py`
 
 ## Agents
 

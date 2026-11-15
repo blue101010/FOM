@@ -9,7 +9,7 @@
 Normalizes saved Shodan, URLScan, DNS and certificate observations into provenance-preserving events,
 orders them by provider observation time, and builds conservative clusters using strong pivots. It
 separates current banners from historical services and prevents generic titles, ports or ASNs from
-becoming unsupported attribution edges.
+becoming unsupported attribution edges while retaining ASN/organization as hosting context.
 
 ## Skill file
 
