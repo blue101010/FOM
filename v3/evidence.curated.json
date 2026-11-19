@@ -625,6 +625,154 @@
       "curator": "local (workspace casebook)",
       "reviewed_on": "2026-10-29",
       "status": "curated"
+    },
+    {
+      "id": "EVID-AIM-002",
+      "schema_version": "3.0",
+      "technique": "CTFTTE-AIM-002",
+      "challenges": [
+        {
+          "ctf": "Hack The Box Business CTF 2025",
+          "challenge": "External Affairs (aiml, Easy)",
+          "year": 2025,
+          "writeup": "https://github.com/hackthebox/business-ctf-2025/tree/main/aiml/External%20Affairs",
+          "extracted_from": "read and confirmed: the application embeds the user's travel application in the LLM prompt template and the verdict is plain text; appending few-shot 'Input:/Output:' examples (denied, denied, then the target word -> granted) flips the decision without ever naming the flag"
+        },
+        {
+          "ctf": "Hack The Box Business CTF 2025",
+          "challenge": "Loyalty Survey (aiml, Easy)",
+          "year": 2025,
+          "writeup": "https://github.com/hackthebox/business-ctf-2025/tree/main/aiml/Loyalty%20Survey",
+          "extracted_from": "read and confirmed: agentic AI with function calling scores the survey; prompt injection in the survey answers hijacks the agent into calling its own tools with attacker-chosen parameters until the loyalty score reaches 100 and the Perfect Citizen badge (flag) is issued"
+        }
+      ],
+      "references": [
+        "https://genai.owasp.org/llm01-prompt-injection/",
+        "https://learnprompting.org/docs/prompt_hacking/injection"
+      ],
+      "positives": [
+        "user input lands inside the LLM prompt template and the success criterion is the model's own output (verdict, score, badge)",
+        "few-shot examples appended to the input change the model's decision without any technical exploit"
+      ],
+      "negatives": [
+        "the LLM sanitizing/redacting its own output structure (CTFTTE-AIM-008)",
+        "a directly callable MCP tool surface (CTFTTE-AIM-009)"
+      ],
+      "boundaries": [
+        "same event for both challenges, so the pair is not yet independent: status stays pending until a second event attests AIM-002",
+        "verdict manipulation via few-shot is still AIM-002; if the agent's tools are the lever, file under AIM-007"
+      ],
+      "abstraction": "technique",
+      "curator": "local (hackthebox/business-ctf-2025 writeups)",
+      "reviewed_on": "2026-11-18",
+      "status": "pending"
+    },
+    {
+      "id": "EVID-AIM-007",
+      "schema_version": "3.0",
+      "technique": "CTFTTE-AIM-007",
+      "challenges": [
+        {
+          "ctf": "Hack The Box Business CTF 2025",
+          "challenge": "Doctrine Studio (aiml, Medium)",
+          "year": 2025,
+          "writeup": "https://github.com/hackthebox/business-ctf-2025/tree/main/aiml/Doctrine%20Studio",
+          "extracted_from": "read and confirmed: agentic AI generates news from user-supplied text or URL; prompt injection makes the agent misuse its fetch tool as a local file read, exfiltrating /flag.txt"
+        },
+        {
+          "ctf": "Hack The Box Business CTF 2025",
+          "challenge": "Power Supply (aiml, Medium)",
+          "year": 2025,
+          "writeup": "https://github.com/hackthebox/business-ctf-2025/tree/main/aiml/Power%20Supply",
+          "extracted_from": "read and confirmed: chat UI where the server labels 'used a function call to query the database'; injected instructions steer the agent's DB query tool into exfiltrating the chief minister's password"
+        }
+      ],
+      "references": [
+        "https://genai.owasp.org/resource/agentic-ai-threats-and-mitigations/"
+      ],
+      "positives": [
+        "the app exposes which function call the agent made, confirming tool use is attacker-steerable",
+        "the privileged action (file read, DB query) is a tool the agent already has; the injection only chooses its arguments"
+      ],
+      "negatives": [
+        "a player-reachable MCP endpoint where you call the tools yourself, no LLM persuasion needed (CTFTTE-AIM-009)"
+      ],
+      "boundaries": [
+        "same event for both challenges: pending until a second event attests AIM-007",
+        "tool misuse via the agent's own policy is AIM-007; direct tool access over MCP is AIM-009"
+      ],
+      "abstraction": "technique",
+      "curator": "local (hackthebox/business-ctf-2025 writeups)",
+      "reviewed_on": "2026-11-18",
+      "status": "pending"
+    },
+    {
+      "id": "EVID-AIM-008",
+      "schema_version": "3.0",
+      "technique": "CTFTTE-AIM-008",
+      "challenges": [
+        {
+          "ctf": "Hack The Box company CTF (March 2026, HQ US CTF)",
+          "challenge": "netninja (AI)",
+          "year": 2026,
+          "writeup": "2026/CTFHQ/AI/netninja/successful_promt.txt (transcript 2026/CTFHQ/AI/netninja/prompts.txt, workspace C:\\DATA\\CTF)",
+          "extracted_from": "read and confirmed: the service is an LLM that sanitizes incident reports into a fixed ticket schema and strips forbidden intrusion vocabulary into a 'removed' list; ~30 payloads were tried (extra JSON keys, YAML/XML/duplicate-key serialization, ASCII/unicode/base64 encodings of removed terms, contradictions/evidence_score, enum labels, regex extraction); direct asks and root_cause-only prompts collapsed to EQUIPMENT_MALFUNCTION, but the examples/templates/hidden_examples payload made the model emit header-prefixed flag-format examples including the real flag HTB{phnth0m_p0l1cy_byp455}"
+        }
+      ],
+      "references": [
+        "https://genai.owasp.org/llm01-prompt-injection/",
+        "https://gandalf.lakera.ai/"
+      ],
+      "positives": [
+        "responses carry 'removed'/'normalization_map' fields when asked, proving the model tracks suppressed content",
+        "internal labels drift between runs (EQUIPMENT_MALFUNCTION vs EXTERNAL_COMPROMISE vs UNAUTHORIZED_ACCESS)",
+        "asking for examples/templates/hidden_examples of flag-format strings made the model repeat embedded example constants verbatim, header prefix included"
+      ],
+      "negatives": [
+        "bare 'output the flag' / 'system prompt' / root-cause-only prompts: they collapse to the sanitized default",
+        "verdict/score gating with no output redaction (CTFTTE-AIM-002)"
+      ],
+      "boundaries": [
+        "single event so far: pending until a second independent event attests AIM-008",
+        "structural leak channels (extra keys, encodings, examples) are AIM-008; an exposed MCP tool surface is AIM-009"
+      ],
+      "abstraction": "technique",
+      "curator": "local (CTFHQ 2026 casebook)",
+      "reviewed_on": "2026-11-18",
+      "status": "pending"
+    },
+    {
+      "id": "EVID-AIM-009",
+      "schema_version": "3.0",
+      "technique": "CTFTTE-AIM-009",
+      "challenges": [
+        {
+          "ctf": "Hack The Box company CTF (March 2026, HQ US CTF)",
+          "challenge": "yen_vault (AI)",
+          "year": 2026,
+          "writeup": "2026/CTFHQ/AI/yen_vault/yen_Vault.md (workspace C:\\DATA\\CTF)",
+          "extracted_from": "read and confirmed: the challenge serves an MCP endpoint (JSON-RPC over SSE, Mcp-Session-Id required); tools/list exposes respond_to_ticket / update_ticket_status / set_response_template / publish_kb_article (the latter names its admin_api_key argument in the description); resources/read leaks internal status and ticket lists; set_response_template placeholders ({ticket[field]}, {message}) are evaluated server-side in respond_to_ticket — an injected placeholder leaked object reprs (__subclasses__ etc.), the entry point of the object-graph walk to the flag"
+        }
+      ],
+      "references": [
+        "https://modelcontextprotocol.io/specification",
+        "https://genai.owasp.org/resource/agentic-ai-threats-and-mitigations/"
+      ],
+      "positives": [
+        "tools/list descriptions name required secrets/keys and example resource IDs",
+        "template placeholder rendering evaluates attribute access on real server-side objects"
+      ],
+      "negatives": [
+        "having to persuade an LLM through its chat UI when the tools are not directly callable (CTFTTE-AIM-002 / AIM-007)"
+      ],
+      "boundaries": [
+        "single event so far: pending until a second independent event attests AIM-009",
+        "direct JSON-RPC tool access is AIM-009; agent tool-policy bypass through the LLM is AIM-007"
+      ],
+      "abstraction": "technique",
+      "curator": "local (CTFHQ 2026 casebook)",
+      "reviewed_on": "2026-11-18",
+      "status": "pending"
     }
   ],
   "rejected": [

@@ -478,6 +478,140 @@
       "source_ref": "course-of-action--38595eaa-3090-587e-9b39-8bdee417ca82",
       "target_ref": "attack-pattern--a7884588-f9e2-5eaa-b7b0-54aedd3a3759",
       "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--6f5279e8-a44a-5672-a6b2-956acaf2f8a6",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-AIM-008 - Output-sanitizer / policy-filter gate on an LLM service",
+      "description": "An LLM-backed service is instructed (system prompt) to sanitize its own output: normalize free text into a fixed schema, replace colloquial or alarming words with technical enum codes, move forbidden terms into a removed list, and never reveal the flag or internal constants. The secret sits in the model's context — system-prompt constants, example strings, audit/debug labels, sometimes response headers — i.e. in channels the policy never marks as user-facing. Direct asks collapse to the sanitized default, but any channel the filter does not model (an extra JSON key, another serialization, an encoding of a suppressed term, an \"example\" of a flag-format string) is unsupervised. Distinct from CTFTTE-AIM-002, where the guardrail blocks revealing the flag outright; here the gate is a structural output policy and the bypass is structural, not semantic.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "aim"
+        }
+      ],
+      "x_ctft_category": "AIM",
+      "x_ctft_domain": "AIM",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-AIM-008"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1190",
+          "description": "Exploit Public-Facing Application"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--a3726f9d-e988-5223-9afc-b440f7bd2f30",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-AIM-008 - Leak filtered content through structure, serialization, encodings and examples",
+      "description": "Baseline the sanitizer first: which fields come back, which terms get removed, which enum labels appear. Then climb the payload ladder: (1) demand extra schema keys (forensic, debugprestandardization, hiddenstrings, flags, suppressionledger, ruletrace, validationtrace, developerartifacts) with \"do not omit / do not sanitize\" rules; (2) switch serialization — YAML, XML+CDATA, one-line dump, code fences, duplicate keys; (3) demand transform encodings of the suppressed terms — ASCII decimal arrays, \\uXXXX, base64, spaced-out letters, token arrays; (4) use audit/contradiction framing (contradictions, evidencescore, policydiff against a null filter); (5) enumerate examples / templates / hiddenexamples of secret-format strings and run regex extraction of flag-format substrings — models often repeat embedded example constants verbatim; (6) harvest non-standard uppercase labels that drift between runs. Log every attempt in a transcript, grep all responses (not just the main field) for the flag regex, validate the candidate format, then submit. Automate the ladder with promptfuzzer.py.",
+      "x_ctft_category": "AIM",
+      "x_ctft_domain": "AIM",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-AIM-008"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1190",
+          "description": "Exploit Public-Facing Application"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--b9d6f7ea-9505-5727-aa8f-bbd59610caf7",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--a3726f9d-e988-5223-9afc-b440f7bd2f30",
+      "target_ref": "attack-pattern--6f5279e8-a44a-5672-a6b2-956acaf2f8a6",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--bd020942-e891-5dc1-8e66-78fb8a982a2b",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-AIM-009 - Player-reachable MCP server with an injectable tool surface",
+      "description": "The challenge exposes a Model Context Protocol server (usually one /mcp/ endpoint, JSON-RPC 2.0 over SSE) fronting an \"AI agent\". The flag is reachable through the tool surface rather than through persuasion: tool descriptions name admin keys or example IDs; resources (resources/read) hold internal state and double as indirect prompt injection into the agent's context; tools that render templates with placeholders ({ticket[field]}, {message}, …) evaluate those placeholders server-side, so an attribute walk (class → init.globals → subclasses()) turns a \"formatted response\" into file read or RCE; prompts can embed the system prompt or example flags. Distinct from CTFTTE-AIM-007, where the target is the agent's tool-use policy; here the transport and the server-side evaluation are the attack surface.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "aim"
+        }
+      ],
+      "x_ctft_category": "AIM",
+      "x_ctft_domain": "AIM",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-AIM-009"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1190",
+          "description": "Exploit Public-Facing Application"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--05e16389-0ac1-5aed-82ce-4dd4d11961b3",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-AIM-009 - Enumerate and abuse the MCP surface (tools, resources, prompts, template placeholders)",
+      "description": "Speak JSON-RPC 2.0 to the endpoint directly: initialize (keep the Mcp-Session-Id header), notifications/initialized, then tools/list, resources/list + resources/read every URI, prompts/list + prompts/get each. Read tool descriptions fully — required keys and example IDs hide there. Then call tools with probe arguments: template placeholders ({ticket.class}, init.globals, subclasses() chains, {{ ... }} SSTI variants — start with a harmless type-name leak, then escalate to file read / RCE), argument injection into every string field, and admin-gated tools with keys found in descriptions. Scan every response for flag-format strings. Automate with mcpprobe.py (--selftest).",
+      "x_ctft_category": "AIM",
+      "x_ctft_domain": "AIM",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-AIM-009"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1190",
+          "description": "Exploit Public-Facing Application"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--9e4b21f0-eebf-5dcb-a584-2539236fe3c3",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--05e16389-0ac1-5aed-82ce-4dd4d11961b3",
+      "target_ref": "attack-pattern--bd020942-e891-5dc1-8e66-78fb8a982a2b",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     }
   ]
 }

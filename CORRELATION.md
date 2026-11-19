@@ -4,8 +4,8 @@ Every **Design / Hide Technique** (`CTFTTE-<CAT>-NNN`) and the
 **Resolution-Technique** (`CTFTCTE-<CAT>-NNN`) that recovers it, grouped by domain.
 IDs pair one-to-one: `CTFTTE-FOR-004` is always answered by `CTFTCTE-FOR-004`.
 
-> Generated from the files in `techniques/` and `countertechniques/` — corpus fingerprint `7ab07605630c65e0`
-> by `v3/render_taxonomy_docs.py`. **230 complete pairs** across **20 active domains**. Do not hand-edit: rename the entry, then re-render.
+> Generated from the files in `techniques/` and `countertechniques/` — corpus fingerprint `af07016359b0fa4d`
+> by `v3/render_taxonomy_docs.py`. **232 complete pairs** across **20 active domains**. Do not hand-edit: rename the entry, then re-render.
 
 ---
 
@@ -24,7 +24,7 @@ Order follows the challenge-category picker.
 | 7 | [`OSI`](#ctft-ta-osi) | OSINT | OSINT | 10 |
 | 8 | [`CLD`](#ctft-ta-cld) | Cloud | Cloud | 11 |
 | 9 | [`BLK`](#ctft-ta-blk) | Blockchain | Blockchain | 5 |
-| 10 | [`AIM`](#ctft-ta-aim) | AI/ML | AI / ML | 7 |
+| 10 | [`AIM`](#ctft-ta-aim) | AI/ML | AI / ML | 9 |
 | 11 | [`ICS`](#ctft-ta-ics) | ICS/SCADA | ICS / SCADA | 9 |
 | 12 | [`MOB`](#ctft-ta-mob) | Mobile | Mobile | 9 |
 | 13 | [`JAL`](#ctft-ta-jal) | Jail escape | Jail / Sandbox Escape | 6 |
@@ -35,7 +35,7 @@ Order follows the challenge-category picker.
 | 18 | [`HWR`](#ctft-ta-hwr) | Hardware | Hardware | 3 |
 | 19 | [`IOT`](#ctft-ta-iot) | IoT / Embedded | IoT / Embedded | 9 |
 | 20 | [`SDR`](#ctft-ta-sdr) | SDR / RF | Software-Defined Radio | 5 |
-| | | | **Total** | **230** |
+| | | | **Total** | **232** |
 
 **Retired — do not use.** `MSC` (Misc) was a catch-all whose entries all
 duplicated a precise domain; file those challenges under `JAL`, `COD`, `GAM`
@@ -255,7 +255,7 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 
 ## <a id="ctft-ta-aim"></a>`CTFT-TA-AIM` — AI / ML
 
-> [domain page](tactics/CTFT-TA-AIM.md) · 7 pairs · HTB: AI-ML
+> [domain page](tactics/CTFT-TA-AIM.md) · 9 pairs · HTB: AI-ML
 
 | # | Technique ID | Hide / Design name | Resolution-technique ID | Recovery action |
 | --- | --- | --- | --- | --- |
@@ -266,6 +266,8 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 | 5 | [CTFTTE-AIM-005](techniques/CTFTTE-AIM-005.md) | Training-data leakage via queries | [CTFTCTE-AIM-005](countertechniques/CTFTCTE-AIM-005.md) | Recover secrets through model inversion |
 | 6 | [CTFTTE-AIM-006](techniques/CTFTTE-AIM-006.md) | Self-hosted LLM platform misconfiguration | [CTFTCTE-AIM-006](countertechniques/CTFTCTE-AIM-006.md) | Audit ollama/oobabooga deployments for exposed endpoints |
 | 7 | [CTFTTE-AIM-007](techniques/CTFTTE-AIM-007.md) | Agent / tool-calling guardrail bypass | [CTFTCTE-AIM-007](countertechniques/CTFTCTE-AIM-007.md) | Bypass agent tool policies |
+| 8 | [CTFTTE-AIM-008](techniques/CTFTTE-AIM-008.md) | Output-sanitizer / policy-filter gate on an LLM service | [CTFTCTE-AIM-008](countertechniques/CTFTCTE-AIM-008.md) | Leak filtered content through structure, serialization, encodings and examples |
+| 9 | [CTFTTE-AIM-009](techniques/CTFTTE-AIM-009.md) | Player-reachable MCP server with an injectable tool surface | [CTFTCTE-AIM-009](countertechniques/CTFTCTE-AIM-009.md) | Enumerate and abuse the MCP surface (tools, resources, prompts, template placeholders) |
 
 
 ## <a id="ctft-ta-ics"></a>`CTFT-TA-ICS` — ICS / SCADA

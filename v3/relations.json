@@ -2,10 +2,10 @@
   "model": "CTFT",
   "schema_version": "3.0",
   "collection": "relations",
-  "generated_at": "2026-10-29T15:51:59+00:00",
+  "generated_at": "2026-11-18T20:59:43+00:00",
   "note": "Generated. Derived `solves` edges come from the markdown pairing; edit v3/relations.curated.json for anything else.",
   "counts": {
-    "derived": 230,
+    "derived": 232,
     "curated": 6
   },
   "items": [
@@ -69,6 +69,24 @@
       "type": "solves",
       "source": "CTFTCTE-AIM-007",
       "target": "CTFTTE-AIM-007",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
+      "id": "REL-SOLVES-AIM-008",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-AIM-008",
+      "target": "CTFTTE-AIM-008",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
+      "id": "REL-SOLVES-AIM-009",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-AIM-009",
+      "target": "CTFTTE-AIM-009",
       "origin": "derived",
       "confidence": "high"
     },

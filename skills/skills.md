@@ -29,6 +29,8 @@ when a skill chip is clicked.
 | [CTFTSKL-014](CTFTSKL-014.md) | ctf-social-thread-recovery | Tool manual | [ctf-skills-main/ctf-social-thread-recovery/SKILL.md](../../ctf-skills-main/ctf-social-thread-recovery/SKILL.md) | OSI-003/005 |
 | [CTFTSKL-015](CTFTSKL-015.md) | ctf-infrastructure-history-correlation | Domain skill | [ctf-skills-main/ctf-infrastructure-history-correlation/SKILL.md](../../ctf-skills-main/ctf-infrastructure-history-correlation/SKILL.md) | OSI-003/008/009 |
 | [CTFTSKL-016](CTFTSKL-016.md) | ctf-threat-report-ioc-pivot | Tool manual | [ctf-skills-main/ctf-threat-report-ioc-pivot/SKILL.md](../../ctf-skills-main/ctf-threat-report-ioc-pivot/SKILL.md) | OSI-005/008 |
+| [CTFTSKL-017](CTFTSKL-017.md) | ctf-ai-ml | Domain skill | [ctf-skills-main/ctf-ai-ml/SKILL.md](../../ctf-skills-main/ctf-ai-ml/SKILL.md) | AIM-001..007, AIM-009 |
+| [CTFTSKL-018](CTFTSKL-018.md) | ctf-ai-llm-sanitizer-bypass | Fine-grained skill | [ctf-skills-main/ctf-ai-llm-sanitizer-bypass/SKILL.md](../../ctf-skills-main/ctf-ai-llm-sanitizer-bypass/SKILL.md) | AIM-008 |
 
 Fiche format (parsed by `franckysolve/fom_nav.py`):
 

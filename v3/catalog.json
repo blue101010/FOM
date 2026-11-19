@@ -2,8 +2,8 @@
   "model": "CTFT",
   "schema_version": "3.0",
   "collection": "catalog",
-  "generated_at": "2026-10-29T15:52:40+00:00",
-  "source_sha256": "876b4b2176f7f72b136f4fa87eedc33a02095df96d03134fa2c9c9f0cf94e702",
+  "generated_at": "2026-11-18T21:00:03+00:00",
+  "source_sha256": "d3608e01cf5143f39485cf45e27ce840d71f85adc7975b9152410fbe828f654a",
   "items": [
     {
       "id": "CTFTPAIR-AIM-001",
@@ -152,6 +152,50 @@
         "id": "CTFTCTE-AIM-007",
         "name": "Bypass agent tool policies",
         "path": "countertechniques/CTFTCTE-AIM-007.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-AIM-008",
+      "schema_version": "3.0",
+      "domain": "AIM",
+      "tactic": "CTFT-TA-AIM",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-AIM-008",
+        "name": "Output-sanitizer / policy-filter gate on an LLM service",
+        "path": "techniques/CTFTTE-AIM-008.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-AIM-008",
+        "name": "Leak filtered content through structure, serialization, encodings and examples",
+        "path": "countertechniques/CTFTCTE-AIM-008.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-AIM-009",
+      "schema_version": "3.0",
+      "domain": "AIM",
+      "tactic": "CTFT-TA-AIM",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-AIM-009",
+        "name": "Player-reachable MCP server with an injectable tool surface",
+        "path": "techniques/CTFTTE-AIM-009.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-AIM-009",
+        "name": "Enumerate and abuse the MCP surface (tools, resources, prompts, template placeholders)",
+        "path": "countertechniques/CTFTCTE-AIM-009.md",
         "role": "resolution"
       },
       "maturity": "taxonomy_only",

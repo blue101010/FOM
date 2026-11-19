@@ -1,7 +1,7 @@
 {
   "model": "CTFT",
   "version": "1.2",
-  "generated": "2026-10-29T15:51:59+00:00",
+  "generated": "2026-11-18T20:59:43+00:00",
   "relates_to": [
     "MITRE ATT&CK",
     "CAPEC",
@@ -14,7 +14,7 @@
       "id": "CTFT-TA-AIM",
       "name": "AI / ML",
       "path": "tactics/CTFT-TA-AIM.md",
-      "count": 7
+      "count": 9
     },
     {
       "id": "CTFT-TA-BLK",
@@ -131,7 +131,7 @@
       "count": 29
     }
   ],
-  "total_techniques": 230,
+  "total_techniques": 232,
   "techniques": [
     {
       "tactic": "CTFT-TA-AIM",
@@ -229,6 +229,34 @@
         "id": "CTFTCTE-AIM-007",
         "name": "Bypass agent tool policies",
         "path": "countertechniques/CTFTCTE-AIM-007.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-AIM",
+      "category": "AIM",
+      "technique": {
+        "id": "CTFTTE-AIM-008",
+        "name": "Output-sanitizer / policy-filter gate on an LLM service",
+        "path": "techniques/CTFTTE-AIM-008.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-AIM-008",
+        "name": "Leak filtered content through structure, serialization, encodings and examples",
+        "path": "countertechniques/CTFTCTE-AIM-008.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-AIM",
+      "category": "AIM",
+      "technique": {
+        "id": "CTFTTE-AIM-009",
+        "name": "Player-reachable MCP server with an injectable tool surface",
+        "path": "techniques/CTFTTE-AIM-009.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-AIM-009",
+        "name": "Enumerate and abuse the MCP surface (tools, resources, prompts, template placeholders)",
+        "path": "countertechniques/CTFTCTE-AIM-009.md"
       }
     },
     {
@@ -3362,6 +3390,8 @@
     "CTFTTE-AIM-005": "CTFTCTE-AIM-005",
     "CTFTTE-AIM-006": "CTFTCTE-AIM-006",
     "CTFTTE-AIM-007": "CTFTCTE-AIM-007",
+    "CTFTTE-AIM-008": "CTFTCTE-AIM-008",
+    "CTFTTE-AIM-009": "CTFTCTE-AIM-009",
     "CTFTTE-BLK-001": "CTFTCTE-BLK-001",
     "CTFTTE-BLK-002": "CTFTCTE-BLK-002",
     "CTFTTE-BLK-003": "CTFTCTE-BLK-003",
@@ -3635,6 +3665,20 @@
       "counter_name": "Bypass agent tool policies",
       "tactic": "CTFT-TA-AIM",
       "path": "techniques/CTFTTE-AIM-007.md"
+    },
+    "CTFTTE-AIM-008": {
+      "name": "Output-sanitizer / policy-filter gate on an LLM service",
+      "counter_id": "CTFTCTE-AIM-008",
+      "counter_name": "Leak filtered content through structure, serialization, encodings and examples",
+      "tactic": "CTFT-TA-AIM",
+      "path": "techniques/CTFTTE-AIM-008.md"
+    },
+    "CTFTTE-AIM-009": {
+      "name": "Player-reachable MCP server with an injectable tool surface",
+      "counter_id": "CTFTCTE-AIM-009",
+      "counter_name": "Enumerate and abuse the MCP surface (tools, resources, prompts, template placeholders)",
+      "tactic": "CTFT-TA-AIM",
+      "path": "techniques/CTFTTE-AIM-009.md"
     },
     "CTFTTE-BLK-001": {
       "name": "Private storage-variable concealment",
@@ -5247,6 +5291,20 @@
       "technique_name": "Agent / tool-calling guardrail bypass",
       "tactic": "CTFT-TA-AIM",
       "path": "countertechniques/CTFTCTE-AIM-007.md"
+    },
+    "CTFTCTE-AIM-008": {
+      "name": "Leak filtered content through structure, serialization, encodings and examples",
+      "technique_id": "CTFTTE-AIM-008",
+      "technique_name": "Output-sanitizer / policy-filter gate on an LLM service",
+      "tactic": "CTFT-TA-AIM",
+      "path": "countertechniques/CTFTCTE-AIM-008.md"
+    },
+    "CTFTCTE-AIM-009": {
+      "name": "Enumerate and abuse the MCP surface (tools, resources, prompts, template placeholders)",
+      "technique_id": "CTFTTE-AIM-009",
+      "technique_name": "Player-reachable MCP server with an injectable tool surface",
+      "tactic": "CTFT-TA-AIM",
+      "path": "countertechniques/CTFTCTE-AIM-009.md"
     },
     "CTFTCTE-BLK-001": {
       "name": "Read contract storage slots directly",

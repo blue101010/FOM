@@ -11,7 +11,7 @@ Reference tools used across CTFT techniques and counter-techniques.
 | [CTFTTOU-005](CTFTTOU-005.md) | NTFS metadata analyzers | <https://ericzimmerman.github.io/> | CTFTCTE-FOR-018, CTFTTE-FOR-018 |
 | [CTFTTOU-006](CTFTTOU-006.md) | ExifTool | <https://exiftool.org/> | CTFTCTE-OSI-001, CTFTCTE-OSI-004, CTFTCTE-STE-004, CTFTCTE-STE-009, CTFTTE-OSI-001, CTFTTE-OSI-004, CTFTTE-STE-009 |
 | [CTFTTOU-007](CTFTTOU-007.md) | webcrack | <https://github.com/j4k0xb/webcrack> | CTFTCTE-WEB-019, CTFTCTE-WEB-022 |
-| [CTFTTOU-008](CTFTTOU-008.md) | Playwright | <https://playwright.dev/> | CTFTCTE-WEB-018, CTFTCTE-GAM-007, CTFTCTE-WEB-020, CTFTTE-AIM-002, CTFTCTE-AIM-002 |
+| [CTFTTOU-008](CTFTTOU-008.md) | Playwright | <https://playwright.dev/> | CTFTCTE-WEB-018, CTFTCTE-GAM-007, CTFTCTE-WEB-020, CTFTTE-AIM-002, CTFTCTE-AIM-002, CTFTTE-AIM-008, CTFTTE-AIM-009, CTFTCTE-AIM-008, CTFTCTE-AIM-009 |
 | [CTFTTOU-009](CTFTTOU-009.md) | ripgrep-all (rga) | <https://github.com/phiresky/ripgrep-all> | CTFTCTE-WEB-019 |
 | [CTFTTOU-010](CTFTTOU-010.md) | jwt_tool | <https://github.com/ticarpi/jwt_tool> | CTFTTE-WEB-003, CTFTCTE-WEB-003 |
 | [CTFTTOU-011](CTFTTOU-011.md) | name-that-hash | <https://github.com/HashPals/Name-That-Hash> | CTFTCTE-CRY-012, CTFTTE-CRY-012, CTFTTE-IOT-009, CTFTCTE-IOT-009 |
@@ -41,7 +41,7 @@ Reference tools used across CTFT techniques and counter-techniques.
 | [CTFTTOU-035](CTFTTOU-035.md) | ldapdomaindump | <https://github.com/dirkjanm/ldapdomaindump> | CTFTTE-FPN-020, CTFTCTE-FPN-020 |
 | [CTFTTOU-036](CTFTTOU-036.md) | grep | <https://www.gnu.org/software/grep/> | CTFTTE-FPN-020, CTFTCTE-FPN-020, CTFTTE-FOR-033, CTFTCTE-FOR-033 |
 | [CTFTTOU-037](CTFTTOU-037.md) | jq | <https://jqlang.github.io/jq/> | CTFTTE-FPN-020, CTFTCTE-FPN-020, CTFTTE-WEB-023, CTFTTE-WEB-025, CTFTTE-WEB-026, CTFTTE-WEB-027, CTFTCTE-WEB-023, CTFTCTE-WEB-024, CTFTCTE-WEB-025, CTFTCTE-WEB-026, CTFTCTE-WEB-027, CTFTCTE-WEB-028 |
-| [CTFTTOU-038](CTFTTOU-038.md) | curl | <https://curl.se/> | CTFTTE-FPN-016, CTFTCTE-FPN-016, CTFTTE-AIM-006, CTFTCTE-AIM-006, CTFTTE-AIM-002, CTFTCTE-AIM-002, CTFTTE-IOT-002, CTFTCTE-IOT-002, CTFTCTE-WEB-023 |
+| [CTFTTOU-038](CTFTTOU-038.md) | curl | <https://curl.se/> | CTFTTE-FPN-016, CTFTCTE-FPN-016, CTFTTE-AIM-006, CTFTCTE-AIM-006, CTFTTE-AIM-002, CTFTCTE-AIM-002, CTFTTE-AIM-008, CTFTTE-AIM-009, CTFTTE-IOT-002, CTFTCTE-AIM-008, CTFTCTE-AIM-009, CTFTCTE-IOT-002, CTFTCTE-WEB-023 |
 | [CTFTTOU-039](CTFTTOU-039.md) | numpy | <https://numpy.org/> | CTFTTE-AIM-001, CTFTCTE-AIM-001, CTFTTE-COD-002, CTFTCTE-COD-002 |
 | [CTFTTOU-040](CTFTTOU-040.md) | torch | <https://pytorch.org/> | CTFTTE-AIM-001, CTFTCTE-AIM-001, CTFTTE-AIM-003, CTFTCTE-AIM-003 |
 | [CTFTTOU-041](CTFTTOU-041.md) | onnx | <https://onnx.ai/> | CTFTTE-AIM-001, CTFTCTE-AIM-001 |
@@ -65,12 +65,12 @@ Reference tools used across CTFT techniques and counter-techniques.
 | [CTFTTOU-059](CTFTTOU-059.md) | PLCnext Engineer | <https://www.phoenixcontact.com/en-ca/products/programming-plcnext-engineer-1046008> | CTFTTE-ICS-007, CTFTCTE-ICS-007 |
 | [CTFTTOU-060](CTFTTOU-060.md) | PLCnext Store | <https://www.plcnextstore.com/> | CTFTTE-ICS-009, CTFTCTE-ICS-009 |
 | [CTFTTOU-061](CTFTTOU-061.md) | rockyou | <https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt> | CTFTTE-ICS-008, CTFTCTE-ICS-008 |
-| [CTFTTOU-062](CTFTTOU-062.md) | garak | <https://github.com/NVIDIA/garak> | CTFTTE-AIM-002, CTFTCTE-AIM-002, CTFTTE-AIM-007, CTFTCTE-AIM-007 |
-| [CTFTTOU-063](CTFTTOU-063.md) | promptfoo | <https://github.com/promptfoo/promptfoo> | CTFTTE-AIM-002, CTFTCTE-AIM-002 |
-| [CTFTTOU-064](CTFTTOU-064.md) | PyRIT | <https://github.com/microsoft/PyRIT> | CTFTTE-AIM-002, CTFTCTE-AIM-002, CTFTTE-AIM-007, CTFTCTE-AIM-007 |
+| [CTFTTOU-062](CTFTTOU-062.md) | garak | <https://github.com/NVIDIA/garak> | CTFTTE-AIM-002, CTFTCTE-AIM-002, CTFTTE-AIM-007, CTFTTE-AIM-008, CTFTCTE-AIM-007, CTFTCTE-AIM-008 |
+| [CTFTTOU-063](CTFTTOU-063.md) | promptfoo | <https://github.com/promptfoo/promptfoo> | CTFTTE-AIM-002, CTFTCTE-AIM-002, CTFTTE-AIM-008, CTFTCTE-AIM-008 |
+| [CTFTTOU-064](CTFTTOU-064.md) | PyRIT | <https://github.com/microsoft/PyRIT> | CTFTTE-AIM-002, CTFTCTE-AIM-002, CTFTTE-AIM-007, CTFTCTE-AIM-007, CTFTTE-AIM-008, CTFTCTE-AIM-008 |
 | [CTFTTOU-065](CTFTTOU-065.md) | Pandoras Box | <https://github.com/panuthept/Pandoras-Box> | CTFTTE-AIM-002, CTFTCTE-AIM-002 |
-| [CTFTTOU-066](CTFTTOU-066.md) | promptmap | <https://github.com/utkusen/promptmap> | CTFTTE-AIM-002, CTFTCTE-AIM-002 |
-| [CTFTTOU-067](CTFTTOU-067.md) | requests | <https://github.com/psf/requests> | CTFTTE-AIM-002, CTFTCTE-AIM-002 |
+| [CTFTTOU-066](CTFTTOU-066.md) | promptmap | <https://github.com/utkusen/promptmap> | CTFTTE-AIM-002, CTFTCTE-AIM-002, CTFTTE-AIM-008, CTFTCTE-AIM-008 |
+| [CTFTTOU-067](CTFTTOU-067.md) | requests | <https://github.com/psf/requests> | CTFTTE-AIM-002, CTFTCTE-AIM-002, CTFTTE-AIM-008, CTFTTE-AIM-009, CTFTCTE-AIM-008, CTFTCTE-AIM-009 |
 | [CTFTTOU-068](CTFTTOU-068.md) | tar-symlink-redirect.py | — | CTFTTE-PWN-009, CTFTCTE-PWN-009 |
 | [CTFTTOU-069](CTFTTOU-069.md) | tar-parent-traversal.py | — | CTFTTE-PWN-010, CTFTCTE-PWN-010 |
 | [CTFTTOU-070](CTFTTOU-070.md) | mutating-file-watchdog.py | — | CTFTTE-FOR-030, CTFTCTE-FOR-030 |
@@ -400,3 +400,5 @@ Reference tools used across CTFT techniques and counter-techniques.
 | [CTFTTOU-444](CTFTTOU-444.md) | qemu-img | <https://www.qemu.org/docs/master/interop/qemu-img.html> | CTFTTE-FOR-035, CTFTCTE-FOR-035, CTFTTE-IOT-008, CTFTCTE-IOT-008, CTFTTE-IOT-009, CTFTCTE-IOT-009 |
 | [CTFTTOU-445](CTFTTOU-445.md) | losetup / kpartx | <https://man7.org/linux/man-pages/man8/losetup.8.html> | CTFTTE-IOT-009, CTFTCTE-IOT-009, CTFTTE-FOR-035, CTFTCTE-FOR-035, CTFTTE-IOT-001, CTFTCTE-IOT-001 |
 | [CTFTTOU-446](CTFTTOU-446.md) | what3words | <https://what3words.com/> | CTFTTE-OSI-010, CTFTCTE-OSI-010 |
+| [CTFTTOU-447](CTFTTOU-447.md) | prompt_fuzzer.py | — | CTFTTE-AIM-008, CTFTCTE-AIM-008 |
+| [CTFTTOU-448](CTFTTOU-448.md) | mcp_probe.py | — | CTFTTE-AIM-009, CTFTCTE-AIM-009 |
