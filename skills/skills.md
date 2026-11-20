@@ -31,6 +31,7 @@ when a skill chip is clicked.
 | [CTFTSKL-016](CTFTSKL-016.md) | ctf-threat-report-ioc-pivot | Tool manual | [ctf-skills-main/ctf-threat-report-ioc-pivot/SKILL.md](../../ctf-skills-main/ctf-threat-report-ioc-pivot/SKILL.md) | OSI-005/008 |
 | [CTFTSKL-017](CTFTSKL-017.md) | ctf-ai-ml | Domain skill | [ctf-skills-main/ctf-ai-ml/SKILL.md](../../ctf-skills-main/ctf-ai-ml/SKILL.md) | AIM-001..007, AIM-009 |
 | [CTFTSKL-018](CTFTSKL-018.md) | ctf-ai-llm-sanitizer-bypass | Fine-grained skill | [ctf-skills-main/ctf-ai-llm-sanitizer-bypass/SKILL.md](../../ctf-skills-main/ctf-ai-llm-sanitizer-bypass/SKILL.md) | AIM-008 |
+| [CTFTSKL-019](CTFTSKL-019.md) | ctf-cloud-aws | Domain skill | [ctf-skills-main/ctf-cloud-aws/SKILL.md](../../ctf-skills-main/ctf-cloud-aws/SKILL.md) | CLD-001/002/003/004/005/006/007/010/011 |
 
 Fiche format (parsed by `franckysolve/fom_nav.py`):
 

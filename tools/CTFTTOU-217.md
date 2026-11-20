@@ -14,3 +14,7 @@ Official command-line interface for AWS services.
 ## Related Techniques
 
 CTFTCTE-CLD-001, CTFTCTE-CLD-002, CTFTCTE-CLD-003, CTFTCTE-CLD-004, CTFTCTE-CLD-006, CTFTCTE-FPN-005, CTFTTE-CLD-001, CTFTTE-CLD-002, CTFTTE-CLD-003, CTFTTE-CLD-004, CTFTTE-CLD-006, CTFTTE-FPN-005
+
+## Skills
+
+- [CTFTSKL-019 ctf-cloud-aws](../skills/CTFTSKL-019.md) — AWS foothold workflow: identity, IAM enumeration, service data planes

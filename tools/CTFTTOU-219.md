@@ -14,3 +14,7 @@ AWS SDK for Python.
 ## Related Techniques
 
 CTFTCTE-CLD-007, CTFTTE-CLD-007
+
+## Skills
+
+- [CTFTSKL-019 ctf-cloud-aws](../skills/CTFTSKL-019.md) — scripted AWS enumeration from Python (same workflow)
