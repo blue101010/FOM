@@ -12,9 +12,13 @@ argument registers. Also distributed as a Python package (install into the share
 pwn venv, never system pip on Kali/PEP 668):
 
 ```sh
-~/.venvs/ctfpwn/bin/pip install 'ROPgadget==7.7'
+~/.venvs/ctfpwn/bin/pip install 'ROPgadget==7.7' 'pwntools==4.15.1'
 ~/.venvs/ctfpwn/bin/ROPgadget --binary ./target --only "pop|ret"
 ```
+
+Verified 2026-11 on Kali WSL (Python 3.14.7, `~/.venvs/ctfpwn`): `ROPgadget v7.7`,
+pwntools 4.15.1 (`pwn checksec` works). Note: **v7.7 removed `--json`** (dump raw
+`0xADDR : gadget` lines instead) and the default `--depth` is now **10** (was 5).
 
 ## URL
 

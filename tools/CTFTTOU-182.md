@@ -5,7 +5,8 @@
 
 ## Description
 
-Searches binaries for ROP gadgets.
+Searches binaries for ROP gadgets. Kali WSL tool manual (PEP 668 venv install, tested
+versions, filtering/validation workflow): see [CTFTTOU-288](CTFTTOU-288.md).
 
 ## URL
 

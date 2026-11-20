@@ -29,11 +29,11 @@
     {
       "id": "TOOL-binwalk",
       "schema_version": "3.0",
-      "name": "binwalk",
+      "name": "binwalk v3 (Rust)",
       "kind": "cli",
       "platforms": ["linux", "wsl", "macos"],
-      "install": "pip install binwalk",
-      "invocation": { "cmd": "binwalk --extract {path}", "params": { "path": { "type": "string", "required": true } } },
+      "install": "apt install binwalk3 on Kali, then: ln -sf /usr/bin/binwalk3 ~/.local/bin/binwalk (v3 is the Rust rewrite; `pip install binwalk` also yields v3)",
+      "invocation": { "cmd": "binwalk --extract --matryoshka {path}", "params": { "path": { "type": "string", "required": true } } },
       "input_types": ["file", "image", "archive"],
       "output_parser": { "format": "regex-lines", "captures": { "offset": "^(\\d+)", "type": "\\s+(\\w[\\w ]+)$" } },
       "produces": ["embedded_files", "true_type"]
