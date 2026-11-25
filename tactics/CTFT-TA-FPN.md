@@ -2,7 +2,7 @@
 
 > **Domain ID:** `CTFT-TA-FPN`  
 > **HTB mapping:** HTB: Fullpwn  
-> **Techniques:** 20
+> **Techniques:** 21
 
 ## Description
 
@@ -46,6 +46,7 @@ per entry**, never the definition of an entry.
 | [CTFTTE-FPN-018](../techniques/CTFTTE-FPN-018.md) | Cross-domain credential reuse after hidden-namespace discovery | [CTFTCTE-FPN-018](../countertechniques/CTFTCTE-FPN-018.md) | Map adjacent namespaces and test credential reuse | T1078, T1482 |
 | [CTFTTE-FPN-019](../techniques/CTFTTE-FPN-019.md) | Interactive-shell history and protected credential stores | [CTFTCTE-FPN-019](../countertechniques/CTFTCTE-FPN-019.md) | Harvest shell histories and decrypt protected stores | T1552.001, T1555.004 |
 | [CTFTTE-FPN-020](../techniques/CTFTTE-FPN-020.md) | Flag payload embedded in directory object properties | [CTFTCTE-FPN-020](../countertechniques/CTFTCTE-FPN-020.md) | Dump directory attributes and search hidden payloads | T1087.002, T1213 |
+| [CTFTTE-FPN-021](../techniques/CTFTTE-FPN-021.md) | Delegated managed service account linked to a privileged predecessor | [CTFTCTE-FPN-021](../countertechniques/CTFTCTE-FPN-021.md) | Enumerate OU create rights and mint a linked successor account | T1098, T1078.002 |
 
 ---
 *See [CORRELATION.md](../CORRELATION.md) for the full cross-reference matrix.*

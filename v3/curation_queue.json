@@ -2,9 +2,9 @@
   "model": "CTFT",
   "schema_version": "3.0",
   "collection": "curation_queue",
-  "generated_at": "2026-11-18T21:00:03+00:00",
-  "source_sha256": "d3608e01cf5143f39485cf45e27ce840d71f85adc7975b9152410fbe828f654a",
-  "pending_count": 225,
+  "generated_at": "2026-11-25T15:58:20+00:00",
+  "source_sha256": "bfd2dcaa0573cd765cc3694e875ba908e342b59323dd0a0e40708d44bdef1435",
+  "pending_count": 226,
   "by_tactic": {
     "CTFT-TA-AIM": [
       {
@@ -719,6 +719,13 @@
       {
         "pair_id": "CTFTPAIR-FPN-020",
         "counter_technique": "CTFTCTE-FPN-020",
+        "missing": [
+          "evidence_record"
+        ]
+      },
+      {
+        "pair_id": "CTFTPAIR-FPN-021",
+        "counter_technique": "CTFTCTE-FPN-021",
         "missing": [
           "evidence_record"
         ]

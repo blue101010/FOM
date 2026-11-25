@@ -2,10 +2,10 @@
   "model": "CTFT",
   "schema_version": "3.0",
   "collection": "relations",
-  "generated_at": "2026-11-18T20:59:43+00:00",
+  "generated_at": "2026-11-25T15:58:02+00:00",
   "note": "Generated. Derived `solves` edges come from the markdown pairing; edit v3/relations.curated.json for anything else.",
   "counts": {
-    "derived": 232,
+    "derived": 233,
     "curated": 6
   },
   "items": [
@@ -924,6 +924,15 @@
       "type": "solves",
       "source": "CTFTCTE-FPN-020",
       "target": "CTFTTE-FPN-020",
+      "origin": "derived",
+      "confidence": "high"
+    },
+    {
+      "id": "REL-SOLVES-FPN-021",
+      "schema_version": "3.0",
+      "type": "solves",
+      "source": "CTFTCTE-FPN-021",
+      "target": "CTFTTE-FPN-021",
       "origin": "derived",
       "confidence": "high"
     },

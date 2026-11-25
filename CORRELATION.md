@@ -4,8 +4,8 @@ Every **Design / Hide Technique** (`CTFTTE-<CAT>-NNN`) and the
 **Resolution-Technique** (`CTFTCTE-<CAT>-NNN`) that recovers it, grouped by domain.
 IDs pair one-to-one: `CTFTTE-FOR-004` is always answered by `CTFTCTE-FOR-004`.
 
-> Generated from the files in `techniques/` and `countertechniques/` — corpus fingerprint `af07016359b0fa4d`
-> by `v3/render_taxonomy_docs.py`. **232 complete pairs** across **20 active domains**. Do not hand-edit: rename the entry, then re-render.
+> Generated from the files in `techniques/` and `countertechniques/` — corpus fingerprint `ed36586811d5120d`
+> by `v3/render_taxonomy_docs.py`. **233 complete pairs** across **20 active domains**. Do not hand-edit: rename the entry, then re-render.
 
 ---
 
@@ -31,11 +31,11 @@ Order follows the challenge-category picker.
 | 14 | [`GAM`](#ctft-ta-gam) | Game/Proto | Game / Protocol Automation (GamePwn) | 8 |
 | 15 | [`COD`](#ctft-ta-cod) | Coding | Coding / Programming Puzzle | 7 |
 | 16 | [`NET`](#ctft-ta-net) | Network | Network | 9 |
-| 17 | [`FPN`](#ctft-ta-fpn) | Full Pwn | Full Pwn / Multi-Stage | 20 |
+| 17 | [`FPN`](#ctft-ta-fpn) | Full Pwn | Full Pwn / Multi-Stage | 21 |
 | 18 | [`HWR`](#ctft-ta-hwr) | Hardware | Hardware | 3 |
 | 19 | [`IOT`](#ctft-ta-iot) | IoT / Embedded | IoT / Embedded | 9 |
 | 20 | [`SDR`](#ctft-ta-sdr) | SDR / RF | Software-Defined Radio | 5 |
-| | | | **Total** | **232** |
+| | | | **Total** | **233** |
 
 **Retired — do not use.** `MSC` (Misc) was a catch-all whose entries all
 duplicated a precise domain; file those challenges under `JAL`, `COD`, `GAM`
@@ -368,7 +368,7 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 
 ## <a id="ctft-ta-fpn"></a>`CTFT-TA-FPN` — Full Pwn / Multi-Stage
 
-> [domain page](tactics/CTFT-TA-FPN.md) · 20 pairs · HTB: Fullpwn
+> [domain page](tactics/CTFT-TA-FPN.md) · 21 pairs · HTB: Fullpwn
 
 | # | Technique ID | Hide / Design name | Resolution-technique ID | Recovery action |
 | --- | --- | --- | --- | --- |
@@ -392,6 +392,7 @@ or `FPN` instead. See the [supersession map](#retired-categories) below.
 | 18 | [CTFTTE-FPN-018](techniques/CTFTTE-FPN-018.md) | Cross-domain credential reuse after hidden-namespace discovery | [CTFTCTE-FPN-018](countertechniques/CTFTCTE-FPN-018.md) | Map adjacent namespaces and test credential reuse |
 | 19 | [CTFTTE-FPN-019](techniques/CTFTTE-FPN-019.md) | Interactive-shell history and protected credential stores | [CTFTCTE-FPN-019](countertechniques/CTFTCTE-FPN-019.md) | Harvest shell histories and decrypt protected stores |
 | 20 | [CTFTTE-FPN-020](techniques/CTFTTE-FPN-020.md) | Flag payload embedded in directory object properties | [CTFTCTE-FPN-020](countertechniques/CTFTCTE-FPN-020.md) | Dump directory attributes and search hidden payloads |
+| 21 | [CTFTTE-FPN-021](techniques/CTFTTE-FPN-021.md) | Delegated managed service account linked to a privileged predecessor | [CTFTCTE-FPN-021](countertechniques/CTFTCTE-FPN-021.md) | Enumerate OU create rights and mint a linked successor account |
 
 
 ## <a id="ctft-ta-hwr"></a>`CTFT-TA-HWR` — Hardware

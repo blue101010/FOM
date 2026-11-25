@@ -2,8 +2,8 @@
   "model": "CTFT",
   "schema_version": "3.0",
   "collection": "catalog",
-  "generated_at": "2026-11-18T21:00:03+00:00",
-  "source_sha256": "d3608e01cf5143f39485cf45e27ce840d71f85adc7975b9152410fbe828f654a",
+  "generated_at": "2026-11-25T15:58:20+00:00",
+  "source_sha256": "bfd2dcaa0573cd765cc3694e875ba908e342b59323dd0a0e40708d44bdef1435",
   "items": [
     {
       "id": "CTFTPAIR-AIM-001",
@@ -2267,6 +2267,28 @@
         "id": "CTFTCTE-FPN-020",
         "name": "Dump directory attributes and search hidden payloads",
         "path": "countertechniques/CTFTCTE-FPN-020.md",
+        "role": "resolution"
+      },
+      "maturity": "taxonomy_only",
+      "missing_for_typed_recommendation": [
+        "evidence_record"
+      ]
+    },
+    {
+      "id": "CTFTPAIR-FPN-021",
+      "schema_version": "3.0",
+      "domain": "FPN",
+      "tactic": "CTFT-TA-FPN",
+      "in_core": false,
+      "technique": {
+        "id": "CTFTTE-FPN-021",
+        "name": "Delegated managed service account linked to a privileged predecessor",
+        "path": "techniques/CTFTTE-FPN-021.md"
+      },
+      "counter_technique": {
+        "id": "CTFTCTE-FPN-021",
+        "name": "Enumerate OU create rights and mint a linked successor account",
+        "path": "countertechniques/CTFTCTE-FPN-021.md",
         "role": "resolution"
       },
       "maturity": "taxonomy_only",

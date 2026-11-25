@@ -19,7 +19,7 @@ Reference tools used across CTFT techniques and counter-techniques.
 | [CTFTTOU-013](CTFTTOU-013.md) | ffuf | <https://github.com/ffuf/ffuf> | CTFTCTE-WEB-001, CTFTCTE-WEB-017, CTFTCTE-WEB-020, CTFTTE-IOT-002, CTFTCTE-IOT-002 |
 | [CTFTTOU-014](CTFTTOU-014.md) | sqlmap | <https://sqlmap.org/> | CTFTTE-WEB-004, CTFTCTE-WEB-004, CTFTCTE-WEB-021 |
 | [CTFTTOU-015](CTFTTOU-015.md) | hashcat | <https://hashcat.net/hashcat/> | CTFTCTE-CRY-012, CTFTTE-WEB-003 |
-| [CTFTTOU-016](CTFTTOU-016.md) | netexec | <https://github.com/Pennyw0rth/NetExec> | CTFTTE-FPN-015, CTFTCTE-FPN-015, CTFTTE-FPN-018, CTFTCTE-FPN-018, CTFTTE-FPN-019, CTFTCTE-FPN-019, CTFTTE-FPN-014 |
+| [CTFTTOU-016](CTFTTOU-016.md) | netexec | <https://github.com/Pennyw0rth/NetExec> | CTFTTE-FPN-015, CTFTCTE-FPN-015, CTFTTE-FPN-018, CTFTCTE-FPN-018, CTFTTE-FPN-019, CTFTCTE-FPN-019, CTFTTE-FPN-014, CTFTTE-FPN-021, CTFTCTE-FPN-021 |
 | [CTFTTOU-017](CTFTTOU-017.md) | BloodHound / SharpHound | — | CTFTTE-FPN-011, CTFTCTE-FPN-011, CTFTTE-FPN-013, CTFTCTE-FPN-013, CTFTTE-FPN-018, CTFTCTE-FPN-018 |
 | [CTFTTOU-018](CTFTTOU-018.md) | pywhisker | <https://github.com/ShutdownRepo/pywhisker> | CTFTTE-FPN-011, CTFTCTE-FPN-011 |
 | [CTFTTOU-019](CTFTTOU-019.md) | PKINITtools | <https://github.com/dirkjanm/PKINITtools> | CTFTTE-FPN-011, CTFTCTE-FPN-011 |
@@ -119,7 +119,7 @@ Reference tools used across CTFT techniques and counter-techniques.
 | [CTFTTOU-113](CTFTTOU-113.md) | enum4linux | <https://github.com/CiscoCXSecurity/enum4linux> | CTFTCTE-NET-003, CTFTTE-NET-003 |
 | [CTFTTOU-114](CTFTTOU-114.md) | crackmapexec | <https://github.com/byt3bl33d3r/CrackMapExec> | CTFTCTE-FPN-009, CTFTCTE-NET-003, CTFTTE-FPN-009, CTFTTE-NET-003 |
 | [CTFTTOU-115](CTFTTOU-115.md) | kerbrute | <https://github.com/ropnop/kerbrute> | CTFTCTE-FPN-002, CTFTTE-FPN-002 |
-| [CTFTTOU-116](CTFTTOU-116.md) | impacket | <https://github.com/fortra/impacket> | CTFTCTE-FPN-002, CTFTTE-FPN-002 |
+| [CTFTTOU-116](CTFTTOU-116.md) | impacket | <https://github.com/fortra/impacket> | CTFTCTE-FPN-002, CTFTTE-FPN-002, CTFTTE-FPN-021, CTFTCTE-FPN-021 |
 | [CTFTTOU-118](CTFTTOU-118.md) | ftp | <https://www.gnu.org/software/inetutils/> | CTFTCTE-NET-008, CTFTTE-NET-008 |
 | [CTFTTOU-119](CTFTTOU-119.md) | lftp | <https://lftp.yar.ru/> | CTFTCTE-NET-008, CTFTTE-NET-008 |
 | [CTFTTOU-120](CTFTTOU-120.md) | tcpflow | <https://github.com/simsong/tcpflow> | CTFTCTE-FOR-006, CTFTTE-FOR-006 |
@@ -294,7 +294,7 @@ Reference tools used across CTFT techniques and counter-techniques.
 | [CTFTTOU-291](CTFTTOU-291.md) | lldb | <https://lldb.llvm.org/> | CTFTTE-PWN-001, CTFTCTE-PWN-001, CTFTTE-REV-001, CTFTCTE-REV-001 |
 | [CTFTTOU-292](CTFTTOU-292.md) | pwndbg | <https://github.com/pwndbg/pwndbg> | CTFTTE-PWN-001, CTFTCTE-PWN-001, CTFTTE-PWN-002, CTFTCTE-PWN-002, CTFTTE-PWN-003, CTFTCTE-PWN-003, CTFTTE-PWN-006, CTFTCTE-PWN-006, CTFTTE-PWN-011, CTFTCTE-PWN-011, CTFTTE-PWN-012, CTFTCTE-PWN-012 |
 | [CTFTTOU-293](CTFTTOU-293.md) | GEF | <https://github.com/hugsy/gef> | CTFTTE-PWN-001, CTFTCTE-PWN-001, CTFTTE-PWN-006, CTFTCTE-PWN-006, CTFTTE-PWN-011, CTFTCTE-PWN-011, CTFTTE-PWN-012, CTFTCTE-PWN-012, CTFTTE-REV-001, CTFTCTE-REV-001 |
-| [CTFTTOU-294](CTFTTOU-294.md) | BloodHound | <https://github.com/SpecterOps/BloodHound> | CTFTTE-FPN-002, CTFTCTE-FPN-002, CTFTTE-FPN-011, CTFTCTE-FPN-011, CTFTTE-FPN-013, CTFTCTE-FPN-013, CTFTTE-FPN-018, CTFTCTE-FPN-018 |
+| [CTFTTOU-294](CTFTTOU-294.md) | BloodHound | <https://github.com/SpecterOps/BloodHound> | CTFTTE-FPN-002, CTFTCTE-FPN-002, CTFTTE-FPN-011, CTFTCTE-FPN-011, CTFTTE-FPN-013, CTFTCTE-FPN-013, CTFTTE-FPN-018, CTFTCTE-FPN-018, CTFTTE-FPN-021, CTFTCTE-FPN-021 |
 | [CTFTTOU-295](CTFTTOU-295.md) | SharpHound | <https://github.com/SpecterOps/SharpHound> | CTFTTE-FPN-002, CTFTCTE-FPN-002, CTFTTE-FPN-011, CTFTCTE-FPN-011, CTFTTE-FPN-013, CTFTCTE-FPN-013, CTFTTE-FPN-018, CTFTCTE-FPN-018 |
 | [CTFTTOU-296](CTFTTOU-296.md) | hexdump | <https://man7.org/linux/man-pages/man1/hexdump.1.html> | CTFTTE-COD-004, CTFTCTE-COD-004, CTFTTE-FOR-032, CTFTCTE-FOR-032, CTFTCTE-FOR-009 |
 | [CTFTTOU-297](CTFTTOU-297.md) | Enter-PSSession | <https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enter-pssession> | CTFTTE-FPN-014, CTFTCTE-FPN-014 |
@@ -402,3 +402,4 @@ Reference tools used across CTFT techniques and counter-techniques.
 | [CTFTTOU-446](CTFTTOU-446.md) | what3words | <https://what3words.com/> | CTFTTE-OSI-010, CTFTCTE-OSI-010 |
 | [CTFTTOU-447](CTFTTOU-447.md) | prompt_fuzzer.py | — | CTFTTE-AIM-008, CTFTCTE-AIM-008 |
 | [CTFTTOU-448](CTFTTOU-448.md) | mcp_probe.py | — | CTFTTE-AIM-009, CTFTCTE-AIM-009 |
+| [CTFTTOU-449](CTFTTOU-449.md) | Get-BadSuccessorOUPermissions.ps1 | <https://github.com/akamai/BadSuccessor> | CTFTTE-FPN-021, CTFTCTE-FPN-021 |

@@ -30,7 +30,7 @@ parallel ATT&CK:
 
 External identifiers are **anchors carried per entry with a confidence and a justification**, not
 the definition of an entry. An entry is defined by the behaviour it names and by the challenges
-that attest it - see [SCHEMA_V3.md](SCHEMA_V3.md) §8 for the promotion criteria. Every technique
+that attest it - see [SCHEMA_V3.md](SCHEMA_V3.md) Â§8 for the promotion criteria. Every technique
 and resolution-technique page carries its own `Related MITRE ATT&CK` table; the `ATT&CK` column on
 a domain page is an orientation excerpt of those tables, nothing more.
 
@@ -76,11 +76,11 @@ Order and short labels follow the challenge-category picker.
 | 14 | [CTFT-TA-GAM](tactics/CTFT-TA-GAM.md) | Game/Proto | Game / Protocol Automation | HTB: GamePwn | 8 |
 | 15 | [CTFT-TA-COD](tactics/CTFT-TA-COD.md) | Coding | Coding / Programming Puzzle | HTB: Coding | 7 |
 | 16 | [CTFT-TA-NET](tactics/CTFT-TA-NET.md) | Network | Network | HTB: Misc (Network) | 9 |
-| 17 | [CTFT-TA-FPN](tactics/CTFT-TA-FPN.md) | Full Pwn | Full Pwn / Multi-Stage | HTB: Fullpwn | 20 |
+| 17 | [CTFT-TA-FPN](tactics/CTFT-TA-FPN.md) | Full Pwn | Full Pwn / Multi-Stage | HTB: Fullpwn | 21 |
 | 18 | [CTFT-TA-HWR](tactics/CTFT-TA-HWR.md) | Hardware | Hardware | HTB: Hardware | 3 |
 | 19 | [CTFT-TA-SDR](tactics/CTFT-TA-SDR.md) | SDR / RF | Software-Defined Radio | HTB: Hardware | 5 |
 | 20 | [CTFT-TA-IOT](tactics/CTFT-TA-IOT.md) | IoT / Embedded | Internet of Things | HTB: Misc (IoT) | 9 |
-| | | | **Total** | | **232** |
+| | | | **Total** | | **233** |
 
 **Retired:** `CTFT-TA-MSC` (Misc) is **removed**. It was a catch-all and every entry
 it held duplicated a precise tactic. Do not create `MSC` entries; file the challenge
@@ -93,8 +93,8 @@ or `FPN` (multi-stage host compromise). The supersession map is in
 ```
 FOM/
   README.md                   this file
-  CORRELATION.md              master technique ↔ counter-technique cross-reference - GENERATED
-  HIERARCHY.md                flat design ↔ counter listing - GENERATED, local only (gitignored)
+  CORRELATION.md              master technique â†” counter-technique cross-reference - GENERATED
+  HIERARCHY.md                flat design â†” counter listing - GENERATED, local only (gitignored)
   index.json                  machine-readable index (pairs/by_id maps) - GENERATED
   SCHEMA_V3.md                active data model
   SCHEMA_V2.md                previous data model - frozen, kept for reproducibility
@@ -159,7 +159,7 @@ produces no diff. Regenerate with `python v3/render_stix.py --write`.
 
 ## Catalogue integrity
 
-The corpus contains **232 complete technique/counter-technique pairs** across 20 domains.
+The corpus contains **233 complete technique/counter-technique pairs** across 20 domains.
 `CORRELATION.md`, `HIERARCHY.md` **and every tactic page** are generated, never hand-edited: the
 markdown entry files are the source of truth, so a renamed technique cannot drift from the matrix.
 After adding or renaming an entry:
@@ -180,8 +180,8 @@ if a retired tactic (`MSC`) reappears, so a new domain has to be declared delibe
 drifting in. Generated documents carry a **corpus fingerprint** instead of a timestamp, so
 `--check` detects real drift and an unchanged regeneration is a git no-op.
 
-**Entries stay technique-level.** A technique or counter-technique names a *class* of behaviour —
-what the author conceals, what the solver does about it — and must transfer to the next challenge
+**Entries stay technique-level.** A technique or counter-technique names a *class* of behaviour â€”
+what the author conceals, what the solver does about it â€” and must transfer to the next challenge
 that uses the same idea. Challenge names, event years, flag literals, bucket or host names, solved
 counts and step-by-step solver narratives belong in `v3/evidence.curated.json` (`challenges`,
 `extracted_from`) and in the entry's `References` link list, never in the body prose. A fiche that
@@ -198,7 +198,7 @@ disagree:
 
 | Maturity | Meaning | Count today |
 | --- | --- | --- |
-| `taxonomy_only` | identifiers and paired prose only | 223 |
+| `taxonomy_only` | identifiers and paired prose only | 224 |
 | `attested` | >= 2 independent CTF events + curated positives, negatives, boundaries | 2 |
 
 Three techniques were attested by reading the write-ups (`CRY-012`, `FOR-006`, `CLD-001`); the
@@ -211,7 +211,7 @@ human-readable step; execution belongs to a separately authorized laboratory run
 
 ### Known coverage debt
 
-- **Evidence is the bottleneck.** 265 of 464 entry files still carry the `Add challenge write-up
+- **Evidence is the bottleneck.** 265 of 466 entry files still carry the `Add challenge write-up
   link` marker. Mining the local write-up base attested **3** core techniques (`CRY-012`,
   `FOR-006`, `CLD-001`); the remaining 32 need sources that do not exist locally.
   `v3/evidence.curated.json` records the rejected candidates and why, so they are not re-proposed.

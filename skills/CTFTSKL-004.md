@@ -2,7 +2,7 @@
 
 > **Skill ID:** `CTFTSKL-004`  
 > **Kind:** Domain skill  
-> **Related techniques/counters:** CTFTTE-FPN-002, CTFTCTE-FPN-002, CTFTTE-FPN-011, CTFTCTE-FPN-011, CTFTTE-FPN-012, CTFTCTE-FPN-012, CTFTTE-FPN-013, CTFTCTE-FPN-013, CTFTTE-FPN-014, CTFTCTE-FPN-014, CTFTTE-FPN-017, CTFTCTE-FPN-017, CTFTTE-FPN-018, CTFTCTE-FPN-018
+> **Related techniques/counters:** CTFTTE-FPN-002, CTFTCTE-FPN-002, CTFTTE-FPN-011, CTFTCTE-FPN-011, CTFTTE-FPN-012, CTFTCTE-FPN-012, CTFTTE-FPN-013, CTFTCTE-FPN-013, CTFTTE-FPN-014, CTFTCTE-FPN-014, CTFTTE-FPN-017, CTFTCTE-FPN-017, CTFTTE-FPN-018, CTFTCTE-FPN-018, CTFTTE-FPN-021, CTFTCTE-FPN-021
 
 ## Description
 
@@ -38,12 +38,14 @@ evidence:
 - [CTFTTE-FPN-014](../techniques/CTFTTE-FPN-014.md) / [CTFTCTE-FPN-014](../countertechniques/CTFTCTE-FPN-014.md) — delegated-session injection (JEA)
 - [CTFTTE-FPN-017](../techniques/CTFTTE-FPN-017.md) / [CTFTCTE-FPN-017](../countertechniques/CTFTCTE-FPN-017.md) — coerced DC authentication
 - [CTFTTE-FPN-018](../techniques/CTFTTE-FPN-018.md) / [CTFTCTE-FPN-018](../countertechniques/CTFTCTE-FPN-018.md) — cross-domain credential reuse
+- [CTFTTE-FPN-021](../techniques/CTFTTE-FPN-021.md) / [CTFTCTE-FPN-021](../countertechniques/CTFTCTE-FPN-021.md) — dMSA successor-link abuse (BadSuccessor)
 
 ## Tools
 
 - [NetExec](../tools/CTFTTOU-016.md)
 - [BloodHound / SharpHound](../tools/CTFTTOU-017.md)
 - [impacket](../tools/CTFTTOU-116.md)
+- [Get-BadSuccessorOUPermissions.ps1](../tools/CTFTTOU-449.md)
 - [certipy](../tools/CTFTTOU-020.md)
 - [kerbrute](../tools/CTFTTOU-115.md)
 - [evil-winrm](../tools/CTFTTOU-024.md)
@@ -67,4 +69,4 @@ ESC4 → coercion → cross-domain).
 
 ## Related Techniques
 
-CTFTTE-FPN-002, CTFTCTE-FPN-002, CTFTTE-FPN-011, CTFTCTE-FPN-011, CTFTTE-FPN-012, CTFTCTE-FPN-012, CTFTTE-FPN-013, CTFTCTE-FPN-013, CTFTTE-FPN-014, CTFTCTE-FPN-014, CTFTTE-FPN-017, CTFTCTE-FPN-017, CTFTTE-FPN-018, CTFTCTE-FPN-018
+CTFTTE-FPN-002, CTFTCTE-FPN-002, CTFTTE-FPN-011, CTFTCTE-FPN-011, CTFTTE-FPN-012, CTFTCTE-FPN-012, CTFTTE-FPN-013, CTFTCTE-FPN-013, CTFTTE-FPN-014, CTFTCTE-FPN-014, CTFTTE-FPN-017, CTFTCTE-FPN-017, CTFTTE-FPN-018, CTFTCTE-FPN-018, CTFTTE-FPN-021, CTFTCTE-FPN-021

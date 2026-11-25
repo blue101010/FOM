@@ -1,10 +1,10 @@
 {
   "model": "CTFT",
   "schema_version": "3.0",
-  "generated_at": "2026-11-18T20:59:44+00:00",
+  "generated_at": "2026-11-25T15:58:02+00:00",
   "source": {
-    "correlation_sha256": "d3608e01cf5143f39485cf45e27ce840d71f85adc7975b9152410fbe828f654a",
-    "legacy_index_sha256": "07630fa41a572021998f43a13848a69569447a5f0bb8944f1c6121d71be86fa6"
+    "correlation_sha256": "bfd2dcaa0573cd765cc3694e875ba908e342b59323dd0a0e40708d44bdef1435",
+    "legacy_index_sha256": "f213f565b788613205a5eb108b5245a425a3423b1fa600b34242fc16eeec87c2"
   },
   "taxonomy": {
     "tactics": [
@@ -30,9 +30,9 @@
       "WEB"
     ],
     "tactic_count": 20,
-    "technique_count": 232,
-    "counter_technique_count": 232,
-    "complete_pairs": 232,
+    "technique_count": 233,
+    "counter_technique_count": 233,
+    "complete_pairs": 233,
     "by_tactic": {
       "AIM": 9,
       "BLK": 5,
@@ -40,7 +40,7 @@
       "COD": 7,
       "CRY": 15,
       "FOR": 35,
-      "FPN": 20,
+      "FPN": 21,
       "GAM": 8,
       "HWR": 3,
       "ICS": 9,
@@ -65,7 +65,7 @@
     },
     "maturity": {
       "attested": 2,
-      "taxonomy_only": 223,
+      "taxonomy_only": 224,
       "typed": 7
     },
     "core": {
@@ -75,10 +75,10 @@
       "placeholder_free": 3
     },
     "stix_object_types": {
-      "attack-pattern": 230,
-      "course-of-action": 230,
+      "attack-pattern": 233,
+      "course-of-action": 233,
       "identity": 1,
-      "relationship": 230,
+      "relationship": 233,
       "x-ctft-tactic": 20
     },
     "placeholder_entries": [
@@ -353,13 +353,13 @@
   "integrity": {
     "techniques_without_counter": [],
     "counters_without_technique": [],
-    "correlation_pair_count": 232,
+    "correlation_pair_count": 233,
     "correlation_pairs_missing_from_files": [],
     "correlation_pairs_not_identity": [],
     "pairs_missing_from_correlation": [],
     "legacy_index_tactics_missing_from_files": [],
     "tactics_missing_from_legacy_index": [],
-    "legacy_index_pair_count": 232,
+    "legacy_index_pair_count": 233,
     "legacy_index_pairs_missing_from_files": [],
     "relation_problems": [],
     "lint_problems": [],

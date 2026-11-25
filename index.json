@@ -1,7 +1,7 @@
 {
   "model": "CTFT",
   "version": "1.2",
-  "generated": "2026-11-18T20:59:43+00:00",
+  "generated": "2026-11-25T15:58:02+00:00",
   "relates_to": [
     "MITRE ATT&CK",
     "CAPEC",
@@ -50,7 +50,7 @@
       "id": "CTFT-TA-FPN",
       "name": "Full Pwn / Multi-Stage",
       "path": "tactics/CTFT-TA-FPN.md",
-      "count": 20
+      "count": 21
     },
     {
       "id": "CTFT-TA-GAM",
@@ -131,7 +131,7 @@
       "count": 29
     }
   ],
-  "total_techniques": 232,
+  "total_techniques": 233,
   "techniques": [
     {
       "tactic": "CTFT-TA-AIM",
@@ -1559,6 +1559,20 @@
         "id": "CTFTCTE-FPN-020",
         "name": "Dump directory attributes and search hidden payloads",
         "path": "countertechniques/CTFTCTE-FPN-020.md"
+      }
+    },
+    {
+      "tactic": "CTFT-TA-FPN",
+      "category": "FPN",
+      "technique": {
+        "id": "CTFTTE-FPN-021",
+        "name": "Delegated managed service account linked to a privileged predecessor",
+        "path": "techniques/CTFTTE-FPN-021.md"
+      },
+      "counter": {
+        "id": "CTFTCTE-FPN-021",
+        "name": "Enumerate OU create rights and mint a linked successor account",
+        "path": "countertechniques/CTFTCTE-FPN-021.md"
       }
     },
     {
@@ -3485,6 +3499,7 @@
     "CTFTTE-FPN-018": "CTFTCTE-FPN-018",
     "CTFTTE-FPN-019": "CTFTCTE-FPN-019",
     "CTFTTE-FPN-020": "CTFTCTE-FPN-020",
+    "CTFTTE-FPN-021": "CTFTCTE-FPN-021",
     "CTFTTE-GAM-001": "CTFTCTE-GAM-001",
     "CTFTTE-GAM-002": "CTFTCTE-GAM-002",
     "CTFTTE-GAM-003": "CTFTCTE-GAM-003",
@@ -4330,6 +4345,13 @@
       "counter_name": "Dump directory attributes and search hidden payloads",
       "tactic": "CTFT-TA-FPN",
       "path": "techniques/CTFTTE-FPN-020.md"
+    },
+    "CTFTTE-FPN-021": {
+      "name": "Delegated managed service account linked to a privileged predecessor",
+      "counter_id": "CTFTCTE-FPN-021",
+      "counter_name": "Enumerate OU create rights and mint a linked successor account",
+      "tactic": "CTFT-TA-FPN",
+      "path": "techniques/CTFTTE-FPN-021.md"
     },
     "CTFTTE-GAM-001": {
       "name": "Networked game / protocol automation",
@@ -5956,6 +5978,13 @@
       "technique_name": "Flag payload embedded in directory object properties",
       "tactic": "CTFT-TA-FPN",
       "path": "countertechniques/CTFTCTE-FPN-020.md"
+    },
+    "CTFTCTE-FPN-021": {
+      "name": "Enumerate OU create rights and mint a linked successor account",
+      "technique_id": "CTFTTE-FPN-021",
+      "technique_name": "Delegated managed service account linked to a privileged predecessor",
+      "tactic": "CTFT-TA-FPN",
+      "path": "countertechniques/CTFTCTE-FPN-021.md"
     },
     "CTFTCTE-GAM-001": {
       "name": "Script a client to beat the protocol",

