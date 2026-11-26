@@ -773,6 +773,36 @@
       "curator": "local (CTFHQ 2026 casebook)",
       "reviewed_on": "2026-11-18",
       "status": "pending"
+    },
+    {
+      "id": "EVID-ICS-005",
+      "schema_version": "3.0",
+      "technique": "CTFTTE-ICS-005",
+      "challenges": [
+        {
+          "ctf": "HTB CTF Journée Cyber Novembre 2026",
+          "challenge": "ForeignHost (ICS)",
+          "year": 2026,
+          "writeup": "2026/CTFHQNOV/ics/foreignhost/foreignhost.md (workspace C:\\DATA\\CTF)",
+          "extracted_from": "live-tested: a framed TCP tunnel carried BACnet/IP to a combined BBMD/controller; unauthenticated Register-Foreign-Device returned success, Who-Is elicited I-Am for device 7, ReadProperty identified BV:42, WriteProperty set present-value to active and SimpleACK confirmed it, then ReadProperty of description returned the flag"
+        }
+      ],
+      "references": [],
+      "positives": [
+        "BACnet Who-Is or object discovery identifies the controller and target object",
+        "confirmed ReadProperty retrieves the flag from a BACnet object property"
+      ],
+      "negatives": [
+        "a passive BACnet listing alone cannot release a flag gated behind WriteProperty"
+      ],
+      "boundaries": [
+        "this event also requires unauthenticated Foreign Device Registration and an active WriteProperty; ICS-005 captures the object discovery and readback, not the full control weakness",
+        "single event so far: pending until a second independent event attests ICS-005"
+      ],
+      "abstraction": "technique",
+      "curator": "local (CTFHQNOV 2026 live solve)",
+      "reviewed_on": "2026-11-26",
+      "status": "pending"
     }
   ],
   "rejected": [
